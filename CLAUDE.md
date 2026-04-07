@@ -23,8 +23,8 @@ data/         Données transformées/normalisées (à venir)
 
 ### Endpoints UdeM utilisés
 
-- `GET /courses?subject=IFT&response_level=full` — tous les cours IFT avec prérequis
-- `GET /courses?subject=MAT&response_level=full` — cours MAT (pour les prérequis)
+- `GET /courses?response_level=full` — tous les cours (12 343 au total), filtrés côté client
+  - Note: les paramètres `subject` et `limit` sont ignorés par l'API — on récupère tout en un appel
 - `GET /courses/{course_id}` — cours individuel par ID
 
 ### Structure d'un cours (response_level=full)
