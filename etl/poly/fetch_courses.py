@@ -20,6 +20,7 @@ import json
 import re
 import time
 from pathlib import Path
+from typing import Optional
 
 import requests
 from bs4 import BeautifulSoup
@@ -71,7 +72,7 @@ def parse_program_page(slug: str) -> dict[str, dict]:
     print(f"  Parsing {url}")
 
     courses: dict[str, dict] = {}
-    current_titre_sigle: str | None = None
+    current_titre_sigle: Optional[str] = None
 
     for tr in soup.select("table.tableau-cours tr"):
         if "titre" in tr.get("class", []):
@@ -159,7 +160,7 @@ def parse_program_page(slug: str) -> dict[str, dict]:
 
 # ── Page individuelle ─────────────────────────────────────────────────────────
 
-def fetch_course_detail(sigle: str, slug: str | None) -> dict | None:
+def fetch_course_detail(sigle: str, slug: Optional[str]) -> Optional[dict]:
     """
     Récupère la description depuis la page individuelle du cours.
     Retourne None si le slug est inconnu ou la page introuvable.
@@ -263,7 +264,7 @@ def main():
 
         # Parser table.tableau-cours directement depuis la soupe déjà chargée
         courses_this_prog: dict[str, dict] = {}
-        current_titre_sigle: str | None = None
+        current_titre_sigle: Optional[str] = None
 
         for tr in soup.select("table.tableau-cours tr"):
             classes = tr.get("class", [])
@@ -315,7 +316,7 @@ def main():
                 current_mode = None
 
                 for child in details_div.children:
-                    if not hasattr(child, "name"):
+                    if child.name is None:  # NavigableString
                         text = str(child).strip()
                         if not text:
                             continue
@@ -332,14 +333,15 @@ def main():
                                 prereqs.append(code)
                             elif current_mode == "coreq":
                                 coreqs.append(code)
-                    # nested spans/divs
-                    for a in child.find_all("a"):
-                        code = a.get_text(strip=True).upper()
-                        if SIGLE_RE.match(code):
-                            if current_mode == "prereq" and code not in prereqs:
-                                prereqs.append(code)
-                            elif current_mode == "coreq" and code not in coreqs:
-                                coreqs.append(code)
+                    else:
+                        # nested spans/divs
+                        for a in child.find_all("a"):
+                            code = a.get_text(strip=True).upper()
+                            if SIGLE_RE.match(code):
+                                if current_mode == "prereq" and code not in prereqs:
+                                    prereqs.append(code)
+                                elif current_mode == "coreq" and code not in coreqs:
+                                    coreqs.append(code)
 
                 c = courses_this_prog[current_titre_sigle]
                 c["prerequisite_courses"] = list(dict.fromkeys(prereqs))

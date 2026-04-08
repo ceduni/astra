@@ -1,0 +1,1936 @@
+{
+  "metadata": {
+    "source": "Polytechnique Montréal – Génie informatique & Génie logiciel",
+    "programs": [
+      "bc-informatique",
+      "bc-logiciel"
+    ],
+    "program_count": 165,
+    "other_count": 13
+  },
+  "courses": {
+    "PROGRAM": [
+      {
+        "id": "INF1007",
+        "name": "Introduction à la programmation",
+        "credits": 4.0,
+        "description": "Description Environnement informatique : l'ordinateur et ses périphériques, le système d'exploitation et la gestion de fichiers. Résolution de problèmes et algorithmes : stratégies de résolution des problèmes, rôle des algorithmes dans le processus de résolution des problèmes, concepts et propriétés des algorithmes, initiation aux structures de contrôles. Représentation interne des données : bit, octet et mot, représentation de données numériques et bases de numération, représentation des données-caractères. Éléments de base du langage Python : Variables, types de données, expressions et opérateurs, chaîne de caractères et fonctions de base de Python, structures de contrôle. Éléments avancés du langage Python : structures de données, fonctions, portée des variables, entrées et sorties, fichiers. Introduction à la programmation orientée objet : classes et objets, concepts d'attributs, de fonctions et d'instances des objets, héritage et polymorphisme. Bibliothèques scientifiques et graphiques. Méthodologie de programmation : concepts et principes fondamentaux de construction, conception structurée, raffinements successifs, analyse, environnement de programmation, tests et outils de correction, temps d'exécution.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Responsable(s) : Felipe Gohring de Magalhaes"
+      },
+      {
+        "id": "INF1015",
+        "name": "Programmation orientée objet avancée",
+        "credits": 4.0,
+        "description": "Description Introduction au C++. Révision des classes et objets. Allocation dynamique. Conversions de types. Surcharge d'opérateur. Classes et méthodes génériques. Héritage simple et héritage multiple. Classes abstraites. Polymorphisme. Algorithmes fondamentaux : recherches linéaire et dichotomique, tri simple. Bibliothèque de structures de données et algorithmes. Variables statiques. Traitement des exceptions. Pointeurs intelligents. Programmation par événements. Notions élémentaires de conception d'interfaces graphiques.",
+        "prerequisite_courses": [
+          "INF1007"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "INF1007 Notes : Responsable(s) : François-Raymond Boyer"
+      },
+      {
+        "id": "INF1040",
+        "name": "Introduction à l'ingénierie informatique",
+        "credits": 3.0,
+        "description": "Description La profession d'ingénieur : historique, nature du travail, types de réalisations, carrières, spécialités, nature de la formation universitaire, recherche de pointe. Rôle des associations et organismes professionnels. Communication orale, écrite et graphique pour l'ingénierie informatique. Planification, rédaction et présentation de rapports techniques : cueillette et validation d'informations, utilisation appropriée de tables, graphiques et références, exposés.  Notions de base reliées à l'exercice professionnel en ingénierie informatique et à la propriété intellectuelle.\nFormation initiale aux relations interpersonnelles pour le travail en équipe. Identité, connaissance de soi et reconnaissance de la différence. Données socioculturelles, contraintes situationnelles et adaptation au changement. Connaissance, application et développement des habiletés de la communication interpersonnelle; processus inconscients, comportements verbaux et non verbaux, projection, mécanisme de défense, écoute active, questionnement, rétroaction et réflexivité. Gestion des conflits interpersonnels.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Responsable(s) : Samuel Pierre Site web"
+      },
+      {
+        "id": "INF1500",
+        "name": "Logique des systèmes numériques",
+        "credits": 3.0,
+        "description": "Description Représentation interne des données dans les systèmes numériques. Détection et correction d'erreurs. Algèbre de Boole. Portes logiques. Représentation et réalisation de fonctions logiques combinatoires. Logique mixte. Simplification par tables de Karnaugh. Réseaux itératifs. Machines à états finis. Systèmes simples à mémoire: bascules et bistables. Méthodes d'analyse et de synthèse de systèmes séquentiels synchrones et asynchrones. Composants usuels: multiplexeurs, codeurs, registres, compteurs, unité arithmétique et logique, commande d'affichage, interface sérielle-parallèle.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Responsable(s) : Pierre-Yves Lajoie Site web"
+      },
+      {
+        "id": "INF1600",
+        "name": "Architecture des micro-ordinateurs",
+        "credits": 3.0,
+        "description": "Description Composants d'un micro-ordinateur: microprocesseur, périphériques, mémoires et bus. Communication et synchronisation entre un microprocesseur et les autres composants: par scrutation et par interruption. Hiérarchie de mémoire: disque, mémoire vive, cache, registres. Boucle d'exécution sur un processeur simple. Représentation des instructions binaires et mnémoniques. Traduction d'expressions en assembleur. Adressage, alignement et représentation des données. Programmation en assembleur. Lien entre l'assembleur et un langage de haut niveau. Optimisation du microprocesseur: pipeline.",
+        "prerequisite_courses": [
+          "INF1500",
+          "INF1005C",
+          "INF1007"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "INF1500 et ( INF1005C ou INF1007 ) Notes : Responsable(s) : Geneviève Cyr Site web"
+      },
+      {
+        "id": "INF1900",
+        "name": "Projet initial de système embarqué",
+        "credits": 3.0,
+        "description": "Description Construction en équipe  d'un système matériel et logiciel basé sur une carte à microcontrôleur.  Les concepts techniques abordés couvrent la familiarisation avec les éléments matériels et logiciels et les interactions requises pour la réalisation et la compréhension d'un système informatique simple mais complet avec ses entrées/sorties et périphériques.  La programmation à différents niveaux, la gestion de configuration, les inspections de code et les tests et les pratiques de base en programmation sont introduits graduellement.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "INF1015",
+          "INF1205",
+          "INF2205",
+          "INF1600"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "INF1015 , INF1205 ou INF2205 , INF1600 Notes : l'inscription et l'abandon de ce cours-projet sont sujets à des\r\nrestrictions. Responsable(s) : Jérôme Collin Site web"
+      },
+      {
+        "id": "INF2010",
+        "name": "Structures de données et algorithmes",
+        "credits": 3.0,
+        "description": "Description Structures de données séquentielles : listes, piles, files, vecteurs.  Manipulation des structures de données séquentielles : insertion, recherche et retrait d'éléments.  Algorithmes de tri.  Arbres binaires.  Algorithmes de recherche dans un arbre.  Mise en uvre des arbres équilibrés.  Files de priorité.  Structures de données pour manipulation de texte.  Algorithmes de filtrage de chaînes de caractères.  Implémentation de graphes.  Algorithmes de parcours de graphes.  Ensembles.",
+        "prerequisite_courses": [
+          "INF1015"
+        ],
+        "concomitant_courses": [
+          "LOG1810",
+          "LOG2810"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "INF1015 LOG1810 ou LOG2810 Notes : Responsable(s) : Samuel Kadoury Site web"
+      },
+      {
+        "id": "INF2610",
+        "name": "Noyau d'un système d'exploitation",
+        "credits": 3.0,
+        "description": "Description Concepts, composants, fonctions, services et structures des systèmes d'exploitation.  Gestion de processus : synchronisation, problèmes classiques de synchronisation, communication et ordonnancement.  Processus légers (threads).  Interblocage.  Gestion de la mémoire.  Introduction aux systèmes d'exploitation temps réel.  Gestion de processus dans un contexte temps réel.  Ordonnancement temps réel.  Études de cas.",
+        "prerequisite_courses": [
+          "INF1010",
+          "INF1015",
+          "INF1600",
+          "ELE3312"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "INF1010 ou INF1015 , ( INF1600 ou ELE3312 ) Notes : Responsable(s) : Felipe Gohring de Magalhaes Site web"
+      },
+      {
+        "id": "INF2705",
+        "name": "Infographie",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF3005",
+        "name": "Communication écrite et orale",
+        "credits": 1.0,
+        "description": "Description Cette formation en communication écrite et orale s'étale de la première à la troisième année.  Elle se présente en quatre étapes : une évaluation initiale d'une communication écrite et d'une communication orale en première année; une prescription personnalisée (s'il y a lieu) ; une évaluation finale d'une communication écrite et d'une communication orale en troisième année ; la réalisation d'un portfolio sur ces formes de communication.  Cette formation vise à apprendre à rédiger des textes de façon efficace et productive ainsi qu'à préparer et présenter des exposés de façon efficace et productive, conformes aux conventions de communication en vigueur dans la discipline.",
+        "prerequisite_courses": [
+          "INF3005A",
+          "INF3005I"
+        ],
+        "concomitant_courses": [
+          "INF3995",
+          "INF1040",
+          "INF3005I"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "INF3005A , INF3005I INF3995 Notes : Des activités relatives à ce cours se dérouleront également à l'intérieur des activités INF1040 Introduction à l'ingénierie informatique, INF3005I Épreuves initiales de communication et le projet intégrateur de 3e année du programme de génie informatique INF3995 Projet de conception d'un système informatique. Responsable(s) : Sylvie Hertrich Site web"
+      },
+      {
+        "id": "INF3405",
+        "name": "Réseaux informatiques",
+        "credits": 3.0,
+        "description": "Description Classification des réseaux. Techniques de commutation. Architectures technologiques de transmission. Tramage, détection d'erreurs, contrôle du flot et contrôle d'erreurs par retransmission. Architecture des réseaux : modèle par couches, relations entre les couches et primitives de contrôle. Protocoles des réseaux locaux : Ethernet et réseaux sans fil. Architecture technologique TCP/IP (Transport Control Protocol/Internet Protocol) : modèle, adressage, protocoles et routage. Analyse de la qualité de service et modèles pour les réseaux informatiques. Mécanismes améliorant la qualité de service. IP version 6. Contrôle et analyse de la congestion avec TCP. Applications de TCP/IP. Efficacité énergétique d'un réseau informatique",
+        "prerequisite_courses": [
+          "INF1005C",
+          "INF1005D",
+          "INF1010",
+          "INF1015"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "INF1005C OU INF1005D OU INF1010 OU INF1015 Notes : Responsable(s) : Soumaya Cherkaoui Site web"
+      },
+      {
+        "id": "INF3500",
+        "name": "Conception et réalisation de syst. numériques",
+        "credits": 3.0,
+        "description": "Description Vue d'ensemble des systèmes numériques. Options d'implémentation en logique fixe et programmable: coûts et performances. Technologies de logique programmable: ROM, PLA, PAL, CPLD et FPGA. Architecture et caractéristiques des FPGA.  Flot de conception pour FPGA: modélisation, synthèse, placement, routage et programmation. Modélisation et vérification de circuits combinatoires et séquentiels avec un langage de description matérielle. Conception et implémentation de chemins des données et de fonctions arithmétiques. Vérification, simulation, synthèse et implémentation de systèmes numériques. Conception de processeurs à usage général. Performance: latence, débit et surface. Exemples d'applications.",
+        "prerequisite_courses": [
+          "INF1600"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "INF1600 Notes : Responsable(s) : Geneviève Cyr Site web"
+      },
+      {
+        "id": "INF3610",
+        "name": "Systèmes embarqués",
+        "credits": 3.0,
+        "description": "Description Introduction aux systèmes embarqués.  Modélisation d'un système embarqué.  Architecture d'une plate-forme pour systèmes embarqués : processeur embarqué, système multibus, accélérateurs matériels (coprocesseurs) et mémoires.  Interface entre la partie matérielle et la partie logicielle d'un système embarqué.  Conception de la partie logicielle d'un système embarqué.  Système d'exploitation temps réel.  Types d'ordonnancement.  Analyse du temps de réponse.  Étapes de conception d'un système embarqué.",
+        "prerequisite_courses": [
+          "INF2610",
+          "INF3500"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "INF2610 , INF3500 Notes : Responsable(s) : Guy Bois Site web"
+      },
+      {
+        "id": "INF3710",
+        "name": "Fichiers et bases de données",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF3995",
+        "name": "Projet de conception d'un syst. informatique",
+        "credits": 4.0,
+        "description": "Description Conception et réalisation d'un système informatique en considérant différents aspects de réseautique, multimédia, systèmes d'exploitation, bases de données, systèmes embarqués et sécurité informatique. Les étudiants auront recours à une méthodologie de conception et de gestion nécessaire pour la réalisation d'un système informatique. Ils mettent aussi en pratique les notions acquises sur le processus de développement du logiciel et du matériel. Une attention particulière sera accordée à l'assurance qualité.",
+        "prerequisite_courses": [
+          "LOG2990",
+          "LOG2995",
+          "INF3405"
+        ],
+        "concomitant_courses": [
+          "INF3005"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "LOG2990 ou LOG2995 , INF3405 INF3005 Notes : l'inscription et l'abandon de ce cours-projet sont sujets à des\r\nrestrictions. Responsable(s) : Giovanni Beltrame Site web"
+      },
+      {
+        "id": "INF3005I",
+        "name": "Épreuves initiales de communication",
+        "credits": 0.0,
+        "description": "Description Cette formation en communication écrite et orale s'étale de la première à la troisième année.  Elle se présente en quatre étapes : une évaluation initiale d'une communication écrite et d'une communication orale en première année; une prescription personnalisée (s'il y a lieu) ; une évaluation finale d'une communication écrite et d'une communication orale en troisième année ; la réalisation d'un portfolio sur ces formes de communication.  Cette formation vise à apprendre à rédiger des textes de façon efficace et productive ainsi qu'à préparer et présenter des exposés de façon efficace et productive, conformes aux conventions de communication en vigueur dans la discipline.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "INF1040",
+          "INF3005I"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Des activités relatives à ce cours se dérouleront également à l'intérieur des activités INF1040 Introduction à l'ingénierie informatique, INF3005I Épreuves initiales de communication et le projet intégrateur de 3e année du programme de génie informatique INF3990 Projet de conception d'un logiciel embarqué. Responsable(s) : Sylvie Hertrich Site web"
+      },
+      {
+        "id": "INF3005A",
+        "name": "Ateliers en CÉO",
+        "credits": 0.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Responsable(s) : Sylvie Hertrich Site web"
+      },
+      {
+        "id": "INF8175",
+        "name": "Intelligence artif.: méthodes et algorithmes",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8480",
+        "name": "Systèmes répartis et infonuagique",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8770",
+        "name": "Technologies multimédias",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG1810",
+        "name": "Structures discrètes",
+        "credits": 3.0,
+        "description": "Description Rôle des structures discrètes en génie informatique et en génie logiciel. Ensembles et logique de base. Techniques de preuves : règles d'inférence et de déduction. Relations et fonctions. Algorithmes : définition, analyse, récursivité. Théorie des nombres : arithmétique, congruences, application à la cryptographie. Éléments de combinatoire : énumération, permutations et combinaisons. Relations de récurrence. Théorie des graphes. Arbres. Langages et grammaires, automates finis, machines de Turing.",
+        "prerequisite_courses": [
+          "INF1500"
+        ],
+        "concomitant_courses": [
+          "LOG2810"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "INF1500 Notes : Ce cours est équivalent et remplace LOG2810 . Responsable(s) : Lévis Thériault"
+      },
+      {
+        "id": "LOG2400",
+        "name": "Analyse et conception de logiciels",
+        "credits": 3.0,
+        "description": "Description Processus du génie logiciel et cycle de vie du logiciel . Phases du cycle de vie du logiciel: analyse, conception, réalisation, test, maintenance et exploitation. Activité d'analyse et de conception dans le processus du génie logiciel : principes, spécifications et méthodes. Méthodes d'analyse et de conception orientée-objet : langages et notation standards, modélisation structurelle, modélisation de comportement et modélisation architecturale. Décomposition en couches logicielles. Patrons de conception.",
+        "prerequisite_courses": [
+          "INF1015"
+        ],
+        "concomitant_courses": [
+          "LOG1410"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "INF1015 Notes : Ce cours est équivalent et remplace LOG1410 . Responsable(s) : Éric Germain"
+      },
+      {
+        "id": "LOG2990",
+        "name": "Projet de logiciel d'application Web",
+        "credits": 4.0,
+        "description": "Description Conception, réalisation, validation et test d'une application Web. Concepts techniques intégrés : notions de base en infographie, interfaces utilisateur, structures de données et algorithmes, programmation orientée objet, patrons de conception, révision de code, intégration continue, tests de logiciel. Concepts techniques enseignés: gestion de projet logiciel, services web, approche agile. Travaux en équipe.",
+        "prerequisite_courses": [
+          "INF1900",
+          "INF2010",
+          "LOG2440"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "INF1900 , INF2010 , LOG2440 Notes : Responsable(s) : Nikolay Radoev Site web"
+      },
+      {
+        "id": "MTH1008",
+        "name": "Algèbre linéaire appliquée",
+        "credits": 3.0,
+        "description": "Description Élimination à l'aide de matrices. Opérations matricielles et inverses. Factorisations A=LU et A=LDU. Transposées et permutations. Espaces de vecteurs. Noyau. Rang et forme réduite en lignes. Indépendance, base et dimension. Les quatre sous-espaces fondamentaux. Orthogonalité et sous-espaces. Projections. Approximations par moindres carrés. Bases orthogonales et procédé de Gram-Schmidt. Matrices orthogonales. Valeurs propres. Vecteurs propres. Diagonalisation. Matrices symétriques. Matrices définies positives. Décomposition en valeurs singulières. Transformations linéaires. Choix de base. Nombres complexes. Matrices hermitiennes et unitaires. Applications.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "MTH0102",
+          "MTH1008"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Les étudiants que cela concerne doivent avoir réussi le cours préparatoire MTH0102 avant de s'inscrire à MTH1008 . Responsable(s) : Houda Trabelsi"
+      },
+      {
+        "id": "GCH2730",
+        "name": "Énerg. et dév. durable dans les syst. infor.",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "SSH3201",
+        "name": "Économique de l'ingénieur",
+        "credits": 3.0,
+        "description": "Description Rôle des états financiers comme supports aux décideurs.  Méthodes d'estimation et analyse des coûts.  Analyse marginale et du point mort.  Méthodes d'estimation des coûts.  Sources et coûts de financement des projets.  Liens entre les décisions de financement et d'investissement.  Intérêt et valeur de l'argent dans le temps, formules d'actualisation.  Méthodes d'évaluation des projets : valeur actuelle nette, taux de rendement interne, taux de rendement interne modifié, délai de recouvrement, coût annuel équivalent et ratio avantages-coûts.  Choix parmi des projets indépendants en cas de restriction budgétaire. Impact de l'impôt sur la rentabilité des projets.  Mesure et méthodes d'analyse du risque et de l'incertitude. Analyse de sensibilité. Analyse de probabilité. Prise de décision, critères et arbres de décision.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "27 cr. Notes : Responsable(s) : Yabo Octave Niamié Site web"
+      },
+      {
+        "id": "SSH3501",
+        "name": "Éthique appliquée à l'ingénierie",
+        "credits": 2.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF1205",
+        "name": "Habiletés relationnelles et travail en équipe",
+        "credits": 2.0,
+        "description": "Description Développement des habiletés personnelles et relationnelles. Modèles et considérations de la communication interpersonnelle, perception, inférence et interprétation. Écoute active, intelligence relationnelle, conscience et affirmation de soi. Types de rétroaction; rétroaction positive, critique et constructive. Gestion des conflits interpersonnels. Connaissance et pratique de la dynamique et de l'organisation du travail en équipe collaboratif. Modèles de dynamique de groupe : conditions, développement et prise en charge de l'évolution de l'équipe. Types de réseaux de travail, organisation et prise de décisions en équipe. Normes, rôles, modes d'interaction, pouvoir et leadership, relations affectives et cohésion. Prise en charge et objectifs de changement personnels et relationnels.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Responsable(s) : Renée-Pascale Laberge"
+      },
+      {
+        "id": "INF8085",
+        "name": "Cybersécurité",
+        "credits": 3.0,
+        "description": "Description Définition, portée et objectifs de la sécurité informatique.  Méthodologie d'analyse et de gestion du risque.  Éléments de cryptographie et de cryptanalyse.  Algorithmes de chiffrement à clé privée et à clé publique.  Fonctions de hachage cryptographique.  Signatures numériques.  Gestion des clés et infrastructures à clés publiques.  Sécurité des logiciels.  Vulnérabilités typiques et techniques d'exploitation.  Logiciels malveillants et contre-mesures.  Sécurité des systèmes d'exploitation.  Mécanismes d'authentification, contrôle d'accès et protection de l'intégrité.  Modèles de gestion du contrôle d'accès.  Sécurité des applications Web.  Sécurité des réseaux.  Configuration sécuritaire.  Pare-feu, détecteur d'intrusions et serveur mandataire.  Protocoles de réseaux sécurisés.  Organisation et gestion de la sécurité informatique.  Acteurs et types d'interventions.  Normalisation et organismes pertinents.  Cadre légal et déontologique.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "INF4420A"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "60 crédits Aucun Notes : Ce cours est équivalent et remplace INF4420A Responsable(s) : Alejandro Quintero"
+      },
+      {
+        "id": "SSH3101",
+        "name": "Analyse sociologique de la technologie",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH2304",
+        "name": "Probabilités et statistique appliquées",
+        "credits": 4.0,
+        "description": "Description Rôle des probabilités et de la statistique en ingénierie. Notions de calcul différentiel et intégral. Probabilités (ensemble, événement, espace échantillonnal, dénombrement, indépendance et probabilité conditionnelle, loi des probabilités totales et théorème de Bayes). Variables aléatoires discrètes et continues (fonction de répartition, fonction de masse, fonction de densité, espérance, lois classiques). Vecteurs de variables aléatoires (densité conjointe, lois conditionnelles et marginales, indépendance, covariance). Convergence des variables aléatoires (inégalité de Markov, inégalité de Tchebychev, loi des grands nombres, théorème limite central). Statistique descriptive (visualisation et description numérique). Estimation (ponctuelle et par intervalle, biais et variance des estimateurs). Test d'hypothèses (hypothèses nulle et alternative, statistique de test, risques de première et de deuxième espèce, puissance). Régression linéaire simple (hypothèses, estimation, intervalle de prédiction, qualité d'ajustement).",
+        "prerequisite_courses": [
+          "MTH1007",
+          "MTH1008"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "MTH1007 ou MTH1008 Notes : Responsable(s) : Julie Carreau"
+      },
+      {
+        "id": "GBM1610",
+        "name": "Biochimie pour ingénieur",
+        "credits": 3.0,
+        "description": "Description Relations entre structure, interaction et fonction des macromolécules fondamentales de la cellule (protéines, sucres, acides nucléiques). Mécanismes et cinétiques enzymatiques (applications industrielles des enzymes). Techniques biochimiques usuelles utiles à l'ingénieur : détection, quantification et purification des macromolécules de la cellule (application, optimisation et limitations).",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "CHE0501",
+          "GBM1610"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : - ce cours est sous la responsabilité du département de génie chimique.\r\n- les étudiants que cela concerne doivent avoir réussi le cours préparatoire CHE0501 avant de s'inscrire à GBM1610 . Responsable(s) : Gregory De Crescenzo Site web"
+      },
+      {
+        "id": "MEC1210",
+        "name": "Thermodynamique",
+        "credits": 3.0,
+        "description": "Description Définitions et unités : milieu continu, système, substance pure, état, paramètres, évolution, cycles. Formes d'énergie. Principe de conservation de masse et d'énergie. Réversibilité et irréversibilité. Chaleur massique. Entropie. Gaz parfait et réel. Évolutions utilisant un gaz parfait. Propriétés des substances pures : tables, diagrammes et logiciel de calcul. Analyse d'un cycle. Cycle de Carnot. Inégalité de Clausius. Second principe et production d'entropie. Cycles classiques de Rankine, Otto, Diesel et Brayton, cycles de réfrigération. Mélanges non réactifs, propriétés thermodynamiques des mélanges, psychrométrie. Introduction à la méthode de résolution des problèmes et aux outils de l'ingénieur.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "CHE0501",
+          "MTH0103",
+          "PHS0101",
+          "MEC1210"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : les étudiants que cela concerne doivent avoir réussi les cours préparatoires CHE0501 , MTH0103 et PHS0101 avant de s'inscrire à MEC1210 . Responsable(s) : Huu Duc Vo Site web"
+      },
+      {
+        "id": "PHS1101",
+        "name": "Mécanique pour ingénieurs",
+        "credits": 3.0,
+        "description": "Description Introduction à la mécanique analytique avec accent sur la résolution de problèmes en ingénierie. \nConcepts fondamentaux : lois de Newton et leur application en statique et en dynamique du point matériel et des corps rigides. Statique : force, moment de force et systèmes force-couple équivalents. Diagramme du corps libre. Structures simples en équilibre statique en deux et en trois dimensions. Frottement statique et cinétique entre solides. Centre de masse et moment d'inertie. Statique des fluides: principe de Pascal, principe d'Archimède, poussée sur une paroi. Dynamique : cinématique et dynamique du point matériel en coordonnées cartésiennes et normale/tangentielle. Principe travail-énergie, puissance mécanique et rendement. Impulsion, quantité de mouvement et moment cinétique. Systèmes de particules variables. Mouvement plan, dynamique et énergie cinétique de rotation des corps rigides en deux dimensions.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "MTH0102",
+          "MTH0103",
+          "PHS0101",
+          "PHS1101"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Les étudiants que cela concerne doivent avoir réussi les cours préparatoires MTH0102 , MTH0103 et PHS0101 avant de s'inscrire à PHS1101 . Responsable(s) : Rodrigue Beaini Site web"
+      },
+      {
+        "id": "PHS4700",
+        "name": "Physique pour les applications multimédia",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8970",
+        "name": "Projet final en génie informatique",
+        "credits": 6.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ING8971",
+        "name": "Projet intégrateur en développement durable",
+        "credits": 6.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8225",
+        "name": "I.A.:tech. probabilistes et d'apprentissage",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8402",
+        "name": "Sécurité des réseaux fixes et mobiles",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8405",
+        "name": "Informatique mobile",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8500",
+        "name": "Systèmes embarqués:conception et vérification",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8503",
+        "name": "Concepts avancés en arch. des ordinateurs",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8601",
+        "name": "Systèmes informatiques parallèles",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8775",
+        "name": "Analyse et conception d'algorithmes",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "AER4715",
+        "name": "Avionique",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "AER8300",
+        "name": "Informatique des systèmes spatiaux",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ELE8304",
+        "name": "Circuits intégrés à très grande échelle",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8505",
+        "name": "Processeurs embarqués configurables",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8725",
+        "name": "Traitement de signaux et d'images",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8900",
+        "name": "Lectures dirigées génie info. génie logiciel",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8901",
+        "name": "Projet perso. rech. génie info. et logiciel",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8215",
+        "name": "Intelligence artif.: méthodes et algorithmes",
+        "credits": 3.0,
+        "description": "Description - Notion d'intelligence artificielle et d'agents intelligents;\n- Stratégies de recherche;\n- Conception d'heuristiques;\n- Recherche en présence d'adversaires;\n- Méthodes de recherche locale;\n- Métaheuristiques;\n- Programmation par contraintes;\n- Agents logiques;\n- Logique des propositions;\n- Représentation des connaissances;\n- Vérification de modèles;\n- Algorithmes d'inférence;\n- Apprentissage automatique supervisé;\n- Réseaux de neurones;\n- Apprentissage non-supervisé;\n- Apprentissage par renforcement;\n- Considérations éthiques et sociétales",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "70 crédits Aucun Notes : Responsable(s) : Quentin Cappart Site web"
+      },
+      {
+        "id": "INF8703",
+        "name": "Audio numérique",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8801A",
+        "name": "Applications multimédias",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG4420",
+        "name": "Conception de sites web dynam. et transact.",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG4715",
+        "name": "Conception de jeux vidéo",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8235",
+        "name": "Agents intelligents pour jeux vidéo",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8715",
+        "name": "Architecture de jeux vidéo",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8401",
+        "name": "Configuration et gestion des réseaux inform.",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8415",
+        "name": "Concepts avancés en infonuagique",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "DDI8001",
+        "name": "Développement durable pour ingénieurs",
+        "credits": 3.0,
+        "description": "Description Contexte historique, repères et acteurs du développement durable. Concepts théoriques, modèles, indicateurs et mesures tels que : produit intérieur brut, indice de développement humain, Genuine Progress Indicators, empreinte écologique. Cadre légal : Loi 118, Loi sur la qualité de l'environnement du Québec, Loi sur les ingénieurs. Leviers et outils de mise en uvre : responsabilité sociale des organisations, analyse de cycle de vie, écoconception. Outils de reddition de compte, certification : normes de l'Organisation internationale de normalisation et du Bureau de normalisation du Québec, Global reporting initiave, écolabel. Enjeux majeurs tels que : biodiversité, eau, sols, énergie, changements climatiques, industrie extractive, procédés de transformation, matières résiduelles, milieu bâti, transport, éthique, société. Défis et contraintes.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "60 crédits au baccalauréat Notes : Responsable(s) : Émilie Bédard"
+      },
+      {
+        "id": "DDI8002",
+        "name": "Études de cas en dévelop. durable pour ing.",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "CIV8750",
+        "name": "Planification durable des transports",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "DDI8004",
+        "name": "Vulgarisation des enjeux environnementaux",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ENE8210",
+        "name": "Efficacité des sources d'énergie",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MEC8252",
+        "name": "Combustion et pollution atmosphérique",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MEC8256",
+        "name": "Design et efficacité énergétique en méc.bât.",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "PHS8603",
+        "name": "Énergie et environnement",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "SSH3402",
+        "name": "Droit de l'environnement",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8137A",
+        "name": "Entrepreneuriat technologique",
+        "credits": 3.0,
+        "description": "Description Phénomène de l'entrepreneuriat. Entrepreneurs technologiques : motivations, caractéristiques, valeurs, carrière, rôle. Processus de création d'une entreprise : sources de l'idée, choix des partenaires et aspects juridiques. Modèles et plan d'affaires. Chaînes de valeur : fournisseurs-clients, partenaires technologiques et commerciaux. Organisation des fonctions critiques de l'entreprise : démarrage et développement de produits ; croissance et organisation. Protection de la propriété intellectuelle, transferts de technologie et autres aspects contractuels. Définition et analyse du marché et plan de commercialisation. Organismes et politiques d'appui au démarrage d'entreprises en technologie. Sources de crédit à court, moyen et long termes. Plan financier pour le démarrage. Ratios financiers. Sources de financement.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "70 crédits pour les étudiants au baccalauréat Notes : Ce cours est également disponible en anglais ( IND8137AE ). Responsable(s) : Yabo Octave Niamié"
+      },
+      {
+        "id": "IND8710",
+        "name": "Gestion de la R&D et l'innovation",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8711",
+        "name": "Innovation technologique et industrielle",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8108",
+        "name": "Créativité en sciences et en génie",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8120",
+        "name": "Commercialisat. nouveaux produits et services",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8143",
+        "name": "Montage projet d'entreprise technologique",
+        "credits": 6.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8144",
+        "name": "Financement de l'entreprise technologique",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH8107",
+        "name": "Mathématiques de l'apprentissage profond",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH3141",
+        "name": "Mathématiques de génie: un récit appliqué",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH8211",
+        "name": "Algèbre linéaire numérique appliquée",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH3400",
+        "name": "Analyse mathématique pour ingénieurs",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH8207",
+        "name": "Mathématiques des éléments finis",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH8515",
+        "name": "Analyse mathématique avancée pour ingénieurs",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH8301",
+        "name": "Planification et analyse stat. d'expériences",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH8302",
+        "name": "Analyse de régression et analyse de variance",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH8303",
+        "name": "Processus stochastiques",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH8408",
+        "name": "Méthodes d'optimisation et contrôle optimal",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH8414",
+        "name": "Outils de recherche opérationnelle en génie",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH8415",
+        "name": "Fondements de recherche opérationnelle",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH8418",
+        "name": "Optimisation sans dérivées",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH8442",
+        "name": "Ordonnancement de la production",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8200",
+        "name": "Organisation industrielle",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8211",
+        "name": "Ingénierie des systèmes d'information",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8774",
+        "name": "Théorie de la décision",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8501",
+        "name": "Droit du travail pour ingénieur",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8107",
+        "name": "Gestion des changements technol. et organis.",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8119",
+        "name": "Gestion d'équipes dans un environnement tech.",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8115",
+        "name": "Technologie et concurrence internationale",
+        "credits": 3.0,
+        "description": "Description Enjeux mondiaux du point de vue économique et technologique. Technologie comme vecteur et enjeu de la concurrence internationale. Économie politique mondiale et politique industrielle dans un contexte de mondialisation. Spécificité du tissu industriel canadien et québécois. Innovation et grands cycles économiques. Concurrence et processus d'innovation. Structure et dynamique des industries. Stratégie technologique dans une entreprise multinationale et dans une petite ou une moyenne entreprise (PME).  Analyse de cas québécois et internationaux.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "70 crédits pour les étudiants au baccalauréat. Notes : Responsable(s) : Nathalie De Marcellis-Warin Site web"
+      },
+      {
+        "id": "IND8127A",
+        "name": "Mondialisation et firmes internationales",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8121",
+        "name": "Ingénieur en coop./dévelop. international",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8138A",
+        "name": "Gestion de projets internationaux",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8116",
+        "name": "Mission industrielle: Poly-Monde",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG3000",
+        "name": "Processus du génie logiciel",
+        "credits": 3.0,
+        "description": "Description Activités de base d'un processus de génie logiciel.  Phases du cycle de vie du logiciel.  Outils et méthodes de support au processus. Survol des différentes philosophies de processus de développement de logiciel. Disciplines techniques du processus du génie logiciel : requis, analyse et conception, implémentation, test.  Disciplines de gestion des processus : gestion des configurations et des requêtes de changement, gestion des projets, gestion des équipes. Évaluation des processus.  Amélioration des processus.  Méthodes de représentation des processus. Méta modèle. Analyse empirique des processus.",
+        "prerequisite_courses": [
+          "LOG2990"
+        ],
+        "concomitant_courses": [
+          "LOG3900"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "LOG2990 LOG3900 Notes : Responsable(s) : Jinghui Cheng Site web"
+      },
+      {
+        "id": "INF8111",
+        "name": "Fouille de données",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ENE8220",
+        "name": "Transport et utilisation de l'énergie",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ENE8230",
+        "name": "Modélisa. techno-écono. des syst. énergéti.",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MEC8258",
+        "name": "Conversion d'énergie",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "DDI8003",
+        "name": "Analyse du cycle de vie",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8110",
+        "name": "Enjeux éco. du développement durable en génie",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ENE8310",
+        "name": "Stockage et intégration des syst. énergéti.",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "GCH8729",
+        "name": "Déchets solides et énergie résiduelle",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "CIV8310",
+        "name": "Aménagements et structures hydrauliques",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ENE8610",
+        "name": "Éléments d'aménagements hydroélectriques",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ELE8411",
+        "name": "Étude des grands réseaux électriques",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ELE8453",
+        "name": "Méth. opt. et apprentissage pour réseaux élec",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ELE8458",
+        "name": "Électricité industrielle",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ENE8412",
+        "name": "Gest. de la charge et de la prod. fluctuante",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ENE6301",
+        "name": "Optimi. microréseaux électriques intelligents",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8202",
+        "name": "Production durable",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ENE6510",
+        "name": "Modélisation énergétique des bâtiments",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ENE8280A",
+        "name": "Turbines hydrauliques",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MEC6214",
+        "name": "Énergie solaire et applications",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MEC6216",
+        "name": "Géothermie et applications",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ENE8203",
+        "name": "Technologies nucléaires",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "PHS8604E",
+        "name": "Direct Energy Conversion",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "CIV8780",
+        "name": "Systèmes de transport collectif guidés",
+        "credits": 3.0,
+        "description": "Description Besoins environnementaux et aspects historiques; Besoins des autorités et dimensionnement du système; Economie des systèmes ferroviaires & résilience; Ingénierie des systèmes ferroviaires; Concepts de la onception de systèmes de métro; Concepts de la conception de systèmes de tramway; Concepts de la conception de systèmes de train de banlieu; Capacité opérationnelle du système; Parties prenantes et intermodalité; Normes nord-américaines, besoins des autorités et dimensionnement des systems; Infrastructures ferroviaires - Lignes et travaux de génie civil; Infrastructures ferroviaires - Gares, voies, aiguillages, et alimentation électrique.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "60 crédits Notes : Responsable(s) : À venir"
+      },
+      {
+        "id": "ELE8780",
+        "name": "Tech. ferroviaires-Sécurité et signalisation",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8780",
+        "name": "Exploit. et maint. des systèmes ferroviaires",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MEC8780",
+        "name": "Technologies ferroviaires - Matériel roulant",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ELE8781",
+        "name": "Électrification des transports ferroviaires",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8102",
+        "name": "Sécurité dans les environnements infonuagique",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8103",
+        "name": "Stratégie et modèles op. de la cybersécurité",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8108",
+        "name": "Gestion et chasse de la cybermenace",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8430",
+        "name": "Investigation numérique en informatique",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8602",
+        "name": "Sécurité des systèmes d'exploitation",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG3430",
+        "name": "Méthodes de test et de validation du logiciel",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8371",
+        "name": "Ingénierie de la qualité en logiciel",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8980",
+        "name": "Projet final en sécurité et mobilité",
+        "credits": 6.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MTH3302",
+        "name": "Méth. prob. et statist. pour l'intel. artif.",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8985",
+        "name": "Projet final en intelligence artificielle",
+        "credits": 6.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8250",
+        "name": "Apprentisage par renforcement",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8460",
+        "name": "Traitement automatique de la langue naturelle",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8808",
+        "name": "Visualisation de données",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG3005I",
+        "name": "Épreuves initiales de communication",
+        "credits": 0.0,
+        "description": "Description Cette formation en communication écrite et orale s'étale de la première à la troisième année.  Elle se présente en quatre étapes : une évaluation initiale d'une communication écrite et d'une communication orale en première année ; une prescription personnalisée (s'il y a lieu) ; une évaluation finale d'une communication écrite et d'une communication orale en troisième année ; la réalisation d'un portfolio sur ces formes de communication.  Cette formation vise à apprendre à rédiger des textes de façon efficace et productive ainsi qu'à préparer et présenter des exposés de façon efficace et productive, conformes aux conventions de communication en vigueur dans la discipline.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "INF1040",
+          "LOG3005I",
+          "LOG3900"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Des activités relatives à ce cours se dérouleront également à l'intérieur des activités INF1040 Introduction à l'ingénierie informatique, LOG3005I Communication écrite et orale et le projet intégrateur de 3e année du programme de génie logiciel LOG3900 Projet d'évolution d'un logiciel. Responsable(s) : Sylvie Hertrich Site web"
+      },
+      {
+        "id": "LOG3005A",
+        "name": "Ateliers en CÉO",
+        "credits": 0.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Responsable(s) : Sylvie Hertrich Site web"
+      },
+      {
+        "id": "LOG2420",
+        "name": "Anal. et conc. des interfaces utilisateurs",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG2440",
+        "name": "Méthod. de dévelop. et conc. d'applic. Web",
+        "credits": 3.0,
+        "description": "Description Caractéristiques des logiciels pour le Web. Notions de client, de serveur et de logiciels distribués. Conception d'applications Web pour la génération dynamique de contenu et la gestion d'interactions avec les utilisateurs. Structure d'un document HTML (HyperText Markup Language). Mise en forme d'un document HTML par l'utilisation de CSS (Cascading Style Sheet). Programmation du côté client et du côté serveur. Présentation générale de l'architecture du web et du protocole HTTP (HyperText Transfer Protocol). Approches à la vérification: stratégie et planification des tests, évaluation de tests. Tests unitaires et tests d'intégration. Tests à boîte noire, vérification fonctionnelle d'une application et tests d'acceptation.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "LOG2400",
+          "LOG1410"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "LOG2400 ou LOG1410 Notes : Responsable(s) : Nikolay Radoev"
+      },
+      {
+        "id": "LOG3005",
+        "name": "Communication écrite et orale",
+        "credits": 1.0,
+        "description": "Description Cette formation en communication écrite et orale s'étale de la première à la troisième année.  Elle se présente en quatre étapes : une évaluation initiale d'une communication écrite et d'une communication orale en première année; une prescription personnalisée (s'il y a lieu) ; une évaluation finale d'une communication écrite et d'une communication orale en troisième année ; la réalisation d'un portfolio sur ces formes de communication.  Cette formation vise à apprendre à rédiger des textes de façon efficace et productive ainsi qu'à préparer et présenter des exposés de façon efficace et productive, conformes aux conventions de communication en vigueur dans la discipline.",
+        "prerequisite_courses": [
+          "LOG3005A",
+          "LOG3005I"
+        ],
+        "concomitant_courses": [
+          "LOG3900",
+          "INF1040",
+          "LOG3005I"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "LOG3005A , LOG3005I LOG3900 Notes : Des activités relatives à ce cours se dérouleront également à l'intérieur des activités INF1040 Introduction à l'ingénierie informatique, LOG3005I Épreuves initiales de communication et le projet intégrateur de 3e année du programme de génie logiciel LOG3900 Projet d'évolution d'un logiciel. Responsable(s) : Sylvie Hertrich Site web"
+      },
+      {
+        "id": "LOG3210",
+        "name": "Éléments de langages et compilateurs",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG3420",
+        "name": "Analyse et spécif. des exigences du logiciel",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG3900",
+        "name": "Projet d'évolution d'un logiciel",
+        "credits": 4.0,
+        "description": "Description Évolution et maintenance d'un système logiciel.  Ce cours projet intègre les connaissances acquises en ingénierie des exigences, en analyse et conception, en réseaux informatiques et en validation et test de logiciel.  Il met en pratique les notions acquises sur le processus de développement du logiciel.  Tous les travaux sont réalisés en équipe.",
+        "prerequisite_courses": [
+          "LOG2995",
+          "LOG2990"
+        ],
+        "concomitant_courses": [
+          "LOG3000",
+          "LOG3005"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "LOG2995 ou LOG2990 LOG3000 , LOG3005 Notes : L'inscription et l'abandon de ce cours-projet sont sujets à des restrictions. Responsable(s) : Éric Germain Site web"
+      },
+      {
+        "id": "LOG8430",
+        "name": "Architecture logicielle et conception avancée",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8970",
+        "name": "Projet final en génie logiciel",
+        "credits": 6.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8402",
+        "name": "Interfaces humain-ordinateur",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8409",
+        "name": "Interfaces humain-ordinateur spécialisées",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8412",
+        "name": "Ergonomie des sites Web",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8845",
+        "name": "Design graphique et interactivité",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF4420A",
+        "name": "Sécurité informatique",
+        "credits": 3.0,
+        "description": "Description Définition, portée et objectifs de la sécurité informatique.  Méthodologie d'analyse et de gestion du risque.  Éléments de cryptographie et de cryptanalyse.  Algorithmes de chiffrement à clé privée et à clé publique.  Fonctions de hachage cryptographique.  Signatures numériques.  Gestion des clés et infrastructures à clés publiques.  Sécurité des logiciels.  Vulnérabilités typiques et techniques d'exploitation.  Logiciels malicieux et contre-mesures.  Sécurité des systèmes d'exploitation.  Mécanismes d'authentification, contrôle d'accès et protection de l'intégrité.  Modèles de gestion du contrôle d'accès.  Sécurité des bases de données et des applications Web.  Sécurité des réseaux.  Configuration sécuritaire.  Coupe-feux, détecteurs d'intrusions et serveur mandataire.  Protocoles de réseaux sécurisés.  Organisation et gestion de la sécurité informatique.  Acteurs et types d'interventions.  Normalisation et organismes pertinents.  Cadre légal et déontologique.",
+        "prerequisite_courses": [
+          "INF2610",
+          "INF3405"
+        ],
+        "concomitant_courses": [
+          "INF8085"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "INF2610 , INF3405 ou l'équivalent Aucun Notes : Ce cours est remplacé par le INF8085 , qui est équivalent. Responsable(s) : À venir Site web"
+      },
+      {
+        "id": "LOG8704",
+        "name": "Développement logiciel en réalité étendue",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8975",
+        "name": "Projet final en multimédia",
+        "credits": 6.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8107",
+        "name": "Détection d'intrusion et supervision",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8100",
+        "name": "DevSecOps - Opérations et dév. logiciel sécur",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8415E",
+        "name": "Advanced Concepts of Cloud Computing",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8980",
+        "name": "Projet final en sécurité et mobilité",
+        "credits": 6.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8985",
+        "name": "Projet final en intelligence artificielle",
+        "credits": 6.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8250E",
+        "name": "Reinforcement Learning",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      }
+    ],
+    "OTHER": [
+      {
+        "id": "CHE0501",
+        "name": "",
+        "credits": 0.0,
+        "description": "Description Systèmes de mesures et analyse dimensionnelle. Tableau périodique et formule chimique. Réactions chimiques et stoechiométrie. Introduction aux solutions aqueuses. Structure de l'atome et configuration électronique. Liaisons intramoléculaires et structures de Lewis. Énergie d'une réaction chimique. Structures moléculaires et hybridation. Liaisons intermoléculaires. Pression et lois des gaz. États de la matière et changements de phases. Équilibre liquide-vapeur.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Ce cours ne peut en aucun cas compter dans les 120 crédits d'un programme de baccalauréat en ingénierie. Responsable(s) : Patrice Farand Site web"
+      },
+      {
+        "id": "ELE3312",
+        "name": "",
+        "credits": 0.0,
+        "description": "Description Historique et structure générale des microprocesseurs et microcontrôleurs.\nArchitecture interne reliant processeur central, bus, mémoires, périphériques,entrées/sorties et horloge. Architecture et format des instructions machines. Modes d'adressage. Pipelinage des instructions. Gestion des routines, des interruptions et des exceptions. Niveaux de priorité des vecteurs d'interruption. Ports d'entrée/sortie, numériques et analogiques. Commandes des périphériques principales via le mappage des registres de commandes, d'états et de données. Organisation, fonctionnement et gestion des différents types de mémoire (programme, données et pile). Protocoles de communication. Conversion analogique/numérique. Pseudo-instructions, assembleur et C embarqué. Programmation mixte. Notation à virgule fixe. Vecteurs de tests. Cartes de développement. Systèmes dédiés.",
+        "prerequisite_courses": [
+          "INF1005C",
+          "ELE1300",
+          "ELE2310",
+          "INF1005D",
+          "MEC8352"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "( INF1005C , ELE1300 , ELE2310 ) ou ( INF1005D , MEC8352 ) Notes : L'inscription et l'abandon de ce cours-projet sont sujets à des restrictions. Responsable(s) : Jean Pierre David Site web"
+      },
+      {
+        "id": "INF1005C",
+        "name": "",
+        "credits": 0.0,
+        "description": "Description Environnement informatique: ordinateurs et périphériques, système d'exploitation, gestion de fichiers. Résolution de problèmes: stratégies, rôle des algorithmes. Concepts et propriétés des algorithmes. Représentation interne des données numériques et caractères. Le langage C/C++ : types élémentaires et construits, structures de contrôle, fichiers texte et binaire, fonctions et modes de passage des paramètres. Méthodologie de programmation: programmation structurée, raffinements successifs, analyse, environnement de programmation, tests et outils de correction.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "INF0101",
+          "INF1005C"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : - ce cours est destiné aux étudiants des programmes de génie électrique, génie informatique et génie logiciel.\r\n- les étudiants que cela concerne doivent avoir réussi le cours préparatoire INF0101 avant de s'inscrire à INF1005C . Responsable(s) : François-Raymond Boyer Site web"
+      },
+      {
+        "id": "INF1005D",
+        "name": "",
+        "credits": 0.0,
+        "description": "Description Résolution de problèmes: stratégie, rôle des algorithmes. Concepts et propriétés des algorithmes. Environnement de programmation, tests et outils de correction. Le langage Python. Variables, types de données, expressions et opérateurs, chaîne de caractères et fonctions. Structures de contrôle: condition, répétition, itérateur, séquence d'entiers. Structures de données: liste, ensemble, dictionnaire, tableau. Fonctions: définition, paramètres et arguments, appel, expression lambda. Variables globales et locales. Entrées et sorties. Fichiers: lecture, écriture. Temps d'exécution. Bibliothèques scientifiques et graphiques.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Responsable(s) : Martine Bellaïche"
+      },
+      {
+        "id": "INF1010",
+        "name": "",
+        "credits": 0.0,
+        "description": "Description Classes et objets. Constructeurs et destructeurs. Allocation dynamique. Conversions de types. Surcharge d'opérateur. Classes et méthodes génériques. Héritage simple et héritage multiple. Classes abstraites. Polymorphisme. Algorithmes fondamentaux : recherches linéaire et dichotomique, tri simple. Bibliothèque de structures de données et algorithmes. Traitement des exceptions. Programmation par événements. Notions élémentaires de conception d'interfaces graphiques.",
+        "prerequisite_courses": [
+          "INF1005C"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "INF1005C Notes : Responsable(s) : Martine Bellaïche Site web"
+      },
+      {
+        "id": "INF2205",
+        "name": "",
+        "credits": 0.0,
+        "description": "Description Connaissance et pratique de la dynamique et de l'organisation du travail en équipe collaboratif. Modèles de dynamique de groupe : conditions, développement et prise en charge de l'évolution de l'équipe. Types de réseaux de travail, organisation et prise de décisions en équipe. Normes, rôles, modes d'interaction, pouvoir et leadership, relations affectives et cohésion. Prise en charge et objectifs de changement personnels et relationnels.",
+        "prerequisite_courses": [
+          "INF1040"
+        ],
+        "concomitant_courses": [
+          "INF1900"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "INF1040 INF1900 Notes : Responsable(s) : À venir Site web"
+      },
+      {
+        "id": "LOG1410",
+        "name": "",
+        "credits": 0.0,
+        "description": "Description Processus du génie logiciel et cycle de vie du logiciel . Phases du cycle de vie du logiciel: analyse, conception, réalisation, test, maintenance et exploitation. Activité d'analyse et de conception dans le processus du génie logiciel : principes, spécifications et méthodes. Méthodes d'analyse et de conception orientée-objet : langages et notation standards, modélisation structurelle, modélisation de comportement et modélisation architecturale. Décomposition en couches logicielles. Patrons de conception.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "INF1015"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "INF1015 Notes : Responsable(s) : À venir"
+      },
+      {
+        "id": "LOG2810",
+        "name": "",
+        "credits": 0.0,
+        "description": "Description Rôle des structures discrètes en génie informatique et en génie logiciel. Ensembles et logique de base. Techniques de preuves : règles d'inférence et de déduction. Relations et fonctions. Algorithmes : définition, analyse, récursivité. Théorie des nombres : arithmétique, congruences, application à la cryptographie. Éléments de combinatoire : énumération, permutations et combinaisons. Relations de récurrence. Théorie des graphes. Arbres. Langages et grammaires, automates finis, machines de Turing.",
+        "prerequisite_courses": [
+          "INF1500"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "INF1500 Notes : Responsable(s) : À venir Site web"
+      },
+      {
+        "id": "LOG2995",
+        "name": "",
+        "credits": 0.0,
+        "description": "Description Conception, réalisation, validation et test d'une application Web. Concepts techniques intégrés : développement de sites web, développement de serveurs dynamiques, interfaces utilisateur, structures de données et algorithmes, programmation orientée objet, patrons de conception, révision de code, intégration continue, tests de logiciel, communication réseau. Concepts techniques enseignés: gestion de projet logiciel, services web, approche agile. Travaux en équipe.",
+        "prerequisite_courses": [
+          "INF1900",
+          "INF2010",
+          "LOG2440"
+        ],
+        "concomitant_courses": [
+          "LOG2990"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "INF1900 , INF2010 , LOG2440 Notes : Ce cours est équivalent et remplace LOG2990 . Responsable(s) : Nikolay Radoev"
+      },
+      {
+        "id": "MTH0102",
+        "name": "",
+        "credits": 0.0,
+        "description": "Description Matrices, opérations, déterminant. Résolution de systèmes d'équations linéaires. Vecteurs géométriques et algébriques. Espaces vectoriels. Combinaisons linéaires, dépendance et indépendance linéaire de vecteurs. Bases et repères. Produit de vecteurs : scalaire, vectoriel, mixte. Droites dans le plan cartésien et dans l'espace cartésien. Plan dans l'espace cartésien. Positions relatives de deux plans et position relative d'une droite. Distance.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Ce cours ne peut en aucun cas compter dans les 120 crédits d'un programme de baccalauréat en ingénierie. Responsable(s) : Houda Trabelsi Site web"
+      },
+      {
+        "id": "MTH0103",
+        "name": "",
+        "credits": 0.0,
+        "description": "Description Dérivées et théorèmes d'analyse : dérivation de fonctions élémentaires, dérivation d'équations implicites, théorème de Rolle, de Lagrange, de Cauchy et règle de l'Hospital. Intégration : différentielle, primitive. Intégrale définie : définition, propriétés, somme de Riemann, théorème fondamental du calcul intégral, calcul d'aires. Techniques d'intégration : par changement de variables, par parties, par substitution trigonométrique et par fractions partielles. Applications au calcul de longueurs, d'aires et de volumes. Intégrales impropres : définition, convergence et divergence, test de comparaison. Suites : définition et notations, convergence et divergence. Séries : harmonique, géométrique et alternée. Critères de convergence (critères du terme général, de l'intégrale, de comparaison, de d'Alembert, de Cauchy). Séries de puissances.",
+        "prerequisite_courses": [
+          "MTH0101"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "MTH0101 Notes : Ce cours ne peut en aucun cas compter dans les 120 crédits d'un programme de baccalauréat en ingénierie. Responsable(s) : Houda Trabelsi Site web"
+      },
+      {
+        "id": "MTH1007",
+        "name": "",
+        "credits": 0.0,
+        "description": "Description Élimination à l'aide de matrices. Opérations matricielles et inverses. Factorisations LU et LDU. Transposées et permutations. Espaces de vecteurs. Noyau. Rang et forme réduite en lignes. Indépendance, base et dimension. Les quatre sous-espaces fondamentaux. Orthogonalité et sous-espaces. Projections. Approximations par moindres carrés. Bases orthogonales et procédé de Gram-Schmidt. Valeurs propres. Vecteurs propres. Diagonalisation. Matrices symétriques. Matrices définies positives. Matrices similaires. Décomposition en valeurs singulières. Nombres complexes. Matrices hermitiennes et unitaires. Transformations linéaires. Choix de base. Applications.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "MTH0102",
+          "MTH1007"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Les étudiants que cela concerne doivent avoir réussi le cours préparatoire MTH0102 avant de s'inscrire à MTH1007 . Responsable(s) : Houda Trabelsi"
+      },
+      {
+        "id": "PHS0101",
+        "name": "",
+        "credits": 0.0,
+        "description": "Description Cinématique : position, déplacement, vitesse, accélération. Lois de Newton appliquées aux corps de masse constante. Mouvements rectiligne et circulaire, dans le plan et dans l'espace tridimensionnel. Travail et énergie. Principe de conservation de la quantité de mouvement. Principe de conservation du moment cinétique. Principe de conservation de l'énergie. Notion d'équilibre statique.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : ce cours ne peut en aucun cas compter dans les 120 crédits d'un programme de baccalauréat en ingénierie. Responsable(s) : Sami Ammar Site web"
+      }
+    ]
+  }
+}
