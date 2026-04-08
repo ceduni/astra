@@ -26,19 +26,6 @@
     "requirement_text": ""
   },
   {
-    "sigle": "IFT1016",
-    "universite": "UdeM",
-    "titre": "Programmation 1",
-    "credits": 3,
-    "description": "Éléments de base d'un langage de programmation : types, expressions, énoncés conditionnels et itératifs, procédures, fonctions, paramètres, récursivité, tableaux, enregistrements, pointeurs et fichiers.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
     "sigle": "IFT1025",
     "universite": "UdeM",
     "titre": "Programmation 2",
@@ -53,452 +40,6 @@
     "concomitant_courses": [],
     "equivalent_courses": [],
     "requirement_text": "prerequisite_courses :  IFT1015 ou IFT1016"
-  },
-  {
-    "sigle": "IFT1065",
-    "universite": "UdeM",
-    "titre": "Structures discrètes en informatique",
-    "credits": 3,
-    "description": "Éléments de logique propositionnelle. Ensembles. Suites et fonctions. Algorithmes. Matrices booléennes. Raisonnement mathématique. Induction. Combinatoire. Relations de récurrence. Graphes, Arbres.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  Collège 201-103-77 et 201-105-77."
-  },
-  {
-    "sigle": "IFT1119",
-    "universite": "UdeM",
-    "titre": "Initiation à la programmation de jeux vidéo",
-    "credits": 3,
-    "description": "Initiation à la programmation appliquée au développement de jeux vidéo. Types et structures de données, opérateurs, instructions conditionnelles et itératives, fonctions. Langage C#. Environnement de jeu 2D dans Unity. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540 et 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1135",
-    "universite": "UdeM",
-    "titre": "Introduction aux applications mobiles",
-    "credits": 3,
-    "description": "Éléments de base de la programmation d'applications graphiques interactives pour appareils mobiles utilisant une plateforme en source libre, telle Android. Architecture d'un projet. Outils de développement et de test. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT1810"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1810"
-  },
-  {
-    "sigle": "IFT1142",
-    "universite": "UdeM",
-    "titre": "Programmation côté client",
-    "credits": 3,
-    "description": "Programmation Javascript avancée, modèle objet de document (DOM), XHTML, notions de programmation Internet (Ajax, JSON, jQuery, etc.). Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT1144"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1144"
-  },
-  {
-    "sigle": "IFT1144",
-    "universite": "UdeM",
-    "titre": "Introduction à la programmation internet",
-    "credits": 3,
-    "description": "Langage HTML5, feuilles de style CSS pour la conception et la mise en page de documents WEB. Introduction à la programmation avec JavaScript pour la création des pages web dynamiques. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1147",
-    "universite": "UdeM",
-    "titre": "Programmation serveur avec PHP",
-    "credits": 3,
-    "description": "Programmation Web du coté serveur avec le langage PHP. Création de documents dynamiques. Accès aux bases de données. Notions avancées de programmation PHP (MVC, Ajax, librairie graphique, cookies, sessions, Smarty, etc.) Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT1144"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1144"
-  },
-  {
-    "sigle": "IFT1148",
-    "universite": "UdeM",
-    "titre": "Programmation serveur avec ASP",
-    "credits": 3,
-    "description": "Programmation Web du côté serveur avec le langage ASP.NET. Création de documents dynamiques. Création de contrôles serveur personnalisés. Accès aux bases de données. Notions avancées de programmation ASP.NET (MVC, Ajax, cookies, sessions, etc.) Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT1144"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1144"
-  },
-  {
-    "sigle": "IFT1152",
-    "universite": "UdeM",
-    "titre": "Introduction aux technologies XML",
-    "credits": 3,
-    "description": "Utilisation des technologies XML pour gestion, stockage, distribution des documents d'affaires sur le Web. Introduction aux schémas (DTD, XSD et RelaxNG), aux transformations XSL (XSLT et XSLT-FO), langage XPath et programmation avec API SAX et DOM. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 105351, 117572, 117573, 117574.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT1144"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1144"
-  },
-  {
-    "sigle": "IFT1155",
-    "universite": "UdeM",
-    "titre": "Programmation mobile à plateforme libre",
-    "credits": 3,
-    "description": "Programmation d'applications pour appareils mobiles utilisant une plateforme en source libre, telle Android. Cycle de vie des activités. Interaction avec le matériel et les ressources. Données, multimédia et Internet. Publication d'applications. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT1135"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1135"
-  },
-  {
-    "sigle": "IFT1166",
-    "universite": "UdeM",
-    "titre": "Programmation orientée objet en C++",
-    "credits": 3,
-    "description": "Perfectionnement en programmation. Étude du langage C++ et de la programmation orientée objet. Applications aux structures de données simples et aux interfaces graphiques de base. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "PHY1234",
-      "IFT1810",
-      "IFT1016",
-      "IFT1969"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1016 ou IFT1810 ou IFT1969 ou PHY1234"
-  },
-  {
-    "sigle": "IFT1169",
-    "universite": "UdeM",
-    "titre": "Programmation avancée en C++",
-    "credits": 3,
-    "description": "Structures de données avancées. Concepts avancés en programmation orientée objet. Librairie de modèles standard STL. Algorithmes génériques. Applications. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT1166"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1166"
-  },
-  {
-    "sigle": "IFT1170",
-    "universite": "UdeM",
-    "titre": "Programmation Java et applications",
-    "credits": 3,
-    "description": "Langage Java. Programmation orientée objet avec Java. Récursivité. Fichiers. Vecteurs. Piles. Listes chaînées. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "PHY1234",
-      "IFT1810",
-      "IFT1016"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1016 ou IFT1810 ou PHY1234"
-  },
-  {
-    "sigle": "IFT1174",
-    "universite": "UdeM",
-    "titre": "Chiffrier, bases de données et programmation VBA",
-    "credits": 3,
-    "description": "Traitement d'ensembles de données au moyen d'un chiffrier électronique et d'un système de gestion de base de données. Automatisation et adaptation de différents traitements sur ces données en utilisant la programmation en VBA.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1175",
-    "universite": "UdeM",
-    "titre": "Programmation en Visual Basic",
-    "credits": 3,
-    "description": "Programmation par événements et orientée objet avec Visual Basic. Classes d'objets, composants ActiveX et .NET, connexions aux bases de données, contrôle d'applications Windows (VBA). Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1176",
-    "universite": "UdeM",
-    "titre": "Aspects avancés de Java",
-    "credits": 3,
-    "description": "Traitement des exceptions en Java. Interfaces usager. Type générique. Collections. JDBC. Programmation concurrente et web, côté serveur. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT1170"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1170"
-  },
-  {
-    "sigle": "IFT1177",
-    "universite": "UdeM",
-    "titre": "Chiffrier et bases de données : compléments",
-    "credits": 3,
-    "description": "Concepts relatifs aux ensembles de données. Modélisation, validation de données et de bases de données. Partage des données. Requêtes, calculs et présentation de résultats. Sujets seront vus en Excel et en Access. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 117550, 117573, 117574, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1178",
-    "universite": "UdeM",
-    "titre": "Programmation d'applications en VB",
-    "credits": 3,
-    "description": "Éléments de base de la programmation. Programmation d'applications interactives en utilisant les langages VBA ou Visual Basic.NET. Utilisation d'applications comme Excel, Access et Word. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1179",
-    "universite": "UdeM",
-    "titre": "Programmation en C#",
-    "credits": 3,
-    "description": "Étude du langage et de la programmation orientée objet en C#. Applications aux structures de données et aux interfaces graphiques de base. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT1810"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1810"
-  },
-  {
-    "sigle": "IFT1215",
-    "universite": "UdeM",
-    "titre": "Introduction aux systèmes informatiques",
-    "credits": 3,
-    "description": "Historique. Composantes d'un ordinateur. Codage des données et des instructions. Langages machine et de haut niveau. Concepts et utilisation d'un système d'exploitation. Introduction à l'Internet. Conséquences sociales de l'informatique.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1227",
-    "universite": "UdeM",
-    "titre": "Architecture des ordinateurs 1",
-    "credits": 3,
-    "description": "Jeu d'instructions : RISC vs CISC. Modes d'adressage. Exceptions. Dispositifs d'entrée/sortie, bus, interruptions. Contrôle câblé et microprogrammé. Accélération du traitement : pipelines et parallélisme. Évolution des technologies.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT1065",
-      "IFT1215"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1065 et IFT1215"
-  },
-  {
-    "sigle": "IFT1575",
-    "universite": "UdeM",
-    "titre": "Modèles de recherche opérationnelle",
-    "credits": 3,
-    "description": "Programmation linéaire. Simplexe. Dualité. Programmation en nombres entiers. Problèmes de réseaux. Méthodes PERT/CPM. Plus court chemin. Programmation dynamique déterministe et probabiliste. Modèles stochastiques.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1800",
-    "universite": "UdeM",
-    "titre": "Initiation à l'informatique",
-    "credits": 3,
-    "description": "Information et informatique. Concepts et vocabulaire de base. Matériel et logiciels. Ordinateur : structure et fonctionnement. Logiciels système et d'application. Remarques: Travaux pratiques sur les progiciels les plus répandus. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 102510, 105351, 117510, 117520, 117540, 117550, 117572, 117573, 117574, 119010, 119020, 119110, 215511.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1810",
-    "universite": "UdeM",
-    "titre": "Introduction à la programmation",
-    "credits": 3,
-    "description": "Algorithmes et concepts de base de la programmation. Notions de tableaux et de fonctions avec paramètres. Introduction à la programmation orientée objet. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 119010, 117510, 117520, 117540, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1901",
-    "universite": "UdeM",
-    "titre": "Initiation aux outils informatiques",
-    "credits": 3,
-    "description": "Familiarisation avec les outils informatiques d'usage courant : logiciels de traitement de texte et de traitement d'image, tableur et logiciel de présentation. Terminologie informatique de base et briève initiation à la programmation. Remarque : Ce cours est exclusif aux étudiants des programmes 195541, 199010, 199011. Toutefois, il pourrait être reconnu comme cours hors programme dans d’autres programmes.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1912",
-    "universite": "UdeM",
-    "titre": "Initiation aux chiffriers électroniques",
-    "credits": 3,
-    "description": "Environnement de travail. Notions de base. Les commandes. Les formules. Les fonctions. Les graphiques. La gestion des données. Les tableaux croisés dynamiques. Les macrocommandes. Applications clé en main. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 102510, 117510, 117520, 117540, 117550, 117572, 117573, 117574, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1931",
-    "universite": "UdeM",
-    "titre": "Initiation aux bases de données",
-    "credits": 3,
-    "description": "Environnement de travail. Notions fondamentales. Tables, requêtes, formulaires et rapports. Gestion d'une base de données. Programmation. Applications clé en main. Utilisation professionnelle. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 117550, 117572, 117573, 117574, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1935",
-    "universite": "UdeM",
-    "titre": "Initiation au graphisme par ordinateur",
-    "credits": 3,
-    "description": "Correction et retouche d'images. Utilisation de calques, textes, filtres, styles de calques, effets artistiques et objets vectoriels. Systèmes de couleurs. Formats d'images. Adaptation d'images pour le Web. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 117550, 117572, 117573, 117574, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1941",
-    "universite": "UdeM",
-    "titre": "Traitement et montage vidéo",
-    "credits": 3,
-    "description": "Introduction au traitement informatique et au montage vidéo non linéaire. Réalisation technique de projets vidéo. Notions théoriques portant sur le format des médias et sur les concepts clés de la production vidéo. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 117572, 117573, 117574, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1945",
-    "universite": "UdeM",
-    "titre": "Internet et création de pages Web",
-    "credits": 3,
-    "description": "Introduction à la création de pages Web interactives avec langage HTML5. Mise en page avec feuilles de style (CSS), formulaires, ergonomie et intégration de contenus multimédia. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 105351, 117510, 117520, 117540, 117550, 117572, 117573, 117574, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1969",
-    "universite": "UdeM",
-    "titre": "Programmation scientifique en langage C",
-    "credits": 3,
-    "description": "Éléments de base de la programmation. Fonctions, tableau, structures de données dynamiques, récursivité. Utilisation du langage C pour résoudre des problèmes scientifiques. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 117550, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  Collège 201-203-77 et 201-105-77"
-  },
-  {
-    "sigle": "IFT1986",
-    "universite": "UdeM",
-    "titre": "Traitement informatique des textes",
-    "credits": 3,
-    "description": "Maîtrise d'un logiciel de traitement de texte : édition, formatage, pagination, en-tête, pied de page, sections, colonnes, tableau, graphiques, références (index, table des matières, bibliographie, légende), fusion de documents, travail collaboratif. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 102510, 105351, 117510, 117520, 117540, 117550, 117572, 117573, 117574, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1990",
-    "universite": "UdeM",
-    "titre": "Informatique pour sciences sociales",
-    "credits": 3,
-    "description": "Initiation aux micro-ordinateurs. Concepts et vocabulaire. Logiciels et matériel. Traitement de l'information. Utilisation d'Internet. Gestion de bases de données. Logiciel de traitement statistique. Analyse qualitative et quantitative de données. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 117550, 117572, 117573, 117574, 119110.",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
   },
   {
     "sigle": "IFT2015",
@@ -530,6 +71,92 @@
     "concomitant_courses": [],
     "equivalent_courses": [],
     "requirement_text": "prerequisite_courses :  IFT1025"
+  },
+  {
+    "sigle": "IFT1215",
+    "universite": "UdeM",
+    "titre": "Introduction aux systèmes informatiques",
+    "credits": 3,
+    "description": "Historique. Composantes d'un ordinateur. Codage des données et des instructions. Langages machine et de haut niveau. Concepts et utilisation d'un système d'exploitation. Introduction à l'Internet. Conséquences sociales de l'informatique.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IFT1227",
+    "universite": "UdeM",
+    "titre": "Architecture des ordinateurs 1",
+    "credits": 3,
+    "description": "Jeu d'instructions : RISC vs CISC. Modes d'adressage. Exceptions. Dispositifs d'entrée/sortie, bus, interruptions. Contrôle câblé et microprogrammé. Accélération du traitement : pipelines et parallélisme. Évolution des technologies.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "IFT1065",
+      "IFT1215"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  IFT1065 et IFT1215"
+  },
+  {
+    "sigle": "IFT2245",
+    "universite": "UdeM",
+    "titre": "Systèmes d'exploitation",
+    "credits": 3,
+    "description": "Fonctions principales. Gestion du parallélisme. Synchronisation. Interblocage. Ordonnancement. Gestion de la mémoire et des entrées/sorties. Fichiers. Protection et systèmes distribués.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "IFT2035",
+      "IFT1227"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  IFT1227 et IFT2035"
+  },
+  {
+    "sigle": "IFT2255",
+    "universite": "UdeM",
+    "titre": "Génie logiciel",
+    "credits": 3,
+    "description": "Introduction au génie logiciel. Cycles de développement. Analyse, modélisation et spécification. Conception. Développement orienté objet. Mise au point. Outils et environnements de développement.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "IFT1025"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  IFT1025"
+  },
+  {
+    "sigle": "IFT1065",
+    "universite": "UdeM",
+    "titre": "Structures discrètes en informatique",
+    "credits": 3,
+    "description": "Éléments de logique propositionnelle. Ensembles. Suites et fonctions. Algorithmes. Matrices booléennes. Raisonnement mathématique. Induction. Combinatoire. Relations de récurrence. Graphes, Arbres.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  Collège 201-103-77 et 201-105-77."
+  },
+  {
+    "sigle": "IFT1575",
+    "universite": "UdeM",
+    "titre": "Modèles de recherche opérationnelle",
+    "credits": 3,
+    "description": "Programmation linéaire. Simplexe. Dualité. Programmation en nombres entiers. Problèmes de réseaux. Méthodes PERT/CPM. Plus court chemin. Programmation dynamique déterministe et probabiliste. Modèles stochastiques.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
   },
   {
     "sigle": "IFT2105",
@@ -566,102 +193,421 @@
     "requirement_text": "concomitant_courses :  IFT2125 et IFT2015 et (MAT1978 ou MAT1720)"
   },
   {
-    "sigle": "IFT2200",
+    "sigle": "MAT1400",
     "universite": "UdeM",
-    "titre": "Programmation de jeux vidéo",
-    "credits": 3,
-    "description": "Programmation avancée appliquée au développement de jeux vidéo. Structures de données complexes, imbrication d'instructions conditionnelles et itératives, programmation événementielle et orientée objet. Langage C#. Environnement de jeu 3D dans Unity. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540 et 119110.",
-    "niveau": 2,
+    "titre": "Calcul 1",
+    "credits": 4,
+    "description": "Suites, séries. Fonctions de plusieurs variables, continuité, dérivées partielles, différentielles, plan tangent, dérivation en chaîne. Gradient, surfaces de niveau, extremums. Intégrales multiples, changement de variables, jacobien.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MAT1600",
+    "universite": "UdeM",
+    "titre": "Algèbre linéaire",
+    "credits": 4,
+    "description": "Systèmes d'équations linéaires, élimination de Gauss, inverse matricielle. Espace vectoriel, indépendance linéaire, transformations linéaires, changement de base. Produit scalaire. Déterminants. Diagonalisation. Exemples d'applications.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MAT1978",
+    "universite": "UdeM",
+    "titre": "Probabilités et statistique",
+    "credits": 4,
+    "description": "Probabilités, indépendance. Variables aléatoires. Espérance. Lois de probabilité. Vecteurs aléatoires. Loi des grands nombres, théorème limite central. Intervalles de confiance. Régression linéaire. Test du khi-deux. Remarques: Cours pour informaticiens.",
+    "niveau": 1,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "IFT1119"
+      "MAT1400",
+      "IFT1063",
+      "IFT1065"
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1119"
+    "requirement_text": "prerequisite_courses :  (IFT1063 OU IFT1065) ET MAT1400"
   },
   {
-    "sigle": "IFT2245",
+    "sigle": "ANG1903",
     "universite": "UdeM",
-    "titre": "Systèmes d'exploitation",
+    "titre": "Anglais 3 (niveau B1.1)",
     "credits": 3,
-    "description": "Fonctions principales. Gestion du parallélisme. Synchronisation. Interblocage. Ordonnancement. Gestion de la mémoire et des entrées/sorties. Fichiers. Protection et systèmes distribués.",
-    "niveau": 2,
+    "description": "Communiquer dans des domaines d'intérêt personnel. Compréhension de discussions sur des sujets divers. Rédactions. Lecture d'un livre court et/ou de courts textes. Approfondissement de la connaissance des pays anglophones. Remarques: 1re partie du niveau B1. Approches pédagogiques mixtes axées sur la communication. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 113510, 113520, 113540, 118510, 118520.",
+    "niveau": 1,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "IFT2035",
-      "IFT1227"
+      "ANG1902"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [
+      "ANG1967",
+      "ANG1903",
+      "ANG1850"
+    ],
+    "requirement_text": "prerequisite_courses :  ANG1902 ou compétence équivalente.\n\nequivalent_courses : ANG1903/ANG1967/ANG1850"
+  },
+  {
+    "sigle": "ANG1913",
+    "universite": "UdeM",
+    "titre": "Lire en anglais 2 (niveau B2 sciences)",
+    "credits": 3,
+    "description": "Saisir le sens de textes sur des sujets en sciences. Analyse de phénomènes lexicaux et de particularités grammaticales et stylistiques réservées au style scientifique. Lecture personnelle. Enrichissement du vocabulaire. Remarques: Approche analytique.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "ANG1904",
+      "ANG1911"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [
+      "ANG1974",
+      "ANG1913"
+    ],
+    "requirement_text": "prerequisite_courses :  ANG1911 ou ANG1904\n\nequivalent_courses : ANG1974/ANG1913"
+  },
+  {
+    "sigle": "ANG1921",
+    "universite": "UdeM",
+    "titre": "Écrire en anglais 1 (niveau B1)",
+    "credits": 3,
+    "description": "Rédiger des textes courants. Enrichissement du vocabulaire et de la grammaire propre au style écrit. Apprentissage de stratégies de planification d'écriture. Remarques: Approche analytique.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "ANG1902"
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1227 et IFT2035"
+    "requirement_text": "prerequisite_courses :  ANG1902 ou compétence équivalente."
   },
   {
-    "sigle": "IFT2255",
+    "sigle": "ANG1924",
     "universite": "UdeM",
-    "titre": "Génie logiciel",
-    "credits": 3,
-    "description": "Introduction au génie logiciel. Cycles de développement. Analyse, modélisation et spécification. Conception. Développement orienté objet. Mise au point. Outils et environnements de développement.",
-    "niveau": 2,
+    "titre": "Rédaction académique et professionnelle",
+    "credits": 2,
+    "description": "Ce cours permet d'acquérir un excellent degré d'aisance en langue anglaise pour exprimer par écrit, dans un cadre structuré (article, rapport, etc.), ses recherches et ses conclusions. Les textes obtenus sont publiables. Remarque : Cours en ligne. Niveau B2-C1",
+    "niveau": 1,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "IFT1025"
+      "ANG1906",
+      "ANG1907",
+      "ANG1905",
+      "ANG1904",
+      "ANG1922"
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1025"
+    "requirement_text": "prerequisite_courses :  ANG1904 ou ANG1905 ou ANG1906 ou ANG1907 ou ANG1922 ou compétences\néquivalentes (atteindre le niveau B2 lors d'un test de classement – site du Centre de\nlangues)"
   },
   {
-    "sigle": "IFT2425",
+    "sigle": "ANG1926",
     "universite": "UdeM",
-    "titre": "Introduction aux algorithmes numériques",
+    "titre": "Anglais écrit pour sciences nature et santé",
+    "credits": 1,
+    "description": "Ce cours spécialisé permet d'acquérir un excellent degré d'aisance en langue anglaise pour s’exprimer par écrit, dans un cadre structuré en sciences naturelles et formelles et en sciences de la santé. Remarque : Cours en ligne. Niveau B2-C1.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "ANG1924"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  ANG1924 ou compétences équivalentes (Test de classement – site du Centre de\nlangues)"
+  },
+  {
+    "sigle": "ANG1933",
+    "universite": "UdeM",
+    "titre": "Expression orale académique et professionnelle",
     "credits": 3,
-    "description": "Arithmétique en point flottant, analyse d'erreurs. Équations linéaires et non linéaires. Interpolation, moindres carrés. Différenciation et intégration numérique. Équations différentielles ordinaires.",
+    "description": "Ce cours permet d'acquérir un excellent degré d'aisance en langue anglaise pour exprimer oralement devant un public compétent ses idées, avis et opinions lors d'échanges formels, comme des conférences ou des colloques. Remarque : Cours en ligne. Niveau B1-B2",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "ANG1904"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  ANG1904 ou compétences équivalentes (Test de classement – site du Centre de\nlangues)"
+  },
+  {
+    "sigle": "BCM1501",
+    "universite": "UdeM",
+    "titre": "Origine biochimique de la vie",
+    "credits": 3,
+    "description": "Caractéristiques de la vie. Conditions physico-chimiques. Structure et propriétés des glucides, lipides, acides aminés, protéines, nucléotides, vitamines. Des molécules organiques aux premières cellules. Évolution.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "BCM1503",
+    "universite": "UdeM",
+    "titre": "Acides nucléiques et génétique 1",
+    "credits": 3,
+    "description": "Métabolisme des nucléotides. Structure de l'ADN, de l'ARN, de la chromatine et des chromosomes. Réplication, dégradation, mutation, réparation et recombinaison de l'ADN. Code génétique. Mécanismes de l'hérédité. Maladies génétiques.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "BCM1501"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  BCM1501"
+  },
+  {
+    "sigle": "BIO1203",
+    "universite": "UdeM",
+    "titre": "Introduction à la génétique",
+    "credits": 3,
+    "description": "Loi de Mendel et mécanismes de l'hérédité. Linkage génétique et recombinaison. Probabilités et génétique. Éléments de cytogénétique. Mutations. Applications en biotechnologie et impact social.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "COM2001",
+    "universite": "UdeM",
+    "titre": "Communication et mondialisation",
+    "credits": 3,
+    "description": "Théories et enjeux relatifs à la communication dans les processus et contextes de la mondialisation tels que le néoimpérialisme, l'hégémonie, la revendication et la contestation. Informations, cultures et médias transnationaux et locaux.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "DRT1002S",
+    "universite": "UdeM",
+    "titre": "Introduction au droit",
+    "credits": 3,
+    "description": "Notions de droit, de règle de droit. Sources de la règle de droit. Pouvoirs législatif, exécutif et judiciaire : composition et compétence. Éléments fondamentaux de droit civil et de common law.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ECN1000",
+    "universite": "UdeM",
+    "titre": "Principes d'économie",
+    "credits": 3,
+    "description": "Présentation des outils de base de l'analyse économique : coût d'opportunité, offre, demande et prix; choix des consommateurs; choix de production des firmes; marchés concurrentiels; monopole; efficacité; commerce international. Remarques: Cours aussi offert en ligne",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ECN1050",
+    "universite": "UdeM",
+    "titre": "Introduction à la macroéconomie",
+    "credits": 3,
+    "description": "Interdépendance des marchés et comptabilité nationale et financière. Marchés monétaires et théories de l'inflation. Marché du travail et types de chômage. Modèles de long et de court termes. Modèle IS-LM; fluctuations économiques. Remarques: Cours aussi offert en ligne",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ECN2230",
+    "universite": "UdeM",
+    "titre": "Institutions et marchés financiers",
+    "credits": 3,
+    "description": "Monnaie et régimes monétaires. Les marchés financiers et la réglementation. Instruments financiers. Opérations bancaires. Gestion monétaire. Marchés des changes. Marchés boursiers.",
     "niveau": 2,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "IFT1015",
+      "ECN1000"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  ECN1000"
+  },
+  {
+    "sigle": "GEO1532",
+    "universite": "UdeM",
+    "titre": "SIG1 - Cartographie",
+    "credits": 3,
+    "description": "Les données cartographiques, les données spatiales numériques, les méthodes d'acquisition de données cartographiques, les projections cartographiques, échelle et contenu d'une carte, la sémiologie graphique, les cartes topographiques et thématiques. Remarques: Laboratoires avec logiciels de cartographie par ordinateur.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GEO1542",
+    "universite": "UdeM",
+    "titre": "Introduction à la télédétection",
+    "credits": 3,
+    "description": "Initiation à la télédétection et aux applications d'images optiques et radar en géographie. Méthodes de suivi environnemental par télédétection. Remarques: Laboratoires de photo-interprétation et d'analyse d'images assistées par ordinateur.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "HEC3015",
+    "universite": "UdeM",
+    "titre": "Management (MNGT30400)",
+    "credits": 0,
+    "description": "",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "HEC3017",
+    "universite": "UdeM",
+    "titre": "Comprendre les états financiers (COMP30900)",
+    "credits": 0,
+    "description": "",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LCO2030",
+    "universite": "UdeM",
+    "titre": "Littérature, technologies et médias",
+    "credits": 3,
+    "description": "Analyse des interactions entre la littérature (institution, production, textualité), les médias et les technologies (hypertexte, film, vidéo).",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LNG1080",
+    "universite": "UdeM",
+    "titre": "Notions de lexicologie, morphologie et sémantique",
+    "credits": 3,
+    "description": "Notions de base de lexicologie, sémantique et morphologie. Thèmes abordés : unité lexicale, signes et règles morphologiques, structure du lexique, relations lexicales, analyse sémantique, phénomènes lexico-pragmatiques, approches lexicographiques.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LNG1955",
+    "universite": "UdeM",
+    "titre": "Notions générales de linguistique",
+    "credits": 3,
+    "description": "Ce cours vise à donner une formation linguistique de base. Remarques: (La section Z est réservée aux étudiants de l'École d'orthophonie et d'audiologie.) Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 114710, 118010, 118020, 118240.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MAT2450",
+    "universite": "UdeM",
+    "titre": "Mathématiques et technologie",
+    "credits": 3,
+    "description": "Étude de plusieurs sujets dans des domaines où les mathématiques jouent un rôle essentiel pour la technologie : informatique, cryptographie, transports, biotechnologie, pharmacie, traitement d'images, reconnaissances de formes, etc.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
       "MAT1400",
       "MAT1600"
     ],
-    "concomitant_courses": [],
+    "concomitant_courses": [
+      "MAT1978",
+      "MAT2450",
+      "MAT1720"
+    ],
     "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1015, MAT1400 et MAT1600"
+    "requirement_text": "prerequisite_courses :  MAT1400 et MAT1600\n\nconcomitant_courses :  MAT2450 et MAT1720 ou MAT1978"
   },
   {
-    "sigle": "IFT2505",
+    "sigle": "MAT2531",
     "universite": "UdeM",
-    "titre": "Optimisation linéaire",
+    "titre": "Histoire des mathématiques",
     "credits": 3,
-    "description": "Modèles linéaires. Méthode du simplexe. Dualité. Postoptimisation. Analyse de sensibilité. Problèmes à structures particulières. Modèles en nombres entiers. Méthodes de coupes. Séparation et évaluation progressive.",
+    "description": "Les mathématiques dans l'Antiquité. Les mathématiques en Chine, en Inde et chez les Arabes. Les mathématiques en Europe de 500 à 1600. La géométrie analytique. Le calcul infinitésimal. Le développement de l'analyse. Les mathématiques du XXe siècle.",
     "niveau": 2,
     "hors_perimetre": false,
-    "prerequisite_courses": [
-      "MAT1600"
+    "prerequisite_courses": [],
+    "concomitant_courses": [
+      "MAT1400",
+      "MAT1600",
+      "MAT2531"
     ],
-    "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  MAT1600"
+    "requirement_text": "concomitant_courses :  MAT2531 et MAT1400 et MAT1600"
   },
   {
-    "sigle": "IFT2550",
+    "sigle": "MCB1979",
     "universite": "UdeM",
-    "titre": "Stage d'informatique 1",
+    "titre": "Microbiologie générale",
     "credits": 3,
-    "description": "Premier stage du programme COOP, en milieu de travail, donnant lieu à un rapport, évalué conjointement par l'employeur et un jury du DIRO.",
-    "niveau": 2,
+    "description": "Introduction aux méthodes d'étude des bactéries, des levures et des virus. Morphologie, physiologie, génétique. Introduction à l'immunologie; antigènes, anticorps, applications. Remarques: Travaux pratiques en relation avec les sujets théoriques.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [
+      "MCB1980",
+      "MCB1979"
+    ],
+    "requirement_text": "equivalent_courses :  MCB1979/MCB1980"
+  },
+  {
+    "sigle": "PHI1130",
+    "universite": "UdeM",
+    "titre": "Philosophie des sciences",
+    "credits": 3,
+    "description": "La science comme entreprise rationnelle : spécificité de l'explication scientifique. Notions d'hypothèse, de loi, de théorie. Le développement de la science : modèles continuistes et discontinuistes.",
+    "niveau": 1,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  30 crédits IFT."
+    "requirement_text": ""
   },
   {
-    "sigle": "IFT2720",
+    "sigle": "PHI2005",
     "universite": "UdeM",
-    "titre": "Introduction au multimédia",
+    "titre": "Logique 2",
     "credits": 3,
-    "description": "Médias informatiques. Web. Interfaces usagers. Images. Vidéo. Audio. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
+    "description": "Introduction à la métalogique propositionnelle : complétude et décidabilité de la logique propositionnelle classique. Introduction à des variantes et alternatives logiques intuitionniste, multivalente, modale, floue, etc.",
     "niveau": 2,
     "hors_perimetre": false,
     "prerequisite_courses": [],
@@ -670,11 +616,57 @@
     "requirement_text": ""
   },
   {
-    "sigle": "IFT2740",
+    "sigle": "PHY1651",
     "universite": "UdeM",
-    "titre": "Outils de l'infographie 3D",
+    "titre": "Mécanique classique 1",
     "credits": 3,
-    "description": "Infographie 3D. Modélisation géométrique et primitives. Techniques de rendu, textures, éclairage. Animation et paramétrisation. Application au logiciel libre Blender.",
+    "description": "Concepts fondamentaux de la mécanique. Lois de conservation. Rotation autour d'un axe. Forces centrales. Problème de Kepler. Diffusion et section efficace. Gravitation.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "PSY2055",
+    "universite": "UdeM",
+    "titre": "Psychologie de la perception",
+    "credits": 3,
+    "description": "Principales problématiques : perspective historique et théories contemporaines. Processus perceptifs de la perception de l'environnement (espace, forme, mouvement) : analyse phénoménale et étude comparative des diverses approches et interprétations.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "PSY1006"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  PSY1006"
+  },
+  {
+    "sigle": "PSY2065",
+    "universite": "UdeM",
+    "titre": "Processus cognitifs 1",
+    "credits": 3,
+    "description": "Étude des processus attentionnels et mnésiques de l'être humain. Aperçu des principaux résultats et des principales théories concernant l'acquisition, la rétention et la récupération des connaissances et des souvenirs.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "PSY1006"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [
+      "FAS1060",
+      "PSY2065"
+    ],
+    "requirement_text": "prerequisite_courses :  PSY1006 ou être étudiant du programme 1-530-1-0\n\nequivalent_courses :  PSY2065/FAS1060"
+  },
+  {
+    "sigle": "RED2000",
+    "universite": "UdeM",
+    "titre": "Rédaction administrative",
+    "credits": 3,
+    "description": "Les communications administratives à l’ère numérique. Particularités et difficultés lexicales et stylistiques. Documents administratifs : correspondance, ordre du jour, procès-verbal, c.v. Le rapport : cueillette, analyse, structuration des informations, rédaction.",
     "niveau": 2,
     "hors_perimetre": false,
     "prerequisite_courses": [],
@@ -683,53 +675,20 @@
     "requirement_text": ""
   },
   {
-    "sigle": "IFT2810",
+    "sigle": "REI1010",
     "universite": "UdeM",
-    "titre": "Structures de données",
+    "titre": "Introduction aux relations industrielles",
     "credits": 3,
-    "description": "Structures d'information : chaînes, tableaux, piles, listes, arbres et graphes. Implantation et manipulation. Algorithmes de tri. Organisation de dictionnaires. Allocation dynamique de mémoire. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 2,
+    "description": "Champ d'études: relations du travail, gestion des ressources humaines et politiques publiques du travail. Constitution et évolution des relations industrielles sur le plan théorique. Les acteurs: rôles, objectifs, structures et activités.",
+    "niveau": 1,
     "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT1170",
-      "IFT1175",
-      "IFT1166",
-      "IFT1179"
-    ],
+    "prerequisite_courses": [],
     "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1166 OU IFT1170 OU IFT1175 OU IFT1179"
-  },
-  {
-    "sigle": "IFT2821",
-    "universite": "UdeM",
-    "titre": "Introduction aux bases de données",
-    "credits": 3,
-    "description": "Principes des bases de données. Modèles de bases de données : hiérarchique, réseau, relationnel. Présentation et exploitation des systèmes couramment utilisés. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 2,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT1810",
-      "IFT1016"
+    "equivalent_courses": [
+      "REI1010G",
+      "REI1010"
     ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1016 ou IFT1810"
-  },
-  {
-    "sigle": "IFT2830",
-    "universite": "UdeM",
-    "titre": "Sécurité des systèmes informatiques",
-    "credits": 3,
-    "description": "Introduction à la sécurité informatique. La sécurité d'un ordinateur personnel. Protocoles et cryptographie. Applications internet. Protection réseau. Programmation sécurisée. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
-    "niveau": 2,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT1810"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1810\nRapport SR301 Université de Montréal Nº page 264 de 949\nRépertoire cours Date: 2023/12/01\nHeure: 09:40:06"
+    "requirement_text": "equivalent_courses :  REI1010/REI1010G"
   },
   {
     "sigle": "IFT2905",
@@ -768,6 +727,74 @@
     "requirement_text": "prerequisite_courses :  IFT2015\n\nequivalent_courses :  IFT2935/IFT3030"
   },
   {
+    "sigle": "IFT3911",
+    "universite": "UdeM",
+    "titre": "Analyse et conception des logiciels",
+    "credits": 3,
+    "description": "Ingénierie des besoins. Méthodes de spécification formelle. Principes, méthodes et notations de conception. Description et styles d'architectures logicielles. Composantes logicielles, patrons de conception et cadres d'application.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "IFT2255"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [
+      "IFT3911",
+      "IFT3901"
+    ],
+    "requirement_text": "prerequisite_courses :  IFT2255\n\nequivalent_courses :  IFT3911/IFT3901"
+  },
+  {
+    "sigle": "IFT3913",
+    "universite": "UdeM",
+    "titre": "Qualité du logiciel et métriques",
+    "credits": 3,
+    "description": "Définition et promotion de la qualité. Assurance qualité. Plan de qualité. Amélioration et contrôle de qualité (tests, revue, inspections). Normes et cadres de qualité. Théorie de la mesure. Métriques de produit et de processus. Métriques de qualité.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "IFT2255"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [
+      "IFT3913",
+      "IFT3903"
+    ],
+    "requirement_text": "prerequisite_courses :  IFT2255\n\nequivalent_courses :  IFT3913/IFT3903"
+  },
+  {
+    "sigle": "IFT2425",
+    "universite": "UdeM",
+    "titre": "Introduction aux algorithmes numériques",
+    "credits": 3,
+    "description": "Arithmétique en point flottant, analyse d'erreurs. Équations linéaires et non linéaires. Interpolation, moindres carrés. Différenciation et intégration numérique. Équations différentielles ordinaires.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "IFT1015",
+      "MAT1400",
+      "MAT1600"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  IFT1015, MAT1400 et MAT1600"
+  },
+  {
+    "sigle": "IFT2505",
+    "universite": "UdeM",
+    "titre": "Optimisation linéaire",
+    "credits": 3,
+    "description": "Modèles linéaires. Méthode du simplexe. Dualité. Postoptimisation. Analyse de sensibilité. Problèmes à structures particulières. Modèles en nombres entiers. Méthodes de coupes. Séparation et évaluation progressive.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MAT1600"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  MAT1600"
+  },
+  {
     "sigle": "IFT3065",
     "universite": "UdeM",
     "titre": "Langages de programmation et compilation",
@@ -784,38 +811,6 @@
       "IFT3065"
     ],
     "requirement_text": "prerequisite_courses :  IFT2035\n\nequivalent_courses :  IFT3065/IFT3060"
-  },
-  {
-    "sigle": "IFT3150",
-    "universite": "UdeM",
-    "titre": "Projet d'informatique",
-    "credits": 3,
-    "description": "Projet défini et encadré par un professeur associé à un laboratoire de recherche universitaire. Remarques: Préalables explicites selon la nature du projet.",
-    "niveau": 3,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [
-      "IFT3051",
-      "IFT3150"
-    ],
-    "requirement_text": "prerequisite_courses :  avoir suivi 30 crédits de cours de sigle IFT\n\nequivalent_courses :  IFT3150/IFT3051"
-  },
-  {
-    "sigle": "IFT3151",
-    "universite": "UdeM",
-    "titre": "Stage d'informatique",
-    "credits": 3,
-    "description": "Stage en milieu de travail, donnant lieu à un rapport, évalué conjointement par l'employeur et un jury du DIRO.",
-    "niveau": 3,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [
-      "IFT3151",
-      "IFT3052"
-    ],
-    "requirement_text": "prerequisite_courses :  avoir suivi 36 crédits dans le programme\n\nequivalent_courses :  IFT3151/IFT3052"
   },
   {
     "sigle": "IFT3155",
@@ -1044,36 +1039,6 @@
     "requirement_text": "equivalent_courses :  IFT3545/IFT3540"
   },
   {
-    "sigle": "IFT3550",
-    "universite": "UdeM",
-    "titre": "Stage d'informatique 2",
-    "credits": 3,
-    "description": "Deuxième stage du programme COOP, en milieu de travail, donnant lieu à un rapport, évalué conjointement par l'employeur et un jury du DIRO.",
-    "niveau": 3,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT2550"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT2550"
-  },
-  {
-    "sigle": "IFT3551",
-    "universite": "UdeM",
-    "titre": "Stage d'informatique 3",
-    "credits": 3,
-    "description": "Troisième stage du programme COOP, en milieu de travail, donnant lieu à un rapport, évalué conjointement par l'employeur et un jury du DIRO.",
-    "niveau": 3,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT3550"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT3550"
-  },
-  {
     "sigle": "IFT3655",
     "universite": "UdeM",
     "titre": "Modèles stochastiques",
@@ -1112,6 +1077,55 @@
     "requirement_text": "prerequisite_courses :  IFT2015 ET (MAT1978 OU MAT1720 OU STT1700)"
   },
   {
+    "sigle": "STT2700",
+    "universite": "UdeM",
+    "titre": "Concepts et méthodes en statistique",
+    "credits": 3,
+    "description": "Estimation ponctuelle et par intervalle. Tests d'hypothèses. Méthodes graphiques. Test du khi-deux. Théorie de la décision et inférence bayésienne. Comparaisons de deux échantillons. Lié aux examens CAS et agrément ICA.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MAT1978",
+      "STT1700",
+      "MAT1720"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  (MAT1720 ou MAT1978) et STT1700"
+  },
+  {
+    "sigle": "IFT3150",
+    "universite": "UdeM",
+    "titre": "Projet d'informatique",
+    "credits": 3,
+    "description": "Projet défini et encadré par un professeur associé à un laboratoire de recherche universitaire. Remarques: Préalables explicites selon la nature du projet.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [
+      "IFT3051",
+      "IFT3150"
+    ],
+    "requirement_text": "prerequisite_courses :  avoir suivi 30 crédits de cours de sigle IFT\n\nequivalent_courses :  IFT3150/IFT3051"
+  },
+  {
+    "sigle": "IFT3151",
+    "universite": "UdeM",
+    "titre": "Stage d'informatique",
+    "credits": 3,
+    "description": "Stage en milieu de travail, donnant lieu à un rapport, évalué conjointement par l'employeur et un jury du DIRO.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [
+      "IFT3151",
+      "IFT3052"
+    ],
+    "requirement_text": "prerequisite_courses :  avoir suivi 36 crédits dans le programme\n\nequivalent_courses :  IFT3151/IFT3052"
+  },
+  {
     "sigle": "IFT3710",
     "universite": "UdeM",
     "titre": "Projets en aprentissage automatique",
@@ -1128,73 +1142,47 @@
     "requirement_text": "prerequisite_courses :  IFT3700 OU IFT3395"
   },
   {
-    "sigle": "IFT3820",
+    "sigle": "IFT2550",
     "universite": "UdeM",
-    "titre": "Gestion de réseaux et protocoles",
+    "titre": "Stage d'informatique 1",
     "credits": 3,
-    "description": "Protocole TCP/IP : installation, configuration, mécanismes d'adressage, évaluation de performances, serveurs d'application et dépannage. Les travaux pratiques seront basés sur les systèmes récents UNIX ou Windows. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
+    "description": "Premier stage du programme COOP, en milieu de travail, donnant lieu à un rapport, évalué conjointement par l'employeur et un jury du DIRO.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  30 crédits IFT."
+  },
+  {
+    "sigle": "IFT3550",
+    "universite": "UdeM",
+    "titre": "Stage d'informatique 2",
+    "credits": 3,
+    "description": "Deuxième stage du programme COOP, en milieu de travail, donnant lieu à un rapport, évalué conjointement par l'employeur et un jury du DIRO.",
     "niveau": 3,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "IFT1170",
-      "IFT1175",
-      "IFT1166",
-      "IFT1179"
+      "IFT2550"
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1166 OU IFT1170 OU IFT1175 OU IFT1179"
+    "requirement_text": "prerequisite_courses :  IFT2550"
   },
   {
-    "sigle": "IFT3830",
+    "sigle": "IFT3551",
     "universite": "UdeM",
-    "titre": "Administration des systèmes d'exploitation",
+    "titre": "Stage d'informatique 3",
     "credits": 3,
-    "description": "Gestion d'un centre informatique : installation, configuration, partage de ressources et de données, systèmes hétérogènes, sécurité et tolérance aux pannes. Exemples basés sur les systèmes récents tels UNIX ou Windows. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 117510, 117520, 117540, 119110.",
+    "description": "Troisième stage du programme COOP, en milieu de travail, donnant lieu à un rapport, évalué conjointement par l'employeur et un jury du DIRO.",
     "niveau": 3,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "IFT1810"
+      "IFT3550"
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT1810"
-  },
-  {
-    "sigle": "IFT3911",
-    "universite": "UdeM",
-    "titre": "Analyse et conception des logiciels",
-    "credits": 3,
-    "description": "Ingénierie des besoins. Méthodes de spécification formelle. Principes, méthodes et notations de conception. Description et styles d'architectures logicielles. Composantes logicielles, patrons de conception et cadres d'application.",
-    "niveau": 3,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT2255"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [
-      "IFT3911",
-      "IFT3901"
-    ],
-    "requirement_text": "prerequisite_courses :  IFT2255\n\nequivalent_courses :  IFT3911/IFT3901"
-  },
-  {
-    "sigle": "IFT3913",
-    "universite": "UdeM",
-    "titre": "Qualité du logiciel et métriques",
-    "credits": 3,
-    "description": "Définition et promotion de la qualité. Assurance qualité. Plan de qualité. Amélioration et contrôle de qualité (tests, revue, inspections). Normes et cadres de qualité. Théorie de la mesure. Métriques de produit et de processus. Métriques de qualité.",
-    "niveau": 3,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT2255"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [
-      "IFT3913",
-      "IFT3903"
-    ],
-    "requirement_text": "prerequisite_courses :  IFT2255\n\nequivalent_courses :  IFT3913/IFT3903"
+    "requirement_text": "prerequisite_courses :  IFT3550"
   },
   {
     "sigle": "IFT4055",
@@ -1210,11 +1198,11 @@
     "requirement_text": "prerequisite_courses :  30 crédits IFT."
   },
   {
-    "sigle": "IFT6001",
+    "sigle": "BIN6002",
     "universite": "UdeM",
-    "titre": "Formation préparatoire en algorithmique",
+    "titre": "Principes d'analyse génomique",
     "credits": 3,
-    "description": "Conception et analyse d'algorithmes. Notation asymptotique, résolution de récurrences. Algorithmes voraces, diviser-pour-régner, programmation dynamique, parcours de graphes, retour-arrière, algorithmes probabilistes.",
+    "description": "Identification (gènes protéiques et d'ARNs structuraux introns) par comparaison de séquences et recherche de motifs. Alignements multiples et code génétique. Assemblage et annotation de séquence génomique.",
     "niveau": 6,
     "hors_perimetre": false,
     "prerequisite_courses": [],
@@ -1223,11 +1211,11 @@
     "requirement_text": ""
   },
   {
-    "sigle": "IFT6002",
+    "sigle": "BIN6003",
     "universite": "UdeM",
-    "titre": "Formation préparatoire en structure de données",
+    "titre": "Architecture des polymères biologiques",
     "credits": 3,
-    "description": "Types abstraits pour les structures de données, arbres, dictionnaires, files avec priorités, graphes.",
+    "description": "Conformation macromoléculaire. Analyse de structures tridimensionnelles.",
     "niveau": 6,
     "hors_perimetre": false,
     "prerequisite_courses": [],
@@ -1265,63 +1253,11 @@
     "requirement_text": ""
   },
   {
-    "sigle": "IFT6043",
-    "universite": "UdeM",
-    "titre": "Rendu réaliste et interactif en médias numériques",
-    "credits": 4,
-    "description": "Rendu en temps réel pour jeux vidéo et animations. Équations de rendu, modèles de réflexion; harmoniques sphériques; OpenGL avec shaders; ombrage réaliste; calculs sur processeurs graphiques.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6056",
-    "universite": "UdeM",
-    "titre": "Chaîne de blocs et ses applications",
-    "credits": 4,
-    "description": "Cours couvrant la technologie de la chaîne de blocs (blockchain), incluant : primitives cryptographiques, algorithmes de consensus, opération de \"\"blockchain\"\", contrats intelligents, différentes plateformes de la \"\"blockchain\"\", études de cas et défis.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6075",
-    "universite": "UdeM",
-    "titre": "Interactions Humain - Machine",
-    "credits": 4,
-    "description": "Évolution, théorie et modèles d'usagers et d'interactions. Styles de dialogues : langages de commande, menus, manipulation directe, langage naturel. Conception et gestion d'interfaces. Appareils et interactions multimédia.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
     "sigle": "IFT6080",
     "universite": "UdeM",
     "titre": "Sujets en exploitation des ordinateurs",
     "credits": 4,
     "description": "",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6085",
-    "universite": "UdeM",
-    "titre": "Sujets en intelligence artificielle",
-    "credits": 4,
-    "description": "Sujets en intelligence artificielle",
     "niveau": 6,
     "hors_perimetre": false,
     "prerequisite_courses": [],
@@ -1341,61 +1277,6 @@
     "concomitant_courses": [],
     "equivalent_courses": [],
     "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6113",
-    "universite": "UdeM",
-    "titre": "Modélisation géométrique et analyse de formes",
-    "credits": 4,
-    "description": "Traitement numérique de la géométrie, modélisation géométrique et analyse de formes. Traitement de maillages; Laplacien; champs discrets de vecteurs; applications à la reconstruction de surfaces et à l’animation de personnages. Remarque: il est fortement recommandé de suivre le cours IFT3355 avant de s'inscrire à ce cours.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6114",
-    "universite": "UdeM",
-    "titre": "Conception computationnelle/fabrication numérique",
-    "credits": 4,
-    "description": "Ce cours couvre les aspects matériels et algorithmiques de l’impression 3D, et d’autres technologies de la fabrication numérique. Au cœur de ce cours se trouvent des approches de simulation physique et d’optimisation sous contraintes.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6132",
-    "universite": "UdeM",
-    "titre": "Prédiction structurée avancée et optimisation",
-    "credits": 4,
-    "description": "Sujets avancées pour la prédiction d'objets structurés (tels: graphes, couplages, réseau de flot). Apprentissage génératif vs discriminatif et modèles à énergie; CRF, SVM structurée, optimisation à grande échelle; algorithmes combinatoires; RNN.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6135",
-    "universite": "UdeM",
-    "titre": "Apprentissage de représentations",
-    "credits": 4,
-    "description": "Algorithmes d'apprentissage de représentations des données et réseaux de neurones artificiels profonds. Avantages de l'apprentissage profond pour l'intelligence artificielle. Modélisation de la distribution de probabilité des données.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT6390",
-      "IFT3395"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT3395 ou IFT6390"
   },
   {
     "sigle": "IFT6145",
@@ -1429,110 +1310,6 @@
     "titre": "Informatique quantique",
     "credits": 4,
     "description": "Calcul réversible; information quantique; non-localité; cryptographie quantique; circuits, parallélisme et interférence quantiques; algorithmes de Simon, Shor et Grover; téléportation; correction d'erreurs; implantation.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6161",
-    "universite": "UdeM",
-    "titre": "Théorie de l’information",
-    "credits": 4,
-    "description": "Ce cours traite de la théorie de l'information, qui définit mathématiquement le concept d'information et étudie les limites ultimes des tâches de traitement de données comme la compression et la transmission sur un canal bruité.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6162",
-    "universite": "UdeM",
-    "titre": "Apprentissage par renforcement, commande optimale",
-    "credits": 4,
-    "description": "Étude des fondements théoriques des algorithmes d’apprentissage par renforcement en établissant des liens avec des disciplines connexes: recherche opérationnelle, simulations et optimisation stochastiques, commande optimale.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6163",
-    "universite": "UdeM",
-    "titre": "Apprentissage automatique pour les robots",
-    "credits": 4,
-    "description": "Étude de concepts fondamentaux d’apprentissage automatique pour les applications robotiques et des méthodes permettant à des agents capables de s'entraîner de manière autonome, de devenir des systèmes d'apprentissage nécessitant peu de supervision.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6164",
-    "universite": "UdeM",
-    "titre": "Apprentissage automatique antagoniste",
-    "credits": 4,
-    "description": "À l'interface entre la théorie des jeux, l'optimisation et l'apprentissage automatique. Vise à comprendre comment plusieurs entités apprennent simultanément à résoudre une tâche commune, en contexte antagoniste.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6166",
-    "universite": "UdeM",
-    "titre": "Méthodes tensorielles en apprentissage automatique",
-    "credits": 4,
-    "description": "Ce cours vise l’étude de diverses méthodes d’apprentissage automatique utilisant les techniques de décomposition matricielle et tensorielle et donne une introduction aux réseaux de tenseurs et à leurs applications en informatique et en apprentissage.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6167",
-    "universite": "UdeM",
-    "titre": "Apprentissage automatique en continu",
-    "credits": 4,
-    "description": "Ce cours étudie l’apprentissage continu qui vise à pousser l’intelligence artificielle moderne de \"\"étroite\"\" à \"\"large\"\", i.e. à développer des algorithmes capables d’un apprentissage continu sur un ensemble potentiellement infini de tâches différentes.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6168",
-    "universite": "UdeM",
-    "titre": "Inférence causale et apprentissage automatique",
-    "credits": 4,
-    "description": "Ce cours explore les opportunités et les défis d’utiliser la causalité pour aider l’apprentissage automatique ou, inversement, d’utiliser l’apprentissage automatique pour aider la causalité.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6169",
-    "universite": "UdeM",
-    "titre": "Principes théoriques de l'apprentissage profond",
-    "credits": 4,
-    "description": "Fondement et principes théoriques de l’apprentissage profond. L'objectif est de couvrir les travaux anciens et récents qui constituent les fondements mathématiques du domaine.",
     "niveau": 6,
     "hors_perimetre": false,
     "prerequisite_courses": [],
@@ -1606,45 +1383,6 @@
     "requirement_text": ""
   },
   {
-    "sigle": "IFT6252",
-    "universite": "UdeM",
-    "titre": "Méthodes empiriques en génie logiciel",
-    "credits": 4,
-    "description": "Introduction à la théorie de la mesure du logiciel et au génie logiciel expérimental. Conception et conduite des études empiriques en génie logiciel. Analyse (tests statistiques), interprétation et diffusion de résultats. Cas concrets.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6253",
-    "universite": "UdeM",
-    "titre": "Conception dirigée par modèles",
-    "credits": 4,
-    "description": "Ingénierie dirigée par les modèles, conception des logiciels dirigée par simulation. Langages de modélisation, langages spécifiques au domaine, transformation de modèles, techniques d'analyse des modèles, introduction à la modélisation et simulation.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6254",
-    "universite": "UdeM",
-    "titre": "Fouille des dépôts logiciels",
-    "credits": 4,
-    "description": "Introduction aux méthodes et techniques de fouille de données du génie logiciel. Dépôts logiciels et données associées. Extraction et fouille des données. Analyse et interprétation (statistiques, métriques, apprentissage machine). Étude de cas.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
     "sigle": "IFT6255",
     "universite": "UdeM",
     "titre": "Recherche d'information",
@@ -1673,63 +1411,11 @@
     "requirement_text": "prerequisite_courses :  IFT3335"
   },
   {
-    "sigle": "IFT6268",
-    "universite": "UdeM",
-    "titre": "Apprentissage automatique pour la vision",
-    "credits": 4,
-    "description": "Apprentissage automatique avancé et perception visuelle; apprentissage de traits caractéristiques spatiaux et spatio-temporels; traits visuels de mi-niveau; modèles bio-inspirés et statistiques avancées d'images; données massives en vision.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6269",
-    "universite": "UdeM",
-    "titre": "Modèles graphiques probabilistes et apprentissage",
-    "credits": 4,
-    "description": "Représentation des systèmes comme des modèles graphiques probabilistes, inférence dans les modèles graphiques, apprentissage des paramètres à partir de données.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
     "sigle": "IFT6271",
     "universite": "UdeM",
     "titre": "Sécurité informatique",
     "credits": 4,
     "description": "Confidentialité et intégrité des données. Protection des réseaux et du commerce électronique. Clefs publiques et les tiers de confiance. Méthodes d'authentification. Coupe-feu. Gestion des mots de passe. Évaluation et gestion des risques et sécurité.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6285",
-    "universite": "UdeM",
-    "titre": "Traitement automatique des langues naturelles",
-    "credits": 4,
-    "description": "Introduction aux problématiques de base du traitement des langues naturelles (modélisation de la langue, étiquetage de séquences de mots, analyse grammaticale) et à ses applications (traduction automatique, extraction d'information, etc.).",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6289",
-    "universite": "UdeM",
-    "titre": "TALN avec apprentissage profond",
-    "credits": 4,
-    "description": "Concepts fondamentaux, tâches et techniques du traitement automatique du langage naturel (TALN); recherches de pointe en apprentissage profond pour le TALN; utilisation et applications au quotidien; modélisation.",
     "niveau": 6,
     "hors_perimetre": false,
     "prerequisite_courses": [],
@@ -1769,74 +1455,6 @@
     "titre": "Sujets en bio-informatique",
     "credits": 4,
     "description": "",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6370",
-    "universite": "UdeM",
-    "titre": "Informatique théorique",
-    "credits": 4,
-    "description": "Modèles du calcul. Calculabilité et décidabilité. Complexité. Hiérarchies. Complétudes. Sujets choisis.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT2102",
-      "IFT2105"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT2102 OU IFT2105"
-  },
-  {
-    "sigle": "IFT6390",
-    "universite": "UdeM",
-    "titre": "Fondements de l'apprentissage machine",
-    "credits": 4,
-    "description": "Éléments de base des algorithmes d'apprentissage statistique et symbolique. Exemples d'applications en forage de données, reconnaissance des formes, régression non linéaire, et données temporelles.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6501",
-    "universite": "UdeM",
-    "titre": "Traitement informatique des mégadonnées",
-    "credits": 4,
-    "description": "Programmation en Python, librairies, images et cartes, traitement et manipulation de texte, structures et bases de données, traitement séquentiel et parallèle, affichage.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6504",
-    "universite": "UdeM",
-    "titre": "Programmation mathématique",
-    "credits": 4,
-    "description": "Sujets avancés en programmation linéaire; théorie des jeux; programmation non linéaire; théorie de la dualité; relaxation et décompositions lagrangiennes; décomposition de Benders; décomposition de Dantzig-Wolfe; méthode de points intérieurs.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6512",
-    "universite": "UdeM",
-    "titre": "Programmation stochastique",
-    "credits": 4,
-    "description": "Optimisation stochastique avec recours. Programmes stochastiques linéaires à deux étapes. Formulations compactes et explicites. Méthode L-Shaped. Problèmes à plusieurs étapes et en nombres entiers. Méthodes échantillonnales.",
     "niveau": 6,
     "hors_perimetre": false,
     "prerequisite_courses": [],
@@ -1890,403 +1508,168 @@
     "requirement_text": ""
   },
   {
-    "sigle": "IFT6575",
+    "sigle": "ANG1902",
     "universite": "UdeM",
-    "titre": "Méthodes de recherche opérationnelle",
-    "credits": 4,
-    "description": "Programmation linéaire. Programmation en nombres entiers. Programmation non linéaire. Programmation dynamique. Modèles stochastiques. Simulation.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6580",
-    "universite": "UdeM",
-    "titre": "Sujets en optimisation",
-    "credits": 4,
-    "description": "",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6755",
-    "universite": "UdeM",
-    "titre": "Analyse du logiciel",
-    "credits": 4,
-    "description": "Spécification et modélisation du logiciel. Méthodes formelles pour l'analyse du logiciel. Analyse empirique du contexte et du processus du développement. Mise en oeuvre de méthodes d'analyse en utilisant des compromis spécifiques au contexte.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6756",
-    "universite": "UdeM",
-    "titre": "Théorie de l'apprentissage automatique",
-    "credits": 4,
-    "description": "Outils théoriques de l'apprentissage automatique; analyse de la généralisation, de l'expressivité et de la complexité; chaînes de Markov, Monte-Carlo pour l'échantillonnage de modèles et systèmes d'apprentissage distribué.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6757",
-    "universite": "UdeM",
-    "titre": "Véhicules autonomes",
-    "credits": 4,
-    "description": "Contrôle de véhicules autonomes avec vision par ordinateur et apprentissage automatique; construction d'un véhicule autonome à petite échelle; senseurs, vision, estimation d'état, navigation, planification, contrôle et actionnement.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6758",
-    "universite": "UdeM",
-    "titre": "Science des données",
-    "credits": 4,
-    "description": "Applications des probabilités, statistiques et optimisation pour la science des données; nettoyage et visualisation de données; enjeux statistiques de l'apprentissage automatique sur données structurées; généralisation et surapprentissage.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6759",
-    "universite": "UdeM",
-    "titre": "Projets avancés en apprentissage automatique",
-    "credits": 4,
-    "description": "Préparation aux applications pratiques de l'apprentissage automatique à travers des projets concrets sur des données réelles. Utilisation de logiciels spécialisés d'apprentissage automatique pour l'intelligence artificielle. Remarque : Il est recommandé de prendre IFT6135 Apprentissage de représentations auparavant ou concomitant.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6760A",
-    "universite": "UdeM",
-    "titre": "Séminaire en apprentissage automatique",
-    "credits": 4,
-    "description": "Présentation et discussion par l'étudiant d'articles scientifiques en apprentissage automatique à la fine pointe de la recherche dans ce domaine, qui change d'une année à l'autre. On vise la compréhension des articles et la capacité à les expliquer. Remarque : Il est recommandé de prendre IFT6135 Apprentissage de représentations auparavant.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6760B",
-    "universite": "UdeM",
-    "titre": "Séminaire en apprentissage automatique",
-    "credits": 4,
-    "description": "Présentation et discussion par l'étudiant d'articles scientifiques en apprentissage automatique à la fine pointe de la recherche dans ce domaine, qui change d'une année à l'autre. On vise la compréhension des articles et la capacité à les expliquer. Remarque : Il est recommandé de prendre IFT6135 Apprentissage de représentations auparavant.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6760C",
-    "universite": "UdeM",
-    "titre": "Séminaire en apprentissage automatique",
-    "credits": 4,
-    "description": "Présentation et discussion par l'étudiant d'articles scientifiques en apprentissage automatique à la fine pointe de la recherche dans ce domaine, qui change d'une année à l'autre. On vise la compréhension des articles et la capacité à les expliquer. Remarque : Il est recommandé de prendre IFT6135 Apprentissage de représentations auparavant.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6761",
-    "universite": "UdeM",
-    "titre": "Colloque 1",
-    "credits": 1,
-    "description": "Série de présentations sur des sujets variés sur les thèmes fondamentaux et des applications en apprentissage automatique. Remarque : cours réservé aux étudiants inscrits au DESS en apprentissage automatique.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6762",
-    "universite": "UdeM",
-    "titre": "Colloque 2",
-    "credits": 1,
-    "description": "Série de présentations sur des sujets variés sur les thèmes fondamentaux et des applications en apprentissage automatique. Remarque : cours réservé aux étudiants inscrits au DESS en apprentissage automatique.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6765",
-    "universite": "UdeM",
-    "titre": "Liens entre la vision par ordinateur et la langue",
-    "credits": 4,
-    "description": "Progrès récents de la recherche sur la vision et le langage, un sous-domaine de l’intelligence artificielle qui permet d’étudier les tâches multimodales à l’intersection de la vision par ordinateur et du traitement du langage naturel.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6900",
-    "universite": "UdeM",
-    "titre": "Mémoire",
-    "credits": 30,
-    "description": "",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6901",
-    "universite": "UdeM",
-    "titre": "Travail dirigé 1",
-    "credits": 11,
-    "description": "Ce cours est publié sans description.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6902",
-    "universite": "UdeM",
-    "titre": "Travail dirigé 2",
-    "credits": 11,
-    "description": "Ce cours est publié sans description.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6916",
-    "universite": "UdeM",
-    "titre": "Stage",
-    "credits": 22,
-    "description": "Ce stage a pour objectif de permettre à l'étudiant d'appliquer dans une organisation publique ou privée les connaissances théoriques et pratiques acquises au cours de sa formation.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6917",
-    "universite": "UdeM",
-    "titre": "Stage en apprentissage automatique",
-    "credits": 22,
-    "description": "Stage de 6 mois dans une organisation publique ou privée permettant à l'étudiant d'appliquer les connaissances théoriques et pratiques en apprentissage automatique acquises au cours de sa formation.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "IFT6390",
-      "IFT6135",
-      "IFT6759",
-      "IFT6758"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  IFT6135, IFT6390, IFT6758, et IFT6759"
-  },
-  {
-    "sigle": "IFT6919",
-    "universite": "UdeM",
-    "titre": "Stage court en apprentissage automatique",
-    "credits": 12,
-    "description": "Stage de 4 mois dans une organisation publique ou privée permettant à l'étudiant d'appliquer les connaissances théoriques et pratiques en apprentissage automatique acquises au cours de sa formation.",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT7000",
-    "universite": "UdeM",
-    "titre": "Examen général de doctorat",
-    "credits": 0,
-    "description": "Ce cours est publié sans description.",
-    "niveau": 7,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT7910",
-    "universite": "UdeM",
-    "titre": "Thèse",
-    "credits": 84,
-    "description": "",
-    "niveau": 7,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1400",
-    "universite": "UdeM",
-    "titre": "Introduction à l’IA",
-    "credits": 0,
-    "description": "",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT1410",
-    "universite": "UdeM",
-    "titre": "IA générative appliquée",
-    "credits": 0,
-    "description": "",
-    "niveau": 1,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6076",
-    "universite": "UdeM",
-    "titre": "Systèmes intégrés à l’IA",
-    "credits": 0,
-    "description": "",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6077",
-    "universite": "UdeM",
-    "titre": "Concep. de l’interact. hum.-IA",
-    "credits": 0,
-    "description": "",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6003",
-    "universite": "UdeM",
-    "titre": "Métho. recherche/informatique",
-    "credits": 0,
-    "description": "",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "IFT6256",
-    "universite": "UdeM",
-    "titre": "Art algorithm. et logic. libre",
-    "credits": 0,
-    "description": "",
-    "niveau": 6,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "MAT1400",
-    "universite": "UdeM",
-    "titre": "Calcul 1",
-    "credits": 4,
-    "description": "Suites, séries. Fonctions de plusieurs variables, continuité, dérivées partielles, différentielles, plan tangent, dérivation en chaîne. Gradient, surfaces de niveau, extremums. Intégrales multiples, changement de variables, jacobien.",
-    "niveau": 1,
-    "hors_perimetre": true,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "MAT1600",
-    "universite": "UdeM",
-    "titre": "Algèbre linéaire",
-    "credits": 4,
-    "description": "Systèmes d'équations linéaires, élimination de Gauss, inverse matricielle. Espace vectoriel, indépendance linéaire, transformations linéaires, changement de base. Produit scalaire. Déterminants. Diagonalisation. Exemples d'applications.",
-    "niveau": 1,
-    "hors_perimetre": true,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": ""
-  },
-  {
-    "sigle": "MAT1978",
-    "universite": "UdeM",
-    "titre": "Probabilités et statistique",
-    "credits": 4,
-    "description": "Probabilités, indépendance. Variables aléatoires. Espérance. Lois de probabilité. Vecteurs aléatoires. Loi des grands nombres, théorème limite central. Intervalles de confiance. Régression linéaire. Test du khi-deux. Remarques: Cours pour informaticiens.",
+    "titre": "Anglais 2 (niveau A2)",
+    "credits": 3,
+    "description": "Communiquer dans des situations familières. Compréhension de lectures et de conversations simples. Sensibilisation aux cultures anglophones du monde. Remarque : Ce cours est exclusif aux étudiants des programmes 195541, 199010, 199011, 199012. Toutefois, il pourrait être reconnu comme cours hors programme dans d’autres programmes.",
     "niveau": 1,
     "hors_perimetre": true,
     "prerequisite_courses": [
-      "MAT1400",
-      "IFT1063",
-      "IFT1065"
+      "ANG1901A"
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "prerequisite_courses :  (IFT1063 OU IFT1065) ET MAT1400"
+    "requirement_text": "prerequisite_courses :  ANG1901A ou compétence équivalente."
+  },
+  {
+    "sigle": "ANG1904",
+    "universite": "UdeM",
+    "titre": "Anglais 4 (niveau B1.2)",
+    "credits": 3,
+    "description": "Communiquer sur des sujets variés. Compréhension de différents médias. Rédactions. Lecture d'un livre court et/ou de courts textes. Discussion sur les cultures anglophones du monde. Remarques: 2e partie du niveau B1. Approches pédagogiques mixtes axées sur la communication. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 113510, 118510, 118520.",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "ANG1903"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [
+      "ANG1968",
+      "ANG1904"
+    ],
+    "requirement_text": "prerequisite_courses :  ANG1903\n\nequivalent_courses :  ANG1968/ANG1904"
+  },
+  {
+    "sigle": "ANG1905",
+    "universite": "UdeM",
+    "titre": "Anglais 5 (niveau B2.1)",
+    "credits": 3,
+    "description": "Communiquer et argumenter sur des sujets d'intérêt variés. Compréhension de différents médias. Rédactions. Lecture d'un roman ou d'un essai. Discussion de sujet d'actualité du monde anglophone. Remarques: 1re partie du niveau B2. Approches pédagogiques mixtes axées sur la communication. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 118510, 118520.",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "ANG1904"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [
+      "ANG2051",
+      "ANG1905"
+    ],
+    "requirement_text": "prerequisite_courses :  ANG1904\n\nequivalent_courses : ANG1905/ANG2051"
+  },
+  {
+    "sigle": "ANG1906",
+    "universite": "UdeM",
+    "titre": "Anglais 6 (niveau B2.2)",
+    "credits": 3,
+    "description": "Communiquer et discuter avec clarté sur des sujets d'actualité. Compréhension de différents médias. Lecture d'un roman ou d'un essai. Discussion de la variété culturelle et linguistique des pays anglophones. Remarques: 2e partie du niveau B2. Approches pédagogiques mixtes axées sur la communication. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 118510, 118520.",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "ANG1905"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [
+      "ANG2052",
+      "ANG1906"
+    ],
+    "requirement_text": "prerequisite_courses :  ANG1905\n\nequivalent_courses : ANG1906/ANG2052"
+  },
+  {
+    "sigle": "ANG1907",
+    "universite": "UdeM",
+    "titre": "Anglais 7 (niveau C1)",
+    "credits": 0,
+    "description": "",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ANG1911",
+    "universite": "UdeM",
+    "titre": "Lire en anglais 1 (niveau B1)",
+    "credits": 3,
+    "description": "Saisir le sens de textes généraux. Lecture de textes présentant des spécificités linguistiques. Enrichissement du vocabulaire et de la grammaire propre au style écrit. Apprentissage de stratégies de lecture. Lecture personnelle. Remarques: Approche analytique. Remarque : Ce cours ne peut pas être reconnu comme cours au choix dans les programmes suivants : 118510, 118520.",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "ANG1902"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  ANG1902 ou compétence équivalente."
+  },
+  {
+    "sigle": "ANG1922",
+    "universite": "UdeM",
+    "titre": "Écrire en anglais 2 (niveau B2)",
+    "credits": 3,
+    "description": "Rédiger des textes universitaires. Application à l'écriture des connaissances sur les phénomènes lexicaux et sur les particularités grammaticales et stylistiques réservées au style écrit. Enrichissement du vocabulaire. Remarques: Approche analytique.",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "ANG1921"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  ANG1921"
+  },
+  {
+    "sigle": "IFT1016",
+    "universite": "UdeM",
+    "titre": "Programmation 1",
+    "credits": 3,
+    "description": "Éléments de base d'un langage de programmation : types, expressions, énoncés conditionnels et itératifs, procédures, fonctions, paramètres, récursivité, tableaux, enregistrements, pointeurs et fichiers.",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IFT1063",
+    "universite": "UdeM",
+    "titre": "",
+    "credits": 0,
+    "description": "",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IFT3330",
+    "universite": "UdeM",
+    "titre": "",
+    "credits": 0,
+    "description": "",
+    "niveau": 3,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IFT6330",
+    "universite": "UdeM",
+    "titre": "",
+    "credits": 0,
+    "description": "",
+    "niveau": 6,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
   },
   {
     "sigle": "MAT1720",
@@ -2294,6 +1677,51 @@
     "titre": "Probabilités",
     "credits": 4,
     "description": "Espace de probabilité. Analyse combinatoire. Probabilité conditionnelle. Indépendance. Variable aléatoire. Fonction de répartition et fonction génératrice. Espérance mathématique. Loi faible des grands nombres. Théorème limite central.",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "PHY2215",
+    "universite": "UdeM",
+    "titre": "Physique thermique et statistique",
+    "credits": 4,
+    "description": "Thermodynamique statistique. Fonctions thermodynamiques. Transformations de phases. Distribution canonique. Méc. stat. Statistiques quantiques. Applications de Gaz de bosons et de fermions.",
+    "niveau": 2,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "MAT1400"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "prerequisite_courses :  MAT1400"
+  },
+  {
+    "sigle": "PSY1006",
+    "universite": "UdeM",
+    "titre": "Méthodologie scientifique 1",
+    "credits": 3,
+    "description": "Méthodes de recherche. Problématique, hypothèse, variables et contrôle. Principes éthiques. Plans de recherche. Cueillette des données. Analyse et interprétation. Analyse d'articles.",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [
+      "REI1130",
+      "PSE1205",
+      "PSY1006"
+    ],
+    "requirement_text": "equivalent_courses :  PSY1006/PSE1205/REI1130"
+  },
+  {
+    "sigle": "STT1700",
+    "universite": "UdeM",
+    "titre": "Introduction à la statistique",
+    "credits": 3,
+    "description": "Description des données. Production de données. Probabilités. Inférence. Intervalles de confiance et tests d'hypothèses. Données de dénombrement. Tableaux de contingence. Régression linéaire simple. Remarques: Utilisation d'un progiciel.",
     "niveau": 1,
     "hors_perimetre": true,
     "prerequisite_courses": [],

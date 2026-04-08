@@ -1,26 +1,49 @@
 """
-Fetch tous les cours de l'UdeM (response_level=full),
-filtre les cours IFT, identifie les prérequis MAT référencés,
-filtre aussi les cours MAT, et sauvegarde dans raw_courses.json.
+Fetch les cours du Baccalauréat en informatique (B. Sc.) de l'UdeM.
 
-Note: l'API retourne tous les cours en une seule réponse (pas de filtrage serveur),
-donc on récupère tout et on filtre côté client.
+Stratégie :
+  1. GET /api/v1/programs → trouver le programme 117510 → extraire la liste
+     des 148 cours du programme (tous segments et blocs confondus).
+  2. GET /api/v1/courses?response_level=full → récupérer tous les cours en
+     un appel (l'API ignore les filtres serveur), filtrer côté client.
+  3. Cours du programme → PROGRAM (hors_perimetre: false).
+     Prérequis référencés hors programme → OTHER (hors_perimetre: true).
+
+Sauvegarde dans etl/udem/raw_courses.json.
 """
 
 import json
-import re
 from pathlib import Path
-from typing import Optional
 
 import requests
 
-BASE_URL = "https://planifium-api.onrender.com/api/v1"
+BASE_URL    = "https://planifium-api.onrender.com/api/v1"
+PROGRAM_ID  = "117510"   # Baccalauréat en informatique (B. Sc.)
 OUTPUT_FILE = Path(__file__).parent / "raw_courses.json"
 
 
+def fetch_program_course_ids() -> list[str]:
+    """
+    Retourne la liste ordonnée des IDs de cours du programme 117510,
+    tels que définis dans prog['courses'] (union de tous les blocs).
+    """
+    print(f"Fetching programme {PROGRAM_ID}...")
+    resp = requests.get(f"{BASE_URL}/programs", timeout=120)
+    resp.raise_for_status()
+    programs = resp.json()
+
+    prog = next((p for p in programs if p["id"] == PROGRAM_ID), None)
+    if prog is None:
+        raise RuntimeError(f"Programme {PROGRAM_ID} introuvable.")
+
+    print(f"  Trouvé : {prog['name']}")
+    print(f"  Segments : {len(prog['segments'])}, cours listés : {len(prog['courses'])}")
+    return prog["courses"]
+
+
 def fetch_all_courses() -> list[dict]:
-    """Fetch tous les cours avec response_level=full."""
-    print("Fetching tous les cours (response_level=full)...")
+    """Fetch tous les cours (l'API ignore les filtres serveur)."""
+    print("\nFetching tous les cours (response_level=full)...")
     resp = requests.get(
         f"{BASE_URL}/courses",
         params={"response_level": "full"},
@@ -28,80 +51,81 @@ def fetch_all_courses() -> list[dict]:
     )
     resp.raise_for_status()
     data = resp.json()
-
-    if isinstance(data, list):
-        return data
-    return data.get("courses", data.get("items", data.get("results", [])))
-
-
-def filter_by_subject(courses: list[dict], subject: str) -> list[dict]:
-    """Filtre les cours dont l'ID commence par le préfixe du sujet."""
-    prefix = subject.upper()
-    return [c for c in courses if c.get("id", "").upper().startswith(prefix)]
-
-
-def extract_mat_prerequisites(courses: list[dict]) -> set[str]:
-    """Extrait tous les codes MAT présents dans prerequisite_courses ou requirement_text."""
-    mat_codes = set()
-    mat_pattern = re.compile(r"\bMAT\d+\b")
-
-    for course in courses:
-        for prereq in course.get("prerequisite_courses", []):
-            if mat_pattern.match(prereq):
-                mat_codes.add(prereq)
-        for match in mat_pattern.finditer(course.get("requirement_text", "")):
-            mat_codes.add(match.group())
-
-    return mat_codes
+    courses = data if isinstance(data, list) else data.get("courses", data.get("items", []))
+    print(f"  {len(courses)} cours récupérés.")
+    return courses
 
 
 def main():
-    print("=== Fetch cours UdeM ===\n")
+    # 1. IDs du programme
+    program_ids = fetch_program_course_ids()
+    program_id_set = set(program_ids)
 
-    # 1. Récupérer tous les cours en un seul appel
+    # 2. Tous les cours de l'API
     all_courses = fetch_all_courses()
-    print(f"  Total récupéré: {len(all_courses)} cours\n")
+    by_id = {c["id"]: c for c in all_courses}
 
-    # 2. Filtrer les cours IFT
-    ift_courses = filter_by_subject(all_courses, "IFT")
-    print(f"Cours IFT: {len(ift_courses)}")
+    # 3. Cours du programme (dédoublonnage : un cours peut figurer dans plusieurs segments)
+    program_courses: list[dict] = []
+    missing_program: list[str] = []
+    seen_program: set[str] = set()
+    for cid in program_ids:
+        if cid in seen_program:
+            continue
+        seen_program.add(cid)
+        if cid in by_id:
+            program_courses.append(by_id[cid])
+        else:
+            missing_program.append(cid)
 
-    # 3. Identifier les prérequis MAT dans les cours IFT
-    mat_prereq_codes = extract_mat_prerequisites(ift_courses)
-    print(f"Prérequis MAT référencés: {sorted(mat_prereq_codes)}\n")
+    if missing_program:
+        print(f"\n  Attention : {len(missing_program)} cours du programme introuvables dans l'API :")
+        for cid in missing_program:
+            print(f"    {cid}")
 
-    # 4. Filtrer les cours MAT
-    mat_courses = filter_by_subject(all_courses, "MAT")
-    mat_courses_by_id = {c["id"]: c for c in mat_courses}
-    print(f"Cours MAT disponibles: {len(mat_courses)}")
+    # 4. Prérequis hors programme
+    other_ids: set[str] = set()
+    for c in program_courses:
+        for dep in c.get("prerequisite_courses", []) + c.get("concomitant_courses", []):
+            if dep not in program_id_set:
+                other_ids.add(dep)
 
-    # Vérifier si tous les prérequis MAT sont couverts
-    missing = mat_prereq_codes - mat_courses_by_id.keys()
-    if missing:
-        print(f"  Attention: prérequis MAT introuvables dans l'API: {sorted(missing)}")
+    other_courses: list[dict] = []
+    missing_other: list[str] = []
+    for cid in sorted(other_ids):
+        if cid in by_id:
+            other_courses.append(by_id[cid])
+        else:
+            missing_other.append(cid)
+            other_courses.append({
+                "id": cid, "name": "", "credits": 0, "description": "",
+                "prerequisite_courses": [], "concomitant_courses": [],
+                "equivalent_courses": [], "requirement_text": "",
+            })
 
-    # 5. Construire et sauvegarder le résultat
+    # 5. Sauvegarder
+    subjects = sorted({c["id"][:3] for c in program_courses})
     result = {
         "metadata": {
-            "source": "UdeM - Planifium API",
-            "base_url": BASE_URL,
-            "response_level": "full",
-            "total_courses_fetched": len(all_courses),
-            "ift_count": len(ift_courses),
-            "mat_count": len(mat_courses),
-            "mat_prerequisites_referenced": sorted(mat_prereq_codes),
-            "mat_prerequisites_missing": sorted(missing) if missing else [],
+            "source":          f"UdeM – Planifium API – programme {PROGRAM_ID}",
+            "program_name":    "Baccalauréat en informatique (B. Sc.)",
+            "program_id":      PROGRAM_ID,
+            "program_count":   len(program_courses),
+            "other_count":     len(other_courses),
+            "subjects":        subjects,
         },
         "courses": {
-            "IFT": ift_courses,
-            "MAT": mat_courses,
+            "PROGRAM": program_courses,
+            "OTHER":   other_courses,
         },
     }
 
     OUTPUT_FILE.write_text(json.dumps(result, ensure_ascii=False, indent=2))
     print(f"\nSauvegardé dans {OUTPUT_FILE}")
-    print(f"  IFT: {len(ift_courses)} cours")
-    print(f"  MAT: {len(mat_courses)} cours")
+    print(f"  PROGRAM : {len(program_courses)} cours  {subjects}")
+    print(f"  OTHER   : {len(other_courses)} cours hors-périmètre")
+    if missing_other:
+        print(f"  (dont {len(missing_other)} stubs introuvables dans l'API : {missing_other})")
 
 
 if __name__ == "__main__":

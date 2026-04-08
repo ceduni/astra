@@ -39,21 +39,14 @@ def main():
     data = json.loads(INPUT_FILE.read_text())
     courses = data["courses"]
 
-    mat_prereqs = {
-        prereq
-        for c in courses["IFT"]
-        for prereq in c.get("prerequisite_courses", [])
-        if prereq.startswith("MAT")
-    }
-
-    mat_by_id = {c["id"]: c for c in courses["MAT"]}
+    program_key = "PROGRAM" if "PROGRAM" in courses else "IFT"
+    program_courses = courses[program_key]
+    other_courses   = courses["OTHER"]
 
     canonical = [
-        transform_course(c, hors_perimetre=False) for c in courses["IFT"]
+        transform_course(c, hors_perimetre=False) for c in program_courses
     ] + [
-        transform_course(mat_by_id[sigle], hors_perimetre=True)
-        for sigle in mat_prereqs
-        if sigle in mat_by_id
+        transform_course(c, hors_perimetre=True) for c in other_courses
     ]
 
     # Dédoublonnage par sigle (priorité au premier trouvé)
@@ -66,8 +59,8 @@ def main():
 
     OUTPUT_FILE.write_text(json.dumps(unique, ensure_ascii=False, indent=2))
     print(f"Sauvegardé {len(unique)} cours dans {OUTPUT_FILE}")
-    print(f"  IFT (hors_perimetre=false): {sum(1 for c in unique if not c['hors_perimetre'])}")
-    print(f"  MAT (hors_perimetre=true):  {sum(1 for c in unique if c['hors_perimetre'])}")
+    print(f"  Programme (hors_perimetre=false): {sum(1 for c in unique if not c['hors_perimetre'])}")
+    print(f"  OTHER     (hors_perimetre=true):  {sum(1 for c in unique if c['hors_perimetre'])}")
 
 
 if __name__ == "__main__":
