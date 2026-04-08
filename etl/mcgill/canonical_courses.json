@@ -13,21 +13,6 @@
     "requirement_text": "3 hours | Restrictions: Not open to students who have taken or are taking COMP 204, COMP 208, or GEOG 333; not open to students who have taken or are taking COMP 206 or COMP 250. | COMP 202 is intended as a general introductory course, while COMP 204 is intended for students in life sciences, and COMP 208 is intended for students in physical sciences and engineering. | To take COMP 202, students should have a solid understanding of pre-calculus fundamentals such as polynomial, trigonometric, exponential, and logarithmic functions."
   },
   {
-    "sigle": "COMP 204",
-    "universite": "McGill",
-    "titre": "Computer Programming for Life Sciences",
-    "credits": 3,
-    "description": "Computer Science (Sci): Computer programming in a high level language: variables, expressions, types, functions, conditionals, loops, objects and classes. Introduction to algorithms, modular software design, libraries, file input/output, debugging. Emphasis on applications in the life sciences.",
-    "niveau": 2,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [
-      "BIOL 112"
-    ],
-    "equivalent_courses": [],
-    "requirement_text": "Co-requisite: BIOL 112 | Restrictions: Not open to students who have taken or are taking COMP 202, COMP 208, or GEOG 333; not open to students who have taken or are taking COMP 206 or COMP 250. | To take COMP 204, students should have a solid understanding of pre-calculus fundamentals such as polynomial, trigonometric, exponential, and logarithmic functions."
-  },
-  {
     "sigle": "COMP 206",
     "universite": "McGill",
     "titre": "Introduction to Software Systems",
@@ -43,19 +28,6 @@
     "concomitant_courses": [],
     "equivalent_courses": [],
     "requirement_text": "3 hours | Prerequisite: COMP 202 or COMP 204 or COMP 208 or CEGEP objective 0F01 or equivalent"
-  },
-  {
-    "sigle": "COMP 230",
-    "universite": "McGill",
-    "titre": "Logic and Computability",
-    "credits": 3,
-    "description": "Propositional Logic, predicate calculus, proof systems, computability Turing machines, Church-Turing thesis, unsolvable problems, completeness, incompleteness, Tarski semantics, uses and misuses of Gödel's theorem.",
-    "niveau": 2,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisite: CEGEP level mathematics."
   },
   {
     "sigle": "COMP 250",
@@ -92,23 +64,6 @@
     "requirement_text": "3 hours | Prerequisites: COMP 250; MATH 235 or MATH 240 | COMP 251 uses basic counting techniques (permutations and combinations) that are covered in MATH 240 but not in MATH 235. These techniques will be reviewed for the benefit of MATH 235 students. | Restrictions: Not open to students who have taken or are taking: COMP 252 or COMP 260."
   },
   {
-    "sigle": "COMP 252",
-    "universite": "McGill",
-    "titre": "Honours Algorithms and Data Structures",
-    "credits": 3,
-    "description": "The design and analysis of data structures and algorithms. The description of various computational problems and the algorithms that can be used to solve them, along with their associated data structures. Proving the correctness of algorithms and determining their computational complexity.",
-    "niveau": 2,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 250",
-      "MATH 235",
-      "MATH 240"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisite: COMP 250 and either MATH 235 or MATH 240 | Restrictions: (1) Open only to students in Honours programs. (2) Students cannot receive credit for both COMP 251 and COMP 252. | COMP 252 uses basic combinatorial counting methods that are covered in MATH 240 but not in MATH 235. Students who are unfamiliar with these methods should speak with the instructor for guidance."
-  },
-  {
     "sigle": "COMP 273",
     "universite": "McGill",
     "titre": "Introduction to Computer Systems",
@@ -122,19 +77,6 @@
     ],
     "equivalent_courses": [],
     "requirement_text": "3 hours | Corequisite: COMP 206."
-  },
-  {
-    "sigle": "COMP 280",
-    "universite": "McGill",
-    "titre": "History and Philosophy of Computing",
-    "credits": 3,
-    "description": "A history of early mathematical computation. Symbolic logic and computation. Modern computer systems and networks. The rise of the internet.",
-    "niveau": 2,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours"
   },
   {
     "sigle": "COMP 302",
@@ -173,38 +115,6 @@
     "requirement_text": "3 hours | Prerequisites: COMP 206, COMP 250."
   },
   {
-    "sigle": "COMP 307",
-    "universite": "McGill",
-    "titre": "Principles of Web Development",
-    "credits": 3,
-    "description": "The course discusses the major principles, algorithms, languages and technologies that underlie web development. Students receive practical hands-on experience through a project.",
-    "niveau": 3,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 206"
-    ],
-    "concomitant_courses": [
-      "COMP 303"
-    ],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisite(s): COMP 206 | Corequisite(s): COMP 303"
-  },
-  {
-    "sigle": "COMP 308",
-    "universite": "McGill",
-    "titre": "Computer Systems Lab",
-    "credits": 1,
-    "description": "Digital circuitry and programming interface of peripheral circuit boards (cards), e.g., graphics cards; introduction to tools and libraries that interact with the card; performance issues.",
-    "niveau": 3,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 273"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "1 hour | Prerequisite: COMP 273."
-  },
-  {
     "sigle": "COMP 310",
     "universite": "McGill",
     "titre": "Operating Systems",
@@ -220,21 +130,50 @@
     "requirement_text": "3 hours | Prerequisite: COMP 273"
   },
   {
-    "sigle": "COMP 322",
+    "sigle": "MATH 222",
     "universite": "McGill",
-    "titre": "Introduction to C++",
-    "credits": 1,
-    "description": "Basics and advanced features of the C++ language. Syntax, memory management, class structure, method and operator overloading, multiple inheritance, access control, stream I/O, templates, exception handling.",
-    "niveau": 3,
+    "titre": "Calculus 3",
+    "credits": 3,
+    "description": "Taylor series, Taylor's theorem in one and several variables. Review of vector geometry. Partial differentiation, directional derivative. Extreme of functions of 2 or 3 variables. Parametric curves and arc length. Polar and spherical coordinates. Multiple integrals.",
+    "niveau": 2,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "COMP 250",
-      "COMP 206",
-      "COMP 208"
+      "MATH 141",
+      "MATH 133"
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "1 hour | Prerequisite(s): COMP 250 and (COMP 206 or COMP 208)"
+    "requirement_text": "Prerequisite: MATH 141. Familiarity with vector geometry or Corequisite: MATH 133 | Restriction: Not open to students who have taken or are taking MATH 150, MATH 151, MATH206, or MATH 262."
+  },
+  {
+    "sigle": "MATH 223",
+    "universite": "McGill",
+    "titre": "Linear Algebra",
+    "credits": 3,
+    "description": "Review of matrix algebra, determinants and systems of linear equations. Vector spaces, linear operators and their matrix representations, orthogonality. Eigenvalues and eigenvectors, diagonalization of Hermitian matrices. Applications.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MATH 133"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Fall and Winter | Prerequisite: MATH 133 or equivalent | Restriction: Not open to students in Mathematics programs nor to students who have taken or are taking MATH 206, MATH 236, MATH 247, or MATH 251."
+  },
+  {
+    "sigle": "MATH 240",
+    "universite": "McGill",
+    "titre": "Discrete Structures",
+    "credits": 3,
+    "description": "Introduction to discrete mathematics and applications. Logical reasoning and methods of proof. Elementary number theory and cryptography: prime numbers, modular equations, RSA encryption. Combinatorics: basic enumeration, combinatorial methods, recurrence equations. Graph theory: trees, cycles, planar\ngraphs.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [
+      "MATH 133"
+    ],
+    "equivalent_courses": [],
+    "requirement_text": "Fall and Winter | Corequisite: MATH 133. | Restriction: For students in any Computer Science, Computer Engineering, or Software Engineering programs. Others only with the instructor's permission. Not open to students who have taken or are taking MATH 235."
   },
   {
     "sigle": "COMP 330",
@@ -250,22 +189,6 @@
     "concomitant_courses": [],
     "equivalent_courses": [],
     "requirement_text": "3 hours | Prerequisite: COMP 251."
-  },
-  {
-    "sigle": "COMP 345",
-    "universite": "McGill",
-    "titre": "From Natural Language to Data Science",
-    "credits": 3,
-    "description": "Introduction to language data science, including theoretical approaches and practical skills. Processing, searching, and querying text data; making sense of large corpora; modelling and interpreting psycholinguistic and historical language data; building models of sequences of words; computing similarity between languages; information retrieval and extraction; question answering; and ethics.",
-    "niveau": 3,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 250",
-      "MATH 133"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisites: COMP 250 and MATH 133; or permission of the instructor. | Restriction: Not open to students who have taken or are taking LING 345."
   },
   {
     "sigle": "COMP 350",
@@ -306,798 +229,86 @@
     "requirement_text": "3 hours | Prerequisite: Either COMP 251 or COMP 252, and either MATH 240 or MATH 235 or MATH 363. | Restriction: Not open to students who have taken or are taking COMP 362."
   },
   {
-    "sigle": "COMP 361D1",
+    "sigle": "MATH 318",
     "universite": "McGill",
-    "titre": "Software Engineering Project",
+    "titre": "Mathematical Logic",
     "credits": 3,
-    "description": "Software development process in practice: requirement elicitation and analysis, software design, implementation, integration, test planning, and maintenance. Application of the core concepts and techniques through the realization of a large software system.",
+    "description": "Propositional logic: truth-tables, formal proof systems, completeness and compactness theorems, Boolean algebras; first-order logic: formal proofs, Gödel's completeness theorem; axiomatic theories; set theory; Cantor's theorem, axiom of choice and Zorn's lemma, Peano arithmetic; Gödel's incompleteness theorem.",
     "niveau": 3,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "COMP 206",
-      "COMP 250"
+      "MATH 235",
+      "MATH 240",
+      "MATH 242"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Fall | Prerequisite(s): MATH 235 or MATH 240 or MATH 242."
+  },
+  {
+    "sigle": "MATH 323",
+    "universite": "McGill",
+    "titre": "Probability",
+    "credits": 3,
+    "description": "Sample space, events, conditional probability, independence of events, Bayes' Theorem. Basic combinatorial probability, random variables, discrete and continuous univariate and multivariate distributions. Independence of random variables. Inequalities, weak law of large numbers, central limit theorem.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MATH 141"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Prerequisites: MATH 141 or equivalent. | Restriction: Intended for students in Science, Engineering and related disciplines, who have had differential and integral calculus | Restriction: Not open to students who have taken or are taking MATH 356"
+  },
+  {
+    "sigle": "MATH 324",
+    "universite": "McGill",
+    "titre": "Statistics",
+    "credits": 3,
+    "description": "Sampling distributions, point and interval estimation, hypothesis testing, analysis of variance, contingency tables, nonparametric inference, regression, Bayesian inference.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MATH 323"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Fall and Winter | Prerequisite: MATH 323 or equivalent | Restriction: Not open to students who have taken or are taking MATH 357 | You may not be able to receive credit for this course and other statistic courses. Be sure to check the Course Overlap section under Faculty Degree Requirements in the Arts or Science section of the Calendar."
+  },
+  {
+    "sigle": "MATH 340",
+    "universite": "McGill",
+    "titre": "Discrete\n Mathematics",
+    "credits": 3,
+    "description": "Discrete Mathematics and applications. Graph Theory: matchings, planarity, and colouring. Discrete probability. Combinatorics: enumeration, combinatorial techniques and proofs.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MATH 235",
+      "MATH 240",
+      "MATH 242"
     ],
     "concomitant_courses": [
-      "COMP 303"
-    ],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisites: COMP 206, COMP 250 | Corequisite: COMP 303 | Restriction: Not open to students who have taken the 3 credit version of COMP 361. | Students must register for both COMP 361D1 and COMP 361D2 | No credit will be given for this course unless both COMP 361D1 and COMP 361D2 are successfully completed in consecutive terms"
-  },
-  {
-    "sigle": "COMP 361D2",
-    "universite": "McGill",
-    "titre": "Software Engineering Project",
-    "credits": 3,
-    "description": "See COMP 361D1 for course description.",
-    "niveau": 3,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 361D1"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisite: COMP 361D1 | No credit will be given for this course unless both COMP 361D1 and COMP 361D2 are successfully completed in consecutive terms"
-  },
-  {
-    "sigle": "COMP 362",
-    "universite": "McGill",
-    "titre": "Honours Algorithm Design",
-    "credits": 3,
-    "description": "Basic algorithmic techniques, their applications and limitations. Problem complexity, how to deal with problems for which no efficient solutions are known.",
-    "niveau": 3,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 252"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisite: COMP 252 | Restriction: Not open to students who have taken or are taking COMP 360. | Note: COMP 362 can be used instead of COMP 360 to satisfy prerequisites."
-  },
-  {
-    "sigle": "COMP 370",
-    "universite": "McGill",
-    "titre": "Introduction to Data\n Science",
-    "credits": 3,
-    "description": "Comprehensive introduction to the data science process. Orientation to the use and configuration of core data science toolkits, data collection and annotation fundamentals, principles of responsible data science, the use of quantitative tools in data science, and presentation of data science findings.",
-    "niveau": 3,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 206",
-      "COMP 250"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisites: COMP 206 and COMP 250 | Restrictions: Not open to students who have taken COMP 598 when the topic was \"Introduction to Data Science\" or \"Data Science\"."
-  },
-  {
-    "sigle": "COMP 401",
-    "universite": "McGill",
-    "titre": "Project in Biology and Computer Science",
-    "credits": 3,
-    "description": "A research project applying computational approaches to a biological problem.",
-    "niveau": 4,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 251",
-      "BIOL 301"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisite(s): COMP 251 and 9 credits of BIOL courses, BIOL 301 recommended. Department approval and project form required to register. | Restriction: Open only to students in the Major in Biology and Computer Science program. | Note: having taken BIOL 301 before COMP 401 is beneficial for finding a project within a Biology lab. | The project is (co)-supervised by a professor in Computer Science and/or Biology"
-  },
-  {
-    "sigle": "COMP 409",
-    "universite": "McGill",
-    "titre": "Concurrent Programming",
-    "credits": 3,
-    "description": "Characteristics and utility of concurrent programs; formal methods for specification, verification and development of concurrent programs; communications, synchronization, resource allocation and management, coherency and integrity.",
-    "niveau": 4,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 251",
-      "COMP 302",
-      "COMP 310",
-      "ECSE 427"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisites: COMP 251, COMP 302, and COMP 310 or ECSE 427"
-  },
-  {
-    "sigle": "COMP 417",
-    "universite": "McGill",
-    "titre": "Introduction Robotics and Intelligent Systems",
-    "credits": 3,
-    "description": "This course considers issues relevant to the design of robotic and of intelligent systems. How can robots move and interact. Robotic hardware systems. Kinematics and inverse kinematics. Sensors, sensor data interpretation and sensor fusion. Path planning. Configuration spaces. Position estimation. Intelligent systems. Spatial mapping. Multi-agent systems. Applications.",
-    "niveau": 4,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 251",
       "MATH 223",
-      "ECSE 321",
-      "COMP 206"
+      "MATH 236"
     ],
-    "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisites: COMP 251, MATH 223 and (ECSE 321 or COMP 206)."
+    "requirement_text": "Winter | Prerequisites: MATH 235 or MATH 240 or MATH 242. | Corequisites: MATH 223 or MATH 236. | Restriction: Restriction: Not open to students who have taken or are taking MATH 350."
   },
   {
-    "sigle": "COMP 421",
+    "sigle": "COMP 204",
     "universite": "McGill",
-    "titre": "Database Systems",
+    "titre": "Computer Programming for Life Sciences",
     "credits": 3,
-    "description": "Database Design: conceptual design of databases (e.g., entity-relationship model), relational data model, functional dependencies. Database Manipulation: relational algebra, SQL, database application programming, triggers, access control. Database Implementation: transactions, concurrency control, recovery, query execution and query optimization.",
-    "niveau": 4,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 206",
-      "COMP 251",
-      "COMP 302"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisites: COMP 206, COMP 251, COMP 302"
-  },
-  {
-    "sigle": "COMP 424",
-    "universite": "McGill",
-    "titre": "Artificial Intelligence",
-    "credits": 3,
-    "description": "Introduction to search methods. Knowledge representation using logic and probability. Planning and decision making under uncertainty. Introduction to machine learning.",
-    "niveau": 4,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 206",
-      "ECSE 321",
-      "MATH 323",
-      "COMP 251"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisites: (COMP 206 or ECSE 321), MATH 323 or equivalent and COMP 251. | Restriction: Not open to students who have taken or are taking ECSE 526."
-  },
-  {
-    "sigle": "COMP 445",
-    "universite": "McGill",
-    "titre": "Computational Linguistics",
-    "credits": 3,
-    "description": "Introduction to foundational ideas in computational linguistics and natural language processing. Topics include formal language theory, probability theory,\nestimation and inference, and recursively defined models of language structure. Emphasis on both the mathematical foundations of the field as well as how to\nuse these tools to understand human language.",
-    "niveau": 4,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 250",
-      "MATH 133"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisite(s): COMP 250 and MATH 133, or permission of the instructor. | Restriction: Not open to students who have taken or are taking LING 445. | Students who are taking or have taken both COMP 330 and COMP 424 are advised to take COMP 550 in place of COMP 445/LING 445. | This is a double-prefix course and is identical in content with LING 445. | Some background in linguistics at the level of LING 201 is desirable, though not critical."
-  },
-  {
-    "sigle": "COMP 451",
-    "universite": "McGill",
-    "titre": "Fundamentals of Machine Learning",
-    "credits": 3,
-    "description": "Introduction to the computational, statistical and mathematical foundations of machine learning. Algorithms for both supervised learning and unsupervised learning. Maximum likelihood estimation, neural networks, and regularization.",
-    "niveau": 4,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 251",
-      "MATH 222",
-      "MATH 223",
-      "MATH 323"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisite: COMP 251, MATH 222, MATH 223, and MATH 323. | Restriction: Not open to students who have taken or are taking COMP 551 or MATH 462."
-  },
-  {
-    "sigle": "COMP 462",
-    "universite": "McGill",
-    "titre": "Computational Biology Methods",
-    "credits": 3,
-    "description": "Application of computer science techniques to problems arising in biology and medicine, techniques for modeling evolution, aligning molecular sequences, predicting structure of a molecule and other problems from computational biology.",
-    "niveau": 4,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 251",
-      "MATH 323",
-      "MATH 203",
-      "BIOL 309"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisites: COMP 251, and MATH 323 or MATH 203 or BIOL 309 | Restriction: Not open to students who have taken or are taking COMP 561."
-  },
-  {
-    "sigle": "COMP 511",
-    "universite": "McGill",
-    "titre": "Network Science",
-    "credits": 4,
-    "description": "Selected topics in Network Science, Graph Mining and Graph Learning, including patterns in real world networks, ranking and similarity measures for graphs, graph clustering and community mining techniques, and node classification and link prediction methods.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 251",
-      "MATH 223"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisites: COMP 251 or equivalent, MATH 223 | Restrictions: Not open to students who took COMP 596 in Fall 2019, Fall 2020 or COMP 599 in Fall 2021, Fall 2022. | 1. Students are recommended to have taken MATH 222, COMP 451 or COMP 551."
-  },
-  {
-    "sigle": "COMP 512",
-    "universite": "McGill",
-    "titre": "Distributed Systems",
-    "credits": 4,
-    "description": "Models and Architectures. Application-oriented communication paradigms (e.g. remote method invocation, group communication). Naming services. Synchronization (e.g. mutual exclusion, concurrency control). Fault-tolerance (e.g. process and replication, agreement protocols). Distributed file systems. Security. Examples of distributed systems (e.g. Web, CORBA). Advanced Topics.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 310",
-      "COMP 251"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "4 hours | Prerequisites: COMP 310, COMP 251 or equivalent."
-  },
-  {
-    "sigle": "COMP 514",
-    "universite": "McGill",
-    "titre": "Applied Robotics",
-    "credits": 4,
-    "description": "The approach and the challenges in the key components of manipulators and locomotors: representations, kinematics, dynamics, rigid-body chains, redundant systems, under-actuated systems, control, planning, and perception. Practical aspects of robotics: collisions, integrating sensory feedback, and real-time software\ndevelopment.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "MATH 223",
-      "MATH 323",
-      "COMP 206",
-      "COMP 250"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisites: MATH 223, MATH 323, COMP 206, and COMP 250, or equivalents. | Restrictions: Not open to students who have taken COMP 597 when the topic was \"Applied Robotics\". | Students should be comfortable with C++ (such as from COMP 322) and a Unix-like programming environment."
-  },
-  {
-    "sigle": "COMP 520",
-    "universite": "McGill",
-    "titre": "Compiler Design",
-    "credits": 4,
-    "description": "The structure of a compiler. Lexical analysis. Parsing techniques. Syntax directed translation. Run-time implementation of various programming language constructs. Introduction to code generation for an idealized machine. Students will implement parts of a compiler.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 273",
-      "COMP 302"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours, 1 hour consultation | Prerequisites: COMP 273 and COMP 302"
-  },
-  {
-    "sigle": "COMP 521",
-    "universite": "McGill",
-    "titre": "Modern Computer Games",
-    "credits": 4,
-    "description": "Genre and history of games, basic game design, storytelling and narrative analysis, game engines, design of virtual worlds, real-time 2D graphics, game physics and physical simulation, pathfinding and game AI, content generation, 3D game concerns, multiplayer and distributed games, social issues.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 251",
-      "MATH 223",
-      "COMP 303",
-      "COMP 361"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "4 hours | Prerequisite: COMP 251, MATH 223 and (COMP 303 or COMP 361)."
-  },
-  {
-    "sigle": "COMP 523",
-    "universite": "McGill",
-    "titre": "Language-based Security",
-    "credits": 3,
-    "description": "State-of-the-art language-based techniques for enforcing security policies in distributed computing environments. Static techniques (such as type- and proof-checking technology), verification of security policies and applications such as proof-carrying code, certifying compilers, and proof-carrying authentication.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 302",
-      "COMP 330"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisites: COMP 302, COMP 330."
-  },
-  {
-    "sigle": "COMP 525",
-    "universite": "McGill",
-    "titre": "Formal Verification",
-    "credits": 3,
-    "description": "Propositional logic - syntax and semantics, temporal logic, other modal logics, model checking, symbolic model checking, binary decision diagrams, other approaches to formal verification.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 251",
-      "COMP 330"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisites: COMP 251 and COMP 330."
-  },
-  {
-    "sigle": "COMP 527",
-    "universite": "McGill",
-    "titre": "Logic and Computation",
-    "credits": 3,
-    "description": "Introduction to modern constructive logic, its mathematical properties, and its numerous applications in computer science.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 302"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisite: COMP 302 | Restriction: Not open to students who have taken COMP 426"
-  },
-  {
-    "sigle": "COMP 529",
-    "universite": "McGill",
-    "titre": "Software Architecture",
-    "credits": 4,
-    "description": "Development, analysis, and maintenance of software architectures, with special focus on modular decomposition and reverse engineering.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 303"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "4 hours | Prerequisite: COMP 303."
-  },
-  {
-    "sigle": "COMP 531",
-    "universite": "McGill",
-    "titre": "Advanced Theory of Computation",
-    "credits": 3,
-    "description": "Models for sequential and parallel computations: Turing machines, boolean circuits. The equivalence of various models and the Church-Turing thesis. Unsolvable problems. Model dependent measures of computational complexity. Abstract complexity theory. Exponentially and super-exponentially difficult problems. Complete problems.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 330"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisite: COMP 330"
-  },
-  {
-    "sigle": "COMP 533",
-    "universite": "McGill",
-    "titre": "Model-Driven Software Development",
-    "credits": 3,
-    "description": "Model-driven software development; requirements engineering based on use cases and scenarios; object-oriented modelling using UML and OCL to establish complete and precise analysis and design documents; mapping to Java. Introduction to meta-modelling and model transformations, use of modelling tools.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "ECSE 321",
-      "COMP 303",
-      "COMP 361"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisite: ECSE 321 or COMP 303 or COMP 361"
-  },
-  {
-    "sigle": "COMP 535",
-    "universite": "McGill",
-    "titre": "Computer Networks 1",
-    "credits": 4,
-    "description": "Fundamental design principles, elements, and protocols of computer networks, focusing on the current Internet. Topics include: layered architecture, direct link networks, switching and forwarding, bridge routing, congestion control, end-to-end protocols application of DNS, HTTP, P2P, fair queuing, performance modeling and analysis.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 310",
-      "ECSE 427"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisite: COMP 310 or ECSE 427"
-  },
-  {
-    "sigle": "COMP 540",
-    "universite": "McGill",
-    "titre": "Matrix Computations",
-    "credits": 4,
-    "description": "Designing and programming reliable numerical algorithms. Stability of algorithms and condition of problems. Reliable and efficient algorithms for solution of equations, linear least squares problems, the singular value decomposition, the eigenproblem and related problems. Perturbation analysis of problems. Algorithms for structured matrices.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "MATH 327",
-      "COMP 350"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisite: MATH 327 or COMP 350"
-  },
-  {
-    "sigle": "COMP 546",
-    "universite": "McGill",
-    "titre": "Computational Perception",
-    "credits": 4,
-    "description": "Computational models of visual perception and audition. Vision problems include stereopsis, motion, focus, perspective, color. Audition problems include source localization and recognition. Emphasis on physics of image formation, sensory signal processing, neural pathways and computation, psychophysical methods.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Restrictions: Not open to students who have taken COMP 646."
-  },
-  {
-    "sigle": "COMP 547",
-    "universite": "McGill",
-    "titre": "Cryptography and Data Security",
-    "credits": 4,
-    "description": "This course presents an in-depth study of modern cryptography and data security. The basic information theoretic and computational properties of classical and modern cryptographic systems are presented, followed by a cryptanalytic examination of several important systems. We will study the applications of cryptography to the security of systems.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 360",
-      "COMP 362",
-      "MATH 323"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisites: COMP 360 or COMP 362, MATH 323."
-  },
-  {
-    "sigle": "COMP 549",
-    "universite": "McGill",
-    "titre": "Brain-Inspired Artificial Intelligence",
-    "credits": 3,
-    "description": "Overview of the influence of neuroscience and psychology on Artificial Intelligence (AI). Historical topics: perceptrons, the PDP framework, Hopfield nets, Boltzmann and Helmholtz machines, and the behaviourist origins of reinforcement learning. Modern topics: deep learning, attention, memory and consciousness. Emphasis on understanding the interdisciplinary foundations of modern AI.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "MATH 222",
-      "MATH 223",
-      "MATH 323"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisites: MATH 222, MATH 223, and MATH 323; or equivalents. | Restrictions: Not open to students who have taken COMP 596 when the topic was \"Brain-Inspired Artificial Intelligence\"."
-  },
-  {
-    "sigle": "COMP 550",
-    "universite": "McGill",
-    "titre": "Natural Language Processing",
-    "credits": 3,
-    "description": "An introduction to the computational modelling of natural language, including algorithms, formalisms, and applications. Computational morphology, language modelling, syntactic parsing, lexical and compositional semantics, and discourse analysis. Selected applications such as automatic summarization, machine translation, and speech processing. Machine learning techniques for natural language processing.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "MATH 323",
-      "ECSE 305",
-      "COMP 251",
-      "COMP 252"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisite(s): MATH 323 or ECSE 305, COMP 251 or COMP 252 | Restriction(s): Not open to students who have taken COMP 599 in 201509 or 201609."
-  },
-  {
-    "sigle": "COMP 551",
-    "universite": "McGill",
-    "titre": "Applied Machine Learning",
-    "credits": 4,
-    "description": "Selected topics in machine learning and data mining, including clustering, neural networks, support vector machines, decision trees. Methods include feature selection and dimensionality reduction, error estimation and empirical validation, algorithm design and parallelization, and handling of large data sets. Emphasis on good methods and practices for deployment of real systems.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "MATH 323",
-      "ECSE 205",
-      "COMP 202",
-      "MATH 133",
-      "MATH 222"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisite(s): MATH 323 or ECSE 205, COMP 202, MATH 133, MATH 222 (or their equivalents). | Restriction(s): Not open to students who have taken or are taking COMP 451, ECSE 551, MATH 462, or PSYC 560. | Some background in Artificial Intelligence is recommended, e.g. COMP-424 or ECSE-526, but not required."
-  },
-  {
-    "sigle": "COMP 552",
-    "universite": "McGill",
-    "titre": "Combinatorial Optimization",
-    "credits": 4,
-    "description": "Algorithmic and structural approaches in combinatorial optimization with a focus upon theory and applications. Topics include: polyhedral methods, network optimization, the ellipsoid method, graph algorithms, matroid theory and submodular functions.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 362"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "4 hours | Prerequisite: Math 350 or COMP 362 (or equivalent). | Restriction: This course is reserved for undergraduate honours students and graduate students. Not open to students who have taken or are taking MATH 552."
-  },
-  {
-    "sigle": "COMP 555",
-    "universite": "McGill",
-    "titre": "Information Privacy",
-    "credits": 4,
-    "description": "Conceptual foundations of information privacy: security and cryptography, privacy by design, privacy threats. Technical controls for supporting privacy: authorization, authentication, access control, malware and intrusion detection. Application-specific privacy concerns of databases, web and mobile applications, cloud storage.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 303"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisite: COMP 303 | Restrictions: Not open to students who have taken COMP 599 when the topic was \"Topics in Mobile Application Development\"."
-  },
-  {
-    "sigle": "COMP 557",
-    "universite": "McGill",
-    "titre": "Fundamentals of Computer Graphics",
-    "credits": 4,
-    "description": "Fundamental mathematical, algorithmic and representational issues in computer graphics: overview of graphics pipeline, homogeneous coordinates, projective transformations, line-drawing and rasterization, hidden surface removal, surface modelling (quadrics, bicubics, meshes), rendering (lighting, reflectance models, ray tracing, texture mapping), compositing colour perception, and other selected topics.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "MATH 222",
-      "MATH 223",
-      "COMP 250",
-      "COMP 206"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisite: MATH 222, MATH 223, COMP 250, COMP 206"
-  },
-  {
-    "sigle": "COMP 558",
-    "universite": "McGill",
-    "titre": "Fundamentals of Computer Vision",
-    "credits": 4,
-    "description": "Image filtering, edge detection, image features and histograms, image segmentation, image motion and tracking, projective geometry, camera calibration, homographies, epipolar geometry and stereo, point clouds and 3D registration. Applications in computer graphics and robotics.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 251",
-      "MATH 222",
-      "MATH 223"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisites: COMP 251, MATH 222, MATH 223"
-  },
-  {
-    "sigle": "COMP 559",
-    "universite": "McGill",
-    "titre": "Fundamentals of Computer Animation",
-    "credits": 4,
-    "description": "Fundamental mathematical and computational issues in computer animation with a focus on physics based simulation: overview of numerical integration methods, accuracy and absolute stability, stiff systems and constraints, rigid body motion, collision detection and response, friction, deformation, stable fluid simulation, use of motion capture, and other selected topics.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "MATH 222",
-      "MATH 223",
-      "COMP 206",
-      "COMP 250"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisite(s): MATH 222, MATH 223, COMP 206, COMP 250"
-  },
-  {
-    "sigle": "COMP 561",
-    "universite": "McGill",
-    "titre": "Computational Biology Methods and Research",
-    "credits": 4,
-    "description": "Application of computer science techniques to problems arising in biology and medicine, techniques for modeling evolution, aligning molecular sequences, predicting structure of a molecule and other problems from computational biology. An in-depth exploration of key research areas.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 251",
-      "MATH 323",
-      "MATH 203",
-      "BIOL 309"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "4 hours | Prerequisites: COMP 251, and MATH 323 or MATH 203 or BIOL 309 | Restriction: Not open to students who have taken or are taking COMP 462. | Note: Additional work will consist of assignments and of a substantial final project that will require to put in practice the concepts covered in the course."
-  },
-  {
-    "sigle": "COMP 562",
-    "universite": "McGill",
-    "titre": "Theory of Machine Learning",
-    "credits": 4,
-    "description": "Concentration inequalities, PAC model, VC dimension, Rademacher complexity, convex optimization, gradient descent, boosting, kernels, support vector machines, regression and learning bounds. Further topics selected from: Gaussian processes, online learning, regret bounds, basic neural network theory.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "MATH 462",
-      "COMP 451",
-      "COMP 551",
-      "MATH 222",
-      "MATH 223",
-      "MATH 324",
-      "ECSE 551"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisites: MATH 462 or COMP 451 or (COMP 551, MATH 222, MATH 223 and MATH 324) or ECSE 551. | Restrictions: Not open to students who have taken or are taking MATH 562. Not open to students who have taken COMP 599 when the topic was \"Statistical Learning Theory\" or \"Mathematical Topics for Machine Learning\". Not open to students who have taken COMP 598 when the topic was \"Mathematical Foundations of Machine Learning\"."
-  },
-  {
-    "sigle": "COMP 565",
-    "universite": "McGill",
-    "titre": "Machine Learning in Genomics and Healthcare",
-    "credits": 4,
-    "description": "Linear models in statistical genetics, causal inference, single-cell genomics, multi-omic learning, electronic health record mining. Applications of machine learning techniques: linear regression, latent factor models, variational Bayesian inference, neural networks, model interpretation.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "BIOL 202",
-      "BIOL 302",
-      "MATH 324",
-      "COMP 451",
-      "COMP 551"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisites: (BIOL 202 or BIOL 302) and MATH 324 and (COMP 451 or COMP 551), or equivalents. | Restrictions: Not open to students who have taken COMP 597 or COMP 598 when the topic was \"Machine Learning in Genomics and Healthcare\"."
-  },
-  {
-    "sigle": "COMP 567",
-    "universite": "McGill",
-    "titre": "Discrete Optimization 2",
-    "credits": 3,
-    "description": "Formulation, solution and applications of integer programs. Branch and bound, cutting plane, and column generation algorithms. Combinatorial optimization. Polyhedral methods. A large emphasis will be placed on modelling. Students will select and present a case study of an application of integer programming in an area of their choice.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 566",
-      "MATH 417"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "3 hours | Prerequisites: COMP 566 or MATH 417"
-  },
-  {
-    "sigle": "COMP 579",
-    "universite": "McGill",
-    "titre": "Reinforcement Learning",
-    "credits": 4,
-    "description": "Bandit algorithms, finite Markov decision processes, dynamic programming, Monte-Carlo Methods, temporal-difference learning, bootstrapping, planning, approximation methods, on versus off policy learning, policy gradient methods temporal\nabstraction and inverse reinforcement learning.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 451",
-      "COMP 551",
-      "MATH 222",
-      "MATH 223",
-      "MATH 323"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisite: A university level course in machine learning such as COMP 451 or COMP 551. Background in calculus, linear algebra, probability at the level of MATH 222, MATH 223, MATH 323, respectively."
-  },
-  {
-    "sigle": "COMP 585",
-    "universite": "McGill",
-    "titre": "Intelligent Software\n Systems\n",
-    "credits": 4,
-    "description": "Practical aspects of building software systems with machine learning components: requirements, design, delivery, quality assessment, and collaboration. Consideration of a user-centered mindset in development; integration of design and development considerations relevant to artificial intelligence, such as security, privacy, and fairness.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 303",
-      "COMP 424",
-      "COMP 551"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisites: COMP 303, COMP 424 or COMP 551 | Restrictions: Not open to students who have taken COMP 598 or COMP 599 when the topic was \"Software Engineering for Building Intelligent Systems\"."
-  },
-  {
-    "sigle": "COMP 588",
-    "universite": "McGill",
-    "titre": "Probabilistic Graphical Models",
-    "credits": 4,
-    "description": "Representation, inference and learning with graphical models; directed and undirected graphical models; exact inference; approximate inference using deterministic optimization based methods, stochastic sampling based methods; learning with complete and partial observations.",
-    "niveau": 5,
-    "hors_perimetre": false,
-    "prerequisite_courses": [
-      "COMP 251",
-      "MATH 323",
-      "MATH 324"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisites: COMP 251, MATH 323, MATH 324; or equivalents. | Restrictions: Not open to students who have taken COMP 766 or COMP 767 when the topic was \"Probabilistic Graphical Models\". | A background in AI (COMP 424) and machine learning (COMP 451 or COMP 551) is highly recommended."
-  },
-  {
-    "sigle": "BIOL 112",
-    "universite": "McGill",
-    "titre": "Cell and Molecular Biology",
-    "credits": 3,
-    "description": "The cell: ultrastructure, division, chemical constituents and reactions. Bioenergetics: photosynthesis and respiration. Principles of genetics, the molecular basis of inheritance and biotechnology.",
-    "niveau": 1,
-    "hors_perimetre": true,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [
-      "BIOL 115",
-      "AEBI 122"
-    ],
-    "requirement_text": "Winter | 2 hours lecture and 2 hours laboratory | Labs are held weekly, starting from the second week of term. Attendance at the first lab is mandatory to confirm registration in the course. | This course serves as an alternative to CEGEP objective code 00XU | Restriction: Not open to students who have taken or are taking CEGEP objective 00XU or equivalent;or BIOL 115; or AEBI 122"
-  },
-  {
-    "sigle": "BIOL 202",
-    "universite": "McGill",
-    "titre": "Basic Genetics",
-    "credits": 3,
-    "description": "Introduction to basic principles, and to modern advances, problems and applications in the genetics of higher and lower organisms with examples representative of the biological sciences.",
+    "description": "Computer Science (Sci): Computer programming in a high level language: variables, expressions, types, functions, conditionals, loops, objects and classes. Introduction to algorithms, modular software design, libraries, file input/output, debugging. Emphasis on applications in the life sciences.",
     "niveau": 2,
     "hors_perimetre": true,
-    "prerequisite_courses": [
-      "BIOL 200",
-      "BIOL 219"
+    "prerequisite_courses": [],
+    "concomitant_courses": [
+      "BIOL 112"
     ],
-    "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "Winter | 3 hours lecture, 1 hour optional tutorial per week | Prerequisite: BIOL 200 or BIOL 219 | Restriction: Not open to students who have taken or are taking LSCI 204 or BIOL 302."
-  },
-  {
-    "sigle": "BIOL 301",
-    "universite": "McGill",
-    "titre": "Cell and Molecular Laboratory",
-    "credits": 4,
-    "description": "An introduction to biology research and communication with a focus on cell and\nmolecular biology. Through conducting a series of project-based experiments and writing a final report, molecular and synthetic biology techniques such as gene cloning, manipulation, protein isolation and characterization and how\nresearch is conducted, analyzed and communicated will be addressed. In addition, an\nintroduction to bioinformatics methods and their role in analysis will be provided.",
-    "niveau": 3,
-    "hors_perimetre": true,
-    "prerequisite_courses": [
-      "BIOL 200",
-      "BIOL 201",
-      "ANAT 212",
-      "BIOC 212",
-      "BIOL 219"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Fall or Winter | 1 hour lecture and one 6-hour laboratory | Prerequisites: BIOL 200, BIOL 201 (or ANAT 212/BIOC 212); or BIOL 219 | Restrictions: Not open to students who have taken or are taking BIOC 300, or BIOC 220 and BIOC 320. Requires departmental approval. | For approval email maxime.leroux@mcgill.ca. Specify your ID number as well as the term and two lab day preferences."
-  },
-  {
-    "sigle": "BIOL 302",
-    "universite": "McGill",
-    "titre": "Fundamentals of Genetics and Genomics",
-    "credits": 3,
-    "description": "Trait variation within and across populations and species,and how this reflects variation within genomes. Case studies and problem-solving approaches will be used to illustrate the tools of genomics, molecular genetics and classical genetics, and how they are employed to understand the mechanisms of phenotypic variation.Topics will include evolutionary, developmental and  human genetics. Application of multiple levels of genetic analysis, formulation, and testing of hypotheses on critical topics ranging from evolution to developmental biology to human genetics.",
-    "niveau": 3,
-    "hors_perimetre": true,
-    "prerequisite_courses": [
-      "BIOL 200",
-      "BIOL 219",
-      "BIOL 215"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisites: BIOL 200 or BIOL 219; BIOL 215, or permission of instructor. | Restrictions: Not open to students who have taken or are taking BIOL202."
-  },
-  {
-    "sigle": "BIOL 309",
-    "universite": "McGill",
-    "titre": "Mathematical Models in Biology",
-    "credits": 3,
-    "description": "Application of finite difference and differential equations to problems in cell and developmental biology, ecology and physiology. Qualitative, quantitative and graphical techniques are used to analyze mathematical models and to compare theoretical predictions with experimental data.",
-    "niveau": 3,
-    "hors_perimetre": true,
-    "prerequisite_courses": [
-      "BIOL 200",
-      "BIOL 201",
-      "ANAT 212",
-      "BIOC 212",
-      "BIOL 219"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Fall | 3 hours lecture | Prerequisites:BIOL 200, BIOL 201 (or ANAT 212/BIOC 212); or BIOL 219"
+    "requirement_text": "Co-requisite: BIOL 112 | Restrictions: Not open to students who have taken or are taking COMP 202, COMP 208, or GEOG 333; not open to students who have taken or are taking COMP 206 or COMP 250. | To take COMP 204, students should have a solid understanding of pre-calculus fundamentals such as polynomial, trigonometric, exponential, and logarithmic functions."
   },
   {
     "sigle": "COMP 208",
@@ -1116,91 +327,34 @@
     "requirement_text": "3 hours | Corequisite: MATH 133 and MATH 141, or equivalents. | Restrictions: Not open to students who have taken or are taking COMP 202, COMP 204, orGEOG 333; not open to students who have taken or are taking COMP 206 or COMP 250. | COMP 202 is intended as a general introductory course, while COMP 208 is intended for students with sufficient math background and in (non-life) science or engineering fields."
   },
   {
-    "sigle": "ECSE 205",
+    "sigle": "COMP 230",
     "universite": "McGill",
-    "titre": "Probability and Statistics for Engineers",
+    "titre": "Logic and Computability",
     "credits": 3,
-    "description": "Probability: basic probability model, conditional probability, Bayes rule, random variables and vectors, distribution and density functions, common distributions in engineering, expectation, moments, independence, laws of large numbers, central limit theorem. Statistics: descriptive measures of engineering data, sampling distributions, estimation of mean and variance, confidence intervals, hypothesis testing, linear regression.",
+    "description": "Propositional Logic, predicate calculus, proof systems, computability Turing machines, Church-Turing thesis, unsolvable problems, completeness, incompleteness, Tarski semantics, uses and misuses of Gödel's theorem.",
+    "niveau": 2,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "3 hours | Prerequisite: CEGEP level mathematics."
+  },
+  {
+    "sigle": "COMP 252",
+    "universite": "McGill",
+    "titre": "Honours Algorithms and Data Structures",
+    "credits": 3,
+    "description": "The design and analysis of data structures and algorithms. The description of various computational problems and the algorithms that can be used to solve them, along with their associated data structures. Proving the correctness of algorithms and determining their computational complexity.",
     "niveau": 2,
     "hors_perimetre": true,
     "prerequisite_courses": [
-      "MATH 262"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisite: MATH 262 | Not open to students who have taken ECSE 305. | (3-2-4)"
-  },
-  {
-    "sigle": "ECSE 305",
-    "universite": "McGill",
-    "titre": "Probability and Random Signals 1",
-    "credits": 3,
-    "description": "The basic probability model, the heuristics of model-building and the additivity of probability; classical models; conditional probability and Bayes rule; random variables and vectors, distribution and density functions, expectation; statistical independence, laws of large numbers, central limit theorem; introduction to random processes and random signal analysis.",
-    "niveau": 3,
-    "hors_perimetre": true,
-    "prerequisite_courses": [
-      "ECSE 303",
-      "ECSE 306"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "(3-2-4) | Prerequisite: ECSE 303 or ECSE 306. | Tutorials assigned by instructor."
-  },
-  {
-    "sigle": "ECSE 321",
-    "universite": "McGill",
-    "titre": "Introduction to Software Engineering",
-    "credits": 3,
-    "description": "Design, development and testing of software systems. Software life cycle: requirements analysis, software architecture and design, implementation, integration, test planning, and maintenance. The course involves a group project.",
-    "niveau": 3,
-    "hors_perimetre": true,
-    "prerequisite_courses": [
-      "ECSE 223",
-      "COMP 202",
-      "COMP 208",
-      "ECSE 202"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "(3-2-4) | Prerequisites: ECSE 223 and (COMP 202 or COMP 208 or ECSE 202) | Tutorials assigned by instructor."
-  },
-  {
-    "sigle": "ECSE 427",
-    "universite": "McGill",
-    "titre": "Operating Systems",
-    "credits": 3,
-    "description": "Operating system services, file system organization, disk and cpu scheduling, virtual memory management, concurrent processing and distributed systems, protection and security. Aspects of the DOS and UNIX operating systems and the C programming language. Programs that communicate between workstations across a network.",
-    "niveau": 4,
-    "hors_perimetre": true,
-    "prerequisite_courses": [
-      "ECSE 324",
-      "COMP 273"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "(3-1-5) | Prerequisite: ECSE 324 or COMP 273 | Tutorials assigned by instructor."
-  },
-  {
-    "sigle": "ECSE 551",
-    "universite": "McGill",
-    "titre": "Machine Learning for Engineers",
-    "credits": 4,
-    "description": "Introduction to machine learning: challenges and fundamental concepts. Supervised learning: Regression and Classification. Unsupervised learning. Curse of dimensionality: dimension reduction and feature selection. Error estimation and empirical validation. Emphasis on good methods and practices for deployment\nof real systems.",
-    "niveau": 5,
-    "hors_perimetre": true,
-    "prerequisite_courses": [
-      "ECSE 250",
       "COMP 250",
-      "ECSE 205",
-      "MATH 323"
+      "MATH 235",
+      "MATH 240"
     ],
-    "concomitant_courses": [
-      "ECSE 343",
-      "ECSE 543",
-      "MATH 247"
-    ],
+    "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "Corequisite: ECSE 343 or ECSE 543 or MATH 247 | Prerequisite(s): (ECSE 250 or COMP 250) and (ECSE 205 or MATH 323) | Restrictions: Not open to students who have taken or are taking COMP 551."
+    "requirement_text": "3 hours | Prerequisite: COMP 250 and either MATH 235 or MATH 240 | Restrictions: (1) Open only to students in Honours programs. (2) Students cannot receive credit for both COMP 251 and COMP 252. | COMP 252 uses basic combinatorial counting methods that are covered in MATH 240 but not in MATH 235. Students who are unfamiliar with these methods should speak with the instructor for guidance."
   },
   {
     "sigle": "MATH 133",
@@ -1218,48 +372,21 @@
     "requirement_text": "3 hours lecture, 1 hour tutorial | Prerequisite: a course in functions | Restriction(s): 1) Not open to students who have taken CEGEP objective 00UQ or equivalent. 2) Not open to students who have taken or are taking MATH 123, except by permission of the Department of Mathematics and Statistics."
   },
   {
-    "sigle": "MATH 203",
+    "sigle": "MATH 141",
     "universite": "McGill",
-    "titre": "Principles of Statistics 1",
-    "credits": 3,
-    "description": "Examples of statistical data and the use of graphical means to summarize the data. Basic distributions arising in the natural and behavioural sciences. The logical meaning of a test of significance and a confidence interval. Tests of significance and confidence intervals in the one and two sample setting (means, variances and proportions).",
-    "niveau": 2,
-    "hors_perimetre": true,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "No calculus prerequisites | Restriction: This course is intended for students in all disciplines. For extensive course restrictions covering statistics courses see Section 3.6.1 of the Arts and of the Science sections of the calendar regarding course overlaps. | You may not be able to receive credit for this course and other statistic courses. Be sure to check the Course Overlap section under Faculty Degree Requirements in the Arts or Science section of the Calendar. Students should consult http://www.mcgill.ca/students/transfercredit for information regarding transfer credits for this course."
-  },
-  {
-    "sigle": "MATH 222",
-    "universite": "McGill",
-    "titre": "Calculus 3",
-    "credits": 3,
-    "description": "Taylor series, Taylor's theorem in one and several variables. Review of vector geometry. Partial differentiation, directional derivative. Extreme of functions of 2 or 3 variables. Parametric curves and arc length. Polar and spherical coordinates. Multiple integrals.",
-    "niveau": 2,
+    "titre": "Calculus 2",
+    "credits": 4,
+    "description": "The definite integral. Techniques of integration. Applications. Introduction to sequences and series.",
+    "niveau": 1,
     "hors_perimetre": true,
     "prerequisite_courses": [
-      "MATH 141",
-      "MATH 133"
+      "MATH 139",
+      "MATH 140",
+      "MATH 150"
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "Prerequisite: MATH 141. Familiarity with vector geometry or Corequisite: MATH 133 | Restriction: Not open to students who have taken or are taking MATH 150, MATH 151, MATH206, or MATH 262."
-  },
-  {
-    "sigle": "MATH 223",
-    "universite": "McGill",
-    "titre": "Linear Algebra",
-    "credits": 3,
-    "description": "Review of matrix algebra, determinants and systems of linear equations. Vector spaces, linear operators and their matrix representations, orthogonality. Eigenvalues and eigenvectors, diagonalization of Hermitian matrices. Applications.",
-    "niveau": 2,
-    "hors_perimetre": true,
-    "prerequisite_courses": [
-      "MATH 133"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Fall and Winter | Prerequisite: MATH 133 or equivalent | Restriction: Not open to students in Mathematics programs nor to students who have taken or are taking MATH 206, MATH 236, MATH 247, or MATH 251."
+    "requirement_text": "Prerequisites: MATH 139 or MATH 140 or MATH 150. | Restriction(s): Not open to students who have taken CEGEP objective 00UP or equivalent. | Restriction(s): Not open to students who have taken or are taking MATH 122,except by permission of the Department of Mathematics and Statistics. | Each Tutorial section is enrolment limited"
   },
   {
     "sigle": "MATH 235",
@@ -1277,124 +404,47 @@
     "requirement_text": "Fall | 3 hours lecture; 1 hour tutorial | Prerequisite: MATH 133 or equivalent | Restrictions: Not open to students who have taken or are taking MATH 245."
   },
   {
-    "sigle": "MATH 240",
+    "sigle": "MATH 236",
     "universite": "McGill",
-    "titre": "Discrete Structures",
+    "titre": "Algebra 2",
     "credits": 3,
-    "description": "Introduction to discrete mathematics and applications. Logical reasoning and methods of proof. Elementary number theory and cryptography: prime numbers, modular equations, RSA encryption. Combinatorics: basic enumeration, combinatorial methods, recurrence equations. Graph theory: trees, cycles, planar\ngraphs.",
+    "description": "Linear equations over a field. Introduction to vector spaces. Linear mappings. Matrix representation of linear mappings. Determinants. Eigenvectors and\neigenvalues. Diagonalizable operators. Cayley-Hamilton theorem. Bilinear and quadratic forms. Inner product spaces, orthogonal diagonalization of symmetric\nmatrices. Canonical forms.",
     "niveau": 2,
     "hors_perimetre": true,
-    "prerequisite_courses": [],
-    "concomitant_courses": [
-      "MATH 133"
-    ],
-    "equivalent_courses": [],
-    "requirement_text": "Fall and Winter | Corequisite: MATH 133. | Restriction: For students in any Computer Science, Computer Engineering, or Software Engineering programs. Others only with the instructor's permission. Not open to students who have taken or are taking MATH 235."
-  },
-  {
-    "sigle": "MATH 318",
-    "universite": "McGill",
-    "titre": "Mathematical Logic",
-    "credits": 3,
-    "description": "Propositional logic: truth-tables, formal proof systems, completeness and compactness theorems, Boolean algebras; first-order logic: formal proofs, Gödel's completeness theorem; axiomatic theories; set theory; Cantor's theorem, axiom of choice and Zorn's lemma, Peano arithmetic; Gödel's incompleteness theorem.",
-    "niveau": 3,
-    "hors_perimetre": true,
     "prerequisite_courses": [
-      "MATH 235",
-      "MATH 240",
-      "MATH 242"
+      "MATH 235"
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "Fall | Prerequisite(s): MATH 235 or MATH 240 or MATH 242."
+    "requirement_text": "Winter | Prerequisite: MATH 235"
   },
   {
-    "sigle": "MATH 323",
+    "sigle": "MATH 242",
     "universite": "McGill",
-    "titre": "Probability",
+    "titre": "Analysis 1",
     "credits": 3,
-    "description": "Sample space, events, conditional probability, independence of events, Bayes' Theorem. Basic combinatorial probability, random variables, discrete and continuous univariate and multivariate distributions. Independence of random variables. Inequalities, weak law of large numbers, central limit theorem.",
-    "niveau": 3,
+    "description": "A rigorous presentation of sequences and of real numbers and basic properties of continuous and differentiable functions on the real line.",
+    "niveau": 2,
     "hors_perimetre": true,
     "prerequisite_courses": [
       "MATH 141"
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "Prerequisites: MATH 141 or equivalent. | Restriction: Intended for students in Science, Engineering and related disciplines, who have had differential and integral calculus | Restriction: Not open to students who have taken or are taking MATH 356"
+    "requirement_text": "Fall | Prerequisite: MATH 141 | Restriction(s): Not open to students who are taking or who have taken MATH 254."
   },
   {
-    "sigle": "MATH 324",
+    "sigle": "MATH 363",
     "universite": "McGill",
-    "titre": "Statistics",
-    "credits": 3,
-    "description": "Sampling distributions, point and interval estimation, hypothesis testing, analysis of variance, contingency tables, nonparametric inference, regression, Bayesian inference.",
+    "titre": "",
+    "credits": 0,
+    "description": "",
     "niveau": 3,
     "hors_perimetre": true,
-    "prerequisite_courses": [
-      "MATH 323"
-    ],
+    "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "Fall and Winter | Prerequisite: MATH 323 or equivalent | Restriction: Not open to students who have taken or are taking MATH 357 | You may not be able to receive credit for this course and other statistic courses. Be sure to check the Course Overlap section under Faculty Degree Requirements in the Arts or Science section of the Calendar."
-  },
-  {
-    "sigle": "MATH 327",
-    "universite": "McGill",
-    "titre": "Matrix Numerical Analysis",
-    "credits": 3,
-    "description": "An overview of numerical methods for linear algebra applications and their analysis. Problem classes include linear systems, least squares problems and eigenvalue problems.",
-    "niveau": 3,
-    "hors_perimetre": true,
-    "prerequisite_courses": [
-      "MATH 223",
-      "MATH 236",
-      "MATH 247",
-      "MATH 251",
-      "COMP 202"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Winter | Prerequisites: MATH 223 or MATH 236 or MATH 247 or MATH 251, COMP 202 or consent of instructor."
-  },
-  {
-    "sigle": "MATH 417",
-    "universite": "McGill",
-    "titre": "Linear Optimization",
-    "credits": 3,
-    "description": "An introduction to linear optimization and its applications: Duality theory, fundamental theorem, sensitivity analysis, convexity, simplex algorithm, interior-point methods, quadratic optimization, applications in game theory.",
-    "niveau": 4,
-    "hors_perimetre": true,
-    "prerequisite_courses": [
-      "COMP 202",
-      "MATH 223",
-      "MATH 236",
-      "MATH 314"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisites: COMP 202, and MATH 223 or MATH 236, and MATH 314 or equivalent | Restriction: Not open to students who have taken or are taking MATH 487 or MATH 517."
-  },
-  {
-    "sigle": "MATH 462",
-    "universite": "McGill",
-    "titre": "Machine Learning\n",
-    "credits": 3,
-    "description": "Introduction to supervised learning: decision trees, nearest neighbors, linear models, neural networks. Probabilistic learning: logistic regression, Bayesian methods, naive Bayes. Classification with linear models and convex losses. Unsupervised learning: PCA, k-means, encoders, and decoders. Statistical learning theory: PAC learning and VC dimension. Training models with gradient descent and stochastic gradient descent. Deep neural networks. Selected topics chosen from: generative models, feature representation learning, computer vision.",
-    "niveau": 4,
-    "hors_perimetre": true,
-    "prerequisite_courses": [
-      "MATH 236",
-      "MATH 247",
-      "MATH 251",
-      "MATH 248",
-      "MATH 314",
-      "MATH 358",
-      "COMP 202"
-    ],
-    "concomitant_courses": [],
-    "equivalent_courses": [],
-    "requirement_text": "Prerequisites: (MATH 236 or MATH 247 or MATH 251) and (MATH 248 or MATH 314 or MATH 358) and (COMP 202 or equivalent or permission of the instructor). | Restriction: Not open to students who have taken or are taking COMP 451 or COMP 551."
+    "requirement_text": ""
   },
   {
     "sigle": "PHIL 210",

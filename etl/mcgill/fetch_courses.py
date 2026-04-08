@@ -1,16 +1,14 @@
 """
-Scrape le McGill Course Catalogue (https://coursecatalogue.mcgill.ca) pour
-tous les cours COMP.
+Scrape le McGill Course Catalogue pour le programme Major in Computer Science.
 
-Sources de découverte :
-  1. Les codes COMP extraits du PDF (etl/mcgill/raw_courses.json existant)
-  2. L'index A-Z du catalogue pour compléter
+Stratégie :
+  1. Page programme → extraire tous les cours listés dans les tables sc_courselist
+     (COMP, MATH et tout autre sigle) — ce sont les cours du périmètre principal.
+  2. Pour chaque cours → page individuelle → titre, crédits, description,
+     préalables, corequis, équivalences.
+  3. Prérequis référencés mais absents du programme → hors-périmètre, fetchés aussi.
 
-Pour chaque cours COMP, récupère :
-  id, name, credits, description, prerequisite_courses,
-  concomitant_courses, equivalent_courses, requirement_text
-
-Sauvegarde dans etl/mcgill/raw_courses.json (même schéma que etl/udem/).
+Sauvegarde dans etl/mcgill/raw_courses.json.
 """
 
 import json
@@ -23,9 +21,11 @@ import requests
 from bs4 import BeautifulSoup
 
 BASE_URL    = "https://coursecatalogue.mcgill.ca"
-AZ_URL      = f"{BASE_URL}/azindex/"
+PROGRAM_URL = (
+    f"{BASE_URL}/en/undergraduate/science/programs/computer-science"
+    "/computer-science-major-bsc/"
+)
 OUTPUT_FILE = Path(__file__).parent / "raw_courses.json"
-PDF_JSON    = Path(__file__).parent / "raw_courses.json"  # codes déjà extraits du PDF
 
 HEADERS = {
     "User-Agent": (
@@ -40,53 +40,66 @@ HEADERS = {
 SESSION = requests.Session()
 SESSION.headers.update(HEADERS)
 
-# Regex pour extraire les codes de cours (ex: COMP 202, MATH 240, ECSE 321)
-COURSE_CODE_RE = re.compile(r"\b([A-Z]{2,4})\s+(\d{3}[A-Z0-9]*)\b")
+COURSE_CODE_RE = re.compile(r"\b([A-Z]{2,5})\s+(\d{3}[A-Z0-9]*)\b")
 
 
-# ── Découverte ────────────────────────────────────────────────────────────────
+# ── Page programme ────────────────────────────────────────────────────────────
+
+def fetch_program_courses() -> list[tuple[str, str]]:
+    """
+    Retourne la liste (course_id, course_url) de tous les cours listés
+    dans le programme (tables sc_courselist), tous sujets confondus.
+    """
+    print(f"Fetching programme : {PROGRAM_URL}")
+    resp = SESSION.get(PROGRAM_URL, timeout=30)
+    resp.raise_for_status()
+    soup = BeautifulSoup(resp.text, "html.parser")
+
+    seen: set[str] = set()
+    result: list[tuple[str, str]] = []
+
+    for table in soup.find_all("table", class_="sc_courselist"):
+        for tr in table.find_all("tr"):
+            code_td = tr.find("td", class_="codecol")
+            if not code_td:
+                continue
+            code = re.sub(r"\s+", " ", code_td.get_text(strip=True))
+            if not re.match(r"^[A-Z]{2,5}\s+\d{3}", code):
+                continue
+            if code in seen:
+                continue
+            seen.add(code)
+
+            # URL de la page individuelle depuis le bubbledrawer
+            drawer = tr.find_next_sibling("tr", class_="bubbledrawer")
+            url = ""
+            if drawer:
+                a = drawer.find("a", href=re.compile(r"/courses/"))
+                if a:
+                    url = a["href"]
+                    if not url.startswith("http"):
+                        url = BASE_URL + url
+
+            result.append((code, url))
+
+    return result
+
+
+# ── Page individuelle ─────────────────────────────────────────────────────────
 
 def slug(course_id: str) -> str:
     """'COMP 202' → 'comp-202'"""
     return course_id.lower().replace(" ", "-")
 
 
-def load_pdf_codes() -> set[str]:
-    """Charge les codes COMP déjà extraits du PDF."""
-    if not PDF_JSON.exists():
-        return set()
-    data = json.loads(PDF_JSON.read_text())
-    return {c["id"] for c in data.get("courses", {}).get("COMP", [])}
-
-
-def fetch_az_comp_codes() -> set[str]:
-    """Scrape l'index A-Z pour trouver tous les cours COMP."""
-    print("Fetching AZ index...")
-    resp = SESSION.get(AZ_URL, timeout=30)
-    resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
-
-    codes = set()
-    for a in soup.find_all("a", href=True):
-        href = a["href"]
-        m = re.match(r"^/courses/comp-(\d{3}[a-z0-9]*)/?$", href)
-        if m:
-            code = m.group(1).upper()
-            codes.add(f"COMP {code}")
-    print(f"  {len(codes)} cours COMP trouvés dans l'index A-Z.")
-    return codes
-
-
-# ── Scraping d'une page de cours ──────────────────────────────────────────────
-
 def parse_note_texts(soup: BeautifulSoup) -> tuple[list[str], list[str], list[str], str]:
     """
     Extrait prerequisite_courses, concomitant_courses, equivalent_courses
     et requirement_text depuis les éléments .detail-note_text.
     """
-    prereqs:  list[str] = []
-    coreqs:   list[str] = []
-    equivs:   list[str] = []
+    prereqs:   list[str] = []
+    coreqs:    list[str] = []
+    equivs:    list[str] = []
     req_parts: list[str] = []
 
     note_items = soup.select(".detail-note_text li, .detail-note_text p")
@@ -115,8 +128,9 @@ def parse_note_texts(soup: BeautifulSoup) -> tuple[list[str], list[str], list[st
     )
 
 
-def fetch_course(course_id: str) -> Optional[dict]:
-    url = f"{BASE_URL}/courses/{slug(course_id)}/"
+def fetch_course(course_id: str, url: str = "") -> Optional[dict]:
+    if not url:
+        url = f"{BASE_URL}/courses/{slug(course_id)}/index.html"
     try:
         resp = SESSION.get(url, timeout=30)
         if resp.status_code == 404:
@@ -128,66 +142,56 @@ def fetch_course(course_id: str) -> Optional[dict]:
 
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    # Titre (ex: "COMP 202. Foundations of Programming.")
     h1 = soup.find("h1", class_="page-title")
     if not h1:
         return None
     title_text = h1.get_text(" ", strip=True)
-    # Retire le sigle du début : "COMP 202. Foundations of Programming." → "Foundations of Programming"
     name = re.sub(r"^[A-Z]+\s+\d{3}[A-Z0-9]*\.\s*", "", title_text).rstrip(".")
 
-    # Crédits
     credits_el = soup.select_one(".detail-credits .value")
     credits = float(credits_el.get_text(strip=True)) if credits_el else 0.0
 
-    # Description
     desc_el = soup.select_one(".section--description .section__content")
     description = desc_el.get_text(" ", strip=True) if desc_el else ""
 
-    # Notes (prérequis, corequis, équivalences)
     prereqs, coreqs, equivs, req_text = parse_note_texts(soup)
 
     return {
-        "id":                  course_id,
-        "name":                name,
-        "credits":             credits,
-        "description":         description,
-        "prerequisite_courses":  prereqs,
-        "concomitant_courses":   coreqs,
-        "equivalent_courses":    equivs,
-        "requirement_text":      req_text,
+        "id":                   course_id,
+        "name":                 name,
+        "credits":              credits,
+        "description":          description,
+        "prerequisite_courses": prereqs,
+        "concomitant_courses":  coreqs,
+        "equivalent_courses":   equivs,
+        "requirement_text":     req_text,
     }
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
-    # 1. Collecter tous les codes COMP à scraper
-    pdf_codes = load_pdf_codes()
-    az_codes  = fetch_az_comp_codes()
-    all_codes = sorted(pdf_codes | az_codes)
-    print(f"\n{len(all_codes)} cours COMP à scraper "
-          f"(PDF: {len(pdf_codes)}, A-Z: {len(az_codes)}, "
-          f"union: {len(all_codes)}).\n")
+    # 1. Cours du programme
+    program_list = fetch_program_courses()
+    print(f"  {len(program_list)} cours dans le programme.\n")
 
-    # 2. Scraper chaque cours
-    comp_courses: list[dict] = []
-    for i, code in enumerate(all_codes, 1):
-        course = fetch_course(code)
+    program_courses: list[dict] = []
+    for i, (code, url) in enumerate(program_list, 1):
+        course = fetch_course(code, url)
         if course:
-            comp_courses.append(course)
-            print(f"  [{i:3d}/{len(all_codes)}] ✓ {code} — {course['name'][:50]}")
+            program_courses.append(course)
+            print(f"  [{i:2d}/{len(program_list)}] ✓ {code} — {course['name'][:50]}")
         else:
-            print(f"  [{i:3d}/{len(all_codes)}] ✗ {code} (404)")
+            print(f"  [{i:2d}/{len(program_list)}] ✗ {code} (404)")
         time.sleep(0.3)
 
-    # 3. Collecter les prérequis hors-périmètre (non-COMP référencés)
-    comp_ids = {c["id"] for c in comp_courses}
+    # 2. Prérequis hors-périmètre
+    program_ids = {c["id"] for c in program_courses}
     other_ids: set[str] = set()
-    for c in comp_courses:
-        for code in c["prerequisite_courses"] + c["concomitant_courses"]:
-            if code not in comp_ids:
-                other_ids.add(code)
+    for c in program_courses:
+        for dep in c["prerequisite_courses"] + c["concomitant_courses"]:
+            if dep not in program_ids:
+                other_ids.add(dep)
 
     print(f"\n{len(other_ids)} cours hors-périmètre référencés comme prérequis.")
     other_courses: list[dict] = []
@@ -195,28 +199,36 @@ def main():
         course = fetch_course(code)
         if course:
             other_courses.append(course)
-            print(f"  [{i:3d}/{len(other_ids)}] ✓ {code} — {course['name'][:50]}")
+            print(f"  [{i:2d}/{len(other_ids)}] ✓ {code} — {course['name'][:50]}")
         else:
-            print(f"  [{i:3d}/{len(other_ids)}] ✗ {code} (404)")
+            # Cours introuvable : stub minimal
+            other_courses.append({
+                "id": code, "name": "", "credits": 0, "description": "",
+                "prerequisite_courses": [], "concomitant_courses": [],
+                "equivalent_courses": [], "requirement_text": "",
+            })
+            print(f"  [{i:2d}/{len(other_ids)}] ✗ {code} (404 — stub)")
         time.sleep(0.3)
 
-    # 4. Sauvegarder
+    # 3. Sauvegarder
     result = {
         "metadata": {
-            "source":       "McGill Course Catalogue – coursecatalogue.mcgill.ca",
-            "base_url":     BASE_URL,
-            "comp_count":   len(comp_courses),
-            "other_count":  len(other_courses),
+            "source":        "McGill Course Catalogue – Major in Computer Science",
+            "program_url":   PROGRAM_URL,
+            "program_count": len(program_courses),
+            "other_count":   len(other_courses),
         },
         "courses": {
-            "COMP":  comp_courses,
-            "OTHER": other_courses,
+            "PROGRAM": program_courses,
+            "OTHER":   other_courses,
         },
     }
     OUTPUT_FILE.write_text(json.dumps(result, ensure_ascii=False, indent=2))
     print(f"\nSauvegardé dans {OUTPUT_FILE}")
-    print(f"  COMP:  {len(comp_courses)} cours")
-    print(f"  OTHER: {len(other_courses)} cours hors-périmètre")
+    print(f"  PROGRAM: {len(program_courses)} cours")
+    print(f"  OTHER:   {len(other_courses)} cours hors-périmètre")
+    subjects = sorted({c["id"].split()[0] for c in program_courses})
+    print(f"  Sujets dans le programme : {subjects}")
 
 
 if __name__ == "__main__":

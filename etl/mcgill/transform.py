@@ -39,8 +39,10 @@ def main():
     data    = json.loads(INPUT_FILE.read_text())
     courses = data["courses"]
 
+    program_key = "PROGRAM" if "PROGRAM" in courses else "COMP"
+
     canonical = [
-        transform_course(c, hors_perimetre=False) for c in courses["COMP"]
+        transform_course(c, hors_perimetre=False) for c in courses[program_key]
     ] + [
         transform_course(c, hors_perimetre=True)  for c in courses["OTHER"]
     ]
@@ -54,8 +56,8 @@ def main():
 
     OUTPUT_FILE.write_text(json.dumps(unique, ensure_ascii=False, indent=2))
     print(f"Sauvegardé {len(unique)} cours dans {OUTPUT_FILE}")
-    print(f"  COMP  (hors_perimetre=false): {sum(1 for c in unique if not c['hors_perimetre'])}")
-    print(f"  OTHER (hors_perimetre=true):  {sum(1 for c in unique if     c['hors_perimetre'])}")
+    print(f"  Programme (hors_perimetre=false): {sum(1 for c in unique if not c['hors_perimetre'])}")
+    print(f"  OTHER     (hors_perimetre=true):  {sum(1 for c in unique if     c['hors_perimetre'])}")
 
 
 if __name__ == "__main__":
