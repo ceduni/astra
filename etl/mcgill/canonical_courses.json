@@ -296,6 +296,405 @@
     "requirement_text": "Winter | Prerequisites: MATH 235 or MATH 240 or MATH 242. | Corequisites: MATH 223 or MATH 236. | Restriction: Restriction: Not open to students who have taken or are taking MATH 350."
   },
   {
+    "sigle": "COMP 307",
+    "universite": "McGill",
+    "titre": "Principles of Web Development",
+    "credits": 3,
+    "description": "The course discusses the major principles, algorithms, languages and technologies that underlie web development. Students receive practical hands-on experience through a project.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 206"
+    ],
+    "concomitant_courses": [
+      "COMP 303"
+    ],
+    "equivalent_courses": [],
+    "requirement_text": "Prerequisite(s): COMP 206 | Corequisite(s): COMP 303"
+  },
+  {
+    "sigle": "COMP 308",
+    "universite": "McGill",
+    "titre": "Computer Systems Lab",
+    "credits": 1,
+    "description": "Digital circuitry and programming interface of peripheral circuit boards (cards), e.g., graphics cards; introduction to tools and libraries that interact with the card; performance issues.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 273"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "1 hour | Prerequisite: COMP 273."
+  },
+  {
+    "sigle": "COMP 321",
+    "universite": "McGill",
+    "titre": "Programming Challenges",
+    "credits": 3,
+    "description": "Development of programming skills on tricky challenges, games and puzzles by means of programming competitions.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 206"
+    ],
+    "concomitant_courses": [
+      "COMP 251",
+      "COMP 252"
+    ],
+    "equivalent_courses": [],
+    "requirement_text": "1 hour | Prerequisites: COMP 206 | Note: At the end of the class, interested students are encouraged to join the McGill team to participate in the annual ACM International Collegiate Programming Competition. | Corequisites: COMP 251 or COMP 252"
+  },
+  {
+    "sigle": "COMP 322",
+    "universite": "McGill",
+    "titre": "Introduction to C++",
+    "credits": 1,
+    "description": "Basics and advanced features of the C++ language. Syntax, memory management, class structure, method and operator overloading, multiple inheritance, access control, stream I/O, templates, exception handling.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 250",
+      "COMP 206",
+      "COMP 208"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "1 hour | Prerequisite(s): COMP 250 and (COMP 206 or COMP 208)"
+  },
+  {
+    "sigle": "COMP 345",
+    "universite": "McGill",
+    "titre": "From Natural Language to Data Science",
+    "credits": 3,
+    "description": "Introduction to language data science, including theoretical approaches and practical skills. Processing, searching, and querying text data; making sense of large corpora; modelling and interpreting psycholinguistic and historical language data; building models of sequences of words; computing similarity between languages; information retrieval and extraction; question answering; and ethics.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 250",
+      "MATH 133"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Prerequisites: COMP 250 and MATH 133; or permission of the instructor. | Restriction: Not open to students who have taken or are taking LING 345."
+  },
+  {
+    "sigle": "COMP 361D1",
+    "universite": "McGill",
+    "titre": "Software Engineering Project",
+    "credits": 3,
+    "description": "Software development process in practice: requirement elicitation and analysis, software design, implementation, integration, test planning, and maintenance. Application of the core concepts and techniques through the realization of a large software system.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 206",
+      "COMP 250"
+    ],
+    "concomitant_courses": [
+      "COMP 303"
+    ],
+    "equivalent_courses": [],
+    "requirement_text": "Prerequisites: COMP 206, COMP 250 | Corequisite: COMP 303 | Restriction: Not open to students who have taken the 3 credit version of COMP 361. | Students must register for both COMP 361D1 and COMP 361D2 | No credit will be given for this course unless both COMP 361D1 and COMP 361D2 are successfully completed in consecutive terms"
+  },
+  {
+    "sigle": "COMP 361D2",
+    "universite": "McGill",
+    "titre": "Software Engineering Project",
+    "credits": 3,
+    "description": "See COMP 361D1 for course description.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 361D1"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Prerequisite: COMP 361D1 | No credit will be given for this course unless both COMP 361D1 and COMP 361D2 are successfully completed in consecutive terms"
+  },
+  {
+    "sigle": "COMP 362",
+    "universite": "McGill",
+    "titre": "Honours Algorithm Design",
+    "credits": 3,
+    "description": "Basic algorithmic techniques, their applications and limitations. Problem complexity, how to deal with problems for which no efficient solutions are known.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 252"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "3 hours | Prerequisite: COMP 252 | Restriction: Not open to students who have taken or are taking COMP 360. | Note: COMP 362 can be used instead of COMP 360 to satisfy prerequisites."
+  },
+  {
+    "sigle": "COMP 370",
+    "universite": "McGill",
+    "titre": "Introduction to Data\n Science",
+    "credits": 3,
+    "description": "Comprehensive introduction to the data science process. Orientation to the use and configuration of core data science toolkits, data collection and annotation fundamentals, principles of responsible data science, the use of quantitative tools in data science, and presentation of data science findings.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 206",
+      "COMP 250"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Prerequisites: COMP 206 and COMP 250 | Restrictions: Not open to students who have taken COMP 598 when the topic was \"Introduction to Data Science\" or \"Data Science\"."
+  },
+  {
+    "sigle": "COMP 400",
+    "universite": "McGill",
+    "titre": "Project in Computer Science",
+    "credits": 4,
+    "description": "A research project in any area of computer science, involving a programming effort and/or a theoretical investigation, and supervised by a faculty member in the School of Computer Science. Final written report required.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "3 hours | Prerequisites: 15 Computer Science credits. Department approval and project form required to register. | Restriction: Open to Honours students, or non-Honours students with permission of the department."
+  },
+  {
+    "sigle": "COMP 401",
+    "universite": "McGill",
+    "titre": "Project in Biology and Computer Science",
+    "credits": 3,
+    "description": "A research project applying computational approaches to a biological problem.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 251",
+      "BIOL 301"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "3 hours | Prerequisite(s): COMP 251 and 9 credits of BIOL courses, BIOL 301 recommended. Department approval and project form required to register. | Restriction: Open only to students in the Major in Biology and Computer Science program. | Note: having taken BIOL 301 before COMP 401 is beneficial for finding a project within a Biology lab. | The project is (co)-supervised by a professor in Computer Science and/or Biology"
+  },
+  {
+    "sigle": "COMP 402",
+    "universite": "McGill",
+    "titre": "Honours Project in Computer Science and Biology",
+    "credits": 6,
+    "description": "One-semester research project applying computational approaches to a biological problem.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Prerequisite(s): 9 credits of COMP courses and 9 credits of BIOL courses. Department approval and project form required to register. | Restriction(s): Open only to students in the Honours in Computer Science and Biology program. | Note: The project is (co)-supervised by a professor in Computer Science and/or Biology or related fields."
+  },
+  {
+    "sigle": "COMP 402D1",
+    "universite": "McGill",
+    "titre": "Honours Project in Computer Science and Biology",
+    "credits": 3,
+    "description": "One-semester research project applying computational approaches to a biological problem.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [
+      "COMP 402D1",
+      "COMP 402D2",
+      "COMP 402"
+    ],
+    "requirement_text": "Prerequisite(s): 9 credits of COMP courses and 9 credits of BIOL courses. Department approval and project form required to register. | Restriction(s): Open only to students in the Honours in Computer Science and Biology program. | Note: The project is (co)-supervised by a professor in Computer Science and/or Biology or related fields. | Students must register for both COMP 402D1 and COMP 402D2. | No credit will be given for this course unless both COMP 402D1 and COMP 402D2 are successfully completed in consecutive terms. | COMP 402D1 and COMP 402D2 are equivalent to COMP 402"
+  },
+  {
+    "sigle": "COMP 402D2",
+    "universite": "McGill",
+    "titre": "Honours Project in Computer Science and Biology",
+    "credits": 3,
+    "description": "One-semester research project applying computational approaches to a biological problem.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 402D1"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [
+      "COMP 402D1",
+      "COMP 402D2",
+      "COMP 402"
+    ],
+    "requirement_text": "Prerequisite(s): 9 credits of COMP courses and 9 credits of BIOL courses. Department approval and project form required to register. | Restriction(s): Open only to students in the Honours in Computer Science and Biology program. | Prerequisite: COMP 402D1 | No credit will be given for this course unless both COMP 402D1 and COMP 402D2 are successfully completed in consecutive terms | COMP 402D1 and COMP 402D2 are equivalent to COMP 402 | Note: The project is (co)-supervised by a professor in Computer Science and/or Biology or related fields."
+  },
+  {
+    "sigle": "COMP 409",
+    "universite": "McGill",
+    "titre": "Concurrent Programming",
+    "credits": 3,
+    "description": "Characteristics and utility of concurrent programs; formal methods for specification, verification and development of concurrent programs; communications, synchronization, resource allocation and management, coherency and integrity.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 251",
+      "COMP 302",
+      "COMP 310",
+      "ECSE 427"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "3 hours | Prerequisites: COMP 251, COMP 302, and COMP 310 or ECSE 427"
+  },
+  {
+    "sigle": "COMP 417",
+    "universite": "McGill",
+    "titre": "Introduction Robotics and Intelligent Systems",
+    "credits": 3,
+    "description": "This course considers issues relevant to the design of robotic and of intelligent systems. How can robots move and interact. Robotic hardware systems. Kinematics and inverse kinematics. Sensors, sensor data interpretation and sensor fusion. Path planning. Configuration spaces. Position estimation. Intelligent systems. Spatial mapping. Multi-agent systems. Applications.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 251",
+      "MATH 223",
+      "ECSE 321",
+      "COMP 206"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "3 hours | Prerequisites: COMP 251, MATH 223 and (ECSE 321 or COMP 206)."
+  },
+  {
+    "sigle": "COMP 421",
+    "universite": "McGill",
+    "titre": "Database Systems",
+    "credits": 3,
+    "description": "Database Design: conceptual design of databases (e.g., entity-relationship model), relational data model, functional dependencies. Database Manipulation: relational algebra, SQL, database application programming, triggers, access control. Database Implementation: transactions, concurrency control, recovery, query execution and query optimization.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 206",
+      "COMP 251",
+      "COMP 302"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "3 hours | Prerequisites: COMP 206, COMP 251, COMP 302"
+  },
+  {
+    "sigle": "COMP 424",
+    "universite": "McGill",
+    "titre": "Artificial Intelligence",
+    "credits": 3,
+    "description": "Introduction to search methods. Knowledge representation using logic and probability. Planning and decision making under uncertainty. Introduction to machine learning.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 206",
+      "ECSE 321",
+      "MATH 323",
+      "COMP 251"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "3 hours | Prerequisites: (COMP 206 or ECSE 321), MATH 323 or equivalent and COMP 251. | Restriction: Not open to students who have taken or are taking ECSE 526."
+  },
+  {
+    "sigle": "COMP 445",
+    "universite": "McGill",
+    "titre": "Computational Linguistics",
+    "credits": 3,
+    "description": "Introduction to foundational ideas in computational linguistics and natural language processing. Topics include formal language theory, probability theory,\nestimation and inference, and recursively defined models of language structure. Emphasis on both the mathematical foundations of the field as well as how to\nuse these tools to understand human language.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 250",
+      "MATH 133"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Prerequisite(s): COMP 250 and MATH 133, or permission of the instructor. | Restriction: Not open to students who have taken or are taking LING 445. | Students who are taking or have taken both COMP 330 and COMP 424 are advised to take COMP 550 in place of COMP 445/LING 445. | This is a double-prefix course and is identical in content with LING 445. | Some background in linguistics at the level of LING 201 is desirable, though not critical."
+  },
+  {
+    "sigle": "COMP 451",
+    "universite": "McGill",
+    "titre": "Fundamentals of Machine Learning",
+    "credits": 3,
+    "description": "Introduction to the computational, statistical and mathematical foundations of machine learning. Algorithms for both supervised learning and unsupervised learning. Maximum likelihood estimation, neural networks, and regularization.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 251",
+      "MATH 222",
+      "MATH 223",
+      "MATH 323"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Prerequisite: COMP 251, MATH 222, MATH 223, and MATH 323. | Restriction: Not open to students who have taken or are taking COMP 551 or MATH 462."
+  },
+  {
+    "sigle": "COMP 462",
+    "universite": "McGill",
+    "titre": "Computational Biology Methods",
+    "credits": 3,
+    "description": "Application of computer science techniques to problems arising in biology and medicine, techniques for modeling evolution, aligning molecular sequences, predicting structure of a molecule and other problems from computational biology.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "COMP 251",
+      "MATH 323",
+      "MATH 203",
+      "BIOL 309"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "3 hours | Prerequisites: COMP 251, and MATH 323 or MATH 203 or BIOL 309 | Restriction: Not open to students who have taken or are taking COMP 561."
+  },
+  {
+    "sigle": "COMP 480",
+    "universite": "McGill",
+    "titre": "Independent Studies in Computer Science",
+    "credits": 3,
+    "description": "Reading course permitting independent study under the supervision of a faculty member who specializes in a subject where no course is available.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Prerequisite(s): Department approval and project form required to register."
+  },
+  {
+    "sigle": "BIOL 301",
+    "universite": "McGill",
+    "titre": "Cell and Molecular Laboratory",
+    "credits": 4,
+    "description": "An introduction to biology research and communication with a focus on cell and\nmolecular biology. Through conducting a series of project-based experiments and writing a final report, molecular and synthetic biology techniques such as gene cloning, manipulation, protein isolation and characterization and how\nresearch is conducted, analyzed and communicated will be addressed. In addition, an\nintroduction to bioinformatics methods and their role in analysis will be provided.",
+    "niveau": 3,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "BIOL 200",
+      "BIOL 201",
+      "ANAT 212",
+      "BIOC 212",
+      "BIOL 219"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Fall or Winter | 1 hour lecture and one 6-hour laboratory | Prerequisites: BIOL 200, BIOL 201 (or ANAT 212/BIOC 212); or BIOL 219 | Restrictions: Not open to students who have taken or are taking BIOC 300, or BIOC 220 and BIOC 320. Requires departmental approval. | For approval email maxime.leroux@mcgill.ca. Specify your ID number as well as the term and two lab day preferences."
+  },
+  {
+    "sigle": "BIOL 309",
+    "universite": "McGill",
+    "titre": "Mathematical Models in Biology",
+    "credits": 3,
+    "description": "Application of finite difference and differential equations to problems in cell and developmental biology, ecology and physiology. Qualitative, quantitative and graphical techniques are used to analyze mathematical models and to compare theoretical predictions with experimental data.",
+    "niveau": 3,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "BIOL 200",
+      "BIOL 201",
+      "ANAT 212",
+      "BIOC 212",
+      "BIOL 219"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Fall | 3 hours lecture | Prerequisites:BIOL 200, BIOL 201 (or ANAT 212/BIOC 212); or BIOL 219"
+  },
+  {
     "sigle": "COMP 204",
     "universite": "McGill",
     "titre": "Computer Programming for Life Sciences",
@@ -357,6 +756,40 @@
     "requirement_text": "3 hours | Prerequisite: COMP 250 and either MATH 235 or MATH 240 | Restrictions: (1) Open only to students in Honours programs. (2) Students cannot receive credit for both COMP 251 and COMP 252. | COMP 252 uses basic combinatorial counting methods that are covered in MATH 240 but not in MATH 235. Students who are unfamiliar with these methods should speak with the instructor for guidance."
   },
   {
+    "sigle": "ECSE 321",
+    "universite": "McGill",
+    "titre": "Introduction to Software Engineering",
+    "credits": 3,
+    "description": "Design, development and testing of software systems. Software life cycle: requirements analysis, software architecture and design, implementation, integration, test planning, and maintenance. The course involves a group project.",
+    "niveau": 3,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "ECSE 223",
+      "COMP 202",
+      "COMP 208",
+      "ECSE 202"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "(3-2-4) | Prerequisites: ECSE 223 and (COMP 202 or COMP 208 or ECSE 202) | Tutorials assigned by instructor."
+  },
+  {
+    "sigle": "ECSE 427",
+    "universite": "McGill",
+    "titre": "Operating Systems",
+    "credits": 3,
+    "description": "Operating system services, file system organization, disk and cpu scheduling, virtual memory management, concurrent processing and distributed systems, protection and security. Aspects of the DOS and UNIX operating systems and the C programming language. Programs that communicate between workstations across a network.",
+    "niveau": 4,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "ECSE 324",
+      "COMP 273"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "(3-1-5) | Prerequisite: ECSE 324 or COMP 273 | Tutorials assigned by instructor."
+  },
+  {
     "sigle": "MATH 133",
     "universite": "McGill",
     "titre": "Linear Algebra and Geometry",
@@ -387,6 +820,19 @@
     "concomitant_courses": [],
     "equivalent_courses": [],
     "requirement_text": "Prerequisites: MATH 139 or MATH 140 or MATH 150. | Restriction(s): Not open to students who have taken CEGEP objective 00UP or equivalent. | Restriction(s): Not open to students who have taken or are taking MATH 122,except by permission of the Department of Mathematics and Statistics. | Each Tutorial section is enrolment limited"
+  },
+  {
+    "sigle": "MATH 203",
+    "universite": "McGill",
+    "titre": "Principles of Statistics 1",
+    "credits": 3,
+    "description": "Examples of statistical data and the use of graphical means to summarize the data. Basic distributions arising in the natural and behavioural sciences. The logical meaning of a test of significance and a confidence interval. Tests of significance and confidence intervals in the one and two sample setting (means, variances and proportions).",
+    "niveau": 2,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "No calculus prerequisites | Restriction: This course is intended for students in all disciplines. For extensive course restrictions covering statistics courses see Section 3.6.1 of the Arts and of the Science sections of the calendar regarding course overlaps. | You may not be able to receive credit for this course and other statistic courses. Be sure to check the Course Overlap section under Faculty Degree Requirements in the Arts or Science section of the Calendar. Students should consult http://www.mcgill.ca/students/transfercredit for information regarding transfer credits for this course."
   },
   {
     "sigle": "MATH 235",
