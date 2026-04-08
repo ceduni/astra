@@ -275,6 +275,73 @@
     "requirement_text": "[INF3105 Structures de données et algorithmes]"
   },
   {
+    "sigle": "MAT4681",
+    "universite": "UQAM",
+    "titre": "Statistique pour les sciences",
+    "credits": 3,
+    "description": "",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ECO1081",
+    "universite": "UQAM",
+    "titre": "Économie des technologies de l'information",
+    "credits": 3,
+    "description": "",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "AOT1110",
+    "universite": "UQAM",
+    "titre": "Organisation, gestion et système d'information",
+    "credits": 3,
+    "description": "Ce cours vise le développement de compétences dans le domaine de la gestion des organisations, des processus, des systèmes d'information et des technologies de l'information et de communication, en mettant au centre des préoccupations le rôle des technologies de l'information et des communications dans l'organisation. Introduction des concepts d'organisation, de chaîne de valeur, de processus, de système d'information (SI), de technologie de l'information et de communication (TIC) et analyse de leurs interrelations. Présentation des composantes d'un SI/TIC (ressources matérielles, logicielles, en données et l'infrastructure des TIC). Introduction des différents types de SI/TIC que l'on retrouve dans une organisation et des enjeux du développement et de la conception de SI/TIC. Introduction à la gestion de la fonction SI/TIC en organisation. Sensibilisation aux enjeux éthiques et de sécurité de l'information propres à la gestion des SI/TIC.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "INM6000",
+    "universite": "UQAM",
+    "titre": "Informatique et société",
+    "credits": 3,
+    "description": "",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "INM5151",
+    "universite": "UQAM",
+    "titre": "Projet d'analyse et de modélisation",
+    "credits": 3,
+    "description": "",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF5151"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF5151 Génie logiciel: analyse et modélisation]"
+  },
+  {
     "sigle": "INF4150",
     "universite": "UQAM",
     "titre": "Interfaces personnes-machines",
@@ -428,12 +495,205 @@
     "requirement_text": ""
   },
   {
-    "sigle": "INF3190",
+    "sigle": "AOT3221",
     "universite": "UQAM",
-    "titre": "",
+    "titre": "Analytique prescriptive pour la gestion",
+    "credits": 3,
+    "description": "Ce cours a pour objectif de former et d'entraîner l'étudiante ou l'étudiant à l'utilisation d'un cadre rigoureux pour formuler, analyser et résoudre des problèmes complexes de gestion qui se posent au sein d'une entreprise, fût-elle privée ou publique, de manufacture ou de service. En particulier, l'étudiante ou l'étudiant sera initié(e) : 1. Aux méthodes d'optimisation, qui permettent de trouver des solutions aux problèmes considérés, de façon à maximiser le profit, minimiser les coûts, minimiser les impacts environnementaux, etc., tout en respectant un ensemble de contraintes (imposant des limites aux solutions possibles). 2. À certaines techniques de simulation, qui permettent de tester et d'évaluer des scénarios dans le but de répondre à des questions telles que : quel profit ou quel coût peut-on espérer obtenir dans un contexte décisionnel impliquant des sources d'incertitudes? Comment devrait-on gérer les stocks, dans un contexte où les demandes, les coûts, etc., varient de façon aléatoire? En suivant ce cours, les étudiantes et les étudiants développeront des habilités leur permettant de modéliser des problèmes de planification organisationnelle, d'identifier les informations qu'il est important de connaître pour pouvoir formuler le modèle, de choisir l'approche de résolution appropriée pour les modèles obtenus, ainsi que des habilités d'analyse permettant de mieux comprendre comment les problèmes considérés peuvent être résolus. Le cours couvrira les thèmes suivants : Analytique descriptive (distributions, moyennes, intervalles de confiance, etc.) Éléments de la modélisation (paramètres, variables et fonctions) Modélisation I : Planification de la production Utilisation du Solver d'Excel pour résoudre les modèles d'optimisation Modélisation II : planification de la production et de la main d'oeuvre Modélisation III : le choix entre faire ou ne pas faire Simulation de Monte-Carlo Gestion des inventaires (stocks) Optimisation multi-crite¿res: Optimisation par objectifs Optimisation sur des réseaux: transport et flot dans les réseaux Études de cas",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "ECO2273",
+      "MAT2082",
+      "MAT4681",
+      "POL1850",
+      "STT1000"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[ECO2273 Économétrie I] OU [MAT2082 Méthodes statistiques] OU [MAT4681 Statistique pour les sciences] OU [POL1850 Méthodes quantitatives] OU [STT1000 Statistique I]"
+  },
+  {
+    "sigle": "AOT5322",
+    "universite": "UQAM",
+    "titre": "Systèmes décisionnels et systèmes intelligents",
+    "credits": 3,
+    "description": "L'objectif de ce cours est d'approfondir la connaissance et l'utilisation des méthodes et des technologies de prise de décision. Parmi celles-ci, on trouve les Systèmes interactifs d'aide à la décision, les Systèmes intelligents d'affaires (BIS), les systèmes experts, ainsi que les systèmes basés sur l'intelligence artificielle. Une attention particulière sera portée sur les tableaux de bord comme outils d'évaluation de la performance stratégique. Ces tableaux de bord s'alimentent à partir d'informations provenant de diverses sources, ayant été préparées pour la prise de décision, se trouvant souvent dans des entrepôts de données mises en valeur à l'aide de traitements analytiques en ligne (de type Traitement analytique en ligne ou Online Analytical Processing - OLAP) et de l'exploration des données (data mining). Le tout est présenté dans un contexte organisationnel.  À l'issue de ce cours, la personne étudiante sera en mesure de : Comprendre les concepts concernant la prise de décision en milieu organisationnel. Connaître les bonnes pratiques quant à la gestion de l'informatique décisionnelle. Modéliser l'information pour faciliter la prise de décision. Préparer l'information pour faciliter la prise de décision à l'aide d'outils d'extraction, de transformation et de chargement. Visualiser l'information à l'aide d'outils OLAP. Maîtriser les bonnes pratiques quant à l'utilisation de l'exploration des données et de l'intelligence artificielle (IA) pour la prise de décision en organisation. Les thèmes suivants sont abordés dans le cours : Concepts de prise de décision dans un milieu organisationnel. Conception d'indicateurs. Tableaux de bord informatifs et de gestion de la performance. Entreposage des données. Modélisation dimensionnelle. Préparation des données avec des outils d'extraction, de transformation et de chargement. Visualisation de données avec des outils OLAP. Pratiques d'exploration des données pour la prise de décision. Pratiques d'utilisation de l'intelligence artificielle pour la prise de décision.",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "AOT5100"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[AOT5100 Introduction aux technologies d'affaires]"
+  },
+  {
+    "sigle": "AOT5332",
+    "universite": "UQAM",
+    "titre": "Introduction aux progiciels de gestion intégrés (PGI)",
+    "credits": 3,
+    "description": "Le cours a comme objectif d'initier l'étudiant aux rôles que jouent les différents progiciels de gestion intégrés (PGI). Plus précisément, ce cours permettra à l'étudiant : (1) de connaître le portfolio de PGIs disponibles sur le marché permettant de soutenir les activités de l'entreprise; (2) de connaître les fonctionnalités particulières offertes par chacun de ces progiciels; et (3) d'utiliser le progiciel ERP de SAP, le leader mondial de solutions d'affaires intégrées. Pour soutenir les activités de l'entreprise, seront abordés dans ce cours les familles de progiciels suivantes: -\tL'Enterprise Resource planning (ERP) -\tLes progiciels soutenant les activités d'approvisionnement de l'entreprise -\tLes progiciels soutenant la gestion de la relation client (CRM) -\tLes progiciels soutenant la gestion de la chaine d'approvisionnement (SCM, MES, SCP, etc.) -\tLes progiciels soutenant la gestion du cycle de vie produit (PDM, CAD/CAM, etc.) -\tLes progiciels soutenant l'intelligence d'affaires (BI)",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "AOT5334",
+    "universite": "UQAM",
+    "titre": "Implantation et configuration de progiciels de gestion intégrés (PGI)",
+    "credits": 3,
+    "description": "Le cours a comme objectif : (1) de familiariser l'étudiant à différentes méthodologies pouvant être adoptées par l'entreprise pour soutenir l'implantation d'un PGI; et (2) d'initier l'étudiant à la configuration du ERP de SAP, le leader mondial de solutions d'affaires intégrées. Pour soutenir le processus d'implantation et de configuration d'un PGI au sein d'une entreprise, ce cours abordera les sujets suivants: -\tLa méthodologie d'implantation de Tomas -\tLa méthodologie d'implantation Accelerated SAP -\tLes concepts clés rattachés à la configuration du progiciel ERP de SAP",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "AOT5332",
+      "MET4902"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[AOT5332 Introduction aux progiciels de gestion intégrés (PGI)] ou [MET4902 Introduction aux progiciels de gestion intégrés (PGI)]"
+  },
+  {
+    "sigle": "AOT5341",
+    "universite": "UQAM",
+    "titre": "Collaboration à l'ère du travail hybride",
+    "credits": 3,
+    "description": "L'objectif général du cours est l'acquisition de compétences reliées à la collaboration efficace en équipe peu importe le lieu. Les étudiantes et étudiants vont progressivement acquérir des connaissances théoriques et pratiques (méthodes, outils et techniques) abordant les domaines de la coordination, de la coopération et de la collaboration en ligne en mode synchrone ou asynchrone. Les contenus suivants seront abordés : le mode de travail hybride, le travail en ligne en mode synchrone et asynchrone ; la collaboration efficace à distance ; la mise en place d'une routine de travail en ligne ; l'équilibre travail/famille ; les présentations en vidéoconférence; le partage et la gestion de connaissances en ligne ; la gestion des équipes à distance ; l'animation de discussions en ligne ; la concentration en ligne ; l'utilisation efficace des outils de gestion et de coordination de tâches ; la co-rédaction en ligne sur une plateforme wiki; l'évaluation des technologies adéquates pour soutenir le travail en ligne ; la reconnaissance des biais induits par la collaboration ligne ; l'harmonisation entre équipes présentiels et équipes virtuelles.",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "JUR1854",
+    "universite": "UQAM",
+    "titre": "Le droit de l'informatique",
+    "credits": 3,
+    "description": "Ce cours vise à analyser les principaux enjeux juridiques liés à l'utilisation de l'informatique. La propriété et les contrats touchant l'informatique: concentration, droits d'auteur, brevets et propriété intellectuelle, opérations commerciales, aspects fiscaux, confidentialité et sécurité des données. La responsabilité civile et pénale découlant de l'utilisation de l'informatique: dommages, diffamation, fraude, crime économique. Les normes d'utilisation de l'informatique par les organismes publics et privés. Les aspects internationaux (flux transfrontières, etc.).",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "TEL4165",
+    "universite": "UQAM",
+    "titre": "Réseaux sans fil et applications mobiles",
+    "credits": 3,
+    "description": "Étudier les réseaux sans fil et leur utilisation pour le applications mobiles. Introduction aux différentes technologies de réseaux sans fil : les réseaux cellulaires (ex.: GSM, CDMA, 3G), les réseaux locaux (ex.: 802.11x, Bluetooth), à large bande (ex.: WIMax); réseaux de capteurs; environnement, contextes, développement des applications mobiles; applications ubiquitaires.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF3271",
+      "TEL3175"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF3271 Téléinformatique] ou [TEL3175 Interconnexions et communications]"
+  },
+  {
+    "sigle": "INM4701",
+    "universite": "UQAM",
+    "titre": "Préparation au stage d'informatique I",
+    "credits": 2,
+    "description": "",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "INM4702",
+    "universite": "UQAM",
+    "titre": "Préparation au stage d'informatique II",
+    "credits": 2,
+    "description": "",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INM5801"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INM5801 Stage d'informatique I]"
+  },
+  {
+    "sigle": "INM4703",
+    "universite": "UQAM",
+    "titre": "Préparation au stage d'informatique III",
+    "credits": 2,
+    "description": "",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INM5802"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INM5802 Stage d'informatique II]"
+  },
+  {
+    "sigle": "INM5801",
+    "universite": "UQAM",
+    "titre": "Stage d'informatique I",
     "credits": 0,
     "description": "",
-    "niveau": 3,
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INM4701"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INM4701 Préparation au stage d'informatique I]"
+  },
+  {
+    "sigle": "INM5802",
+    "universite": "UQAM",
+    "titre": "Stage d'informatique II",
+    "credits": 0,
+    "description": "",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INM4702"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INM4702 Préparation au stage d'informatique II]"
+  },
+  {
+    "sigle": "INM5803",
+    "universite": "UQAM",
+    "titre": "Stage d'informatique III",
+    "credits": 0,
+    "description": "",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INM4703"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INM4703 Préparation au stage d'informatique III]"
+  },
+  {
+    "sigle": "AOT5100",
+    "universite": "UQAM",
+    "titre": "Introduction aux technologies d'affaires",
+    "credits": 3,
+    "description": "Les technologies de l'information jouent un rôle fondamental dans le fonctionnement des organisations. Ces technologies permettent d'acquérir, de stocker, de traiter, de contrôler et de communiquer des données et de l'information. Elles permettent également de coordonner et de soutenir les activités et les opérations d'une organisation, tant internes qu'externes, ainsi que de soutenir les gestionnaires dans leurs prises de décisions. De plus, les technologies de l'information peuvent être des vecteurs de développement, de croissance, d'innovation et de transformation importants pour les organisations. Ce cours permettra à l'étudiant de : 1. Connaître le vocabulaire et concepts de base liés aux technologies de l'information; 2. Expliquer le fonctionnement des principales technologies de l'information et leurs composantes; 3. Comprendre le rôle que jouent les technologies de l'information dans l'organisation; 4. Développer des compétences clés liées au développement et à l'utilisation de logiciels clés en gestion (p. ex., tableur et système de gestion de base de données); 5. Décrire différents métiers rattachés aux technologies de l'information et établir des relations entre ces métiers et les éléments du cours. Ce cours aborde les principaux concepts liés aux technologies de l'information ainsi que leurs rôles au sein des organisations. Pour ce faire, les thèmes suivants sont abordés: 1. Rôle des technologies de l'information au sein de l'organisation 2. Composantes matérielles et logicielles des technologies de l'information 3. Conception, développement et utilisation d'une base de données 4. Conception, développement et utilisation d'un tableur 5. L'intelligence et l'analytique d'affaires 6. Métiers liés aux technologies de l'information De plus, plusieurs séances de laboratoire sont prévues afin de stimuler l'apprentissage par la pratique et d'initier l'étudiant au développement et à l'utilisation de logiciels clés en gestion",
+    "niveau": 5,
     "hors_perimetre": true,
     "prerequisite_courses": [],
     "concomitant_courses": [],
@@ -441,11 +701,40 @@
     "requirement_text": ""
   },
   {
+    "sigle": "ECO2273",
+    "universite": "UQAM",
+    "titre": "Économétrie I",
+    "credits": 3,
+    "description": "Ce cours a pour objectif de permettre à l'étudiant d'acquérir une connaissance pratique des principales sources de données économiques et des méthodes d'analyse des données généralement utilisées par les économistes. Ce cours traitera des sujets suivants : Concepts de variable économique et d'unité d'observation; Collecte de données et sondages; Principales sources de données statistiques en économique : recensements, grandes enquêtes sur le marché du travail et la consommation; Mesures de tendance centrale et mesures de dispersion; Analyse des relations entre variables économiques : estimation et tests d'hypothèses; Interprétation économique des relations statistiques; Apprentissage d'un progiciel d'analyse statistique.",
+    "niveau": 2,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "INF3190",
+    "universite": "UQAM",
+    "titre": "Introduction à la programmation Web",
+    "credits": 3,
+    "description": "Ce cours introduit à la conception et au développement Web, tant du côté client que serveur. Les fondements du web : navigateur, serveur, protocoles. Langages et normes du Web (HTML5, JavaScript, PHP, CSS). Introduction à un cadre d'applications (cadriciel, framework). Notions de conception d'interface et de logiciel en tant que service (Software as a service, SaaS).",
+    "niveau": 3,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "INF1120",
+      "INF1070"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF1120 Programmation I] (pour le certificat en réseaux et systèmes de télécommunications) [INF1070 Utilisation et administration des systèmes informatiques] Note : Le [INF1120 Programmation I] est le seul préalable pour le programme de certificat en réseaux et systèmes de télécommunications. Les deux préalables [INF1120 Programmation I] et [INF1070 Utilisation et administration des systèmes informatiques] sont exigés pour tous les autres programmes."
+  },
+  {
     "sigle": "MAT1060",
     "universite": "UQAM",
-    "titre": "",
-    "credits": 0,
-    "description": "",
+    "titre": "Mathématiques algorithmiques",
+    "credits": 3,
+    "description": "Ce cours vise à introduire des aspects fondamentaux des mathématiques algorithmiques, et certaines notions d'informatique théorique. Notions de base sur les ensembles et les fonctions. Calculs et constructions récursives. Algorithmes numériques. Concepts élémentaires sur les graphes. Arbres binaires. Graphes planaires, formule d'Euler, colorations.  Algorithmes sur les graphes. Introduction aux automates finis. Ce cours comporte une séance de travaux pratiques (TP) de trois heures par semaine. Certaines séances de travaux pratiques pourraient servir à évaluer la progression des étudiants, en complément des examens, afin d'assurer le meilleur encadrement dans ce cours.",
     "niveau": 1,
     "hors_perimetre": true,
     "prerequisite_courses": [],
@@ -456,9 +745,9 @@
   {
     "sigle": "MAT1700",
     "universite": "UQAM",
-    "titre": "",
-    "credits": 0,
-    "description": "",
+    "titre": "Probabilités I",
+    "credits": 3,
+    "description": "Familiariser l'étudiant avec les notions de base de la théorie des probabilités et le rendre habile à résoudre des problèmes où jouent les lois du hasard. Calcul des probabilités : lois élémentaires; probabilités conditionnelles et indépendance; théorème de Bayes. Variables aléatoires et espérance mathématique. Lois de probabilités discrètes: loi binomiale, loi de Poisson, loi géométrique, loi hypergéométrique, loi binomiale négative. Lois de probabilités continues; fonctions de densité, loi uniforme, loi exponentielle, loi normale. Transformation de variables aléatoires. Probabilités et fonctions de densité jointes, marginales et conditionnelles. Espérance et variance conditionnelles. Approximation d'une loi binomiale: par une loi de Poisson, par une loi normale. Fonctions génératrices de moments et leurs applications. Inégalité de Tchebyshev. Loi des grands nombres. Théorème limite central. Ce cours comporte une séance de travaux pratiques (TP) de trois heures par semaine. Certaines séances de travaux pratiques pourraient servir à évaluer la progression des étudiants, en complément des examens, afin d'assurer le meilleur encadrement dans ce cours. Activités concomitantes Dans les programmes en actuariat, mathématiques, méthodes quantitatives et statistiques : [MAT1115 Calcul I] Conditions d'accès Avoir réussi [MAT0341 Calcul différentiel et intégral I (hors programme)], [MAT0343 Calcul différentiel (hors programme)] et/ou [MAT0344 Calcul intégral (hors programme)] si imposés",
     "niveau": 1,
     "hors_perimetre": true,
     "prerequisite_courses": [],
@@ -467,12 +756,38 @@
     "requirement_text": ""
   },
   {
-    "sigle": "MAT4681",
+    "sigle": "MAT2082",
     "universite": "UQAM",
-    "titre": "Statistique pour les sciences",
+    "titre": "Méthodes statistiques",
     "credits": 3,
-    "description": "",
+    "description": "L'objectif de ce cours est d'initier les personnes étudiantes à l'analyse de données en sciences de la gestion. À l'aide de mises en situation provenant de divers domaines pertinents (administration, finance, économie, ressources humaines, marketing, tourisme et hôtellerie, design de la mode, etc.), les principales méthodes statistiques utilisées en sciences de la gestion sont présentées en mettant l'accent sur la compréhension des principes statistiques fondamentaux et l'interprétation des résultats. Le cours couvre les thèmes suivants : statistique descriptive, distributions conjointes, probabilités et variables aléatoires, lois discrètes, lois continues, échantillonnage et estimation par intervalle de confiance de paramètres (moyenne, total, proportion, effectif et quotient), détermination de la taille de l'échantillon, autres modes d'échantillonnage (échantillonnages stratifié, par grappes et systématique), tests du khi-deux (tests d'ajustement et d'indépendance), régression linéaire simple (corrélation, droite des moindres carrés, intervalle de confiance et test d'hypothèse).",
+    "niveau": 2,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MET4902",
+    "universite": "UQAM",
+    "titre": "Introduction aux progiciels de gestion intégrés (PGI)",
+    "credits": 3,
+    "description": "Le cours a comme objectif d'initier l'étudiant aux rôles que jouent les différents progiciels de gestion intégrés (PGI). Plus précisément, ce cours permettra à l'étudiant : (1) de connaître le portfolio de PGIs disponibles sur le marché permettant de soutenir les activités de l'entreprise; (2) de connaître les fonctionnalités particulières offertes par chacun de ces progiciels; et (3) d'utiliser le progiciel ERP de SAP, le leader mondial de solutions d'affaires intégrées. Pour soutenir les activités de l'entreprise, seront abordés dans ce cours les familles de progiciels suivantes: -\tL'Enterprise Resource planning (ERP) -\tLes progiciels soutenant les activités d'approvisionnement de l'entreprise -\tLes progiciels soutenant la gestion de la relation client (CRM) -\tLes progiciels soutenant la gestion de la chaine d'approvisionnement (SCM, MES, SCP, etc.) -\tLes progiciels soutenant la gestion du cycle de vie produit (PDM, CAD/CAM, etc.) -\tLes progiciels soutenant l'intelligence d'affaires (BI)",
     "niveau": 4,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "POL1850",
+    "universite": "UQAM",
+    "titre": "Méthodes quantitatives",
+    "credits": 3,
+    "description": "Le cours porte sur les notions de base en statistiques descriptives et d'inférence (échelles de mesure, mesures de tendance centrale et de dispersion, tests d'hypothèse, etc.) dans une perspective de mise en pratique dans le processus d'analyse et de résolution de problème. Les éléments propres aux méthodes quantitatives dans un contexte de recherche et d'analyse en sciences humaines et sociales seront introduites. Cela inclut une initiation aux différents devis de recherche (pré-expérimental, quasi-expérimental et expérimental), aux types de recherche (exploratoire, descriptive et explicative) et à la cueillette et au traitement des données. Le cours porte également sur les stratégies d'analyse des données, c'est-à-dire aux choix des outils et à l'identification des tests statistiques appropriés (méthodes d'analyse bivariée et multivariée) ainsi que sur la présentation des résultats et des données. Le cours initie les étudiants à un logiciel de traitement de données (SPSS, SAS, R, ou autre).",
+    "niveau": 1,
     "hors_perimetre": true,
     "prerequisite_courses": [],
     "concomitant_courses": [],
@@ -482,14 +797,32 @@
   {
     "sigle": "STT1000",
     "universite": "UQAM",
-    "titre": "",
-    "credits": 0,
-    "description": "",
+    "titre": "Statistique I",
+    "credits": 3,
+    "description": "Familiariser l'étudiant avec les principaux concepts en estimation et tests d'hypothèses. Rappel des principales distributions. Statistiques descriptives et théorème limite central. Estimation: estimation ponctuelle et par intervalle; propriétés des estimateurs; méthodes d'estimation (moments estimateur du maximum de vraisemblance). Calcul de tailles échantillonnales. Théorie des tests d'hypothèses: tests unilatéraux et bilatéraux; erreurs de première et de deuxième espèce; p valeurs, rapport entre tests et ensembles de confiance. Étude des distributions échantillonnales liées à la loi normale. Tests et intervalles de confiance basés sur la loi normale: pour une et deux moyennes; pour une et deux proportions. Tests et intervalles de confiance basés sur la loi de Student pour une et deux moyennes. Tests et intervalles de confiance pour une variance et pour le rapport de deux variances. Tests d'ajustement et tableaux de contingence. Régression linéaire simple: méthode des moindres carrés; estimation des paramètres; tests et intervalles de confiance pour les paramètres; coefficient de corrélation. Emploi d'un progiciel statistique interactif comme SPSS. Ce cours comporte une séance de travaux pratiques (TP) de trois heures par semaine. Certaines séances de travaux pratiques pourraient servir à évaluer la progression des étudiants, en complément des examens, afin d'assurer le meilleur encadrement dans ce cours.",
     "niveau": 1,
     "hors_perimetre": true,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MAT1700"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "[MAT1700 Probabilités I]"
+  },
+  {
+    "sigle": "TEL3175",
+    "universite": "UQAM",
+    "titre": "Interconnexions et communications",
+    "credits": 3,
+    "description": "",
+    "niveau": 3,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "INF1105",
+      "INF1120"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF1105 Introduction à la programmation scientifique] ou [INF1120 Programmation I]"
   }
 ]

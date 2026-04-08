@@ -38,33 +38,14 @@ def main():
     data    = json.loads(INPUT_FILE.read_text())
     courses = data["courses"]
 
-    inf_courses   = courses["INF"]
-    other_courses = courses["OTHER"]
-
-    # Cours hors-périmètre = cours non-INF référencés comme prérequis dans les cours INF
-    inf_ids = {c["id"] for c in inf_courses}
-    other_ids_referenced = {
-        prereq
-        for c in inf_courses
-        for prereq in c.get("prerequisite_courses", []) + c.get("concomitant_courses", [])
-        if prereq not in inf_ids
-    }
-
-    # Index des cours OTHER par sigle pour enrichir les stubs
-    other_by_id = {c["id"]: c for c in other_courses}
+    program_key = "PROGRAM" if "PROGRAM" in courses else "INF"
+    program_courses = courses[program_key]
+    other_courses   = courses["OTHER"]
 
     canonical = [
-        transform_course(c, hors_perimetre=False) for c in inf_courses
+        transform_course(c, hors_perimetre=False) for c in program_courses
     ] + [
-        transform_course(
-            other_by_id.get(sid, {
-                "id": sid, "name": "", "credits": 0, "description": "",
-                "prerequisite_courses": [], "concomitant_courses": [],
-                "equivalent_courses": [], "requirement_text": "",
-            }),
-            hors_perimetre=True,
-        )
-        for sid in sorted(other_ids_referenced)
+        transform_course(c, hors_perimetre=True)  for c in other_courses
     ]
 
     # Dédoublonnage par sigle
@@ -76,8 +57,8 @@ def main():
 
     OUTPUT_FILE.write_text(json.dumps(unique, ensure_ascii=False, indent=2))
     print(f"Sauvegardé {len(unique)} cours dans {OUTPUT_FILE}")
-    print(f"  INF   (hors_perimetre=false): {sum(1 for c in unique if not c['hors_perimetre'])}")
-    print(f"  OTHER (hors_perimetre=true):  {sum(1 for c in unique if     c['hors_perimetre'])}")
+    print(f"  Programme (hors_perimetre=false): {sum(1 for c in unique if not c['hors_perimetre'])}")
+    print(f"  OTHER     (hors_perimetre=true):  {sum(1 for c in unique if     c['hors_perimetre'])}")
 
 
 if __name__ == "__main__":

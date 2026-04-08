@@ -2,11 +2,11 @@
   "metadata": {
     "source": "UQAM – Baccalauréat en informatique (programme 7617)",
     "program_url": "https://etudier.uqam.ca/programme?code=7617",
-    "inf_count": 28,
-    "other_count": 18
+    "program_count": 46,
+    "other_count": 10
   },
   "courses": {
-    "INF": [
+    "PROGRAM": [
       {
         "id": "INF1070",
         "name": "Utilisation et administration des systèmes informatiques",
@@ -229,6 +229,58 @@
         "requirement_text": "[INF3105 Structures de données et algorithmes]"
       },
       {
+        "id": "MAT4681",
+        "name": "Statistique pour les sciences",
+        "credits": 3,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ECO1081",
+        "name": "Économie des technologies de l'information",
+        "credits": 3,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "AOT1110",
+        "name": "Organisation, gestion et système d'information",
+        "credits": 3,
+        "description": "Ce cours vise le développement de compétences dans le domaine de la gestion des organisations, des processus, des systèmes d'information et des technologies de l'information et de communication, en mettant au centre des préoccupations le rôle des technologies de l'information et des communications dans l'organisation. Introduction des concepts d'organisation, de chaîne de valeur, de processus, de système d'information (SI), de technologie de l'information et de communication (TIC) et analyse de leurs interrelations. Présentation des composantes d'un SI/TIC (ressources matérielles, logicielles, en données et l'infrastructure des TIC). Introduction des différents types de SI/TIC que l'on retrouve dans une organisation et des enjeux du développement et de la conception de SI/TIC. Introduction à la gestion de la fonction SI/TIC en organisation. Sensibilisation aux enjeux éthiques et de sécurité de l'information propres à la gestion des SI/TIC.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INM6000",
+        "name": "Informatique et société",
+        "credits": 3,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INM5151",
+        "name": "Projet d'analyse et de modélisation",
+        "credits": 3,
+        "description": "",
+        "prerequisite_courses": [
+          "INF5151"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF5151 Génie logiciel: analyse et modélisation]"
+      },
+      {
         "id": "INF4150",
         "name": "Interfaces personnes-machines",
         "credits": 3,
@@ -350,60 +402,6 @@
         "concomitant_courses": [],
         "equivalent_courses": [],
         "requirement_text": ""
-      }
-    ],
-    "OTHER": [
-      {
-        "id": "MAT4681",
-        "name": "Statistique pour les sciences",
-        "credits": 3,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "ECO1081",
-        "name": "Économie des technologies de l'information",
-        "credits": 3,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "AOT1110",
-        "name": "Organisation, gestion et système d'information",
-        "credits": 3,
-        "description": "Ce cours vise le développement de compétences dans le domaine de la gestion des organisations, des processus, des systèmes d'information et des technologies de l'information et de communication, en mettant au centre des préoccupations le rôle des technologies de l'information et des communications dans l'organisation. Introduction des concepts d'organisation, de chaîne de valeur, de processus, de système d'information (SI), de technologie de l'information et de communication (TIC) et analyse de leurs interrelations. Présentation des composantes d'un SI/TIC (ressources matérielles, logicielles, en données et l'infrastructure des TIC). Introduction des différents types de SI/TIC que l'on retrouve dans une organisation et des enjeux du développement et de la conception de SI/TIC. Introduction à la gestion de la fonction SI/TIC en organisation. Sensibilisation aux enjeux éthiques et de sécurité de l'information propres à la gestion des SI/TIC.",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INM6000",
-        "name": "Informatique et société",
-        "credits": 3,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INM5151",
-        "name": "Projet d'analyse et de modélisation",
-        "credits": 3,
-        "description": "",
-        "prerequisite_courses": [
-          "INF5151"
-        ],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": "[INF5151 Génie logiciel: analyse et modélisation]"
       },
       {
         "id": "AOT3221",
@@ -558,6 +556,116 @@
         "concomitant_courses": [],
         "equivalent_courses": [],
         "requirement_text": "[INM4703 Préparation au stage d'informatique III]"
+      }
+    ],
+    "OTHER": [
+      {
+        "id": "AOT5100",
+        "name": "Introduction aux technologies d'affaires",
+        "credits": 3,
+        "description": "Les technologies de l'information jouent un rôle fondamental dans le fonctionnement des organisations. Ces technologies permettent d'acquérir, de stocker, de traiter, de contrôler et de communiquer des données et de l'information. Elles permettent également de coordonner et de soutenir les activités et les opérations d'une organisation, tant internes qu'externes, ainsi que de soutenir les gestionnaires dans leurs prises de décisions. De plus, les technologies de l'information peuvent être des vecteurs de développement, de croissance, d'innovation et de transformation importants pour les organisations. Ce cours permettra à l'étudiant de : 1. Connaître le vocabulaire et concepts de base liés aux technologies de l'information; 2. Expliquer le fonctionnement des principales technologies de l'information et leurs composantes; 3. Comprendre le rôle que jouent les technologies de l'information dans l'organisation; 4. Développer des compétences clés liées au développement et à l'utilisation de logiciels clés en gestion (p. ex., tableur et système de gestion de base de données); 5. Décrire différents métiers rattachés aux technologies de l'information et établir des relations entre ces métiers et les éléments du cours. Ce cours aborde les principaux concepts liés aux technologies de l'information ainsi que leurs rôles au sein des organisations. Pour ce faire, les thèmes suivants sont abordés: 1. Rôle des technologies de l'information au sein de l'organisation 2. Composantes matérielles et logicielles des technologies de l'information 3. Conception, développement et utilisation d'une base de données 4. Conception, développement et utilisation d'un tableur 5. L'intelligence et l'analytique d'affaires 6. Métiers liés aux technologies de l'information De plus, plusieurs séances de laboratoire sont prévues afin de stimuler l'apprentissage par la pratique et d'initier l'étudiant au développement et à l'utilisation de logiciels clés en gestion",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ECO2273",
+        "name": "Économétrie I",
+        "credits": 3,
+        "description": "Ce cours a pour objectif de permettre à l'étudiant d'acquérir une connaissance pratique des principales sources de données économiques et des méthodes d'analyse des données généralement utilisées par les économistes. Ce cours traitera des sujets suivants : Concepts de variable économique et d'unité d'observation; Collecte de données et sondages; Principales sources de données statistiques en économique : recensements, grandes enquêtes sur le marché du travail et la consommation; Mesures de tendance centrale et mesures de dispersion; Analyse des relations entre variables économiques : estimation et tests d'hypothèses; Interprétation économique des relations statistiques; Apprentissage d'un progiciel d'analyse statistique.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF3190",
+        "name": "Introduction à la programmation Web",
+        "credits": 3,
+        "description": "Ce cours introduit à la conception et au développement Web, tant du côté client que serveur. Les fondements du web : navigateur, serveur, protocoles. Langages et normes du Web (HTML5, JavaScript, PHP, CSS). Introduction à un cadre d'applications (cadriciel, framework). Notions de conception d'interface et de logiciel en tant que service (Software as a service, SaaS).",
+        "prerequisite_courses": [
+          "INF1120",
+          "INF1070"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF1120 Programmation I] (pour le certificat en réseaux et systèmes de télécommunications) [INF1070 Utilisation et administration des systèmes informatiques] Note : Le [INF1120 Programmation I] est le seul préalable pour le programme de certificat en réseaux et systèmes de télécommunications. Les deux préalables [INF1120 Programmation I] et [INF1070 Utilisation et administration des systèmes informatiques] sont exigés pour tous les autres programmes."
+      },
+      {
+        "id": "MAT1060",
+        "name": "Mathématiques algorithmiques",
+        "credits": 3,
+        "description": "Ce cours vise à introduire des aspects fondamentaux des mathématiques algorithmiques, et certaines notions d'informatique théorique. Notions de base sur les ensembles et les fonctions. Calculs et constructions récursives. Algorithmes numériques. Concepts élémentaires sur les graphes. Arbres binaires. Graphes planaires, formule d'Euler, colorations.  Algorithmes sur les graphes. Introduction aux automates finis. Ce cours comporte une séance de travaux pratiques (TP) de trois heures par semaine. Certaines séances de travaux pratiques pourraient servir à évaluer la progression des étudiants, en complément des examens, afin d'assurer le meilleur encadrement dans ce cours.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MAT1700",
+        "name": "Probabilités I",
+        "credits": 3,
+        "description": "Familiariser l'étudiant avec les notions de base de la théorie des probabilités et le rendre habile à résoudre des problèmes où jouent les lois du hasard. Calcul des probabilités : lois élémentaires; probabilités conditionnelles et indépendance; théorème de Bayes. Variables aléatoires et espérance mathématique. Lois de probabilités discrètes: loi binomiale, loi de Poisson, loi géométrique, loi hypergéométrique, loi binomiale négative. Lois de probabilités continues; fonctions de densité, loi uniforme, loi exponentielle, loi normale. Transformation de variables aléatoires. Probabilités et fonctions de densité jointes, marginales et conditionnelles. Espérance et variance conditionnelles. Approximation d'une loi binomiale: par une loi de Poisson, par une loi normale. Fonctions génératrices de moments et leurs applications. Inégalité de Tchebyshev. Loi des grands nombres. Théorème limite central. Ce cours comporte une séance de travaux pratiques (TP) de trois heures par semaine. Certaines séances de travaux pratiques pourraient servir à évaluer la progression des étudiants, en complément des examens, afin d'assurer le meilleur encadrement dans ce cours. Activités concomitantes Dans les programmes en actuariat, mathématiques, méthodes quantitatives et statistiques : [MAT1115 Calcul I] Conditions d'accès Avoir réussi [MAT0341 Calcul différentiel et intégral I (hors programme)], [MAT0343 Calcul différentiel (hors programme)] et/ou [MAT0344 Calcul intégral (hors programme)] si imposés",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MAT2082",
+        "name": "Méthodes statistiques",
+        "credits": 3,
+        "description": "L'objectif de ce cours est d'initier les personnes étudiantes à l'analyse de données en sciences de la gestion. À l'aide de mises en situation provenant de divers domaines pertinents (administration, finance, économie, ressources humaines, marketing, tourisme et hôtellerie, design de la mode, etc.), les principales méthodes statistiques utilisées en sciences de la gestion sont présentées en mettant l'accent sur la compréhension des principes statistiques fondamentaux et l'interprétation des résultats. Le cours couvre les thèmes suivants : statistique descriptive, distributions conjointes, probabilités et variables aléatoires, lois discrètes, lois continues, échantillonnage et estimation par intervalle de confiance de paramètres (moyenne, total, proportion, effectif et quotient), détermination de la taille de l'échantillon, autres modes d'échantillonnage (échantillonnages stratifié, par grappes et systématique), tests du khi-deux (tests d'ajustement et d'indépendance), régression linéaire simple (corrélation, droite des moindres carrés, intervalle de confiance et test d'hypothèse).",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "MET4902",
+        "name": "Introduction aux progiciels de gestion intégrés (PGI)",
+        "credits": 3,
+        "description": "Le cours a comme objectif d'initier l'étudiant aux rôles que jouent les différents progiciels de gestion intégrés (PGI). Plus précisément, ce cours permettra à l'étudiant : (1) de connaître le portfolio de PGIs disponibles sur le marché permettant de soutenir les activités de l'entreprise; (2) de connaître les fonctionnalités particulières offertes par chacun de ces progiciels; et (3) d'utiliser le progiciel ERP de SAP, le leader mondial de solutions d'affaires intégrées. Pour soutenir les activités de l'entreprise, seront abordés dans ce cours les familles de progiciels suivantes: -\tL'Enterprise Resource planning (ERP) -\tLes progiciels soutenant les activités d'approvisionnement de l'entreprise -\tLes progiciels soutenant la gestion de la relation client (CRM) -\tLes progiciels soutenant la gestion de la chaine d'approvisionnement (SCM, MES, SCP, etc.) -\tLes progiciels soutenant la gestion du cycle de vie produit (PDM, CAD/CAM, etc.) -\tLes progiciels soutenant l'intelligence d'affaires (BI)",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "POL1850",
+        "name": "Méthodes quantitatives",
+        "credits": 3,
+        "description": "Le cours porte sur les notions de base en statistiques descriptives et d'inférence (échelles de mesure, mesures de tendance centrale et de dispersion, tests d'hypothèse, etc.) dans une perspective de mise en pratique dans le processus d'analyse et de résolution de problème. Les éléments propres aux méthodes quantitatives dans un contexte de recherche et d'analyse en sciences humaines et sociales seront introduites. Cela inclut une initiation aux différents devis de recherche (pré-expérimental, quasi-expérimental et expérimental), aux types de recherche (exploratoire, descriptive et explicative) et à la cueillette et au traitement des données. Le cours porte également sur les stratégies d'analyse des données, c'est-à-dire aux choix des outils et à l'identification des tests statistiques appropriés (méthodes d'analyse bivariée et multivariée) ainsi que sur la présentation des résultats et des données. Le cours initie les étudiants à un logiciel de traitement de données (SPSS, SAS, R, ou autre).",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "STT1000",
+        "name": "Statistique I",
+        "credits": 3,
+        "description": "Familiariser l'étudiant avec les principaux concepts en estimation et tests d'hypothèses. Rappel des principales distributions. Statistiques descriptives et théorème limite central. Estimation: estimation ponctuelle et par intervalle; propriétés des estimateurs; méthodes d'estimation (moments estimateur du maximum de vraisemblance). Calcul de tailles échantillonnales. Théorie des tests d'hypothèses: tests unilatéraux et bilatéraux; erreurs de première et de deuxième espèce; p valeurs, rapport entre tests et ensembles de confiance. Étude des distributions échantillonnales liées à la loi normale. Tests et intervalles de confiance basés sur la loi normale: pour une et deux moyennes; pour une et deux proportions. Tests et intervalles de confiance basés sur la loi de Student pour une et deux moyennes. Tests et intervalles de confiance pour une variance et pour le rapport de deux variances. Tests d'ajustement et tableaux de contingence. Régression linéaire simple: méthode des moindres carrés; estimation des paramètres; tests et intervalles de confiance pour les paramètres; coefficient de corrélation. Emploi d'un progiciel statistique interactif comme SPSS. Ce cours comporte une séance de travaux pratiques (TP) de trois heures par semaine. Certaines séances de travaux pratiques pourraient servir à évaluer la progression des étudiants, en complément des examens, afin d'assurer le meilleur encadrement dans ce cours.",
+        "prerequisite_courses": [
+          "MAT1700"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[MAT1700 Probabilités I]"
+      },
+      {
+        "id": "TEL3175",
+        "name": "Interconnexions et communications",
+        "credits": 3,
+        "description": "",
+        "prerequisite_courses": [
+          "INF1105",
+          "INF1120"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF1105 Introduction à la programmation scientifique] ou [INF1120 Programmation I]"
       }
     ]
   }
