@@ -1,0 +1,564 @@
+{
+  "metadata": {
+    "source": "UQAM – Baccalauréat en informatique (programme 7617)",
+    "program_url": "https://etudier.uqam.ca/programme?code=7617",
+    "inf_count": 28,
+    "other_count": 18
+  },
+  "courses": {
+    "INF": [
+      {
+        "id": "INF1070",
+        "name": "Utilisation et administration des systèmes informatiques",
+        "credits": 3,
+        "description": "Ce cours vise à former les étudiants à l'utilisation éclairée des systèmes informatiques et à introduire les concepts de l'administration de ces systèmes. Commandes et applications, gestion des processus, entrées-sorties et leurs redirections, tubes et conduites, fichiers de commandes. Système de fichiers hiérarchiques, types de fichiers, utilisateurs et droits, recherche et expressions régulières, fiabilité et sécurité des systèmes de fichiers. Terminologie, concepts de base et principaux protocoles des réseaux téléinformatiques. Sécurité des réseaux et vie privée. Installation, configuration, sécurisation et mise-à-jour d'un système informatique. Installation et configuration de services et de serveurs. Supervision et qualité de service.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF1120",
+        "name": "Programmation I",
+        "credits": 3,
+        "description": "Acquérir une méthode de développement de solutions logicielles dans le cadre du paradigme orienté-objet : analyse du problème, conception simplifiée, codage et test d'une solution. Sensibiliser au développement de programmes de qualité : fiables, faciles à utiliser, à comprendre et à modifier. Introduction aux algorithmes. Éléments de programmation de base : vocabulaire, syntaxe et sémantique, constantes, variables, types simples et composés (tableaux à une et deux dimensions), conversions de type, affectation, opérateurs et expressions, instructions, structures de contrôle (séquence, sélection, itération), instructions simples d'entrées-sorties, fichier texte. Introduction aux éléments de la programmation orientée-objet : classes, objets, méthodes et paramètres, variables de classe, d'instance et locale, portée et durée de vie des variables, constructeurs. Notion d'encapsulation. Introduction à l'utilisation de classes et de paquetages prédéfinis.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF2050",
+        "name": "Outils et pratiques de développement logiciel",
+        "credits": 3,
+        "description": "Initier les étudiants au développement de logiciel dans un contexte et un environnement de développement professionnel. Faire connaître aux étudiants les principaux outils utilisés pour le développement professionnel de logiciel. Comparaison des modèles de développement traditionnels et des processus de développements modernes. Développement de logiciel dans un contexte de logiciel libre (open source). Étude de cas. Utilisation d'outils contemporains pour de développement : cadre de test, gestion de la configuration, construction automatisée, environnement intégré de développement, outils de pistage et de revue de code.",
+        "prerequisite_courses": [
+          "INF1070",
+          "INF1120"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF1070 Utilisation et administration des systèmes informatiques] [INF1120 Programmation I]"
+      },
+      {
+        "id": "INF2120",
+        "name": "Programmation II",
+        "credits": 3,
+        "description": "Approfondir les concepts de la programmation orientée-objet, de mise au point et de test de composants logiciels. Identification et définition des classes d'une solution logicielle. Relations entre les classes : composition et héritage. Classes abstraites et polymorphisme. Algorithmes récursifs simples. Structures de données classiques : piles, files, listes et arbres binaires de recherche. Techniques classiques de recherche (séquentielle et binaire) et de tri. Gestion des événements et des exceptions, fils d'exécution. Conception de paquetages Introduction à un environnement de développement logiciel.",
+        "prerequisite_courses": [
+          "INF1120"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF1120 Programmation I]"
+      },
+      {
+        "id": "INF2171",
+        "name": "Organisation des ordinateurs et assembleur",
+        "credits": 3,
+        "description": "Familiariser l'étudiant avec le fonctionnement de l'ordinateur à partir des niveaux de l'assembleur, du langage machine et des circuits logiques. Description des unités de l'ordinateur (processeur, mémoire, bus, périphériques). Représentation et manipulation de l'information (bits, octets, entiers signés et non signés, flottants, pointeurs, tableaux, enregistrements). Organisation et accès à la mémoire (pile, tas et leurs adressages). Représentation et exécution des programmes en langage machine et en assembleur (jeux d'instructions, sous-programmes, entrées-sorties).",
+        "prerequisite_courses": [
+          "INF1120"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF1120 Programmation I]"
+      },
+      {
+        "id": "INF3080",
+        "name": "Bases de données",
+        "credits": 3,
+        "description": "Introduire les concepts fondamentaux des bases de données relationnelles. Information, données et système de gestion de bases de données (SGBD). Présentation des principales architectures de bases de données. Modèle entité-association. Modèle relationnel. Algèbre relationnelle et langage SQL. Contraintes d'intégrité et gâchette (trigger). Modélisation et conception, création, exploitation et administration d'une base de données. Schéma interne : indexage et hachage. Intégration d'une base de données dans une application. Sécurité. Transactions. Évaluation et optimisation des requêtes relationnelles.",
+        "prerequisite_courses": [
+          "INF1120"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF1120 Programmation I]"
+      },
+      {
+        "id": "INF3105",
+        "name": "Structures de données et algorithmes",
+        "credits": 3,
+        "description": "Approfondir les connaissances des structures de données et des algorithmes et les appliquer à la résolution de problèmes. Rappels sur les types abstraits de données. Analyse et complexité des algorithmes. Abstractions de données et de contrôle. Collections et les structures de données nécessaires à leurs réalisations. Arbres équilibrés, tables de hachage, graphes. Bibliothèques publiques ou normalisées.",
+        "prerequisite_courses": [
+          "INF1132",
+          "MAT1060",
+          "INF2120"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF1132 Mathématiques pour l'informatique] ou [MAT1060 Mathématiques algorithmiques]; [INF2120 Programmation II]"
+      },
+      {
+        "id": "INF3135",
+        "name": "Construction et maintenance de logiciels",
+        "credits": 3,
+        "description": "Initier les étudiants à la programmation à l'aide d'un langage impératif et procédural. Familiariser les étudiants à la construction professionnelle de logiciels et à leur maintenance. Notions de base de la programmation procédurale et impérative en langage C sous environnement Unix/Linux (définition et déclaration, portée et durée de vie, fichier d'interface, structures de contrôle, unités de programme et passage des paramètres, macros, compilation conditionnelle). Décomposition en modules et caractéristiques facilitant les modifications (cohésion et couplage, encapsulation et dissimulation de l'information, décomposition fonctionnelle). Style de programmation (conventions, documentation interne, gabarits). Déboggage de programmes (erreurs typiques, traces, outils). Assertions et conception par contrats. Tests (unitaires, intégration, d'acceptation, boîte noire vs. boîte blanche, mesures de couverture, outils d'exécution automatique des tests). Évaluation et amélioration des performances (profils d'exécution, améliorations asymptotiques vs. optimisations, outils). Techniques et outils de base pour la gestion de la configuration. Système de contrôle de version.",
+        "prerequisite_courses": [
+          "INF1120",
+          "INF2050"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF1120 Programmation I] (pour le certificat en réseaux et systèmes de télécommunications et le baccalauréat en systèmes informatiques et électroniques) [INF2050 Outils et pratiques de développement logiciel] Note : Le INF1120 est le seul préalables pour les programmes de certificat en réseaux et systèmes de télécommunications et le baccalauréat en systèmes informatiques et électroniques. Les deux préalables INF1120 et INF2050 sont exigés pour tous les autres programmes."
+      },
+      {
+        "id": "INF3173",
+        "name": "Principes des systèmes d'exploitation",
+        "credits": 3,
+        "description": "Maîtriser et appliquer les concepts fondamentaux des systèmes d'exploitation. Comprendre les mécanismes et les politiques mises-en-oeuvre par les systèmes d'exploitations. Maîtriser la programmation système UNIX/Linux en C. Rôles, types et structure générale des systèmes d'exploitation. Mécanismes noyaux : appels systèmes, interruptions, modes d'exécution processeur. Gestion des processus : états des processus, création et terminaison (fork et exec). Multitâche : changement de contexte, fils (threads), ordonnancement des tâches. Gestion des fichiers : systèmes de fichiers, inodes, descripteurs de fichiers, fichiers spéciaux. Communication inter-processus : échanges de messages, signaux, tubes, mémoire partagée. Concurrence : synchronisation, sections critiques, interblocages. Gestion de la mémoire : adressage, allocation, protection, pagination, mémoire virtuelle. Entrées-sorties : pilotes, pseudo-périphériques. Les considérations de sécurité seront intégrées au développement de la matière.",
+        "prerequisite_courses": [
+          "INF2171",
+          "INF3135"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF2171 Organisation des ordinateurs et assembleur] [INF3135 Construction et maintenance de logiciels]"
+      },
+      {
+        "id": "INF3191",
+        "name": "Programmation Web",
+        "credits": 3,
+        "description": "Ce cours introduit à la conception et au développement Web, tant du côté client que serveur. Les fondements du Web : navigateur, serveur, protocoles. Langages, normes et standards du Web (HTML, JavaScript, CSS, XML, JSON). Accessibilité Web. Conception de formulaires et d'interfaces utilisateur. Génération dynamique de documents HTML. Services Web. Introduction à un cadre d'applications (cadriciel, framework). Sécurité et vie privée.",
+        "prerequisite_courses": [
+          "INF1120",
+          "INF1070"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF1120 Programmation I] [INF1070 Utilisation et administration des systèmes informatiques]"
+      },
+      {
+        "id": "INF3271",
+        "name": "Téléinformatique",
+        "credits": 3,
+        "description": "Introduire les notions de base en matière de télécommunication et de téléinformatique indispensables à l'étude des réseaux actuels et des réseaux de nouvelle génération. Terminologie et concepts de base des réseaux téléinformatiques. Les différentes couches du modèle OSI et exemples tirés du modèle TCP/IP. Normes et protocoles associés aux diverses couches du modèle OSI, de la couche application à la couche physique. Applications sur Internet (HTTP, FTP, SNMP). Adressage IP. Protocoles de transport (TCP, UDP), de routage et de liaison de données. Transmission de données, multiplexage, équipements d'interconnexion. Introduction aux réseaux de téléphonie mobile. Les considérations de sécurité réseau seront intégrées au fur et mesure du développement de la matière.",
+        "prerequisite_courses": [
+          "INF2171"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF2171 Organisation des ordinateurs et assembleur]"
+      },
+      {
+        "id": "INF5151",
+        "name": "Génie logiciel: analyse et modélisation",
+        "credits": 3,
+        "description": "",
+        "prerequisite_courses": [
+          "INF2050",
+          "INF2120",
+          "INF3080",
+          "INF3191"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF2050 Outils et pratiques de développement logiciel] ET [INF2120 Programmation II] ET [INF3080 Bases de données] ET [INF3191 Programmation Web]"
+      },
+      {
+        "id": "INF5171",
+        "name": "Programmation concurrente et parallèle",
+        "credits": 3,
+        "description": "Familiariser les étudiants avec les concepts de base et les différents paradigmes de la programmation concurrente et parallèle. Donner un aperçu de la mise en oeuvre de programmes concurrents et parallèles dans différents langages. Architectures parallèles : architecture des processeurs (pipelines, coeurs multiples); multiprocesseurs, multi-ordinateurs, grilles de calculs. Types d'application concurrentes : à fils d'exécution multiples, parallèles, distribuées. Synchronisation et communication : variables partagées, échange de messages. Programmation par variables partagées : verrous, sémaphores, barrières, moniteurs. Mesures de performance: temps, coût, accélération, efficacité. Stratégies de programmation : parallélisme itératif, récursif, de flux, de données, de sac de tâches; parallélisme de résultat, d'agenda, de spécialistes.",
+        "prerequisite_courses": [
+          "INF3173"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF3173 Principes des systèmes d'exploitation]"
+      },
+      {
+        "id": "INF5153",
+        "name": "Génie logiciel: conception",
+        "credits": 3,
+        "description": "",
+        "prerequisite_courses": [
+          "INF5151",
+          "INF3135"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF5151 Génie logiciel: analyse et modélisation] ; [INF3135 Construction et maintenance de logiciels]"
+      },
+      {
+        "id": "INF6120",
+        "name": "Programmation fonctionnelle et logique",
+        "credits": 3,
+        "description": "Faire l'acquisition de nouvelles techniques et stratégies de programmation par l'apprentissage des concepts fondamentaux des langages de programmation fonctionnels et logiques. Apprécier l'apport de ces langages au développement logiciel. La récursion comme méthode générale de résolution de problèmes. Bref historique de la programmation fonctionnelle. Effet de bord, référence immuable et évaluation des expressions. Répartition par appariement de motifs. Fonctions comme argument et valeur de retour. Stratégies d'évaluation des arguments. Polymorphisme et déduction des types. Fermetures, curryage et application partielle. Fonctions d'ordre supérieur (map, reduce/fold, filter). Concurrence et parallélisme en programmation fonctionnelle. Bref historique de la programmation déclarative et logique. Règles, inférence et clauses de Horn. Recherche par retour-arrière et déduction. Unification et résolution. Coupure et négation. Programmation par contraintes, consistance d'arc, de chemins et problèmes de satisfaction de contraintes. Comparaison des approches de programmation logique et par contraintes.",
+        "prerequisite_courses": [
+          "INF3105"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF3105 Structures de données et algorithmes]"
+      },
+      {
+        "id": "INF6150",
+        "name": "Génie logiciel: conduite de projets informatiques",
+        "credits": 3,
+        "description": "Étudier les approches et les outils spécifiques à la conduite de projets informatiques. Permettre à l'étudiant d'avoir un regard critique par rapport aux méthodes en application dans l'industrie, le sensibiliser à l'interaction entre les parties technique et gestion des projets. Gestion de projets et méthodologies de développement. Équipes et styles de gestion. Analyse des risques des projets informatiques. Métriques: objet, processus, produit. Estimation et échéanciers. Outils de mesure de productivité. Suivi et revues formelles. Interaction entre projet et assurance de qualité. Contrôle de la configuration. Réflexion critique sur le processus de développement des systèmes et sur les outils de gestion de projets.",
+        "prerequisite_courses": [
+          "INF3135",
+          "INF5151"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF3135 Construction et maintenance de logiciels] [INF5151 Génie logiciel: analyse et modélisation]"
+      },
+      {
+        "id": "INF1132",
+        "name": "Mathématiques pour l'informatique",
+        "credits": 3,
+        "description": "Connaître les notions de base en mathématiques qui sous-tendent l'informatique. Calcul  propositionnel,  calcul  des  prédicats  et  théorie  naïve  des  ensembles. Nombres entiers et division. Définitions et preuves par induction. Stratégies de preuve. Relations : définitions et représentations. Propriétés des relations et principaux types de relations. Fonctions : définitions et représentations. Opérations sur les fonctions. Récursion. Graphes : définitions et représentations. Parcours d'un graphe. Introduction à l'analyse d'algorithmes : notion générale d'algorithme, arrêt et exactitude. Complexité spatiale et temporelle. Algorithmes récursifs et équations de récurrence.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF5130",
+        "name": "Algorithmique",
+        "credits": 3,
+        "description": "Introduire aux principes fondamentaux de la conception et de l'analyse des algorithmes. Introduction à la théorie de l'information. Entropie, information mutuelle et conditionnelle. Codes de longueur fixe/variable, théorème fondamental du codage de source. Détection et correction d'erreurs, distance de Hamming, codes linéaires. Rappels sur la notation asymptotique. Complexité temporelle et spatiale, analyse probabiliste. Équations de récurrence et théorème fondamental. Algorithmes de force brute et voraces. Principe «diviser pour régner». Programmation dynamique. Algorithmes randomisés. Algorithmes à retour arrière. Méthode de séparation et d'évaluation progressive (Branch-and- bound). Heuristiques. Machine de Turing : le problème de l'arrêt, la question P=NP. Réductions et NP-complétude.",
+        "prerequisite_courses": [
+          "INF3105"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF3105 Structures de données et algorithmes]"
+      },
+      {
+        "id": "INF4150",
+        "name": "Interfaces personnes-machines",
+        "credits": 3,
+        "description": "",
+        "prerequisite_courses": [
+          "INF5151"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF5151 Génie logiciel: analyse et modélisation]"
+      },
+      {
+        "id": "INF4170",
+        "name": "Architecture des ordinateurs",
+        "credits": 3,
+        "description": "Familiariser l'étudiant avec la structure des ordinateurs modernes. Initier au fonctionnement interne, à l'agencement des organes. Classification des architectures. Structure des ordinateurs parallèles, pipelines, matriciels et à multiprocesseurs. Fonctionnement d'un processeur. Unité de traitement: étude comparative des catégories d'instructions, unité de contrôle, U.A.L. Mémoires: architecture, fonctionnement, types. Entrée/sortie: adressage des composants, synchronisation, interfaces, canaux. Pipelining: principe, arithmétique et instructions, fonctionnement. Traitement vectorisé: caractéristiques et exemples. Multiprocesseurs: structures fonctionnelles, réseaux d'interconnexion, organisation de la mémoire parallèle, logiciels d'exploitation.",
+        "prerequisite_courses": [
+          "INF3173"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF3173 Principes des systèmes d'exploitation]"
+      },
+      {
+        "id": "INF4230",
+        "name": "Intelligence artificielle",
+        "credits": 3,
+        "description": "Connaître les paradigmes de l'intelligence artificielle. Être capable de formuler des hypothèses pour la recherche, de les tester, les interpréter et les présenter. Être capable d'évaluer les idées reçues à propos de l'intelligence artificielle. Historique de l'intelligence artificielle. Identification descriptive et réduction de buts. Résolution de problèmes par analogie. Exploitation de contraintes naturelles. Propagation de contraintes. Recherche et exploration de solutions de rechange. Décision et contrôle. Paradigmes de résolution de problèmes. Logique mathématique et démonstration de théorèmes. Représentation des connaissances. Traitement des langues naturelles.",
+        "prerequisite_courses": [
+          "MAT4681",
+          "MAT1700",
+          "INF3105"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[MAT4681 Statistique pour les sciences] ou [MAT1700 Probabilités I] [INF3105 Structures de données et algorithmes]"
+      },
+      {
+        "id": "INF4471",
+        "name": "Introduction à la sécurité informatique",
+        "credits": 3,
+        "description": "Introduire les étudiants aux différents aspects de la sécurité des systèmes informatiques. Sensibiliser les étudiants aux risques et menaces. Introduire les techniques permettant d'assurer la sécurité des processus. Introduire les méthodes de mitigation du risque. À la fin de ce cours, l'étudiant devra être en mesure de: distinguer les principaux objectifs de sécurité; expliquer le fonctionnement et justifier l'utilisation des principaux mécanismes de sécurité: chiffrement, signature, hachage, protocoles, etc.; identifier les risques et les menaces auxquels fait face un système; proposer des mesures de contrôle appropriées. Principes et concepts fondamentaux de la sécurité des systèmes informatiques. Principaux objectifs de sécurité: confidentialité, intégrité, disponibilité, authentification, non répudiation, contrôle d'accès. Typologie des attaques et menaces: fuites, modifications, dénis de service. Introduction aux mécanismes sécuritaires modernes: systèmes de chiffrage symétriques et asymétriques; fonctions de hachage; protocoles sécuritaires: authentification, contrôle d'accès. Sécurité des réseaux: filtrage, périmètre de sécurité, journalisation, surveillance et détection d'intrusion, appareils mobiles. Gestion des incidents de sécurité et améliorations des systèmes: mécanismes de recouvrement. Analyse de risque. Gestion des vulnérabilités techniques. Éducation des usagers. Considérations légales, politiques et éthiques. Politiques et modèles de sécurité. Services de commerces électronique. Monnaie électronique. Mécanismes de paiement.",
+        "prerequisite_courses": [
+          "INF1120"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF1120 Programmation I]"
+      },
+      {
+        "id": "INF4500",
+        "name": "Bioinformatique",
+        "credits": 3,
+        "description": "",
+        "prerequisite_courses": [
+          "INF3105"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF3105 Structures de données et algorithmes]"
+      },
+      {
+        "id": "INF5001",
+        "name": "Conception, interprétation et compilation de langages informatiques",
+        "credits": 3,
+        "description": "Initier les étudiants à la conception de langages informatiques et à la construction efficace d'interpréteurs et de compilateurs à l'aide d'outils modernes. Types de langages informatiques (programmation, déclaratif, requête et autres). Structure typique d'un interpréteur et d'un compilateur. Éléments de la théorie des langages. Spécification lexicale. Expressions régulières. Ambiguïtés lexicales. Spécification syntaxique. Grammaires non contextuelles. Ambiguïtés syntaxiques et conflits. Utilisation de générateurs d'analyseurs lexicaux et syntaxiques. Arbres syntaxiques hétérogènes. Interprétation par visite d'arbre. Structures de données auxiliaires à l'interprétation telles que le dictionnaire de variables. Analyse sémantique. Interprétation abstraite. Analyse de types d'expressions. Génération de code. Utilisation de générateurs de générateurs de texte. Techniques et structures de données pour l'interprétation ou la compilation de concepts des langages de programmation modernes.",
+        "prerequisite_courses": [
+          "INF3105"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF3105 Structures de données et algorithmes]"
+      },
+      {
+        "id": "INF5071",
+        "name": "Infographie",
+        "credits": 3,
+        "description": "Connaître les algorithmes fondamentaux de l'infographie. Être capable de réaliser une application graphique simple à l'aide d'une bibliothèque graphique (par exemple, OpenGL). Rappels des notions de base en calcul vectoriel et en géométrie. Objets géométriques élémentaires. Codage des objets en deux et trois dimensions. Transformations linéaires en coordonnées homogènes. Composition de transformation. Transformation de perspective et modèles de représentation. Tracé de figures élémentaires. Représentation paramétrique des objets en trois dimensions (courbes de Bézier, B-splines). Fonctionnalités typiques offertes par les bibliothèques graphiques, par exemple, OpenGL. Autres sujets (selon le temps disponible) : modèle de lumière, espace de couleurs, surface de Bézier, lancer de rayons.",
+        "prerequisite_courses": [
+          "INF3105"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF3105 Structures de données et algorithmes]"
+      },
+      {
+        "id": "INF5082",
+        "name": "Gestion et analyse de données",
+        "credits": 3,
+        "description": "Développer une capacité d'analyse des besoins en gestion de données en fonction du contexte d'application. Être en mesure de justifier l'usage et de mettre en oeuvre une méthode avancée de gestion et analyse des données. Présentation et comparaison des différentes méthodes de gestion et d'analyse de données. Extraction de connaissances et forage de données. Prétraitement et préparation des données, apprentissage automatique et algorithmes d'exploitation de données prédictives (apprentissage supervisé) et descriptives (apprentissage non supervisé), données transactionnelles et recherche de règles d'associations.",
+        "prerequisite_courses": [
+          "INF3105",
+          "MAT4681",
+          "STT1000"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF3105 Structures de données et algorithmes] et [MAT4681 Statistique pour les sciences] ou [STT1000 Statistique I]"
+      },
+      {
+        "id": "INF5190",
+        "name": "Programmation Web avancée",
+        "credits": 3,
+        "description": "Ce cours introduit aux méthodes avancées et aux bonnes pratiques de conception et de développement d'applications Web modernes. Infrastructure et cadre de développement Web ; intégration d'une base de données ; authentification ; conception de services web ; formats de sérialisation ; gestion d'erreurs ; interopérabilité ; déploiement de services ; tests de charge ; sécurité et patrons d'attaques spécifiques aux applications web.",
+        "prerequisite_courses": [
+          "INF3080",
+          "INF3190"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF3080 Bases de données] [INF3190 Introduction à la programmation Web]"
+      },
+      {
+        "id": "INF6200",
+        "name": "Initiation à la recherche",
+        "credits": 3,
+        "description": "Initiation à la production scientifique par la réalisation d'un projet sur une problématique de recherche en informatique. Aborder, sous la direction d'une professeure, d'un professeur d'informatique, les différents aspects d'un projet de recherche scientifique : revue de littérature, définition d'une problématique, types de contributions scientifiques, méthodes d'évaluation (théorique, expérimentale, etc.). Réalisation d'un projet donnant lieu à un rapport final et une présentation démontrant la maîtrise du processus de production scientifique en informatique.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      }
+    ],
+    "OTHER": [
+      {
+        "id": "MAT4681",
+        "name": "Statistique pour les sciences",
+        "credits": 3,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "ECO1081",
+        "name": "Économie des technologies de l'information",
+        "credits": 3,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "AOT1110",
+        "name": "Organisation, gestion et système d'information",
+        "credits": 3,
+        "description": "Ce cours vise le développement de compétences dans le domaine de la gestion des organisations, des processus, des systèmes d'information et des technologies de l'information et de communication, en mettant au centre des préoccupations le rôle des technologies de l'information et des communications dans l'organisation. Introduction des concepts d'organisation, de chaîne de valeur, de processus, de système d'information (SI), de technologie de l'information et de communication (TIC) et analyse de leurs interrelations. Présentation des composantes d'un SI/TIC (ressources matérielles, logicielles, en données et l'infrastructure des TIC). Introduction des différents types de SI/TIC que l'on retrouve dans une organisation et des enjeux du développement et de la conception de SI/TIC. Introduction à la gestion de la fonction SI/TIC en organisation. Sensibilisation aux enjeux éthiques et de sécurité de l'information propres à la gestion des SI/TIC.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INM6000",
+        "name": "Informatique et société",
+        "credits": 3,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INM5151",
+        "name": "Projet d'analyse et de modélisation",
+        "credits": 3,
+        "description": "",
+        "prerequisite_courses": [
+          "INF5151"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF5151 Génie logiciel: analyse et modélisation]"
+      },
+      {
+        "id": "AOT3221",
+        "name": "Analytique prescriptive pour la gestion",
+        "credits": 3,
+        "description": "Ce cours a pour objectif de former et d'entraîner l'étudiante ou l'étudiant à l'utilisation d'un cadre rigoureux pour formuler, analyser et résoudre des problèmes complexes de gestion qui se posent au sein d'une entreprise, fût-elle privée ou publique, de manufacture ou de service. En particulier, l'étudiante ou l'étudiant sera initié(e) : 1. Aux méthodes d'optimisation, qui permettent de trouver des solutions aux problèmes considérés, de façon à maximiser le profit, minimiser les coûts, minimiser les impacts environnementaux, etc., tout en respectant un ensemble de contraintes (imposant des limites aux solutions possibles). 2. À certaines techniques de simulation, qui permettent de tester et d'évaluer des scénarios dans le but de répondre à des questions telles que : quel profit ou quel coût peut-on espérer obtenir dans un contexte décisionnel impliquant des sources d'incertitudes? Comment devrait-on gérer les stocks, dans un contexte où les demandes, les coûts, etc., varient de façon aléatoire? En suivant ce cours, les étudiantes et les étudiants développeront des habilités leur permettant de modéliser des problèmes de planification organisationnelle, d'identifier les informations qu'il est important de connaître pour pouvoir formuler le modèle, de choisir l'approche de résolution appropriée pour les modèles obtenus, ainsi que des habilités d'analyse permettant de mieux comprendre comment les problèmes considérés peuvent être résolus. Le cours couvrira les thèmes suivants : Analytique descriptive (distributions, moyennes, intervalles de confiance, etc.) Éléments de la modélisation (paramètres, variables et fonctions) Modélisation I : Planification de la production Utilisation du Solver d'Excel pour résoudre les modèles d'optimisation Modélisation II : planification de la production et de la main d'oeuvre Modélisation III : le choix entre faire ou ne pas faire Simulation de Monte-Carlo Gestion des inventaires (stocks) Optimisation multi-crite¿res: Optimisation par objectifs Optimisation sur des réseaux: transport et flot dans les réseaux Études de cas",
+        "prerequisite_courses": [
+          "ECO2273",
+          "MAT2082",
+          "MAT4681",
+          "POL1850",
+          "STT1000"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[ECO2273 Économétrie I] OU [MAT2082 Méthodes statistiques] OU [MAT4681 Statistique pour les sciences] OU [POL1850 Méthodes quantitatives] OU [STT1000 Statistique I]"
+      },
+      {
+        "id": "AOT5322",
+        "name": "Systèmes décisionnels et systèmes intelligents",
+        "credits": 3,
+        "description": "L'objectif de ce cours est d'approfondir la connaissance et l'utilisation des méthodes et des technologies de prise de décision. Parmi celles-ci, on trouve les Systèmes interactifs d'aide à la décision, les Systèmes intelligents d'affaires (BIS), les systèmes experts, ainsi que les systèmes basés sur l'intelligence artificielle. Une attention particulière sera portée sur les tableaux de bord comme outils d'évaluation de la performance stratégique. Ces tableaux de bord s'alimentent à partir d'informations provenant de diverses sources, ayant été préparées pour la prise de décision, se trouvant souvent dans des entrepôts de données mises en valeur à l'aide de traitements analytiques en ligne (de type Traitement analytique en ligne ou Online Analytical Processing - OLAP) et de l'exploration des données (data mining). Le tout est présenté dans un contexte organisationnel.  À l'issue de ce cours, la personne étudiante sera en mesure de : Comprendre les concepts concernant la prise de décision en milieu organisationnel. Connaître les bonnes pratiques quant à la gestion de l'informatique décisionnelle. Modéliser l'information pour faciliter la prise de décision. Préparer l'information pour faciliter la prise de décision à l'aide d'outils d'extraction, de transformation et de chargement. Visualiser l'information à l'aide d'outils OLAP. Maîtriser les bonnes pratiques quant à l'utilisation de l'exploration des données et de l'intelligence artificielle (IA) pour la prise de décision en organisation. Les thèmes suivants sont abordés dans le cours : Concepts de prise de décision dans un milieu organisationnel. Conception d'indicateurs. Tableaux de bord informatifs et de gestion de la performance. Entreposage des données. Modélisation dimensionnelle. Préparation des données avec des outils d'extraction, de transformation et de chargement. Visualisation de données avec des outils OLAP. Pratiques d'exploration des données pour la prise de décision. Pratiques d'utilisation de l'intelligence artificielle pour la prise de décision.",
+        "prerequisite_courses": [
+          "AOT5100"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[AOT5100 Introduction aux technologies d'affaires]"
+      },
+      {
+        "id": "AOT5332",
+        "name": "Introduction aux progiciels de gestion intégrés (PGI)",
+        "credits": 3,
+        "description": "Le cours a comme objectif d'initier l'étudiant aux rôles que jouent les différents progiciels de gestion intégrés (PGI). Plus précisément, ce cours permettra à l'étudiant : (1) de connaître le portfolio de PGIs disponibles sur le marché permettant de soutenir les activités de l'entreprise; (2) de connaître les fonctionnalités particulières offertes par chacun de ces progiciels; et (3) d'utiliser le progiciel ERP de SAP, le leader mondial de solutions d'affaires intégrées. Pour soutenir les activités de l'entreprise, seront abordés dans ce cours les familles de progiciels suivantes: -\tL'Enterprise Resource planning (ERP) -\tLes progiciels soutenant les activités d'approvisionnement de l'entreprise -\tLes progiciels soutenant la gestion de la relation client (CRM) -\tLes progiciels soutenant la gestion de la chaine d'approvisionnement (SCM, MES, SCP, etc.) -\tLes progiciels soutenant la gestion du cycle de vie produit (PDM, CAD/CAM, etc.) -\tLes progiciels soutenant l'intelligence d'affaires (BI)",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "AOT5334",
+        "name": "Implantation et configuration de progiciels de gestion intégrés (PGI)",
+        "credits": 3,
+        "description": "Le cours a comme objectif : (1) de familiariser l'étudiant à différentes méthodologies pouvant être adoptées par l'entreprise pour soutenir l'implantation d'un PGI; et (2) d'initier l'étudiant à la configuration du ERP de SAP, le leader mondial de solutions d'affaires intégrées. Pour soutenir le processus d'implantation et de configuration d'un PGI au sein d'une entreprise, ce cours abordera les sujets suivants: -\tLa méthodologie d'implantation de Tomas -\tLa méthodologie d'implantation Accelerated SAP -\tLes concepts clés rattachés à la configuration du progiciel ERP de SAP",
+        "prerequisite_courses": [
+          "AOT5332",
+          "MET4902"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[AOT5332 Introduction aux progiciels de gestion intégrés (PGI)] ou [MET4902 Introduction aux progiciels de gestion intégrés (PGI)]"
+      },
+      {
+        "id": "AOT5341",
+        "name": "Collaboration à l'ère du travail hybride",
+        "credits": 3,
+        "description": "L'objectif général du cours est l'acquisition de compétences reliées à la collaboration efficace en équipe peu importe le lieu. Les étudiantes et étudiants vont progressivement acquérir des connaissances théoriques et pratiques (méthodes, outils et techniques) abordant les domaines de la coordination, de la coopération et de la collaboration en ligne en mode synchrone ou asynchrone. Les contenus suivants seront abordés : le mode de travail hybride, le travail en ligne en mode synchrone et asynchrone ; la collaboration efficace à distance ; la mise en place d'une routine de travail en ligne ; l'équilibre travail/famille ; les présentations en vidéoconférence; le partage et la gestion de connaissances en ligne ; la gestion des équipes à distance ; l'animation de discussions en ligne ; la concentration en ligne ; l'utilisation efficace des outils de gestion et de coordination de tâches ; la co-rédaction en ligne sur une plateforme wiki; l'évaluation des technologies adéquates pour soutenir le travail en ligne ; la reconnaissance des biais induits par la collaboration ligne ; l'harmonisation entre équipes présentiels et équipes virtuelles.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "JUR1854",
+        "name": "Le droit de l'informatique",
+        "credits": 3,
+        "description": "Ce cours vise à analyser les principaux enjeux juridiques liés à l'utilisation de l'informatique. La propriété et les contrats touchant l'informatique: concentration, droits d'auteur, brevets et propriété intellectuelle, opérations commerciales, aspects fiscaux, confidentialité et sécurité des données. La responsabilité civile et pénale découlant de l'utilisation de l'informatique: dommages, diffamation, fraude, crime économique. Les normes d'utilisation de l'informatique par les organismes publics et privés. Les aspects internationaux (flux transfrontières, etc.).",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "TEL4165",
+        "name": "Réseaux sans fil et applications mobiles",
+        "credits": 3,
+        "description": "Étudier les réseaux sans fil et leur utilisation pour le applications mobiles. Introduction aux différentes technologies de réseaux sans fil : les réseaux cellulaires (ex.: GSM, CDMA, 3G), les réseaux locaux (ex.: 802.11x, Bluetooth), à large bande (ex.: WIMax); réseaux de capteurs; environnement, contextes, développement des applications mobiles; applications ubiquitaires.",
+        "prerequisite_courses": [
+          "INF3271",
+          "TEL3175"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INF3271 Téléinformatique] ou [TEL3175 Interconnexions et communications]"
+      },
+      {
+        "id": "INM4701",
+        "name": "Préparation au stage d'informatique I",
+        "credits": 2,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INM4702",
+        "name": "Préparation au stage d'informatique II",
+        "credits": 2,
+        "description": "",
+        "prerequisite_courses": [
+          "INM5801"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INM5801 Stage d'informatique I]"
+      },
+      {
+        "id": "INM4703",
+        "name": "Préparation au stage d'informatique III",
+        "credits": 2,
+        "description": "",
+        "prerequisite_courses": [
+          "INM5802"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INM5802 Stage d'informatique II]"
+      },
+      {
+        "id": "INM5801",
+        "name": "Stage d'informatique I",
+        "credits": 0,
+        "description": "",
+        "prerequisite_courses": [
+          "INM4701"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INM4701 Préparation au stage d'informatique I]"
+      },
+      {
+        "id": "INM5802",
+        "name": "Stage d'informatique II",
+        "credits": 0,
+        "description": "",
+        "prerequisite_courses": [
+          "INM4702"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INM4702 Préparation au stage d'informatique II]"
+      },
+      {
+        "id": "INM5803",
+        "name": "Stage d'informatique III",
+        "credits": 0,
+        "description": "",
+        "prerequisite_courses": [
+          "INM4703"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "[INM4703 Préparation au stage d'informatique III]"
+      }
+    ]
+  }
+}

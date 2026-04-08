@@ -1,0 +1,495 @@
+[
+  {
+    "sigle": "INF1070",
+    "universite": "UQAM",
+    "titre": "Utilisation et administration des systèmes informatiques",
+    "credits": 3,
+    "description": "Ce cours vise à former les étudiants à l'utilisation éclairée des systèmes informatiques et à introduire les concepts de l'administration de ces systèmes. Commandes et applications, gestion des processus, entrées-sorties et leurs redirections, tubes et conduites, fichiers de commandes. Système de fichiers hiérarchiques, types de fichiers, utilisateurs et droits, recherche et expressions régulières, fiabilité et sécurité des systèmes de fichiers. Terminologie, concepts de base et principaux protocoles des réseaux téléinformatiques. Sécurité des réseaux et vie privée. Installation, configuration, sécurisation et mise-à-jour d'un système informatique. Installation et configuration de services et de serveurs. Supervision et qualité de service.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "INF1120",
+    "universite": "UQAM",
+    "titre": "Programmation I",
+    "credits": 3,
+    "description": "Acquérir une méthode de développement de solutions logicielles dans le cadre du paradigme orienté-objet : analyse du problème, conception simplifiée, codage et test d'une solution. Sensibiliser au développement de programmes de qualité : fiables, faciles à utiliser, à comprendre et à modifier. Introduction aux algorithmes. Éléments de programmation de base : vocabulaire, syntaxe et sémantique, constantes, variables, types simples et composés (tableaux à une et deux dimensions), conversions de type, affectation, opérateurs et expressions, instructions, structures de contrôle (séquence, sélection, itération), instructions simples d'entrées-sorties, fichier texte. Introduction aux éléments de la programmation orientée-objet : classes, objets, méthodes et paramètres, variables de classe, d'instance et locale, portée et durée de vie des variables, constructeurs. Notion d'encapsulation. Introduction à l'utilisation de classes et de paquetages prédéfinis.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "INF2050",
+    "universite": "UQAM",
+    "titre": "Outils et pratiques de développement logiciel",
+    "credits": 3,
+    "description": "Initier les étudiants au développement de logiciel dans un contexte et un environnement de développement professionnel. Faire connaître aux étudiants les principaux outils utilisés pour le développement professionnel de logiciel. Comparaison des modèles de développement traditionnels et des processus de développements modernes. Développement de logiciel dans un contexte de logiciel libre (open source). Étude de cas. Utilisation d'outils contemporains pour de développement : cadre de test, gestion de la configuration, construction automatisée, environnement intégré de développement, outils de pistage et de revue de code.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF1070",
+      "INF1120"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF1070 Utilisation et administration des systèmes informatiques] [INF1120 Programmation I]"
+  },
+  {
+    "sigle": "INF2120",
+    "universite": "UQAM",
+    "titre": "Programmation II",
+    "credits": 3,
+    "description": "Approfondir les concepts de la programmation orientée-objet, de mise au point et de test de composants logiciels. Identification et définition des classes d'une solution logicielle. Relations entre les classes : composition et héritage. Classes abstraites et polymorphisme. Algorithmes récursifs simples. Structures de données classiques : piles, files, listes et arbres binaires de recherche. Techniques classiques de recherche (séquentielle et binaire) et de tri. Gestion des événements et des exceptions, fils d'exécution. Conception de paquetages Introduction à un environnement de développement logiciel.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF1120"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF1120 Programmation I]"
+  },
+  {
+    "sigle": "INF2171",
+    "universite": "UQAM",
+    "titre": "Organisation des ordinateurs et assembleur",
+    "credits": 3,
+    "description": "Familiariser l'étudiant avec le fonctionnement de l'ordinateur à partir des niveaux de l'assembleur, du langage machine et des circuits logiques. Description des unités de l'ordinateur (processeur, mémoire, bus, périphériques). Représentation et manipulation de l'information (bits, octets, entiers signés et non signés, flottants, pointeurs, tableaux, enregistrements). Organisation et accès à la mémoire (pile, tas et leurs adressages). Représentation et exécution des programmes en langage machine et en assembleur (jeux d'instructions, sous-programmes, entrées-sorties).",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF1120"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF1120 Programmation I]"
+  },
+  {
+    "sigle": "INF3080",
+    "universite": "UQAM",
+    "titre": "Bases de données",
+    "credits": 3,
+    "description": "Introduire les concepts fondamentaux des bases de données relationnelles. Information, données et système de gestion de bases de données (SGBD). Présentation des principales architectures de bases de données. Modèle entité-association. Modèle relationnel. Algèbre relationnelle et langage SQL. Contraintes d'intégrité et gâchette (trigger). Modélisation et conception, création, exploitation et administration d'une base de données. Schéma interne : indexage et hachage. Intégration d'une base de données dans une application. Sécurité. Transactions. Évaluation et optimisation des requêtes relationnelles.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF1120"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF1120 Programmation I]"
+  },
+  {
+    "sigle": "INF3105",
+    "universite": "UQAM",
+    "titre": "Structures de données et algorithmes",
+    "credits": 3,
+    "description": "Approfondir les connaissances des structures de données et des algorithmes et les appliquer à la résolution de problèmes. Rappels sur les types abstraits de données. Analyse et complexité des algorithmes. Abstractions de données et de contrôle. Collections et les structures de données nécessaires à leurs réalisations. Arbres équilibrés, tables de hachage, graphes. Bibliothèques publiques ou normalisées.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF1132",
+      "MAT1060",
+      "INF2120"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF1132 Mathématiques pour l'informatique] ou [MAT1060 Mathématiques algorithmiques]; [INF2120 Programmation II]"
+  },
+  {
+    "sigle": "INF3135",
+    "universite": "UQAM",
+    "titre": "Construction et maintenance de logiciels",
+    "credits": 3,
+    "description": "Initier les étudiants à la programmation à l'aide d'un langage impératif et procédural. Familiariser les étudiants à la construction professionnelle de logiciels et à leur maintenance. Notions de base de la programmation procédurale et impérative en langage C sous environnement Unix/Linux (définition et déclaration, portée et durée de vie, fichier d'interface, structures de contrôle, unités de programme et passage des paramètres, macros, compilation conditionnelle). Décomposition en modules et caractéristiques facilitant les modifications (cohésion et couplage, encapsulation et dissimulation de l'information, décomposition fonctionnelle). Style de programmation (conventions, documentation interne, gabarits). Déboggage de programmes (erreurs typiques, traces, outils). Assertions et conception par contrats. Tests (unitaires, intégration, d'acceptation, boîte noire vs. boîte blanche, mesures de couverture, outils d'exécution automatique des tests). Évaluation et amélioration des performances (profils d'exécution, améliorations asymptotiques vs. optimisations, outils). Techniques et outils de base pour la gestion de la configuration. Système de contrôle de version.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF1120",
+      "INF2050"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF1120 Programmation I] (pour le certificat en réseaux et systèmes de télécommunications et le baccalauréat en systèmes informatiques et électroniques) [INF2050 Outils et pratiques de développement logiciel] Note : Le INF1120 est le seul préalables pour les programmes de certificat en réseaux et systèmes de télécommunications et le baccalauréat en systèmes informatiques et électroniques. Les deux préalables INF1120 et INF2050 sont exigés pour tous les autres programmes."
+  },
+  {
+    "sigle": "INF3173",
+    "universite": "UQAM",
+    "titre": "Principes des systèmes d'exploitation",
+    "credits": 3,
+    "description": "Maîtriser et appliquer les concepts fondamentaux des systèmes d'exploitation. Comprendre les mécanismes et les politiques mises-en-oeuvre par les systèmes d'exploitations. Maîtriser la programmation système UNIX/Linux en C. Rôles, types et structure générale des systèmes d'exploitation. Mécanismes noyaux : appels systèmes, interruptions, modes d'exécution processeur. Gestion des processus : états des processus, création et terminaison (fork et exec). Multitâche : changement de contexte, fils (threads), ordonnancement des tâches. Gestion des fichiers : systèmes de fichiers, inodes, descripteurs de fichiers, fichiers spéciaux. Communication inter-processus : échanges de messages, signaux, tubes, mémoire partagée. Concurrence : synchronisation, sections critiques, interblocages. Gestion de la mémoire : adressage, allocation, protection, pagination, mémoire virtuelle. Entrées-sorties : pilotes, pseudo-périphériques. Les considérations de sécurité seront intégrées au développement de la matière.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF2171",
+      "INF3135"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF2171 Organisation des ordinateurs et assembleur] [INF3135 Construction et maintenance de logiciels]"
+  },
+  {
+    "sigle": "INF3191",
+    "universite": "UQAM",
+    "titre": "Programmation Web",
+    "credits": 3,
+    "description": "Ce cours introduit à la conception et au développement Web, tant du côté client que serveur. Les fondements du Web : navigateur, serveur, protocoles. Langages, normes et standards du Web (HTML, JavaScript, CSS, XML, JSON). Accessibilité Web. Conception de formulaires et d'interfaces utilisateur. Génération dynamique de documents HTML. Services Web. Introduction à un cadre d'applications (cadriciel, framework). Sécurité et vie privée.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF1120",
+      "INF1070"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF1120 Programmation I] [INF1070 Utilisation et administration des systèmes informatiques]"
+  },
+  {
+    "sigle": "INF3271",
+    "universite": "UQAM",
+    "titre": "Téléinformatique",
+    "credits": 3,
+    "description": "Introduire les notions de base en matière de télécommunication et de téléinformatique indispensables à l'étude des réseaux actuels et des réseaux de nouvelle génération. Terminologie et concepts de base des réseaux téléinformatiques. Les différentes couches du modèle OSI et exemples tirés du modèle TCP/IP. Normes et protocoles associés aux diverses couches du modèle OSI, de la couche application à la couche physique. Applications sur Internet (HTTP, FTP, SNMP). Adressage IP. Protocoles de transport (TCP, UDP), de routage et de liaison de données. Transmission de données, multiplexage, équipements d'interconnexion. Introduction aux réseaux de téléphonie mobile. Les considérations de sécurité réseau seront intégrées au fur et mesure du développement de la matière.",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF2171"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF2171 Organisation des ordinateurs et assembleur]"
+  },
+  {
+    "sigle": "INF5151",
+    "universite": "UQAM",
+    "titre": "Génie logiciel: analyse et modélisation",
+    "credits": 3,
+    "description": "",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF2050",
+      "INF2120",
+      "INF3080",
+      "INF3191"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF2050 Outils et pratiques de développement logiciel] ET [INF2120 Programmation II] ET [INF3080 Bases de données] ET [INF3191 Programmation Web]"
+  },
+  {
+    "sigle": "INF5171",
+    "universite": "UQAM",
+    "titre": "Programmation concurrente et parallèle",
+    "credits": 3,
+    "description": "Familiariser les étudiants avec les concepts de base et les différents paradigmes de la programmation concurrente et parallèle. Donner un aperçu de la mise en oeuvre de programmes concurrents et parallèles dans différents langages. Architectures parallèles : architecture des processeurs (pipelines, coeurs multiples); multiprocesseurs, multi-ordinateurs, grilles de calculs. Types d'application concurrentes : à fils d'exécution multiples, parallèles, distribuées. Synchronisation et communication : variables partagées, échange de messages. Programmation par variables partagées : verrous, sémaphores, barrières, moniteurs. Mesures de performance: temps, coût, accélération, efficacité. Stratégies de programmation : parallélisme itératif, récursif, de flux, de données, de sac de tâches; parallélisme de résultat, d'agenda, de spécialistes.",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF3173"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF3173 Principes des systèmes d'exploitation]"
+  },
+  {
+    "sigle": "INF5153",
+    "universite": "UQAM",
+    "titre": "Génie logiciel: conception",
+    "credits": 3,
+    "description": "",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF5151",
+      "INF3135"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF5151 Génie logiciel: analyse et modélisation] ; [INF3135 Construction et maintenance de logiciels]"
+  },
+  {
+    "sigle": "INF6120",
+    "universite": "UQAM",
+    "titre": "Programmation fonctionnelle et logique",
+    "credits": 3,
+    "description": "Faire l'acquisition de nouvelles techniques et stratégies de programmation par l'apprentissage des concepts fondamentaux des langages de programmation fonctionnels et logiques. Apprécier l'apport de ces langages au développement logiciel. La récursion comme méthode générale de résolution de problèmes. Bref historique de la programmation fonctionnelle. Effet de bord, référence immuable et évaluation des expressions. Répartition par appariement de motifs. Fonctions comme argument et valeur de retour. Stratégies d'évaluation des arguments. Polymorphisme et déduction des types. Fermetures, curryage et application partielle. Fonctions d'ordre supérieur (map, reduce/fold, filter). Concurrence et parallélisme en programmation fonctionnelle. Bref historique de la programmation déclarative et logique. Règles, inférence et clauses de Horn. Recherche par retour-arrière et déduction. Unification et résolution. Coupure et négation. Programmation par contraintes, consistance d'arc, de chemins et problèmes de satisfaction de contraintes. Comparaison des approches de programmation logique et par contraintes.",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF3105"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF3105 Structures de données et algorithmes]"
+  },
+  {
+    "sigle": "INF6150",
+    "universite": "UQAM",
+    "titre": "Génie logiciel: conduite de projets informatiques",
+    "credits": 3,
+    "description": "Étudier les approches et les outils spécifiques à la conduite de projets informatiques. Permettre à l'étudiant d'avoir un regard critique par rapport aux méthodes en application dans l'industrie, le sensibiliser à l'interaction entre les parties technique et gestion des projets. Gestion de projets et méthodologies de développement. Équipes et styles de gestion. Analyse des risques des projets informatiques. Métriques: objet, processus, produit. Estimation et échéanciers. Outils de mesure de productivité. Suivi et revues formelles. Interaction entre projet et assurance de qualité. Contrôle de la configuration. Réflexion critique sur le processus de développement des systèmes et sur les outils de gestion de projets.",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF3135",
+      "INF5151"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF3135 Construction et maintenance de logiciels] [INF5151 Génie logiciel: analyse et modélisation]"
+  },
+  {
+    "sigle": "INF1132",
+    "universite": "UQAM",
+    "titre": "Mathématiques pour l'informatique",
+    "credits": 3,
+    "description": "Connaître les notions de base en mathématiques qui sous-tendent l'informatique. Calcul  propositionnel,  calcul  des  prédicats  et  théorie  naïve  des  ensembles. Nombres entiers et division. Définitions et preuves par induction. Stratégies de preuve. Relations : définitions et représentations. Propriétés des relations et principaux types de relations. Fonctions : définitions et représentations. Opérations sur les fonctions. Récursion. Graphes : définitions et représentations. Parcours d'un graphe. Introduction à l'analyse d'algorithmes : notion générale d'algorithme, arrêt et exactitude. Complexité spatiale et temporelle. Algorithmes récursifs et équations de récurrence.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "INF5130",
+    "universite": "UQAM",
+    "titre": "Algorithmique",
+    "credits": 3,
+    "description": "Introduire aux principes fondamentaux de la conception et de l'analyse des algorithmes. Introduction à la théorie de l'information. Entropie, information mutuelle et conditionnelle. Codes de longueur fixe/variable, théorème fondamental du codage de source. Détection et correction d'erreurs, distance de Hamming, codes linéaires. Rappels sur la notation asymptotique. Complexité temporelle et spatiale, analyse probabiliste. Équations de récurrence et théorème fondamental. Algorithmes de force brute et voraces. Principe «diviser pour régner». Programmation dynamique. Algorithmes randomisés. Algorithmes à retour arrière. Méthode de séparation et d'évaluation progressive (Branch-and- bound). Heuristiques. Machine de Turing : le problème de l'arrêt, la question P=NP. Réductions et NP-complétude.",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF3105"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF3105 Structures de données et algorithmes]"
+  },
+  {
+    "sigle": "INF4150",
+    "universite": "UQAM",
+    "titre": "Interfaces personnes-machines",
+    "credits": 3,
+    "description": "",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF5151"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF5151 Génie logiciel: analyse et modélisation]"
+  },
+  {
+    "sigle": "INF4170",
+    "universite": "UQAM",
+    "titre": "Architecture des ordinateurs",
+    "credits": 3,
+    "description": "Familiariser l'étudiant avec la structure des ordinateurs modernes. Initier au fonctionnement interne, à l'agencement des organes. Classification des architectures. Structure des ordinateurs parallèles, pipelines, matriciels et à multiprocesseurs. Fonctionnement d'un processeur. Unité de traitement: étude comparative des catégories d'instructions, unité de contrôle, U.A.L. Mémoires: architecture, fonctionnement, types. Entrée/sortie: adressage des composants, synchronisation, interfaces, canaux. Pipelining: principe, arithmétique et instructions, fonctionnement. Traitement vectorisé: caractéristiques et exemples. Multiprocesseurs: structures fonctionnelles, réseaux d'interconnexion, organisation de la mémoire parallèle, logiciels d'exploitation.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF3173"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF3173 Principes des systèmes d'exploitation]"
+  },
+  {
+    "sigle": "INF4230",
+    "universite": "UQAM",
+    "titre": "Intelligence artificielle",
+    "credits": 3,
+    "description": "Connaître les paradigmes de l'intelligence artificielle. Être capable de formuler des hypothèses pour la recherche, de les tester, les interpréter et les présenter. Être capable d'évaluer les idées reçues à propos de l'intelligence artificielle. Historique de l'intelligence artificielle. Identification descriptive et réduction de buts. Résolution de problèmes par analogie. Exploitation de contraintes naturelles. Propagation de contraintes. Recherche et exploration de solutions de rechange. Décision et contrôle. Paradigmes de résolution de problèmes. Logique mathématique et démonstration de théorèmes. Représentation des connaissances. Traitement des langues naturelles.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MAT4681",
+      "MAT1700",
+      "INF3105"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[MAT4681 Statistique pour les sciences] ou [MAT1700 Probabilités I] [INF3105 Structures de données et algorithmes]"
+  },
+  {
+    "sigle": "INF4471",
+    "universite": "UQAM",
+    "titre": "Introduction à la sécurité informatique",
+    "credits": 3,
+    "description": "Introduire les étudiants aux différents aspects de la sécurité des systèmes informatiques. Sensibiliser les étudiants aux risques et menaces. Introduire les techniques permettant d'assurer la sécurité des processus. Introduire les méthodes de mitigation du risque. À la fin de ce cours, l'étudiant devra être en mesure de: distinguer les principaux objectifs de sécurité; expliquer le fonctionnement et justifier l'utilisation des principaux mécanismes de sécurité: chiffrement, signature, hachage, protocoles, etc.; identifier les risques et les menaces auxquels fait face un système; proposer des mesures de contrôle appropriées. Principes et concepts fondamentaux de la sécurité des systèmes informatiques. Principaux objectifs de sécurité: confidentialité, intégrité, disponibilité, authentification, non répudiation, contrôle d'accès. Typologie des attaques et menaces: fuites, modifications, dénis de service. Introduction aux mécanismes sécuritaires modernes: systèmes de chiffrage symétriques et asymétriques; fonctions de hachage; protocoles sécuritaires: authentification, contrôle d'accès. Sécurité des réseaux: filtrage, périmètre de sécurité, journalisation, surveillance et détection d'intrusion, appareils mobiles. Gestion des incidents de sécurité et améliorations des systèmes: mécanismes de recouvrement. Analyse de risque. Gestion des vulnérabilités techniques. Éducation des usagers. Considérations légales, politiques et éthiques. Politiques et modèles de sécurité. Services de commerces électronique. Monnaie électronique. Mécanismes de paiement.",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF1120"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF1120 Programmation I]"
+  },
+  {
+    "sigle": "INF4500",
+    "universite": "UQAM",
+    "titre": "Bioinformatique",
+    "credits": 3,
+    "description": "",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF3105"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF3105 Structures de données et algorithmes]"
+  },
+  {
+    "sigle": "INF5001",
+    "universite": "UQAM",
+    "titre": "Conception, interprétation et compilation de langages informatiques",
+    "credits": 3,
+    "description": "Initier les étudiants à la conception de langages informatiques et à la construction efficace d'interpréteurs et de compilateurs à l'aide d'outils modernes. Types de langages informatiques (programmation, déclaratif, requête et autres). Structure typique d'un interpréteur et d'un compilateur. Éléments de la théorie des langages. Spécification lexicale. Expressions régulières. Ambiguïtés lexicales. Spécification syntaxique. Grammaires non contextuelles. Ambiguïtés syntaxiques et conflits. Utilisation de générateurs d'analyseurs lexicaux et syntaxiques. Arbres syntaxiques hétérogènes. Interprétation par visite d'arbre. Structures de données auxiliaires à l'interprétation telles que le dictionnaire de variables. Analyse sémantique. Interprétation abstraite. Analyse de types d'expressions. Génération de code. Utilisation de générateurs de générateurs de texte. Techniques et structures de données pour l'interprétation ou la compilation de concepts des langages de programmation modernes.",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF3105"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF3105 Structures de données et algorithmes]"
+  },
+  {
+    "sigle": "INF5071",
+    "universite": "UQAM",
+    "titre": "Infographie",
+    "credits": 3,
+    "description": "Connaître les algorithmes fondamentaux de l'infographie. Être capable de réaliser une application graphique simple à l'aide d'une bibliothèque graphique (par exemple, OpenGL). Rappels des notions de base en calcul vectoriel et en géométrie. Objets géométriques élémentaires. Codage des objets en deux et trois dimensions. Transformations linéaires en coordonnées homogènes. Composition de transformation. Transformation de perspective et modèles de représentation. Tracé de figures élémentaires. Représentation paramétrique des objets en trois dimensions (courbes de Bézier, B-splines). Fonctionnalités typiques offertes par les bibliothèques graphiques, par exemple, OpenGL. Autres sujets (selon le temps disponible) : modèle de lumière, espace de couleurs, surface de Bézier, lancer de rayons.",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF3105"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF3105 Structures de données et algorithmes]"
+  },
+  {
+    "sigle": "INF5082",
+    "universite": "UQAM",
+    "titre": "Gestion et analyse de données",
+    "credits": 3,
+    "description": "Développer une capacité d'analyse des besoins en gestion de données en fonction du contexte d'application. Être en mesure de justifier l'usage et de mettre en oeuvre une méthode avancée de gestion et analyse des données. Présentation et comparaison des différentes méthodes de gestion et d'analyse de données. Extraction de connaissances et forage de données. Prétraitement et préparation des données, apprentissage automatique et algorithmes d'exploitation de données prédictives (apprentissage supervisé) et descriptives (apprentissage non supervisé), données transactionnelles et recherche de règles d'associations.",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF3105",
+      "MAT4681",
+      "STT1000"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF3105 Structures de données et algorithmes] et [MAT4681 Statistique pour les sciences] ou [STT1000 Statistique I]"
+  },
+  {
+    "sigle": "INF5190",
+    "universite": "UQAM",
+    "titre": "Programmation Web avancée",
+    "credits": 3,
+    "description": "Ce cours introduit aux méthodes avancées et aux bonnes pratiques de conception et de développement d'applications Web modernes. Infrastructure et cadre de développement Web ; intégration d'une base de données ; authentification ; conception de services web ; formats de sérialisation ; gestion d'erreurs ; interopérabilité ; déploiement de services ; tests de charge ; sécurité et patrons d'attaques spécifiques aux applications web.",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "INF3080",
+      "INF3190"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "[INF3080 Bases de données] [INF3190 Introduction à la programmation Web]"
+  },
+  {
+    "sigle": "INF6200",
+    "universite": "UQAM",
+    "titre": "Initiation à la recherche",
+    "credits": 3,
+    "description": "Initiation à la production scientifique par la réalisation d'un projet sur une problématique de recherche en informatique. Aborder, sous la direction d'une professeure, d'un professeur d'informatique, les différents aspects d'un projet de recherche scientifique : revue de littérature, définition d'une problématique, types de contributions scientifiques, méthodes d'évaluation (théorique, expérimentale, etc.). Réalisation d'un projet donnant lieu à un rapport final et une présentation démontrant la maîtrise du processus de production scientifique en informatique.",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "INF3190",
+    "universite": "UQAM",
+    "titre": "",
+    "credits": 0,
+    "description": "",
+    "niveau": 3,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MAT1060",
+    "universite": "UQAM",
+    "titre": "",
+    "credits": 0,
+    "description": "",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MAT1700",
+    "universite": "UQAM",
+    "titre": "",
+    "credits": 0,
+    "description": "",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MAT4681",
+    "universite": "UQAM",
+    "titre": "Statistique pour les sciences",
+    "credits": 3,
+    "description": "",
+    "niveau": 4,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "STT1000",
+    "universite": "UQAM",
+    "titre": "",
+    "credits": 0,
+    "description": "",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  }
+]
