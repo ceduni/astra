@@ -1,0 +1,490 @@
+{
+  "metadata": {
+    "source": "Concordia University – Undergraduate Calendar (current)",
+    "url": "https://www.concordia.ca/academics/undergraduate/calendar/current/section-71-gina-cody-school-of-engineering-and-computer-science/section-71-70-department-of-computer-science-and-software-engineering/section-71-70-10-computer-science-and-software-engineering-courses.html",
+    "comp_count": 47
+  },
+  "courses": {
+    "COMP": [
+      {
+        "id": "COMP 108",
+        "name": "Computer Science C.Edge Option Reflective Learning I",
+        "credits": 3.0,
+        "description": "This course is a reflective learning module for students in their related field which is based on their academic requirements and their first C.Edge term.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "Permission of the GCS is required."
+      },
+      {
+        "id": "COMP 208",
+        "name": "Computer Science C.Edge Option Reflective Learning II",
+        "credits": 3.0,
+        "description": "This course expands on the students’ second C.Edge term in their related field of study to further develop their knowledge and workârelated skills.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 108 . Permission of the GCS is required."
+      },
+      {
+        "id": "COMP 218",
+        "name": "Fundamentals of Programming",
+        "credits": 3.0,
+        "description": "Computers and computing: problem solving with computers, basic data types, expressions, assignments, control structures, simple library functions, programmerâdefined functions, arrays of basic types. Basic elements of objectâoriented programming: classes, objects and methods.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: MATH 201 or equivalent. No prior experience with computers is assumed."
+      },
+      {
+        "id": "COMP 228",
+        "name": "System Hardware",
+        "credits": 3.0,
+        "description": "Levels of system abstraction and von Neumann model. Basics of digital logic design. Data representation and manipulation. Instruction set architecture. Processor internals. Assembly language programming. Memory subsystem and cache management. I/O subsystem. Introduction to network organization and architecture.",
+        "prerequisite_courses": [
+          "COMP 248"
+        ],
+        "concomitant_courses": [
+          "MATH 203",
+          "MATH 204"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 248 . The following courses must be completed previously or concurrently: MATH 203 or Cegep Mathematics 103 or NYA; MATH 204 or Cegep Mathematics 105 or NYC."
+      },
+      {
+        "id": "COMP 232",
+        "name": "Mathematics for Computer Science",
+        "credits": 3.0,
+        "description": "Sets. Propositional logic and predicate calculus. Functions and relations. Elements of number theory. Mathematical reasoning. Proof techniques: direct proof, indirect proof, proof by contradiction, proof by induction.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: MATH 203 or Cegep Mathematics 103 or NYA; MATH 204 or Cegep Mathematics 105 or NYC."
+      },
+      {
+        "id": "COMP 233",
+        "name": "Probability and Statistics for Computer Science",
+        "credits": 3.0,
+        "description": "Combinatorics. Axioms of probability. Conditional probability. Discrete and continuous probability distributions. Expectation and moments. Hypothesis testing. Parameter estimation. Correlation and linear regression. Applications to computer science.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: MATH 205 or Cegep Mathematics 203 or NYB."
+      },
+      {
+        "id": "COMP 248",
+        "name": "ObjectâOriented Programming I",
+        "credits": 3.5,
+        "description": "Introduction to programming. Basic data types, variables, expressions, assignments, control flow. Classes, objects, methods. Information hiding, public vs. private visibility, data abstraction and encapsulation. References. Arrays.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously or concurrently: MATH 204 or Cegep Mathematics 105 or NYC."
+      },
+      {
+        "id": "COMP 249",
+        "name": "ObjectâOriented Programming II",
+        "credits": 3.5,
+        "description": "This course provides a comprehensive introduction to object-oriented programming (OOP), focusing on the design, efficiency, and implementation of software using OOP principles. Key topics include inheritance, polymorphism, exception handling, recursion, and dynamic data structures such as linked lists and array lists. Students explore collections and generics, learning how to develop flexible and reusable code. Through hands-on programming assignments and projects, students gain experience in designing modular, maintainable, and scalable software solutions. â â",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: COMP 248 ; MATH 203 or Cegep Mathematics 103 or NYA. The following courses must be completed previously or concurrently: MATH 205 or Cegep Mathematics 203 or NYB."
+      },
+      {
+        "id": "COMP 326",
+        "name": "Computer Architecture",
+        "credits": 3.0,
+        "description": "Computer architecture models: controlâflow and dataâflow. Concurrency and locality, data dependency theory. Instruction level parallelism. Instruction scheduling. Pipelined processors. Vector processors. Thread level parallelism. Multiprocessors. Shared memory models. Coherence protocols. Interconnection networks. Performance issues. Advanced topics in contemporary computer architectures.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 346 ."
+      },
+      {
+        "id": "COMP 333",
+        "name": "Data Analytics",
+        "credits": 4.0,
+        "description": "This course introduces the process of data analytics with the aid of examples from several disciplines. It covers data wrangling: extract-transform-load (ETL), cleaning, structuring, integration; data analytics activities: description, prescription, modelling, simulation, optimization, storytelling; and the Python ecosystem: language, libraries, and Jupyter environment.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: COMP 233 or ENGR 371 ; COMP 352 ; ENCS 282 ."
+      },
+      {
+        "id": "COMP 335",
+        "name": "Introduction to Theoretical Computer Science",
+        "credits": 3.0,
+        "description": "This course covers the following topics: finite state automata and regular languages; push â down automata and context â free languages; pumping lemmas; applications to parsing; Turing machines; undecidability and decidability.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: COMP 232 or COEN 231 ; and COMP 249 or COEN 244 ."
+      },
+      {
+        "id": "COMP 339",
+        "name": "Combinatorics",
+        "credits": 3.0,
+        "description": "General principles of counting, permutations, combinations, identities, partitions, generating functions, Fibonacci numbers, Stirling numbers, Catalan numbers, principle of inclusionâexclusion. Graphs, subgraphs, isomorphism, Euler graphs, Hamilton paths and cycles, planar graphs, Kuratowski’s Theorem, trees, colouring, 5âcolour theorem, matching, Hall’s theorem.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 232 ; or students must complete have completed 18 credits in postCegep Mathematics prior to enrolling."
+      },
+      {
+        "id": "COMP 345",
+        "name": "Advanced Program Design with C++",
+        "credits": 4.0,
+        "description": "Introduction to C++. I/O with stream classes. Pointers and their uses. The Standard Template Library (STL): containers, algorithms, iterators, adaptors, function objects. Class design: constructors, destructors, operator overloading, inheritance, virtual functions, exception handling, memory management. Advanced topics: libraries, locales, STL conventions, concurrency, template metaprogramming. Applications of C++: systems, engineering, games programming. Project.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously or concurrently: COMP 352 ."
+      },
+      {
+        "id": "COMP 346",
+        "name": "Operating Systems",
+        "credits": 4.0,
+        "description": "Fundamentals of operating system functionalities, design and implementation. Multiprogramming: processes and threads, context switching, queuing models and scheduling. Interprocess communication and synchronization. Principles of concurrency. Synchronization primitives. Deadlock detection and recovery, prevention and avoidance schemes. Memory management. Device management. File systems. Protection models and schemes.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: COMP 228 or SOEN 228 ; COMP 352 ."
+      },
+      {
+        "id": "COMP 348",
+        "name": "Principles of Programming Languages",
+        "credits": 3.0,
+        "description": "The course discusses the design, efficiency, and implementation of programming languages. A comparison of common high-level programming paradigms, including both imperative and functional approaches, is provided. Core language features such as binding, visibility, and scope are evaluated across a set of current and historical languages. In addition, statically constrained typing and memory management models are compared to dynamic run-time alternatives, with an emphasis on the trade-offs between flexibility and performance.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 249 ."
+      },
+      {
+        "id": "COMP 352",
+        "name": "Data Structures and Algorithms",
+        "credits": 3.0,
+        "description": "Abstract data types: stacks and queues, trees, priority queues, dictionaries. Data structures: arrays, linked lists, heaps, hash tables, search trees. Design and analysis of algorithms: asymptotic notation, recursive algorithms, searching and sorting, tree traversal, graph algorithms.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously or concurrently: COMP 232 . The following course must be completed previously: COMP 249 ."
+      },
+      {
+        "id": "COMP 353",
+        "name": "Databases",
+        "credits": 4.0,
+        "description": "This course introduces database design, applications, and aspects of database management systems. It covers conceptual database design using the entity-relationship model. Students are introduced to the relational data model, relational algebra, as well as the SQL language, and their applications. Furthermore,the course covers the development of database applications. Students also learn about other data models, including Datalog and Object-oriented. A project is required.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: COMP 232 or COEN 231 ; and COMP 352 or COEN 352 ."
+      },
+      {
+        "id": "COMP 354",
+        "name": "Introduction to Software Engineering",
+        "credits": 4.0,
+        "description": "Software development process models (e.g. linear vs. iterative). Project management; roles, activities and deliverables for each software life cycle phase. Requirements management: analysis, elicitation, and scope. Architecture, design and the mapping of requirements to design and design to implementation. Traceability. Software quality assurance: verification, validation and the role of testing. Maintenance and evolution. Project.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: COMP 352 ; ENCS 282 ."
+      },
+      {
+        "id": "COMP 361",
+        "name": "Elementary Numerical Methods",
+        "credits": 3.0,
+        "description": "Vector and matrix norms. Numerical methods for solving linear systems, Gaussian elimination, LU decomposition, error analysis. Numerical solution of nonlinear equations, Newtonâs method, fixed point iterations. Interpolation and approximation, Taylor, Lagrange, Chebyshev and Legendre polynomials. Cubic spline interpolation. Numerical differentiation, numerical integration, Gauss quadrature. Discrete leastâsquares approximation. Initial value problems in ordinary differential equations, stiff differential equations. Boundary value problems in ordinary differential equations.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: COMP 232 , COMP 249 ."
+      },
+      {
+        "id": "COMP 367",
+        "name": "Techniques in Symbolic Computation",
+        "credits": 3.0,
+        "description": "This course is an application-oriented introduction to algebraic methods involved in symbolic computation, as it applies to number theory and modular algebra, and covering the following topics: numbers, primes, modular arithmetic, Diophantine equations; congruence classes and applications, finite fields and rings; Fermatâs and Eulerâs theorems; Chinese Remainder theorem and applications; polynomial congruences and rings. Applications to: error-correcting codes (Humming codes), Hill Cryptosystem, public key encryption schemes, polynomial factorization, polynomial interpolation. A symbolic computation system (e.g. MAPLE), is used as a computational tool and a platform for writing all assignments and tests but not as an object of study itself.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: MATH 222 or COMP 232 or equivalent; COMP 248 or equivalent."
+      },
+      {
+        "id": "COMP 371",
+        "name": "Computer Graphics",
+        "credits": 4.0,
+        "description": "This course covers the following topics: introduction to computer graphics and graphics hardware; introduction to graphics API and graphics systems architecture; mathematics of 2D and 3D transformations and 2D and 3D viewing; colour and basic rendering algorithms; visual realism and visibility; illumination and shading and global illumination techniques and textures; introduction to curves and surfaces and 3D object modelling; introduction to computer animation. This course includes a project.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: COMP 232 or COEN 231 ; COMP 352 or COEN 352 ."
+      },
+      {
+        "id": "COMP 376",
+        "name": "Introduction to Game Development",
+        "credits": 4.0,
+        "description": "This course introduces students to design and implementation aspects of computer gaming, including topics such as game technologies , basic game design, programming , applied mathematics , storytelling and narratives, and game genres. The course covers virtual environments, 2D and 3D game engines, and game development tools. Furthermore , students learn about character development, gameplay strategies, level design in games, and user interfaces. Other topics covered in the course include architecture of game consoles, analog and digital controllers, and the incorporation of graphics, sound, and music in game implementations. During the course, the students develop 2D and 3D games. A project is required.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 371 ."
+      },
+      {
+        "id": "COMP 425",
+        "name": "Computer Vision",
+        "credits": 4.0,
+        "description": "This course introduces basic techniques and concepts in computer vision including image formation, grouping and fitting, geometric vision, recognition, perceptual organization, and the state-of-the-art software tools. Students learn fundamental algorithms and techniques, and gain experience in programming vision-based components. A project is required.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "COMP 426",
+        "name": "Multicore Programming",
+        "credits": 4.0,
+        "description": "Fundamental concepts of computer architecture. Architecture of the selected multicore platform. Review of sharedâmemory parallel programming. The difficulties inherent to parallel programming. Scalability of programming models. The stream programming model for multicore. Implicit and explicit threading. Implicit and explicit orchestration of data movement, both on chip and off. Adapting standard algorithms to multicore. Critical assessment of the available systemâsoftware support. Project.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 346 or COEN 346 ."
+      },
+      {
+        "id": "COMP 428",
+        "name": "Parallel Programming",
+        "credits": 4.0,
+        "description": "Parallel programming techniques as a natural extension to sequential programming. Overview of parallel programming architectures and models. Parallel programming issues: locality, granularity, scheduling, data decomposition and distribution, load balancing, communication and synchronization, determinacy and nonâdeterminacy, cost and performance. Techniques and tools for messageâpassing parallel programming. Case studies. Project.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 346 or COEN 346 ."
+      },
+      {
+        "id": "COMP 432",
+        "name": "Machine Learning",
+        "credits": 4.0,
+        "description": "This course introduces conceptual and practical aspects of machine learning. Concepts include regression, classification, maximum likelihood estimation, discriminative vs. generative modelling, generalization, supervised learning, unsupervised learning, semi-supervised learning and transfer learning. Methods include linear models, mixture models, nearest neighbours, support vector machines, random forests, boosting, and basics of deep learning. A project is required.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 352 ."
+      },
+      {
+        "id": "COMP 433",
+        "name": "Introduction to Deep Learning",
+        "credits": 4.0,
+        "description": "This course introduces conceptual and practical aspects of deep learning and their implementation in software. Topics covered include commonly used deep learning model architectures, loss functions, regularization, optimization methods, and a strong emphasis is placed on review of their foundations and use of software tools such as pytorch, jax, and tensorflow to implement and/or apply these models. Applications in computer vision and natural language processing are covered. A final project is required.",
+        "prerequisite_courses": [
+          "COMP 352"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 352 ."
+      },
+      {
+        "id": "COMP 438",
+        "name": "Geometric Modelling and Processing",
+        "credits": 4.0,
+        "description": "This course exposes students to the geometric modelling pipeline. It includes topics such as efficient mesh data structures such as half-edge and cornertable, digital differential geometry, spectral mesh processing, discrete modelling tools and analytic modelling tools (B-Splines, Bezier and subdivision surfaces), optimization-driven modelling and simulation, 3D shape acquisition, 3D printing and prototyping. Application-related topics are discussed such as smoothing, resampling, compression, as well as deep neural network architectures for geometric data and modelling problems. A project is required.",
+        "prerequisite_courses": [
+          "COMP 352"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 352 ."
+      },
+      {
+        "id": "COMP 442",
+        "name": "Compiler Design",
+        "credits": 4.0,
+        "description": "Compiler organization and implementation: lexical analysis and parsing, syntaxâdirected translation, code optimization. Runâtime systems. Project.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: COMP 228 or SOEN 228 or COEN 311 ; COMP 335 ; COMP 352 or COEN 352 ."
+      },
+      {
+        "id": "COMP 444",
+        "name": "System Software Design",
+        "credits": 4.0,
+        "description": "Detailed examination of the design, implementation and system call interface of a contemporary operating system: its kernel, file system, process and thread management including scheduling, file system design and implementation, memory management, device management, I/O management, interprocess communication and synchronization mechanisms, system call interface, interrupt handling, and other advanced issues. Project.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 346 ."
+      },
+      {
+        "id": "COMP 445",
+        "name": "Data Communication and Computer Networks",
+        "credits": 4.0,
+        "description": "This course introduces the fundamentals of networking protocols and communication technologies. Topics covered include network architectures and service models, principles behind the design of protocol stacks, local and wide area networks, and the Internet. The course also covers a review of the foundations and performance of application layer protocols, reliable delivery mechanisms, congestion and flow control, control and data planes, routing and switching, error detection and correction, and multiple access protocols. The course includes an introduction to wireless networking and security.â¯",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 346 ."
+      },
+      {
+        "id": "COMP 451",
+        "name": "Database Design",
+        "credits": 4.0,
+        "description": "Storage management. Buffer management. Data organization. Index structures. Query optimization and execution. Transaction management. Recovery. Concurrency control. Database performance analysis and tuning. New trends in database technology. Project.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: COMP 353 ."
+      },
+      {
+        "id": "COMP 465",
+        "name": "Design and Analysis of Algorithms",
+        "credits": 3.0,
+        "description": "Order statistics: worstâcase, averageâcase and amortized analysis. Algorithm design techniques: greedy algorithms, dynamic programming. Selected algorithms from graph theory, linear programming, number theory, string matching, and computational geometry. A survey of hard problems, NPâcompleteness, and approximation algorithms.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: COMP 232 or COEN 231 ; COMP 339 ; COMP 352 or COEN 352 ."
+      },
+      {
+        "id": "COMP 472",
+        "name": "Artificial Intelligence",
+        "credits": 4.0,
+        "description": "This course initially describes the scope and history of Artificial Intelligence. Then it covers knowledge representation, heuristic search, game playing and planning. Finally, it introduces the topics of machine learning, genetic algorithms and natural language processing. A project is required.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 352 or COEN 352 ."
+      },
+      {
+        "id": "COMP 473",
+        "name": "Pattern Recognition",
+        "credits": 4.0,
+        "description": "Preprocessing. Feature extraction and selection. Similarity between patterns and distance measurements. Syntactic and statistical approaches. Clustering analysis. Bayesian decision theory and discriminant functions. Neural networks and machine learning. Applications. Project.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 352 ."
+      },
+      {
+        "id": "COMP 474",
+        "name": "Intelligent Systems",
+        "credits": 4.0,
+        "description": "Ruleâbased expert systems, blackboard architecture, and agentâbased. Knowledge acquisition and representation. Uncertainty and conflict resolution. Reasoning and explanation. Design of intelligent systems. Project.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 352 or COEN 352 ."
+      },
+      {
+        "id": "COMP 475",
+        "name": "Immersive Technologies",
+        "credits": 4.0,
+        "description": "This course covers the fundamentals of immersive technologies, a brief history and overview of immersive technologies, analyzes case studies of interactive experiences using immersive technologies, and identifies the main challenges of the current state of the art. Furthermore, it covers the basic principles of 3D graphics for creating virtual assets and environments, and basic concepts and technologies for interaction. A project provides handsâon experience in the design and development of interactive experiences with the user of immersive technologies.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 371 ."
+      },
+      {
+        "id": "COMP 476",
+        "name": "Advanced Game Development",
+        "credits": 4.0,
+        "description": "Introduction to advanced aspects of computer games. Game engine design. Artificial Intelligence (AI): nonâplayer character movement, coordinated  movement, pathfinding, world representations; decision making; tactical AI, strategic AI, learning in games. Physicsâbased techniques: collision detection and response. Networked gaming: multiâplayer games, networking and distributed game design, mobile gaming. Improving realism: cut scenes, 3D sound. Project.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: COMP 361 or ENGR 391 ; COMP 376 ."
+      },
+      {
+        "id": "COMP 477",
+        "name": "Animation for Computer Games",
+        "credits": 4.0,
+        "description": "Introduction to the algorithms, data structures, and techniques used in modelling and rendering dynamic scenes. Topics include principles of traditional animation, production pipeline, animation hardware and software, orientation representation and interpolation, modelling physical and articulated objects, forward and inverse kinematics, motion control and capture, keyâframe, procedural, and behavioural animation, camera animation, scripting system, and freeâform deformation. Project.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: COMP 361 or ENGR 391 , COMP 371 ."
+      },
+      {
+        "id": "COMP 478",
+        "name": "Image Processing",
+        "credits": 4.0,
+        "description": "Digital image fundamentals, image transforms (Fourier, Walsh, Haar, Hotelling, wavelet), image enhancement (histogram processing, spatial filtering, highâ and lowâpass filtering), image restoration, image compression (elements of information theory, image compression models, errorâfree compression, lossy compression, image compression standards), image segmentation (line detection, Hough transform, edge detection and linking, thresholding, region splitting and merging), representation and description (chain codes, signatures, skeletons, shape descriptors, moments, texture). Project.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: COMP 352 ."
+      },
+      {
+        "id": "COMP 479",
+        "name": "Information Retrieval and Web Search",
+        "credits": 4.0,
+        "description": "Basics of information retrieval (IR): boolean, vector space and probabilistic models. Tokenization and creation of inverted files. Weighting schemes. Evaluation of IR systems: precision, recall, Fâmeasure. Relevance feedback and query expansion. Application of IR to web search engines: XML, link analysis, PageRank algorithm. Text categorization and clustering techniques as used in spam filtering. Project.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: COMP 233 or ENGR 371 ; COMP 352 ."
+      },
+      {
+        "id": "COMP 490",
+        "name": "Computer Science Project I",
+        "credits": 3.0,
+        "description": "Students work on a computer science project under the supervision of a faculty member and submit a suitable written report on the work carried out.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: ENCS 282 . Students must complete 60 credits prior to enrolling. Permission of the Department is required."
+      },
+      {
+        "id": "COMP 492",
+        "name": "Computer Science Project II",
+        "credits": 3.0,
+        "description": "Students work on a computer science project under the supervision of a faculty member and submit a suitable written report on the work carried out.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously or concurrently: COMP 490 . Permission of the Department is required."
+      },
+      {
+        "id": "COMP 493",
+        "name": "Computational Biology Team Project",
+        "credits": 6.0,
+        "description": "Students form teams or join existing teams (such as those in research  labs) and work under faculty supervision to solve a computational  biology research problem or to carry out a computational biology  research project. The research problem or project involves the  utilization of knowledge of biology and of computing, involves computing  lab and/or wet lab practice and contributes to any of the areas of  computational biology. The project fosters teamwork and allows students  to develop their project management, technical writing and oral  presentation skills.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following courses must be completed previously: BIOL 367 ; COMP 352 . Students must complete a minimum of 54 credits in the BCompSc in Health and Life Sciences program prior to enrolling. If prerequisites are not satisfied, permission of the Department is required."
+      },
+      {
+        "id": "COMP 495",
+        "name": "Honours Seminar",
+        "credits": 1.0,
+        "description": "Students are required to attend a number of departmental seminars and submit a written report on them.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "The following course must be completed previously: ENCS 282 .  Registration in the final year of the honours program is required."
+      },
+      {
+        "id": "COMP 498",
+        "name": "Topics in Computer Science",
+        "credits": 3.0,
+        "description": "This course may be offered in a given year upon the authorization of the Department. The content may vary from offering to offering and will be chosen to complement the available elective courses.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "Permission of the Department is required."
+      },
+      {
+        "id": "COMP 499",
+        "name": "Topics in Computer Science with Lab",
+        "credits": 4.0,
+        "description": "The content may vary from offering to offering and will be chosen to complement the available elective courses.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "Permission of the Department is required."
+      }
+    ]
+  }
+}
