@@ -52,6 +52,22 @@ data/         Données transformées/normalisées (à venir)
 python etl/udem/fetch_courses.py
 ```
 
+## API
+
+Run with: `python3 -m uvicorn api.main:app --reload`
+
+### Endpoints
+
+- `GET /health` — vérifie la connexion Neo4j
+- `GET /courses` — liste tous les cours (filtres: `universite`, `niveau`, `hors_perimetre`)
+- `GET /courses/{sigle}` — détails d'un cours
+- `GET /courses/{sigle}/prerequisites` — arbre de prérequis structuré (AND/OR)
+
+### Sigles avec espace (McGill, Concordia)
+
+McGill et Concordia utilisent des sigles avec espace (ex: `COMP 251`, `MATH 203`).
+Dans les URLs, ces espaces doivent être encodés : `COMP%20251`.
+
 ## Conventions
 
 - Les données brutes sont sauvegardées telles quelles depuis l'API, sans transformation.
