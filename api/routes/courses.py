@@ -21,6 +21,10 @@ class Cours(BaseModel):
     requirement_text: str
 
 
+class EligibilityRequest(BaseModel):
+    completed: List[str]
+
+
 class PrereqGroup(BaseModel):
     type: str                                   # 'AND' or 'OR'
     items: List[Union[str, PrereqGroup]]        # sigle or nested group
@@ -61,6 +65,20 @@ def get_courses(
         return [dict(record["c"]) for record in result]
 
 
+def _prereq_satisfied(node_ref, completed: set, groups: dict) -> bool:
+    """
+    Recursively evaluate whether a prerequisite node is satisfied.
+    node_ref: ('course', sigle) | ('group', group_id)
+    groups: {group_id: {'type': 'AND'|'OR', 'items': [node_ref, ...]}}
+    """
+    kind, val = node_ref
+    if kind == "course":
+        return val in completed
+    group = groups[val]
+    check = all if group["type"] == "AND" else any
+    return check(_prereq_satisfied(item, completed, groups) for item in group["items"])
+
+
 def _resolve(session, node) -> Union[str, dict]:
     """Recursively resolve a Cours or PrerequisiteGroup node into a tree."""
     if "Cours" in node.labels:
@@ -76,6 +94,56 @@ def _resolve(session, node) -> Union[str, dict]:
         "type": node["type"],
         "items": [_resolve(session, record["child"]) for record in children],
     }
+
+
+@router.post("/eligible", response_model=List[Cours])
+def get_eligible(body: EligibilityRequest):
+    completed = set(body.completed)
+
+    with get_driver().session() as session:
+        # Query 1: every in-program course + its single REQUIERT target (if any)
+        course_rows = list(session.run("""
+            MATCH (c:Cours {hors_perimetre: false})
+            OPTIONAL MATCH (c)-[:REQUIERT]->(t)
+            RETURN c, t
+        """))
+
+        # Query 2: full PrerequisiteGroup structure (all INCLUDES edges)
+        pg_rows = list(session.run("""
+            MATCH (g:PrerequisiteGroup)-[:INCLUDES]->(child)
+            RETURN g.id AS gid, g.type AS gtype, child
+        """))
+
+    # Build in-memory group map
+    groups: dict = {}
+    for row in pg_rows:
+        gid, gtype, child = row["gid"], row["gtype"], row["child"]
+        if gid not in groups:
+            groups[gid] = {"type": gtype, "items": []}
+        if "Cours" in child.labels:
+            groups[gid]["items"].append(("course", child["sigle"]))
+        else:
+            groups[gid]["items"].append(("group", child["id"]))
+
+    eligible = []
+    for row in course_rows:
+        c, t = row["c"], row["t"]
+        sigle = c["sigle"]
+
+        if sigle in completed:
+            continue
+
+        if t is None:
+            eligible.append(dict(c))
+        elif "Cours" in t.labels:
+            if t["sigle"] in completed:
+                eligible.append(dict(c))
+        else:  # PrerequisiteGroup
+            if _prereq_satisfied(("group", t["id"]), completed, groups):
+                eligible.append(dict(c))
+
+    eligible.sort(key=lambda c: (c["universite"], c["sigle"]))
+    return eligible
 
 
 @router.get("/{sigle}/prerequisites", response_model=PrereqTree)
