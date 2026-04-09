@@ -182,7 +182,12 @@
     "description": "Conception et analyse d'algorithmes. Notation asymptotique, résolution de récurrences. Algorithmes voraces, diviser-pour-régner, programmation dynamique, parcours de graphes, retour-arrière, algorithmes probabilistes.",
     "niveau": 2,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "IFT2125",
+      "IFT2015",
+      "MAT1978",
+      "MAT1720"
+    ],
     "concomitant_courses": [
       "IFT2125",
       "MAT1978",
@@ -546,7 +551,10 @@
     "hors_perimetre": false,
     "prerequisite_courses": [
       "MAT1400",
-      "MAT1600"
+      "MAT1600",
+      "MAT2450",
+      "MAT1720",
+      "MAT1978"
     ],
     "concomitant_courses": [
       "MAT1978",
@@ -564,7 +572,11 @@
     "description": "Les mathématiques dans l'Antiquité. Les mathématiques en Chine, en Inde et chez les Arabes. Les mathématiques en Europe de 500 à 1600. La géométrie analytique. Le calcul infinitésimal. Le développement de l'analyse. Les mathématiques du XXe siècle.",
     "niveau": 2,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MAT2531",
+      "MAT1400",
+      "MAT1600"
+    ],
     "concomitant_courses": [
       "MAT1400",
       "MAT1600",

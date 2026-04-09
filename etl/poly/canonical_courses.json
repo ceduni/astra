@@ -7,7 +7,11 @@
     "description": "Description Cette formation en communication écrite et orale s'étale de la première à la troisième année.  Elle se présente en quatre étapes : une évaluation initiale d'une communication écrite et d'une communication orale en première année ; une prescription personnalisée (s'il y a lieu) ; une évaluation finale d'une communication écrite et d'une communication orale en troisième année ; la réalisation d'un portfolio sur ces formes de communication.  Cette formation vise à apprendre à rédiger des textes de façon efficace et productive ainsi qu'à préparer et présenter des exposés de façon efficace et productive, conformes aux conventions de communication en vigueur dans la discipline.",
     "niveau": 3,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF1040",
+      "LOG3005I",
+      "LOG3900"
+    ],
     "concomitant_courses": [
       "INF1040",
       "LOG3005I",
@@ -108,7 +112,12 @@
     "description": "Description Construction en équipe  d'un système matériel et logiciel basé sur une carte à microcontrôleur.  Les concepts techniques abordés couvrent la familiarisation avec les éléments matériels et logiciels et les interactions requises pour la réalisation et la compréhension d'un système informatique simple mais complet avec ses entrées/sorties et périphériques.  La programmation à différents niveaux, la gestion de configuration, les inspections de code et les tests et les pratiques de base en programmation sont introduits graduellement.",
     "niveau": 1,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF1015",
+      "INF1205",
+      "INF2205",
+      "INF1600"
+    ],
     "concomitant_courses": [
       "INF1015",
       "INF1205",
@@ -127,7 +136,9 @@
     "niveau": 2,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "INF1015"
+      "INF1015",
+      "LOG1810",
+      "LOG2810"
     ],
     "concomitant_courses": [
       "LOG1810",
@@ -207,7 +218,8 @@
     "niveau": 1,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "INF1500"
+      "INF1500",
+      "LOG2810"
     ],
     "concomitant_courses": [
       "LOG2810"
@@ -224,7 +236,8 @@
     "niveau": 2,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "INF1015"
+      "INF1015",
+      "LOG1410"
     ],
     "concomitant_courses": [
       "LOG1410"
@@ -253,7 +266,10 @@
     "description": "Description Caractéristiques des logiciels pour le Web. Notions de client, de serveur et de logiciels distribués. Conception d'applications Web pour la génération dynamique de contenu et la gestion d'interactions avec les utilisateurs. Structure d'un document HTML (HyperText Markup Language). Mise en forme d'un document HTML par l'utilisation de CSS (Cascading Style Sheet). Programmation du côté client et du côté serveur. Présentation générale de l'architecture du web et du protocole HTTP (HyperText Transfer Protocol). Approches à la vérification: stratégie et planification des tests, évaluation de tests. Tests unitaires et tests d'intégration. Tests à boîte noire, vérification fonctionnelle d'une application et tests d'acceptation.",
     "niveau": 2,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "LOG2400",
+      "LOG1410"
+    ],
     "concomitant_courses": [
       "LOG2400",
       "LOG1410"
@@ -287,7 +303,8 @@
     "niveau": 3,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "LOG2990"
+      "LOG2990",
+      "LOG3900"
     ],
     "concomitant_courses": [
       "LOG3900"
@@ -305,7 +322,9 @@
     "hors_perimetre": false,
     "prerequisite_courses": [
       "LOG3005A",
-      "LOG3005I"
+      "LOG3005I",
+      "LOG3900",
+      "INF1040"
     ],
     "concomitant_courses": [
       "LOG3900",
@@ -364,7 +383,9 @@
     "hors_perimetre": false,
     "prerequisite_courses": [
       "LOG2995",
-      "LOG2990"
+      "LOG2990",
+      "LOG3000",
+      "LOG3005"
     ],
     "concomitant_courses": [
       "LOG3000",
@@ -394,7 +415,10 @@
     "description": "Description Élimination à l'aide de matrices. Opérations matricielles et inverses. Factorisations A=LU et A=LDU. Transposées et permutations. Espaces de vecteurs. Noyau. Rang et forme réduite en lignes. Indépendance, base et dimension. Les quatre sous-espaces fondamentaux. Orthogonalité et sous-espaces. Projections. Approximations par moindres carrés. Bases orthogonales et procédé de Gram-Schmidt. Matrices orthogonales. Valeurs propres. Vecteurs propres. Diagonalisation. Matrices symétriques. Matrices définies positives. Décomposition en valeurs singulières. Transformations linéaires. Choix de base. Nombres complexes. Matrices hermitiennes et unitaires. Applications.",
     "niveau": 1,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MTH0102",
+      "MTH1008"
+    ],
     "concomitant_courses": [
       "MTH0102",
       "MTH1008"
@@ -491,7 +515,10 @@
     "description": "Description Relations entre structure, interaction et fonction des macromolécules fondamentales de la cellule (protéines, sucres, acides nucléiques). Mécanismes et cinétiques enzymatiques (applications industrielles des enzymes). Techniques biochimiques usuelles utiles à l'ingénieur : détection, quantification et purification des macromolécules de la cellule (application, optimisation et limitations).",
     "niveau": 1,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "CHE0501",
+      "GBM1610"
+    ],
     "concomitant_courses": [
       "CHE0501",
       "GBM1610"
@@ -507,7 +534,12 @@
     "description": "Description Définitions et unités : milieu continu, système, substance pure, état, paramètres, évolution, cycles. Formes d'énergie. Principe de conservation de masse et d'énergie. Réversibilité et irréversibilité. Chaleur massique. Entropie. Gaz parfait et réel. Évolutions utilisant un gaz parfait. Propriétés des substances pures : tables, diagrammes et logiciel de calcul. Analyse d'un cycle. Cycle de Carnot. Inégalité de Clausius. Second principe et production d'entropie. Cycles classiques de Rankine, Otto, Diesel et Brayton, cycles de réfrigération. Mélanges non réactifs, propriétés thermodynamiques des mélanges, psychrométrie. Introduction à la méthode de résolution des problèmes et aux outils de l'ingénieur.",
     "niveau": 1,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "CHE0501",
+      "MTH0103",
+      "PHS0101",
+      "MEC1210"
+    ],
     "concomitant_courses": [
       "CHE0501",
       "MTH0103",
@@ -525,7 +557,12 @@
     "description": "Description Introduction à la mécanique analytique avec accent sur la résolution de problèmes en ingénierie. \nConcepts fondamentaux : lois de Newton et leur application en statique et en dynamique du point matériel et des corps rigides. Statique : force, moment de force et systèmes force-couple équivalents. Diagramme du corps libre. Structures simples en équilibre statique en deux et en trois dimensions. Frottement statique et cinétique entre solides. Centre de masse et moment d'inertie. Statique des fluides: principe de Pascal, principe d'Archimède, poussée sur une paroi. Dynamique : cinématique et dynamique du point matériel en coordonnées cartésiennes et normale/tangentielle. Principe travail-énergie, puissance mécanique et rendement. Impulsion, quantité de mouvement et moment cinétique. Systèmes de particules variables. Mouvement plan, dynamique et énergie cinétique de rotation des corps rigides en deux dimensions.",
     "niveau": 1,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MTH0102",
+      "MTH0103",
+      "PHS0101",
+      "PHS1101"
+    ],
     "concomitant_courses": [
       "MTH0102",
       "MTH0103",
@@ -582,7 +619,9 @@
     "description": "Description Définition, portée et objectifs de la sécurité informatique.  Méthodologie d'analyse et de gestion du risque.  Éléments de cryptographie et de cryptanalyse.  Algorithmes de chiffrement à clé privée et à clé publique.  Fonctions de hachage cryptographique.  Signatures numériques.  Gestion des clés et infrastructures à clés publiques.  Sécurité des logiciels.  Vulnérabilités typiques et techniques d'exploitation.  Logiciels malveillants et contre-mesures.  Sécurité des systèmes d'exploitation.  Mécanismes d'authentification, contrôle d'accès et protection de l'intégrité.  Modèles de gestion du contrôle d'accès.  Sécurité des applications Web.  Sécurité des réseaux.  Configuration sécuritaire.  Pare-feu, détecteur d'intrusions et serveur mandataire.  Protocoles de réseaux sécurisés.  Organisation et gestion de la sécurité informatique.  Acteurs et types d'interventions.  Normalisation et organismes pertinents.  Cadre légal et déontologique.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF4420A"
+    ],
     "concomitant_courses": [
       "INF4420A"
     ],
@@ -716,7 +755,8 @@
     "hors_perimetre": false,
     "prerequisite_courses": [
       "INF2610",
-      "INF3405"
+      "INF3405",
+      "INF8085"
     ],
     "concomitant_courses": [
       "INF8085"
@@ -2025,7 +2065,9 @@
     "description": "Description Environnement informatique: ordinateurs et périphériques, système d'exploitation, gestion de fichiers. Résolution de problèmes: stratégies, rôle des algorithmes. Concepts et propriétés des algorithmes. Représentation interne des données numériques et caractères. Le langage C/C++ : types élémentaires et construits, structures de contrôle, fichiers texte et binaire, fonctions et modes de passage des paramètres. Méthodologie de programmation: programmation structurée, raffinements successifs, analyse, environnement de programmation, tests et outils de correction.",
     "niveau": 1,
     "hors_perimetre": true,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF1005C"
+    ],
     "concomitant_courses": [
       "INF0101",
       "INF1005C"
@@ -2070,7 +2112,8 @@
     "niveau": 2,
     "hors_perimetre": true,
     "prerequisite_courses": [
-      "INF1040"
+      "INF1040",
+      "INF1900"
     ],
     "concomitant_courses": [
       "INF1900"
@@ -2086,7 +2129,9 @@
     "description": "Description Processus du génie logiciel et cycle de vie du logiciel . Phases du cycle de vie du logiciel: analyse, conception, réalisation, test, maintenance et exploitation. Activité d'analyse et de conception dans le processus du génie logiciel : principes, spécifications et méthodes. Méthodes d'analyse et de conception orientée-objet : langages et notation standards, modélisation structurelle, modélisation de comportement et modélisation architecturale. Décomposition en couches logicielles. Patrons de conception.",
     "niveau": 1,
     "hors_perimetre": true,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF1015"
+    ],
     "concomitant_courses": [
       "INF1015"
     ],
@@ -2119,7 +2164,8 @@
     "prerequisite_courses": [
       "INF1900",
       "INF2010",
-      "LOG2440"
+      "LOG2440",
+      "LOG2990"
     ],
     "concomitant_courses": [
       "LOG2990"
@@ -2163,7 +2209,10 @@
     "description": "Description Élimination à l'aide de matrices. Opérations matricielles et inverses. Factorisations LU et LDU. Transposées et permutations. Espaces de vecteurs. Noyau. Rang et forme réduite en lignes. Indépendance, base et dimension. Les quatre sous-espaces fondamentaux. Orthogonalité et sous-espaces. Projections. Approximations par moindres carrés. Bases orthogonales et procédé de Gram-Schmidt. Valeurs propres. Vecteurs propres. Diagonalisation. Matrices symétriques. Matrices définies positives. Matrices similaires. Décomposition en valeurs singulières. Nombres complexes. Matrices hermitiennes et unitaires. Transformations linéaires. Choix de base. Applications.",
     "niveau": 1,
     "hors_perimetre": true,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MTH0102",
+      "MTH1007"
+    ],
     "concomitant_courses": [
       "MTH0102",
       "MTH1007"

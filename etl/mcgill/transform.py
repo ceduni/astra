@@ -3,8 +3,12 @@ Lit raw_courses.json et produit canonical_courses.json avec un format normalisé
 """
 
 import json
+import sys
 import re
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parents[1]))
+from prereq_text_extract import augment_prerequisites
 
 INPUT_FILE  = Path(__file__).parent / "raw_courses.json"
 OUTPUT_FILE = Path(__file__).parent / "canonical_courses.json"
@@ -53,6 +57,9 @@ def main():
         if c["sigle"] not in seen:
             seen.add(c["sigle"])
             unique.append(c)
+
+    stats = augment_prerequisites(unique)
+    print(f"  [Layer 2] +{stats['added']} prérequis extraits du texte ({stats['courses_affected']} cours affectés)")
 
     OUTPUT_FILE.write_text(json.dumps(unique, ensure_ascii=False, indent=2))
     print(f"Sauvegardé {len(unique)} cours dans {OUTPUT_FILE}")

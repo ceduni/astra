@@ -8,7 +8,9 @@
     "niveau": 2,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "COMP 248"
+      "COMP 248",
+      "MATH 203",
+      "MATH 204"
     ],
     "concomitant_courses": [
       "MATH 203",
@@ -56,7 +58,9 @@
     "description": "Introduction to programming. Basic data types, variables, expressions, assignments, control flow. Classes, objects, methods. Information hiding, public vs. private visibility, data abstraction and encapsulation. References. Arrays.",
     "niveau": 2,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MATH 204"
+    ],
     "concomitant_courses": [
       "MATH 204"
     ],
@@ -73,7 +77,8 @@
     "hors_perimetre": false,
     "prerequisite_courses": [
       "COMP 248",
-      "MATH 203"
+      "MATH 203",
+      "MATH 205"
     ],
     "concomitant_courses": [
       "MATH 205"
@@ -155,7 +160,9 @@
     "description": "Introduction to C++. I/O with stream classes. Pointers and their uses. The Standard Template Library (STL): containers, algorithms, iterators, adaptors, function objects. Class design: constructors, destructors, operator overloading, inheritance, virtual functions, exception handling, memory management. Advanced topics: libraries, locales, STL conventions, concurrency, template metaprogramming. Applications of C++: systems, engineering, games programming. Project.",
     "niveau": 3,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "COMP 352"
+    ],
     "concomitant_courses": [
       "COMP 352"
     ],
@@ -203,7 +210,8 @@
     "niveau": 3,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "COMP 249"
+      "COMP 249",
+      "COMP 232"
     ],
     "concomitant_courses": [
       "COMP 232"
@@ -636,7 +644,9 @@
     "description": "Students work on a computer science project under the supervision of a faculty member and submit a suitable written report on the work carried out.",
     "niveau": 4,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "COMP 490"
+    ],
     "concomitant_courses": [
       "COMP 490"
     ],
@@ -960,7 +970,9 @@
     "prerequisite_courses": [
       "COMP 354",
       "SOEN 341",
-      "SOEN 287"
+      "SOEN 287",
+      "COMP 353",
+      "SOEN 363"
     ],
     "concomitant_courses": [
       "COMP 353",
@@ -1222,7 +1234,11 @@
     "description": "This course covers the following topics: basic principles of software engineering; introduction to software process, including activities, phases, organization, roles, teamwork, and conflict resolution; notations used in software engineering; software development practices, including documentation, modern version control, review, testing, agile, and continuous integration.",
     "niveau": 3,
     "hors_perimetre": true,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "COMP 352",
+      "COEN 352",
+      "ENCS 282"
+    ],
     "concomitant_courses": [
       "COMP 352",
       "COEN 352",

@@ -57,7 +57,8 @@
     "prerequisite_courses": [
       "COMP 250",
       "MATH 235",
-      "MATH 240"
+      "MATH 240",
+      "COMP 251"
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],
@@ -71,7 +72,9 @@
     "description": "Number representations, combinational and sequential digital circuits, MIPS instructions and architecture datapath and control, caches, virtual memory, interrupts and exceptions, pipelining.",
     "niveau": 2,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "COMP 206"
+    ],
     "concomitant_courses": [
       "COMP 206"
     ],
@@ -168,7 +171,9 @@
     "description": "Introduction to discrete mathematics and applications. Logical reasoning and methods of proof. Elementary number theory and cryptography: prime numbers, modular equations, RSA encryption. Combinatorics: basic enumeration, combinatorial methods, recurrence equations. Graph theory: trees, cycles, planar\ngraphs.",
     "niveau": 2,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MATH 133"
+    ],
     "concomitant_courses": [
       "MATH 133"
     ],
@@ -286,7 +291,9 @@
     "prerequisite_courses": [
       "MATH 235",
       "MATH 240",
-      "MATH 242"
+      "MATH 242",
+      "MATH 223",
+      "MATH 236"
     ],
     "concomitant_courses": [
       "MATH 223",
@@ -304,7 +311,8 @@
     "niveau": 3,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "COMP 206"
+      "COMP 206",
+      "COMP 303"
     ],
     "concomitant_courses": [
       "COMP 303"
@@ -336,7 +344,9 @@
     "niveau": 3,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "COMP 206"
+      "COMP 206",
+      "COMP 251",
+      "COMP 252"
     ],
     "concomitant_courses": [
       "COMP 251",
@@ -388,7 +398,8 @@
     "hors_perimetre": false,
     "prerequisite_courses": [
       "COMP 206",
-      "COMP 250"
+      "COMP 250",
+      "COMP 303"
     ],
     "concomitant_courses": [
       "COMP 303"
@@ -465,7 +476,8 @@
     "hors_perimetre": false,
     "prerequisite_courses": [
       "COMP 251",
-      "BIOL 301"
+      "BIOL 301",
+      "COMP 401"
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],
@@ -717,7 +729,10 @@
     "description": "Programming and problem solving in a high level computer language: variables, expressions, types, functions, conditionals, loops, objects and classes. Introduction to algorithms such as searching and sorting. Modular software design, libraries, file input and output, debugging. Emphasis on applications in Physical Sciences\nand Engineering, such as root finding, numerical integration, diffusion, Monte Carlo methods.",
     "niveau": 2,
     "hors_perimetre": true,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MATH 133",
+      "MATH 141"
+    ],
     "concomitant_courses": [
       "MATH 133",
       "MATH 141"
