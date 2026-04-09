@@ -223,8 +223,7 @@ def search_courses(
     universite: Optional[str] = None,
 ):
     filters = [
-        "(toLower(c.sigle) CONTAINS toLower($q)"
-        " OR toLower(c.titre) CONTAINS toLower($q)"
+        "(toLower(c.titre) CONTAINS toLower($q)"
         " OR toLower(c.description) CONTAINS toLower($q))"
     ]
     params: dict = {"q": q}
