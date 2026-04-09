@@ -1,6 +1,6 @@
 from typing import Optional
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 from ..database import get_driver
@@ -44,3 +44,17 @@ def get_courses(
     with get_driver().session() as session:
         result = session.run(query, **params)
         return [dict(record["c"]) for record in result]
+
+
+@router.get("/{sigle}", response_model=Cours)
+def get_course(sigle: str):
+    with get_driver().session() as session:
+        record = session.run(
+            "MATCH (c:Cours {sigle: $sigle}) RETURN c",
+            sigle=sigle,
+        ).single()
+
+    if record is None:
+        raise HTTPException(status_code=404, detail=f"Course '{sigle}' not found")
+
+    return dict(record["c"])
