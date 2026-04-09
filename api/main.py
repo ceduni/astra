@@ -4,6 +4,7 @@ from fastapi import FastAPI
 
 from .database import check_connection, close_driver
 from .routes.courses import router as courses_router
+from .routes.courses import universities_router, search_router
 
 
 @asynccontextmanager
@@ -15,6 +16,8 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Cours Interuniversitaire API", lifespan=lifespan)
 
 app.include_router(courses_router)
+app.include_router(universities_router)
+app.include_router(search_router)
 
 
 @app.get("/health")
