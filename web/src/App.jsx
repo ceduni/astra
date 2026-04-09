@@ -33,7 +33,7 @@ function CourseCard({ course, action }) {
       </div>
       <div className="titre">{course.titre}</div>
       <div className="card-meta">
-        <span>{course.credits} cr</span>
+        <span>{course.credits ? `${course.credits} cr` : 'N/A'}</span>
         <span>Niveau {course.niveau}</span>
         {action}
       </div>

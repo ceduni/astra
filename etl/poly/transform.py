@@ -23,7 +23,7 @@ def transform_course(course: dict, hors_perimetre: bool) -> dict:
         "sigle":                sigle,
         "universite":           UNIVERSITE,
         "titre":                course.get("name", ""),
-        "credits":              int(course.get("credits", 0)),
+        "credits":              int(course["credits"]) if course.get("credits") else None,
         "description":          course.get("description", ""),
         "niveau":               extract_niveau(sigle),
         "hors_perimetre":       hors_perimetre,
