@@ -18,7 +18,7 @@ class Cours(BaseModel):
     sigle: str
     universite: str
     titre: str
-    credits: Optional[int]
+    credits: Optional[int] = None
     niveau: int
     hors_perimetre: bool
     description: str
