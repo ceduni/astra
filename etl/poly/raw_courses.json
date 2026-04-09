@@ -5,11 +5,35 @@
       "bc-informatique",
       "bc-logiciel"
     ],
-    "program_count": 165,
+    "program_count": 146,
     "other_count": 13
   },
   "courses": {
     "PROGRAM": [
+      {
+        "id": "LOG3005I",
+        "name": "Épreuves initiales de communication",
+        "credits": 0.0,
+        "description": "Description Cette formation en communication écrite et orale s'étale de la première à la troisième année.  Elle se présente en quatre étapes : une évaluation initiale d'une communication écrite et d'une communication orale en première année ; une prescription personnalisée (s'il y a lieu) ; une évaluation finale d'une communication écrite et d'une communication orale en troisième année ; la réalisation d'un portfolio sur ces formes de communication.  Cette formation vise à apprendre à rédiger des textes de façon efficace et productive ainsi qu'à préparer et présenter des exposés de façon efficace et productive, conformes aux conventions de communication en vigueur dans la discipline.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "INF1040",
+          "LOG3005I",
+          "LOG3900"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Des activités relatives à ce cours se dérouleront également à l'intérieur des activités INF1040 Introduction à l'ingénierie informatique, LOG3005I Communication écrite et orale et le projet intégrateur de 3e année du programme de génie logiciel LOG3900 Projet d'évolution d'un logiciel. Responsable(s) : Sylvie Hertrich Site web"
+      },
+      {
+        "id": "LOG3005A",
+        "name": "Ateliers en CÉO",
+        "credits": 0.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "Notes : Responsable(s) : Sylvie Hertrich Site web"
+      },
       {
         "id": "INF1007",
         "name": "Introduction à la programmation",
@@ -112,33 +136,6 @@
         "requirement_text": "INF1010 ou INF1015 , ( INF1600 ou ELE3312 ) Notes : Responsable(s) : Felipe Gohring de Magalhaes Site web"
       },
       {
-        "id": "INF2705",
-        "name": "Infographie",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF3005",
-        "name": "Communication écrite et orale",
-        "credits": 1.0,
-        "description": "Description Cette formation en communication écrite et orale s'étale de la première à la troisième année.  Elle se présente en quatre étapes : une évaluation initiale d'une communication écrite et d'une communication orale en première année; une prescription personnalisée (s'il y a lieu) ; une évaluation finale d'une communication écrite et d'une communication orale en troisième année ; la réalisation d'un portfolio sur ces formes de communication.  Cette formation vise à apprendre à rédiger des textes de façon efficace et productive ainsi qu'à préparer et présenter des exposés de façon efficace et productive, conformes aux conventions de communication en vigueur dans la discipline.",
-        "prerequisite_courses": [
-          "INF3005A",
-          "INF3005I"
-        ],
-        "concomitant_courses": [
-          "INF3995",
-          "INF1040",
-          "INF3005I"
-        ],
-        "equivalent_courses": [],
-        "requirement_text": "INF3005A , INF3005I INF3995 Notes : Des activités relatives à ce cours se dérouleront également à l'intérieur des activités INF1040 Introduction à l'ingénierie informatique, INF3005I Épreuves initiales de communication et le projet intégrateur de 3e année du programme de génie informatique INF3995 Projet de conception d'un système informatique. Responsable(s) : Sylvie Hertrich Site web"
-      },
-      {
         "id": "INF3405",
         "name": "Réseaux informatiques",
         "credits": 3.0,
@@ -154,31 +151,6 @@
         "requirement_text": "INF1005C OU INF1005D OU INF1010 OU INF1015 Notes : Responsable(s) : Soumaya Cherkaoui Site web"
       },
       {
-        "id": "INF3500",
-        "name": "Conception et réalisation de syst. numériques",
-        "credits": 3.0,
-        "description": "Description Vue d'ensemble des systèmes numériques. Options d'implémentation en logique fixe et programmable: coûts et performances. Technologies de logique programmable: ROM, PLA, PAL, CPLD et FPGA. Architecture et caractéristiques des FPGA.  Flot de conception pour FPGA: modélisation, synthèse, placement, routage et programmation. Modélisation et vérification de circuits combinatoires et séquentiels avec un langage de description matérielle. Conception et implémentation de chemins des données et de fonctions arithmétiques. Vérification, simulation, synthèse et implémentation de systèmes numériques. Conception de processeurs à usage général. Performance: latence, débit et surface. Exemples d'applications.",
-        "prerequisite_courses": [
-          "INF1600"
-        ],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": "INF1600 Notes : Responsable(s) : Geneviève Cyr Site web"
-      },
-      {
-        "id": "INF3610",
-        "name": "Systèmes embarqués",
-        "credits": 3.0,
-        "description": "Description Introduction aux systèmes embarqués.  Modélisation d'un système embarqué.  Architecture d'une plate-forme pour systèmes embarqués : processeur embarqué, système multibus, accélérateurs matériels (coprocesseurs) et mémoires.  Interface entre la partie matérielle et la partie logicielle d'un système embarqué.  Conception de la partie logicielle d'un système embarqué.  Système d'exploitation temps réel.  Types d'ordonnancement.  Analyse du temps de réponse.  Étapes de conception d'un système embarqué.",
-        "prerequisite_courses": [
-          "INF2610",
-          "INF3500"
-        ],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": "INF2610 , INF3500 Notes : Responsable(s) : Guy Bois Site web"
-      },
-      {
         "id": "INF3710",
         "name": "Fichiers et bases de données",
         "credits": 3.0,
@@ -189,67 +161,8 @@
         "requirement_text": ""
       },
       {
-        "id": "INF3995",
-        "name": "Projet de conception d'un syst. informatique",
-        "credits": 4.0,
-        "description": "Description Conception et réalisation d'un système informatique en considérant différents aspects de réseautique, multimédia, systèmes d'exploitation, bases de données, systèmes embarqués et sécurité informatique. Les étudiants auront recours à une méthodologie de conception et de gestion nécessaire pour la réalisation d'un système informatique. Ils mettent aussi en pratique les notions acquises sur le processus de développement du logiciel et du matériel. Une attention particulière sera accordée à l'assurance qualité.",
-        "prerequisite_courses": [
-          "LOG2990",
-          "LOG2995",
-          "INF3405"
-        ],
-        "concomitant_courses": [
-          "INF3005"
-        ],
-        "equivalent_courses": [],
-        "requirement_text": "LOG2990 ou LOG2995 , INF3405 INF3005 Notes : l'inscription et l'abandon de ce cours-projet sont sujets à des\r\nrestrictions. Responsable(s) : Giovanni Beltrame Site web"
-      },
-      {
-        "id": "INF3005I",
-        "name": "Épreuves initiales de communication",
-        "credits": 0.0,
-        "description": "Description Cette formation en communication écrite et orale s'étale de la première à la troisième année.  Elle se présente en quatre étapes : une évaluation initiale d'une communication écrite et d'une communication orale en première année; une prescription personnalisée (s'il y a lieu) ; une évaluation finale d'une communication écrite et d'une communication orale en troisième année ; la réalisation d'un portfolio sur ces formes de communication.  Cette formation vise à apprendre à rédiger des textes de façon efficace et productive ainsi qu'à préparer et présenter des exposés de façon efficace et productive, conformes aux conventions de communication en vigueur dans la discipline.",
-        "prerequisite_courses": [],
-        "concomitant_courses": [
-          "INF1040",
-          "INF3005I"
-        ],
-        "equivalent_courses": [],
-        "requirement_text": "Notes : Des activités relatives à ce cours se dérouleront également à l'intérieur des activités INF1040 Introduction à l'ingénierie informatique, INF3005I Épreuves initiales de communication et le projet intégrateur de 3e année du programme de génie informatique INF3990 Projet de conception d'un logiciel embarqué. Responsable(s) : Sylvie Hertrich Site web"
-      },
-      {
-        "id": "INF3005A",
-        "name": "Ateliers en CÉO",
-        "credits": 0.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": "Notes : Responsable(s) : Sylvie Hertrich Site web"
-      },
-      {
-        "id": "INF8175",
-        "name": "Intelligence artif.: méthodes et algorithmes",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
         "id": "INF8480",
         "name": "Systèmes répartis et infonuagique",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF8770",
-        "name": "Technologies multimédias",
         "credits": 3.0,
         "description": "",
         "prerequisite_courses": [],
@@ -286,6 +199,29 @@
         "requirement_text": "INF1015 Notes : Ce cours est équivalent et remplace LOG1410 . Responsable(s) : Éric Germain"
       },
       {
+        "id": "LOG2420",
+        "name": "Anal. et conc. des interfaces utilisateurs",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG2440",
+        "name": "Méthod. de dévelop. et conc. d'applic. Web",
+        "credits": 3.0,
+        "description": "Description Caractéristiques des logiciels pour le Web. Notions de client, de serveur et de logiciels distribués. Conception d'applications Web pour la génération dynamique de contenu et la gestion d'interactions avec les utilisateurs. Structure d'un document HTML (HyperText Markup Language). Mise en forme d'un document HTML par l'utilisation de CSS (Cascading Style Sheet). Programmation du côté client et du côté serveur. Présentation générale de l'architecture du web et du protocole HTTP (HyperText Transfer Protocol). Approches à la vérification: stratégie et planification des tests, évaluation de tests. Tests unitaires et tests d'intégration. Tests à boîte noire, vérification fonctionnelle d'une application et tests d'acceptation.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "LOG2400",
+          "LOG1410"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "LOG2400 ou LOG1410 Notes : Responsable(s) : Nikolay Radoev"
+      },
+      {
         "id": "LOG2990",
         "name": "Projet de logiciel d'application Web",
         "credits": 4.0,
@@ -300,6 +236,93 @@
         "requirement_text": "INF1900 , INF2010 , LOG2440 Notes : Responsable(s) : Nikolay Radoev Site web"
       },
       {
+        "id": "LOG3000",
+        "name": "Processus du génie logiciel",
+        "credits": 3.0,
+        "description": "Description Activités de base d'un processus de génie logiciel.  Phases du cycle de vie du logiciel.  Outils et méthodes de support au processus. Survol des différentes philosophies de processus de développement de logiciel. Disciplines techniques du processus du génie logiciel : requis, analyse et conception, implémentation, test.  Disciplines de gestion des processus : gestion des configurations et des requêtes de changement, gestion des projets, gestion des équipes. Évaluation des processus.  Amélioration des processus.  Méthodes de représentation des processus. Méta modèle. Analyse empirique des processus.",
+        "prerequisite_courses": [
+          "LOG2990"
+        ],
+        "concomitant_courses": [
+          "LOG3900"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "LOG2990 LOG3900 Notes : Responsable(s) : Jinghui Cheng Site web"
+      },
+      {
+        "id": "LOG3005",
+        "name": "Communication écrite et orale",
+        "credits": 1.0,
+        "description": "Description Cette formation en communication écrite et orale s'étale de la première à la troisième année.  Elle se présente en quatre étapes : une évaluation initiale d'une communication écrite et d'une communication orale en première année; une prescription personnalisée (s'il y a lieu) ; une évaluation finale d'une communication écrite et d'une communication orale en troisième année ; la réalisation d'un portfolio sur ces formes de communication.  Cette formation vise à apprendre à rédiger des textes de façon efficace et productive ainsi qu'à préparer et présenter des exposés de façon efficace et productive, conformes aux conventions de communication en vigueur dans la discipline.",
+        "prerequisite_courses": [
+          "LOG3005A",
+          "LOG3005I"
+        ],
+        "concomitant_courses": [
+          "LOG3900",
+          "INF1040",
+          "LOG3005I"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "LOG3005A , LOG3005I LOG3900 Notes : Des activités relatives à ce cours se dérouleront également à l'intérieur des activités INF1040 Introduction à l'ingénierie informatique, LOG3005I Épreuves initiales de communication et le projet intégrateur de 3e année du programme de génie logiciel LOG3900 Projet d'évolution d'un logiciel. Responsable(s) : Sylvie Hertrich Site web"
+      },
+      {
+        "id": "LOG3210",
+        "name": "Éléments de langages et compilateurs",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG3420",
+        "name": "Analyse et spécif. des exigences du logiciel",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG3430",
+        "name": "Méthodes de test et de validation du logiciel",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG3900",
+        "name": "Projet d'évolution d'un logiciel",
+        "credits": 4.0,
+        "description": "Description Évolution et maintenance d'un système logiciel.  Ce cours projet intègre les connaissances acquises en ingénierie des exigences, en analyse et conception, en réseaux informatiques et en validation et test de logiciel.  Il met en pratique les notions acquises sur le processus de développement du logiciel.  Tous les travaux sont réalisés en équipe.",
+        "prerequisite_courses": [
+          "LOG2995",
+          "LOG2990"
+        ],
+        "concomitant_courses": [
+          "LOG3000",
+          "LOG3005"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "LOG2995 ou LOG2990 LOG3000 , LOG3005 Notes : L'inscription et l'abandon de ce cours-projet sont sujets à des restrictions. Responsable(s) : Éric Germain Site web"
+      },
+      {
+        "id": "LOG8371",
+        "name": "Ingénierie de la qualité en logiciel",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
         "id": "MTH1008",
         "name": "Algèbre linéaire appliquée",
         "credits": 3.0,
@@ -311,6 +334,19 @@
         ],
         "equivalent_courses": [],
         "requirement_text": "Notes : Les étudiants que cela concerne doivent avoir réussi le cours préparatoire MTH0102 avant de s'inscrire à MTH1008 . Responsable(s) : Houda Trabelsi"
+      },
+      {
+        "id": "MTH2304",
+        "name": "Probabilités et statistique appliquées",
+        "credits": 4.0,
+        "description": "Description Rôle des probabilités et de la statistique en ingénierie. Notions de calcul différentiel et intégral. Probabilités (ensemble, événement, espace échantillonnal, dénombrement, indépendance et probabilité conditionnelle, loi des probabilités totales et théorème de Bayes). Variables aléatoires discrètes et continues (fonction de répartition, fonction de masse, fonction de densité, espérance, lois classiques). Vecteurs de variables aléatoires (densité conjointe, lois conditionnelles et marginales, indépendance, covariance). Convergence des variables aléatoires (inégalité de Markov, inégalité de Tchebychev, loi des grands nombres, théorème limite central). Statistique descriptive (visualisation et description numérique). Estimation (ponctuelle et par intervalle, biais et variance des estimateurs). Test d'hypothèses (hypothèses nulle et alternative, statistique de test, risques de première et de deuxième espèce, puissance). Régression linéaire simple (hypothèses, estimation, intervalle de prédiction, qualité d'ajustement).",
+        "prerequisite_courses": [
+          "MTH1007",
+          "MTH1008"
+        ],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "MTH1007 ou MTH1008 Notes : Responsable(s) : Julie Carreau"
       },
       {
         "id": "GCH2730",
@@ -333,6 +369,16 @@
         "requirement_text": "27 cr. Notes : Responsable(s) : Yabo Octave Niamié Site web"
       },
       {
+        "id": "SSH3101",
+        "name": "Analyse sociologique de la technologie",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
         "id": "SSH3501",
         "name": "Éthique appliquée à l'ingénierie",
         "credits": 2.0,
@@ -351,41 +397,6 @@
         "concomitant_courses": [],
         "equivalent_courses": [],
         "requirement_text": "Notes : Responsable(s) : Renée-Pascale Laberge"
-      },
-      {
-        "id": "INF8085",
-        "name": "Cybersécurité",
-        "credits": 3.0,
-        "description": "Description Définition, portée et objectifs de la sécurité informatique.  Méthodologie d'analyse et de gestion du risque.  Éléments de cryptographie et de cryptanalyse.  Algorithmes de chiffrement à clé privée et à clé publique.  Fonctions de hachage cryptographique.  Signatures numériques.  Gestion des clés et infrastructures à clés publiques.  Sécurité des logiciels.  Vulnérabilités typiques et techniques d'exploitation.  Logiciels malveillants et contre-mesures.  Sécurité des systèmes d'exploitation.  Mécanismes d'authentification, contrôle d'accès et protection de l'intégrité.  Modèles de gestion du contrôle d'accès.  Sécurité des applications Web.  Sécurité des réseaux.  Configuration sécuritaire.  Pare-feu, détecteur d'intrusions et serveur mandataire.  Protocoles de réseaux sécurisés.  Organisation et gestion de la sécurité informatique.  Acteurs et types d'interventions.  Normalisation et organismes pertinents.  Cadre légal et déontologique.",
-        "prerequisite_courses": [],
-        "concomitant_courses": [
-          "INF4420A"
-        ],
-        "equivalent_courses": [],
-        "requirement_text": "60 crédits Aucun Notes : Ce cours est équivalent et remplace INF4420A Responsable(s) : Alejandro Quintero"
-      },
-      {
-        "id": "SSH3101",
-        "name": "Analyse sociologique de la technologie",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "MTH2304",
-        "name": "Probabilités et statistique appliquées",
-        "credits": 4.0,
-        "description": "Description Rôle des probabilités et de la statistique en ingénierie. Notions de calcul différentiel et intégral. Probabilités (ensemble, événement, espace échantillonnal, dénombrement, indépendance et probabilité conditionnelle, loi des probabilités totales et théorème de Bayes). Variables aléatoires discrètes et continues (fonction de répartition, fonction de masse, fonction de densité, espérance, lois classiques). Vecteurs de variables aléatoires (densité conjointe, lois conditionnelles et marginales, indépendance, covariance). Convergence des variables aléatoires (inégalité de Markov, inégalité de Tchebychev, loi des grands nombres, théorème limite central). Statistique descriptive (visualisation et description numérique). Estimation (ponctuelle et par intervalle, biais et variance des estimateurs). Test d'hypothèses (hypothèses nulle et alternative, statistique de test, risques de première et de deuxième espèce, puissance). Régression linéaire simple (hypothèses, estimation, intervalle de prédiction, qualité d'ajustement).",
-        "prerequisite_courses": [
-          "MTH1007",
-          "MTH1008"
-        ],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": "MTH1007 ou MTH1008 Notes : Responsable(s) : Julie Carreau"
       },
       {
         "id": "GBM1610",
@@ -441,8 +452,50 @@
         "requirement_text": ""
       },
       {
-        "id": "INF8970",
-        "name": "Projet final en génie informatique",
+        "id": "INF8775",
+        "name": "Analyse et conception d'algorithmes",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8430",
+        "name": "Architecture logicielle et conception avancée",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8085",
+        "name": "Cybersécurité",
+        "credits": 3.0,
+        "description": "Description Définition, portée et objectifs de la sécurité informatique.  Méthodologie d'analyse et de gestion du risque.  Éléments de cryptographie et de cryptanalyse.  Algorithmes de chiffrement à clé privée et à clé publique.  Fonctions de hachage cryptographique.  Signatures numériques.  Gestion des clés et infrastructures à clés publiques.  Sécurité des logiciels.  Vulnérabilités typiques et techniques d'exploitation.  Logiciels malveillants et contre-mesures.  Sécurité des systèmes d'exploitation.  Mécanismes d'authentification, contrôle d'accès et protection de l'intégrité.  Modèles de gestion du contrôle d'accès.  Sécurité des applications Web.  Sécurité des réseaux.  Configuration sécuritaire.  Pare-feu, détecteur d'intrusions et serveur mandataire.  Protocoles de réseaux sécurisés.  Organisation et gestion de la sécurité informatique.  Acteurs et types d'interventions.  Normalisation et organismes pertinents.  Cadre légal et déontologique.",
+        "prerequisite_courses": [],
+        "concomitant_courses": [
+          "INF4420A"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "60 crédits Aucun Notes : Ce cours est équivalent et remplace INF4420A Responsable(s) : Alejandro Quintero"
+      },
+      {
+        "id": "INF8175",
+        "name": "Intelligence artif.: méthodes et algorithmes",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8970",
+        "name": "Projet final en génie logiciel",
         "credits": 6.0,
         "description": "",
         "prerequisite_courses": [],
@@ -461,8 +514,8 @@
         "requirement_text": ""
       },
       {
-        "id": "INF8225",
-        "name": "I.A.:tech. probabilistes et d'apprentissage",
+        "id": "IND8402",
+        "name": "Interfaces humain-ordinateur",
         "credits": 3.0,
         "description": "",
         "prerequisite_courses": [],
@@ -471,14 +524,79 @@
         "requirement_text": ""
       },
       {
-        "id": "INF8402",
-        "name": "Sécurité des réseaux fixes et mobiles",
+        "id": "IND8409",
+        "name": "Interfaces humain-ordinateur spécialisées",
         "credits": 3.0,
         "description": "",
         "prerequisite_courses": [],
         "concomitant_courses": [],
         "equivalent_courses": [],
         "requirement_text": ""
+      },
+      {
+        "id": "IND8412",
+        "name": "Ergonomie des sites Web",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8211",
+        "name": "Ingénierie des systèmes d'information",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "IND8845",
+        "name": "Design graphique et interactivité",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG4420",
+        "name": "Conception de sites web dynam. et transact.",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF4420A",
+        "name": "Sécurité informatique",
+        "credits": 3.0,
+        "description": "Description Définition, portée et objectifs de la sécurité informatique.  Méthodologie d'analyse et de gestion du risque.  Éléments de cryptographie et de cryptanalyse.  Algorithmes de chiffrement à clé privée et à clé publique.  Fonctions de hachage cryptographique.  Signatures numériques.  Gestion des clés et infrastructures à clés publiques.  Sécurité des logiciels.  Vulnérabilités typiques et techniques d'exploitation.  Logiciels malicieux et contre-mesures.  Sécurité des systèmes d'exploitation.  Mécanismes d'authentification, contrôle d'accès et protection de l'intégrité.  Modèles de gestion du contrôle d'accès.  Sécurité des bases de données et des applications Web.  Sécurité des réseaux.  Configuration sécuritaire.  Coupe-feux, détecteurs d'intrusions et serveur mandataire.  Protocoles de réseaux sécurisés.  Organisation et gestion de la sécurité informatique.  Acteurs et types d'interventions.  Normalisation et organismes pertinents.  Cadre légal et déontologique.",
+        "prerequisite_courses": [
+          "INF2610",
+          "INF3405"
+        ],
+        "concomitant_courses": [
+          "INF8085"
+        ],
+        "equivalent_courses": [],
+        "requirement_text": "INF2610 , INF3405 ou l'équivalent Aucun Notes : Ce cours est remplacé par le INF8085 , qui est équivalent. Responsable(s) : À venir Site web"
+      },
+      {
+        "id": "INF8215",
+        "name": "Intelligence artif.: méthodes et algorithmes",
+        "credits": 3.0,
+        "description": "Description - Notion d'intelligence artificielle et d'agents intelligents;\n- Stratégies de recherche;\n- Conception d'heuristiques;\n- Recherche en présence d'adversaires;\n- Méthodes de recherche locale;\n- Métaheuristiques;\n- Programmation par contraintes;\n- Agents logiques;\n- Logique des propositions;\n- Représentation des connaissances;\n- Vérification de modèles;\n- Algorithmes d'inférence;\n- Apprentissage automatique supervisé;\n- Réseaux de neurones;\n- Apprentissage non-supervisé;\n- Apprentissage par renforcement;\n- Considérations éthiques et sociétales",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": "70 crédits Aucun Notes : Responsable(s) : Quentin Cappart Site web"
       },
       {
         "id": "INF8405",
@@ -491,88 +609,8 @@
         "requirement_text": ""
       },
       {
-        "id": "INF8500",
-        "name": "Systèmes embarqués:conception et vérification",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF8503",
-        "name": "Concepts avancés en arch. des ordinateurs",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
         "id": "INF8601",
         "name": "Systèmes informatiques parallèles",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF8775",
-        "name": "Analyse et conception d'algorithmes",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "AER4715",
-        "name": "Avionique",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "AER8300",
-        "name": "Informatique des systèmes spatiaux",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "ELE8304",
-        "name": "Circuits intégrés à très grande échelle",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF8505",
-        "name": "Processeurs embarqués configurables",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF8725",
-        "name": "Traitement de signaux et d'images",
         "credits": 3.0,
         "description": "",
         "prerequisite_courses": [],
@@ -593,86 +631,6 @@
       {
         "id": "INF8901",
         "name": "Projet perso. rech. génie info. et logiciel",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF8215",
-        "name": "Intelligence artif.: méthodes et algorithmes",
-        "credits": 3.0,
-        "description": "Description - Notion d'intelligence artificielle et d'agents intelligents;\n- Stratégies de recherche;\n- Conception d'heuristiques;\n- Recherche en présence d'adversaires;\n- Méthodes de recherche locale;\n- Métaheuristiques;\n- Programmation par contraintes;\n- Agents logiques;\n- Logique des propositions;\n- Représentation des connaissances;\n- Vérification de modèles;\n- Algorithmes d'inférence;\n- Apprentissage automatique supervisé;\n- Réseaux de neurones;\n- Apprentissage non-supervisé;\n- Apprentissage par renforcement;\n- Considérations éthiques et sociétales",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": "70 crédits Aucun Notes : Responsable(s) : Quentin Cappart Site web"
-      },
-      {
-        "id": "INF8703",
-        "name": "Audio numérique",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF8801A",
-        "name": "Applications multimédias",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "LOG4420",
-        "name": "Conception de sites web dynam. et transact.",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "LOG4715",
-        "name": "Conception de jeux vidéo",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "LOG8235",
-        "name": "Agents intelligents pour jeux vidéo",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "LOG8715",
-        "name": "Architecture de jeux vidéo",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF8401",
-        "name": "Configuration et gestion des réseaux inform.",
         "credits": 3.0,
         "description": "",
         "prerequisite_courses": [],
@@ -1001,16 +959,6 @@
         "requirement_text": ""
       },
       {
-        "id": "IND8211",
-        "name": "Ingénierie des systèmes d'information",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
         "id": "IND8774",
         "name": "Théorie de la décision",
         "credits": 3.0,
@@ -1099,20 +1047,6 @@
         "concomitant_courses": [],
         "equivalent_courses": [],
         "requirement_text": ""
-      },
-      {
-        "id": "LOG3000",
-        "name": "Processus du génie logiciel",
-        "credits": 3.0,
-        "description": "Description Activités de base d'un processus de génie logiciel.  Phases du cycle de vie du logiciel.  Outils et méthodes de support au processus. Survol des différentes philosophies de processus de développement de logiciel. Disciplines techniques du processus du génie logiciel : requis, analyse et conception, implémentation, test.  Disciplines de gestion des processus : gestion des configurations et des requêtes de changement, gestion des projets, gestion des équipes. Évaluation des processus.  Amélioration des processus.  Méthodes de représentation des processus. Méta modèle. Analyse empirique des processus.",
-        "prerequisite_courses": [
-          "LOG2990"
-        ],
-        "concomitant_courses": [
-          "LOG3900"
-        ],
-        "equivalent_courses": [],
-        "requirement_text": "LOG2990 LOG3900 Notes : Responsable(s) : Jinghui Cheng Site web"
       },
       {
         "id": "INF8111",
@@ -1385,6 +1319,106 @@
         "requirement_text": ""
       },
       {
+        "id": "INF2705",
+        "name": "Infographie",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8725",
+        "name": "Traitement de signaux et d'images",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8770",
+        "name": "Technologies multimédias",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8801A",
+        "name": "Applications multimédias",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8808",
+        "name": "Visualisation de données",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG4715",
+        "name": "Conception de jeux vidéo",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8235",
+        "name": "Agents intelligents pour jeux vidéo",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8704",
+        "name": "Développement logiciel en réalité étendue",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8715",
+        "name": "Architecture de jeux vidéo",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "LOG8975",
+        "name": "Projet final en multimédia",
+        "credits": 6.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
         "id": "INF8102",
         "name": "Sécurité dans les environnements infonuagique",
         "credits": 3.0,
@@ -1405,8 +1439,18 @@
         "requirement_text": ""
       },
       {
-        "id": "INF8108",
-        "name": "Gestion et chasse de la cybermenace",
+        "id": "INF8107",
+        "name": "Détection d'intrusion et supervision",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8402",
+        "name": "Sécurité des réseaux fixes et mobiles",
         "credits": 3.0,
         "description": "",
         "prerequisite_courses": [],
@@ -1427,291 +1471,6 @@
       {
         "id": "INF8602",
         "name": "Sécurité des systèmes d'exploitation",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "LOG3430",
-        "name": "Méthodes de test et de validation du logiciel",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "LOG8371",
-        "name": "Ingénierie de la qualité en logiciel",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF8980",
-        "name": "Projet final en sécurité et mobilité",
-        "credits": 6.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "MTH3302",
-        "name": "Méth. prob. et statist. pour l'intel. artif.",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF8985",
-        "name": "Projet final en intelligence artificielle",
-        "credits": 6.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF8250",
-        "name": "Apprentisage par renforcement",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF8460",
-        "name": "Traitement automatique de la langue naturelle",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF8808",
-        "name": "Visualisation de données",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "LOG3005I",
-        "name": "Épreuves initiales de communication",
-        "credits": 0.0,
-        "description": "Description Cette formation en communication écrite et orale s'étale de la première à la troisième année.  Elle se présente en quatre étapes : une évaluation initiale d'une communication écrite et d'une communication orale en première année ; une prescription personnalisée (s'il y a lieu) ; une évaluation finale d'une communication écrite et d'une communication orale en troisième année ; la réalisation d'un portfolio sur ces formes de communication.  Cette formation vise à apprendre à rédiger des textes de façon efficace et productive ainsi qu'à préparer et présenter des exposés de façon efficace et productive, conformes aux conventions de communication en vigueur dans la discipline.",
-        "prerequisite_courses": [],
-        "concomitant_courses": [
-          "INF1040",
-          "LOG3005I",
-          "LOG3900"
-        ],
-        "equivalent_courses": [],
-        "requirement_text": "Notes : Des activités relatives à ce cours se dérouleront également à l'intérieur des activités INF1040 Introduction à l'ingénierie informatique, LOG3005I Communication écrite et orale et le projet intégrateur de 3e année du programme de génie logiciel LOG3900 Projet d'évolution d'un logiciel. Responsable(s) : Sylvie Hertrich Site web"
-      },
-      {
-        "id": "LOG3005A",
-        "name": "Ateliers en CÉO",
-        "credits": 0.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": "Notes : Responsable(s) : Sylvie Hertrich Site web"
-      },
-      {
-        "id": "LOG2420",
-        "name": "Anal. et conc. des interfaces utilisateurs",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "LOG2440",
-        "name": "Méthod. de dévelop. et conc. d'applic. Web",
-        "credits": 3.0,
-        "description": "Description Caractéristiques des logiciels pour le Web. Notions de client, de serveur et de logiciels distribués. Conception d'applications Web pour la génération dynamique de contenu et la gestion d'interactions avec les utilisateurs. Structure d'un document HTML (HyperText Markup Language). Mise en forme d'un document HTML par l'utilisation de CSS (Cascading Style Sheet). Programmation du côté client et du côté serveur. Présentation générale de l'architecture du web et du protocole HTTP (HyperText Transfer Protocol). Approches à la vérification: stratégie et planification des tests, évaluation de tests. Tests unitaires et tests d'intégration. Tests à boîte noire, vérification fonctionnelle d'une application et tests d'acceptation.",
-        "prerequisite_courses": [],
-        "concomitant_courses": [
-          "LOG2400",
-          "LOG1410"
-        ],
-        "equivalent_courses": [],
-        "requirement_text": "LOG2400 ou LOG1410 Notes : Responsable(s) : Nikolay Radoev"
-      },
-      {
-        "id": "LOG3005",
-        "name": "Communication écrite et orale",
-        "credits": 1.0,
-        "description": "Description Cette formation en communication écrite et orale s'étale de la première à la troisième année.  Elle se présente en quatre étapes : une évaluation initiale d'une communication écrite et d'une communication orale en première année; une prescription personnalisée (s'il y a lieu) ; une évaluation finale d'une communication écrite et d'une communication orale en troisième année ; la réalisation d'un portfolio sur ces formes de communication.  Cette formation vise à apprendre à rédiger des textes de façon efficace et productive ainsi qu'à préparer et présenter des exposés de façon efficace et productive, conformes aux conventions de communication en vigueur dans la discipline.",
-        "prerequisite_courses": [
-          "LOG3005A",
-          "LOG3005I"
-        ],
-        "concomitant_courses": [
-          "LOG3900",
-          "INF1040",
-          "LOG3005I"
-        ],
-        "equivalent_courses": [],
-        "requirement_text": "LOG3005A , LOG3005I LOG3900 Notes : Des activités relatives à ce cours se dérouleront également à l'intérieur des activités INF1040 Introduction à l'ingénierie informatique, LOG3005I Épreuves initiales de communication et le projet intégrateur de 3e année du programme de génie logiciel LOG3900 Projet d'évolution d'un logiciel. Responsable(s) : Sylvie Hertrich Site web"
-      },
-      {
-        "id": "LOG3210",
-        "name": "Éléments de langages et compilateurs",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "LOG3420",
-        "name": "Analyse et spécif. des exigences du logiciel",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "LOG3900",
-        "name": "Projet d'évolution d'un logiciel",
-        "credits": 4.0,
-        "description": "Description Évolution et maintenance d'un système logiciel.  Ce cours projet intègre les connaissances acquises en ingénierie des exigences, en analyse et conception, en réseaux informatiques et en validation et test de logiciel.  Il met en pratique les notions acquises sur le processus de développement du logiciel.  Tous les travaux sont réalisés en équipe.",
-        "prerequisite_courses": [
-          "LOG2995",
-          "LOG2990"
-        ],
-        "concomitant_courses": [
-          "LOG3000",
-          "LOG3005"
-        ],
-        "equivalent_courses": [],
-        "requirement_text": "LOG2995 ou LOG2990 LOG3000 , LOG3005 Notes : L'inscription et l'abandon de ce cours-projet sont sujets à des restrictions. Responsable(s) : Éric Germain Site web"
-      },
-      {
-        "id": "LOG8430",
-        "name": "Architecture logicielle et conception avancée",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "LOG8970",
-        "name": "Projet final en génie logiciel",
-        "credits": 6.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "IND8402",
-        "name": "Interfaces humain-ordinateur",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "IND8409",
-        "name": "Interfaces humain-ordinateur spécialisées",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "IND8412",
-        "name": "Ergonomie des sites Web",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "IND8845",
-        "name": "Design graphique et interactivité",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF4420A",
-        "name": "Sécurité informatique",
-        "credits": 3.0,
-        "description": "Description Définition, portée et objectifs de la sécurité informatique.  Méthodologie d'analyse et de gestion du risque.  Éléments de cryptographie et de cryptanalyse.  Algorithmes de chiffrement à clé privée et à clé publique.  Fonctions de hachage cryptographique.  Signatures numériques.  Gestion des clés et infrastructures à clés publiques.  Sécurité des logiciels.  Vulnérabilités typiques et techniques d'exploitation.  Logiciels malicieux et contre-mesures.  Sécurité des systèmes d'exploitation.  Mécanismes d'authentification, contrôle d'accès et protection de l'intégrité.  Modèles de gestion du contrôle d'accès.  Sécurité des bases de données et des applications Web.  Sécurité des réseaux.  Configuration sécuritaire.  Coupe-feux, détecteurs d'intrusions et serveur mandataire.  Protocoles de réseaux sécurisés.  Organisation et gestion de la sécurité informatique.  Acteurs et types d'interventions.  Normalisation et organismes pertinents.  Cadre légal et déontologique.",
-        "prerequisite_courses": [
-          "INF2610",
-          "INF3405"
-        ],
-        "concomitant_courses": [
-          "INF8085"
-        ],
-        "equivalent_courses": [],
-        "requirement_text": "INF2610 , INF3405 ou l'équivalent Aucun Notes : Ce cours est remplacé par le INF8085 , qui est équivalent. Responsable(s) : À venir Site web"
-      },
-      {
-        "id": "LOG8704",
-        "name": "Développement logiciel en réalité étendue",
-        "credits": 3.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "LOG8975",
-        "name": "Projet final en multimédia",
-        "credits": 6.0,
-        "description": "",
-        "prerequisite_courses": [],
-        "concomitant_courses": [],
-        "equivalent_courses": [],
-        "requirement_text": ""
-      },
-      {
-        "id": "INF8107",
-        "name": "Détection d'intrusion et supervision",
         "credits": 3.0,
         "description": "",
         "prerequisite_courses": [],
@@ -1760,8 +1519,38 @@
         "requirement_text": ""
       },
       {
+        "id": "MTH3302",
+        "name": "Méth. prob. et statist. pour l'intel. artif.",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8225",
+        "name": "I.A.:tech. probabilistes et d'apprentissage",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
         "id": "INF8250E",
         "name": "Reinforcement Learning",
+        "credits": 3.0,
+        "description": "",
+        "prerequisite_courses": [],
+        "concomitant_courses": [],
+        "equivalent_courses": [],
+        "requirement_text": ""
+      },
+      {
+        "id": "INF8460",
+        "name": "Traitement automatique de la langue naturelle",
         "credits": 3.0,
         "description": "",
         "prerequisite_courses": [],

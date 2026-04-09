@@ -188,6 +188,24 @@ def fetch_course_detail(sigle: str, slug: Optional[str]) -> Optional[dict]:
     desc_div = node.find("div", class_="desc")
     description = desc_div.get_text(" ", strip=True) if desc_div else ""
 
+    # Credits — try common Drupal field patterns then fall back to regex in full text
+    credits: float = 0.0
+    credit_el = (
+        node.find(class_=re.compile(r"credit", re.I))
+        or node.find("div", class_="credits")
+    )
+    if credit_el:
+        m = re.search(r"(\d+(?:[.,]\d+)?)", credit_el.get_text())
+        if m:
+            credits = float(m.group(1).replace(",", "."))
+    if credits == 0.0:
+        # fallback: scan the full node text for "X crédit(s)" (cap at 15 to avoid degree totals)
+        m = re.search(r"\b(\d{1,2}(?:[.,]\d)?)\s*cr[ée]dit", node.get_text(), re.I)
+        if m:
+            v = float(m.group(1).replace(",", "."))
+            if v <= 15:
+                credits = v
+
     # Préalables et corequis depuis div.details de la page individuelle
     details_div = node.find("div", class_="details")
     prereqs: list[str] = []
@@ -220,6 +238,7 @@ def fetch_course_detail(sigle: str, slug: Optional[str]) -> Optional[dict]:
 
     return {
         "description":          description,
+        "credits":              credits,
         "prerequisite_courses": list(dict.fromkeys(prereqs)),
         "concomitant_courses":  list(dict.fromkeys(coreqs)),
         "requirement_text":     req_text,
@@ -368,6 +387,8 @@ def main():
         detail = fetch_course_detail(sigle, slug)
         if detail:
             course["description"] = detail["description"]
+            if detail.get("credits", 0.0) > 0:
+                course["credits"] = detail["credits"]
             # Préférer les préalables de la page individuelle si plus complets
             if detail["prerequisite_courses"]:
                 course["prerequisite_courses"] = detail["prerequisite_courses"]
@@ -397,7 +418,7 @@ def main():
             other_courses.append({
                 "id":                   sigle,
                 "name":                 "",
-                "credits":              0.0,
+                "credits":              detail.get("credits", 0.0),
                 "description":          detail["description"],
                 "prerequisite_courses": detail["prerequisite_courses"],
                 "concomitant_courses":  detail["concomitant_courses"],
