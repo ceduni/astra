@@ -22,31 +22,116 @@ function groupBy(arr, key) {
   }, {})
 }
 
-// ── Small shared components ────────────────────────────────────────────────
+// ── Prerequisite tree renderer ─────────────────────────────────────────────
 
-function CourseCard({ course, action }) {
+function PrereqNode({ node }) {
+  if (typeof node === 'string') {
+    return <span className="prereq-tag">{node}</span>
+  }
+  const op = node.type === 'AND' ? 'ET' : 'OU'
   return (
-    <div className="card">
-      <div className="card-header">
-        <span className="sigle">{course.sigle}</span>
-        <span className="universite">{course.universite}</span>
-      </div>
-      <div className="titre">{course.titre}</div>
-      <div className="card-meta">
-        <span>{course.credits ? `${course.credits} cr` : 'N/A'}</span>
-        <span>Niveau {course.niveau}</span>
-        {action}
+    <span className="prereq-group">
+      (
+      {node.items.map((item, i) => (
+        <span key={i}>
+          {i > 0 && <span className="prereq-op">{op}</span>}
+          <PrereqNode node={item} />
+        </span>
+      ))}
+      )
+    </span>
+  )
+}
+
+// ── Course modal ───────────────────────────────────────────────────────────
+
+function CourseModal({ course, onClose }) {
+  const [prereqs, setPrereqs] = useState(null)
+
+  useEffect(() => {
+    const encoded = encodeURIComponent(course.sigle)
+    fetch(`${API}/courses/${encoded}/prerequisites`)
+      .then(r => r.json())
+      .then(setPrereqs)
+      .catch(() => setPrereqs({ sigle: course.sigle, prerequisites: null }))
+  }, [course.sigle])
+
+  // Close on backdrop click
+  function onBackdrop(e) {
+    if (e.target === e.currentTarget) onClose()
+  }
+
+  // Close on Escape
+  useEffect(() => {
+    const handler = e => { if (e.key === 'Escape') onClose() }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [onClose])
+
+  return (
+    <div className="modal-backdrop" onClick={onBackdrop}>
+      <div className="modal">
+        <div className="modal-header" data-uni={course.universite}>
+          <div className="modal-title">
+            <span className="sigle">{course.sigle}</span>
+            <h3>{course.titre || '(sans titre)'}</h3>
+          </div>
+          <button className="modal-close" onClick={onClose}>×</button>
+        </div>
+        <div className="modal-body">
+          <div className="modal-meta">
+            <span>{course.universite}</span>
+            <span>{course.credits ? `${course.credits} crédits` : 'Crédits N/A'}</span>
+            <span>Niveau {course.niveau}</span>
+            {course.hors_perimetre && <span style={{color:'#c00'}}>Hors périmètre</span>}
+          </div>
+
+          {course.description && (
+            <div>
+              <div className="modal-section-title">Description</div>
+              <p className="modal-description">{course.description}</p>
+            </div>
+          )}
+
+          <div>
+            <div className="modal-section-title">Prérequis</div>
+            <div className="prereq-tree">
+              {prereqs === null
+                ? 'Chargement…'
+                : prereqs.prerequisites
+                  ? <PrereqNode node={prereqs.prerequisites} />
+                  : 'Aucun prérequis'
+              }
+            </div>
+          </div>
+
+          {course.requirement_text && (
+            <div>
+              <div className="modal-section-title">Texte original</div>
+              <p style={{fontSize:'0.82rem', color:'#777', lineHeight:1.5}}>{course.requirement_text}</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )
 }
 
-function CompactCourse({ course, action }) {
+// ── Small shared components ────────────────────────────────────────────────
+
+function CourseCard({ course, action, onClick }) {
   return (
-    <div className="compact-course">
-      <span className="sigle">{course.sigle}</span>
-      <span className="compact-titre">{course.titre}</span>
-      {action}
+    <div className="card" data-uni={course.universite} onClick={onClick}>
+      <div className="card-header">
+        <span className="sigle">{course.sigle}</span>
+        <span className="universite">{course.universite}</span>
+      </div>
+      <div className="titre">{course.titre || '(sans titre)'}</div>
+      <div className="card-meta">
+        <span>{course.credits ? `${course.credits} cr` : 'N/A'}</span>
+        <span>Niveau {course.niveau}</span>
+        {action}
+      </div>
     </div>
   )
 }
@@ -141,8 +226,8 @@ function ProfilePanel({ completed, onAdd, onRemove }) {
 
 // ── Right panel: eligible courses ──────────────────────────────────────────
 
-function EligiblePanel({ completed }) {
-  const [eligible, setEligible] = useState(null)   // null = not yet fetched
+function EligiblePanel({ completed, onCardClick }) {
+  const [eligible, setEligible] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
@@ -191,12 +276,17 @@ function EligiblePanel({ completed }) {
           {uniNames.map(uni => (
             <div key={uni} className="uni-group">
               <h3 className="uni-heading">
+                <span className="uni-dot" data-uni={uni} />
                 {uni}
                 <span className="uni-count">{byUni[uni].length}</span>
               </h3>
               <div className="eligible-grid">
                 {byUni[uni].map(course => (
-                  <CourseCard key={course.sigle} course={course} />
+                  <CourseCard
+                    key={course.sigle}
+                    course={course}
+                    onClick={() => onCardClick(course)}
+                  />
                 ))}
               </div>
             </div>
@@ -209,7 +299,7 @@ function EligiblePanel({ completed }) {
 
 // ── Top search (general explore) ───────────────────────────────────────────
 
-function ExploreSection({ universities }) {
+function ExploreSection({ universities, onCardClick }) {
   const [query, setQuery] = useState('')
   const [universite, setUniversite] = useState('')
   const [results, setResults] = useState([])
@@ -257,7 +347,13 @@ function ExploreSection({ universities }) {
 
       {results.length > 0 && (
         <div className="grid">
-          {results.map(c => <CourseCard key={`${c.universite}-${c.sigle}`} course={c} />)}
+          {results.map(c => (
+            <CourseCard
+              key={`${c.universite}-${c.sigle}`}
+              course={c}
+              onClick={() => onCardClick(c)}
+            />
+          ))}
         </div>
       )}
     </section>
@@ -268,7 +364,8 @@ function ExploreSection({ universities }) {
 
 export default function App() {
   const [universities, setUniversities] = useState([])
-  const [completed, setCompleted] = useState([])   // array of course objects, ordered
+  const [completed, setCompleted] = useState([])
+  const [modalCourse, setModalCourse] = useState(null)
 
   useEffect(() => {
     fetch(`${API}/universities`).then(r => r.json()).then(setUniversities).catch(() => {})
@@ -293,10 +390,14 @@ export default function App() {
 
       <div className="two-col">
         <ProfilePanel completed={completed} onAdd={addCourse} onRemove={removeCourse} />
-        <EligiblePanel completed={completed} />
+        <EligiblePanel completed={completed} onCardClick={setModalCourse} />
       </div>
 
-      <ExploreSection universities={universities} />
+      <ExploreSection universities={universities} onCardClick={setModalCourse} />
+
+      {modalCourse && (
+        <CourseModal course={modalCourse} onClose={() => setModalCourse(null)} />
+      )}
     </div>
   )
 }

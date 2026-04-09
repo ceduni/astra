@@ -49,7 +49,7 @@
       },
       {
         "id": "COMP 248",
-        "name": "ObjectâOriented Programming I",
+        "name": "Object‑Oriented Programming I",
         "credits": 3.5,
         "description": "Introduction to programming. Basic data types, variables, expressions, assignments, control flow. Classes, objects, methods. Information hiding, public vs. private visibility, data abstraction and encapsulation. References. Arrays.",
         "prerequisite_courses": [],
@@ -61,9 +61,9 @@
       },
       {
         "id": "COMP 249",
-        "name": "ObjectâOriented Programming II",
+        "name": "Object‑Oriented Programming II",
         "credits": 3.5,
-        "description": "This course provides a comprehensive introduction to object-oriented programming (OOP), focusing on the design, efficiency, and implementation of software using OOP principles. Key topics include inheritance, polymorphism, exception handling, recursion, and dynamic data structures such as linked lists and array lists. Students explore collections and generics, learning how to develop flexible and reusable code. Through hands-on programming assignments and projects, students gain experience in designing modular, maintainable, and scalable software solutions. â â",
+        "description": "This course provides a comprehensive introduction to object-oriented programming (OOP), focusing on the design, efficiency, and implementation of software using OOP principles. Key topics include inheritance, polymorphism, exception handling, recursion, and dynamic data structures such as linked lists and array lists. Students explore collections and generics, learning how to develop flexible and reusable code. Through hands-on programming assignments and projects, students gain experience in designing modular, maintainable, and scalable software solutions. ​ ​",
         "prerequisite_courses": [
           "COMP 248",
           "MATH 203"
@@ -78,7 +78,7 @@
         "id": "COMP 326",
         "name": "Computer Architecture",
         "credits": 3.0,
-        "description": "Computer architecture models: controlâflow and dataâflow. Concurrency and locality, data dependency theory. Instruction level parallelism. Instruction scheduling. Pipelined processors. Vector processors. Thread level parallelism. Multiprocessors. Shared memory models. Coherence protocols. Interconnection networks. Performance issues. Advanced topics in contemporary computer architectures.",
+        "description": "Computer architecture models: control‑flow and data‑flow. Concurrency and locality, data dependency theory. Instruction level parallelism. Instruction scheduling. Pipelined processors. Vector processors. Thread level parallelism. Multiprocessors. Shared memory models. Coherence protocols. Interconnection networks. Performance issues. Advanced topics in contemporary computer architectures.",
         "prerequisite_courses": [
           "COMP 346"
         ],
@@ -105,7 +105,7 @@
         "id": "COMP 335",
         "name": "Introduction to Theoretical Computer Science",
         "credits": 3.0,
-        "description": "This course covers the following topics: finite state automata and regular languages; push â down automata and context â free languages; pumping lemmas; applications to parsing; Turing machines; undecidability and decidability.",
+        "description": "This course covers the following topics: finite state automata and regular languages; push ‑ down automata and context ‑ free languages; pumping lemmas; applications to parsing; Turing machines; undecidability and decidability.",
         "prerequisite_courses": [
           "COMP 232",
           "COEN 231",
@@ -212,7 +212,7 @@
         "id": "COMP 361",
         "name": "Elementary Numerical Methods",
         "credits": 3.0,
-        "description": "Vector and matrix norms. Numerical methods for solving linear systems, Gaussian elimination, LU decomposition, error analysis. Numerical solution of nonlinear equations, Newtonâs method, fixed point iterations. Interpolation and approximation, Taylor, Lagrange, Chebyshev and Legendre polynomials. Cubic spline interpolation. Numerical differentiation, numerical integration, Gauss quadrature. Discrete leastâsquares approximation. Initial value problems in ordinary differential equations, stiff differential equations. Boundary value problems in ordinary differential equations.",
+        "description": "Vector and matrix norms. Numerical methods for solving linear systems, Gaussian elimination, LU decomposition, error analysis. Numerical solution of nonlinear equations, Newton’s method, fixed point iterations. Interpolation and approximation, Taylor, Lagrange, Chebyshev and Legendre polynomials. Cubic spline interpolation. Numerical differentiation, numerical integration, Gauss quadrature. Discrete least‑squares approximation. Initial value problems in ordinary differential equations, stiff differential equations. Boundary value problems in ordinary differential equations.",
         "prerequisite_courses": [
           "COMP 232",
           "COMP 249"
@@ -225,7 +225,7 @@
         "id": "COMP 367",
         "name": "Techniques in Symbolic Computation",
         "credits": 3.0,
-        "description": "This course is an application-oriented introduction to algebraic methods involved in symbolic computation, as it applies to number theory and modular algebra, and covering the following topics: numbers, primes, modular arithmetic, Diophantine equations; congruence classes and applications, finite fields and rings; Fermatâs and Eulerâs theorems; Chinese Remainder theorem and applications; polynomial congruences and rings. Applications to: error-correcting codes (Humming codes), Hill Cryptosystem, public key encryption schemes, polynomial factorization, polynomial interpolation. A symbolic computation system (e.g. MAPLE), is used as a computational tool and a platform for writing all assignments and tests but not as an object of study itself.",
+        "description": "This course is an application-oriented introduction to algebraic methods involved in symbolic computation, as it applies to number theory and modular algebra, and covering the following topics: numbers, primes, modular arithmetic, Diophantine equations; congruence classes and applications, finite fields and rings; Fermat’s and Euler’s theorems; Chinese Remainder theorem and applications; polynomial congruences and rings. Applications to: error-correcting codes (Humming codes), Hill Cryptosystem, public key encryption schemes, polynomial factorization, polynomial interpolation. A symbolic computation system (e.g. MAPLE), is used as a computational tool and a platform for writing all assignments and tests but not as an object of study itself.",
         "prerequisite_courses": [
           "MATH 222",
           "COMP 232",
@@ -276,7 +276,7 @@
         "id": "COMP 426",
         "name": "Multicore Programming",
         "credits": 4.0,
-        "description": "Fundamental concepts of computer architecture. Architecture of the selected multicore platform. Review of sharedâmemory parallel programming. The difficulties inherent to parallel programming. Scalability of programming models. The stream programming model for multicore. Implicit and explicit threading. Implicit and explicit orchestration of data movement, both on chip and off. Adapting standard algorithms to multicore. Critical assessment of the available systemâsoftware support. Project.",
+        "description": "Fundamental concepts of computer architecture. Architecture of the selected multicore platform. Review of shared‑memory parallel programming. The difficulties inherent to parallel programming. Scalability of programming models. The stream programming model for multicore. Implicit and explicit threading. Implicit and explicit orchestration of data movement, both on chip and off. Adapting standard algorithms to multicore. Critical assessment of the available system‑software support. Project.",
         "prerequisite_courses": [
           "COMP 346",
           "COEN 346"
@@ -289,7 +289,7 @@
         "id": "COMP 428",
         "name": "Parallel Programming",
         "credits": 4.0,
-        "description": "Parallel programming techniques as a natural extension to sequential programming. Overview of parallel programming architectures and models. Parallel programming issues: locality, granularity, scheduling, data decomposition and distribution, load balancing, communication and synchronization, determinacy and nonâdeterminacy, cost and performance. Techniques and tools for messageâpassing parallel programming. Case studies. Project.",
+        "description": "Parallel programming techniques as a natural extension to sequential programming. Overview of parallel programming architectures and models. Parallel programming issues: locality, granularity, scheduling, data decomposition and distribution, load balancing, communication and synchronization, determinacy and non‑determinacy, cost and performance. Techniques and tools for message‑passing parallel programming. Case studies. Project.",
         "prerequisite_courses": [
           "COMP 346",
           "COEN 346"
@@ -338,7 +338,7 @@
         "id": "COMP 442",
         "name": "Compiler Design",
         "credits": 4.0,
-        "description": "Compiler organization and implementation: lexical analysis and parsing, syntaxâdirected translation, code optimization. Runâtime systems. Project.",
+        "description": "Compiler organization and implementation: lexical analysis and parsing, syntax‑directed translation, code optimization. Run‑time systems. Project.",
         "prerequisite_courses": [
           "COMP 228",
           "SOEN 228",
@@ -367,7 +367,7 @@
         "id": "COMP 445",
         "name": "Data Communication and Computer Networks",
         "credits": 4.0,
-        "description": "This course introduces the fundamentals of networking protocols and communication technologies. Topics covered include network architectures and service models, principles behind the design of protocol stacks, local and wide area networks, and the Internet. The course also covers a review of the foundations and performance of application layer protocols, reliable delivery mechanisms, congestion and flow control, control and data planes, routing and switching, error detection and correction, and multiple access protocols. The course includes an introduction to wireless networking and security.â¯",
+        "description": "This course introduces the fundamentals of networking protocols and communication technologies. Topics covered include network architectures and service models, principles behind the design of protocol stacks, local and wide area networks, and the Internet. The course also covers a review of the foundations and performance of application layer protocols, reliable delivery mechanisms, congestion and flow control, control and data planes, routing and switching, error detection and correction, and multiple access protocols. The course includes an introduction to wireless networking and security. ",
         "prerequisite_courses": [
           "COMP 346"
         ],
@@ -391,7 +391,7 @@
         "id": "COMP 465",
         "name": "Design and Analysis of Algorithms",
         "credits": 3.0,
-        "description": "Order statistics: worstâcase, averageâcase and amortized analysis. Algorithm design techniques: greedy algorithms, dynamic programming. Selected algorithms from graph theory, linear programming, number theory, string matching, and computational geometry. A survey of hard problems, NPâcompleteness, and approximation algorithms.",
+        "description": "Order statistics: worst‑case, average‑case and amortized analysis. Algorithm design techniques: greedy algorithms, dynamic programming. Selected algorithms from graph theory, linear programming, number theory, string matching, and computational geometry. A survey of hard problems, NP‑completeness, and approximation algorithms.",
         "prerequisite_courses": [
           "COMP 232",
           "COEN 231",
@@ -432,7 +432,7 @@
         "id": "COMP 474",
         "name": "Intelligent Systems",
         "credits": 4.0,
-        "description": "Ruleâbased expert systems, blackboard architecture, and agentâbased. Knowledge acquisition and representation. Uncertainty and conflict resolution. Reasoning and explanation. Design of intelligent systems. Project.",
+        "description": "Rule‑based expert systems, blackboard architecture, and agent‑based. Knowledge acquisition and representation. Uncertainty and conflict resolution. Reasoning and explanation. Design of intelligent systems. Project.",
         "prerequisite_courses": [
           "COMP 352",
           "COEN 352"
@@ -445,7 +445,7 @@
         "id": "COMP 475",
         "name": "Immersive Technologies",
         "credits": 4.0,
-        "description": "This course covers the fundamentals of immersive technologies, a brief history and overview of immersive technologies, analyzes case studies of interactive experiences using immersive technologies, and identifies the main challenges of the current state of the art. Furthermore, it covers the basic principles of 3D graphics for creating virtual assets and environments, and basic concepts and technologies for interaction. A project provides handsâon experience in the design and development of interactive experiences with the user of immersive technologies.",
+        "description": "This course covers the fundamentals of immersive technologies, a brief history and overview of immersive technologies, analyzes case studies of interactive experiences using immersive technologies, and identifies the main challenges of the current state of the art. Furthermore, it covers the basic principles of 3D graphics for creating virtual assets and environments, and basic concepts and technologies for interaction. A project provides hands‑on experience in the design and development of interactive experiences with the user of immersive technologies.",
         "prerequisite_courses": [
           "COMP 371"
         ],
@@ -457,7 +457,7 @@
         "id": "COMP 476",
         "name": "Advanced Game Development",
         "credits": 4.0,
-        "description": "Introduction to advanced aspects of computer games. Game engine design. Artificial Intelligence (AI): nonâplayer character movement, coordinated  movement, pathfinding, world representations; decision making; tactical AI, strategic AI, learning in games. Physicsâbased techniques: collision detection and response. Networked gaming: multiâplayer games, networking and distributed game design, mobile gaming. Improving realism: cut scenes, 3D sound. Project.",
+        "description": "Introduction to advanced aspects of computer games. Game engine design. Artificial Intelligence (AI): non‑player character movement, coordinated  movement, pathfinding, world representations; decision making; tactical AI, strategic AI, learning in games. Physics‑based techniques: collision detection and response. Networked gaming: multi‑player games, networking and distributed game design, mobile gaming. Improving realism: cut scenes, 3D sound. Project.",
         "prerequisite_courses": [
           "COMP 361",
           "ENGR 391",
@@ -471,7 +471,7 @@
         "id": "COMP 477",
         "name": "Animation for Computer Games",
         "credits": 4.0,
-        "description": "Introduction to the algorithms, data structures, and techniques used in modelling and rendering dynamic scenes. Topics include principles of traditional animation, production pipeline, animation hardware and software, orientation representation and interpolation, modelling physical and articulated objects, forward and inverse kinematics, motion control and capture, keyâframe, procedural, and behavioural animation, camera animation, scripting system, and freeâform deformation. Project.",
+        "description": "Introduction to the algorithms, data structures, and techniques used in modelling and rendering dynamic scenes. Topics include principles of traditional animation, production pipeline, animation hardware and software, orientation representation and interpolation, modelling physical and articulated objects, forward and inverse kinematics, motion control and capture, key‑frame, procedural, and behavioural animation, camera animation, scripting system, and free‑form deformation. Project.",
         "prerequisite_courses": [
           "COMP 361",
           "ENGR 391",
@@ -485,7 +485,7 @@
         "id": "COMP 478",
         "name": "Image Processing",
         "credits": 4.0,
-        "description": "Digital image fundamentals, image transforms (Fourier, Walsh, Haar, Hotelling, wavelet), image enhancement (histogram processing, spatial filtering, highâ and lowâpass filtering), image restoration, image compression (elements of information theory, image compression models, errorâfree compression, lossy compression, image compression standards), image segmentation (line detection, Hough transform, edge detection and linking, thresholding, region splitting and merging), representation and description (chain codes, signatures, skeletons, shape descriptors, moments, texture). Project.",
+        "description": "Digital image fundamentals, image transforms (Fourier, Walsh, Haar, Hotelling, wavelet), image enhancement (histogram processing, spatial filtering, high‑ and low‑pass filtering), image restoration, image compression (elements of information theory, image compression models, error‑free compression, lossy compression, image compression standards), image segmentation (line detection, Hough transform, edge detection and linking, thresholding, region splitting and merging), representation and description (chain codes, signatures, skeletons, shape descriptors, moments, texture). Project.",
         "prerequisite_courses": [
           "COMP 352"
         ],
@@ -497,7 +497,7 @@
         "id": "COMP 479",
         "name": "Information Retrieval and Web Search",
         "credits": 4.0,
-        "description": "Basics of information retrieval (IR): boolean, vector space and probabilistic models. Tokenization and creation of inverted files. Weighting schemes. Evaluation of IR systems: precision, recall, Fâmeasure. Relevance feedback and query expansion. Application of IR to web search engines: XML, link analysis, PageRank algorithm. Text categorization and clustering techniques as used in spam filtering. Project.",
+        "description": "Basics of information retrieval (IR): boolean, vector space and probabilistic models. Tokenization and creation of inverted files. Weighting schemes. Evaluation of IR systems: precision, recall, F‑measure. Relevance feedback and query expansion. Application of IR to web search engines: XML, link analysis, PageRank algorithm. Text categorization and clustering techniques as used in spam filtering. Project.",
         "prerequisite_courses": [
           "COMP 233",
           "ENGR 371",
@@ -580,13 +580,13 @@
         "id": "ENCS 282",
         "name": "Technical Writing and Communication",
         "credits": 3.0,
-        "description": "Technical writing form and style. Technical and scientific papers, abstracts, reports. Library research and referencing methods for engineers and computer scientists. Technical communication using information technology: document processing software, computerâassisted presentation, analysis and design of web presentation, choice and use of appropriate tools. Students will prepare an individual major report and make an oral presentation",
+        "description": "Technical writing form and style. Technical and scientific papers, abstracts, reports. Library research and referencing methods for engineers and computer scientists. Technical communication using information technology: document processing software, computer‑assisted presentation, analysis and design of web presentation, choice and use of appropriate tools. Students will prepare an individual major report and make an oral presentation",
         "prerequisite_courses": [
           "ENCS 272"
         ],
         "concomitant_courses": [],
         "equivalent_courses": [],
-        "requirement_text": "Students must have satisfied the requirements in Section 71.20.7 Writing Skills Requirement , by passing the Engineering Writing Test (EWT) or by passing ENCS 272 with a grade of C â or higher, prior to enrolling."
+        "requirement_text": "Students must have satisfied the requirements in Section 71.20.7 Writing Skills Requirement , by passing the Engineering Writing Test (EWT) or by passing ENCS 272 with a grade of C ‑ or higher, prior to enrolling."
       },
       {
         "id": "ENCS 393",
@@ -724,7 +724,7 @@
         "id": "SOEN 287",
         "name": "Web Programming",
         "credits": 3.0,
-        "description": "This course covers the following topics: internet architecture and protocols; web applications through clients and servers; modern HTML and CSS; clientâside programming using modern JavaScript and an overview of the advantages of some common modern JavaScript libraries; Regular Expressions; static website contents and dynamic page generation through serverâside programming; preserving state (clientâside) in web applications; deploying static and dynamic websites and content management systems vs. website deployment.",
+        "description": "This course covers the following topics: internet architecture and protocols; web applications through clients and servers; modern HTML and CSS; client‑side programming using modern JavaScript and an overview of the advantages of some common modern JavaScript libraries; Regular Expressions; static website contents and dynamic page generation through server‑side programming; preserving state (client‑side) in web applications; deploying static and dynamic websites and content management systems vs. website deployment.",
         "prerequisite_courses": [
           "COMP 248"
         ],
@@ -736,7 +736,7 @@
         "id": "SOEN 321",
         "name": "Information Systems Security",
         "credits": 3.0,
-        "description": "This course covers the following topics: introduction to cryptography and cryptanalysis; threats, attacks, and vulnerabilities; security services (confidentiality, authentication, integrity); public key systems including DiffieâHellman, RSA, Rabin; Digital Signature Schemes; Hash functions and MAC schemes; authentication protocols; network layers and security; protocols; Public Key Infrastructure (PKI); Transport Layer Security (TLS); firewalls; Intrusion Detection Systems; DNS security; Denial of Service Attacks; Penetration testing; Online Privacy and anonymity; Mix networks and Onion Routing; TOR; Malware; Botnets; Spam and Hot topics in Security and Privacy.",
+        "description": "This course covers the following topics: introduction to cryptography and cryptanalysis; threats, attacks, and vulnerabilities; security services (confidentiality, authentication, integrity); public key systems including Diffie‑Hellman, RSA, Rabin; Digital Signature Schemes; Hash functions and MAC schemes; authentication protocols; network layers and security; protocols; Public Key Infrastructure (PKI); Transport Layer Security (TLS); firewalls; Intrusion Detection Systems; DNS security; Denial of Service Attacks; Penetration testing; Online Privacy and anonymity; Mix networks and Onion Routing; TOR; Malware; Botnets; Spam and Hot topics in Security and Privacy.",
         "prerequisite_courses": [
           "COMP 346",
           "COEN 346"
@@ -749,7 +749,7 @@
         "id": "SOEN 331",
         "name": "Formal Methods for Software Engineering",
         "credits": 3.0,
-        "description": "This course covers the following topics: propertyâbased (axiomatic and algebraic) formalisms and modelâbased (abstract and visual) formalisms; axiomatic formalisms with temporal logic, assertions and contracts; algebraic formalisms through algebraic specifications; abstract formalisms through the Z and ObjectâZ specification languages; visual formalisms through automata (finite state machines and extended finite state machines).",
+        "description": "This course covers the following topics: property‑based (axiomatic and algebraic) formalisms and model‑based (abstract and visual) formalisms; axiomatic formalisms with temporal logic, assertions and contracts; algebraic formalisms through algebraic specifications; abstract formalisms through the Z and Object‑Z specification languages; visual formalisms through automata (finite state machines and extended finite state machines).",
         "prerequisite_courses": [
           "COMP 232",
           "COMP 249"
@@ -762,7 +762,7 @@
         "id": "SOEN 357",
         "name": "User Interface Design",
         "credits": 3.0,
-        "description": "This course covers the following topics: principles, standards and guidelines for user interface design; usability principles and user experience; standards and design rationale for userâcentred design; taskâcentred design; rationalized design; usability engineering; user models; interface design process, including interface requirement gathering, conceptual design and prototyping, and evaluation; usability testing and analytic evaluation; data gathering and analysis techniques for qualitative and quantitative data; interface design documentation; design approaches for touch, gestureâbased, and haptic interfaces.",
+        "description": "This course covers the following topics: principles, standards and guidelines for user interface design; usability principles and user experience; standards and design rationale for user‑centred design; task‑centred design; rationalized design; usability engineering; user models; interface design process, including interface requirement gathering, conceptual design and prototyping, and evaluation; usability testing and analytic evaluation; data gathering and analysis techniques for qualitative and quantitative data; interface design documentation; design approaches for touch, gesture‑based, and haptic interfaces.",
         "prerequisite_courses": [
           "SOEN 341",
           "COMP 354"
@@ -773,7 +773,7 @@
       },
       {
         "id": "SOEN 387",
-        "name": "WebâBased Enterprise Application Design",
+        "name": "Web‑Based Enterprise Application Design",
         "credits": 3.0,
         "description": "This course introduces Hypertext Transfer Protocol (HTTP), and client/server and layered architectures for Web-based Enterprise Applications (WEA). The course covers Application, Presentation, Domain and Data Source design patterns. Students learn how to use Java servlets and Java Server Pages. The course also covers authentication, security and transaction processing, as well as system-level testing of web applications.",
         "prerequisite_courses": [
@@ -792,7 +792,7 @@
         "id": "SOEN 422",
         "name": "Embedded Systems and Software",
         "credits": 4.0,
-        "description": "This course covers the following topics: embedded computer system architectures; programming of interface and peripheral control registers; analog to digital conversion and motor control using pulse width modulation; interrupts, communication methods and their application to interface control and multiâcomputer systems; architecture and operating systems of advanced embedded designs; design and testing of integrated systems; advanced topics.",
+        "description": "This course covers the following topics: embedded computer system architectures; programming of interface and peripheral control registers; analog to digital conversion and motor control using pulse width modulation; interrupts, communication methods and their application to interface control and multi‑computer systems; architecture and operating systems of advanced embedded designs; design and testing of integrated systems; advanced topics.",
         "prerequisite_courses": [
           "COMP 346"
         ],
@@ -804,7 +804,7 @@
         "id": "SOEN 423",
         "name": "Distributed Systems",
         "credits": 4.0,
-        "description": "This course covers the following topics: principles of distributed computing including scalability, transparency, concurrency, consistency, fault tolerance, high availability; clientâserver interaction technologies including interprocess communication, sockets, group communication, remote procedure call, remote method invocation, object request broker, web services; server design techniques including process replication, fault tolerance through passive replication, high availability through active replication, coordination and agreement, transactions and concurrency control.",
+        "description": "This course covers the following topics: principles of distributed computing including scalability, transparency, concurrency, consistency, fault tolerance, high availability; client‑server interaction technologies including interprocess communication, sockets, group communication, remote procedure call, remote method invocation, object request broker, web services; server design techniques including process replication, fault tolerance through passive replication, high availability through active replication, coordination and agreement, transactions and concurrency control.",
         "prerequisite_courses": [
           "COMP 346"
         ],
@@ -828,13 +828,13 @@
         "id": "SOEN 487",
         "name": "Web Services and Applications",
         "credits": 4.0,
-        "description": "This course covers the following topics: analysis and design of web services and applications; advanced architectures for the design, deployment, and testing of large multiâserver web services and applications; Service Oriented Architecture (SOA); Electronic Commerce; security; load balancing; stress testing.",
+        "description": "This course covers the following topics: analysis and design of web services and applications; advanced architectures for the design, deployment, and testing of large multi‑server web services and applications; Service Oriented Architecture (SOA); Electronic Commerce; security; load balancing; stress testing.",
         "prerequisite_courses": [
           "SOEN 387"
         ],
         "concomitant_courses": [],
         "equivalent_courses": [],
-        "requirement_text": "The following course must be completed previously: â SOEN 387 â. â â"
+        "requirement_text": "The following course must be completed previously: ​ SOEN 387 ‌. ​ ​"
       }
     ],
     "OTHER": [
@@ -999,7 +999,7 @@
         "id": "SOEN 363",
         "name": "Data Systems for Software Engineers",
         "credits": 3.0,
-        "description": "This course covers the following topics: introduction to the current data ecosystem; relational databases; keyâvalue databases; document databases; column databases; graph databases; RDF stores; parallel and distributed file systems, data processing engines; data stream analytics; and data infrastructure.",
+        "description": "This course covers the following topics: introduction to the current data ecosystem; relational databases; key‑value databases; document databases; column databases; graph databases; RDF stores; parallel and distributed file systems, data processing engines; data stream analytics; and data infrastructure.",
         "prerequisite_courses": [
           "COMP 352"
         ],

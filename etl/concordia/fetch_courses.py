@@ -226,6 +226,7 @@ def main():
     print(f"Fetching programme page…")
     prog_resp = SESSION.get(PROGRAM_URL, timeout=30)
     prog_resp.raise_for_status()
+    prog_resp.encoding = "utf-8"
     prog_soup = BeautifulSoup(prog_resp.text, "html.parser")
 
     explicit = fetch_explicit_program_courses(prog_soup)
@@ -235,6 +236,7 @@ def main():
     print(f"\nFetching COMP/SOEN course details…")
     cs_resp = SESSION.get(COMP_SOEN_URL, timeout=30)
     cs_resp.raise_for_status()
+    cs_resp.encoding = "utf-8"
     cs_soup = BeautifulSoup(cs_resp.text, "html.parser")
     cs_details = parse_accordion_courses(cs_soup)
     print(f"  {len(cs_details)} cours COMP/SOEN trouvés.")
@@ -243,6 +245,7 @@ def main():
     print(f"\nFetching ENCS course details…")
     encs_resp = SESSION.get(ENCS_URL, timeout=30)
     encs_resp.raise_for_status()
+    encs_resp.encoding = "utf-8"
     encs_soup = BeautifulSoup(encs_resp.text, "html.parser")
     encs_details = parse_accordion_courses(encs_soup)
     print(f"  {len(encs_details)} cours ENCS trouvés.")
