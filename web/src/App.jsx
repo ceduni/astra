@@ -1,9 +1,7 @@
-import { useEffect, useState } from 'react'
-import PrereqGraph from './PrereqGraph'
+import { useEffect, useRef, useState } from 'react'
+import GraphCanvas from './GraphCanvas'
 
 const API = '/api'
-
-// ── Utilities ──────────────────────────────────────────────────────────────
 
 function useDebounce(value, delay) {
   const [debounced, setDebounced] = useState(value)
@@ -14,96 +12,15 @@ function useDebounce(value, delay) {
   return debounced
 }
 
-function groupBy(arr, key) {
-  return arr.reduce((acc, item) => {
-    const k = item[key]
-    if (!acc[k]) acc[k] = []
-    acc[k].push(item)
-    return acc
-  }, {})
-}
+// ── Sidebar: Search section ────────────────────────────────────────────────────
 
-// ── Course modal ───────────────────────────────────────────────────────────
-
-function CourseModal({ course, completed, onClose }) {
-  function onBackdrop(e) {
-    if (e.target === e.currentTarget) onClose()
-  }
-
-  useEffect(() => {
-    const handler = e => { if (e.key === 'Escape') onClose() }
-    window.addEventListener('keydown', handler)
-    return () => window.removeEventListener('keydown', handler)
-  }, [onClose])
-
-  return (
-    <div className="modal-backdrop" onClick={onBackdrop}>
-      <div className="modal">
-        <div className="modal-header" data-uni={course.universite}>
-          <div className="modal-title">
-            <span className="sigle">{course.sigle}</span>
-            <h3>{course.titre || '(sans titre)'}</h3>
-          </div>
-          <button className="modal-close" onClick={onClose}>×</button>
-        </div>
-        <div className="modal-body">
-          <div className="modal-meta">
-            <span>{course.universite}</span>
-            <span>{course.credits ? `${course.credits} crédits` : 'Crédits N/A'}</span>
-            <span>Niveau {course.niveau}</span>
-            {course.hors_perimetre && <span style={{color:'#c00'}}>Hors périmètre</span>}
-          </div>
-
-          {course.description && (
-            <div>
-              <div className="modal-section-title">Description</div>
-              <p className="modal-description">{course.description}</p>
-            </div>
-          )}
-
-          <div>
-            <div className="modal-section-title">Chaîne de prérequis</div>
-            <PrereqGraph sigle={course.sigle} completed={completed} />
-          </div>
-
-          {course.requirement_text && (
-            <div>
-              <div className="modal-section-title">Texte original</div>
-              <p style={{fontSize:'0.82rem', color:'#777', lineHeight:1.5}}>{course.requirement_text}</p>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-// ── Small shared components ────────────────────────────────────────────────
-
-function CourseCard({ course, action, onClick }) {
-  return (
-    <div className="card" data-uni={course.universite} onClick={onClick}>
-      <div className="card-header">
-        <span className="sigle">{course.sigle}</span>
-        <span className="universite">{course.universite}</span>
-      </div>
-      <div className="titre">{course.titre || '(sans titre)'}</div>
-      <div className="card-meta">
-        <span>{course.credits ? `${course.credits} cr` : 'N/A'}</span>
-        <span>Niveau {course.niveau}</span>
-        {action}
-      </div>
-    </div>
-  )
-}
-
-// ── Left panel: profile / completed courses ────────────────────────────────
-
-function ProfilePanel({ completed, onAdd, onRemove }) {
+function SearchSection({ onAdd, completed }) {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
   const [loading, setLoading] = useState(false)
   const debouncedQuery = useDebounce(query, 300)
+
+  const completedSigles = new Set(completed.map(c => c.sigle))
 
   useEffect(() => {
     if (debouncedQuery.length < 2) { setResults([]); return }
@@ -115,79 +32,83 @@ function ProfilePanel({ completed, onAdd, onRemove }) {
       .finally(() => setLoading(false))
   }, [debouncedQuery])
 
-  const completedSigles = new Set(completed.map(c => c.sigle))
-
   return (
-    <div className="panel">
-      <h2>Mon profil</h2>
+    <div className="sidebar-section">
+      <span className="section-label">Explorer les cours</span>
+      <input
+        type="search"
+        className="search-input"
+        placeholder="Sigle, titre, description…"
+        value={query}
+        onChange={e => setQuery(e.target.value)}
+      />
 
-      <div className="panel-section">
-        <label className="section-label">Ajouter des cours complétés</label>
-        <input
-          type="search"
-          className="panel-input"
-          placeholder="Rechercher un cours…"
-          value={query}
-          onChange={e => setQuery(e.target.value)}
-        />
+      {loading && <p className="hint">Recherche…</p>}
 
-        {loading && <p className="hint">Recherche…</p>}
-
-        {results.length > 0 && (
-          <div className="search-results-list">
-            {results.map(course => {
-              const done = completedSigles.has(course.sigle)
-              return (
-                <div key={course.sigle} className={`result-row ${done ? 'done' : ''}`}>
-                  <div className="result-info">
-                    <span className="sigle">{course.sigle}</span>
-                    <span className="compact-titre">{course.titre}</span>
-                  </div>
-                  <button
-                    className="btn-add"
-                    onClick={() => onAdd(course)}
-                    disabled={done}
-                    title={done ? 'Déjà ajouté' : 'Ajouter'}
-                  >
-                    {done ? '✓' : '+'}
-                  </button>
+      {results.length > 0 && (
+        <div className="result-list">
+          {results.map(course => {
+            const done = completedSigles.has(course.sigle)
+            return (
+              <div key={`${course.universite}-${course.sigle}`} className={`result-row ${done ? 'done' : ''}`}>
+                <span className="uni-dot" data-uni={course.universite} />
+                <div className="result-info">
+                  <span className="sigle">{course.sigle}</span>
+                  <span className="compact-titre">{course.titre}</span>
                 </div>
-              )
-            })}
-          </div>
-        )}
-      </div>
-
-      <div className="panel-section">
-        <label className="section-label">
-          Cours complétés{completed.length > 0 ? ` (${completed.length})` : ''}
-        </label>
-
-        {completed.length === 0 ? (
-          <p className="hint">Aucun cours ajouté.</p>
-        ) : (
-          <ul className="completed-list">
-            {completed.map(course => (
-              <li key={course.sigle} className="completed-item">
-                <span className="sigle">{course.sigle}</span>
-                <span className="compact-titre">{course.titre}</span>
                 <button
-                  className="btn-remove"
-                  onClick={() => onRemove(course.sigle)}
-                  title="Retirer"
-                >×</button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+                  className="btn-add"
+                  onClick={() => onAdd(course)}
+                  disabled={done}
+                  title={done ? 'Déjà ajouté' : 'Ajouter au profil + visualiser'}
+                >
+                  {done ? '✓' : '+'}
+                </button>
+              </div>
+            )
+          })}
+        </div>
+      )}
     </div>
   )
 }
 
-// ── Right panel: eligible courses ──────────────────────────────────────────
+// ── Sidebar: Completed courses ─────────────────────────────────────────────────
 
-function EligiblePanel({ completed, onCardClick }) {
+function CompletedSection({ completed, onRemove, onSelect }) {
+  if (completed.length === 0) return (
+    <div className="sidebar-section">
+      <span className="section-label">Cours complétés</span>
+      <p className="hint">Aucun cours ajouté.</p>
+    </div>
+  )
+
+  return (
+    <div className="sidebar-section">
+      <span className="section-label">Cours complétés ({completed.length})</span>
+      <ul className="completed-list">
+        {completed.map(course => (
+          <li key={course.sigle} className="completed-item" onClick={() => onSelect(course)}>
+            <span className="uni-dot" data-uni={course.universite} />
+            <div className="result-info">
+              <span className="sigle">{course.sigle}</span>
+              <span className="compact-titre">{course.titre}</span>
+            </div>
+            <button
+              className="btn-remove"
+              onClick={e => { e.stopPropagation(); onRemove(course.sigle) }}
+              title="Retirer"
+            >×</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+// ── Sidebar: Eligible courses ──────────────────────────────────────────────────
+
+function EligibleSection({ completed, onSelect }) {
   const [eligible, setEligible] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -206,159 +127,178 @@ function EligiblePanel({ completed, onCardClick }) {
       .finally(() => setLoading(false))
   }
 
-  const byUni = eligible ? groupBy(eligible, 'universite') : {}
-  const uniNames = Object.keys(byUni).sort()
-
   return (
-    <div className="panel eligible-panel">
-      <div className="eligible-header">
-        <h2>Cours accessibles</h2>
-        <button
-          className="btn-primary"
-          onClick={fetchEligible}
-          disabled={loading || completed.length === 0}
-        >
-          {loading ? 'Calcul…' : 'Voir mes cours accessibles'}
-        </button>
-        {completed.length === 0 && (
-          <p className="hint">Ajoutez des cours complétés pour voir ce qui est accessible.</p>
-        )}
-      </div>
-
-      {error && <p className="error">Erreur : {error}</p>}
-
+    <div className="sidebar-section">
+      <span className="section-label">Cours accessibles</span>
+      <button
+        className="btn-primary"
+        onClick={fetchEligible}
+        disabled={loading || completed.length === 0}
+      >
+        {loading ? 'Calcul…' : 'Voir mes cours accessibles'}
+      </button>
+      {completed.length === 0 && (
+        <p className="hint">Ajoutez des cours complétés d'abord.</p>
+      )}
+      {error && <p className="error">{error}</p>}
       {eligible !== null && !loading && (
         <>
-          <p className="result-count">
-            {eligible.length} cours accessible{eligible.length !== 1 ? 's' : ''}
-            {' '}dans {uniNames.length} université{uniNames.length !== 1 ? 's' : ''}
-          </p>
-
-          {uniNames.map(uni => (
-            <div key={uni} className="uni-group">
-              <h3 className="uni-heading">
-                <span className="uni-dot" data-uni={uni} />
-                {uni}
-                <span className="uni-count">{byUni[uni].length}</span>
-              </h3>
-              <div className="eligible-grid">
-                {byUni[uni].map(course => (
-                  <CourseCard
-                    key={course.sigle}
-                    course={course}
-                    onClick={() => onCardClick(course)}
-                  />
-                ))}
-              </div>
-            </div>
-          ))}
+          <p className="hint">{eligible.length} cours accessible{eligible.length !== 1 ? 's' : ''}</p>
+          <div className="eligible-list">
+            {['UdeM','UQAM','McGill','Concordia','Poly'].map(uni => {
+              const group = eligible.filter(c => c.universite === uni)
+              if (group.length === 0) return null
+              return (
+                <div key={uni}>
+                  <div className="eligible-group-label">
+                    <span className="uni-dot" data-uni={uni} />
+                    {uni} ({group.length})
+                  </div>
+                  {group.map(course => (
+                    <div key={course.sigle} className="result-row" onClick={() => onSelect(course)}>
+                      <div className="result-info">
+                        <span className="sigle">{course.sigle}</span>
+                        <span className="compact-titre">{course.titre}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )
+            })}
+          </div>
         </>
       )}
     </div>
   )
 }
 
-// ── Top search (general explore) ───────────────────────────────────────────
+// ── Detail panel ───────────────────────────────────────────────────────────────
 
-function ExploreSection({ universities, onCardClick }) {
-  const [query, setQuery] = useState('')
-  const [universite, setUniversite] = useState('')
-  const [results, setResults] = useState([])
-  const [loading, setLoading] = useState(false)
-  const [searched, setSearched] = useState(false)
-  const debouncedQuery = useDebounce(query, 300)
+function DetailPanel({ course, completed, onClose, onAdd, onRemove }) {
+  if (!course) return <div className="detail-panel" />
 
-  useEffect(() => {
-    if (debouncedQuery.length < 2) { setResults([]); setSearched(false); return }
-    const params = new URLSearchParams({ q: debouncedQuery })
-    if (universite) params.set('universite', universite)
-    setLoading(true)
-    fetch(`${API}/search?${params}`)
-      .then(r => r.json())
-      .then(d => { setResults(d); setSearched(true) })
-      .catch(() => {})
-      .finally(() => setLoading(false))
-  }, [debouncedQuery, universite])
+  const isDone = completed.some(c => c.sigle === course.sigle)
 
   return (
-    <section className="explore-section">
-      <h2>Explorer les cours</h2>
-      <div className="controls">
-        <input
-          type="search"
-          placeholder="Rechercher par sigle, titre ou description…"
-          value={query}
-          onChange={e => setQuery(e.target.value)}
-        />
-        <select value={universite} onChange={e => setUniversite(e.target.value)}>
-          <option value="">Toutes les universités</option>
-          {universities.map(u => (
-            <option key={u.name} value={u.name}>
-              {u.name} ({u.program_courses})
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className="status">
-        {loading && <span>Recherche…</span>}
-        {!loading && searched && <span>{results.length} résultat{results.length !== 1 ? 's' : ''}</span>}
-        {!loading && !searched && query.length > 0 && query.length < 2 && <span>Entrez au moins 2 caractères</span>}
-      </div>
-
-      {results.length > 0 && (
-        <div className="grid">
-          {results.map(c => (
-            <CourseCard
-              key={`${c.universite}-${c.sigle}`}
-              course={c}
-              onClick={() => onCardClick(c)}
-            />
-          ))}
+    <div className="detail-panel open" data-uni={course.universite}>
+      <div className="detail-inner">
+        <div className="detail-top">
+          <div className="detail-title-block">
+            <span className="sigle">{course.sigle}</span>
+            <h3>{course.titre || '(sans titre)'}</h3>
+          </div>
+          <div className="detail-actions">
+            {isDone ? (
+              <button
+                className="btn-complete done"
+                onClick={() => onRemove(course.sigle)}
+              >✓ Complété</button>
+            ) : (
+              <button
+                className="btn-complete"
+                onClick={() => onAdd(course)}
+              >+ Marquer complété</button>
+            )}
+            <button className="btn-dismiss" onClick={onClose} title="Fermer">×</button>
+          </div>
         </div>
-      )}
-    </section>
+
+        <div className="detail-meta">
+          <span>{course.universite}</span>
+          <span>{course.credits ? `${course.credits} crédits` : 'Crédits N/A'}</span>
+          <span>Niveau {course.niveau}</span>
+          {course.hors_perimetre && <span style={{color:'#c00'}}>Hors périmètre</span>}
+        </div>
+
+        {course.description && (
+          <p className="detail-description">{course.description}</p>
+        )}
+
+        {course.requirement_text && (
+          <p className="detail-req">{course.requirement_text}</p>
+        )}
+      </div>
+    </div>
   )
 }
 
-// ── Root ───────────────────────────────────────────────────────────────────
+// ── Root ───────────────────────────────────────────────────────────────────────
 
 export default function App() {
-  const [universities, setUniversities] = useState([])
   const [completed, setCompleted] = useState([])
-  const [modalCourse, setModalCourse] = useState(null)
-
-  useEffect(() => {
-    fetch(`${API}/universities`).then(r => r.json()).then(setUniversities).catch(() => {})
-  }, [])
+  const [selectedCourse, setSelectedCourse] = useState(null)
+  const [chainToLoad, setChainToLoad] = useState(null)
+  const [resetKey, setResetKey] = useState(0)
 
   function addCourse(course) {
     setCompleted(prev =>
       prev.some(c => c.sigle === course.sigle) ? prev : [...prev, course]
     )
+    setChainToLoad(course.sigle)
+    setSelectedCourse(course)
   }
 
   function removeCourse(sigle) {
     setCompleted(prev => prev.filter(c => c.sigle !== sigle))
   }
 
+  function selectCourse(course) {
+    setSelectedCourse(course)
+    setChainToLoad(course.sigle)
+  }
+
+  function handleReset() {
+    setCompleted([])
+    setSelectedCourse(null)
+    setChainToLoad(null)
+    setResetKey(k => k + 1)
+  }
+
   return (
-    <div className="app">
-      <header>
-        <h1>Cours interuniversitaires</h1>
-        <p>UdeM · UQAM · McGill · Concordia · Polytechnique</p>
-      </header>
+    <div className="app-shell">
+      {/* ── Sidebar ── */}
+      <aside className="sidebar">
+        <div className="sidebar-header">
+          <h1>Astra</h1>
+          <p>Explorez les relations entre les cours interuniversitaires</p>
+        </div>
 
-      <div className="two-col">
-        <ProfilePanel completed={completed} onAdd={addCourse} onRemove={removeCourse} />
-        <EligiblePanel completed={completed} onCardClick={setModalCourse} />
-      </div>
+        <div className="sidebar-body">
+          <SearchSection onAdd={addCourse} completed={completed} />
+          <CompletedSection
+            completed={completed}
+            onRemove={removeCourse}
+            onSelect={selectCourse}
+          />
+          <EligibleSection completed={completed} onSelect={selectCourse} />
+        </div>
 
-      <ExploreSection universities={universities} onCardClick={setModalCourse} />
+        <div className="sidebar-footer">
+          <button className="btn-reset" onClick={handleReset}>
+            Réinitialiser le graphe
+          </button>
+        </div>
+      </aside>
 
-      {modalCourse && (
-        <CourseModal course={modalCourse} completed={completed} onClose={() => setModalCourse(null)} />
-      )}
+      {/* ── Main area ── */}
+      <main className="main-area">
+        <div className="graph-canvas-wrapper">
+          <GraphCanvas
+            completed={completed}
+            chainToLoad={chainToLoad}
+            resetKey={resetKey}
+            onNodeClick={selectCourse}
+          />
+        </div>
+
+        <DetailPanel
+          course={selectedCourse}
+          completed={completed}
+          onClose={() => setSelectedCourse(null)}
+          onAdd={addCourse}
+          onRemove={removeCourse}
+        />
+      </main>
     </div>
   )
 }

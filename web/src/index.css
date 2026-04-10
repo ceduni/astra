@@ -1,20 +1,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   font-family: system-ui, sans-serif;
-  background: #f0f2f5;
   color: #111;
+  background: #f0f2f5;
 }
-
-.app {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-}
-
-header { margin-bottom: 2rem; }
-header h1 { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.02em; }
-header p  { color: #666; margin-top: 0.3rem; font-size: 0.95rem; }
 
 /* ── University colors ───────────────────────────────────────────────── */
 
@@ -26,67 +21,96 @@ header p  { color: #666; margin-top: 0.3rem; font-size: 0.95rem; }
   --poly:       #f0a500;
 }
 
-/* ── Two-column layout ───────────────────────────────────────────────── */
+/* ── App shell ───────────────────────────────────────────────────────── */
 
-.two-col {
-  display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 1.5rem;
-  align-items: start;
-  margin-bottom: 2.5rem;
+.app-shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* ── Panels ──────────────────────────────────────────────────────────── */
+/* ── Sidebar ─────────────────────────────────────────────────────────── */
 
-.panel {
+.sidebar {
+  width: 340px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   background: #fff;
-  border: 1px solid #e2e5ea;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  border-right: 1px solid #e2e5ea;
+  overflow: hidden;
 }
 
-.panel h2 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  margin-bottom: 1.25rem;
+.sidebar-header {
+  padding: 1.25rem 1.25rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  flex-shrink: 0;
+}
+
+.sidebar-header h1 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   color: #111;
 }
 
-.panel-section { margin-bottom: 1.5rem; }
-.panel-section:last-child { margin-bottom: 0; }
+.sidebar-header p {
+  font-size: 0.72rem;
+  color: #999;
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+.sidebar-body {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-section {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.sidebar-footer {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid #f0f0f0;
+  flex-shrink: 0;
+}
 
 .section-label {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  color: #888;
+  color: #aaa;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
   margin-bottom: 0.6rem;
 }
 
-.panel-input {
+/* ── Search input ────────────────────────────────────────────────────── */
+
+.search-input {
   width: 100%;
-  padding: 0.5rem 0.8rem;
-  font-size: 0.95rem;
-  border: 1px solid #d0d5dd;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  border: 1px solid #e0e0e0;
   border-radius: 6px;
-  margin-bottom: 0.5rem;
   background: #fafafa;
+  outline: none;
+  margin-bottom: 0.5rem;
 }
-.panel-input:focus { outline: none; border-color: #555; background: #fff; }
+.search-input:focus { border-color: #999; background: #fff; }
 
-.hint { font-size: 0.83rem; color: #aaa; margin-top: 0.3rem; }
+/* ── Compact list rows ───────────────────────────────────────────────── */
 
-/* ── Search results list (profile panel) ────────────────────────────── */
-
-.search-results-list {
-  border: 1px solid #e8eaed;
+.result-list {
+  border: 1px solid #eee;
   border-radius: 6px;
   overflow: hidden;
-  max-height: 280px;
+  max-height: 220px;
   overflow-y: auto;
 }
 
@@ -94,47 +118,39 @@ header p  { color: #666; margin-top: 0.3rem; font-size: 0.95rem; }
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0.7rem;
-  border-bottom: 1px solid #f3f4f6;
-  background: #fff;
+  padding: 0.45rem 0.65rem;
+  border-bottom: 1px solid #f5f5f5;
+  cursor: pointer;
+  transition: background 0.1s;
 }
 .result-row:last-child { border-bottom: none; }
-.result-row.done { background: #fafafa; opacity: 0.6; }
+.result-row:hover { background: #f7f9ff; }
+.result-row.done { opacity: 0.55; }
 
 .result-info {
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
-  min-width: 0;
+}
+
+.sigle {
+  font-weight: 700;
+  font-size: 0.82rem;
+  font-family: monospace;
+  color: #222;
 }
 
 .compact-titre {
-  font-size: 0.8rem;
-  color: #666;
+  font-size: 0.78rem;
+  color: #777;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.btn-add {
-  flex-shrink: 0;
-  width: 1.6rem;
-  height: 1.6rem;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  background: #fff;
-  font-size: 1rem;
-  line-height: 1;
-  cursor: pointer;
-  color: #444;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.1s;
-}
-.btn-add:disabled { opacity: 0.35; cursor: default; }
-.btn-add:not(:disabled):hover { background: #f0f0f0; border-color: #999; }
+.hint { font-size: 0.8rem; color: #bbb; padding: 0.25rem 0; }
 
 /* ── Completed list ──────────────────────────────────────────────────── */
 
@@ -143,7 +159,7 @@ header p  { color: #666; margin-top: 0.3rem; font-size: 0.95rem; }
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  max-height: 300px;
+  max-height: 200px;
   overflow-y: auto;
 }
 
@@ -151,295 +167,253 @@ header p  { color: #666; margin-top: 0.3rem; font-size: 0.95rem; }
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.35rem 0.5rem;
+  padding: 0.3rem 0.5rem;
   border-radius: 5px;
   background: #f5f7fa;
+  cursor: pointer;
 }
+.completed-item:hover { background: #ebf0f9; }
 .completed-item .compact-titre { flex: 1; }
+
+/* ── Buttons ─────────────────────────────────────────────────────────── */
+
+.btn-add {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.1s;
+}
+.btn-add:disabled { opacity: 0.35; cursor: default; }
+.btn-add:not(:disabled):hover { background: #f0f0f0; }
 
 .btn-remove {
   flex-shrink: 0;
   background: none;
   border: none;
-  font-size: 1.1rem;
-  color: #bbb;
+  font-size: 1rem;
+  color: #ccc;
   cursor: pointer;
   line-height: 1;
   padding: 0 0.1rem;
-  transition: color 0.1s;
 }
 .btn-remove:hover { color: #c00; }
 
-/* ── Eligible panel ──────────────────────────────────────────────────── */
-
-.eligible-panel { display: flex; flex-direction: column; gap: 1.25rem; }
-
-.eligible-header { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
-.eligible-header h2 { font-size: 1.05rem; font-weight: 700; }
-
 .btn-primary {
-  padding: 0.5rem 1.1rem;
+  width: 100%;
+  padding: 0.5rem;
   background: #1a6ef5;
   color: #fff;
   border: none;
   border-radius: 6px;
-  font-size: 0.88rem;
-  cursor: pointer;
+  font-size: 0.85rem;
   font-weight: 600;
-  transition: background 0.15s;
+  cursor: pointer;
+  margin-bottom: 0.6rem;
 }
 .btn-primary:hover:not(:disabled) { background: #155cd4; }
 .btn-primary:disabled { opacity: 0.45; cursor: default; }
 
-.result-count { font-size: 0.83rem; color: #777; }
-
-.error { color: #c00; font-size: 0.88rem; }
-
-.uni-group { margin-bottom: 1.25rem; }
-
-.uni-heading {
-  font-size: 0.85rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #444;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+.btn-reset {
+  width: 100%;
+  padding: 0.45rem;
+  background: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: #888;
+  cursor: pointer;
 }
+.btn-reset:hover { border-color: #c00; color: #c00; }
+
+/* ── Main area ───────────────────────────────────────────────────────── */
+
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* CRITICAL: min-height: 0 allows ReactFlow to shrink in a flex column */
+.graph-canvas-wrapper {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+}
+
+/* ── Course detail panel ─────────────────────────────────────────────── */
+
+.detail-panel {
+  flex-shrink: 0;
+  background: #fff;
+  border-top: 3px solid #e0e0e0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
+.detail-panel.open {
+  max-height: 230px;
+  overflow-y: auto;
+}
+
+.detail-panel[data-uni="UdeM"]       { border-top-color: var(--udem); }
+.detail-panel[data-uni="UQAM"]       { border-top-color: var(--uqam); }
+.detail-panel[data-uni="McGill"]     { border-top-color: var(--mcgill); }
+.detail-panel[data-uni="Concordia"]  { border-top-color: var(--concordia); }
+.detail-panel[data-uni="Poly"]       { border-top-color: var(--poly); }
+
+.detail-inner {
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.detail-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.detail-title-block { flex: 1; min-width: 0; }
+.detail-title-block .sigle { font-size: 0.9rem; display: block; margin-bottom: 0.2rem; }
+.detail-title-block h3 { font-size: 1rem; font-weight: 600; line-height: 1.3; }
+
+.detail-actions { display: flex; gap: 0.5rem; align-items: center; flex-shrink: 0; }
+
+.detail-meta { display: flex; gap: 0.75rem; font-size: 0.78rem; color: #888; flex-wrap: wrap; }
+
+.detail-description {
+  font-size: 0.83rem;
+  line-height: 1.6;
+  color: #444;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.detail-req {
+  font-size: 0.75rem;
+  color: #aaa;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.btn-complete {
+  padding: 0.3rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 5px;
+  border: 1.5px solid #2a9d4e;
+  background: none;
+  color: #2a9d4e;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-complete:hover { background: #f0faf3; }
+.btn-complete.done { background: #f0faf3; cursor: default; }
+
+.btn-dismiss {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #bbb;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+.btn-dismiss:hover { color: #555; }
+
+/* ── Graph empty state ───────────────────────────────────────────────── */
+
+.graph-empty {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: #bbb;
+  pointer-events: none;
+  user-select: none;
+}
+
+.graph-empty-icon { font-size: 2.5rem; }
+.graph-empty-text { font-size: 0.9rem; text-align: center; line-height: 1.5; max-width: 280px; }
+
+/* ── Graph loading indicator ─────────────────────────────────────────── */
+
+.graph-loading-badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,.6);
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ── University dot ──────────────────────────────────────────────────── */
 
 .uni-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   flex-shrink: 0;
+  display: inline-block;
 }
-
-.uni-count {
-  font-size: 0.75rem;
-  background: #eee;
-  border-radius: 10px;
-  padding: 0.1rem 0.45rem;
-  font-weight: 600;
-  color: #666;
-  text-transform: none;
-  letter-spacing: 0;
-}
-
-.eligible-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 0.75rem;
-}
-
-/* ── Explore section ─────────────────────────────────────────────────── */
-
-.explore-section { padding-top: 0.5rem; }
-.explore-section h2 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  letter-spacing: -0.01em;
-}
-
-.controls {
-  display: flex;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-.controls input  {
-  flex: 1;
-  padding: 0.55rem 0.85rem;
-  font-size: 0.95rem;
-  border: 1px solid #d0d5dd;
-  border-radius: 6px;
-  background: #fafafa;
-}
-.controls input:focus { outline: none; border-color: #555; background: #fff; }
-.controls select {
-  padding: 0.55rem 0.85rem;
-  font-size: 0.95rem;
-  border: 1px solid #d0d5dd;
-  border-radius: 6px;
-  background: #fafafa;
-}
-
-.status { min-height: 1.5rem; margin-bottom: 1rem; color: #888; font-size: 0.85rem; }
-
-/* ── Course cards ────────────────────────────────────────────────────── */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 0.85rem;
-}
-
-.card {
-  background: #fff;
-  border: 1px solid #e2e5ea;
-  border-left: 4px solid #ccc;
-  border-radius: 8px;
-  padding: 1rem;
-  cursor: pointer;
-  transition: box-shadow 0.15s, transform 0.1s;
-  box-shadow: 0 1px 2px rgba(0,0,0,.04);
-}
-.card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,.1);
-  transform: translateY(-1px);
-}
-
-/* University border colors */
-.card[data-uni="UdeM"]       { border-left-color: var(--udem); }
-.card[data-uni="UQAM"]       { border-left-color: var(--uqam); }
-.card[data-uni="McGill"]     { border-left-color: var(--mcgill); }
-.card[data-uni="Concordia"]  { border-left-color: var(--concordia); }
-.card[data-uni="Poly"]       { border-left-color: var(--poly); }
-
-/* University dot colors */
 .uni-dot[data-uni="UdeM"]       { background: var(--udem); }
 .uni-dot[data-uni="UQAM"]       { background: var(--uqam); }
 .uni-dot[data-uni="McGill"]     { background: var(--mcgill); }
 .uni-dot[data-uni="Concordia"]  { background: var(--concordia); }
 .uni-dot[data-uni="Poly"]       { background: var(--poly); }
 
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 0.35rem;
-}
-.sigle      { font-weight: 700; font-size: 0.9rem; font-family: monospace; }
-.universite { font-size: 0.75rem; color: #888; }
-.titre      { font-size: 0.88rem; margin-bottom: 0.65rem; line-height: 1.4; color: #222; }
-.card-meta  { display: flex; gap: 0.6rem; font-size: 0.78rem; color: #888; }
-.tag        { background: #f0f0f0; border-radius: 3px; padding: 0.05rem 0.35rem; }
+.error { font-size: 0.82rem; color: #c00; }
 
-/* ── Modal ───────────────────────────────────────────────────────────── */
+/* ── Eligible section ────────────────────────────────────────────────── */
 
-.modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-  padding: 1rem;
-}
-
-.modal {
-  background: #fff;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 640px;
-  max-height: 85vh;
+.eligible-list {
+  max-height: 180px;
   overflow-y: auto;
-  box-shadow: 0 20px 60px rgba(0,0,0,.25);
-  display: flex;
-  flex-direction: column;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 0.5rem;
 }
 
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 1.5rem 1.5rem 1rem;
-  border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
-  background: #fff;
-  border-radius: 12px 12px 0 0;
-  border-top: 4px solid #ccc;
-}
-.modal-header[data-uni="UdeM"]       { border-top-color: var(--udem); }
-.modal-header[data-uni="UQAM"]       { border-top-color: var(--uqam); }
-.modal-header[data-uni="McGill"]     { border-top-color: var(--mcgill); }
-.modal-header[data-uni="Concordia"]  { border-top-color: var(--concordia); }
-.modal-header[data-uni="Poly"]       { border-top-color: var(--poly); }
-
-.modal-title { flex: 1; }
-.modal-title .sigle { font-size: 1rem; display: block; margin-bottom: 0.25rem; }
-.modal-title h3 { font-size: 1.1rem; font-weight: 600; line-height: 1.3; }
-
-.modal-close {
-  background: none;
-  border: none;
-  font-size: 1.4rem;
-  color: #888;
-  cursor: pointer;
-  padding: 0 0.25rem;
-  margin-left: 1rem;
-  line-height: 1;
-  flex-shrink: 0;
-}
-.modal-close:hover { color: #333; }
-
-.modal-body { padding: 1.25rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
-
-.modal-meta { display: flex; gap: 1rem; font-size: 0.85rem; color: #666; flex-wrap: wrap; }
-.modal-meta span { display: flex; align-items: center; gap: 0.3rem; }
-
-.modal-section-title {
-  font-size: 0.72rem;
+.eligible-group-label {
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #888;
-  margin-bottom: 0.5rem;
-}
-
-.modal-description { font-size: 0.9rem; line-height: 1.65; color: #333; }
-
-.prereq-tree {
-  font-size: 0.85rem;
-  background: #f8f9fa;
-  border-radius: 6px;
-  padding: 0.75rem 1rem;
-  line-height: 1.7;
-}
-
-.prereq-tag {
-  display: inline-block;
-  background: #e8edf5;
-  border-radius: 4px;
-  padding: 0.05rem 0.4rem;
-  font-family: monospace;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #1a3a6e;
-  margin: 0.1rem;
-}
-
-.prereq-op {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #888;
-  margin: 0 0.25rem;
-}
-
-.prereq-group {
-  display: inline;
-}
-
-/* ── Prereq graph ────────────────────────────────────────────────────── */
-
-.graph-placeholder {
-  height: 80px;
+  color: #bbb;
+  padding: 0.4rem 0.65rem 0.2rem;
+  background: #fafafa;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #aaa;
-  font-size: 0.85rem;
-  border: 1px solid #eee;
-  border-radius: 8px;
+  gap: 0.4rem;
 }
 
 /* ── Responsive ──────────────────────────────────────────────────────── */
 
-@media (max-width: 860px) {
-  .two-col { grid-template-columns: 1fr; }
+@media (max-width: 700px) {
+  .sidebar { width: 260px; }
 }
