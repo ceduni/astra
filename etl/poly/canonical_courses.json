@@ -203,10 +203,15 @@
     "description": "",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF3405"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "INF3405 et avoir obtenu 60 crédits",
+    "other_conditions": [
+      "60 crédits complétés"
+    ]
   },
   {
     "sigle": "LOG1810",
