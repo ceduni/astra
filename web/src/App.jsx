@@ -232,7 +232,13 @@ function DetailPanel({ course, completed, onClose, onAdd, onRemove }) {
 // ── Root ───────────────────────────────────────────────────────────────────────
 
 export default function App() {
-  const [completed, setCompleted] = useState([])
+  const [completed, setCompleted] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('completed') || '[]') } catch { return [] }
+  })
+  useEffect(() => {
+    localStorage.setItem('completed', JSON.stringify(completed))
+  }, [completed])
+
   const [selectedCourse, setSelectedCourse] = useState(null)
   const [chainToLoad, setChainToLoad] = useState(null)
   const [resetKey, setResetKey] = useState(0)
