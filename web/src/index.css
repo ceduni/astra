@@ -32,14 +32,13 @@ body {
 /* ── Sidebar ─────────────────────────────────────────────────────────── */
 
 .sidebar {
-  width: 340px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
   background: #fff;
-  border-right: 1px solid #e2e5ea;
   overflow: hidden;
+  transition: width 0.15s ease;
 }
 
 .sidebar-header {
@@ -80,6 +79,62 @@ body {
   flex-shrink: 0;
 }
 
+/* ── Resize handle ───────────────────────────────────────────────────────── */
+
+.resize-handle {
+  width: 5px;
+  flex-shrink: 0;
+  cursor: col-resize;
+  background: #e2e5ea;
+  position: relative;
+  transition: background 0.15s;
+  z-index: 10;
+}
+.resize-handle:hover { background: #1a6ef5; }
+
+.collapse-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 36px;
+  background: #fff;
+  border: 1px solid #e2e5ea;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #888;
+  line-height: 1;
+  padding: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,.1);
+}
+.collapse-btn:hover { color: #1a6ef5; border-color: #1a6ef5; }
+
+/* ── Collapsible section toggle ──────────────────────────────────────────── */
+
+.section-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-bottom: 0.6rem;
+}
+.section-toggle:hover .section-label { color: #555; }
+
+.section-chevron {
+  font-size: 0.6rem;
+  color: #bbb;
+  flex-shrink: 0;
+}
+
 .section-label {
   display: block;
   font-size: 0.7rem;
@@ -87,7 +142,7 @@ body {
   color: #aaa;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0;
 }
 
 /* ── Search input ────────────────────────────────────────────────────── */

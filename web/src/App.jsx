@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import GraphCanvas from './GraphCanvas'
 
 const API = '/api'
@@ -10,6 +10,23 @@ function useDebounce(value, delay) {
     return () => clearTimeout(t)
   }, [value, delay])
   return debounced
+}
+
+// ── Collapsible sidebar section ────────────────────────────────────────────────
+
+function Section({ label, count, children, defaultOpen = true }) {
+  const [open, setOpen] = useState(defaultOpen)
+  return (
+    <div className="sidebar-section">
+      <button className="section-toggle" onClick={() => setOpen(o => !o)}>
+        <span className="section-label">
+          {label}{count != null ? ` (${count})` : ''}
+        </span>
+        <span className="section-chevron">{open ? '▴' : '▾'}</span>
+      </button>
+      {open && <div className="section-body">{children}</div>}
+    </div>
+  )
 }
 
 // ── Sidebar: Search section ────────────────────────────────────────────────────
@@ -33,8 +50,7 @@ function SearchSection({ onAdd, completed }) {
   }, [debouncedQuery])
 
   return (
-    <div className="sidebar-section">
-      <span className="section-label">Explorer les cours</span>
+    <Section label="Explorer" defaultOpen={true}>
       <input
         type="search"
         className="search-input"
@@ -42,9 +58,7 @@ function SearchSection({ onAdd, completed }) {
         value={query}
         onChange={e => setQuery(e.target.value)}
       />
-
       {loading && <p className="hint">Recherche…</p>}
-
       {results.length > 0 && (
         <div className="result-list">
           {results.map(course => {
@@ -69,40 +83,36 @@ function SearchSection({ onAdd, completed }) {
           })}
         </div>
       )}
-    </div>
+    </Section>
   )
 }
 
 // ── Sidebar: Completed courses ─────────────────────────────────────────────────
 
 function CompletedSection({ completed, onRemove, onSelect }) {
-  if (completed.length === 0) return (
-    <div className="sidebar-section">
-      <span className="section-label">Cours complétés</span>
-      <p className="hint">Aucun cours ajouté.</p>
-    </div>
-  )
-
   return (
-    <div className="sidebar-section">
-      <span className="section-label">Cours complétés ({completed.length})</span>
-      <ul className="completed-list">
-        {completed.map(course => (
-          <li key={course.sigle} className="completed-item" onClick={() => onSelect(course)}>
-            <span className="uni-dot" data-uni={course.universite} />
-            <div className="result-info">
-              <span className="sigle">{course.sigle}</span>
-              <span className="compact-titre">{course.titre}</span>
-            </div>
-            <button
-              className="btn-remove"
-              onClick={e => { e.stopPropagation(); onRemove(course.sigle) }}
-              title="Retirer"
-            >×</button>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Section label="Complétés" count={completed.length || null} defaultOpen={true}>
+      {completed.length === 0 ? (
+        <p className="hint">Aucun cours ajouté.</p>
+      ) : (
+        <ul className="completed-list">
+          {completed.map(course => (
+            <li key={course.sigle} className="completed-item" onClick={() => onSelect(course)}>
+              <span className="uni-dot" data-uni={course.universite} />
+              <div className="result-info">
+                <span className="sigle">{course.sigle}</span>
+                <span className="compact-titre">{course.titre}</span>
+              </div>
+              <button
+                className="btn-remove"
+                onClick={e => { e.stopPropagation(); onRemove(course.sigle) }}
+                title="Retirer"
+              >×</button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </Section>
   )
 }
 
@@ -128,8 +138,7 @@ function EligibleSection({ completed, onSelect }) {
   }
 
   return (
-    <div className="sidebar-section">
-      <span className="section-label">Cours accessibles</span>
+    <Section label="Accessibles" count={eligible ? eligible.length : null} defaultOpen={true}>
       <button
         className="btn-primary"
         onClick={fetchEligible}
@@ -143,7 +152,7 @@ function EligibleSection({ completed, onSelect }) {
       {error && <p className="error">{error}</p>}
       {eligible !== null && !loading && (
         <>
-          <p className="hint">{eligible.length} cours accessible{eligible.length !== 1 ? 's' : ''}</p>
+          <p className="hint" style={{marginTop:'0.25rem'}}>{eligible.length} cours accessible{eligible.length !== 1 ? 's' : ''}</p>
           <div className="eligible-list">
             {['UdeM','UQAM','McGill','Concordia','Poly'].map(uni => {
               const group = eligible.filter(c => c.universite === uni)
@@ -168,7 +177,7 @@ function EligibleSection({ completed, onSelect }) {
           </div>
         </>
       )}
-    </div>
+    </Section>
   )
 }
 
@@ -189,15 +198,13 @@ function DetailPanel({ course, completed, onClose, onAdd, onRemove }) {
           </div>
           <div className="detail-actions">
             {isDone ? (
-              <button
-                className="btn-complete done"
-                onClick={() => onRemove(course.sigle)}
-              >✓ Complété</button>
+              <button className="btn-complete done" onClick={() => onRemove(course.sigle)}>
+                ✓ Complété
+              </button>
             ) : (
-              <button
-                className="btn-complete"
-                onClick={() => onAdd(course)}
-              >+ Marquer complété</button>
+              <button className="btn-complete" onClick={() => onAdd(course)}>
+                + Marquer complété
+              </button>
             )}
             <button className="btn-dismiss" onClick={onClose} title="Fermer">×</button>
           </div>
@@ -230,6 +237,38 @@ export default function App() {
   const [chainToLoad, setChainToLoad] = useState(null)
   const [resetKey, setResetKey] = useState(0)
 
+  // ── Sidebar resize ───────────────────────────────────────────────────────────
+  const [sidebarWidth, setSidebarWidth] = useState(340)
+  const [collapsed, setCollapsed] = useState(false)
+  const isDragging = useRef(false)
+  const dragStartX = useRef(0)
+  const dragStartWidth = useRef(0)
+
+  const onDividerMouseDown = useCallback(e => {
+    if (collapsed) return
+    isDragging.current = true
+    dragStartX.current = e.clientX
+    dragStartWidth.current = sidebarWidth
+    e.preventDefault()
+  }, [collapsed, sidebarWidth])
+
+  useEffect(() => {
+    function onMove(e) {
+      if (!isDragging.current) return
+      const delta = e.clientX - dragStartX.current
+      setSidebarWidth(Math.max(220, Math.min(580, dragStartWidth.current + delta)))
+    }
+    function onUp() { isDragging.current = false }
+    document.addEventListener('mousemove', onMove)
+    document.addEventListener('mouseup', onUp)
+    return () => {
+      document.removeEventListener('mousemove', onMove)
+      document.removeEventListener('mouseup', onUp)
+    }
+  }, [])
+
+  // ── Course actions ───────────────────────────────────────────────────────────
+
   function addCourse(course) {
     setCompleted(prev =>
       prev.some(c => c.sigle === course.sigle) ? prev : [...prev, course]
@@ -257,7 +296,10 @@ export default function App() {
   return (
     <div className="app-shell">
       {/* ── Sidebar ── */}
-      <aside className="sidebar">
+      <aside
+        className="sidebar"
+        style={{ width: collapsed ? 0 : sidebarWidth }}
+      >
         <div className="sidebar-header">
           <h1>Astra</h1>
           <p>Explorez les relations entre les cours interuniversitaires</p>
@@ -279,6 +321,20 @@ export default function App() {
           </button>
         </div>
       </aside>
+
+      {/* ── Resize handle ── */}
+      <div
+        className="resize-handle"
+        onMouseDown={onDividerMouseDown}
+      >
+        <button
+          className="collapse-btn"
+          onClick={() => setCollapsed(c => !c)}
+          title={collapsed ? 'Ouvrir le panneau' : 'Fermer le panneau'}
+        >
+          {collapsed ? '›' : '‹'}
+        </button>
+      </div>
 
       {/* ── Main area ── */}
       <main className="main-area">
