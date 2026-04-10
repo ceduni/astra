@@ -183,7 +183,6 @@
     "niveau": 2,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "IFT2125",
       "IFT2015",
       "MAT1978",
       "MAT1720"
@@ -552,7 +551,6 @@
     "prerequisite_courses": [
       "MAT1400",
       "MAT1600",
-      "MAT2450",
       "MAT1720",
       "MAT1978"
     ],
@@ -573,7 +571,6 @@
     "niveau": 2,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "MAT2531",
       "MAT1400",
       "MAT1600"
     ],

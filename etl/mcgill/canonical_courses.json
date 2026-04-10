@@ -57,8 +57,7 @@
     "prerequisite_courses": [
       "COMP 250",
       "MATH 235",
-      "MATH 240",
-      "COMP 251"
+      "MATH 240"
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],
@@ -476,8 +475,7 @@
     "hors_perimetre": false,
     "prerequisite_courses": [
       "COMP 251",
-      "BIOL 301",
-      "COMP 401"
+      "BIOL 301"
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],

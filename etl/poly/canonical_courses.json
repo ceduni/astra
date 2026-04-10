@@ -9,7 +9,6 @@
     "hors_perimetre": false,
     "prerequisite_courses": [
       "INF1040",
-      "LOG3005I",
       "LOG3900"
     ],
     "concomitant_courses": [
@@ -416,8 +415,7 @@
     "niveau": 1,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "MTH0102",
-      "MTH1008"
+      "MTH0102"
     ],
     "concomitant_courses": [
       "MTH0102",
@@ -516,8 +514,7 @@
     "niveau": 1,
     "hors_perimetre": false,
     "prerequisite_courses": [
-      "CHE0501",
-      "GBM1610"
+      "CHE0501"
     ],
     "concomitant_courses": [
       "CHE0501",
@@ -537,8 +534,7 @@
     "prerequisite_courses": [
       "CHE0501",
       "MTH0103",
-      "PHS0101",
-      "MEC1210"
+      "PHS0101"
     ],
     "concomitant_courses": [
       "CHE0501",
@@ -560,8 +556,7 @@
     "prerequisite_courses": [
       "MTH0102",
       "MTH0103",
-      "PHS0101",
-      "PHS1101"
+      "PHS0101"
     ],
     "concomitant_courses": [
       "MTH0102",
@@ -2065,9 +2060,7 @@
     "description": "Description Environnement informatique: ordinateurs et périphériques, système d'exploitation, gestion de fichiers. Résolution de problèmes: stratégies, rôle des algorithmes. Concepts et propriétés des algorithmes. Représentation interne des données numériques et caractères. Le langage C/C++ : types élémentaires et construits, structures de contrôle, fichiers texte et binaire, fonctions et modes de passage des paramètres. Méthodologie de programmation: programmation structurée, raffinements successifs, analyse, environnement de programmation, tests et outils de correction.",
     "niveau": 1,
     "hors_perimetre": true,
-    "prerequisite_courses": [
-      "INF1005C"
-    ],
+    "prerequisite_courses": [],
     "concomitant_courses": [
       "INF0101",
       "INF1005C"
@@ -2210,8 +2203,7 @@
     "niveau": 1,
     "hors_perimetre": true,
     "prerequisite_courses": [
-      "MTH0102",
-      "MTH1007"
+      "MTH0102"
     ],
     "concomitant_courses": [
       "MTH0102",

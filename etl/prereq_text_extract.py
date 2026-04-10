@@ -94,11 +94,14 @@ def augment_prerequisites(courses: List[dict]) -> dict:
     courses_affected = 0
 
     for course in courses:
+        # Exclude the course's own sigle — it can appear in the concomitant
+        # section of its own requirement_text, causing a self-reference.
+        own_excluded = set(course.get('equivalent_courses', [])) | {course['sigle']}
         new = extract_from_text(
             requirement_text=course.get('requirement_text', ''),
             known_sigles=known_sigles,
             already_present=course.get('prerequisite_courses', []),
-            equivalents=course.get('equivalent_courses', []),
+            equivalents=list(own_excluded),
         )
         if new:
             course['prerequisite_courses'] = course.get('prerequisite_courses', []) + new
