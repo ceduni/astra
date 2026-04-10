@@ -14,10 +14,10 @@ function useDebounce(value, delay) {
 
 // ── Collapsible sidebar section ────────────────────────────────────────────────
 
-function Section({ label, count, children, defaultOpen = true }) {
+function Section({ label, count, children, defaultOpen = true, grow = false }) {
   const [open, setOpen] = useState(defaultOpen)
   return (
-    <div className="sidebar-section">
+    <div className={`sidebar-section${grow ? ' grow' : ''}`}>
       <button className="section-toggle" onClick={() => setOpen(o => !o)}>
         <span className="section-label">
           {label}{count != null ? ` (${count})` : ''}
@@ -138,7 +138,7 @@ function EligibleSection({ completed, onSelect }) {
   }
 
   return (
-    <Section label="Accessibles" count={eligible ? eligible.length : null} defaultOpen={true}>
+    <Section label="Accessibles" count={eligible ? eligible.length : null} defaultOpen={true} grow={true}>
       <button
         className="btn-primary"
         onClick={fetchEligible}

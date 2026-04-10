@@ -63,7 +63,7 @@ body {
 
 .sidebar-body {
   flex: 1;
-  overflow-y: auto;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -71,6 +71,20 @@ body {
 .sidebar-section {
   padding: 1rem 1.25rem;
   border-bottom: 1px solid #f3f4f6;
+  flex-shrink: 0;
+}
+
+/* Grows to fill remaining sidebar space; inner content scrolls */
+.sidebar-section.grow {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-section.grow .section-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .sidebar-footer {
@@ -446,12 +460,10 @@ body {
 /* ── Eligible section ────────────────────────────────────────────────── */
 
 .eligible-list {
-  max-height: 180px;
-  overflow-y: auto;
   border: 1px solid #eee;
   border-radius: 6px;
-  overflow: hidden;
   margin-top: 0.5rem;
+  overflow-y: auto;
 }
 
 .eligible-group-label {
