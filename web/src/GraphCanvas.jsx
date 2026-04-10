@@ -42,9 +42,18 @@ function CourseNode({ data }) {
       cursor: 'pointer',
     }}>
       <Handle type="target" position={Position.Left} style={{ background: '#aaa' }} />
-      <div style={{ fontSize: 11, fontWeight: 700, fontFamily: 'monospace', color: '#333', marginBottom: 3 }}>
-        {data.sigle}
-        {data.completed && <span style={{ marginLeft: 6, color: '#2a9d4e', fontSize: 12 }}>✓</span>}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 4 }}>
+        <div style={{ fontSize: 11, fontWeight: 700, fontFamily: 'monospace', color: '#333', marginBottom: 3 }}>
+          {data.sigle}
+          {data.completed && <span style={{ marginLeft: 6, color: '#2a9d4e', fontSize: 12 }}>✓</span>}
+        </div>
+        {data.isRoot && data.onRemoveChain && (
+          <button
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#ccc', fontSize: 13, padding: 0, lineHeight: 1, flexShrink: 0 }}
+            onClick={e => { e.stopPropagation(); data.onRemoveChain(data.sigle) }}
+            title="Retirer du graphe"
+          >×</button>
+        )}
       </div>
       <div style={{ fontSize: 11, color: '#555', lineHeight: 1.35 }}>
         {data.titre ? data.titre.slice(0, 45) + (data.titre.length > 45 ? '…' : '') : ''}
@@ -79,7 +88,7 @@ const NODE_TYPES = { course: CourseNode, group: GroupNode }
 
 // ── Layout ─────────────────────────────────────────────────────────────────────
 
-function applyLayout(nodeList, edgeList, completedSet, rootSigleSet) {
+function applyLayout(nodeList, edgeList, completedSet, rootSigleSet, onRemoveChain) {
   const g = new dagre.graphlib.Graph()
   g.setDefaultEdgeLabel(() => ({}))
   g.setGraph({ rankdir: 'LR', ranksep: 70, nodesep: 30, marginx: 20, marginy: 20 })
@@ -95,6 +104,7 @@ function applyLayout(nodeList, edgeList, completedSet, rootSigleSet) {
 
   const rfNodes = nodeList.map(n => {
     const pos = g.node(n.id)
+    const isRoot = rootSigleSet.has(n.id)
     return {
       id: n.id,
       type: n.node_type,
@@ -102,7 +112,8 @@ function applyLayout(nodeList, edgeList, completedSet, rootSigleSet) {
       data: {
         ...n.data,
         completed: n.node_type === 'course' && completedSet.has(n.id),
-        isRoot: rootSigleSet.has(n.id),
+        isRoot,
+        onRemoveChain: isRoot ? onRemoveChain : undefined,
       },
     }
   })
@@ -133,31 +144,37 @@ const btnStyle = {
   boxShadow: '0 1px 3px rgba(0,0,0,.1)',
 }
 
-export default function GraphCanvas({ completed, chainToLoad, resetKey, onNodeClick }) {
+export default function GraphCanvas({ completed, chainsToLoad, resetKey, onNodeClick, onRemoveChain }) {
   const [nodes, setNodes, onNodesChange] = useNodesState([])
   const [edges, setEdges, onEdgesChange] = useEdgesState([])
   const [fullscreen, setFullscreen] = useState(false)
   const [loadingSigles, setLoadingSigles] = useState(new Set())
 
-  // Raw accumulated graph data — plain objects, not React state, to avoid stale closures
-  const rawNodes = useRef({})  // id → API node object
-  const rawEdges = useRef({})  // id → API edge object
+  const rawNodes = useRef({})
+  const rawEdges = useRef({})
   const rootSigles = useRef(new Set())
-  const loadedRef = useRef(new Set())  // sigles already fetched (dedup)
+  const loadedRef = useRef(new Set())
+  const chainMembership = useRef(new Map()) // sigle → { nodeIds: Set, edgeIds: Set }
+  const prevChainsRef = useRef([])
+
+  // Stable ref to onRemoveChain so relayout doesn't need it as a dep
+  const onRemoveChainRef = useRef(onRemoveChain)
+  useEffect(() => { onRemoveChainRef.current = onRemoveChain }, [onRemoveChain])
 
   const completedSet = new Set((completed || []).map(c => c.sigle))
 
-  // Re-layout and push to ReactFlow whenever raw data or completion changes
   const relayout = useCallback(() => {
     const nodeList = Object.values(rawNodes.current)
     const edgeList = Object.values(rawEdges.current)
     if (nodeList.length === 0) { setNodes([]); setEdges([]); return }
-    const { rfNodes, rfEdges } = applyLayout(nodeList, edgeList, completedSet, rootSigles.current)
+    const { rfNodes, rfEdges } = applyLayout(
+      nodeList, edgeList, completedSet, rootSigles.current,
+      (sigle) => onRemoveChainRef.current?.(sigle)
+    )
     setNodes(rfNodes)
     setEdges(rfEdges)
   }, [completed]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Load a single chain and merge into accumulated raw data
   const loadChain = useCallback((sigle) => {
     if (!sigle || loadedRef.current.has(sigle)) return
     loadedRef.current.add(sigle)
@@ -167,43 +184,69 @@ export default function GraphCanvas({ completed, chainToLoad, resetKey, onNodeCl
       .then(r => { if (!r.ok) throw new Error(r.status); return r.json() })
       .then(chain => {
         rootSigles.current.add(chain.root)
-        chain.nodes.forEach(n => { rawNodes.current[n.id] = n })
-        chain.edges.forEach(e => { rawEdges.current[e.id] = e })
+        const nodeIds = new Set()
+        const edgeIds = new Set()
+        chain.nodes.forEach(n => { rawNodes.current[n.id] = n; nodeIds.add(n.id) })
+        chain.edges.forEach(e => { rawEdges.current[e.id] = e; edgeIds.add(e.id) })
+        chainMembership.current.set(sigle, { nodeIds, edgeIds })
         relayout()
       })
-      .catch(() => {})
+      .catch(() => { loadedRef.current.delete(sigle) })
       .finally(() => {
-        setLoadingSigles(prev => {
-          const next = new Set(prev)
-          next.delete(sigle)
-          return next
-        })
+        setLoadingSigles(prev => { const s = new Set(prev); s.delete(sigle); return s })
       })
   }, [relayout])
 
-  // Trigger chain load when prop changes
+  const removeChain = useCallback((sigle) => {
+    const membership = chainMembership.current.get(sigle)
+    if (!membership) return
+
+    chainMembership.current.delete(sigle)
+    rootSigles.current.delete(sigle)
+    loadedRef.current.delete(sigle)
+
+    // Collect node/edge IDs still owned by other chains
+    const survivingNodeIds = new Set()
+    const survivingEdgeIds = new Set()
+    chainMembership.current.forEach(m => {
+      m.nodeIds.forEach(id => survivingNodeIds.add(id))
+      m.edgeIds.forEach(id => survivingEdgeIds.add(id))
+    })
+
+    membership.nodeIds.forEach(id => { if (!survivingNodeIds.has(id)) delete rawNodes.current[id] })
+    membership.edgeIds.forEach(id => { if (!survivingEdgeIds.has(id)) delete rawEdges.current[id] })
+
+    relayout()
+  }, [relayout])
+
+  // Diff chainsToLoad: load new sigles, remove dropped ones
   useEffect(() => {
-    if (chainToLoad) loadChain(chainToLoad)
-  }, [chainToLoad, loadChain])
+    const prev = new Set(prevChainsRef.current)
+    const curr = new Set(chainsToLoad)
+
+    chainsToLoad.forEach(sigle => { if (!prev.has(sigle)) loadChain(sigle) })
+    prevChainsRef.current.forEach(sigle => { if (!curr.has(sigle)) removeChain(sigle) })
+
+    prevChainsRef.current = [...chainsToLoad]
+  }, [chainsToLoad, loadChain, removeChain])
 
   // Re-layout when completion status changes
-  useEffect(() => {
-    relayout()
-  }, [completed]) // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { relayout() }, [completed]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Reset all state when resetKey changes
+  // Full reset
   useEffect(() => {
     rawNodes.current = {}
     rawEdges.current = {}
     rootSigles.current = new Set()
     loadedRef.current = new Set()
+    chainMembership.current = new Map()
+    prevChainsRef.current = []
     setLoadingSigles(new Set())
     setNodes([])
     setEdges([])
     setFullscreen(false)
   }, [resetKey]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Escape closes fullscreen
   useEffect(() => {
     if (!fullscreen) return
     const handler = e => { if (e.key === 'Escape') setFullscreen(false) }
@@ -211,13 +254,11 @@ export default function GraphCanvas({ completed, chainToLoad, resetKey, onNodeCl
     return () => window.removeEventListener('keydown', handler)
   }, [fullscreen])
 
-  // Lock body scroll when fullscreen
   useEffect(() => {
     document.body.style.overflow = fullscreen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [fullscreen])
 
-  // Handle node click: open detail + expand chain
   function handleNodeClick(_, node) {
     if (node.type !== 'course') return
     if (onNodeClick) onNodeClick(node.data)

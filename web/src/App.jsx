@@ -240,7 +240,9 @@ export default function App() {
   }, [completed])
 
   const [selectedCourse, setSelectedCourse] = useState(null)
-  const [chainToLoad, setChainToLoad] = useState(null)
+  const [chainsToLoad, setChainsToLoad] = useState(() => {
+    try { return JSON.parse(localStorage.getItem('completed') || '[]').map(c => c.sigle) } catch { return [] }
+  })
   const [resetKey, setResetKey] = useState(0)
 
   // ── Sidebar resize ───────────────────────────────────────────────────────────
@@ -279,7 +281,9 @@ export default function App() {
     setCompleted(prev =>
       prev.some(c => c.sigle === course.sigle) ? prev : [...prev, course]
     )
-    setChainToLoad(course.sigle)
+    setChainsToLoad(prev =>
+      prev.includes(course.sigle) ? prev : [...prev, course.sigle]
+    )
     setSelectedCourse(course)
   }
 
@@ -289,13 +293,20 @@ export default function App() {
 
   function selectCourse(course) {
     setSelectedCourse(course)
-    setChainToLoad(course.sigle)
+    setChainsToLoad(prev =>
+      prev.includes(course.sigle) ? prev : [...prev, course.sigle]
+    )
+  }
+
+  function removeChain(sigle) {
+    setChainsToLoad(prev => prev.filter(s => s !== sigle))
+    setSelectedCourse(prev => (prev?.sigle === sigle ? null : prev))
   }
 
   function handleReset() {
     setCompleted([])
     setSelectedCourse(null)
-    setChainToLoad(null)
+    setChainsToLoad([])
     setResetKey(k => k + 1)
   }
 
@@ -347,9 +358,10 @@ export default function App() {
         <div className="graph-canvas-wrapper">
           <GraphCanvas
             completed={completed}
-            chainToLoad={chainToLoad}
+            chainsToLoad={chainsToLoad}
             resetKey={resetKey}
             onNodeClick={selectCourse}
+            onRemoveChain={removeChain}
           />
         </div>
 
