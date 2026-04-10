@@ -1,4 +1,5 @@
-import { useEffect, useReducer, useState } from 'react'
+import { useEffect, useState } from 'react'
+import PrereqGraph from './PrereqGraph'
 
 const API = '/api'
 
@@ -22,46 +23,13 @@ function groupBy(arr, key) {
   }, {})
 }
 
-// ── Prerequisite tree renderer ─────────────────────────────────────────────
-
-function PrereqNode({ node }) {
-  if (typeof node === 'string') {
-    return <span className="prereq-tag">{node}</span>
-  }
-  const op = node.type === 'AND' ? 'ET' : 'OU'
-  return (
-    <span className="prereq-group">
-      (
-      {node.items.map((item, i) => (
-        <span key={i}>
-          {i > 0 && <span className="prereq-op">{op}</span>}
-          <PrereqNode node={item} />
-        </span>
-      ))}
-      )
-    </span>
-  )
-}
-
 // ── Course modal ───────────────────────────────────────────────────────────
 
-function CourseModal({ course, onClose }) {
-  const [prereqs, setPrereqs] = useState(null)
-
-  useEffect(() => {
-    const encoded = encodeURIComponent(course.sigle)
-    fetch(`${API}/courses/${encoded}/prerequisites`)
-      .then(r => r.json())
-      .then(setPrereqs)
-      .catch(() => setPrereqs({ sigle: course.sigle, prerequisites: null }))
-  }, [course.sigle])
-
-  // Close on backdrop click
+function CourseModal({ course, completed, onClose }) {
   function onBackdrop(e) {
     if (e.target === e.currentTarget) onClose()
   }
 
-  // Close on Escape
   useEffect(() => {
     const handler = e => { if (e.key === 'Escape') onClose() }
     window.addEventListener('keydown', handler)
@@ -94,15 +62,8 @@ function CourseModal({ course, onClose }) {
           )}
 
           <div>
-            <div className="modal-section-title">Prérequis</div>
-            <div className="prereq-tree">
-              {prereqs === null
-                ? 'Chargement…'
-                : prereqs.prerequisites
-                  ? <PrereqNode node={prereqs.prerequisites} />
-                  : 'Aucun prérequis'
-              }
-            </div>
+            <div className="modal-section-title">Chaîne de prérequis</div>
+            <PrereqGraph sigle={course.sigle} completed={completed} />
           </div>
 
           {course.requirement_text && (
@@ -396,7 +357,7 @@ export default function App() {
       <ExploreSection universities={universities} onCardClick={setModalCourse} />
 
       {modalCourse && (
-        <CourseModal course={modalCourse} onClose={() => setModalCourse(null)} />
+        <CourseModal course={modalCourse} completed={completed} onClose={() => setModalCourse(null)} />
       )}
     </div>
   )

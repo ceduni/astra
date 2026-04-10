@@ -185,6 +185,53 @@ def get_eligible(body: EligibilityRequest):
     return eligible
 
 
+# ── GET /courses/{sigle}/prerequisite-chain ──────────────────────────────────
+
+@router.get("/{sigle}/prerequisite-chain")
+def get_prereq_chain(sigle: str):
+    with get_driver().session() as session:
+        if session.run("MATCH (c:Cours {sigle: $s}) RETURN c", s=sigle).single() is None:
+            raise HTTPException(status_code=404, detail=f"Course '{sigle}' not found")
+
+        nodes: dict = {}
+        edges: list = []
+        visited_courses: set = set()
+
+        def traverse_course(s: str):
+            if s in visited_courses:
+                return
+            visited_courses.add(s)
+            rec = session.run("MATCH (c:Cours {sigle: $s}) RETURN c", s=s).single()
+            if rec:
+                nodes[s] = {"id": s, "node_type": "course", "data": dict(rec["c"])}
+            prereq_rec = session.run(
+                "MATCH (c:Cours {sigle: $s})-[:REQUIERT]->(t) RETURN t", s=s
+            ).single()
+            if prereq_rec:
+                traverse_node(s, prereq_rec["t"])
+
+        def traverse_node(source_id: str, node):
+            if "Cours" in node.labels:
+                child_sigle = node["sigle"]
+                edges.append({"id": f"{source_id}->{child_sigle}", "source": source_id, "target": child_sigle})
+                traverse_course(child_sigle)
+            else:
+                gid = node["id"]
+                if gid not in nodes:
+                    nodes[gid] = {"id": gid, "node_type": "group", "data": {"type": node["type"]}}
+                edges.append({"id": f"{source_id}->{gid}", "source": source_id, "target": gid})
+                children = list(session.run(
+                    "MATCH (g:PrerequisiteGroup {id: $id})-[:INCLUDES]->(child) RETURN child",
+                    id=gid,
+                ))
+                for child_rec in children:
+                    traverse_node(gid, child_rec["child"])
+
+        traverse_course(sigle)
+
+    return {"root": sigle, "nodes": list(nodes.values()), "edges": edges}
+
+
 # ── GET /courses/{sigle}/prerequisites ───────────────────────────────────────
 
 @router.get("/{sigle}/prerequisites", response_model=PrereqTree)

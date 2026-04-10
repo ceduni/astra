@@ -425,6 +425,19 @@ header p  { color: #666; margin-top: 0.3rem; font-size: 0.95rem; }
   display: inline;
 }
 
+/* ── Prereq graph ────────────────────────────────────────────────────── */
+
+.graph-placeholder {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 0.85rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
 /* ── Responsive ──────────────────────────────────────────────────────── */
 
 @media (max-width: 860px) {
