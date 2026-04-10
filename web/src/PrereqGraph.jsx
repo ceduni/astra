@@ -1,8 +1,9 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState } from 'react'
 import ReactFlow, {
   Background,
   Controls,
   Handle,
+  Panel,
   Position,
   useNodesState,
   useEdgesState,
@@ -119,12 +120,27 @@ function applyLayout(chainNodes, chainEdges, completedSet, rootSigle) {
   return { rfNodes, rfEdges }
 }
 
+// ── Fullscreen button ──────────────────────────────────────────────────────
+
+const btnStyle = {
+  background: '#fff',
+  border: '1px solid #ddd',
+  borderRadius: 6,
+  padding: '5px 8px',
+  cursor: 'pointer',
+  fontSize: 14,
+  lineHeight: 1,
+  color: '#555',
+  boxShadow: '0 1px 3px rgba(0,0,0,.1)',
+}
+
 // ── Main component ─────────────────────────────────────────────────────────
 
 export default function PrereqGraph({ sigle, completed }) {
   const [nodes, setNodes, onNodesChange] = useNodesState([])
   const [edges, setEdges, onEdgesChange] = useEdgesState([])
   const [status, setStatus] = useState('loading') // loading | empty | ready | error
+  const [fullscreen, setFullscreen] = useState(false)
 
   const completedSet = new Set((completed || []).map(c => c.sigle))
 
@@ -133,10 +149,8 @@ export default function PrereqGraph({ sigle, completed }) {
     fetch(`${API}/courses/${encodeURIComponent(sigle)}/prerequisite-chain`)
       .then(r => { if (!r.ok) throw new Error(r.status); return r.json() })
       .then(chain => {
-        // Only course nodes that aren't the root
         const hasPrereqs = chain.nodes.some(n => n.node_type === 'course' && n.id !== sigle)
         if (!hasPrereqs) { setStatus('empty'); return }
-
         const { rfNodes, rfEdges } = applyLayout(chain.nodes, chain.edges, completedSet, chain.root)
         setNodes(rfNodes)
         setEdges(rfEdges)
@@ -145,12 +159,30 @@ export default function PrereqGraph({ sigle, completed }) {
       .catch(() => setStatus('error'))
   }, [sigle])
 
+  // Escape closes fullscreen
+  useEffect(() => {
+    if (!fullscreen) return
+    const handler = e => { if (e.key === 'Escape') setFullscreen(false) }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [fullscreen])
+
+  // Lock body scroll when fullscreen
+  useEffect(() => {
+    document.body.style.overflow = fullscreen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [fullscreen])
+
   if (status === 'loading') return <div className="graph-placeholder">Chargement du graphe…</div>
   if (status === 'empty')   return <div className="graph-placeholder">Aucun prérequis enregistré.</div>
   if (status === 'error')   return <div className="graph-placeholder" style={{color:'#c00'}}>Erreur de chargement.</div>
 
+  const containerStyle = fullscreen
+    ? { position: 'fixed', inset: 0, zIndex: 200, background: '#fff', borderRadius: 0 }
+    : { height: 340, borderRadius: 8, overflow: 'hidden', border: '1px solid #e2e5ea' }
+
   return (
-    <div style={{ height: 340, borderRadius: 8, overflow: 'hidden', border: '1px solid #e2e5ea' }}>
+    <div style={containerStyle}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -164,6 +196,11 @@ export default function PrereqGraph({ sigle, completed }) {
       >
         <Background color="#f0f0f0" gap={16} />
         <Controls showInteractive={false} />
+        <Panel position="top-right">
+          <button style={btnStyle} onClick={() => setFullscreen(f => !f)} title={fullscreen ? 'Quitter le plein écran' : 'Plein écran'}>
+            {fullscreen ? '✕  Quitter' : '⛶  Plein écran'}
+          </button>
+        </Panel>
       </ReactFlow>
     </div>
   )
