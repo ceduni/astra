@@ -31,7 +31,7 @@ function Section({ label, count, children, defaultOpen = true, grow = false }) {
 
 // ── Sidebar: Search section ────────────────────────────────────────────────────
 
-function SearchSection({ onAdd, completed }) {
+function SearchSection({ onAddCompleted, onVisualize, completed }) {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
   const [loading, setLoading] = useState(false)
@@ -70,14 +70,23 @@ function SearchSection({ onAdd, completed }) {
                   <span className="sigle">{course.sigle}</span>
                   <span className="compact-titre">{course.titre}</span>
                 </div>
-                <button
-                  className="btn-add"
-                  onClick={() => onAdd(course)}
-                  disabled={done}
-                  title={done ? 'Déjà ajouté' : 'Ajouter au profil + visualiser'}
-                >
-                  {done ? '✓' : '+'}
-                </button>
+                <div className="result-actions">
+                  <button
+                    className="btn-add"
+                    onClick={() => onAddCompleted(course)}
+                    disabled={done}
+                    title={done ? 'Déjà ajouté au parcours' : 'Ajouter à mon parcours'}
+                  >
+                    ✓
+                  </button>
+                  <button
+                    className="btn-add"
+                    onClick={() => onVisualize(course)}
+                    title="Visualiser la chaîne de prérequis"
+                  >
+                    ⬡
+                  </button>
+                </div>
               </div>
             )
           })}
@@ -123,7 +132,14 @@ function EligibleSection({ completed, onSelect }) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  function fetchEligible() {
+  useEffect(() => {
+    if (completed.length === 0) {
+      setEligible(null)
+      setError(null)
+      setLoading(false)
+      return
+    }
+    let cancelled = false
     setLoading(true)
     setError(null)
     fetch(`${API}/courses/eligible`, {
@@ -132,20 +148,15 @@ function EligibleSection({ completed, onSelect }) {
       body: JSON.stringify({ completed: completed.map(c => c.sigle) }),
     })
       .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json() })
-      .then(setEligible)
-      .catch(e => setError(e.message))
-      .finally(() => setLoading(false))
-  }
+      .then(data => { if (!cancelled) setEligible(data) })
+      .catch(e => { if (!cancelled) setError(e.message) })
+      .finally(() => { if (!cancelled) setLoading(false) })
+    return () => { cancelled = true }
+  }, [completed])
 
   return (
     <Section label="Accessibles" count={eligible ? eligible.length : null} defaultOpen={true} grow={true}>
-      <button
-        className="btn-primary"
-        onClick={fetchEligible}
-        disabled={loading || completed.length === 0}
-      >
-        {loading ? 'Calcul…' : 'Voir mes cours accessibles'}
-      </button>
+      {loading && <p className="hint">Calcul…</p>}
       {completed.length === 0 && (
         <p className="hint">Ajoutez des cours complétés d'abord.</p>
       )}
@@ -277,12 +288,9 @@ export default function App() {
 
   // ── Course actions ───────────────────────────────────────────────────────────
 
-  function addCourse(course) {
+  function markCompleted(course) {
     setCompleted(prev =>
       prev.some(c => c.sigle === course.sigle) ? prev : [...prev, course]
-    )
-    setChainsToLoad(prev =>
-      prev.includes(course.sigle) ? prev : [...prev, course.sigle]
     )
     setSelectedCourse(course)
   }
@@ -303,7 +311,16 @@ export default function App() {
     setSelectedCourse(prev => (prev?.sigle === sigle ? null : prev))
   }
 
-  function handleReset() {
+  function handleResetGraph() {
+    setSelectedCourse(null)
+    setChainsToLoad([])
+    setResetKey(k => k + 1)
+  }
+
+  function handleClearTranscript() {
+    if (!window.confirm('Effacer tout votre parcours (cours complétés) ? Cette action est irréversible.')) {
+      return
+    }
     setCompleted([])
     setSelectedCourse(null)
     setChainsToLoad([])
@@ -323,7 +340,7 @@ export default function App() {
         </div>
 
         <div className="sidebar-body">
-          <SearchSection onAdd={addCourse} completed={completed} />
+          <SearchSection onAddCompleted={markCompleted} onVisualize={selectCourse} completed={completed} />
           <CompletedSection
             completed={completed}
             onRemove={removeCourse}
@@ -333,8 +350,11 @@ export default function App() {
         </div>
 
         <div className="sidebar-footer">
-          <button className="btn-reset" onClick={handleReset}>
+          <button className="btn-reset" onClick={handleResetGraph}>
             Réinitialiser le graphe
+          </button>
+          <button className="btn-danger" onClick={handleClearTranscript}>
+            Effacer mon parcours
           </button>
         </div>
       </aside>
@@ -369,7 +389,7 @@ export default function App() {
           course={selectedCourse}
           completed={completed}
           onClose={() => setSelectedCourse(null)}
-          onAdd={addCourse}
+          onAdd={markCompleted}
           onRemove={removeCourse}
         />
       </main>

@@ -91,6 +91,9 @@ body {
   padding: 0.75rem 1.25rem;
   border-top: 1px solid #f0f0f0;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 /* ── Resize handle ───────────────────────────────────────────────────────── */
@@ -196,6 +199,12 @@ body {
 .result-row:hover { background: #f7f9ff; }
 .result-row.done { opacity: 0.55; }
 
+.result-actions {
+  display: flex;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
 .result-info {
   flex: 1;
   min-width: 0;
@@ -276,20 +285,17 @@ body {
 }
 .btn-remove:hover { color: #c00; }
 
-.btn-primary {
+.btn-danger {
   width: 100%;
-  padding: 0.5rem;
-  background: #1a6ef5;
-  color: #fff;
-  border: none;
+  padding: 0.45rem;
+  background: none;
+  border: 1px solid #f3c2c2;
   border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.82rem;
+  color: #c00;
   cursor: pointer;
-  margin-bottom: 0.6rem;
 }
-.btn-primary:hover:not(:disabled) { background: #155cd4; }
-.btn-primary:disabled { opacity: 0.45; cursor: default; }
+.btn-danger:hover { background: #fdeaea; border-color: #c00; }
 
 .btn-reset {
   width: 100%;
