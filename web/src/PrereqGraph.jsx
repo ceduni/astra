@@ -23,16 +23,27 @@ const UNI_COLORS = {
 
 // ── Custom node: Course ────────────────────────────────────────────────────
 
+const EQUIVALENT_COLOR = '#8a3ffc'
+
 function CourseNode({ data }) {
   const color = UNI_COLORS[data.universite] || '#999'
-  const bg = data.completed ? '#f0faf3' : data.isRoot ? '#f0f6ff' : '#fff'
-  const border = data.completed ? '#2a9d4e' : data.isRoot ? '#1a6ef5' : '#ddd'
+  const isEquivalent = !!data.is_equivalent
+
+  const bg = data.completed ? '#f0faf3'
+    : data.isRoot ? '#f0f6ff'
+    : isEquivalent ? '#faf5ff'
+    : '#fff'
+  const border = data.completed ? '#2a9d4e'
+    : data.isRoot ? '#1a6ef5'
+    : isEquivalent ? EQUIVALENT_COLOR
+    : '#ddd'
+  const leftBorder = data.completed ? '#2a9d4e' : isEquivalent ? EQUIVALENT_COLOR : color
 
   return (
     <div style={{
       background: bg,
-      border: `1.5px solid ${border}`,
-      borderLeft: `4px solid ${data.completed ? '#2a9d4e' : color}`,
+      border: `1.5px ${isEquivalent && !data.completed ? 'dashed' : 'solid'} ${border}`,
+      borderLeft: `4px solid ${leftBorder}`,
       borderRadius: 8,
       padding: '8px 12px',
       minWidth: 160,
@@ -45,6 +56,11 @@ function CourseNode({ data }) {
         {data.sigle}
         {data.completed && <span style={{ marginLeft: 6, color: '#2a9d4e', fontSize: 12 }}>✓</span>}
       </div>
+      {isEquivalent && (
+        <div style={{ fontSize: 9, fontWeight: 700, color: EQUIVALENT_COLOR, letterSpacing: '0.05em', marginBottom: 2 }}>
+          ÉQUIVALENT · {data.universite}
+        </div>
+      )}
       <div style={{ fontSize: 11, color: '#555', lineHeight: 1.35 }}>
         {data.titre ? data.titre.slice(0, 45) + (data.titre.length > 45 ? '…' : '') : ''}
       </div>
@@ -108,14 +124,29 @@ function applyLayout(chainNodes, chainEdges, completedSet, rootSigle) {
     }
   })
 
-  const rfEdges = chainEdges.map(e => ({
-    id: e.id,
-    source: e.source,
-    target: e.target,
-    type: 'smoothstep',
-    style: { stroke: '#bbb', strokeWidth: 1.5 },
-    animated: false,
-  }))
+  const rfEdges = chainEdges.map(e => {
+    if (e.relation_type === 'equivalent') {
+      return {
+        id: e.id,
+        source: e.source,
+        target: e.target,
+        type: 'smoothstep',
+        label: e.label,
+        labelStyle: { fontSize: 10, fill: EQUIVALENT_COLOR, fontWeight: 600 },
+        labelBgStyle: { fill: '#faf5ff', fillOpacity: 0.9 },
+        style: { stroke: EQUIVALENT_COLOR, strokeWidth: 1.5, strokeDasharray: '4 3' },
+        animated: false,
+      }
+    }
+    return {
+      id: e.id,
+      source: e.source,
+      target: e.target,
+      type: 'smoothstep',
+      style: { stroke: '#bbb', strokeWidth: 1.5 },
+      animated: false,
+    }
+  })
 
   return { rfNodes, rfEdges }
 }

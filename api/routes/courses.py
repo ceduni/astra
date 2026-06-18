@@ -283,6 +283,39 @@ def get_prereq_chain(sigle: str):
 
         traverse_course(sigle)
 
+        # ── Equivalent courses (siblings, not traversed further) ────────────
+        # For every course already in the chain, attach its active EQUIVAUT_A
+        # neighbors so a student can see that a partner-university course
+        # they completed already satisfies this node. These are leaves: we
+        # don't walk their own prerequisites, just show the link.
+        seen_equiv_pairs: set = set()
+        for s in list(visited_courses):
+            equiv_recs = session.run(
+                "MATCH (c:Cours {sigle: $s})-[:EQUIVAUT_A {status: 'active'}]-(eq:Cours)"
+                " RETURN DISTINCT eq",
+                s=s,
+            )
+            for rec in equiv_recs:
+                eq = rec["eq"]
+                eq_sigle = eq["sigle"]
+                pair = frozenset((s, eq_sigle))
+                if pair in seen_equiv_pairs:
+                    continue
+                seen_equiv_pairs.add(pair)
+
+                if eq_sigle not in nodes:
+                    data = dict(eq)
+                    data["is_equivalent"] = True
+                    nodes[eq_sigle] = {"id": eq_sigle, "node_type": "course", "data": data}
+
+                edges.append({
+                    "id": f"{s}<->{eq_sigle}:equivalent",
+                    "source": s,
+                    "target": eq_sigle,
+                    "relation_type": "equivalent",
+                    "label": "équivalent",
+                })
+
     return {"root": sigle, "nodes": list(nodes.values()), "edges": edges}
 
 

@@ -1,0 +1,212 @@
+[
+    {
+        "code": "IFT3225",
+        "title": "Technologie de l'Internet",
+        "tags": ["web", "internet"],
+        "keywords": ["react", "php"],
+        "equivalences": [
+            {
+                "code": "INF5190",
+                "university": { "id": "UQAM", "name": "UQAM" },
+                "title": "Programmation web avancée",
+                "terms_recent": ["A2022", "A2023", "H2023"],
+                "last_verified": "2026-01-25",
+                "links": {
+                    "course_page": null
+                },
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "code": "IFT3275",
+        "title": "Sécurité informatique",
+        "tags": ["securite", "reseaux", "cryptographie"],
+        "equivalences": [
+            {
+                "code": "INF4420A",
+                "university": { "id": "POLYMTL", "name": "Polytechnique Montréal" },
+                "title": "Sécurité informatique",
+                "terms_recent": ["H2023", "E2024"],
+                "links": {
+                    "course_page": null
+                },
+                "notes": ""
+            },
+            {
+                "code": "GTI619",
+                "university": { "id": "ETS", "name": "ÉTS" },
+                "title": "Sécurité des systèmes",
+                "terms_recent": ["A2022", "H2023", "E2024", "E2025", "A2025"],
+                "links": {
+                    "course_page": null
+                },
+                "notes": ""
+            },
+            {
+                "code": "INF4471",
+                "university": { "id": "UQAM", "name": "UQAM" },
+                "title": "Introduction à la sécurité informatique",
+                "terms_recent": ["H2023", "A2023", "H2025"],
+                "links": {
+                    "course_page": null
+                },
+                "notes": ""
+            },
+            {
+                "code": "IFT2102",
+                "university": { "id": "ULAVAL", "name": "Université Laval" },
+                "title": "Introduction à la sécurité informatique",
+                "terms_recent": ["E2022", "E2023", "E2024", "E2025"],
+                "links": {
+                    "course_page": null
+                },
+                "notes": ""
+            },
+            {
+                "code": "SOEN321",
+                "university": { "id": "CONCORDIA", "name": "Concordia" },
+                "title": "Information Systems Security",
+                "terms_recent": ["A2022"],
+                "links": {
+                    "course_page": null
+                },
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "code": "IFT3325",
+        "title": "Téléinformatique",
+        "equivalences": [
+            {
+                "code": "INF3271",
+                "university": { "id": "UQAM", "name": "UQAM" },
+                "title": "Téléinformatique",
+                "terms_recent": ["A2022", "E2022", "H2023", "H2024", "E2024", "E2025"],
+                "links": {
+                    "course_page": null
+                },
+                "notes": ""
+            },
+            {
+                "code": "INF3405",
+                "university": { "id": "POLYMTL", "name": "Polytechnique Montréal" },
+                "title": "Réseaux informatiques",
+                "terms_recent": ["A2022", "E2023", "H2024", "H2025", "E2024", "E2025"],
+                "links": {
+                    "course_page": null
+                },
+                "notes": ""
+            },
+            {
+                "code": "IFT2006",
+                "university": { "id": "ULAVAL", "name": "Université Laval" },
+                "title": "Téléinformatique",
+                "terms_recent": ["H2023", "H2025", "A2025"],
+                "links": { "course_page": null },
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "code": "IFT3335",
+        "title": "Intelligence artificielle : introduction",
+        "tags": ["ia"],
+        "equivalences": [
+            {
+                "code": "INF4230",
+                "university": { "id": "UQAM", "name": "UQAM" },
+                "title": "Intelligence artificielle",
+                "terms_recent": ["H2023", "E2023", "E2024", "E2025"],
+                "links": { "course_page": null },
+                "notes": ""
+            },
+            {
+                "code": "COMP472",
+                "university": { "id": "CONCORDIA", "name": "Concordia" },
+                "title": "Artificial Intelligence",
+                "terms_recent": ["E2024", "E2025"],
+                "links": { "course_page": null },
+                "notes": ""
+            },
+            {
+                "code": "IFT2003",
+                "university": { "id": "ULAVAL", "name": "Université Laval" },
+                "title": "Intelligence artificielle I",
+                "terms_recent": ["A2022", "A2023", "A2024"],
+                "links": { "course_page": null },
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "code": "IFT3355",
+        "title": "Infographie",
+        "tags": ["infographie", "graphique"],
+        "equivalences": [
+            {
+                "code": "INF2705",
+                "university": { "id": "POLYMTL", "name": "Polytechnique Montréal" },
+                "title": "Infographie",
+                "terms_recent": ["H2023"],
+                "links": { "course_page": null },
+                "notes": ""
+            },
+            {
+                "code": "INF5071",
+                "university": { "id": "UQAM", "name": "UQAM" },
+                "title": "Infographie",
+                "terms_recent": ["A2022","A2023"],
+                "links": { "course_page": null },
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "code": "IFT3911",
+        "title": "Analyse et conception des logiciels",
+        "tags": ["genie-logiciel", "conception", "uml", "patron-conception"],
+        "equivalences": [
+            {
+                "code": "INF5153",
+                "university": { "id": "UQAM", "name": "UQAM" },
+                "title": "Génie logiciel : conception",
+                "terms_recent": ["A2023", "E2024", "H2025"],
+                "links": { "course_page": null },
+                "notes": ""
+            },
+            {
+                "code": "LOG210",
+                "university": { "id": "ETS", "name": "ÉTS" },
+                "title": "Analyse et conception logiciel",
+                "terms_recent": ["E2024"],
+                "links": { "course_page": null },
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "code": "IFT3913",
+        "title": "Qualité du logiciel et métriques",
+        "tags": ["genie-logiciel", "qualite", "tests", "metriques"],
+        "equivalences": [
+            {
+                "code": "LOG3430",
+                "university": { "id": "POLYMTL", "name": "Polytechnique Montréal" },
+                "title": "Test et validation logiciel",
+                "terms_recent": ["H2023"],
+                "links": { "course_page": null },
+                "notes": ""
+            },
+            {
+                "code": "GLO4002",
+                "university": { "id": "ULAVAL", "name": "Université Laval" },
+                "title": "Qualité et métriques logicielles",
+                "terms_recent": ["A2023"],
+                "links": { "course_page": null },
+                "notes": ""
+            }
+        ]
+    }
+]
