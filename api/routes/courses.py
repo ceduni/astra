@@ -23,6 +23,10 @@ class Cours(BaseModel):
     hors_perimetre: bool
     description: str
     requirement_text: str
+    # False means the scraper could not read the source page, so an empty
+    # prerequisite list should be shown as 'unknown' rather than 'none'.
+    # Null only on legacy nodes before backfill.
+    prereqs_known: Optional[bool] = None
 
 
 class CoursPage(BaseModel):

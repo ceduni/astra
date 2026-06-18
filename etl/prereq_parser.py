@@ -192,6 +192,40 @@ def _create_or_group(tx, from_sigle, gid, codes, parent_is_cours):
         )
 
 
+# ── Derived flag: prereqs_known ───────────────────────────────────────────────
+
+def set_prereqs_known(session, universite: str) -> int:
+    """
+    Set Cours.prereqs_known for one university based on evidence that the
+    source page was actually inspected:
+
+        prereqs_known = (has any REQUIERT edge)
+                     OR (description is non-empty)
+                     OR (requirement_text is non-empty)
+
+    A `false` value means the scraper could not read the source page, so
+    an empty prerequisite list should be treated as 'unknown', not 'none'.
+    Run after prereq loading so REQUIERT edges are present.
+
+    Returns the number of nodes updated.
+    """
+    result = session.run(
+        """
+        MATCH (c:Cours {universite: $uni})
+        OPTIONAL MATCH (c)-[r:REQUIERT]->()
+        WITH c, count(r) AS req_count
+        SET c.prereqs_known = (
+            req_count > 0
+            OR (c.description IS NOT NULL AND c.description <> '')
+            OR (c.requirement_text IS NOT NULL AND c.requirement_text <> '')
+        )
+        RETURN count(c) AS updated
+        """,
+        uni=universite,
+    ).single()
+    return result["updated"] if result else 0
+
+
 # ── Clear before reload ───────────────────────────────────────────────────────
 
 def clear_uni_prereqs(session, universite: str):

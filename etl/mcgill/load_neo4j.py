@@ -16,7 +16,10 @@ from dotenv import load_dotenv
 from neo4j import GraphDatabase
 
 sys.path.insert(0, str(Path(__file__).parents[1]))
-from prereq_parser import merge_cours, load_prereqs, clear_uni_prereqs, parse_prereqs
+from prereq_parser import (
+    merge_cours, load_prereqs, clear_uni_prereqs, parse_prereqs,
+    set_prereqs_known,
+)
 
 load_dotenv(Path(__file__).parents[2] / ".env")
 
@@ -47,12 +50,14 @@ def main():
     with driver.session() as session:
         clear_uni_prereqs(session, UNIVERSITE)
         session.execute_write(load, courses, stats)
+        updated = set_prereqs_known(session, UNIVERSITE)
     driver.close()
 
     print(f"[{UNIVERSITE}] {len(courses)} nœuds Cours")
     print(f"  {stats['direct']:3d} relations directes  (1 prérequis)")
     print(f"  {stats['and']:3d} groupes AND")
     print(f"  {stats['or']:3d} groupes OR")
+    print(f"  prereqs_known set on {updated} courses")
 
 
 if __name__ == "__main__":

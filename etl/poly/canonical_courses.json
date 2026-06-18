@@ -187,20 +187,22 @@
     "universite": "Poly",
     "titre": "Fichiers et bases de données",
     "credits": 3,
-    "description": "",
+    "description": "Introduction aux fichiers et bases de données.  Analyse de besoins : modèle entité-association.  Modèle relationnel : concepts de base et algèbre relationnelle.  Norme SQL (Standard Query Language) : langages de définition, de manipulation et de contrôle de données.  Langage SQL enchâssé dans un langage algorithmique de programmation.  Notions de contrôle d'accès concurrents et de gestion de transactions.  Conception d'un schéma de base de données relationnelle : dépendances fonctionnelles et formes normales.  Modèles de stockage de relations et de fichiers.  Structures auxiliaires facilitant l'accès aux données : indexage et adressage dispersé.",
     "niveau": 3,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF2010"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "INF2010"
   },
   {
     "sigle": "INF8480",
     "universite": "Poly",
     "titre": "Systèmes répartis et infonuagique",
     "credits": 3,
-    "description": "",
+    "description": "Introduction aux systèmes répartis et à l'infonuagique. Environnement de développement technologique et réseautique des systèmes répartis. Architectures client-serveur, pair-à-pair, orientées-services et totalement réparties. Infrastructure, plateforme et applications en tant que services. Concepts d'objets distants et d'intergiciels. Virtualisation des noeuds et du réseau. Notions de synchronisation du temps et de systèmes transactionnels répartis. Méthodes et techniques de conception de services performants, répartis, virtualisés, sécuritaires et tolérants aux défaillances. L'informatique et le développement durable dans le contexte d'applications réparties et de l'infonuagique",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [
@@ -208,10 +210,7 @@
     ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": "INF3405 et avoir obtenu 60 crédits",
-    "other_conditions": [
-      "60 crédits complétés"
-    ]
+    "requirement_text": "INF3405 et 60 crédits pour les étudiants du baccalauréat. Aucun"
   },
   {
     "sigle": "LOG1810",
@@ -254,13 +253,17 @@
     "universite": "Poly",
     "titre": "Anal. et conc. des interfaces utilisateurs",
     "credits": 3,
-    "description": "",
+    "description": "Analyse et spécification des besoins des utilisateurs. Développement centré-utilisateur. Analyses coûts-bénéfices. Ergonomie cognitive. Principes et règles de conception d'interface. Tests utilisateurs. Évaluation heuristique et inspection d'interface. Boîtes à outils. Architecture des systèmes de fenêtrage. Motivation et persuasion. Personnalisation et assistance.",
     "niveau": 2,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
+    "prerequisite_courses": [
+      "LOG2440"
+    ],
+    "concomitant_courses": [
+      "LOG2440"
+    ],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "LOG2440"
   },
   {
     "sigle": "LOG2440",
@@ -343,39 +346,50 @@
     "universite": "Poly",
     "titre": "Éléments de langages et compilateurs",
     "credits": 3,
-    "description": "",
+    "description": "Introduction à l'analyse de programmes en langages évolués, aux grammaires et aux langages.  Analyse structurelle : analyse syntaxique, arbre d'appels des procédures et graphes de flux de contrôle.  Introduction et fondements théoriques en analyse statique de flux : théorie des graphes et algorithmes, ordre partiel, treillis, analyse de flux.  Analyses élémentaires : définitions, variables vives, expressions disponibles, propagation de copies, initialisation des variables et paramètres, détection des instructions inaccessibles ou inutiles, vérification de l'utilisation efficace des variables, propagation des constantes, analyse des pointeurs ou des alias, analyse des dépendances et analyse d'impact en maintenance du logiciel.  Analyse dynamique : instrumentation des programmes, tests à boîte blanche, évaluation des performances.",
     "niveau": 3,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "LOG1810",
+      "LOG2400",
+      "INF2010"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "LOG1810 , LOG2400 , INF2010"
   },
   {
     "sigle": "LOG3420",
     "universite": "Poly",
     "titre": "Analyse et spécif. des exigences du logiciel",
     "credits": 3,
-    "description": "",
+    "description": "Exigences du logiciel: définition, typologie. Cycle de l'ingénierie des exigences: élicitation, analyse et validation, spécification, vérification.  Prototypage. Techniques d'élicitation. Analyse des exigences: classification, modélisation conceptuelle, allocation, négociation, évaluation du risque. Validation des exigences: revues et inspections, tests d'acceptation. Techniques de spécification. Caractéristiques de qualité des exigences et vérification. Modélisation des exigences et méthodes agiles. Gestion des exigences. Études de cas.",
     "niveau": 3,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "LOG2400"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "LOG2400"
   },
   {
     "sigle": "LOG3430",
     "universite": "Poly",
     "titre": "Méthodes de test et de validation du logiciel",
     "credits": 3,
-    "description": "",
+    "description": "Importance de la validation et de la vérification dans le processus du génie logiciel.  Méthodes de test et de validation.  Classification des méthodes.  Rappel des méthodes de test structurel.  Méthodes de test fonctionnel.  Génération de tests pour automates finis.  Stratégies de tests d'intégration et d'installation pour programmation procédurale et orientée objet.  Approches statistiques en validation et en vérification.  Méthodes du développement pour assurer la fiabilité. Planification des activités de test du logiciel.",
     "niveau": 3,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "LOG1810",
+      "LOG2400",
+      "MTH2302D",
+      "MTH2304"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "LOG1810 , LOG2400 , MTH2302D ou MTH2304"
   },
   {
     "sigle": "LOG3900",
@@ -403,13 +417,13 @@
     "universite": "Poly",
     "titre": "Ingénierie de la qualité en logiciel",
     "credits": 3,
-    "description": "",
+    "description": "Concepts de base et définitions pertinentes en relation avec la qualité du logiciel, assurance qualité,  tests, ingénierie de la qualité et planification de la qualité.  Prévention des anomalies et classification des défauts.  Tolérance aux fautes.  Ingénierie de la fiabilité logicielle.  Modèles de la qualité.  Comparaison des différentes techniques d'assurance qualité.  Amélioration du processus de développement logiciel.  Mesure du logiciel et du processus.  Identification des risques pour l'amélioration quantifiable de la qualité.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants du baccalauréat"
   },
   {
     "sigle": "MTH1008",
@@ -450,13 +464,13 @@
     "universite": "Poly",
     "titre": "Énerg. et dév. durable dans les syst. infor.",
     "credits": 3,
-    "description": "",
+    "description": "Analyse dimensionnelle. Variables utilisées dans les procédés : débit, pression, température et composition. Notion de procédé et principe de fonctionnement d'une pile. Équation générale de conservation de la matière. Bilans de matière sur des systèmes informatiques. Équilibre de phases. Réactions chimiques : réactif limitant et en excès, rendement, sélectivité. Bilans d'énergie sur des systèmes informatiques. Formes d'énergie dans un procédé. Calcul de l'enthalpie et état de référence. Premier principe de la thermodynamique. Procédure d'établissement des bilans d'énergie pour des procédés non-réactifs et réactifs. Électrochimie : oxydo-réduction, loi de Nernst, loi de Faraday. Effet Joule. Chaleur dissipée dans une pile. Bilans de matière et d'énergie dans une salle de serveurs. Développement durable : historique, concepts et outils de base. Introduction à l'analyse du cycle de vie. Place du développement durable dans les systèmes informatiques. Études de cas.",
     "niveau": 2,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "Ce cours ne peut être suivi par les étudiants inscrits au baccalauréat en génie chimique."
   },
   {
     "sigle": "SSH3201",
@@ -476,26 +490,26 @@
     "universite": "Poly",
     "titre": "Analyse sociologique de la technologie",
     "credits": 3,
-    "description": "",
+    "description": "Notions de base en sociologie de la technologie et historique des ingénieurs comme groupe social. Notion d'impact des technologies. Déterminisme technologique et évolution des relations technologies/société. Controverses, enjeux de pouvoir et production sociale des technologies. Diffusion et appropriation sociale des technologies incrémentales et de rupture. Prise de conscience environnementale, éléments d'économie de l'environnement et interventions de l'État. Développement durable, risque et incertitude des grands projets, et acceptabilité sociale. Simulation d'un forum de délibération par la participation citoyenne (Bureau d'audiences publiques sur l'environnement). Place de l'État dans l'innovation technologique et ses relations avec l'entreprise et l'université. Intelligence artificielle et thèmes technologiques : paradigmes et défis. Enjeux de désinformation, de protection de la vie privée et de sécurité. Capitalisme de plateforme, inégalités et impacts des technologies sur le travail, l'emploi et l'organisation du travail. Résistance et pouvoir dans la gestion du changement technologique en organisation.",
     "niveau": 3,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "30 crédits Aucun"
   },
   {
     "sigle": "SSH3501",
     "universite": "Poly",
     "titre": "Éthique appliquée à l'ingénierie",
     "credits": 2,
-    "description": "",
+    "description": "Statut de l'ingénieur et valeurs de la profession d'ingénieur. Lois et règlements concernant la profession d'ingénieur. Éthique et déontologie. Spécificité de l'éthique. Courants théoriques en éthique appliquée. Éthiques classiques. Raisonnement et prise de décision éthiques. Justification et mise en application de la décision éthique. Études de cas (à titre d'exemples): conflit d'intérêt, tentative de corruption, manque d'équité, danger pour la santé et la sécurité des travailleurs ou du public, danger pour l'environnement. Avenir de l'éthique appliquée.",
     "niveau": 3,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "40 cr."
   },
   {
     "sigle": "INF1205",
@@ -577,39 +591,46 @@
     "universite": "Poly",
     "titre": "Physique pour les applications multimédia",
     "credits": 3,
-    "description": "",
+    "description": "Rappel des bases de la dynamique : forces, équations de conservation, corps rigides, problème à deux corps. Dynamique des particules : physique statistique, collisions et ralentissement, équation de transport et de la diffusion. Dynamique des milieux continus : lois de conservation, solides, vibrations et fréquence de résonance, fluides et écoulements, diffusion de particules dispersées dans des liquides. Ondes transverses : propagation des ondes en milieu infini, interférence, collision entre ondes et solides. Ondes longitudinales : acoustique et ondes de choc, interférences et pulsation, réflexion, atténuation et dispersion. Optique : sources de lumière, optique géométrique, réfraction, dispersion et diffusion, réflexion, modèle de sources et perception de la lumière.",
     "niveau": 4,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MTH1008",
+      "MTH1007"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "MTH1008 ou MTH1007"
   },
   {
     "sigle": "INF8775",
     "universite": "Poly",
     "titre": "Analyse et conception d'algorithmes",
     "credits": 3,
-    "description": "",
+    "description": "Notions élémentaires d'algorithmique.  Notation asymptotique.  Analyse d'un algorithme selon les ressources consommées : temps de calcul, espace mémoire et processeurs. Analyse empirique, théorique et hybride. Consommation de ressources en pire cas, en moyenne et amortie.  Patrons de conception d'algorithmes : vorace, diviser-pour-régner,  programmation dynamique, parcours de graphes, métaheuristique et probabiliste.  Caractérisation des algorithmes d'optimisation : exact, heuristique et approximatif.  Introduction aux classes de complexité : P et NP.  Décidabilité.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF2010",
+      "LOG1810",
+      "LOG2810"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "INF2010 , LOG1810 ou LOG2810 , 70 crédits Aucun"
   },
   {
     "sigle": "LOG8430",
     "universite": "Poly",
     "titre": "Architecture logicielle et conception avancée",
     "credits": 3,
-    "description": "",
+    "description": "Méthodes de conception avancées de logiciels et choix d'architecture. Architectures logicielles : multi-niveaux, clients-serveurs, extensibles et dynamiques. Concepts et implantations avancées des bibliothèques et du chargement de composantes dynamiques. Cadres de référence et plugiciels.  Composition et architecture par composantes. Patrons de conception avancés pour les systèmes distribués : accès aux services et configuration, traitement d'événements, synchronisation et accès simultanés. Approches émergentes de conception et d'architecture : conception orientée aspect, architecture orientée services et autres.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "INF8085",
@@ -633,39 +654,43 @@
     "universite": "Poly",
     "titre": "Intelligence artif.: méthodes et algorithmes",
     "credits": 3,
-    "description": "",
+    "description": "Notion d'intelligence artificielle et d'agents intelligents. Stratégies de recherche. Conception d'heuristiques. Recherche en présence d'adversaires. Méthodes de recherche locale. Métaheuristiques. Programmation par contraintes. Agents logiques. Logique des propositions. Représentation des connaissances. Vérification de modèles. Algorithmes d'inférence. Apprentissage automatique supervisé. Réseaux de neurones. Apprentissage non-supervisé. Apprentissage par renforcement. Considérations éthiques et sociétales.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF8215"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "60 crédits pour les étudiants au baccalauréat Aucun Ce cours est équivalent et remplace INF8215 ."
   },
   {
     "sigle": "LOG8970",
     "universite": "Poly",
     "titre": "Projet final en génie logiciel",
     "credits": 6,
-    "description": "",
+    "description": "Conception et réalisation en équipe d'un produit logiciel nécessitant l'application de notions et de méthodes acquises préalablement dans le programme de génie logiciel. Recours à une méthodologie de conception et de gestion nécessaire pour la réalisation d'applications logicielles. Attention particulière accordée au processus logiciel et à l'assurance qualité. Utilisation d'outils logiciels appropriés. Les sujets du projet, approuvés par le coordonnateur du cours, peuvent provenir de l'industrie, de sociétés techniques étudiantes de Polytechnique Montréal, ou des professeurs.  La personne ayant proposé le projet assume normalement le rôle de client par rapport à l'équipe d'étudiants.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "LOG3900"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "95 cr., LOG3900 Aucun"
   },
   {
     "sigle": "ING8971",
     "universite": "Poly",
     "titre": "Projet intégrateur en développement durable",
     "credits": 6,
-    "description": "",
+    "description": "Projet intégrateur de quatrième année d'une durée d'un trimestre divisé en deux volets : travail en équipe et travail individuel. Volet équipe : résolution d'une problématique d'ingénierie et conception technique dans une perspective de développement durable. Travail en équipe mixte, ouvert à tous les génies, encadré par une équipe technique multidisciplinaire. Prise en compte dans la conception des impacts des solutions proposées sur l'environnement, la société et l'économie. Volet individuel : développement d'une expertise individuelle en matière de développement durable. Cette compétence est transférable au projet d'équipe et liée aux intérêts et à la formation de l'étudiant.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "85 cr. et les étudiants inscrits dans ce cours devront également avoir complété les préalables demandés pour le projet intégrateur de leur programme. Veuillez consulter votre cheminement. Cours contingenté. Les équipes ne seront en aucun cas mono-génie. L'étudiant doit obtenir l'approbation d'une personne désignée dans son programme pour s'inscrire à ce cours. Inscription et abandon de ce cours-projet sujets à des restrictions."
   },
   {
     "sigle": "IND8402",
@@ -711,13 +736,13 @@
     "universite": "Poly",
     "titre": "Ingénierie des systèmes d'information",
     "credits": 3,
-    "description": "",
+    "description": "Analyse, conception et réalisation des systèmes d'information d'entreprise. Typologie des systèmes d'information, architecture des entreprises. Ingénierie des processus d'affaires : diagramme d'activité. Modèle conceptuel : cas d'utilisation, diagramme de classes. Relation entre la structure informationnelle et le traitement de l'information. Ingénierie d'une application web de système d'information : architecture et technologies. Base de données relationnelle. Passage du modèle conceptuel au modèle logique. Progiciels de gestion intégrés dans les entreprises de production de biens et de services : sélection, implantation, utilisation.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits au baccalauréat Ce cours n'est pas accessible aux étudiants suivant ou ayant suivi une formation de 1er cycle en génie industriel."
   },
   {
     "sigle": "IND8845",
@@ -737,13 +762,13 @@
     "universite": "Poly",
     "titre": "Conception de sites web dynam. et transact.",
     "credits": 3,
-    "description": "",
+    "description": "Conception de sites web complexes pour la génération dynamique de contenu et la gestion d'interactions avec les utilisateurs.  Présentation générale de l'architecture du web et du protocole HTTP (HyperText Transfer Protocol).  Structure d'un document HTML (HyperText Markup Language).  Mise en forme d'un document HTML par l'utilisation de CSS (Cascading Style Sheet).  Paradigmes de conception propres aux systèmes web.  Programmation du côté serveur.  Gestion d'une session sur un site web.  Éléments de sécurité pour les sites web.  Présentation du format XML (Extended Markup Language) et du langage de transformation de documents XSL (Extended Stylesheet Language).  Programmation du côté client par le biais de scripts exécutés par le navigateur web.  Interface avec une base de données relationnelle.  Notions de performance et de sécurité.  Notions de validation et de test de sites web dynamiques et transactionnels.",
     "niveau": 4,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "60 cr."
   },
   {
     "sigle": "INF4420A",
@@ -782,52 +807,56 @@
     "universite": "Poly",
     "titre": "Informatique mobile",
     "credits": 3,
-    "description": "",
+    "description": "Informatique mobile et réseaux sans fil. Disponibilité ou présence en tous lieux et en tout temps.   Gestion de mobilité et de localisation. Caractérisation d'applications mobiles. Architectures des réseaux à composantes mobiles : cadres théoriques et pratiques. Systèmes d'exploitation pour les dispositifs mobiles. Systèmes cellulaires et sans fil. Réseaux de prochaines générations. Nouvelles architectures de réseaux sans fil. Approches de déploiement d'applications dans les réseaux ad hoc et de capteurs. Infrastructures et protocoles supportant la mobilité. Qualité de service et routage pour applications mobiles. Développement de services évolués pour usagers mobiles. Internet des objets: architectures et applications.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF3405"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "INF3405 et 70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "INF8601",
     "universite": "Poly",
     "titre": "Systèmes informatiques parallèles",
     "credits": 3,
-    "description": "",
+    "description": "Taxonomie et organisation des systèmes informatiques parallèles. Architectures avancées de multiprocesseurs. Hiérarchie de mémoires, protocoles de cohérence des antémémoires. Parallélisme par fils d'exécution multiples. Conception d'applications parallèles en mémoire partagée. Coprocesseurs pour le calcul parallèle. Grappes de calcul et échange de messages entre les nuds. Techniques d'équilibrage de charge. Infonuagique. Conception d'applications parallèles en mémoire répartie.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF2610"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "INF2610 ou l���équivalent"
   },
   {
     "sigle": "INF8900",
     "universite": "Poly",
     "titre": "Lectures dirigées génie info. génie logiciel",
     "credits": 3,
-    "description": "",
+    "description": "Choix d'une problématique de recherche à explorer sous la supervision d'un professeur. Recherche documentaire. Lecture critique des articles retenus.  Rédaction d'un rapport synthèse.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits de premier cycle en génie informatique, génie logiciel ou l'équivalent Aucun Ce cours est réservé aux étudiants ayant une moyenne académique d'au moins 2,75 sur 4."
   },
   {
     "sigle": "INF8901",
     "universite": "Poly",
     "titre": "Projet perso. rech. génie info. et logiciel",
     "credits": 3,
-    "description": "",
+    "description": "Choix d'une problématique de recherche à explorer sous la supervision d'un professeur. Définition et mise en contexte du problème retenu. Élaboration d'une méthodologie appropriée pour son étude ou sa résolution. Réalisation et évaluation préliminaires. Rédaction d'un rapport synthèse.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "90 crédits de premier cycle en génie informatique, génie logiciel  ou l'équivalent Aucun Ce cours est réservé aux étudiants ayant une moyenne académique d'au moins 2,75 sur 4."
   },
   {
     "sigle": "LOG8415",
@@ -860,98 +889,106 @@
     "universite": "Poly",
     "titre": "Études de cas en dévelop. durable pour ing.",
     "credits": 3,
-    "description": "",
+    "description": "Synthèse et méthodologie d'application des principes du développement durable (DD) à partir d'études de cas ou de problèmes rencontrés pour la prise en compte des relations environnementales, économiques et sociales propres à un produit, procédé ou service pendant tout son cycle de vie. Aspect méthodologique de la préparation d'un rapport de durabilité. Revue des critères d'écoconception. Application de l'analyse du cycle de vie selon les normes ISO14040 et suivantes. Rôle de l'ingénieur dans les débats de société. Connaissance des milieux de mises en uvre des principes du DD. Exemples d'intégration des aspects à impacts durables dans les procédés de transformation et dans l'utilisation des produits et services. Exemples de l'influence de la source d'énergie utilisée pour développer une technologie, un produit ou un service sur leurs impacts de durabilité.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "DDI8001"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "60 crédits, DDI8001 ou l'équivalent"
   },
   {
     "sigle": "CIV8750",
     "universite": "Poly",
     "titre": "Planification durable des transports",
     "credits": 3,
-    "description": "",
+    "description": "Plans de transport, plans stratégiques (déplacement des personnes), plans de développement urbains, processus de prise de décision, mécanismes de consultation. Stratégies novatrices pour favoriser l'utilisation des modes durables de transport : études de cas et analyse. Prévision de la demande de transport : modèles classiques, nouvelles approches et résultats. Logiciels de planification. Externalités liées aux infrastructures de transport et à leur utilisation : santé publique, sécurité, pollution, utilisation de l'espace, étalement urbain et dépendance à l'automobile. Indicateurs de transport et de mobilité durable : bases de données et mécanismes d'évaluation. Approche alternative de déplacement : autopartage, vélo-partage, covoiturage, voies réservées, modes actifs, intermodalité, gestion des stationnements.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "CIV2710"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "CIV2710 et 60 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "DDI8004",
     "universite": "Poly",
     "titre": "Vulgarisation des enjeux environnementaux",
     "credits": 3,
-    "description": "",
+    "description": "Notions de vulgarisation scientifique appliquée aux enjeux environnementaux et dédiée à différents publics cibles. Place du discours scientifique sur l'environnement dans la société. Survol des enjeux climatiques : ressources fossiles, cycles du carbone, scénarios du Groupe d'experts intergouvernemental sur l'évolution du climat, énergies renouvelables. Principes généraux de vulgarisation : public, narration, fiction, effet de surprise. Contenu d'une présentation scientifique : amorce, structure inversée, comparaisons, jargon. Sens critique, biais de confirmation, désinformation. Écoanxiété, complotisme, techniques de mobilisation. Outils de vulgarisation : images, balados, vidéos. Art oratoire : termes, synonymes, facteur humain. Techniques de rétroaction et amélioration continue.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "60 crédits pour les étudiants du baccalauréat"
   },
   {
     "sigle": "ENE8210",
     "universite": "Poly",
     "titre": "Efficacité des sources d'énergie",
     "credits": 3,
-    "description": "",
+    "description": "Définition de l'énergie. Notions de base sur l'énergie. Les différentes sources primaires de l'énergie. Énergies fossiles: charbon, pétrole, gaz naturel. Énergie nucléaire. Énergies renouvelables : énergie hydraulique, énergie éolienne, énergie solaire, biomasse, énergie géothermale, énergie des déchets, fusion thermonucléaire. Notion de vecteur énergétique : électricité, chaleur, cogénération et trigénération, hydrogène, piles à combustible. Production, stockage, transport et utilisation de l'énergie. Rendement, coût et efficacité énergétique selon le type de sources. Relation entre source d'énergie et type de pollution. Gestion de l'énergie : avantages et inconvénients de la déréglementation de la distribution de l'électricité en Amérique du Nord. Énergie et recyclage des déchets. Économies d'énergie, perspectives d'avenir.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "60 crédits pour les étudiants au baccalauréat."
   },
   {
     "sigle": "MEC8252",
     "universite": "Poly",
     "titre": "Combustion et pollution atmosphérique",
     "credits": 3,
-    "description": "",
+    "description": "Les combustibles : description, classification, production et consommation.  Notions de combustion, point de rosée des fumées, rendement de combustion.  Équilibre chimique, température de flamme adiabatique, vitesse de réaction.  Dynamique des jets, description et calcul des flammes.  Description et calcul des brûleurs.  Fours industriels, description et calculs.  Classification et effets des polluants.   Étude des processus générant les polluants.  Effet de serre et changement climatique, impact des polluants atmosphériques sur la santé. Techniques de mesure et méthodes de réduction des polluants.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "60 cr. pour les étudiants du baccalauréat."
   },
   {
     "sigle": "MEC8256",
     "universite": "Poly",
     "titre": "Design et efficacité énergétique en méc.bât.",
     "credits": 3,
-    "description": "",
+    "description": "Différents systèmes de chauffage, de  climatisation et  de réfrigération.  Calcul de la consommation énergétique : méthode des degrés jours et des fourchettes de température, simulation horaire, tarification énergétique. Systèmes de chauffage : rappel sur les pompes, chaudières, corps de chauffe, serpentin, réservoir d'expansion, régulation, à la vapeur et  radiant. Systèmes de climatisation : rappel sur les ventilateurs, dimensionnement des gaines, filtres, serpentins, régulation, diffusion d'air dans une pièce. Systèmes de réfrigération : cycle à compression, pompes à chaleur, réfrigérants, systèmes à absorption, rejet thermique. Logiciels de simulations énergétiques.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MEC3200"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "MEC3200 , 60 cr. pour les étudiants du baccalauréat."
   },
   {
     "sigle": "PHS8603",
     "universite": "Poly",
     "titre": "Énergie et environnement",
     "credits": 3,
-    "description": "",
+    "description": "Conversion de l'énergie. Pollution de l'espace, de l'air, de l'eau, du sol et pollution souterraine due à la production et à la conversion de l'énergie. Détection et propagation de la pollution. Étude des impacts sur l'environnement et sur la santé pour les filières du charbon, du pétrole, de l'hydro-électrique et du nucléaire. Pollution et risques associés aux modes de production d'électricité géothermique, éolienne, solaire, par fusion et par biomasse.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "PHS1105"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "PHS1105 et 70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "SSH3402",
     "universite": "Poly",
     "titre": "Droit de l'environnement",
     "credits": 3,
-    "description": "",
+    "description": "Identifier les dimensions légales de problèmes environnementaux. Proposer des éléments de solutions juridiques.",
     "niveau": 3,
     "hors_perimetre": false,
     "prerequisite_courses": [],
@@ -977,241 +1014,266 @@
     "universite": "Poly",
     "titre": "Gestion de la R&D et l'innovation",
     "credits": 3,
-    "description": "",
+    "description": "Principes généraux de gestion de la recherche-développement (R&D) et de l'innovation technologique et industrielle. Caractéristiques de la technologie et de l'innovation. Modèles linéaires et modèles systémiques. Propriété intellectuelle, valorisation et mise en contexte. Veille : sources d'information, activités et méthodes. Conditions de succès et causes d'échec dans la gestion des projets d'innovation. Organisation de la R&D et de l'innovation : systèmes rigides et systèmes souples. Couplage R&D, marketing et production. R&D et innovation ouverte. R&D et innovation face aux défis environnementaux. Gestion et contrôle de projets de R&D et d'innovation. Échéanciers, budgets et techniques de gestion de projets. Créativité et rôle des individus.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "IND8711",
     "universite": "Poly",
     "titre": "Innovation technologique et industrielle",
     "credits": 3,
-    "description": "",
+    "description": "Cycle typique d'une innovation technologique et industrielle : entrepreneurship, créativité, valorisation de la recherche, stratégie d'entreprise, création et développement d'une entreprise basée sur une innovation, expansion en milieu international, propriété intellectuelle, ressources humaines, marketing, financement, choix entre la PME et la grande entreprise pour développer une innovation, intrapreneurship, succès par l'innovation. Études de cas exposées par des ingénieurs et gestionnaires d'entreprise.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants du baccalauréat"
   },
   {
     "sigle": "IND8108",
     "universite": "Poly",
     "titre": "Créativité en sciences et en génie",
     "credits": 3,
-    "description": "",
+    "description": "Concepts, théories, modèles et applications de la créativité. Caractéristiques de la créativité en sciences et en génie. Pratiques exemplaires de soutien à la créativité dans les entreprises. Facteurs organisationnels, sociaux et personnels favorisant la créativité. Analyse des comportements, modes de travail et attitudes de créateurs dans différents domaines. Analyses préalables à la création portant sur des tâches, problèmes, contextes et populations. Stratégies et méthodes de production d'idées individuelles et en groupe : remue-méninge, analogie/métaphore, transfert, pensée critique, résolution de problèmes, rencontres improbables, persona, carnet d'idées. Méthodes C-K (Concepts-Connaissances) et TRIZ. Outils d'aide à la structuration, au suivi et à la représentation des idées. Évaluation des idées créatives.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat. Ce cours est admissible pour les étudiants du bacccalauréat."
   },
   {
     "sigle": "IND8120",
     "universite": "Poly",
     "titre": "Commercialisat. nouveaux produits et services",
     "credits": 3,
-    "description": "",
+    "description": "Fondements et spécificités du marketing de la haute technologie. Enjeux des nouveaux produits et services : innovation incrémentale et innovation radicale. Gestion de la fonction marketing pour une entreprise technologique. Marketing relationnel : organisation et structuration de la chaîne de valeur - création et capture. Gestion clients, réseaux, partenariats, alliances. Relations recherche et développement (R-D) et marketing. Analyse des environnements interne et externe de la firme : marché, estimation de la demande, analyse de la concurrence, orientations stratégiques de la firme. Techniques de segmentation, ciblage et positionnement. Types de consommateurs. Stratégies de marketing mixte : modèles d'affaires et force de vente. Marketing social et Internet.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 cr. pour les étudiants au baccalauréat"
   },
   {
     "sigle": "IND8143",
     "universite": "Poly",
     "titre": "Montage projet d'entreprise technologique",
     "credits": 6,
-    "description": "",
+    "description": "Émergence de diverses idées de projets d'entreprise technologique. Validation du potentiel commercial et de la faisabilité technique. Développement et commercialisation de solutions innovantes. Analyse des besoins du marché et positionnement concurrentiel différenciateur. Choix d'une proposition de valeur et d'un modèle d'affaires. Intégration des aspects économiques, légaux, propriété intellectuelle, environnementaux et humains. Planification préliminaire des étapes du projet d'entreprise technologique : activités, délais et coûts. Besoins financiers : coûts de prototypage, démarrage et opérations, étude de faisabilité et des risques. Plan préliminaire avec jalons de développement technologique et commercial. Montage financier et  sources de financement, programmes et organismes d'aide, réseau de contacts et de partenaires d'affaires.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "IND8137A"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "IND8137A ou l'équivalent\n et 70 crédits  pour les étudiants au baccalauréat"
   },
   {
     "sigle": "IND8144",
     "universite": "Poly",
     "titre": "Financement de l'entreprise technologique",
     "credits": 3,
-    "description": "",
+    "description": "Stratégie d'approche dans le processus d'obtention d'un financement pour les entreprises technologiques : outils, intervenants et partenaires. Problématiques spécifiques du financement de démarrage et du financement de croissance. Valeur de la technologie. Propriété intellectuelle : protection, coûts, valeur du capital humain. Stratégie du montage financier : budgets, ratios, cautionnement personnel, études de marché. Évaluation et analyse des besoins de l'entreprise en fonction des programmes et sources de financement disponibles : sources publiques, sources privées, crédits d'impôt, entreprises de valorisation. Impact des différentes sources de financement et de l'aspect technologique du modèle d'affaires. Négociations avec les différents acteurs financiers.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "MTH8107",
     "universite": "Poly",
     "titre": "Mathématiques de l'apprentissage profond",
     "credits": 3,
-    "description": "",
+    "description": "Présentation des principales méthodes mathématiques à la base des algorithmes d'apprentissage profond. Rappels et notions importantes d'algèbre linéaire utilisées en science des données. Matrices de grande taille et algèbre linéaire numérique. Matrices de faible rang et acquisition comprimée. Matrices spéciales: transformées de Fourier discrètes; graphes. Rappels et notions importantes de probabilités et de statistique pour les problèmes d'apprentissage. Optimisation. Apprentissage à l'aide de données. Application des notions étudiées pour des problèmes d'apprentissage profond.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat Il est souhaitable que le cours MTH2210A et qu'un cours de la série MTH2302, ou l'équivalent, aient été suivis avec succès."
   },
   {
     "sigle": "MTH3141",
     "universite": "Poly",
     "titre": "Mathématiques de génie: un récit appliqué",
     "credits": 3,
-    "description": "",
+    "description": "Ensemble de récits historiques, biographiques et anecdotiques portant sur des résultats mathématiques fondamentaux. Impacts et applications en génie. Constructions avec règle et compas. Axiomatisation de la géométrie. Calcul de la constante Pi. Découvertes des nombres complexes, logarithmes, et racines de polynômes. Calcul différentiel et intégral, corps en mouvement. Probabilités. Nombres premiers. Contributions des principaux mathématiciens.",
     "niveau": 3,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MTH1102",
+      "MTH1102D",
+      "MTH1102H",
+      "MTH1106",
+      "MTH1110",
+      "MTH1115",
+      "MTH1115D",
+      "MTH2302A",
+      "MTH2302B",
+      "MTH2302C",
+      "MTH2302D",
+      "MTH2303",
+      "MTH2304"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "MTH1102 ou MTH1102D ou MTH1102H ou MTH1106 , MTH1110 ou MTH1115 ou MTH1115D , MTH2302A ou MTH2302B ou MTH2302C ou MTH2302D ou MTH2303 ou MTH2304"
   },
   {
     "sigle": "MTH8211",
     "universite": "Poly",
     "titre": "Algèbre linéaire numérique appliquée",
     "credits": 3,
-    "description": "",
+    "description": "Méthodes directes et itératives pour la résolution de systèmes d'équations algébriques linéaires, de problèmes aux moindres carrés linéaires et de problèmes de moindre norme de grande taille. Approximation de valeurs propres et singulières. Matrices creuses. Préconditionnement. Introduction au calcul \"multithread\", distribué (MPI) et GPU (CUDA) pour l'algèbre linéaire avec un langage tel que Julia. Problème de contextualisation (discrétisation d'équations aux dérivées partielles à l'aide de la méthode des éléments finis sur maillage non structuré ou solution d'un problème d'optimisation non linéaire de grande taille). Projet de programmation en Julia guidé à travers les séances de laboratoire.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MTH1007"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "Voir note et 70 crédits pour les étudiants au baccalauréat Il est important que MTH1007 et un cours de la série MTH2210 (ou GCH2545 ou équivalents) aient été suivis avec succès."
   },
   {
     "sigle": "MTH3400",
     "universite": "Poly",
     "titre": "Analyse mathématique pour ingénieurs",
     "credits": 3,
-    "description": "",
+    "description": "Espaces topologiques. Suites et séries dans les espaces métriques généraux. Intégrale de Lebesgue dans Rn. Espaces Lp. Espaces de Banach et de Hilbert. Calcul différentiel des fonctions de plusieurs variables. Séries de Taylor à plusieurs variables. Théorème des fonctions inverses et implicites. Formes différentielles et intégration. Fonctions analytiques d'une variable complexe. Séries de Laurent. Intégration des fonctions d'une variable complexe et calcul des résidus. Structures algébriques abstraites et exemples : groupes, anneaux, algèbres et corps.\n\nCe cours vise principalement les étudiants souhaitant compléter leurs études dans une Grande École française ou intéressés d'approfondir leurs connaissances en analyse mathématique, et se distingue par une approche abstraite des concepts abordés et l'emphase sur la rigueur et la notion de preuve mathématique.",
     "niveau": 3,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MTH1007",
+      "MTH1101"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "MTH1007 , MTH1101"
   },
   {
     "sigle": "MTH8207",
     "universite": "Poly",
     "titre": "Mathématiques des éléments finis",
     "credits": 3,
-    "description": "",
+    "description": "Espaces fonctionnels. Distributions. Formulations variationnelles. Théorème de Lax-Milgram. Méthode de Ritz. Éléments finis unidimensionnels. Éléments finis bidimensionnels et multidimensionnels. Analyse de convergence. Problèmes non linéaires. Problèmes transitoires. Systèmes d'équations aux dérivées partielles. Méthodes stabilisées. Projet de programmation d'un résolveur éléments-finis.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "MTH8515",
     "universite": "Poly",
     "titre": "Analyse mathématique avancée pour ingénieurs",
     "credits": 3,
-    "description": "",
+    "description": "Calcul des variations : équations d'Euler, problèmes avec contraintes, hamiltonien, variation générale d'une fonctionnelle, conditions de transversalité, extrémales brisées. Analyse fonctionnelle : espaces linéaires normés, espaces de Banach, espaces de Sobolev, espaces de Hilbert, projections, meilleure approximation, séries de Fourier généralisées, bases de Karhunen-Loève. Formulation variationnelle de problèmes aux limites, solution faible. Théorème de Riesz. Théorème de Lax-Milgram.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "MTH8301",
     "universite": "Poly",
     "titre": "Planification et analyse stat. d'expériences",
     "credits": 3,
-    "description": "",
+    "description": "Étude et optimisation des processus, principes de base en expérimentation, terminologie, expériences comparatives, principales méthodes d'assignation des traitements, analyse de la variance d'expériences avec un seul facteur, analyse diagnostique des résidus, expériences avec plusieurs facteurs, conception de plans fractionnaires, niveau de résolution d'un plan, autres types de plans, analyse de la variance de plans complets et des plans fractionnaires, calcul des effets, tests d'hypothèses, modèles de prédiction, méthodes graphiques de présentation des résultats, conception et analyse de plans en blocs, analyse de covariance, méthodologie des surfaces de réponse, fonctions de désirabilité, conception robuste de Taguchi, plans optimaux, plans avec contraintes, plans pour les mélanges, expériences en unités divisées, plans en mesures répétées, plans avec facteurs aléatoires, plans sur ordinateur pour les codes numériques et la simulation.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MTH2302B"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "MTH2302B et 70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "MTH8302",
     "universite": "Poly",
     "titre": "Analyse de régression et analyse de variance",
     "credits": 3,
-    "description": "",
+    "description": "Classification des modèles statistiques, modèle de régression avec un prédicteur, analyse de la variance, tests d'hypothèses, prédictions, analyse diagnostique des résidus, mesures correctives, transformations, modèles de régression multiple, estimation des paramètres, analyse de la variance, tests d'hypothèses, prédictions, problème de multicolinéarité, méthodes de sélection de prédicteurs pour la construction de modèles, identification d'observations influentes, modèles avec prédicteurs catégoriques, modèle de régression logistique, modèles non linéaires, régression PLS, modèle d'analyse de la variance avec un facteur, analyse des moyennes, modèles d'analyse de la variance avec deux facteurs croisés, facteurs emboîtés, facteurs blocs, analyse de covariance, modèles d'analyse de variance avec trois facteurs et plus, modèles avec plusieurs variables de réponse, analyse de variance multidimensionnelle, modèle à mesures répétées, introduction à la fouille de données.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "MTH8303",
     "universite": "Poly",
     "titre": "Processus stochastiques",
     "credits": 3,
-    "description": "",
+    "description": "Rappels de probabilités. Propriétés des processus stochastiques. Processus gaussiens. Chaînes de Markov à temps discret et à temps continu. Processus de naissance et de mort. Mouvement brownien. Processus de diffusion. Processus de Poisson. Processus de Poisson non homogènes et autres généralisations. Processus de renouvellement. Files d'attente avec un seul et avec plusieurs serveurs.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauraét"
   },
   {
     "sigle": "MTH8408",
     "universite": "Poly",
     "titre": "Méthodes d'optimisation et contrôle optimal",
     "credits": 3,
-    "description": "",
+    "description": "Optimisation de fonctions avec et sans contraintes. Conditions d'optimalité et algorithmes numériques. Modélisation de problèmes concrets rencontrés en génie et résolution numérique. Méthodes à mémoire limitée. Introduction au contrôle et au calcul des variations. Résolution de problèmes de contrôle en utilisant les techniques d'optimisation. Commande de systèmes dynamiques, méthodes numériques de contrôle, exemples concrets et actuels.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "MTH8414",
     "universite": "Poly",
     "titre": "Outils de recherche opérationnelle en génie",
     "credits": 3,
-    "description": "",
+    "description": "Résolution de problèmes en ingénierie à l'aide des techniques de la recherche opérationnelle : programmation linéaire et non linéaire, programmation linéaire en nombres entiers, flots dans les réseaux, méthodes heuristiques et métaheuristiques, génération de colonnes, programmation par contraintes. Langages de modélisation. Logiciels d'optimisation mathématique. Applications en ingénierie et logistique.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat Ce cours est également disponible en anglais ( MTH8414E )."
   },
   {
     "sigle": "MTH8415",
     "universite": "Poly",
     "titre": "Fondements de recherche opérationnelle",
     "credits": 3,
-    "description": "",
+    "description": "Présentation des résultats fondamentaux, des principaux modèles et des techniques de résolution en recherche opérationnelle, avec applications aux sciences de l'ingénieur. Programmation linéaire et application aux jeux matriciels; optimisation non linéaire sous contraintes et application en ingénierie;  programmation en nombres entiers et application au problème de sac-à-dos; cheminements optimaux dans les graphes et applications à l'ordonnancement et à la gestion de stock; flots dans les réseaux et problèmes de transport.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MTH1007"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "Préalables 70 crédits MTH1007 ou équivalent Les étudiants ayant suivi MTH2402 ou MIN3510 ne peuvent pas s'inscrire à ce cours."
   },
   {
     "sigle": "MTH8418",
     "universite": "Poly",
     "titre": "Optimisation sans dérivées",
     "credits": 3,
-    "description": "",
+    "description": "Algorithmes et techniques d'optimisation sans dérivées pour les problèmes de type boîte noire : preuves de convergence, calcul non-lisse de Clarke, concepts géométriques, heuristiques, régions de confiance, fonctions substitut. Traitement des contraintes, optimisation multiobjectif, optimisation globale, optimisation robuste, variables entières et de catégorie. Applications en génie : alliages, modèles hydrologiques, optimisation multidisciplinaire.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
@@ -1224,78 +1286,85 @@
     "universite": "Poly",
     "titre": "Ordonnancement de la production",
     "credits": 3,
-    "description": "",
+    "description": "Problèmes de planification de la production et modèles de programmation linéaire. Description des problèmes d'ordonnancement de la production en ateliers classiques. Classification des problèmes : à une machine, machines parallèles, ateliers à cheminement unique et à cheminement multiple. Cas particuliers pouvant se résoudre par des algorithmes optimaux simples. Méthodes générales pour résoudre les cas plus complexes de façon optimale : programmation mathématique, séparation et évaluation progressive, énumération implicite. Méthodes approximatives : méta-heuristiques, programmation par contraintes, affectations selon des règles de décision. Problème de gestion de projets avec ou sans contraintes de ressources. Applications industrielles.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "IND8200",
     "universite": "Poly",
     "titre": "Organisation industrielle",
     "credits": 3,
-    "description": "",
+    "description": "Introduction à différents aspects de l'organisation industrielle : conception d'usine, aménagement d'usine, étude du travail, équilibrage des chaînes de production, planification de la fabrication, gestion des stocks, « juste-à-temps » et normes de qualité ISO 9000. Le cours met l'accent sur la compréhension pratique et stratégique des concepts organisationnels.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
-    "concomitant_courses": [],
+    "concomitant_courses": [
+      "MTH2302",
+      "MTH2303"
+    ],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat MTH2302 (B,C ou D) ou MTH2303 Ce cours n'est pas accessible aux étudiants suivant ou ayant suivi une formation de 1er cycle en génie industriel."
   },
   {
     "sigle": "IND8774",
     "universite": "Poly",
     "titre": "Théorie de la décision",
     "credits": 3,
-    "description": "",
+    "description": "Prise de décision industrielle.  Caractéristiques, rôle et pratique de l'aide à la décision industrielle.  Processus de décision.  Erreurs-types dans la prise de décision.  Collecte et validation des données nécessaires à la prise de décision.  Évaluations actuarielles de projets industriels.  Évaluations et choix multicritères, méthodes AHP, Électre.  Décision dans un contexte de recrutement de personnel.  Décision et problème de localisation d'une usine.  Décision en environnement incertain.  Méthodes quantitatives d'analyse de risque.  Collecte et valorisation de l'information.  Décision en présence de plusieurs acteurs/décideurs.  Introduction à la théorie des jeux.  Équilibre de Nash.  Jeux répétés.  Décision et stratégie d'externalisation.  Décision et négociation avec les fournisseurs.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "IND3702",
+      "SSH3201",
+      "GCH2401"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "IND3702 ou SSH3201 ou GCH2401 + 70 crédits Ce cours est admissible pour les étudiants du baccalauréat.\n\nPour l'année 2015-2016, les étudiants ayant choisi le présent cours ne pourront pas suivre le cours IND6114 ."
   },
   {
     "sigle": "IND8501",
     "universite": "Poly",
     "titre": "Droit du travail pour ingénieur",
     "credits": 3,
-    "description": "",
+    "description": "Notions générales de droit. Contrat de travail et contrat d'entreprise. Charte des droits et libertés de la personne. Loi sur la santé et la sécurité du travail. Droits et obligations des travailleurs et employeurs. Loi sur les accidents du travail et les maladies professionnelles. Loi sur les normes du travail. Code du travail. Système professionnel québécois. Responsabilité professionnelle. Loi sur les ingénieurs. Code de déontologie des ingénieurs. Éthique.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "IND8107",
     "universite": "Poly",
     "titre": "Gestion des changements technol. et organis.",
     "credits": 3,
-    "description": "",
+    "description": "Définition et enjeux de la gestion des changements technologiques et organisationnels en entreprise. Positionnement du projet de changement. Identification et catégorisation des acteurs. Mise sur pied d'une structure de gestion du changement. Analyse de la situation actuelle et définition de la situation future. Anticipation des impacts du changement et de la résistance au changement. Légitimation du projet de changement. Choix d'une stratégie de conception et d'une stratégie de réalisation du changement. Modulation des impacts anticipés. Recours à des mesures d'accompagnement. Synchronisation et révision des stratégies. Résorption de la résistance au changement. Évaluation du succès du changement. Études de cas de gestion de changements technologiques ou organisationnels.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 cr. pour les étudiants au baccalauréat Ce cours n'est pas accessible aux étudiants suivant ou ayant suivi une formation de 1er cycle en génie industriel."
   },
   {
     "sigle": "IND8119",
     "universite": "Poly",
     "titre": "Gestion d'équipes dans un environnement tech.",
     "credits": 3,
-    "description": "",
+    "description": "Évolution de l'environnement technologique. Modes d'organisation et de gestion. Gestion et leadership. Profil et personnalité du gestionnaire. Modes d'organisation du travail en équipe : équipes internationales, multidisciplinaires, interinstitutionnelles. Formation d'équipes dans un environnement technologique. Partage des tâches. Création d'un esprit d'équipe. Développement d'un climat de confiance. Habiletés de communication. Animation et conduite de réunion. Gestion de la créativité intellectuelle. Gestion du stress. Négociations et résolution de conflits. Recrutement, évaluation et motivation du personnel. Gestion des intérêts et de la carrière. Réseautage et mentorat.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 cr. pour les étudiants au baccalauréat Ce cours n'est pas accessible aux étudiants suivant ou ayant suivi une formation de 1er cycle en génie industriel."
   },
   {
     "sigle": "IND8115",
@@ -1315,267 +1384,283 @@
     "universite": "Poly",
     "titre": "Mondialisation et firmes internationales",
     "credits": 3,
-    "description": "",
+    "description": "Mondialisation et commerce international. Stratégies d'internationalisation des entreprises. Concepts de l'économie financière internationale. Système monétaire international. Taux de change. Institutions du développement (Fonds monétaire international, Banque mondiale). Mondialisation versus régionalisation (ALENA, APEC, UE). Organisation mondiale du commerce. Accords commerciaux. Politiques de concurrence. Stratégies d'investissement à l'étranger. Fonctionnement des multinationales (logique d'impartition et d'échanges intra firmes, gestion des ressources). Pratiques liées au commerce international. Import-export. Gestion et logistique internationale. Risques liés au commerce international.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "IND8121",
     "universite": "Poly",
     "titre": "Ingénieur en coop./dévelop. international",
     "credits": 3,
-    "description": "",
+    "description": "Introduction à la coopération internationale et aux principaux acteurs et enjeux du développement international au sein du système international contemporain. Effets de la mondialisation sur les nouveaux acteurs des organisations internationales. Rôle de l'ingénieur face aux grands enjeux du développement international et approche transdisciplinaire des projets de coopération en ingénierie. Stratégies d'analyses de situations de gestion de travail en ingénierie dans des contextes organisationnels, sociaux, culturels, économiques et politiques différents. Influences de la culture et de la communication dans la permanence du changement de projets de coopération pour le développement. Aspects environnementaux et sociaux des projets de coopération internationale : évaluation environnementale, solutions fondées sur la nature, approche de développement axée sur les droits, approche féministe, objectifs de développement durable. Conditions de réussite de la planification et de la mise en oeuvre d'un projet en coopération internationale.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "60 crédits"
   },
   {
     "sigle": "IND8138A",
     "universite": "Poly",
     "titre": "Gestion de projets internationaux",
     "credits": 3,
-    "description": "",
+    "description": "Contexte, enjeux et défis associés aux projets internationaux. Environnement économique, politique et social des projets internationaux. Types de projets internationaux. Cas particulier des projets réalisés dans les pays en développement. Principaux acteurs et types d'ententes liées au développement international. Élaboration et faisabilité. Planification et déroulement des projets de développement. Processus de gestion et de coordination des acteurs. Rédaction d'un plan de mise en oeuvre. Évaluation de projets internationaux.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 cr. pour les étudiants au baccalauréat"
   },
   {
     "sigle": "IND8116",
     "universite": "Poly",
     "titre": "Mission industrielle: Poly-Monde",
     "credits": 3,
-    "description": "",
+    "description": "Préparation de la mission industrielle : géographie, histoire, culture et système des valeurs, système politique, système économique, système industriel, système d'éducation et système scientifique du pays à étudier. \nPlanification et organisation de la mission Poly-Monde.  Financement et logistique. Visites industrielles dans le pays ciblé. Rédaction d'un rapport de mission.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "IND8115"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "IND8115 et 60 crédits pour les étudiants au baccalauréat. Ce cours fait l'objet d'un contingentement."
   },
   {
     "sigle": "INF8111",
     "universite": "Poly",
     "titre": "Fouille de données",
     "credits": 3,
-    "description": "",
+    "description": "Fouille de données: concepts et contextualisation. Préparation, réduction et transformation de données. Tâches principales de la fouille de données et ses algorithmes. Détection de données aberrantes. Fouille de données sur des graphes et le web. Analyse de réseaux sociaux. Fouille de mégadonnées (Big Data): concepts, champs d'application, outils et paradigmes de programmation. Fouille de flots de données.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "ENE8220",
     "universite": "Poly",
     "titre": "Transport et utilisation de l'énergie",
     "credits": 3,
-    "description": "",
+    "description": "Consommation énergétique dans différents secteurs. Profils de consommation résidentielle et commerciale; besoins énergétiques des bâtiments. Profils de consommation des procédés industriels (moyennes et grandes industries). Profil de consommation du transport des biens et des personnes. Transport des matières énergétiques. Transport de l'énergie sous forme de chaleur: réseaux de chaleur. Électricité comme vecteur de transport d'énergie. Transport de l'énergie électrique: principe de fonctionnement d'un réseau de transport, notions d'écoulement de puissance, limites de transit et notions de stabilité. Réseaux de distribution électrique: rôle, architecture et limites d'opération. Infrastructures associées aux réseaux électriques. Défis contemporains du transport et de la distribution de l'énergie électrique: intégration des sources d'énergie renouvelables, gestion de la charge et des prix du marché. Aspects économiques.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "ENE8230",
     "universite": "Poly",
     "titre": "Modélisa. techno-écono. des syst. énergéti.",
     "credits": 3,
-    "description": "",
+    "description": "Formes d'énergie et grands consommateurs, concepts économiques fondamentaux, séries chronologiques et concepts de prévision, concepts de base en modélisation et optimisation mathématique. Approche techno-économique, aspects chronologique et géographique, dimensions politique et techno-économique, linéarité, équilibre de marché, compétition parfaite, apprentissage technologique endogène versus exogène, modèles multirégions, problématiques mono-objectif et multiobjectif, modélisation des systèmes électriques, aspects particuliers pour bâtiments, transports et industries à forte consommation énergétique. Outillage pour l'utilisation d'un modèle techno-économique. Analyse et interprétation des résultats, analyse de sensibilité et interprétation des solutions duales, courbes Pareto pour modèle multiobjectif. Simulation avec scénarios.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "MEC8258",
     "universite": "Poly",
     "titre": "Conversion d'énergie",
     "credits": 3,
-    "description": "",
+    "description": "Relation énergie, économie et changement climatique ; mécanismes et conséquences du changement climatique ; Contextualisation au développement durable et à l'analyse de cycle de vie des systèmes énergétiques ; rendement, coût environnemental et mécanisme des différentes techniques de conversion d'énergie : énergie fossile, biomasse, nucléaire, solaire, éolienne, géothermie, éolien, hydraulique, thermopile, stockage d'énergie.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MEC3200"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "MEC3200 et 60 cr. pour les étudiants du baccalauréat."
   },
   {
     "sigle": "DDI8003",
     "universite": "Poly",
     "titre": "Analyse du cycle de vie",
     "credits": 3,
-    "description": "",
+    "description": "Étude détaillée de l'analyse du cycle de vie (ACV). Normalisation ISO 14040 et 14044. Définition des objectifs et du champ de l'étude. Analyse de l'inventaire : aspects mathématiques, approches ascendante et descendante, approches attributionnelle et conséquentielle, multi-fonctionnalité. Évaluation des impacts du cycle de vie : chaînes de cause à effet, modèles et facteurs de caractérisation, méthodologies d'évaluation des impacts du cycle de vie. Impacts et indicateurs environnementaux.  Classification, caractérisation, normalisation et pondération. Interprétation des résultats : analyses de contribution, de sensibilité, d'incertitude, de scénario. Utilisation des bases de données et des logiciels d'ACV. Analyse critique d'une ACV publique. Réalisation d'un projet réel d'ACV dans le domaine de compétence de l'étudiant. Types d'études ACV : interne, rapport tierce partie, assertion comparative divulguée au public.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "GCH1220"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "GCH1220 ou équivalent, 60 crédits Le cours est donné en version bilingue anglais/français au semestre d'automne sous le sigle DDI8003E ."
   },
   {
     "sigle": "IND8110",
     "universite": "Poly",
     "titre": "Enjeux éco. du développement durable en génie",
     "credits": 3,
-    "description": "",
+    "description": "Notions fondamentales en économie de l'environnement et principaux enjeux traités du point de vue de l'ingénieur dans son milieu de travail : problèmes de biens publics, externalité et passager clandestin. Instruments réglementaires et économiques : normes, lois, taxes et permis. Valeur de l'environnement : valeur d'usage et de non-usage, méthodes d'évaluation contingente, méthode du prix hédonique. Innovation : politiques environnementales, hypothèse de Porter, compétition et incitatifs des firmes. Accords internationaux, commerce, hypothèse du paradis des pollueurs. Développement durable : équité intergénérationnelle, faisabilité et critère de durabilité, rapports sur le développement durable. Ressources naturelles renouvelables : modèles de pêcheries, droits de propriété, tragédie des biens communs. Ressources naturelles non renouvelables : industrie pétrolière et mines, modèles à temps discret et continu. Paradoxe vert, braconnage, conflits et coûts de transaction. Autres enjeux choisis en ingénierie tels que : énergies vertes, risque et irréversibilité.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "ENE8310",
     "universite": "Poly",
     "titre": "Stockage et intégration des syst. énergéti.",
     "credits": 3,
-    "description": "",
+    "description": "Thermodynamique et stockage de l'énergie. Efficacité du stockage et de la récupération de l'énergie. Différentes formes de stockage énergétique. Stockage chimique : biomasse,  méthane et hydrogène. Stockage électrochimique : accumulateurs, condensateurs et piles à combustible. Stockage sous forme potentielle : hydraulique et air comprimé. Stockage sous forme cinétique : volant d'inertie. Stockage thermique : chaleurs sensibles et latentes. Stockage magnétique. Capacité et rendement des différents types de stockage. Enjeux technologiques et économiques du stockage. Intégration des systèmes de stockage dans la production et la distribution de l'énergie. Éléments d'intégration des systèmes d'énergie renouvelable. Spécifications et choix des composants d'intégration. Capacité d'intégration et fiabilité du réseau. Études de cas  de systèmes isolés et de systèmes intégrés à un réseau existant.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "60 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "GCH8729",
     "universite": "Poly",
     "titre": "Déchets solides et énergie résiduelle",
     "credits": 3,
-    "description": "",
+    "description": "Gestion des matières résiduelles solides : déchets domestiques, déchets dangereux, rebus industriels. Enfouissement, incinération, gazéification : plasma, pyrolyse. Biométhanisation, recyclage et valorisation. Énergie gaspillée/résiduelle, énergie thermique et chimique, génération de vapeur d'eau, ressources chaudes et formation d'électricité à partir de ressources à basse température : cycle de Rankine organique, pompage thermique.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "GCH3100A"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "GCH3100A ou l'équivalent et 60 crédits pour les étudiants au baccalauréat."
   },
   {
     "sigle": "CIV8310",
     "universite": "Poly",
     "titre": "Aménagements et structures hydrauliques",
     "credits": 3,
-    "description": "",
+    "description": "Classification des structures hydrauliques : adduction d'eau, hydroélectricité, contrôle des inondations, navigation, drainage et assainissement. Acquisition de données topographiques, géologiques et géotechniques. Études hydrologiques. Conception et dimensionnement : prises d'eau, canaux et conduites, évacuateurs de crue, dissipateurs d'énergie, structures de restitution. Phénomènes transitoires et chambres d'équilibre. Modélisation et simulation numérique des conditions d'écoulement dans les passages hydrauliques. Impacts financiers, environnementaux et socio-économiques. Avant-projet d'un aménagement hydro-électrique : choix, localisation et dimensionnement des ouvrages.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "CIV3330",
+      "CIV4340"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "CIV3330 et CIV4340 ou l'équivalent, 60 crédits"
   },
   {
     "sigle": "ENE8610",
     "universite": "Poly",
     "titre": "Éléments d'aménagements hydroélectriques",
     "credits": 3,
-    "description": "",
+    "description": "Principales structures hydrauliques et principaux types d'aménagements hydroélectriques. Composantes principales et principes de fonctionnement d'un aménagement hydroélectrique. Multidisciplinarité des projets et planification des avant-projets d'aménagement. Généralités sur les géomatériaux pour la construction des structures hydrauliques; choix et disponibilité des géomatériaux. Essentiels d'hydrologie statistique appliquée aux cours d'eau. Essentiels d'hydrométrie et d'analyse des fréquences. Type de turbines et plage d'opération; types d'alternateurs et dynamique de l'arbre; notions de base en électromagnétisme.  Contrôle et transport de l'énergie électrique. Calculs des productibles, étude de rentabilité, marché de l'hydroélectricité.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "60 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "ELE8411",
     "universite": "Poly",
     "titre": "Étude des grands réseaux électriques",
     "credits": 3,
-    "description": "",
+    "description": "Introduction aux grands réseaux électriques. Les structures typiques, les sources de production, énergies renouvelables, transport et distribution. Les logiciels de simulation. Matrices de représentation des réseaux. Analyse nodale, équations d'état, analyse hybride. Régime permanent. Modélisation des lignes de transport, des transformateurs, des charges et des sources. Études de court-circuit à l'aide des circuits de séquence. Écoulement de puissance monophasé. Écoulement de puissance triphasé. Stabilité de tension. Introduction aux transitoires électromécaniques. Introduction aux transitoires électromagnétiques.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "ELE3400"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "ELE3400 et 60 crédits pour les étudiants au baccalauréat Les étudiants ayant suivit le cours ELE8452 (ou ELE4452 ) ne sont pas autorisés à suivre ce cours."
   },
   {
     "sigle": "ELE8453",
     "universite": "Poly",
     "titre": "Méth. opt. et apprentissage pour réseaux élec",
     "credits": 3,
-    "description": "",
+    "description": "Méthodes d'optimisation et d'apprentissage pour la gestion, l'opération et la planification des réseaux électriques modernes. Optimisation convexe: écoulement de puissance optimal et relaxations convexes. Optimisation en nombres entiers: planification de la production (unit commitment), reconfiguration du réseau et planification de l'expansion du réseau de transport. Optimisation stochastique et robuste: écoulement de la puissance et planification de la production en présence d'énergie renouvelable. Apprentissage supervisé. Régression linéaire: identification de la topologie du réseau et estimation de l'état du réseau. Classification: reconfiguration automatique du réseau. Réseaux neuronaux: identification des défauts des lignes et des fautes dans le réseau électrique. Apprentissage non supervisé. Méthode de groupement: identification des profils de consommation. Apprentissage par renforcement:   gestion de la demande avec charge thermostatique, opération d'unité de stockage.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "60 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "ELE8458",
     "universite": "Poly",
     "titre": "Électricité industrielle",
     "credits": 3,
-    "description": "",
+    "description": "Structure des réseaux électriques industriels. Niveau de tension. Installations électriques, codes et normes. Court-circuits, protection et coordination. Mise à la terre. Qualité de l'onde. Facteur de puissance, tarification et gestion de l'énergie électrique.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "ELE3201",
+      "ELE3400"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "ELE3201 , ELE3400 et 60 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "ENE8412",
     "universite": "Poly",
     "titre": "Gest. de la charge et de la prod. fluctuante",
     "credits": 3,
-    "description": "",
+    "description": "Processus stochastiques et génération d'évènements aléatoires à partir de distributions statistiques connues. Profils de puissance des charges électriques : chauffe-eau, climatisation, véhicules électriques, électroménagers. Agrégation des charges individuelles. Échelle d'intégration et bornes d'incertitudes. Distributions de charge : paramètres météo et dépendance temporelle. Profil de production des sources d'énergie renouvelables. Algorithmes de prévision de la charge agrégée et de la production fluctuante. Gestion de la charge en temps normal et suite à une interruption. Dynamique de reprise en charge. Objectif d'un programme de gestion de la charge: nivelage de la charge, absorption de production fluctuante. Contraintes reliées au réseau de distribution électrique. Modélisation conjointe et à haut niveau du réseau de télécommunications et du réseau de distribution. Fiabilité d'une stratégie de gestion de la charge en fonction des principales contraintes du système.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "60 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "ENE6301",
     "universite": "Poly",
     "titre": "Optimi. microréseaux électriques intelligents",
     "credits": 3,
-    "description": "",
+    "description": "Introduction aux concepts de réseaux électriques intelligents tels que les microréseaux électriques, le bâtiment intelligent, la centrale électrique virtuelle, le bâtiment à zéro énergie nette. Structure et composantes fondamentales des mini-réseaux : système de gestion d'énergie, production décentralisée, systèmes de stockage, infrastructure de mesure et communication, véhicules électriques, charges. Prédiction et modélisation de la production renouvelable  et consommation électrique. Stratégies de réponse à la demande.  Techniques d'optimisation et approches de gestion d'énergie dans les microréseaux : programmation linéaire, non-linéaire, commande prédictive, optimisation robuste. Concept d'un réseau de microréseaux intelligents : avantages, applications et topologies. Méthodes de contrôle optimal centralisées, distribuées et décentralisées. Optimisation appliquée à un réseau de microréseaux intelligents.",
     "niveau": 6,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "80 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "IND8202",
     "universite": "Poly",
     "titre": "Production durable",
     "credits": 3,
-    "description": "",
+    "description": "Trois volets du développement durable : environnemental, social, économique. Perspective du cycle de vie. Moteurs de changement en entreprise. Cadre normatif ISO 14000 et principales initiatives volontaires. Gestion du cycle de vie. Système de gestion environnementale. Performance environnementale dans l'ensemble de la chaîne de valeurs d'une entreprise. Empreintes carbone et eau. Analyse sociale du cycle de vie. Analyse des coûts du cycle de vie et éco-efficacité. Écologie et symbiose industrielle. Écoconception des systèmes durables. Eco-innovation. Approvisionnement responsable. Communication environnementale interne et externe. Labels et déclaration environnementale de produits. Leviers de création de valeur dans l'entreprise par le développement durable. Économie circulaire et de la fonctionnalité.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 cr. au baccalauréat"
   },
   {
     "sigle": "ENE6510",
     "universite": "Poly",
     "titre": "Modélisation énergétique des bâtiments",
     "credits": 3,
-    "description": "",
+    "description": "Rôle et impacts de la simulation dans la conception et l'opération des bâtiments. Modélisation des transferts de chaleur et de masse dans les bâtiments et avec l'extérieur. Modélisation des occupants : comportement, confort thermique, gains de chaleur internes. Modélisation des systèmes thermiques dans le bâtiment : chauffage, ventilation et conditionnement d'air et systèmes utilisant les énergies renouvelables. Stratégies de commande minimisant la consommation énergétique et les coûts d'opération. Équations de base et solveurs, types de logiciels de simulation pour les bâtiments résidentiels et commerciaux. Processus de validation des logiciels. Sources de données, stratégies de modélisation, zonage thermique des bâtiments. Analyse et interprétation des résultats, assurance de la qualité, analyse des incertitudes. Utilisation de la simulation pour la conception, l'optimisation et pour améliorer les politiques et les codes du bâtiment.",
     "niveau": 6,
     "hors_perimetre": false,
     "prerequisite_courses": [],
@@ -1588,20 +1673,20 @@
     "universite": "Poly",
     "titre": "Turbines hydrauliques",
     "credits": 3,
-    "description": "",
+    "description": "Caractérisation des équipements mécaniques nécessaires à l'exploitation d'un site de production hydroélectrique. Processus de choix et de conception des équipements mécaniques, de la phase de dimensionnement de l'aménagement à la phase d'exploitation. Méthodes de caractérisation du site, d'évaluation de la puissance disponible et de choix des équipements.  Enjeux de conception hydraulique et mécanique des composantes de turbine. Méthodes de simulation numérique en dynamique des fluides et pour les analyses de contraintes mécaniques. Évaluation des performances sur modèles réduits. Méthodes de mise à l'échelle vers les prototypes et normes. Conditions d'exploitation et aspects environnementaux.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "MEC6214",
     "universite": "Poly",
     "titre": "Énergie solaire et applications",
     "credits": 3,
-    "description": "",
+    "description": "Rayonnement solaire. Éléments de physique céleste. Durée d'insolation, propagation du rayonnement dans l'atmosphère, énergie reçue par une surface inclinée. Données et estimation de rayonnement solaire. Principe de transfert thermique. Types de collecteurs solaires et leur analyse thermique. Performance des collecteurs solaires. Systèmes de stockage d'énergie. Analyse économique, aspects environnementaux et sociaux. Chauffage et ventilation des bâtiments. Climatisation et réfrigération solaire. Conception et calcul des systèmes d'énergie solaire. Simulation des systèmes d'énergie solaire. Production de l'énergie mécanique, électrique et combustible solaire. Applications.",
     "niveau": 6,
     "hors_perimetre": false,
     "prerequisite_courses": [],
@@ -1614,7 +1699,7 @@
     "universite": "Poly",
     "titre": "Géothermie et applications",
     "credits": 3,
-    "description": "",
+    "description": "Ressources géothermiques à haute et basse température. Température du sol, gradient géothermique, propriétés du sol. Notions d'hydrogéologie. Survol des différents systèmes à basse température : circuits ouverts et fermés; systèmes verticaux et horizontaux. Couplage aux bâtiments et aux pompes à chaleur. Transfert de chaleur dans le sol : méthodes analytiques et numériques. Test de réponse thermique. Résistance thermique des puits. Conception, dimensionnement et simulation des systèmes verticaux. Applications : chauffage et climatisation des bâtiments, pieux énergétiques, gel du sol, « geocooling », stockage saisonnier par puits géothermiques.",
     "niveau": 6,
     "hors_perimetre": false,
     "prerequisite_courses": [],
@@ -1627,26 +1712,29 @@
     "universite": "Poly",
     "titre": "Technologies nucléaires",
     "credits": 3,
-    "description": "",
+    "description": "Vue d'ensemble des technologies nucléaires : réacteurs de recherche, applications en médecine, applications industrielles, réacteurs de puissance. Précis de physique moderne : équivalence masse-énergie, mécanique quantique et physique atomique. Physique nucléaire : radioactivité, réactions nucléaires, atténuation du rayonnement, interaction des photons, des neutrons et des particules chargées avec la matière. Détection du rayonnement. Effet du rayonnement sur l'organisme et applications médicales. Radio-isotopes et applications industrielles. Principes de fonctionnement des réacteurs de recherche et de puissance. Réacteurs CANDU, à eau pressurisée, à eau bouillante, à neutrons rapides et de 4e génération. Réacteurs de recherche, conversion directe de l'énergie et applications industrielles du rayonnement.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 cr. pour les étudiants au baccalauréat"
   },
   {
     "sigle": "PHS8604E",
     "universite": "Poly",
     "titre": "Direct Energy Conversion",
     "credits": 3,
-    "description": "",
+    "description": "Classification of energy conversion systems. Introduction to energy conversion limitations. Limitations imposed by our planet: sensitivity study. Thermodynamic limitations. Electromagnetic energy conversion. Magneto hydrodynamic (MHD) energy conversion: efficiency of Faraday and Hall MHD systems. Thermoelectric,photovoltaic and fuel cell systems. Comparative study of different energy conversion technologies. Analyses of advanced energy conversion cycles.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "PHS1102",
+      "PHS1105"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "PHS1102 , PHS1105 et\n70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "CIV8780",
@@ -1666,338 +1754,371 @@
     "universite": "Poly",
     "titre": "Tech. ferroviaires-Sécurité et signalisation",
     "credits": 3,
-    "description": "",
+    "description": "Signalisation ferroviaire. Sécurité des systèmes : gestion des risques (APD, niveaux d'intégrité, ALARP), fiabilité, disponibilité, maintenabilité (RAM), interlocking (Smartlock, iVPI). Technologies de signalisation : ETCS, PTC. Automatisation : GoA2 à GoA4, CBTC, ATP, ATO. Infrastructures ferroviaires : alimentation, ventilation, portes palières, détection (circuits de piste, compteurs d'essieux, GPS). Centres de contrôle : SCADA, supervision. Télécommunications : BCN, LTE. Transition technologique : rétrofit, intégration des lignes. Cybersécurité et résilience. Impacts de l'automatisation sur l'aménagement du territoire. Études de cas et visites techniques.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits"
   },
   {
     "sigle": "IND8780",
     "universite": "Poly",
     "titre": "Exploit. et maint. des systèmes ferroviaires",
     "credits": 3,
-    "description": "",
+    "description": "Description des principaux concepts opérationnels des lignes urbaines, suburbaines et principales. Modes d'exploitation des systèmes ferroviaires : Principes du règlement principal applicables aux chemins de fer urbains et suburbains. Concepts de maintenance corrective, préventive, prédictive des systèmes ferroviaires et viabilité. Prise en compte du concept de maintenabilité dans dans la conception des équipements et infrastructures ferroviaires. Stratégies de maintenance hivernale des infrastructures. Méthodes et outils de maintenance applicables. Procédures et formation du personnel de maintenance. Gestion des horaires.  Mesures d'urgence. Essais et mise en service. Études de cas.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits"
   },
   {
     "sigle": "MEC8780",
     "universite": "Poly",
     "titre": "Technologies ferroviaires - Matériel roulant",
     "credits": 3,
-    "description": "",
+    "description": "Dimensionnement des trains. Caractéristiques des types de trains (métro, tramway, de grandes lignes et de grandes vitesses). Systèmes de traction et collecte d'énergie. Systèmes de freinage. Confort global et éco-conception (Bruit, vibrations, climatisation, éclairage, effort d'éco-conception, ergonomie, feu, fumée et toxicité). Familles de bogies.  Innovation dans le domaine du matériel roulant. Fabrication du matériel roulant et chaîne d'approvisionnement. Interfaces avec les infrastructures (système de communication train-voie, train autonome, systèmes permettant l'évacuation d'urgence et intervention). Entretien du matériel roulant.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
-    "concomitant_courses": [],
+    "prerequisite_courses": [
+      "CIV8780"
+    ],
+    "concomitant_courses": [
+      "CIV8780"
+    ],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "60 crédits CIV8780 Le"
   },
   {
     "sigle": "ELE8781",
     "universite": "Poly",
     "titre": "Électrification des transports ferroviaires",
     "credits": 3,
-    "description": "",
+    "description": "Introduction à l'électrification ferroviaire, systèmes d'alimentation électrique ferroviaire, conception et dimensionnement des systèmes d'électrification, protection des systèmes d'électrification, installation et maintenance des systèmes d'électrification, systèmes de traction électrique, compatibilité électromagnétique et perturbations, perspectives et innovations.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "ELE3400"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "ELE3400 ou équivalent et 70 crédits réussis"
   },
   {
     "sigle": "INF2705",
     "universite": "Poly",
     "titre": "Infographie",
     "credits": 3,
-    "description": "",
+    "description": "Modèles géométriques. Évolution des langages graphiques. Transformations affines : translation, rotation, homothétie. Projections parallèles et perspective. Pipeline des transformations : modélisation, visualisation, projection, clôture. Pipeline graphique programmable : nuanceurs de sommets, de tessellation, de géométrie, de fragments. Tests et opérations sur les fragments. Réflexion de la lumière et modèles d'illumination. Modèles de couleurs, modèles d'affichage, matériel graphique. Sélection graphique. Panneaux et lutins. Modélisation 3D : splines, courbes de Bézier, B-splines, B-splines rationnelles.",
     "niveau": 2,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF2010",
+      "MTH1007",
+      "MTH1008"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "INF2010 , MTH1007 ou MTH1008"
   },
   {
     "sigle": "INF8725",
     "universite": "Poly",
     "titre": "Traitement de signaux et d'images",
     "credits": 3,
-    "description": "",
+    "description": "Analyse temporelle de signaux numériques : rapport signal / bruit, modélisation du bruit, convolution de signaux.  Analyse spectrale du signal : spectres continus et discrets, transformée de Fourier, théorème d'échantillonnage.  Filtres numériques : transformée en Z, filtres impulsionnels à réponse finie et infinie.  Filtrage d'images : dans le domaine spatial, dans le domaine fréquentiel. Restauration d'images : filtres de régularisation, filtres de déconvolution.  Segmentation d'images : détection de contours, détection de lignes par transformée de Hough, techniques de seuillage, segmentation de régions, segmentation par la transformée Watershed.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MTH1102"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "MTH1102 , 70 crédits"
   },
   {
     "sigle": "INF8770",
     "universite": "Poly",
     "titre": "Technologies multimédias",
     "credits": 3,
-    "description": "",
+    "description": "Techniques de codage des objets multimédia (extraits audio, images, séquences vidéo) : codage entropique et par dictionnaire. Techniques de compression des objets multimédia : techniques sans perte, techniques avec perte, utilisation des redondances temporelles. Artéfacts et qualité de la compression. Conteneurs multimédia et techniques de synchronisation multimédia. Tatouage numérique. Indexation des objets multimédia: décomposition en prises de vue, sélection d'images-clés, recherche par le contenu pictural/sonore.  Interactions dans les applications multimédia : suivi d'un présentateur, reconnaissance de gestes.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "60 crédits Aucun"
   },
   {
     "sigle": "INF8801A",
     "universite": "Poly",
     "titre": "Applications multimédias",
     "credits": 3,
-    "description": "",
+    "description": "Recherche par le contenu dans des bases multimédias : images 2D, images non réalistes, objets 3D. Taxonomie des critères de recherche, et modes de recherche (par l'exemple, par croquis). Mégadonnées visuelles : utilisation de grandes bases d'images dans différentes applications.  Applications multimédias basées sur le filtre bilatéral d'image (mappage de ton local, transfert de couleurs). Stylisation temporelle et spatiale de vidéos. Recadrage d'images et vidéos basés sur le contenu. Synthèse de textures et d'hybrides.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits"
   },
   {
     "sigle": "INF8808",
     "universite": "Poly",
     "titre": "Visualisation de données",
     "credits": 3,
-    "description": "",
+    "description": "Principes de design graphique. Types de données visuelles. Interaction et animation. Visualisation d'arbres et réseaux. Géovisualisation. Visualisation de données multimédias. Données multidimensionnelles. Couleur, perception et cognition dans la visualisation. Programmation avec une librairie.'",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits"
   },
   {
     "sigle": "LOG4715",
     "universite": "Poly",
     "titre": "Conception de jeux vidéo",
     "credits": 3,
-    "description": "",
+    "description": "Historique des jeux vidéo. Types de jeux vidéo. Rôles impliqués dans la création de jeux vidéo. Conception de jeux : apprentissage, plaisir, document de conception de jeu vidéo. Personnage, caméra et contrôle. Règles et mécaniques de jeu : jeux d'émergence et jeux de progression, économie interne, mécanismes de progression, structures de rétroaction, patrons de conception, incitatifs, monétisation. Conception de niveaux.  Interface utilisateur. Notions de jeux multijoueurs. Assurance qualité. Production et communauté.",
     "niveau": 4,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "LOG2990"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "LOG2990 Aucun"
   },
   {
     "sigle": "LOG8235",
     "universite": "Poly",
     "titre": "Agents intelligents pour jeux vidéo",
     "credits": 3,
-    "description": "",
+    "description": "Réalisme des personnages en intelligence artificielle. Conception de règles de jeu. Sensibilisation à l'utilisation de la physique dans un jeu pour mieux percevoir et agir sur son environnement:  intégration de bibliothèque de physique du jeu vidéo, lancer de rayon, cinématique inverse, voxelisation. Sensibilisation à l'animation : vallée dérangeante, animation faciale. Sensibilisation à la génération de contenu procédural: algorithmes génératifs pour la voix, les animations, les niveaux, les personnages, les situations rencontrées, ainsi que le contrôle dynamique et personnalisé de la difficulté du jeu. Navigation. Boucles de perception, de décision et d'action. Systèmes complexes et efficacité.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "LOG8704",
     "universite": "Poly",
     "titre": "Développement logiciel en réalité étendue",
     "credits": 3,
-    "description": "",
+    "description": "Tendances en réalité virtuelle, en réalité augmentée et en réalité mixte. Cycle de développement logiciel en réalité étendue. Techniques de conception en réalité étendue. Caméra et contrôle. Applications en réalité virtuelle. Applications en réalité augmentée. Usages de la réalité étendue.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits"
   },
   {
     "sigle": "LOG8715",
     "universite": "Poly",
     "titre": "Architecture de jeux vidéo",
     "credits": 3,
-    "description": "",
+    "description": "Composantes d'un moteur de jeu, modèle orienté objet, modèle entité-composante-système, patrons de conception orientés données, archétypes. Décomposition d'une itération de boucle de jeu. Jouabilité. Profilage et débogage. Performance et gestion de mémoire : stratégies, optimisations, modèles de parallélisme, patrons de synchronisation de données. Intégration continue des jeux vidéo. Programmation de jeux multijoueurs: topologies réseaux des jeux, réplication d'objets, gestion de la latence et fiabilité, architecture réseau et types de jeu, mise à l'échelle, sécurité des jeux, jeu à la demande, infrastructure serveur et infonuagique.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "LOG8975",
     "universite": "Poly",
     "titre": "Projet final en multimédia",
     "credits": 6,
-    "description": "",
+    "description": "Conception et réalisation en équipe d'un produit logiciel nécessitant l'application de notions et de méthodes acquises préalablement dans le programme de génie logiciel concentration multimédia.  Recours à une méthodologie de conception et de gestion nécessaire pour la réalisation d'applications multimédia. Attention particulière accordée au processus logiciel et à l'assurance qualité. Utilisation d'outils logiciels appropriés. Les sujets du projet, approuvés par le coordonnateur du cours, peuvent provenir de l'industrie, de sociétés techniques étudiantes de Polytechnique Montréal, ou des professeurs.  La personne ayant proposé le projet assume normalement le rôle de client par rapport à l'équipe d'étudiants.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "LOG3900"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "95 cr., LOG3900 Aucun"
   },
   {
     "sigle": "INF8102",
     "universite": "Poly",
     "titre": "Sécurité dans les environnements infonuagique",
     "credits": 3,
-    "description": "",
+    "description": "Concepts clés de l'infonuagique. Sûreté de fonctionnement et sécurité dans le nuage. Gestion des identités et des accès. Gestion sécurisée des configurations. Protection des données et automatisation. Mise en réseau et journalisation. Conformité, réponse aux incidents, et tests de pénétration. Sécurité dans les environnements infonuagiques mobiles.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants du baccalauréat."
   },
   {
     "sigle": "INF8103",
     "universite": "Poly",
     "titre": "Stratégie et modèles op. de la cybersécurité",
     "credits": 3,
-    "description": "",
+    "description": "Modèle organisationnel de la cybersécurité. Modèles décentralisé et centralisé. Rôle et responsabilité d'une équipe de cybersécurité. Gouvernance, conformité, risques, architecture. Équipes rouge, bleue et violette. Rôle de l'ensemble des employés dans la cybersécurité d'une entreprise. Alignement de la cyberstratégie d'une organisation et de ses objectifs d'affaires. Identification des actifs associés aux risques d'affaires. Stratégie de rehaussement de la posture de sécurité. Acteurs de la menace. Plan de recouvrement. Gestion des risques.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF4420A"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "60 crédits pour les étudiants inscrits au baccalauréat et INF4420A ou équivalent"
   },
   {
     "sigle": "INF8107",
     "universite": "Poly",
     "titre": "Détection d'intrusion et supervision",
     "credits": 3,
-    "description": "",
+    "description": "Stratégie et outils de détection d'intrusion. Évaluation de la posture de défense. Types de menaces. Modèle de la chaine de frappe. Cadres Mitre att&ck et Mitre d3fend. Analyse des alertes (faux positifs/faux négatifs). Identification des schémas d'attaques. Supervision de la sécurité. Structure et fonctionnement d'un centre d'opérations de sécurité.  Métriques et stratégies de réponse aux cyberincidents et gestion des priorités. Création et utilisation des livres de jeu et livres de course. Indicateurs de performance d'un centre d'opérations de sécurité. Déontologie d'un spécialiste cyberdéfense",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF4420A"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants inscrits au baccalauréat et INF4420A ou équivalent"
   },
   {
     "sigle": "INF8402",
     "universite": "Poly",
     "titre": "Sécurité des réseaux fixes et mobiles",
     "credits": 3,
-    "description": "",
+    "description": "Sécurité des réseaux informatiques fixes et mobiles. Normes de sécurité des réseaux. Sécurité des technologies et des protocoles utilisés dans les réseaux informatiques fixes : réseaux Ethernet, réseaux TCP/IP (Transport Control Protocol/Internet Protocol) et particularités des réseaux IP. Sécurité des technologies et des protocoles utilisés dans les réseaux informatiques mobiles incluant les réseaux ad hoc, les réseaux de capteurs et les réseaux téléphoniques mobiles. Sécurité du système IMS (Internet Multimedia Subsystem) et des réseaux pair-à-pair. Technologies de sécurité des réseaux : réseaux privés virtuels et les réseaux locaux virtuels.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF3405"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "INF3405 ou l'équivalent"
   },
   {
     "sigle": "INF8430",
     "universite": "Poly",
     "titre": "Investigation numérique en informatique",
     "credits": 3,
-    "description": "",
+    "description": "Application de techniques et de protocoles d'investigation numériques pour la collecte, l'identification, la description, la sécurisation, l'extraction, l'authentification, l'analyse, l'interprétation et l'explication des données numériques contenues dans des systèmes informatiques et dans des périphériques de stockage. Capture et analyse des données volatiles, notamment des séances actives de réseaux et des processus en cours. Collecte d'informations des navigateurs Web.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "INF2610",
+      "INF3405"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "INF2610 , INF3405 ou équivalents Aucun"
   },
   {
     "sigle": "INF8602",
     "universite": "Poly",
     "titre": "Sécurité des systèmes d'exploitation",
     "credits": 3,
-    "description": "",
+    "description": "Sécurité des systèmes d'exploitation: concepts et mise en contexte. Méthodes d'analyse et d'évaluation de la sécurité d'un système d'exploitation. Contrôle d'accès discrétionnaire et obligatoire. Intégrité de flux de contrôle: attaques et contremesures. Systèmes d'exploitation sécuritaires: Multics et noyaux de sécurité. Sécurité des systèmes d'usage général: Windows, Unix, iOS, Android. Stratégies d'isolation de processus et données: conteneurs logiciels, machines virtuelles, isolation en bac à sable.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "LOG8100",
     "universite": "Poly",
     "titre": "DevSecOps - Opérations et dév. logiciel sécur",
     "credits": 3,
-    "description": "",
+    "description": "Introduction à la sécurité logicielle. Analyse des vulnérabilités, testing de sécurité, stratégies de mitigation. Sécurité multi-niveau des systèmes numériques. Sécuriser la périphérie, sécuriser le logiciel, sécuriser les données (encryption), contrôle d'accès et authentification. Développement de logiciel sécuritaire. Exigences de sécurité, conformité à l'ENS, sécurité par conception, patrons et antipatrons pour la sécurité logicielle (codage sécuritaire). Introduction aux DevOps, intégration et déploiement continus, containeurs et microservices. Introduction aux DevSecOps, monitorage et mitigation des menaces dynamiques, automatisation des réponses aux menaces. Systèmes auto-adaptatifs et auto-protecteurs. Analyse des risques des vulnérabilités et des menaces sécuritaires.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "80 crédits pour les étudiants inscrits au baccalauréat"
   },
   {
     "sigle": "LOG8415E",
     "universite": "Poly",
     "titre": "Advanced Concepts of Cloud Computing",
     "credits": 3,
-    "description": "",
+    "description": "Key concepts of cloud computing. Key mechanisms and key architectures of cloud computing platforms. Service delivery models of a cloud computing architecture. Virtualization. Big data analytics with MapReduce and NoSQL.  Migration of applications to the cloud. Cloud computing patterns. Interoperability issues in the cloud. Quality of Service metrics and Service Level Agreement (SLA). Dependability and security in the cloud. Legal issues related to cloud computing. Mobile cloud computing.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "LOG8980",
     "universite": "Poly",
     "titre": "Projet final en sécurité et mobilité",
     "credits": 6,
-    "description": "",
+    "description": "Conception et réalisation en équipe d'applications mobiles en considérant les aspects de sécurité  informatique. Utilisation des notions et des méthodes acquises dans la concentration en sécurité et mobilité. Recours à une méthodologie de conception et de gestion nécessaire pour la réalisation d'applications mobiles sécuritaires. Attention particulière accordée au processus logiciel et à l'assurance qualité. Utilisation d'outils logiciels appropriés. Les sujets du projet, approuvés par le coordonnateur du cours, peuvent provenir de l'industrie, de sociétés techniques étudiantes de Polytechnique Montréal, ou des professeurs. La personne ayant proposé le projet assume normalement le rôle de client par rapport à l'équipe d'étudiants.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "LOG3900"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "95 cr., LOG3900 Aucun"
   },
   {
     "sigle": "LOG8985",
     "universite": "Poly",
     "titre": "Projet final en intelligence artificielle",
     "credits": 6,
-    "description": "",
+    "description": "Conception et réalisation en équipe d'un produit logiciel nécessitant l'application de notions et méthodes acquises dans la concentration en intelligence artificielle et science des données. Attention particulière accordée au processus logiciel, à l'assurance qualité et à la gestion de projet. Utilisation d'outils logiciels appropriés. Les sujets du projet, approuvés par le coordonnateur du cours, peuvent provenir de l'industrie, de sociétés techniques étudiantes de Polytechnique Montréal, ou des professeurs. La personne ayant proposé le projet assume normalement le rôle de client par rapport à l'équipe d'étudiants.",
     "niveau": 8,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "LOG3900"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "95 cr., LOG3900"
   },
   {
     "sigle": "MTH3302",
     "universite": "Poly",
     "titre": "Méth. prob. et statist. pour l'intel. artif.",
     "credits": 3,
-    "description": "",
+    "description": "Régression linéaire : simple et multiple, estimation et prédiction, inférence, régression polynomiale, multicolinéarité, méthodes itératives de construction de modèles, qualité du modèle. Modèles linéaires généralisés : généralisation de la régression linéaire, fonctions de lien, régression logistique, régression de Poisson, régression multinomiale. Analyse en composantes principales : définitions et calculs, interprétation géométrique et statistique, régression sur les composantes principales. Statistique bayésienne : loi a priori, loi a posteriori, inférence bayésienne, régression bayésienne, régression pénalisée, méthodes Monte-Carlo par chaine de Markov, variable latente, classification. Théorie de l'information : définitions de base, notions d'entropie, information mutuelle et propre; arbres probabilisés.",
     "niveau": 3,
     "hors_perimetre": false,
-    "prerequisite_courses": [],
+    "prerequisite_courses": [
+      "MTH2302",
+      "MTH2303",
+      "MTH2304"
+    ],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "MTH2302/A/B/C/D ou MTH2303 ou MTH2304"
   },
   {
     "sigle": "INF8225",
     "universite": "Poly",
     "titre": "I.A.:tech. probabilistes et d'apprentissage",
     "credits": 3,
-    "description": "",
+    "description": "Méthodes probabilistes d'intelligence artificielle. Modèles probabilistes : réseaux bayésiens, modèles de Markov cachés, champs aléatoires de Markov et leurs généralisations. Inférence. Théorie de la décision statistique et des réseaux de décision. Algorithmes d'apprentissage automatique, classificateurs simples, complexes et structurés. L'apprentissage profond « deep learning ». Traitement probabiliste de la langue naturelle et de la perception visuelle. Applications à la conception et l'implantation des systèmes experts, au forage de données, à la recherche d'informations et à la vision par ordinateur.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants au baccalauréat"
   },
   {
     "sigle": "INF8250E",
@@ -2017,13 +2138,13 @@
     "universite": "Poly",
     "titre": "Traitement automatique de la langue naturelle",
     "credits": 3,
-    "description": "",
+    "description": "Modélisation par n-grammes. Analyse syntaxique probabiliste. Analyse syntaxique basée sur les dépendances. Sémantique vectorielle et mesures de similarité. Extraction d'information et de connaissances à partir de textes. Systèmes automatiques de réponse à des questions. Systèmes de dialogue et agents conversationnels. Réseaux de neurones pour le traitement de la langue.",
     "niveau": 8,
     "hors_perimetre": false,
     "prerequisite_courses": [],
     "concomitant_courses": [],
     "equivalent_courses": [],
-    "requirement_text": ""
+    "requirement_text": "70 crédits pour les étudiants du baccalauréat"
   },
   {
     "sigle": "CHE0501",
