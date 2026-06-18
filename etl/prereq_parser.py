@@ -192,6 +192,37 @@ def _create_or_group(tx, from_sigle, gid, codes, parent_is_cours):
         )
 
 
+# ── Corequisites (concomitant courses) ─────────────────────────────────────────
+
+def load_concomitants(tx, from_sigle: str, concomitant_courses: list) -> int:
+    """
+    Write direct (Cours)-[:REQUIERT_CONCOMITANT]->(Cours) edges for one
+    course's corequisites.
+
+    Source data occasionally lists a course as its own concomitant (a
+    scraper artifact seen on Poly and UdeM); such self-references are
+    skipped to avoid self-loops.
+
+    Returns the number of edges created.
+    """
+    targets = [t for t in concomitant_courses if t != from_sigle]
+    for t in targets:
+        tx.run(
+            "MATCH (a:Cours {sigle:$f}) MATCH (b:Cours {sigle:$t})"
+            " MERGE (a)-[:REQUIERT_CONCOMITANT]->(b)",
+            f=from_sigle, t=t,
+        )
+    return len(targets)
+
+
+def clear_uni_concomitants(session, universite: str):
+    """Remove all REQUIERT_CONCOMITANT edges for one university before a reload."""
+    session.run("""
+        MATCH (c:Cours {universite: $uni})-[r:REQUIERT_CONCOMITANT]->(:Cours)
+        DELETE r
+    """, uni=universite)
+
+
 # ── Derived flag: prereqs_known ───────────────────────────────────────────────
 
 def set_prereqs_known(session, universite: str) -> int:

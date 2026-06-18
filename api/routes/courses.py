@@ -151,7 +151,11 @@ def get_courses(
 #           depth-2 nesting (AND → OR → Cours).
 #
 # Phase 4 — return program courses not in `expanded` whose REQUIERT target is
-#           absent / is a completed Cours / is a satisfied group.
+#           absent / is a completed Cours / is a satisfied group, AND whose
+#           REQUIERT_CONCOMITANT targets (corequisites) are all in `expanded`.
+#           Corequisites are treated as blocking, same as prerequisites — a
+#           conservative choice for a planning tool that doesn't model
+#           "take together" scheduling.
 
 _ELIGIBLE_QUERY = """
 WITH $completed AS completed_raw
@@ -205,6 +209,8 @@ WITH c, t, expanded, satisfied_groups
 WHERE t IS NULL
    OR (t:Cours AND t.sigle IN expanded)
    OR (t:PrerequisiteGroup AND t.id IN satisfied_groups)
+WITH c, expanded
+WHERE all(coreq IN [(c)-[:REQUIERT_CONCOMITANT]->(co:Cours) | co.sigle] WHERE coreq IN expanded)
 RETURN c
 ORDER BY c.universite, c.sigle
 """
@@ -240,24 +246,40 @@ def get_prereq_chain(sigle: str):
                 "MATCH (c:Cours {sigle: $s})-[:REQUIERT]->(t) RETURN t", s=s
             ).single()
             if prereq_rec:
-                traverse_node(s, prereq_rec["t"])
+                traverse_node(s, prereq_rec["t"], relation_type="prerequisite")
 
-        def traverse_node(source_id: str, node):
+            coreq_recs = session.run(
+                "MATCH (c:Cours {sigle: $s})-[:REQUIERT_CONCOMITANT]->(t:Cours) RETURN t", s=s
+            )
+            for coreq_rec in coreq_recs:
+                traverse_node(s, coreq_rec["t"], relation_type="corequisite")
+
+        def traverse_node(source_id: str, node, relation_type: str):
             if "Cours" in node.labels:
                 child_sigle = node["sigle"]
-                edges.append({"id": f"{source_id}->{child_sigle}", "source": source_id, "target": child_sigle})
+                edges.append({
+                    "id": f"{source_id}->{child_sigle}:{relation_type}",
+                    "source": source_id,
+                    "target": child_sigle,
+                    "relation_type": relation_type,
+                })
                 traverse_course(child_sigle)
             else:
                 gid = node["id"]
                 if gid not in nodes:
                     nodes[gid] = {"id": gid, "node_type": "group", "data": {"type": node["type"]}}
-                edges.append({"id": f"{source_id}->{gid}", "source": source_id, "target": gid})
+                edges.append({
+                    "id": f"{source_id}->{gid}:{relation_type}",
+                    "source": source_id,
+                    "target": gid,
+                    "relation_type": relation_type,
+                })
                 children = list(session.run(
                     "MATCH (g:PrerequisiteGroup {id: $id})-[:INCLUDES]->(child) RETURN child",
                     id=gid,
                 ))
                 for child_rec in children:
-                    traverse_node(gid, child_rec["child"])
+                    traverse_node(gid, child_rec["child"], relation_type)
 
         traverse_course(sigle)
 

@@ -26,6 +26,14 @@ Indexes
 
 - EQUIVAUT_A(status)
     Same reason — only `active` edges affect eligibility.
+
+Relationship types (not enforced here, listed for reference)
+--------------------------------------------------------------
+- REQUIERT               Cours/PrerequisiteGroup prerequisite edges.
+- REQUIERT_CONCOMITANT   Direct Cours→Cours corequisite edges, loaded from
+    concomitant_courses. No grouping (AND/OR) is modeled — every entry is
+    a flat requirement. Traversal always starts from an already-matched
+    Cours node, so no index is needed.
 """
 
 import os
