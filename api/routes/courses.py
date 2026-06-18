@@ -290,14 +290,24 @@ def get_prereq_chain(sigle: str):
         # don't walk their own prerequisites, just show the link.
         seen_equiv_pairs: set = set()
         for s in list(visited_courses):
+            # Ordered so that, if a pair somehow has more than one active
+            # edge (e.g. official + inferred both present), the official /
+            # highest-confidence one wins rather than whichever row Neo4j
+            # returns first.
             equiv_recs = session.run(
-                "MATCH (c:Cours {sigle: $s})-[:EQUIVAUT_A {status: 'active'}]-(eq:Cours)"
-                " RETURN DISTINCT eq",
+                "MATCH (c:Cours {sigle: $s})-[r:EQUIVAUT_A {status: 'active'}]-(eq:Cours)"
+                " RETURN eq, r.source AS source, r.confidence AS confidence"
+                " ORDER BY CASE r.source WHEN 'official' THEN 0 ELSE 1 END, r.confidence DESC",
                 s=s,
             )
+            seen_eq_for_s: set = set()
             for rec in equiv_recs:
                 eq = rec["eq"]
                 eq_sigle = eq["sigle"]
+                if eq_sigle in seen_eq_for_s:
+                    continue
+                seen_eq_for_s.add(eq_sigle)
+
                 pair = frozenset((s, eq_sigle))
                 if pair in seen_equiv_pairs:
                     continue
@@ -306,6 +316,8 @@ def get_prereq_chain(sigle: str):
                 if eq_sigle not in nodes:
                     data = dict(eq)
                     data["is_equivalent"] = True
+                    data["source"] = rec["source"]
+                    data["confidence"] = rec["confidence"]
                     nodes[eq_sigle] = {"id": eq_sigle, "node_type": "course", "data": data}
 
                 edges.append({

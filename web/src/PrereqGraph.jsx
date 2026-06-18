@@ -24,6 +24,13 @@ const UNI_COLORS = {
 // ── Custom node: Course ────────────────────────────────────────────────────
 
 const EQUIVALENT_COLOR = '#8a3ffc'
+const OFFICIAL_BADGE = { bg: '#e6f4ea', color: '#1e7e34' }
+const INFERRED_BADGE = { bg: '#fff8e1', color: '#8a6d00' }
+
+function equivalentBadgeLabel(data) {
+  if (data.source === 'official') return `OFFICIELLE · ${data.universite}`
+  return `SIMILAIRE ${Math.round((data.confidence ?? 0) * 100)}% · ${data.universite}`
+}
 
 function CourseNode({ data }) {
   const color = UNI_COLORS[data.universite] || '#999'
@@ -57,8 +64,18 @@ function CourseNode({ data }) {
         {data.completed && <span style={{ marginLeft: 6, color: '#2a9d4e', fontSize: 12 }}>✓</span>}
       </div>
       {isEquivalent && (
-        <div style={{ fontSize: 9, fontWeight: 700, color: EQUIVALENT_COLOR, letterSpacing: '0.05em', marginBottom: 2 }}>
-          ÉQUIVALENT · {data.universite}
+        <div style={{
+          display: 'inline-block',
+          fontSize: 9,
+          fontWeight: 700,
+          letterSpacing: '0.05em',
+          marginBottom: 2,
+          padding: '1px 6px',
+          borderRadius: 4,
+          background: data.source === 'official' ? OFFICIAL_BADGE.bg : INFERRED_BADGE.bg,
+          color: data.source === 'official' ? OFFICIAL_BADGE.color : INFERRED_BADGE.color,
+        }}>
+          {equivalentBadgeLabel(data)}
         </div>
       )}
       <div style={{ fontSize: 11, color: '#555', lineHeight: 1.35 }}>
