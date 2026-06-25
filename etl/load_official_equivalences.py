@@ -38,7 +38,7 @@ from pathlib import Path
 API_BASE_URL = os.environ.get("API_BASE_URL", "http://localhost:8000")
 
 # Universities not yet scraped — their course codes aren't in the graph.
-SKIP_UNIVERSITIES = {"ETS", "ULAVAL"}
+SKIP_UNIVERSITIES = {"ULAVAL"}
 
 # Concordia and McGill sigles carry a space between the subject letters and
 # the course number (e.g. "COMP 472"); this equivalences export omits it.
@@ -53,6 +53,25 @@ def normalize_sigle(code: str, university_id: str) -> str:
     return f"{m.group(1)} {m.group(2)}" if m else code
 
 
+ADMIN_USER = os.environ.get("ADMIN_USER", "admin")
+ADMIN_PASS = os.environ.get("ADMIN_PASSWORD", "astra-admin")
+_AUTH = "Basic " + __import__("base64").b64encode(f"{ADMIN_USER}:{ADMIN_PASS}".encode()).decode()
+
+
+def fetch_existing_pairs() -> set[tuple[str, str]]:
+    """Return set of (sigle_a, sigle_b) sorted tuples already in the graph as official."""
+    req = urllib.request.Request(
+        f"{API_BASE_URL}/admin/equivalences?source=official&limit=1000",
+        headers={"Authorization": _AUTH},
+    )
+    try:
+        with urllib.request.urlopen(req) as resp:
+            rows = json.loads(resp.read())
+        return {tuple(sorted((r["sigle_a"], r["sigle_b"]))) for r in rows}
+    except Exception:
+        return set()
+
+
 def post_equivalence(sigle_a: str, sigle_b: str) -> tuple[bool, str]:
     """POST one directed edge to the admin API. Returns (created, detail)."""
     body = json.dumps({
@@ -64,7 +83,7 @@ def post_equivalence(sigle_a: str, sigle_b: str) -> tuple[bool, str]:
     req = urllib.request.Request(
         f"{API_BASE_URL}/admin/equivalences",
         data=body,
-        headers={"Content-Type": "application/json"},
+        headers={"Content-Type": "application/json", "Authorization": _AUTH},
         method="POST",
     )
     try:
@@ -80,8 +99,10 @@ def main():
     path = Path(sys.argv[1]) if len(sys.argv) > 1 else default_input
     courses = json.loads(path.read_text())
 
+    existing_pairs = fetch_existing_pairs()
     created = 0
     skipped_university = 0
+    skipped_existing = 0
     skipped_missing: list[tuple[str, str, str]] = []
 
     for course in courses:
@@ -95,6 +116,10 @@ def main():
 
             sigle_b = normalize_sigle(eq["code"], university_id)
 
+            if tuple(sorted((sigle_a, sigle_b))) in existing_pairs:
+                skipped_existing += 1
+                continue
+
             for a, b in ((sigle_a, sigle_b), (sigle_b, sigle_a)):
                 ok, detail = post_equivalence(a, b)
                 if ok:
@@ -102,9 +127,10 @@ def main():
                 else:
                     skipped_missing.append((a, b, detail))
 
-    print(f"Created:                                {created} EQUIVAUT_A edges")
-    print(f"Skipped (ÉTS/ULaval, not yet scraped):   {skipped_university} equivalences")
-    print(f"Skipped (course not found in graph):     {len(skipped_missing)} edge attempts")
+    print(f"Created:                         {created} EQUIVAUT_A edges")
+    print(f"Skipped (already exist):         {skipped_existing} equivalences")
+    print(f"Skipped (ULaval, not scraped):   {skipped_university} equivalences")
+    print(f"Skipped (course not in graph):   {len(skipped_missing)} edge attempts")
     for a, b, detail in skipped_missing:
         print(f"  {a} -> {b}: {detail}")
 

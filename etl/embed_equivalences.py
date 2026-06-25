@@ -10,7 +10,8 @@ Thresholds:
   POLY_ETS_THR = 0.72  Poly↔ETS only, gated by same course-code prefix
                        (both schools share LOG/IND/ELE/MTH conventions)
 
-Scope: hors_perimetre=false courses with description > 30 chars.
+Scope: all courses with description > 30 chars, filtered to same academic cycle.
+  Cycle is inferred from hors_perimetre: false → 1er cycle, true → 2e cycle+.
 
 This script replaces infer_equivalences.py for the inferred edge set —
 it clears all inferred edges first and rewrites them from scratch
@@ -37,8 +38,9 @@ from equivalence_loader import INFERRED, clear_inferred_equivalences, write_infe
 load_dotenv(Path(__file__).parents[1] / ".env")
 
 MODEL_NAME   = "paraphrase-multilingual-MiniLM-L12-v2"
-THRESHOLD    = 0.78
-POLY_ETS_THR = 0.72
+THRESHOLD    = 0.78   # active
+PENDING_THR  = 0.70   # pending — requires admin review
+POLY_ETS_THR = 0.72   # active for Poly↔ETS same-prefix pairs
 MIN_DESC_LEN = 30
 
 # Universities that teach primarily in French
@@ -55,8 +57,13 @@ def code_prefix(sigle: str) -> str:
 
 def fetch_courses(session) -> list:
     return [dict(r["c"]) for r in session.run(
-        "MATCH (c:Cours {hors_perimetre: false}) RETURN c"
+        "MATCH (c:Cours) RETURN c"
     )]
+
+
+def course_cycle(c: dict) -> int:
+    """1 = undergraduate (hors_perimetre=false), 2 = graduate (hors_perimetre=true)."""
+    return 1 if not c.get("hors_perimetre") else 2
 
 
 def fetch_covered_pairs(session) -> set:
@@ -105,9 +112,13 @@ def main():
     for c in courses:
         by_uni[c["universite"]].append(c)
 
-    print(f"Courses with usable descriptions: {len(courses)} / {len(all_courses)}")
+    c1 = sum(1 for c in courses if course_cycle(c) == 1)
+    c2 = sum(1 for c in courses if course_cycle(c) == 2)
+    print(f"Courses with usable descriptions: {len(courses)} / {len(all_courses)}  (cycle 1: {c1}, cycle 2+: {c2})")
     for uni in sorted(by_uni):
-        print(f"  {uni:<12} {len(by_uni[uni])}")
+        u_c1 = sum(1 for c in by_uni[uni] if course_cycle(c) == 1)
+        u_c2 = sum(1 for c in by_uni[uni] if course_cycle(c) == 2)
+        print(f"  {uni:<12} {len(by_uni[uni]):>4}  (c1: {u_c1}, c2+: {u_c2})")
 
     # ── Encode ────────────────────────────────────────────────────────────────
     print(f"\nLoading {MODEL_NAME} …")
@@ -131,7 +142,7 @@ def main():
 
     # ── Score cross-university pairs ─────────────────────────────────────────
     uni_names  = sorted(by_uni.keys())
-    candidates = []   # (sigle_a, sigle_b, score)
+    candidates = []   # (sigle_a, sigle_b, score, status)
 
     for i_u, uni_a in enumerate(uni_names):
         for uni_b in uni_names[i_u + 1:]:
@@ -153,16 +164,29 @@ def main():
                     if pair in covered_pairs:
                         continue
 
+                    if course_cycle(ca) != course_cycle(cb):
+                        continue
+
                     if is_poly_ets:
-                        if (score >= POLY_ETS_THR
-                                and code_prefix(ca["sigle"]) == code_prefix(cb["sigle"])
-                                and code_prefix(ca["sigle"]) != ""):
-                            candidates.append((ca["sigle"], cb["sigle"], score))
+                        same_prefix = (
+                            code_prefix(ca["sigle"]) == code_prefix(cb["sigle"])
+                            and code_prefix(ca["sigle"]) != ""
+                        )
+                        if same_prefix and score >= POLY_ETS_THR:
+                            candidates.append((ca["sigle"], cb["sigle"], score, "active"))
+                        elif same_prefix and score >= PENDING_THR:
+                            candidates.append((ca["sigle"], cb["sigle"], score, "pending"))
                     else:
                         if score >= THRESHOLD:
-                            candidates.append((ca["sigle"], cb["sigle"], score))
+                            candidates.append((ca["sigle"], cb["sigle"], score, "active"))
+                        elif score >= PENDING_THR:
+                            candidates.append((ca["sigle"], cb["sigle"], score, "pending"))
 
     candidates.sort(key=lambda x: -x[2])
+    active_cands  = [(a, b, s, st) for a, b, s, st in candidates if st == "active"]
+    pending_cands = [(a, b, s, st) for a, b, s, st in candidates if st == "pending"]
+    print(f"  Active candidates (≥{THRESHOLD}):  {len(active_cands)}")
+    print(f"  Pending candidates ({PENDING_THR}–{THRESHOLD}): {len(pending_cands)}")
 
     # ── Write to Neo4j ────────────────────────────────────────────────────────
     sigle_to_course = {c["sigle"]: c for c in courses}
@@ -175,8 +199,9 @@ def main():
                     "sigle_b":    b,
                     "confidence": round(score, 4),
                     "evidence":   f"embed_cosine={score:.4f}",
+                    "status":     st,
                 }
-                for a, b, score in candidates
+                for a, b, score, st in candidates
             ])
         )
 
@@ -192,12 +217,12 @@ def main():
 
     # ── Report ────────────────────────────────────────────────────────────────
     print(f"\nEdges after  — total: {after_total}  (inferred: {after_inferred})")
-    print(f"New inferred edges written: {written}")
+    print(f"New inferred edges written: {written}  (active: {len(active_cands)}, pending: {len(pending_cands)})")
 
     # Breakdown by university pair
     pair_counts: dict[str, int] = defaultdict(int)
     pair_fr_en:  dict[str, int] = defaultdict(int)
-    for a, b, _ in candidates:
+    for a, b, _, _st in candidates:
         ca = sigle_to_course[a]
         cb = sigle_to_course[b]
         key = f"{ca['universite']}↔{cb['universite']}"
@@ -205,20 +230,20 @@ def main():
         if lang(ca["universite"]) != lang(cb["universite"]):
             pair_fr_en[key] += 1
 
-    print(f"\nBreakdown by university pair:")
+    print(f"\nBreakdown by university pair (active + pending):")
     for key, n in sorted(pair_counts.items(), key=lambda x: -x[1]):
         fr_en = pair_fr_en.get(key, 0)
         tag = f"  ({fr_en} FR↔EN)" if fr_en else ""
         print(f"  {key:<25} {n:>4}{tag}")
 
     print(f"\nTop 25 pairs by confidence:")
-    print(f"  {'Score':>6}  {'A':<22} {'B':<22} {'Direction'}")
-    print(f"  {'─'*6}  {'─'*22} {'─'*22} {'─'*20}")
-    for a, b, score in candidates[:25]:
+    print(f"  {'Score':>6}  {'Status':<8} {'A':<22} {'B':<22} {'Direction'}")
+    print(f"  {'─'*6}  {'─'*8} {'─'*22} {'─'*22} {'─'*20}")
+    for a, b, score, st in candidates[:25]:
         ca = sigle_to_course.get(a, {})
         cb = sigle_to_course.get(b, {})
         direction = f"[{ca.get('universite','')}↔{cb.get('universite','')}] {lang(ca.get('universite',''))}↔{lang(cb.get('universite',''))}"
-        print(f"  {score:.4f}  {a:<22} {b:<22} {direction}")
+        print(f"  {score:.4f}  {st:<8} {a:<22} {b:<22} {direction}")
 
 
 if __name__ == "__main__":

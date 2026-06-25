@@ -6,6 +6,102 @@ function authHeader(token) {
   return { Authorization: `Basic ${token}` }
 }
 
+// ── Pending queue ──────────────────────────────────────────────────────────────
+
+function PendingQueue({ token, onChanged }) {
+  const [rows, setRows] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [acting, setActing] = useState(null)
+
+  const fetchPending = useCallback(async () => {
+    setLoading(true)
+    try {
+      const resp = await fetch(`${API}/pending`, { headers: authHeader(token) })
+      if (resp.ok) setRows(await resp.json())
+    } finally {
+      setLoading(false)
+    }
+  }, [token])
+
+  useEffect(() => { fetchPending() }, [fetchPending])
+
+  async function act(id, action) {
+    setActing(id)
+    try {
+      await fetch(`${API}/${id}/${action}`, {
+        method: 'PATCH',
+        headers: authHeader(token),
+      })
+      await fetchPending()
+      onChanged()
+    } finally {
+      setActing(null)
+    }
+  }
+
+  if (loading) return null
+  if (rows.length === 0) return null
+
+  return (
+    <div className="admin-pending-wrap">
+      <div className="admin-pending-header">
+        <span className="admin-pending-title">En attente de révision</span>
+        <span className="admin-pending-count">{rows.length} paire{rows.length !== 1 ? 's' : ''}</span>
+        <span className="admin-pending-hint">Équivalences inférées entre {(70).toFixed(0)}% et {(78).toFixed(0)}% de confiance</span>
+      </div>
+      <div className="admin-table-wrap">
+        <table className="admin-table">
+          <thead>
+            <tr>
+              <th>Cours A</th>
+              <th>Cours B</th>
+              <th>Confiance</th>
+              <th>Preuve</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(eq => (
+              <tr key={eq.id} className="admin-row-pending">
+                <td><code className="admin-sigle">{eq.sigle_a}</code></td>
+                <td><code className="admin-sigle">{eq.sigle_b}</code></td>
+                <td>
+                  <span className="admin-conf-bar-wrap">
+                    <span
+                      className="admin-conf-bar"
+                      style={{ width: `${Math.round((eq.confidence || 0) * 100)}%` }}
+                    />
+                    <span className="admin-conf-label">
+                      {eq.confidence != null ? `${Math.round(eq.confidence * 100)}%` : '—'}
+                    </span>
+                  </span>
+                </td>
+                <td className="admin-evidence">{eq.evidence || '—'}</td>
+                <td className="admin-pending-actions">
+                  <button
+                    className="admin-btn-approve"
+                    disabled={acting === eq.id}
+                    onClick={() => act(eq.id, 'approve')}
+                  >
+                    ✓ Approuver
+                  </button>
+                  <button
+                    className="admin-btn-reject"
+                    disabled={acting === eq.id}
+                    onClick={() => act(eq.id, 'reject')}
+                  >
+                    ✕ Rejeter
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
 // ── Login screen ───────────────────────────────────────────────────────────────
 
 function LoginScreen({ onLogin }) {

@@ -56,7 +56,7 @@ admin_router = APIRouter(
 # ── Models ────────────────────────────────────────────────────────────────────
 
 Source = Literal["inferred", "official", "request"]
-Status = Literal["active", "revoked", "expired"]
+Status = Literal["active", "pending", "revoked", "expired"]
 
 
 class EquivalenceCreate(BaseModel):
@@ -250,6 +250,65 @@ def restore_equivalence(equivalence_id: str):
             status_code=404,
             detail=f"Equivalence '{equivalence_id}' not found",
         )
+    return _row_to_equivalence(record)
+
+
+# ── GET /admin/equivalences/pending ──────────────────────────────────────────
+
+@admin_router.get("/pending", response_model=List[Equivalence])
+def list_pending(
+    limit: int = Query(200, ge=1, le=1000),
+):
+    with get_driver().session() as session:
+        rows = list(session.run(
+            """
+            MATCH (a:Cours)-[r:EQUIVAUT_A {status: 'pending'}]->(b:Cours)
+            RETURN r, a, b
+            ORDER BY r.confidence DESC
+            LIMIT $limit
+            """,
+            limit=limit,
+        ))
+    return [_row_to_equivalence(row) for row in rows]
+
+
+# ── PATCH /admin/equivalences/{id}/approve ────────────────────────────────────
+
+@admin_router.patch("/{equivalence_id}/approve", response_model=Equivalence)
+def approve_equivalence(equivalence_id: str, credentials: HTTPBasicCredentials = Depends(_http_basic)):
+    now_iso = datetime.now(timezone.utc).isoformat()
+    with get_driver().session() as session:
+        record = session.run(
+            """
+            MATCH (a:Cours)-[r:EQUIVAUT_A {id: $id}]->(b:Cours)
+            SET r.status      = 'active',
+                r.approved_by = $admin,
+                r.approved_at = datetime($now)
+            RETURN r, a, b
+            """,
+            id=equivalence_id, admin=credentials.username, now=now_iso,
+        ).single()
+    if record is None:
+        raise HTTPException(status_code=404, detail=f"Equivalence '{equivalence_id}' not found")
+    return _row_to_equivalence(record)
+
+
+# ── PATCH /admin/equivalences/{id}/reject ─────────────────────────────────────
+
+@admin_router.patch("/{equivalence_id}/reject", response_model=Equivalence)
+def reject_equivalence(equivalence_id: str):
+    with get_driver().session() as session:
+        record = session.run(
+            """
+            MATCH (a:Cours)-[r:EQUIVAUT_A {id: $id}]->(b:Cours)
+            SET r.status     = 'revoked',
+                r.revoked_at = datetime()
+            RETURN r, a, b
+            """,
+            id=equivalence_id,
+        ).single()
+    if record is None:
+        raise HTTPException(status_code=404, detail=f"Equivalence '{equivalence_id}' not found")
     return _row_to_equivalence(record)
 
 

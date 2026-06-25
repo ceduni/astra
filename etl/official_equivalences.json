@@ -187,6 +187,22 @@
         ]
     },
     {
+        "code": "LOG320",
+        "title": "Structures de données et algorithmes",
+        "tags": ["structures-de-donnees", "algorithmes"],
+        "equivalences": [
+            {
+                "code": "COMP352",
+                "university": { "id": "CONCORDIA", "name": "Concordia" },
+                "title": "Data Structures and Algorithms",
+                "terms_recent": [],
+                "last_verified": "2026-06-25",
+                "links": { "course_page": null },
+                "notes": "Identical curriculum: ADTs, sorting, trees, graphs, complexity analysis."
+            }
+        ]
+    },
+    {
         "code": "IFT3913",
         "title": "Qualité du logiciel et métriques",
         "tags": ["genie-logiciel", "qualite", "tests", "metriques"],

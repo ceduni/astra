@@ -49,12 +49,16 @@ def write_inferred_equivalence(
     sigle_b: str,
     confidence: float,
     evidence: str = "",
+    status: str = "active",
 ) -> str:
     """
     Create a single inferred equivalence edge. Returns the new edge id.
 
     No MERGE — inferred edges are wiped wholesale before each rebuild,
     so duplicates can't accumulate. Using CREATE keeps the write cheap.
+
+    status='pending' is used for lower-confidence candidates that require
+    admin review before becoming active.
     """
     edge_id = str(uuid4())
     tx.run(
@@ -63,7 +67,7 @@ def write_inferred_equivalence(
         CREATE (a)-[:EQUIVAUT_A {
             id:         $id,
             source:     $source,
-            status:     'active',
+            status:     $status,
             created_at: datetime($created_at),
             created_by: 'etl',
             confidence: $confidence,
@@ -74,6 +78,7 @@ def write_inferred_equivalence(
         a=sigle_a, b=sigle_b, id=edge_id, source=INFERRED,
         created_at=datetime.now(timezone.utc).isoformat(),
         confidence=confidence, evidence=evidence, version=VERSION,
+        status=status,
     )
     return edge_id
 
@@ -83,7 +88,7 @@ def write_inferred_batch(tx, pairs: Iterable[dict]) -> int:
     Bulk-insert inferred equivalences.
 
     `pairs` is an iterable of dicts with keys:
-      sigle_a, sigle_b, confidence, evidence (optional)
+      sigle_a, sigle_b, confidence, evidence (optional), status (optional, default 'active')
     """
     count = 0
     for p in pairs:
@@ -93,6 +98,7 @@ def write_inferred_batch(tx, pairs: Iterable[dict]) -> int:
             sigle_b=p["sigle_b"],
             confidence=p["confidence"],
             evidence=p.get("evidence", ""),
+            status=p.get("status", "active"),
         )
         count += 1
     return count
