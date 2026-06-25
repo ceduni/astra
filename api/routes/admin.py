@@ -1,30 +1,56 @@
 """
 Admin endpoints for managing EQUIVAUT_A equivalences.
 
-No auth for now — endpoints are open. Structure leaves room to plug in
-a router-level dependency (e.g. require_admin) later without touching
-the handlers.
+Protected by HTTP Basic auth. Credentials are read from the environment:
+  ADMIN_USER     (default: admin)
+  ADMIN_PASSWORD (default: astra-admin)
 
 Endpoints
 ---------
 POST   /admin/equivalences            create an equivalence
 GET    /admin/equivalences            list with filters
+PATCH  /admin/equivalences/{id}       re-activate a revoked equivalence
 DELETE /admin/equivalences/{id}       soft-delete (status -> 'revoked')
 """
 
 from __future__ import annotations
 
+import os
+import secrets
 from datetime import datetime, timezone
 from typing import List, Literal, Optional
 from uuid import uuid4
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from pydantic import BaseModel, Field, model_validator
 
 from ..database import get_driver
 
+_http_basic = HTTPBasic()
 
-admin_router = APIRouter(prefix="/admin/equivalences", tags=["admin"])
+
+def require_admin(credentials: HTTPBasicCredentials = Depends(_http_basic)) -> str:
+    expected_user = os.environ.get("ADMIN_USER", "admin").encode()
+    expected_pass = os.environ.get("ADMIN_PASSWORD", "astra-admin").encode()
+    ok = (
+        secrets.compare_digest(credentials.username.encode(), expected_user)
+        and secrets.compare_digest(credentials.password.encode(), expected_pass)
+    )
+    if not ok:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid credentials",
+            headers={"WWW-Authenticate": "Basic"},
+        )
+    return credentials.username
+
+
+admin_router = APIRouter(
+    prefix="/admin/equivalences",
+    tags=["admin"],
+    dependencies=[Depends(require_admin)],
+)
 
 
 # ── Models ────────────────────────────────────────────────────────────────────
@@ -202,6 +228,29 @@ def list_equivalences(
         ))
 
     return [_row_to_equivalence(row) for row in rows]
+
+
+# ── PATCH /admin/equivalences/{id} ────────────────────────────────────────────
+
+@admin_router.patch("/{equivalence_id}/restore", response_model=Equivalence)
+def restore_equivalence(equivalence_id: str):
+    with get_driver().session() as session:
+        record = session.run(
+            """
+            MATCH (a:Cours)-[r:EQUIVAUT_A {id: $id}]->(b:Cours)
+            SET r.status     = 'active',
+                r.revoked_at = NULL
+            RETURN r, a, b
+            """,
+            id=equivalence_id,
+        ).single()
+
+    if record is None:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Equivalence '{equivalence_id}' not found",
+        )
+    return _row_to_equivalence(record)
 
 
 # ── DELETE /admin/equivalences/{id} ───────────────────────────────────────────

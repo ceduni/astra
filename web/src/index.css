@@ -485,6 +485,320 @@ body {
   gap: 0.4rem;
 }
 
+/* ── Admin button (sidebar footer) ──────────────────────────────────── */
+
+.btn-admin {
+  width: 100%;
+  padding: 0.45rem;
+  background: none;
+  border: 1px solid #d0d8f0;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: #1a6ef5;
+  cursor: pointer;
+  margin-top: 0.2rem;
+}
+.btn-admin:hover { background: #f0f4ff; border-color: #1a6ef5; }
+
+/* ── Admin panel shell ───────────────────────────────────────────────── */
+
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #f7f8fa;
+  overflow: hidden;
+}
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.admin-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-back-btn {
+  background: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.82rem;
+  color: #555;
+  cursor: pointer;
+}
+.admin-back-btn:hover { background: #f5f5f5; }
+
+.admin-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.admin-stats {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.admin-logout-btn {
+  background: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.82rem;
+  color: #888;
+  cursor: pointer;
+}
+.admin-logout-btn:hover { color: #c00; border-color: #f3c2c2; background: #fdeaea; }
+
+.admin-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Admin login ─────────────────────────────────────────────────────── */
+
+.admin-login-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: #f7f8fa;
+}
+
+.admin-login-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,.07);
+}
+
+.admin-login-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 0;
+}
+
+.admin-login-sub {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Admin form elements ─────────────────────────────────────────────── */
+
+.admin-field-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.admin-input {
+  width: 100%;
+  padding: 0.45rem 0.7rem;
+  font-size: 0.88rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fafafa;
+  outline: none;
+}
+.admin-input:focus { border-color: #1a6ef5; background: #fff; }
+
+.admin-btn-primary {
+  width: 100%;
+  padding: 0.55rem;
+  background: #1a6ef5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+.admin-btn-primary:hover { background: #1560d4; }
+.admin-btn-primary:disabled { opacity: 0.5; cursor: default; }
+
+.admin-btn-secondary {
+  background: none;
+  border: 1px solid #d0d8f0;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  font-size: 0.84rem;
+  color: #1a6ef5;
+  cursor: pointer;
+}
+.admin-btn-secondary:hover { background: #f0f4ff; }
+
+.admin-error { font-size: 0.82rem; color: #c00; }
+
+/* ── Create form ─────────────────────────────────────────────────────── */
+
+.admin-create-wrap {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.admin-create-form {
+  margin-top: 0.75rem;
+}
+
+.admin-create-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.admin-create-field {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* ── Filters ─────────────────────────────────────────────────────────── */
+
+.admin-filters {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.admin-filter-select,
+.admin-filter-input {
+  padding: 0.4rem 0.65rem;
+  font-size: 0.84rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fff;
+  outline: none;
+}
+.admin-filter-input { min-width: 180px; }
+.admin-filter-select:focus,
+.admin-filter-input:focus { border-color: #1a6ef5; }
+
+/* ── Table ───────────────────────────────────────────────────────────── */
+
+.admin-table-wrap {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #aaa;
+  border-bottom: 1px solid #f0f0f0;
+  white-space: nowrap;
+  background: #fafafa;
+}
+
+.admin-table td {
+  padding: 0.55rem 0.85rem;
+  border-bottom: 1px solid #f5f5f5;
+  vertical-align: middle;
+}
+
+.admin-table tr:last-child td { border-bottom: none; }
+.admin-table tr:hover td { background: #fafbff; }
+
+.admin-row-revoked td { opacity: 0.5; }
+
+.admin-sigle {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.admin-badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.admin-status {
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.admin-status.active  { color: #2a9d4e; }
+.admin-status.revoked { color: #c00; }
+
+.admin-num, .admin-date, .admin-by {
+  font-size: 0.78rem;
+  color: #888;
+  white-space: nowrap;
+}
+
+.admin-btn-revoke {
+  padding: 0.25rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border: 1px solid #f3c2c2;
+  border-radius: 5px;
+  color: #c00;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.admin-btn-revoke:hover { background: #fdeaea; }
+.admin-btn-revoke:disabled { opacity: 0.4; cursor: default; }
+
+.admin-btn-restore {
+  padding: 0.25rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border: 1px solid #d0d8f0;
+  border-radius: 5px;
+  color: #1a6ef5;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.admin-btn-restore:hover { background: #f0f4ff; }
+.admin-btn-restore:disabled { opacity: 0.4; cursor: default; }
+
+.admin-loading { font-size: 0.82rem; color: #aaa; }
+.admin-empty   { font-size: 0.84rem; color: #bbb; padding: 1.5rem; text-align: center; }
+
 /* ── Responsive ──────────────────────────────────────────────────────── */
 
 @media (max-width: 700px) {

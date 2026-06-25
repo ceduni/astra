@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import GraphCanvas from './GraphCanvas'
+import AdminPanel from './AdminPanel'
 
 const API = '/api'
 
@@ -243,6 +244,8 @@ function DetailPanel({ course, completed, onClose, onAdd, onRemove }) {
 // ── Root ───────────────────────────────────────────────────────────────────────
 
 export default function App() {
+  const [view, setView] = useState('main')
+
   const [completed, setCompleted] = useState(() => {
     try { return JSON.parse(localStorage.getItem('completed') || '[]') } catch { return [] }
   })
@@ -356,6 +359,9 @@ export default function App() {
           <button className="btn-danger" onClick={handleClearTranscript}>
             Effacer mon parcours
           </button>
+          <button className="btn-admin" onClick={() => setView('admin')}>
+            Administration
+          </button>
         </div>
       </aside>
 
@@ -375,23 +381,29 @@ export default function App() {
 
       {/* ── Main area ── */}
       <main className="main-area">
-        <div className="graph-canvas-wrapper">
-          <GraphCanvas
-            completed={completed}
-            chainsToLoad={chainsToLoad}
-            resetKey={resetKey}
-            onNodeClick={selectCourse}
-            onRemoveChain={removeChain}
-          />
-        </div>
+        {view === 'admin' ? (
+          <AdminPanel onBack={() => setView('main')} />
+        ) : (
+          <>
+            <div className="graph-canvas-wrapper">
+              <GraphCanvas
+                completed={completed}
+                chainsToLoad={chainsToLoad}
+                resetKey={resetKey}
+                onNodeClick={selectCourse}
+                onRemoveChain={removeChain}
+              />
+            </div>
 
-        <DetailPanel
-          course={selectedCourse}
-          completed={completed}
-          onClose={() => setSelectedCourse(null)}
-          onAdd={markCompleted}
-          onRemove={removeCourse}
-        />
+            <DetailPanel
+              course={selectedCourse}
+              completed={completed}
+              onClose={() => setSelectedCourse(null)}
+              onAdd={markCompleted}
+              onRemove={removeCourse}
+            />
+          </>
+        )}
       </main>
     </div>
   )

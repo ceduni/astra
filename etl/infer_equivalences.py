@@ -7,7 +7,7 @@ etl/official_equivalences.json), so that's the only regime this was
 calibrated against — there's no ground truth to justify scoring e.g.
 UQAM<->Poly pairs.
 
-THRESHOLD: 0.30, chosen by analysis (not guessed):
+THRESHOLD: 0.60, chosen by analysis (not guessed):
   - 2 of the 12 official pairs are French<->English (UdeM-Concordia) and
     score 0.00-0.05 — lexical TF-IDF shares ~no vocabulary across
     languages, so these are structurally unrecoverable at any threshold.
@@ -55,7 +55,7 @@ from equivalence_loader import clear_inferred_equivalences, write_inferred_batch
 
 load_dotenv(Path(__file__).parents[1] / ".env")
 
-THRESHOLD = 0.30
+THRESHOLD = 0.60
 
 TOKEN_RE = re.compile(r"\w+", re.UNICODE)
 
