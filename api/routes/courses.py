@@ -27,6 +27,7 @@ class Cours(BaseModel):
     # prerequisite list should be shown as 'unknown' rather than 'none'.
     # Null only on legacy nodes before backfill.
     prereqs_known: Optional[bool] = None
+    tags: Optional[List[str]] = None
 
 
 class CoursPage(BaseModel):

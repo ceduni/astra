@@ -485,6 +485,25 @@ body {
   gap: 0.4rem;
 }
 
+/* ── Tag pills (detail panel) ────────────────────────────────────────── */
+
+.detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag-pill {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: #f0f2f5;
+  color: #555;
+}
+
 /* ── Admin button (sidebar footer) ──────────────────────────────────── */
 
 .btn-admin {

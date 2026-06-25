@@ -229,6 +229,14 @@ function DetailPanel({ course, completed, onClose, onAdd, onRemove }) {
           {course.hors_perimetre && <span style={{color:'#c00'}}>Hors périmètre</span>}
         </div>
 
+        {course.tags && course.tags.length > 0 && (
+          <div className="detail-tags">
+            {course.tags.map(tag => (
+              <span key={tag} className="tag-pill">{tag}</span>
+            ))}
+          </div>
+        )}
+
         {course.description && (
           <p className="detail-description">{course.description}</p>
         )}

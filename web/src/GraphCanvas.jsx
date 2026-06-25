@@ -21,6 +21,25 @@ const UNI_COLORS = {
   Poly:      '#f0a500',
 }
 
+const TAG_COLORS = [
+  '#e8f0fe', '#e6f4ea', '#fff8e1', '#fce8e6', '#f3e8fd',
+  '#e8f5e9', '#e3f2fd', '#fff3e0', '#fce4ec', '#e8eaf6',
+  '#e0f7fa', '#f9fbe7',
+]
+const TAG_TEXT_COLORS = [
+  '#1a47a8', '#1e7e34', '#8a6d00', '#c62828', '#6a1b9a',
+  '#2e7d32', '#0d47a1', '#e65100', '#880e4f', '#283593',
+  '#006064', '#558b2f',
+]
+// Stable color assignment by tag name
+const _tagIndex = {}
+let _tagCounter = 0
+function tagStyle(tag) {
+  if (_tagIndex[tag] == null) _tagIndex[tag] = _tagCounter++ % TAG_COLORS.length
+  const i = _tagIndex[tag]
+  return { background: TAG_COLORS[i], color: TAG_TEXT_COLORS[i] }
+}
+
 // ── Custom nodes ───────────────────────────────────────────────────────────────
 
 const EQUIVALENT_COLOR = '#8a3ffc'
@@ -91,6 +110,27 @@ function CourseNode({ data }) {
       <div style={{ fontSize: 11, color: '#555', lineHeight: 1.35 }}>
         {data.titre ? data.titre.slice(0, 45) + (data.titre.length > 45 ? '…' : '') : ''}
       </div>
+      {data.tags && data.tags.length > 0 && (
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 3, marginTop: 5 }}>
+          {data.tags.slice(0, 2).map(tag => (
+            <span key={tag} style={{
+              ...tagStyle(tag),
+              fontSize: 9,
+              fontWeight: 700,
+              padding: '1px 5px',
+              borderRadius: 3,
+              letterSpacing: '0.03em',
+            }}>
+              {tag}
+            </span>
+          ))}
+          {data.tags.length > 2 && (
+            <span style={{ fontSize: 9, color: '#aaa', alignSelf: 'center' }}>
+              +{data.tags.length - 2}
+            </span>
+          )}
+        </div>
+      )}
       <Handle type="source" position={Position.Right} style={{ background: '#aaa' }} />
     </div>
   )
@@ -128,7 +168,7 @@ function applyLayout(nodeList, edgeList, completedSet, rootSigleSet, onRemoveCha
 
   nodeList.forEach(n => {
     const w = n.node_type === 'course' ? 180 : 64
-    const h = n.node_type === 'course' ? 64 : 32
+    const h = n.node_type === 'course' ? 80 : 32
     g.setNode(n.id, { width: w, height: h })
   })
   edgeList.forEach(e => g.setEdge(e.source, e.target))
