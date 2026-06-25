@@ -2,6 +2,17 @@ import { useEffect, useState } from 'react'
 
 export const API = '/api'
 
+export function useUniversities() {
+  const [universities, setUniversities] = useState([])
+  useEffect(() => {
+    fetch(`${API}/universities`)
+      .then(r => r.json())
+      .then(data => setUniversities(data.map(u => u.name).sort()))
+      .catch(() => {})
+  }, [])
+  return universities
+}
+
 export function useDebounce(value, delay) {
   const [debounced, setDebounced] = useState(value)
   useEffect(() => {

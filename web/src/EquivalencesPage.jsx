@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react'
-import { API, useDebounce } from './shared'
-
-const UNIVERSITIES = ['UdeM', 'UQAM', 'McGill', 'Concordia', 'Poly']
+import { API, useDebounce, useUniversities } from './shared'
 
 const SOURCE_STYLE = {
   official: { bg: '#e6f4ea', color: '#1e7e34' },
@@ -50,6 +48,7 @@ function UniCell({ sigle, titre, universite }) {
 }
 
 export default function EquivalencesPage() {
+  const universities = useUniversities()
   const [rows, setRows]         = useState([])
   const [loading, setLoading]   = useState(true)
   const [source, setSource]     = useState('')
@@ -98,7 +97,7 @@ export default function EquivalencesPage() {
             onChange={e => setUni(e.target.value)}
           >
             <option value="">Toutes universités</option>
-            {UNIVERSITIES.map(u => <option key={u} value={u}>{u}</option>)}
+            {universities.map(u => <option key={u} value={u}>{u}</option>)}
           </select>
           <input
             className="equiv-search"

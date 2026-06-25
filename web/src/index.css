@@ -19,6 +19,7 @@ body {
   --mcgill:     #ed1b2f;
   --concordia:  #912338;
   --poly:       #f0a500;
+  --ets:        #0891b2;
 }
 
 /* ── App shell (flex column) ─────────────────────────────────────────── */
@@ -336,6 +337,7 @@ body {
 .uni-dot[data-uni="McGill"]     { background: var(--mcgill); }
 .uni-dot[data-uni="Concordia"]  { background: var(--concordia); }
 .uni-dot[data-uni="Poly"]       { background: var(--poly); }
+.uni-dot[data-uni="ETS"]        { background: var(--ets); }
 
 .error { font-size: 0.82rem; color: #c00; }
 
@@ -365,6 +367,7 @@ body {
 .detail-panel[data-uni="McGill"]     { border-top-color: var(--mcgill); }
 .detail-panel[data-uni="Concordia"]  { border-top-color: var(--concordia); }
 .detail-panel[data-uni="Poly"]       { border-top-color: var(--poly); }
+.detail-panel[data-uni="ETS"]        { border-top-color: var(--ets); }
 
 .detail-inner {
   padding: 0.9rem 1.25rem;

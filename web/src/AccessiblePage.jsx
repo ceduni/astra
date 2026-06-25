@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react'
-import { API, SearchSection, CompletedSection } from './shared'
-
-const UNIVERSITIES = ['UdeM', 'UQAM', 'McGill', 'Concordia', 'Poly']
+import { API, SearchSection, CompletedSection, useUniversities } from './shared'
 
 const UNI_ACCENT = {
   UdeM: '#0057a8', UQAM: '#00833e', McGill: '#ed1b2f',
-  Concordia: '#912338', Poly: '#f0a500',
+  Concordia: '#912338', Poly: '#f0a500', ETS: '#0891b2',
 }
 
 // ── Course card ────────────────────────────────────────────────────────────────
@@ -50,6 +48,7 @@ export default function AccessiblePage({
   completed, onAddCompleted, onRemoveCompleted,
   homeUniversite, onSetHome,
 }) {
+  const universities = useUniversities()
   const [eligible, setEligible] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -74,8 +73,8 @@ export default function AccessiblePage({
   }, [completed, homeUniversite])
 
   const visibleUnis = homeUniversite
-    ? UNIVERSITIES.filter(u => u !== homeUniversite)
-    : UNIVERSITIES
+    ? universities.filter(u => u !== homeUniversite)
+    : universities
 
   const byUni = {}
   for (const c of eligible) {
@@ -93,7 +92,7 @@ export default function AccessiblePage({
         <div className="sidebar-section" style={{ borderBottom: '1px solid #f3f4f6', paddingBottom: '1rem' }}>
           <div className="section-label" style={{ marginBottom: '0.6rem' }}>Mon université</div>
           <div className="uni-selector">
-            {UNIVERSITIES.map(uni => (
+            {universities.map(uni => (
               <button
                 key={uni}
                 className={`uni-pill${homeUniversite === uni ? ' active' : ''}`}
