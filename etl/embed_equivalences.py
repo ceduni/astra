@@ -48,11 +48,31 @@ FR_UNIS = {"UdeM", "UQAM", "Poly", "ETS"}
 EN_UNIS = {"McGill", "Concordia"}
 
 PREFIX_RE = re.compile(r"^([A-Z]+)", re.ASCII)
+LEVEL_RE  = re.compile(r"(\d)")
+
+# Titles containing these words are excluded from equivalence inference —
+# project/capstone/internship courses are rarely true content equivalences.
+SKIP_TITLE_WORDS = {
+    "project", "projet", "capstone", "stage", "internship",
+    "intégrateur", "integrateur", "honor", "honours", "honors",
+    "independent", "topics", "sujets",
+}
 
 
 def code_prefix(sigle: str) -> str:
     m = PREFIX_RE.match(sigle.upper().replace(" ", ""))
     return m.group(1) if m else ""
+
+
+def course_level(sigle: str) -> int | None:
+    """First digit found in the sigle, e.g. IFT3275 → 3, COMP 248 → 2."""
+    m = LEVEL_RE.search(sigle)
+    return int(m.group(1)) if m else None
+
+
+def is_skip_title(titre: str) -> bool:
+    words = re.split(r"[\s\-/]+", (titre or "").lower())
+    return bool(SKIP_TITLE_WORDS.intersection(words))
 
 
 def fetch_courses(session) -> list:
@@ -107,7 +127,14 @@ def main():
     courses = [
         c for c in all_courses
         if c.get("description") and len(c["description"]) > MIN_DESC_LEN
+        and not is_skip_title(c.get("titre", ""))
     ]
+    skipped_titles = sum(
+        1 for c in all_courses
+        if c.get("description") and len(c["description"]) > MIN_DESC_LEN
+        and is_skip_title(c.get("titre", ""))
+    )
+    print(f"Skipped {skipped_titles} courses with project/capstone/stage titles")
     by_uni: dict[str, list] = defaultdict(list)
     for c in courses:
         by_uni[c["universite"]].append(c)
@@ -165,6 +192,10 @@ def main():
                         continue
 
                     if course_cycle(ca) != course_cycle(cb):
+                        continue
+
+                    lv_a, lv_b = course_level(ca["sigle"]), course_level(cb["sigle"])
+                    if lv_a is not None and lv_b is not None and abs(lv_a - lv_b) > 1:
                         continue
 
                     if is_poly_ets:
