@@ -157,9 +157,15 @@ def get_courses(
 
 # Single-query eligibility resolution.
 #
-# Phase 1 — expand `completed` via active EQUIVAUT_A edges (undirected, 1 hop).
-#           After this, equivalences disappear from the rest of the logic:
-#           a prereq is satisfied iff its sigle is in `expanded`.
+# Phase 1a — expand `completed` via active EQUIVAUT_A edges (undirected, 1 hop).
+#
+# Phase 1b — for each equivalent course (not directly completed), also add its
+#            direct prerequisites to `expanded`. This is what makes cross-university
+#            eligibility meaningful: completing IFT3335 (UdeM) ≡ COMP 472 (Concordia)
+#            puts both COMP 472 AND its prerequisite COMP 352 into `expanded`, so
+#            courses that require COMP 352 at Concordia become accessible.
+#            After Phase 1b, equivalences disappear from the rest of the logic:
+#            a prereq is satisfied iff its sigle is in `expanded`.
 #
 # Phase 2 — mark satisfied LEAF prerequisite groups (all INCLUDES are Cours).
 #           AND => every child sigle in `expanded`; OR => any child in `expanded`.
@@ -185,7 +191,23 @@ CALL {
     OPTIONAL MATCH (:Cours {sigle: s})-[:EQUIVAUT_A {status: 'active'}]-(eq:Cours)
     RETURN collect(DISTINCT eq.sigle) AS via_equiv
 }
-WITH [x IN completed_raw + via_equiv WHERE x IS NOT NULL] AS expanded
+WITH completed_raw, [x IN completed_raw + via_equiv WHERE x IS NOT NULL] AS expanded
+
+WITH completed_raw, expanded, [s IN expanded WHERE NOT s IN completed_raw] AS equiv_only
+CALL {
+    WITH equiv_only
+    UNWIND equiv_only AS eq_sigle
+    OPTIONAL MATCH (:Cours {sigle: eq_sigle})-[:REQUIERT]->(prereq_c:Cours)
+    RETURN collect(DISTINCT prereq_c.sigle) AS via_direct_prereqs
+}
+WITH completed_raw, expanded, equiv_only, via_direct_prereqs
+CALL {
+    WITH equiv_only
+    UNWIND equiv_only AS eq_sigle
+    OPTIONAL MATCH (:Cours {sigle: eq_sigle})-[:REQUIERT]->(:PrerequisiteGroup)-[:INCLUDES]->(prereq_pg:Cours)
+    RETURN collect(DISTINCT prereq_pg.sigle) AS via_group_prereqs
+}
+WITH [x IN expanded + via_direct_prereqs + via_group_prereqs WHERE x IS NOT NULL] AS expanded
 
 CALL {
     WITH expanded
