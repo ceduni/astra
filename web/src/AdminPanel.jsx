@@ -294,6 +294,7 @@ function FiltersBar({ filters, onChange }) {
       >
         <option value="">Tous statuts</option>
         <option value="active">active</option>
+        <option value="pending">pending</option>
         <option value="revoked">revoked</option>
       </select>
       <input
@@ -490,6 +491,11 @@ export default function AdminPanel({ onBack }) {
       </div>
 
       <div className="admin-body">
+        <PendingQueue
+          token={token}
+          onChanged={() => fetchEquivs(token, filters)}
+        />
+
         <CreateForm
           token={token}
           onCreated={() => fetchEquivs(token, filters)}
