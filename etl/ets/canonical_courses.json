@@ -1,0 +1,1888 @@
+[
+  {
+    "sigle": "ATE100",
+    "universite": "ETS",
+    "titre": "Intégrité intellectuelle",
+    "credits": 0,
+    "description": " Cet atelier vise à s'initier aux normes d'intégrité intellectuelle, ainsi qu'à la méthodologie de travail universitaire.  Au terme de ce cours, la personne étudiante sera en mesure de : distinguer son discours et ses idées personnelles de celles d autrui; indiquer dans ses textes, avec des sources, le discours, les idées, les graphiques ou autres éléments tirés d autres ouvrages ou sites.  Éléments de contenu : Plagiat et sanctions. Responsabilités morale et légale. Conceptions philosophiques e",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ATE150",
+    "universite": "ETS",
+    "titre": "Règles de base en santé et sécurité",
+    "credits": 0,
+    "description": " Ce cours vise à acquérir des notions en lien avec les normes et politiques sur la santé et la sécurité à l'ÉTS, afin que les étudiants et les étudiantes soient en mesure d'adopter une approche préventive et proactive face aux risques de santé et sécurité sur le campus et dans les laboratoires. Au terme de ce cours, la personne étudiante sera en mesure de : identifier les actions à prendre en cas d urgence, d accident ou de quasi-accident et en cas de constatation de la présence d une situation ",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "CHM131",
+    "universite": "ETS",
+    "titre": "Chimie et matériaux",
+    "credits": 4,
+    "description": "Ce cours vise à explorer la structure atomique de la matière et à analyser son comportement observable en appliquant une démarche scientifique. Au terme de ce cours, la personne étudiante sera en mesure de :  identifier les composés organiques et inorganiques; expliquer la structure de la matière; expliquer les mécanismes des réactions chimiques; interpréter les lois régissant les comportements des solides, des liquides et des gaz; choisir le modèle adéquat en fonction de la situation proposée; ",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "COM120",
+    "universite": "ETS",
+    "titre": "Méthodes de communication",
+    "credits": 3,
+    "description": " Ce cours vise à développer les compétences en rédaction technique, en rédaction professionnelle et en communication nécessaires à l'exercice de la profession d'ingénieure et d'ingénieur. Au terme de ce cours, la personne étudiante sera en mesure de : rédiger un rapport en respectant les règles du style technique et de présentation matérielle; exprimer oralement des concepts techniques dans un langage adapté à différents auditoires; appliquer les normes de création d'une présentation visuelle ac",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "COM410",
+    "universite": "ETS",
+    "titre": "Rédaction technique et communication en génie logiciel",
+    "credits": 3,
+    "description": "Ce cours vise à développer les compétences en rédaction technique, en rédaction professionnelle et en communication nécessaires à l'exercice de la profession d'ingénieure et ingénieur en génie logiciel. Au terme de ce cours, la personne étudiante sera en mesure de : rédiger un rapport en respectant les règles du style technique et de présentation matérielle; exprimer oralement des concepts techniques dans un langage adapté à différents auditoires; appliquer les normes de création d'une présentat",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [
+      "LOG410"
+    ],
+    "equivalent_courses": [],
+    "requirement_text": "Cours concomitant : LOG410 Analyse de besoins et spécifications (3 cr.)"
+  },
+  {
+    "sigle": "ELE543",
+    "universite": "ETS",
+    "titre": "Principes des systèmes embarqués",
+    "credits": 4,
+    "description": "Ce cours vise à réaliser des systèmes embarqués qui satisfont des contraintes matérielles et logicielles associées au traitement des évènements en temps réel.  Au terme de ce cours, la personne étudiante sera en mesure de : concevoir une démarche d'investigation pour l'identification et la caractérisation des contraintes matérielles et logicielles d'un système en temps réel; analyser la structure et l'opération des microcontrôleurs utilisés dans les systèmes embarqués; appliquer les techniques d",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "ELE216",
+      "ELE344"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ELE641",
+    "universite": "ETS",
+    "titre": "Systèmes embarqués et normes en aérospatiale",
+    "credits": 3,
+    "description": "Ce cours vise à identifier les parties critiques des systèmes embarqués en aéronautique.  Au terme de ce cours, la personne étudiante sera en mesure de : identifier les parties critiques des systèmes informatiques embarqués et leurs interactions; appliquer une méthodologie de design et de conception d'un système en aéronautique afin d'en permettre la certification; établir une base de certification pertinente à la criticité du système et spécifique au produit à certifier; utiliser les normes en ",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ELE674",
+    "universite": "ETS",
+    "titre": "Systèmes embarqués avancés",
+    "credits": 3,
+    "description": "Ce cours vise à approfondir les notions de systèmes embarqués par la réalisation d'un système complexe à l'aide de techniques de programmation multitâches en temps réel.  Au terme de ce cours, la personne étudiante sera en mesure de : assembler la chaine d'amorçage d'un système embarqué; expliquer le fonctionnement d'un système d'exploitation dans un contexte temps-réel; concevoir une application multitâche sur un système embarqué; évaluer la fiabilité et la robustesse d'un système embarqué; int",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "ELE543"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ELE749",
+    "universite": "ETS",
+    "titre": "Conception conjointe matériel-logiciel de systèmes numériques",
+    "credits": 3,
+    "description": "Ce cours vise à concevoir et à réaliser conjointe matériel-logiciel de systèmes numériques avancés  Au terme de ce cours, la personne étudiante sera en mesure de : analyser des fiches techniques pour l'intégration de dispositifs électroniques; utiliser efficacement les techniques de vérification automatisées; utiliser efficacement les instruments de mesures propres à la conception numérique; analyser les problèmes liés à la synchronisation dans les circuits numériques; analyser la performance d'",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "ELE344",
+      "IND580"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ENT201",
+    "universite": "ETS",
+    "titre": "Gestion financière d’entreprise",
+    "credits": 3,
+    "description": "Ce cours vise à mettre en pratique les méthodes de gestion financière et d'évaluation d'une entreprise.  Au terme de ce cours, la personne étudiante sera en mesure de : appliquer les principes fondamentaux de comptabilité; considérer le contexte financier dans lequel une entreprise est évaluée;  considérer le contexte financier dans lequel une entreprise est évaluée; comprendre la dynamique sous-jacente à l attribution d une valeur financière à une entreprise; construire des modèles d'évaluation",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "GIA400",
+      "GIA410"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Note sur les préalables : un seul des deux préalables est requis."
+  },
+  {
+    "sigle": "ENT202",
+    "universite": "ETS",
+    "titre": "Introduction à l’entrepreneuriat",
+    "credits": 3,
+    "description": " Ce cours vise à s'initier aux principes fondamentaux de l'entrepreneurship en explorant le rôle de l'entrepreneur dans l'économie et le processus de création d'entreprise.  Au terme de ce cours, la personne étudiante sera en mesure de :  définir le rôle de l'entrepreneur et son impact sur l'innovation et la création de valeur; définir les étapes du processus entrepreneurial de l'idéation à la mise en marché; évaluer les opportunités d'affaires en utilisant les outils d'analyse stratégiques; con",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ENT301",
+    "universite": "ETS",
+    "titre": "Projets spéciaux en Entrepreneuriat I",
+    "credits": 3,
+    "description": "Ce cours vise à concevoir  un projet en ingénierie dans le cadre de création d'une entreprise en adoptant une démarche entrepreneuriale et un processus créatif, itératif et évolutif.  Au terme de ce cours, la personne étudiante sera en mesure de : concevoir des systèmes, des procédés ou des processus répondant à des besoins spécifiques en intégrant les principes des sciences du génie et en respectant des contraintes économiques , environnementales, légales et éthiques; appliquer une démarche ent",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Éléments de contenu : les contenus sont vus préalablement lors de la session d'accélération ou Propulsion au Centech. Ce cours ressemble à un (PFE) projet de fin d'études."
+  },
+  {
+    "sigle": "ENT302",
+    "universite": "ETS",
+    "titre": "Projets spéciaux en Entrepreneuriat II",
+    "credits": 3,
+    "description": "Ce cours vise à concevoir un projet en ingénierie dans le cadre de création d'une entreprise en adoptant une démarche entrepreneuriale et un processus créatif, itératif et évolutif.  Au terme de ce cours, la personne étudiante sera en mesure de :  concevoir des systèmes, des procédés ou des processus répondant à des besoins spécifiques en intégrant les principes des sciences du génie et en respectant des contraintes économiques , environnementales, légales et éthiques; appliquer une démarche ent",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "ENT301"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Éléments de contenu : les contenus sont vus préalablement lors de la session d'accélération ou Propulsion au Centech. Ce cours ressemble à un (PFE) projet de fin d'études. L'étudiant qui a terminé le cours ENT301 peut s'inscrire au cours ENT302 | Cours préalable : ENT301 Projets spéciaux en Entrepreneuriat I"
+  },
+  {
+    "sigle": "ENT303",
+    "universite": "ETS",
+    "titre": "Projets spéciaux en Entrepreneuriat III",
+    "credits": 3,
+    "description": "Ce cours vise à concevoir  un projet en ingénierie dans le cadre de création d'une entreprise en adoptant une démarche entrepreneuriale et un processus créatif, itératif et évolutif.  Au terme de ce cours, la personne étudiante sera en mesure de :  concevoir des systèmes, des procédés ou des processus répondant à des besoins spécifiques en intégrant les principes des sciences du génie et en respectant des contraintes économiques , environnementales, légales et éthiques; appliquer une démarche en",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [
+      "ENT302"
+    ],
+    "equivalent_courses": [],
+    "requirement_text": "Éléments de contenu : les contenus sont vus préalablement lors de la session d'accélération ou Propulsion au Centech. Ce cours ressemble à un (PFE) projet de fin d'études. L'étudiant qui a terminé le cours ENT301 ou ENT302 peut s'inscrire au cours ENT303. | Cours préalable : ENT302 Projets spéciaux en Entrepreneuriat II (ou concomitant)"
+  },
+  {
+    "sigle": "ENT304",
+    "universite": "ETS",
+    "titre": "Projets spéciaux en entrepreneuriat IV",
+    "credits": 3,
+    "description": " Ce cours vise à concevoir  un projet en ingénierie dans le cadre de création d'une entreprise en adoptant une démarche entrepreneuriale et un processus créatif, itératif et évolutif.  Au terme de ce cours, la personne étudiante sera en mesure de :  concevoir des systèmes, des procédés ou des processus répondant à des besoins spécifiques en intégrant les principes des sciences du génie et en respectant des contraintes économiques , environnementales, légales et éthiques; appliquer une démarche e",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "ENT303"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Éléments de contenu : les contenus sont vus préalablement lors de la session d'accélération ou Propulsion au Centech. Ce cours ressemble à un (PFE) projet de fin d'études. L'étudiant qui a terminé le cours ENT301, ENT302, ENT303 peut s'inscrire au cours ENT304 | Cour préalable : ENT303 Projets spéciaux en Entrepreneuriat III"
+  },
+  {
+    "sigle": "ENT601",
+    "universite": "ETS",
+    "titre": "Marketing et ventes",
+    "credits": 3,
+    "description": "Ce cours vise à s'initier aux principes fondamentaux du marketing et des stratégies de vente.  Au terme de ce cours, la personne étudiante sera en mesure de :  expliquer les concepts fondamentaux du marketing et leur rôle dans la stratégie d'une entreprise; analyser le marché et le comportement d'achat des consommateurs; identifier les segments cibles et adapter l'offre en conséquence; élaborer un plan de marketing en incluant les stratégies de prix, produit, communication et distribution; emplo",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ETH300",
+    "universite": "ETS",
+    "titre": "Enjeux éthiques et environnementaux de l'informatique distribuée",
+    "credits": 2,
+    "description": "Ce cours vise à expliquer les enjeux éthiques liés à la prolifération des objets connectés et des systèmes informatiques distribués. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : comprendre les grands défis éthiques liés à la collecte et l’utilisation des données par les objets connectés, tant pour les individus que pour les sociétés ; évaluer les recommandations, les pratiques et les cadres éthiques pour guider le développement responsable de l’informatique distribuée ; ex",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ETH310",
+    "universite": "ETS",
+    "titre": "Encadrement de la profession et éthique professionnelle",
+    "credits": 0,
+    "description": "Ce cours vise à s'initier aux responsabilités professionnelles de la personne ingénieurer, en particulier la protection du public.  Au terme de ce cours, la personne étudiante sera en mesure de :  interpréter l'application du Code de déontologie des ingénieurs dans une situation professionnelle donnée; analyser les défis éthiques auxquels fait face la profession d'ingénieur, notamment en ce qui a trait à la mise à jour du système professionnel et du Code de déontologie; décrire les valeurs et le",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "STA101",
+      "STA102",
+      "STA103",
+      "STA104"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ETH610",
+    "universite": "ETS",
+    "titre": "Enjeux éthiques de l’intelligence artificielle",
+    "credits": 3,
+    "description": "Ce cours vise à s'initier aux notions théoriques et pratiques entourant l'intelligence artificielle (IA).  Au terme de ce cours, la personne étudiante sera en mesure de :  analyser un problème éthique lié à l'intelligence artificielle (IA) ainsi que les argumentaires courant dans les débats issus du développement de l'IA; identifier les risques éthiques de l'IA pour les individus et les sociétés; comparer les avantages et les limites des recommandations proposées pour atténuer ces risques.  Élém",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GIA400",
+    "universite": "ETS",
+    "titre": "Analyse de rentabilité de projets",
+    "credits": 3,
+    "description": "Ce cours vise à faire acquérir  divers concepts théoriques et techniques de l'analyse économique et financière de rentabilité de projets d'investissements.  Au terme de ce cours, la personne étudiante sera en mesure de :  expliquer les concepts d'équivalence temps-argent, flux monétaire d'un projet et autres paramètres financiers essentiels à l'analyse de rentabilité; évaluer le coût du financement d'un projet; analyser un problème de décision d'investissement sous l'angle de la rentabilité écon",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GIA602",
+    "universite": "ETS",
+    "titre": "Ergonomie et sécurité en milieu industriel",
+    "credits": 3,
+    "description": "Ce cours vise à initier les étudiantes ou les étudiants à analyser des problèmes de santé et de sécurité du travail, concevoir des moyens de prévention ou de correction, évaluer les risques résiduels d’un outil, d’un équipement, d’un procédé ou d’un poste de travail.  Les thèmes abordés sont : les capacités et les limites d’un être humain au travail, les risques ergonomiques, les risques de sécurité du travail (physiques, mécaniques et électriques), les risques liés aux contaminants, la gestion ",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GPE450",
+    "universite": "ETS",
+    "titre": "Gestion du personnel et relations industrielles",
+    "credits": 3,
+    "description": "Au terme de ce cours, l’étudiante ou l’étudiant aura acquis des connaissances théoriques et sera en mesure de les appliquer à la gestion de ressources humaines dans les entreprises et aux relations de travail dans le contexte québécois et canadien, et d’appliquer des outils de gestion efficaces et adaptables aux situations particulières des organisations.  À la fin de ce cours, l’étudiante ou l’étudiant sera en mesure : d’expliquer l’importance et les enjeux des différentes facettes des ressourc",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GPO602",
+    "universite": "ETS",
+    "titre": "Évaluation et contrôle de l'environnement industriel",
+    "credits": 3,
+    "description": "Au terme de ce cours, l’étudiante ou l’étudiant connaîtra les principes de l’évaluation et du contrôle de l’environnement industriel.   À la fin du cours, l’étudiante ou l’étudiant sera en mesure : d’identifier les différents contaminants du milieu de travail;d’appliquer les différentes normes et règlementations;de décrire des techniques pour évaluer les expositions professionnelles à ces produits;de proposer des mesures de contrôle des expositions.  Contaminants chimiques et physiques : toxicol",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GTI320",
+    "universite": "ETS",
+    "titre": "Programmation mathématique : patrons et algorithmes efficaces",
+    "credits": 3,
+    "description": "Ce cours présente les approches permettant de concevoir des applications orientées objet efficaces, particulièrement dans le cadre des applications qui reposent sur les calculs mathématiques.  Au terme de ce cours, l’étudiante ou l'étudiant sera en mesure de : concevoir un système efficace utilisant la programmation orientée objet; développer des applications qui utilisent les vecteurs et matrices pour résoudre des problèmes; réaliser les opérations fondamentales nécessaires à la 3D.  Programmat",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG121",
+      "MAT472"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GTI350",
+    "universite": "ETS",
+    "titre": "Conception et évaluation des interfaces utilisateurs",
+    "credits": 4,
+    "description": "Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure :de faire des choix judicieux lors de la conception d'une interface utilisateur, en appliquant des directives de conception et en respectant les besoins des utilisateurs; de réaliser des prototypes de l'interface conçue; d'appliquer des méthodes d'évaluation pour valider les prototypes et guider leur modification.   Étapes de spécification, de conception, de développement, et d'évaluation des interfaces utilisateurs selon les princip",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG210"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GTI510",
+    "universite": "ETS",
+    "titre": "Gestion de projets et assurance de la qualité",
+    "credits": 3,
+    "description": "Au terme de ce cours, l’étudiante ou l'étudiant sera en mesure de : mesurer le logiciel en développement; estimer le coût et l’effort d’un projet de développement logiciel; identifier et gérer les ressources nécessaires pour le déroulement d’un projet; planifier, organiser, diriger et contrôler un projet d’assurance de la qualité en génie des TI; négocier et gérer les conflits;acquérir un cadre conceptuel pour l’étude de la gestion de projets et se familiariser avec les principes, techniques et ",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "GTI210",
+      "STA204"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GTI525",
+    "universite": "ETS",
+    "titre": "Technologies de développement Internet",
+    "credits": 3,
+    "description": "À la fin de ce cours, l'étudiante ou l'étudiant sera capable de : décrire l’infrastructure de base d’Internet, du Web, et d’une application Web, et expliquer le rôle des principaux éléments de cette infrastructure (matériel, protocoles, langages, serveurs, navigateurs, etc.); nommer les principales technologies de développement (langages) d’applications Web statiques et dynamiques et expliquer les principales caractéristiques de chacune; identifier les particularités du développement en environn",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG210",
+      "LOG121"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Précision sur les préalables :"
+  },
+  {
+    "sigle": "GTI611",
+    "universite": "ETS",
+    "titre": "Réseaux de communication IP",
+    "credits": 4,
+    "description": "Au terme de ce cours, l’étudiante ou l'étudiant sera en mesure de comprendre le principe de fonctionnement des réseaux de communication IP (Internet protocol), d’analyser les exigences des applications transportées par des réseaux de communication IP, de concevoir un réseau de communication IP en appliquant les principes de base de conception de réseau, de choisir et d’appliquer les technologies réseau les plus utilisées dans l’industrie pour concevoir un réseau de communication IP.  Plus spécif",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG121"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GTI619",
+    "universite": "ETS",
+    "titre": "Sécurité des systèmes",
+    "credits": 3,
+    "description": "La sécurité des systèmes d’information est un vaste champ d’études touchant à de nombreux domaines : ingénierie, logiciel, matériel, infrastructure, architecture, législation, etc. Ces aspects sont souvent interreliés. De ce fait, les spécialistes en sécurité informatique se doivent d’avoir une bonne vue d’ensemble afin de réaliser leurs tâches de façon adéquate.   Ce cours aura pour principal objectif de présenter les principaux aspects de la sécurité des systèmes reliés aux technologies de l’i",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG121"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GTI650",
+    "universite": "ETS",
+    "titre": "Introduction à l'information quantique",
+    "credits": 3,
+    "description": "Ce cours vise à introduire les étudiantes et les étudiants à l’information quantique. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : comprendre les notions  de bases de l’information quantique ; décrire le fonctionnement d’algorithmes quantiques  simples et de protocoles de communication quantiques élémentaires ; calculer l’évolution  de l’état de qubits dans un circuit quantique ; calculer les probabilités de mesure ; calculer  l’intrication. Bases de l’information quantiqu",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MAT165",
+      "MAT472"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Précision sur le préalable : Un seul des deux cours suivants est nécessaire. MAT165 Algèbre linéaire et analyse vectorielle (4 cr.) ou MAT472 Algèbre linéaire et géométrie de l’espace (4 cr.)"
+  },
+  {
+    "sigle": "GTI700",
+    "universite": "ETS",
+    "titre": "Principes et fondements de l’Internet des objets (IdO)",
+    "credits": 3,
+    "description": "L’objectif de ce cours est de fournir à l’étudiante ou à l'étudiant les connaissances nécessaires des  principales fonctionnalités, applications et technologies clés génériques de l’Internet des  objets (IdO). Le cours couvrira divers aspects liés au paradigme de l’IdO tels que les  réseaux, les protocoles, les architectures, les applications et les services. Au terme de ce cours, l’étudiante ou l'étudiant sera en mesure de : démontrer une compréhension des  principes fondamentaux des architectu",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "IND250"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Préalable : avoir réussi 60 crédits du programme pour les programmes de baccalauréat en génie logiciel et baccalauréat en génie des technologies de l’information et IND250 Conception de plateformes infonuagiques distribuées (3 cr.) pour le programme de baccalauréat en informatique distribuée."
+  },
+  {
+    "sigle": "GTI719",
+    "universite": "ETS",
+    "titre": "Sécurité des réseaux d'entreprise",
+    "credits": 3,
+    "description": "La sécurité des systèmes d’information est un vaste champ d’études touchant à de nombreux domaines : logiciel, matériel, infrastructure, architecture, législation, etc. Ces aspects sont souvent interreliés. De ce fait, les ingénieurs spécialistes en sécurité des systèmes d’information se doivent d’avoir une bonne vue d’ensemble afin de réaliser leurs tâches adéquatement.  Ce cours a pour principal objectif de présenter les aspects essentiels de la sécurité des systèmes d’information des entrepri",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "GTI619"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GTI720",
+    "universite": "ETS",
+    "titre": "Protection des renseignements personnels",
+    "credits": 3,
+    "description": "Les renseignements personnels sont des données permettant d’identifier de manière  directe ou indirecte un individu. Ce cours aborde les concepts fondamentaux de la  protection des renseignements personnels, notamment leur potentiel d’inférence, les  propriétés garantissant leur protection ainsi que les technologies d’amélioration de la  confidentialité. Au terme de ce cours, l’étudiante ou l'étudiant sera en mesure de : identifier des menaces à la vie privée  et d’effectuer des études d’impact ",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG121"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GTI723",
+    "universite": "ETS",
+    "titre": "Test d’intrusion",
+    "credits": 3,
+    "description": "Le test d’intrusion représente une étape cruciale dans la sécurisation d’un système d’information ou d’une infrastructure informatique. En effet, il consiste à mettre à l’épreuve la sécurité du système en l’exposant à une équipe d’experts ayant comme mission la découverte des vulnérabilités et leur exploitation afin de compromettre le bon fonctionnement du système, d’obtenir un accès illégal à une ressource, de perturber ou interrompre un service, etc. De ce fait, les spécialistes en test d’intr",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "GTI619"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GTI745",
+    "universite": "ETS",
+    "titre": "Interfaces utilisateurs avancées",
+    "credits": 3,
+    "description": "À la suite de ce cours, l'étudiante ou l'étudiant sera en mesure : de concevoir et de développer des interfaces utilisateurs avancées, expérimentales ou non conventionnelles; d'incorporer des techniques récentes et des fonctionnalités interactives novatrices à la conception d'un système; de mesurer et analyser de façon quantitative la performance humaine avec une interface donnée.    Notions avancées en interaction humain-machine. Styles et techniques d'interaction expérimentaux ou novateurs (in",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "GTI350",
+      "MAT472"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GTI750",
+    "universite": "ETS",
+    "titre": "Programmation et algorithmes quantiques",
+    "credits": 3,
+    "description": "Ce cours vise à acquérir des connaissances et à maitriser les techniques de  programmation afin d’être en mesure d’implémenter des algorithmes sur des ordinateurs  quantiques. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : comprendre les  éléments fondamentaux de la programmation sur des ordinateurs quantiques ; distinguer  les différentes techniques de programmation des ordinateurs quantiques ; développer des  applications combinant les ordinateurs classiques et quantiques ",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "GTI650",
+      "LOG320"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GTI755",
+    "universite": "ETS",
+    "titre": "Apprentissage machine quantique",
+    "credits": 3,
+    "description": "Ce cours vise à acquérir des connaissances dans le domaine l’informatique quantique  appliquées à l’intelligence artificielle, comprendre les contraintes des ordinateurs  quantiques et comment les utiliser pour améliorer les performances des algorithmes  d’apprentissage classiques.  Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : comprendre les  éléments fondamentaux de l’apprentissage machine quantique ; identifier les problèmes  ou sous-problèmes de l’apprentissage machine ",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "GTI650"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GTI771",
+    "universite": "ETS",
+    "titre": "Apprentissage machine avancé",
+    "credits": 3,
+    "description": "Ce cours présente les concepts d’apprentissage automatique par les ordinateurs. Plusieurs problèmes applicatifs seront étudiés et différentes méthodes d’apprentissage automatique émanant du génie des technologies de l’information, de la théorie de l’information et de l’intelligence artificielle seront étudiées.   À la fin de ce cours, les étudiantes et les étudiants seront en mesure de : illustrer et expliquer la nature des systèmes intelligents; appliquer les connaissances en intelligence artif",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG635",
+      "MAT472"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Note sur les préalables :"
+  },
+  {
+    "sigle": "GTI780",
+    "universite": "ETS",
+    "titre": "Sujets émergents en technologie de l'information",
+    "credits": 3,
+    "description": "Au terme de ce cours, l’étudiant aura vu les aspects nouveaux et cruciaux en technologie de l’information.   Stratégies technologiques pertinentes liées à la planification, à la conception ou à la gestion des systèmes matériels ou logiciels actuels ou proposés par les industries qui évoluent dans le domaine des technologies de l’information.",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IND105",
+    "universite": "ETS",
+    "titre": "Architecture des microprocesseurs",
+    "credits": 3,
+    "description": "Ce cours vise à initier les étudiantes et les étudiants aux architectures les plus courantes du processeur de systèmes ordinés.  Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : distinguer les différentes architectures de processeurs ; identifier l’architecture des processeurs présents dans un système ordiné ; distinguer les différents types de parallélisme d’exécution ; choisir une architecture appropriée pour l’application.  Représentations de nombres. Organisation et archit",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IND220",
+    "universite": "ETS",
+    "titre": "Systèmes d’exploitation et services Internet",
+    "credits": 3,
+    "description": "Ce cours vise à configurer et exploiter efficacement une machine locale ou distante dans un contexte d’informatique distribuée. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : configurer le système d’exploitation d’une machine ; d’automatiser ses tâches à travers le développement de scripts ; agir sur une machine distante ; identifier les services Internet nécessaires selon les besoins liés à leur projet d’informatique distribuée ; mettre en place les services identifiés ; me",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IND235",
+    "universite": "ETS",
+    "titre": "Graphes et algorithmes",
+    "credits": 3,
+    "description": "Ce cours vise à expliquer des notions de la théorie des graphes et des algorithmes qui s’y rattachent. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : utiliser la théorie des graphes pour représenter et résoudre des problèmes de nature algorithmique ; expliquer la notion de classes de complexité ; choisir la technique algorithmique appropriée en fonction du contexte ; implémenter de manière efficace des algorithmes de la théorie des graphes. Analyse de la complexité asymptoti",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG320"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IND250",
+    "universite": "ETS",
+    "titre": "Conception de plateformes infonuagiques distribuées",
+    "credits": 3,
+    "description": "Ce cours vise à concevoir des plateformes infonuagiques à partir de patrons de référence. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : expliquer les fondements et les avantages d’une migration vers l’infonuagique; expliquer les différents défis reliés au déploiement et à la gestion des infrastructures infonuagiques; appliquer des patrons d’architecture infonuagique; caractériser les différents services selon leur fonction dans une architecture; choisir le meilleur service ",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "IND220"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IND280",
+    "universite": "ETS",
+    "titre": "Développement multiplateformes",
+    "credits": 3,
+    "description": "Ce cours vise à créer des applications distribuées pouvant s’exécuter sur des plateformes matérielles et logicielles hétérogènes. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : décrire les principales technologies sous-tendant la réalisation d’applications multiplateformes ; appliquer les techniques de conception, de développement, de déploiement et de tests propres à la réalisation d’applications multiplateformes ; considérer les différentes contraintes matérielles et logic",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "IND250"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IND300",
+    "universite": "ETS",
+    "titre": "Sécurité dans les environnements informatiques distribués",
+    "credits": 3,
+    "description": "Ce cours vise à expliquer les enjeux de sécurité des systèmes distribués. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : comprendre les vulnérabilités inhérentes aux systèmes distribuées ainsi que leur surface d’attaque; mettre en pratique les techniques de protection des communications, des mécanismes de coordination, des services et données dans ces systèmes; analyser les risques de systèmes distribués. Propriétés de sécurité. Informatique nuagique. Systèmes cyberphysiques",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IND500",
+    "universite": "ETS",
+    "titre": "Bases de données distribuées modernes",
+    "credits": 3,
+    "description": "Ce cours vise à expliquer les technologies, la modélisation et l’utilisation des bases de données NoSQL. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : déterminer quand utiliser un type particulier de base de données ; identifier les exigences et les défis des bases de données en matière de performance et de fiabilité ; mettre en pratique les techniques d’extraction, de transformation et de compression de données pour charger de grandes quantités de données ; comprendre cert",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IND520",
+    "universite": "ETS",
+    "titre": "Réalisation d’une solution IdO",
+    "credits": 6,
+    "description": "Ce cours vise à développer une solution IdO (Internet des objets/IoT) d’envergure distribuée qui intégrera différentes plateformes logicielles et matérielles.  Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : appliquer les principes de gestion de projet, de communication et de travail d’équipe ; modéliser les éléments architecturaux et logiciels d’un système IdO ; implémenter les composants d’un système IdO ; déployer un système IdO distribué. Architecture. Conception. Impléme",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "GTI700"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IND540",
+    "universite": "ETS",
+    "titre": "Introduction à l’analyse des mégadonnées",
+    "credits": 3,
+    "description": "Ce cours vise à analyser des mégadonnées dans le but de découvrir des informations pour prendre des décisions éclairées. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : expliquer la nature des systèmes d’analyse de données ; utiliser les outils appropriés ; représenter des documents analytiques en combinant des techniques de narration, de codification et graphiques ; modéliser les problèmes de la science des données à grande échelle. Applications du domaine des mégadonnées po",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG320"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IND560",
+    "universite": "ETS",
+    "titre": "Projet en analytique et IA avec mégadonnées",
+    "credits": 6,
+    "description": "Ce cours vise à synthétiser les connaissances acquises en intelligence artificielle et en mégadonnées avec un accent sur la pratique. Au terme de ce cours l’étudiante ou l’étudiant sera en mesure de : appliquer les principes de gestion de projets, de communication et de travail d’équipe ; appliquer les connaissances en apprentissage machine et en analytique dans un projet de grande envergure ; contraster les services, les outils et les infrastructures appropriés pour l’entrainement, l’analyse et",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "IND540",
+      "LOG635"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IND580",
+    "universite": "ETS",
+    "titre": "Programmation de haut niveau pour l’accélération matérielle",
+    "credits": 3,
+    "description": "Le cours vise à créer un accélérateur matériel à l’aide d’outils de haut niveau du domaine construit autour d’un langage de haut niveau. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure autant pour un circuit intégré prédiffusé programmable (FPGA) que pour un processeur graphique à usage général (GPGPU) de : identifier les goulots d’étranglement ; choisir des stratégies de parallélisation en adéquation avec la plateforme visée ; appliquer les stratégies sélectionnées en utilisant u",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG645"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IND590",
+    "universite": "ETS",
+    "titre": "Robustesse des systèmes distribués",
+    "credits": 3,
+    "description": "Ce cours vise à concevoir des systèmes distribués résilients selon le contexte de pannes dans lequel ils se trouvent. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : identifier les risques de pannes et les besoins en résilience d’un système distribué ; déterminer l’approche la plus pertinente pour tolérer les pannes dans un système distribué étant données ses contraintes opérationnelles ; concevoir des algorithmes ; évaluer la résilience d’un algorithme à l’aune des besoins i",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG645"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "IND780",
+    "universite": "ETS",
+    "titre": "Sujets émergents en informatique distribuée",
+    "credits": 3,
+    "description": "Ce cours vise à créer des solutions novatrices et à critiquer les solutions actuelles dans une ou plusieurs perspectives des systèmes distribués. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : analyser l’impact de l’adoption de technologies émergentes; évaluer les stratégies technologiques pertinentes liées à la planification de solution futures; expérimenter des technologies émergentes de systèmes distribués proposés par les industries qui évoluent dans le domaine de l’info",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Préalable : Avoir obtenu un minimum de 60 crédits de cours du programme."
+  },
+  {
+    "sigle": "IND791",
+    "universite": "ETS",
+    "titre": "Projets spéciaux en informatique distribuée",
+    "credits": 3,
+    "description": "Activité destinée à deux catégories d’étudiants et d’étudiantes : celles et ceux qui participent aux diverses compétitions en sciences appliquées et celles et ceux qui souhaitent réaliser un travail d’initiation à la recherche (élaboration d’une revue de littérature, définition d’une problématique ou autre).  Dans les deux cas, une proposition écrite spécifiant l’objectif, les moyens nécessaires et la méthodologie qui sera utilisée pour mener à bien le projet doit préalablement être approuvée pa",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Dans les deux cas, une proposition écrite spécifiant l’objectif, les moyens nécessaires et la méthodologie qui sera utilisée pour mener à bien le projet doit préalablement être approuvée par le directeur du département. Cette activité conduit à la rédaction d’un rapport technique et à une présentation orale. | Préalable : Avoir obtenu un minimum de 60 crédits de cours du programme."
+  },
+  {
+    "sigle": "IND795",
+    "universite": "ETS",
+    "titre": "Projet de fin d’études en informatique distribuée",
+    "credits": 6,
+    "description": "Cette activité donne à l’étudiante ou l'étudiant l’occasion de présenter par écrit une analyse détaillée d’un problème complexe et d’en formuler et soutenir les conclusions. Elle lui fournit également l’opportunité de faire la synthèse de connaissances acquises dans son programme d’études.   Des étudiantes et des étudiants provenant potentiellement de différents programmes d’études travaillent sous la supervision d’un membre de l'équipe professorale. Le projet est choisi d’une liste de projets p",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Préalable : Avoir réussi un minimum de 78 crédits du programme."
+  },
+  {
+    "sigle": "ING150",
+    "universite": "ETS",
+    "titre": "Statique et dynamique",
+    "credits": 4,
+    "description": " Ce cours vise à initier aux concepts fondamentaux de la statique et de la dynamique en utilisant une démarche scientifique.  Au terme de ce cours, la personne étudiante sera en mesure de : appliquer les concepts fondamentaux de la statique en 2D et 3D;  analyser l'équilibre d'un corps rigide en 2D et 3D;  déterminer la position du centre de masse et le moment d'inertie de surface d'un objet; analyser des situations où un objet est soumis à des forces de frottement sec; appliquer les concepts fo",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ING500",
+    "universite": "ETS",
+    "titre": "Outils de développement durable pour l’ingénieur",
+    "credits": 3,
+    "description": "Ce cours vise à s'initier aux principes d'ingénierie durable.  Au terme de ce cours, la personne étudiante sera en mesure de :  appliquer les principes fondamentaux de l'ingénierie durable; choisir les outils d'ingénierie durable pertinents selon le contexte du projet; évaluer les impacts environnementaux, sociaux et économiques d'un projet dans une perspective de durabilité.  Éléments de contenu : principes d'ingénierie durable (Innovation et  Créativité, Respect des écosystèmes, Pensée systémi",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG100",
+    "universite": "ETS",
+    "titre": "Programmation et réseautique en génie logiciel",
+    "credits": 4,
+    "description": "Ce cours présente les notions fondamentales en programmation et en réseautique nécessaires à l’ingénieur en génie logiciel. Il est constitué de deux modules.   Au terme du premier module spécifique à la programmation, l’étudiante ou l'étudiant sera en mesure d’implémenter une application orientée objet utilisant les algorithmes de base et les structures de données appropriées. Retour rapide sur la programmation orientée objet : classe, objet, interface, héritage, composition, encapsulation et po",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG121",
+    "universite": "ETS",
+    "titre": "Conception orientée objet",
+    "credits": 4,
+    "description": "Au terme de ce cours, l’étudiante ou l'étudiant sera en mesure : de concevoir des systèmes orientés objet en appliquant des principes et heuristiques de base d’une bonne conception;d'analyser des problèmes de conception;de choisir et d’appliquer des patrons de conception.    Conception orientée objet : identification des objets, modélisation des objets et de leur interaction, notions de cohésion d’un objet et de couplage entre objets. Patrons de conception : compréhension des problèmes reliés à ",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "GTI100",
+      "LOG100"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Préalable: GTI100 Programmation et réseautique en génie des TI (4 cr.) ou LOG100 Programmation et réseautique en génie logiciel (4 cr.) pour les programmes de baccalauréat en génie logiciel, baccalauréat en génie des technologies de l’information et cheminement universitaire en technologie."
+  },
+  {
+    "sigle": "LOG200",
+    "universite": "ETS",
+    "titre": "Structures de données et algorithmes",
+    "credits": 4,
+    "description": "Acquérir une connaissance spécifique au génie logiciel des structures de données et des algorithmes. Comprendre et utiliser l'analyse asymptotique afin de choisir judicieusement les structures de données appropriées et le type d'algorithme optimal pour résoudre efficacement un problème tout en respectant les contraintes imposées et les ressources disponibles.  À la fin de ce cours, l’étudiante ou l’étudiant sera en mesure de choisir parmi une multitude de structures de données de base (tableau, ",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MAT210",
+      "LOG121"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG210",
+    "universite": "ETS",
+    "titre": "Analyse et conception de logiciels",
+    "credits": 4,
+    "description": "Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure  : de maîtriser et appliquer des patrons de conception logicielle;de concevoir un logiciel orienté objet en appliquant un ensemble de principes et des méthodes heuristiques de génie logiciel; de réaliser un logiciel en suivant un processus itératif et évolutif incluant les activités d'analyse et de conception par objets.  Méthodes et techniques de modélisation orientés objet, langage de modélisation, cas d'utilisation, analyse orient",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG121"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG240",
+    "universite": "ETS",
+    "titre": "Tests et maintenance",
+    "credits": 3,
+    "description": "Ce cours présente et applique les concepts du cycle de vie de la maintenance d'un logiciel, la validation et la vérification d'un logiciel, et les différents types de tests selon les principes du génie logiciel.  Gestion de la configuration, transition d'un logiciel du développement à la maintenance, éléments de maintenance de logiciel, types de maintenance, activités de maintenance, gestion des problèmes et amélioration de la maintenance du logiciel, principes de tests, conception de tests boit",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG100"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG320",
+    "universite": "ETS",
+    "titre": "Structures de données et algorithmes",
+    "credits": 4,
+    "description": "Acquérir une connaissance spécifique au génie logiciel des structures de données et des algorithmes. Comprendre et utiliser l'analyse asymptotique afin de choisir judicieusement les structures de données appropriées et le type d'algorithme optimal pour résoudre efficacement un problème tout en respectant les contraintes imposées et les ressources disponibles.   Au terme de ce cours, l'étudiante ou l'étudiant sera en mesure de choisir parmi une multitude de structures de données de base (tableau,",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MAT210",
+      "LOG121"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG410",
+    "universite": "ETS",
+    "titre": "Analyse de besoins et spécifications",
+    "credits": 3,
+    "description": "Au terme de ce cours, l’étudiante ou l’étudiant sera initié à l’exercice exhaustif d’analyse des besoins et au développement d’une spécification de produit à partir de l’analyse de besoins.  Importance de l’analyse des besoins. Modèles de cycle de vie du logiciel et formes appropriées d’analyse des besoins à chaque étape. Étapes du processus de formalisation des besoins. Caractéristiques des informations contenues dans le document d’analyse des besoins ainsi que le contenu, la validation de ce c",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG240"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Préalable : LOG240 Tests et maintenance (3 cr.) Cours associé : COM410 Rédaction technique et communication en génie logiciel (3 cr.)"
+  },
+  {
+    "sigle": "LOG430",
+    "universite": "ETS",
+    "titre": "Architecture logicielle",
+    "credits": 4,
+    "description": "À la fin de ce cours, l'étudiante ou l'étudiant sera en mesure : de documenter une architecture logicielle;d’analyser une architecture logicielle;de concevoir une architecture logicielle dirigée par les attributs de qualité;   Caractéristiques du problème de conception, architecture et ingénierie, rôle et importance de l'architecte, scénarios d'attributs de qualité, tactiques architecturales, familles de structures architecturales, styles architecturaux, conception de l'architecture dirigée par ",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG210"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG450",
+    "universite": "ETS",
+    "titre": "Conception d’applications mobiles",
+    "credits": 3,
+    "description": "Ce cours introduit les étudiants au développement d’applications pour les appareils mobiles.  Au terme de ce cours, les étudiantes et les étudiants seront en mesure de : concevoir, développer et déployer une application mobile; appliquer les patrons de conception spécifiques à la conception d’applications mobiles; maîtriser les outils de développement d’une application mobile; comprendre les enjeux reliés à la production d’une application mobile.  Les sujets abordés incluent entre autres : envir",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "GTI350"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG460",
+    "universite": "ETS",
+    "titre": "Sécurité des logiciels",
+    "credits": 3,
+    "description": "En dépit du progrès de la discipline du génie logiciel et des nombreux mécanismes de défense développés, les logiciels déployés et exécutés sur nos infrastructures sont souvent la cible de cyberattaques. En effet, de nouvelles vulnérabilités logicielles sont régulièrement découvertes, ce qui représente de nombreuses brèches qui peuvent être exploitées afin de mener des cyberattaques redoutables. De ce fait, les spécialistes en cybersécurité doivent maîtriser les principes fondamentaux de la sécu",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG121"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG530",
+    "universite": "ETS",
+    "titre": "Réingénierie du logiciel",
+    "credits": 3,
+    "description": "Ce cours vise l’acquisition des principes de la réingénierie du logiciel. Différentes techniques à différents niveaux d’un logiciel seront étudiées de manière théorique ou pratique.   Au terme de ce cours, l'étudiante ou l'étudiant sera en mesure de proposer des solutions concrètes pour la réingénierie dans le milieu professionnel. Nous y verrons les concepts suivants : maintenance du logiciel; exigences des systèmes modernes et les techniques de transformations des systèmes patrimoniaux; défini",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG210"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG550",
+    "universite": "ETS",
+    "titre": "Conception de systèmes informatiques en temps réel",
+    "credits": 3,
+    "description": "Acquérir des méthodologies et techniques de spécification, conception et implémentation de systèmes de logiciels temps réel spécifique à un ingénieur logiciel.  Définition du temps réel. Revue des systèmes en temps réel et leurs caractéristiques générales. Exigences du temps réel. Méthodologies et techniques de spécification et de conception de systèmes temps réel. Principales méthodes de communication et de synchronisation entre processus. Technique de compilation croisée et optimisation de cod",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG210"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG635",
+    "universite": "ETS",
+    "titre": "Systèmes intelligents et algorithmes",
+    "credits": 3,
+    "description": "Ce cours vise la compréhension pour un ingénieur logiciel et un ingénieur TI de trois domaines d’application de l’intelligence artificielle étroitement liés : la représentation des connaissances, le traitement automatique des langues naturelles et les algorithmes de recherche de solutions optimales.  À la fin de ce cours, l’étudiante ou l'étudiant sera en mesure de: discuter des avantages et inconvénients des approches symboliques et non symboliques en explicitant les points communs entre les tr",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG320",
+      "MAT350",
+      "MAT380"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Note sur les préalables :"
+  },
+  {
+    "sigle": "LOG645",
+    "universite": "ETS",
+    "titre": "Architectures de calculs parallèles",
+    "credits": 3,
+    "description": "Au terme de ce cours, l’étudiante ou l'étudiant aura vu les architectures parallèles modernes, aura acquis et appliqué une méthodologie de conception d’algorithme parallèle ainsi que les techniques d’analyse de performance des systèmes informatique parallèles.   Architectures parallèles modernes : multi-cœurs, multiprocesseurs, grilles de calculs et multi-ordinateurs. Classification de Flynn des architectures parallèles : SIMD, MIMD, MISD et MIMD. Méthodologie de conception d’algorithmes parallè",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG320",
+      "IND105"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Note sur le préalable :"
+  },
+  {
+    "sigle": "LOG660",
+    "universite": "ETS",
+    "titre": "Bases de données de haute performance",
+    "credits": 4,
+    "description": "Ce cours présente des concepts avancés sur l'analyse, la conception et l'implémentation d'applications complexes utilisant des bases de données (BD) de haute performance en génie logiciel. Les thèmes abordés dans le cours comprennent la modélisation de relations complexes et la conception de BD relationnelles efficaces, les paradigmes de la persistance transparente et des BD non relationnelles, la gestion des données en mémoire et l'optimisation de la performance, la gestion des transactions con",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG320"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG675",
+    "universite": "ETS",
+    "titre": "Programmation compétitive",
+    "credits": 3,
+    "description": "Ce cours vise à acquérir les connaissances algorithmiques, mathématiques et de  programmation, nécessaires pour la programmation compétitive. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : analyser un problème  de programmation compétitive ; choisir les structures de données adéquates pour un  problème donné ; concevoir un algorithme efficace pour résoudre un problème ;  développer des programmes fiables pour implémenter une solution conçue ; coordonner  le travail d’une équ",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG320"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG680",
+    "universite": "ETS",
+    "titre": "Introduction à l'approche DevOps",
+    "credits": 3,
+    "description": "L’approche DevOps vise à intégrer les différents aspects liés au cycle de vie des systèmes logiciels, incluant le développement et les opérations, pour accroître l’agilité des entreprises, tant au niveau technique qu’au niveau affaires. Ce cours aborde les concepts de base de DevOps, notamment sa philosophie, son flux de travail, ses méthodes d’analyse et de surveillance, et ses outils. Nous discuterons aussi des défis associés à l’implémentation et l'évolution d’une approche DevOps dans un cont",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "STA204",
+      "STA206",
+      "STA209"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Note sur le préalable :"
+  },
+  {
+    "sigle": "LOG710",
+    "universite": "ETS",
+    "titre": "Principes des systèmes d’exploitation et programmation système",
+    "credits": 3,
+    "description": "Au terme de ce cours, l’étudiante ou l'étudiant aura acquis et appliqué les concepts, principes de base et techniques établies utilisés en génie logiciel pour l’analyse, la conception et l’implémentation des systèmes d’exploitation modernes.  Structures et architectures des systèmes d'exploitation : monolithique, en couche, micronoyau, et modulaire. Mode d’opération des systèmes d’exploitation : mode utilisateur, mode privilégié. Mécanisme des interruptions, appels systèmes et commutation de con",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG320"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG721",
+    "universite": "ETS",
+    "titre": "Intergiciels pour applications distribués",
+    "credits": 3,
+    "description": "Ce cours vise à familiariser l’étudiante ou l'étudiant avec les principaux concepts liés aux systèmes distribués ayant des composantes développées grâce à des intergiciels (\"middleware\") orientés objet.  Au terme de ce cours, les étudiantes et les étudiants seront en mesure de : identifier les principales caractéristiques d’un système distribué; identifier les principales caractéristiques des intergiciels orientés objet; déterminer les divers attributs de qualité d’un système affectés par la dis",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG121",
+      "IND220"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Note sur le préalable : LOG210 Analyse et conception de logiciels (4 cr.) pour les programmes de baccalauréat en génie logiciel et baccalauréat en génie des technologies de l’information;"
+  },
+  {
+    "sigle": "LOG725",
+    "universite": "ETS",
+    "titre": "Ingénierie et conception de jeux vidéo",
+    "credits": 3,
+    "description": "Ce cours qui se concentre sur l’ingénierie vise à :Permettre à l’étudiante ou à l'étudiant d’analyser et de concevoir des jeux vidéo et de leurs architectures;Comprendre les enjeux reliés à la production d’un jeu vidéo.  Historique du jeu vidéo, cycle de développement d’un jeu, gestion de projet et processus de développement, gestionnaire de version, fondement d’une architecture pour engin 3D, concepts de physique et de mathématiques, librairies optimisées pour le calcul vectoriel et la résoluti",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "GTI320"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG736",
+    "universite": "ETS",
+    "titre": "Fondements des systèmes distribués",
+    "credits": 3,
+    "description": "Ce cours présente les principaux fondamentaux des systèmes distribués tels que le réseau informatique, horloges, les modèles de tolérance aux pannes, coordination, la réplication et les transactions. Le cours vise aussi à introduire les principes avancés de systèmes distribués, tels que les patrons pour le traitement de données massives (p. ex. : MapReduce), les réseaux pair à pair et décentralisés, et les notions de cohérence, de disponibilité et de tolérance au partitionnement. Les systèmes di",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "LOG645"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG750",
+    "universite": "ETS",
+    "titre": "Infographie",
+    "credits": 3,
+    "description": "Acquérir des connaissances de base en infographie 2D et 3D.   Production et affichage d'images par ordinateur. Représentation numérique de la couleur et des images. Transformations affines et projections. Coordonnées homogènes. Changement de systèmes de coordonnées. Primitives graphiques telles que : modèles polygonaux, courbes et surfaces paramétriques. Graphe de scène et hiérarchie d'objets. Caméra synthétique et visualisation tridimensionnelle. Élimination des parties cachées. Textures. Éclai",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MAT472",
+      "GTI320"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Préalable : MAT472 Algèbre linéaire et géométrie de l’espace (4 cr.) pour le baccalauréat en génie logiciel;"
+  },
+  {
+    "sigle": "LOG780",
+    "universite": "ETS",
+    "titre": "Sujets émergents en génie logiciel",
+    "credits": 3,
+    "description": "Au terme de ce cours, l’étudiante ou l'étudiant aura vu les aspects nouveaux et cruciaux en génie logiciel.  Stratégies technologiques pertinentes liées à la planification, à la conception ou à la gestion des systèmes logiciels actuels ou proposés par les industries qui évoluent dans le domaine du génie logiciel.",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LOG791",
+    "universite": "ETS",
+    "titre": "Projets spéciaux",
+    "credits": 3,
+    "description": "Activité destinée à deux catégories d’étudiantes et d'étudiants: celles et ceux qui participent aux diverses compétitions d'ingénierie et celles et ceux qui souhaitent réaliser un travail d’initiation à la recherche (élaboration d’une revue de littérature, définition d’une problématique, ou autre).   Dans les deux cas, elles et ils doivent préalablement faire approuver par la direction du Département une proposition écrite spécifiant l'objectif, les moyens nécessaires et la méthodologie qu'elles",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Dans les deux cas, elles et ils doivent préalablement faire approuver par la direction du Département une proposition écrite spécifiant l'objectif, les moyens nécessaires et la méthodologie qu'elles et ils entendent utiliser pour mener à bien leur projet. Cette activité conduit à la rédaction d’un rapport technique et à une présentation orale."
+  },
+  {
+    "sigle": "LOG795",
+    "universite": "ETS",
+    "titre": "Projet de fin d’études en génie logiciel",
+    "credits": 4,
+    "description": "À la fin de cette activité, l’étudiante ou l'étudiant sera en mesure : de concevoir des éléments, des systèmes, procédés et processus qui répondent à des besoins spécifiques tout en respectant des contraintes non techniques telles que les facteurs économiques, le développement durable, la santé et la sécurité, l’éthique et les contraintes légales;  d’appliquer une méthodologie de conception rigoureuse;   de produire toute la documentation technique nécessaire à la mise en œuvre des éléments, des",
+    "niveau": 7,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Préalable : l'étudiante ou l'étudiant doit avoir réussi 99 crédits de cours dans son programme."
+  },
+  {
+    "sigle": "LRC110",
+    "universite": "ETS",
+    "titre": "Leadership et responsabilité collective",
+    "credits": 3,
+    "description": "Ce cours vise à doter la future ingénieure ou le futur ingénieur d’une vision globale de l’environnement dans lequel elle ou il évoluera. Ce cours vise aussi à la ou le préparer à assumer un rôle de leadership sur le marché du travail, et ce,  dans un contexte où l’action de tous les  acteurs (privés, publics, parapublics) est  nécessaire pour favoriser la croissance  économique et assurer une incidence  socio-environnementale positive. Au terme de ce cours, l’étudiante ou l'étudiant sera en mes",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "LRC600",
+    "universite": "ETS",
+    "titre": "Leadership et responsabilité collective",
+    "credits": 3,
+    "description": " Ce cours vise à comprendre l'environnement complexe dans lequel ils interviendront ainsi quà l exercice d un leadership éclairé sur le marché du travail. Au terme de ce cours, la personne étudiante sera en mesure de : développer sa pensée critique sur des problématiques complexes, en établissant des liens entre les dimensions économiques, sociales et environnementales; évaluer des solutions créatives et innovatrices à des problèmes sociétaux;  collaborer de manière efficace au sein d'équipes mu",
+    "niveau": 6,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MAT145",
+    "universite": "ETS",
+    "titre": "Calcul différentiel et intégral",
+    "credits": 4,
+    "description": " Ce cours vise à acquérir les concepts et méthodes du calcul différentiel et intégral à une variable pour la résolution de problèmes en science et en génie.  Au terme de ce cours, la personne étudiante sera en mesure de :  appliquer les méthodes du calcul différentiel et intégral; résoudre des problèmes à l'aide du calcul différentiel et intégral; communiquer ses démarches de façon claire et structurée; utiliser un logiciel de calcul symbolique.  Éléments de contenu : fonctions d'une variable. G",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MAT210",
+    "universite": "ETS",
+    "titre": "Logique et mathématiques discrètes",
+    "credits": 4,
+    "description": "Ce cours vise à acquérir les concepts de logique du premier ordre et de mathématiques discrètes pour la résolution de divers problèmes.  Au terme de ce cours, la personne étudiante sera en mesure de :  appliquer des méthodes de la logique et des mathématiques discrètes; résoudre des problèmes à l'aide de la logique et des mathématiques discrètes; concevoir la preuve d'un résultat mathématique; analyser la complexité d'algorithmes simples; communiquer ses démarches de façon claire et structurée; ",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MAT145"
+    ],
+    "concomitant_courses": [
+      "MAT145"
+    ],
+    "equivalent_courses": [],
+    "requirement_text": "Cours préalable : MAT145 Calcul différentiel et intégral (4 cr.) | Cours concomitant : MAT145 Calcul différentiel et intégral (4 cr.) pour le programme de baccalauréat en informatique distribuée"
+  },
+  {
+    "sigle": "MAT265",
+    "universite": "ETS",
+    "titre": "Équations différentielles",
+    "credits": 4,
+    "description": "Ce cours vise à acquérir les concepts et les méthodes de résolution pour différents types d'équations différentielles rencontrées dans des problèmes en science et en génie. Au terme de ce cours, la personne étudiante sera en mesure de :  identifier les propriétés d'une équation différentielle; appliquer les techniques de résolution appropriées pour une équation différentielle; résoudre des problèmes modélisés par des équations différentielles; communiquer ses démarches de façon claire et structu",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MAT145"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MAT350",
+    "universite": "ETS",
+    "titre": "Probabilités et statistiques",
+    "credits": 4,
+    "description": "Ce cours vise à acquérir les concepts et les outils de base reliés aux probabilités, aux statistiques descriptives et à l'inférence statistique. Au terme de ce cours, la personne étudiante sera en mesure de :  appliquer les concepts de statistiques descriptives, de l'inférence statistique, de l'estimation, des tests d'hypothèses et de la régression linéaire; appliquer les principes de base de la probabilité et des variables aléatoires; résoudre des problèmes à l'aide de méthodes statistiques et ",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MAT145"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MAT380",
+    "universite": "ETS",
+    "titre": "Algèbre linéaire",
+    "credits": 4,
+    "description": "Ce cours vise à utiliser les notions fondamentales d’algèbre linéaire et de calcul matriciel.  Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de :  effectuer diverses opérations sur les matrices;  décrire un problème à l’aide du langage matriciel;  résoudre un système d’équations linéaires à l’aide du langage matriciel;  identifier les propriétés importantes d’une matrice;  comprendre les notions d’espaces vectoriels et de transformations linéaires;  utiliser les outils mathémati",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MAT472",
+    "universite": "ETS",
+    "titre": "Algèbre linéaire et géométrie de l’espace",
+    "credits": 4,
+    "description": " Ce cours vise à acquérir les concepts et méthodes de l'algèbre linéaire, de la géométrie vectorielle ainsi que du calcul différentiel en plusieurs variables afin de résoudre divers problèmes.  Au terme de ce cours, la personne étudiante sera en mesure de :  appliquer les méthodes issues de l'algèbre linéaire, de la géométrie vectorielle et du calcul différentiel à plusieurs variables; résoudre des problèmes à l'aide de l'algèbre linéaire, de la géométrie vectorielle et du calcul différentiel à ",
+    "niveau": 4,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "MAT145"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MGL805",
+    "universite": "ETS",
+    "titre": "Vérification et assurance qualité de logiciels",
+    "credits": 3,
+    "description": "Étudier les concepts et les outils liés à la qualité des logiciels.  Facteurs qualité (efficacité, exactitude, performance, facilité d’entretien). Normes d’assurance qualité et de vérification et validation (ISO, IEEE). Plans d’assurance qualité et de vérification et validation (coût, activités, ressources). Méthodes d’assurance qualité et de vérification et validation (revue, inspections, audits). Les tests : principes, méthodes, processus et plan de tests. Outils logiciels facilitant la mise e",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MGL845",
+    "universite": "ETS",
+    "titre": "Ingénierie dirigée par les modèles",
+    "credits": 3,
+    "description": "Ce cours présente les principes de l’ingénierie logicielle dirigée par les modèles. En particulier, le cours aborde le processus de développement logiciel par transformations de modèles et les concepts de modèles indépendants des plateformes et modèles spécifiques aux plateformes. Ce cours couvre aussi les principes et les standards de modélisation et de méta-modélisation, les langages spécifiques aux domaines et l’architecture dirigée par les modèles MDA (Model-Driven Architecture) de l’OMG (Ob",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MGL846",
+    "universite": "ETS",
+    "titre": "Concepts et pratique des tests logiciels",
+    "credits": 3,
+    "description": "Fondements des tests logiciels : terminologie, questions clés des tests logiciels, relation des tests logiciels avec les autres activités du cycle de vie logiciel.  Niveaux de tests : cibles des tests logiciels, objectifs des tests logiciels. Techniques de tests logiciels.  Mesures des tests logiciels : évaluation des programmes testés, évaluation des tests effectués. Processus des tests logiciels : considérations pratiques des tests logiciels, activités des tests logiciels. Outils de tests logi",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MGL848",
+    "universite": "ETS",
+    "titre": "Validation et vérification de modèles en génie logiciel",
+    "credits": 3,
+    "description": "Ce cours vise à procurer à l'étudiante ou à l'étudiant une connaissance approfondie des méthodes formelles et semi-formelles pour la description et l’analyse de matériels ou de produits logiciels. Il vise également à faire comprendre les avantages et les limites de ces méthodes.   À la fin du cours, l'étudiante ou l'étudiant sera en mesure de produire un modèle abstrait et formel d’un système, de l’utiliser pour démontrer certaines propriétés, de d'expliquer comment ces propriétés répondent aux ",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MGL849",
+    "universite": "ETS",
+    "titre": "Modélisation, analyse et programmation des systèmes temps réel",
+    "credits": 3,
+    "description": "Les systèmes temps réel et embarqués sont omniprésents. Ces systèmes sont souvent caractérisés par des contraintes de temps sévères. En outre, ils sont naturellement concurrents, distribués et souvent critiques. La complexité de tels systèmes est continuellement en croissance. Par conséquent, la conception et l’implémentation de systèmes temps réels corrects et fiables sont des tâches cruciales et complexes. La modélisation de ces systèmes utilisant des méthodes et langages de modélisation stand",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MTI805",
+    "universite": "ETS",
+    "titre": "Compréhension de l'image",
+    "credits": 3,
+    "description": "Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure : de reconnaître les algorithmes contemporains de compréhension de l’image et de vision par ordinateur;de développer un sens critique face aux différents algorithmes en compréhension de l’image et en vision par ordinateur;de concevoir et implémenter des solutions de base en compréhension de l’image et en vision par ordinateur;de comprendre les questions de recherche en compréhension de l’image et en vision par ordinateur.   Survol de",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MTI811",
+    "universite": "ETS",
+    "titre": "Technologies, systèmes et applications vidéo",
+    "credits": 3,
+    "description": "Ce cours vise à développer des connaissances  approfondies dans le domaine des technologies  et des systèmes vidéo, ainsi que dans les  applications qu’ils rendent possibles. Au terme de ce cours, l'étudiante ou l'étudiant sera en mesure de : analyser les propriétés des signaux vidéo à l'aide de divers outils; concevoir les éléments architecturaux importants des systèmes  de communication et des applications vidéo; choisir les formats et protocoles appropriés dans  la conception de systèmes de c",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MTI815",
+    "universite": "ETS",
+    "titre": "Systèmes de communication vocale",
+    "credits": 3,
+    "description": "Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure : d’expliquer le fonctionnement des systèmes de communication vocale;de choisir un système de communication vocale en fonction des besoins;d’évaluer les systèmes de communication vocale.  Communication vocale par ordinateur. Modes de production et de perception de la parole. Fonctionnement des ordinateurs afin de compresser, encoder, synthétiser et reconnaître le signal de la parole. Techniques d’encodage (PCM, ADPCM, LPC, ACELP), de",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MTI820",
+    "universite": "ETS",
+    "titre": "Entrepôts de données et intelligence d’affaires",
+    "credits": 3,
+    "description": "Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure : d’analyser les besoins d’une organisation en intelligence d’affaires; de spécifier les exigences d’un entrepôt de données; de modéliser, concevoir, réaliser, et administrer un entrepôt de données.   Revue des concepts SQL2; interface entre SQL et un programme (SQLJ, SQL-PSM, JDBC, DBMS_LOB); modélisation, conception, réalisation, réalisation et administration d’un entrepôt de donné. Éléments d’un système d’aide à la décision (Decis",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MTI830",
+    "universite": "ETS",
+    "titre": "Forage de textes et de données audiovisuelles",
+    "credits": 3,
+    "description": "Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure : d’expliquer le fonctionnement des techniques de forage de textes et de données audiovisuelles; de choisir une approche de forage en fonction des besoins de l’application; d’évaluer les approches de techniques de forage.   Introduction à la théorie et aux techniques de forage de textes et de données audiovisuelles. Systèmes de recherche d'information textuelle et de documents audiovisuels; indexation efficace de texte et de document",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MTI836",
+    "universite": "ETS",
+    "titre": "Surfaces discrètes : représentation, algorithmes et traitement",
+    "credits": 3,
+    "description": "Ce cours vise à initier les étudiantes et les étudiants aux approches permettant de concevoir des systèmes pour traiter des surfaces discrètes. Il présente des outils mathématiques utilisés pour le traitement des surfaces, de même que des approches algorithmiques pour représenter et traiter les surfaces.  Au terme de ce cours, les étudiantes et les étudiants seront en mesure de : choisir les opérations appropriées pour modifier une surface discrète; réaliser des opérations sur des surfaces discr",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MTI845",
+    "universite": "ETS",
+    "titre": "Interfaces haptiques",
+    "credits": 3,
+    "description": "Ce cours initie les étudiantes et les étudiants au développement d’interfaces haptiques, c’est-à-dire d’interfaces humain-machine faisant appel au sens du toucher. Les objectifs principaux de ce cours sont de développer une compréhension de la perception haptique chez l’humain et d’apprendre à concevoir, prototyper et évaluer des interfaces haptiques utilisant différentes technologies tel que la vibration ou le retour de force.  À la fin du cours, les étudiantes et les étudiants seront en mesure",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MTI850",
+    "universite": "ETS",
+    "titre": "Analytiques des données massives",
+    "credits": 3,
+    "description": "Ce cours présente les concepts pour effectuer une analyse statistique de très grands ensembles de données qui ne tiennent pas sur un seul ordinateur. Ce cours vous permettra développer vos connaissances en analyse de données massives et améliorerez vos compétences en programmation et en mathématiques. Vous apprendrez à utiliser des outils analytiques essentiels pour l’analyse statistique des données massives. Plusieurs problèmes applicatifs seront étudiés et différentes méthodes et outils pour e",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MTI855",
+    "universite": "ETS",
+    "titre": "Physique des jeux",
+    "credits": 3,
+    "description": "Ce cours introduit les étudiantes et les étudiants aux techniques numériques pour l'animation basée sur la physique dans les applications temps réel, tels que les jeux vidéo et les applications de réalité virtuelle. L'objectif principal de ce cours est de développer une compréhension des techniques fondamentales utilisées pour l'animation basée sur la physique.  À la fin du cours, les étudiantes et les étudiants seront en mesure de : comprendre les principes fondamentaux de la modélisation et de",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MTI860",
+    "universite": "ETS",
+    "titre": "Réalité virtuelle et augmentée",
+    "credits": 3,
+    "description": "Ce cours vise à familiariser les étudiantes et les étudiants avec les mécanismes sensoriels humains impliqués dans les systèmes de réalité virtuelle et de réalité augmentée ainsi que de les initier au développement d’applications de réalité virtuelle et de réalité augmentée.  Au terme de ce cours, les étudiantes et les étudiants seront en mesure de : comprendre et expliquer les mécanismes sensoriels de l'humain qui sont impliqués dans la perception de la réalité virtuelle ou augmentée; comprendr",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MTI865",
+    "universite": "ETS",
+    "titre": "Apprentissage profond pour la vision par ordinateur",
+    "credits": 3,
+    "description": "Ce cours vise à décrire tous les détails du fonctionnement des réseaux de neurones profonds et leurs applications dans le domaine de la reconnaissance visuelle. Au terme de ce cours, les étudiantes et les étudiants seront en mesure d’expliquer en détail le fonctionnement des réseaux de neurones convolutifs; de discuter des avantages et inconvénients de ces approches pour des applications en vision par ordinateur; de construire des systèmes basés sur des réseaux de neurones convolutifs et les uti",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MTI870",
+    "universite": "ETS",
+    "titre": "Rendu d’images de synthèse photoréalistes",
+    "credits": 3,
+    "description": "Ce cours vise à appliquer des méthodes modernes de génération d’images photoréalistes  utilisées en infographie. Au terme de ce cours, l’étudiante ou l’étudiant sera en mesure de : décrire les différentes  étapes et modèles mathématiques utilisés dans la génération d’images; mettre en  application ces modèles dans un moteur de rendu moderne basé sur le tracé de chemin;  valider les procédures de génération d’images; discuter des avantages et inconvénients  des différentes méthodes d’échantillonn",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "PHY332",
+    "universite": "ETS",
+    "titre": "Électricité et magnétisme",
+    "credits": 4,
+    "description": "Ce cours vise à calculer les effets produits par des charges électriques au repos et en mouvement, principalement en ce qui a trait aux forces et aux champs de natures électrique et magnétique, ainsi qu'aux circuits électriques.  Au terme de ce cours, la personne étudiante sera en mesure de :  calculer les forces, le champ et le potentiel électriques produits par des charges ponctuelles ou des distributions continues de charges; appliquer la loi de Gauss dans des calculs de flux et de champ élec",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "CTN248",
+      "ING150"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "cours préalable : ING150 Statique et dynamique (4 cr.) sauf pour les étudiantes et les étudiants au baccalauréat en génie mécanique et au baccalauréat en génie aérospatial ou CTN248 Statique et dynamique (3 cr.) pour les étudiantes et les étudiants au baccalauréat en génie de la construction."
+  },
+  {
+    "sigle": "PHY335",
+    "universite": "ETS",
+    "titre": "Physique des ondes",
+    "credits": 4,
+    "description": "Ce cours vise à Ce cours vise à développer les principes fondamentaux de la physique des ondes et des oscillations.  Au terme de ce cours, la personne étudiante sera en mesure de :  interpréter les données expérimentales permettant de trouver les équations du mouvement harmonique simple; calculer la propagation d'onde dans des cordes;  analyser les résultats expérimentaux d'un système optique constitué de lentilles minces; analyser expérimentalement la réflexion, la transmission et la polarisati",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "CTN248",
+      "ING150"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Cours préalable : ING150 Statique et dynamique (4 cr.) sauf pour les étudiantes et les étudiants au baccalauréat en génie mécanique ou CTN248 Statique et dynamique (3 cr.) pour les étudiantes et les étudiants au baccalauréat en génie de la construction."
+  },
+  {
+    "sigle": "PRE011",
+    "universite": "ETS",
+    "titre": "Développement professionnel et initiation à la santé et sécurité au travail",
+    "credits": 0,
+    "description": "Volet 1 (en ligne, asynchrone) - Volet 2 15h (intensif)  Ce cours vise à s'initier au fonctionnement des stages à l'ÉTS, à son développement professionnel et aux méthodes de recherche de stages (volet 1) ainsi qu'à la santé et sécurité en milieu de travail (SST) (volet 2).  Au terme de ce cours, la personne étudiante sera en mesure de :   Volet 1 :  acquérir les principes liés au fonctionnement des stages à l'ÉTS; identifier les bonnes pratiques à propos de la rédaction du dossier de candidature",
+    "niveau": 0,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "PRE013",
+    "universite": "ETS",
+    "titre": "Développement professionnel et santé et sécurité du travail en secteur informatique",
+    "credits": 0,
+    "description": "Ce cours vise à s'initier au fonctionnement des stages à l'ÉTS, à son développement professionnel et aux méthodes de recherche de stages (volet 1) ainsi qu'aux principes de prévention en santé et sécurité du travail (SST) pour les personnes œuvrant dans le secteur des technologies de l'information et l'informatique (volet 2).  Au terme de ce cours, la personne étudiante sera en mesure de :   Volet 1 : acquérir les principes liés au fonctionnement des stages à l'ÉTS; identifier les bonnes pratiqu",
+    "niveau": 0,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "STA106",
+    "universite": "ETS",
+    "titre": "Stage coopératif I en génie logiciel",
+    "credits": 9,
+    "description": "Le premier stage coopératif (S1), réalisé dans le cadre du microprogramme de 1er cycle en enseignement coopératif I, permet d’initier l’étudiante ou l’étudiant d’un baccalauréat en génie aux réalités du marché du travail de son secteur. Ce stage rémunéré fait surtout appel au sens pratique de l’étudiante ou l’étudiant dans l’application de travaux à caractère technique ou d’ingénierie.   Note : avoir cumulé ou être inscrit à un minimum de 12 crédits d’un programme de baccalauréat de l’École, ",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "PRE011"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "STA109",
+    "universite": "ETS",
+    "titre": "Stage en informatique distribuée (hors programme)",
+    "credits": 9,
+    "description": "Stage optionnel et hors programme permettant à l'étudiante ou l'étudiant du baccalauréat en informatique distribuée d'appliquer les connaissances et les compétences acquises lors de deux premiers trimestres du programme de baccalauréat en informatique distribuée. Ce stage est rémunéré.  Note:  avoir obtenu 30 crédits de cours du programme.",
+    "niveau": 1,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "PRE013"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "STA206",
+    "universite": "ETS",
+    "titre": "Stage coopératif II en génie logiciel",
+    "credits": 9,
+    "description": "Le deuxième stage coopératif (S2), réalisé dans le cadre du microprogramme de 1er cycle en enseignement coopératif II, a l’objectif de faire participer l’étudiante ou l’étudiant d’un baccalauréat en génie, de façon significative, à l’exécution d’un projet d’ingénierie ou à la réalisation de travaux ou d’études de nature technique. Ce stage est rémunéré. ",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "STA209",
+    "universite": "ETS",
+    "titre": "Stage industriel en informatique distribuée",
+    "credits": 9,
+    "description": "Le deuxième stage coopératif (S2), réalisé dans le cadre du microprogramme de 1er cycle en enseignement coopératif II, a l’objectif de faire participer l’étudiante ou l’étudiant d’un baccalauréat en génie, de façon significative, à l’exécution d’un projet d’ingénierie ou à la réalisation de travaux ou d’études de nature technique. Ce stage est rémunéré.   Note: avoir obtenu un minimum de 46 crédits de cours du programme de baccalauréat en informatique distribuée.",
+    "niveau": 2,
+    "hors_perimetre": false,
+    "prerequisite_courses": [
+      "PRE013"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "STA306",
+    "universite": "ETS",
+    "titre": "Stage coopératif III en génie logiciel",
+    "credits": 9,
+    "description": "Le troisième stage coopératif (S3), réalisé dans le cadre du microprogramme de 1er cycle en enseignement coopératif III, amène l’étudiante ou l’étudiant d’un baccalauréat en génie à œuvrer à la conception de projets d’ingénierie ou à participer à leur exécution. Ce stage rémunéré a pour objectif de permettre à l’étudiante ou à l’étudiant d’apporter une contribution significative à la résolution d’un problème d’ingénierie ou à la conception et à la réalisation d’un tel projet, en tenant compte de",
+    "niveau": 3,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "SYS800",
+    "universite": "ETS",
+    "titre": "Reconnaissance de formes et inspection",
+    "credits": 4,
+    "description": "Acquérir les concepts de base et les principales techniques utilisées dans le domaine de la reconnaissance de formes en vue d’adapter éventuellement l'équipement existant à des tâches particulières de production et d'inspection.   Méthodes statistiques en reconnaissance de formes. Techniques déterministes et statistiques, tests d'hypothèses, classificateur bayésien, estimation de paramètres et de fonctions de densité, sélection de caractéristiques. Méthode syntaxique en reconnaissance de formes.",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "SYS809",
+    "universite": "ETS",
+    "titre": "Vision par ordinateur",
+    "credits": 4,
+    "description": "Comprendre les divers phénomènes qui se produisent lors de la formation d’une image. Maîtriser l’appareil mathématique servant à poser les problèmes de vision de façon analytique. Choisir l’approche de segmentation la mieux appropriée au type d’image à l’étude. Apprendre à se faire une idée globale du vaste domaine que représente la vision par ordinateur et à progresser de façon autonome par la suite.   Introduction : vue d’ensemble de la vision artificielle. Formation des images : géométrie, co",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "SYS828",
+    "universite": "ETS",
+    "titre": "Systèmes biométriques",
+    "credits": 3,
+    "description": "À la fin de ce cours, l’étudiante ou l'étudiant sera en mesure : d’acquérir les notions fondamentales en biométrie, de comparer les principaux modèles neuroniques et statistiques exploités pour faire la mise en œuvre des systèmes biométriques,  d’analyser les avantages et les limites de différentes architectures de systèmes pour une application donnée.  Introduction à la biométrie : historique; caractéristiques biométriques; domaines d’applications; fonctions d’identification, de surveillance et",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "SYS843",
+    "universite": "ETS",
+    "titre": "Réseaux de neurones et systèmes flous",
+    "credits": 3,
+    "description": "Acquérir les notions fondamentales sur les réseaux de neurones et les systèmes flous, et se familiariser avec les principaux modèles permettant d’analyser les avantages et les limites d’une application donnée.    Réseaux de neurones : définitions, caractéristiques, fondements biologiques, structure et fonctionnement de base. Méthodologie de construction et description des principaux modèles : Perceptron, Adaline-Madaline, rétropropagation, Hopfield, Kohonen, ART, etc. Réalisation d'une applicati",
+    "niveau": 8,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "TIN503",
+    "universite": "ETS",
+    "titre": "Environnement, technologie et société",
+    "credits": 3,
+    "description": "Ce cours vise à s'initier aux liens et interactions entre la technologie, la société et l'environnement.  Au terme de ce cours, la personne étudiante sera en mesure de :  analyser les projets d'ingénierie de façon à en dégager les enjeux sociaux, économiques et environnementaux;  analyser le changement technologique dans ses dimensions sociale, économique, environnementale et éthique;  Expliquer les grandes problématiques environnementales contemporaines; décrire le rôle de l'ingénieur dans la s",
+    "niveau": 5,
+    "hors_perimetre": false,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": "Cours préalables : 64 crédits (programmes 7065, 7070, 7084, 7086, 7365, 7483, 7485, 7495, 7610, 7622, 7625, 7684, 7694, 7921) ou 70 crédits (programmes 7095, 7883, 7884, 7885)"
+  },
+  {
+    "sigle": "CTN248",
+    "universite": "ETS",
+    "titre": "Statique et dynamique",
+    "credits": 3,
+    "description": "Ce cours vise à acquérir les principes fondamentaux de la statique et de la dynamique.  Au terme de ce cours, la personne étudiante sera en mesure de : appliquer les principes fondamentaux de l'analyse vectorielle et des systèmes de forces à des cas typiques déquilibre rencontrés en structure; déterminer les conditions d'équilibre des points matériels et des corps rigides dans le plan et dans l'espace; analyser les éléments structuraux isostatiques; illustrer les diagrammes des efforts internes ",
+    "niveau": 2,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "MAT145"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ELE216",
+    "universite": "ETS",
+    "titre": "Développement de logiciels en génie électrique",
+    "credits": 4,
+    "description": "Ce cours vise à s'initier aux bases de la programmation multi-tâche et de la conception de logiciels.  Au terme de ce cours, la personne étudiante sera en mesure de : analyser des problèmes liés à la programmation multi-tâches, tels que la synchronisation, la protection d'accès, le partage de ressources; appliquer les principales méthodes de communication inter-processus; concevoir des protocoles de communication simples pour répondre aux exigences d'une application logicielle; utiliser le Unifi",
+    "niveau": 2,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "INF147"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "ELE344",
+    "universite": "ETS",
+    "titre": "Conception et architecture de processeurs",
+    "credits": 4,
+    "description": "Ce cours vise à s'initier aux concepts fondamentaux de l'architecture des processeurs dans un système ordiné et la méthodologie de conception de processeurs dans des circuits intégrés programmables (FPGA).  Au terme de ce cours, la personne étudiante sera en mesure de : utiliser les notions du langage de description de haut niveau (VHDL); expliquer les concepts fondamentaux de l'architecture des processeurs et les architectures courantes utilisées pour la réalisation de processeurs; concevoir de",
+    "niveau": 3,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "ELE140"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GIA410",
+    "universite": "ETS",
+    "titre": "Gestion et économie des projets d’ingénierie",
+    "credits": 3,
+    "description": "Ce cours vise à s'initier à la gestion de projet et à l'analyse financière.  Au terme de ce cours, la personne étudiante sera en mesure de :  expliquer les neufs domaines de la gestion de projet; expliquer les concepts d'équivalence temps-argent, flux monétaire d'un projet et autres paramètres financiers essentiels à l'analyse de rentabilité; évaluer le coût du financement d'un projet; analyser un problème de décision d'investissement sous l'angle de la rentabilité économique en appliquant les c",
+    "niveau": 4,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GTI100",
+    "universite": "ETS",
+    "titre": "Programmation et réseautique en génie des TI",
+    "credits": 4,
+    "description": "Ce cours présente les notions fondamentales en programmation et en réseautique nécessaires à l’ingénieur des TI. Il est constitué de deux modules.  Au terme du premier module spécifique à la programmation, l’étudiante ou l'étudiant sera en mesure d’implémenter une application orientée objet utilisant les algorithmes de base et les structures de données appropriées.  Retour rapide sur la programmation orientée objet : classe, objet, interface, héritage, composition, encapsulation et polymorphisme",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "GTI210",
+    "universite": "ETS",
+    "titre": "Introduction au génie des TI",
+    "credits": 3,
+    "description": "Ce cours d’introduction vise à sensibiliser l’étudiante ou l'étudiant à l’importance stratégique des technologies de l’information, tant pour la société que pour les organisations. Il conduira l’étudiant à aborder les TI sous l’angle de leur approche contextuelle en entreprise.  Au terme du cours, l'étudiante ou l'étudiant :comprendra ce qu’est une entreprise et comment les TI en sont partie intégrante;aura une connaissance des principales TI et de leur utilisation potentielle;comprendra comment",
+    "niveau": 2,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "MAT165",
+    "universite": "ETS",
+    "titre": "Algèbre linéaire et analyse vectorielle",
+    "credits": 4,
+    "description": "Ce cours vise à acquérir les concepts et méthodes du calcul différentiel et intégral à plusieurs variables, du calcul vectoriel et de l'algèbre matricielle, afin de résoudre divers problèmes.  Au terme de ce cours, la personne étudiante sera en mesure de :  appliquer les méthodes du calcul différentiel et intégral, du calcul vectoriel et de l'algèbre matricielle;   résoudre des problèmes à l'aide du calcul différentiel et intégral, du calcul vectoriel et de l'algèbre matricielle; communiquer ses",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "MAT145"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "STA101",
+    "universite": "ETS",
+    "titre": "Stage coopératif I en génie de la construction",
+    "credits": 9,
+    "description": "Le premier stage coopératif (S1), réalisé dans le cadre du microprogramme de 1er cycle en enseignement coopératif I, permet d’initier l’étudiante ou l’étudiant d’un baccalauréat en génie aux réalités du marché du travail de son secteur. Ce stage rémunéré fait surtout appel au sens pratique de l’étudiante ou l’étudiant dans l’application de travaux à caractère technique ou d’ingénierie.  Note : avoir cumulé ou être inscrit à un minimum de 12 crédits d’un programme de baccalauréat de l’École, ",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "PRE011",
+      "PRE013"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "STA102",
+    "universite": "ETS",
+    "titre": "Stage coopératif I en génie de la production automatisée",
+    "credits": 9,
+    "description": "Le premier stage coopératif (S1), réalisé dans le cadre du microprogramme de 1er cycle en enseignement coopératif I, permet d’initier l’étudiante ou l’étudiant d’un baccalauréat en génie aux réalités du marché du travail de son secteur. Ce stage rémunéré fait surtout appel au sens pratique de l’étudiante ou l’étudiant dans l’application de travaux à caractère technique ou d’ingénierie.  Note : avoir cumulé ou être inscrit à un minimum de 12 crédits d’un programme de baccalauréat de l’École, ",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "PRE011",
+      "PRE013"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "STA103",
+    "universite": "ETS",
+    "titre": "Stage coopératif I en génie des opérations et de la logistique",
+    "credits": 9,
+    "description": "Le premier stage coopératif (S1), réalisé dans le cadre du microprogramme de 1er cycle en enseignement coopératif I, permet d’initier l’étudiante ou l’étudiant d’un baccalauréat en génie aux réalités du marché du travail de son secteur. Ce stage rémunéré fait surtout appel au sens pratique de l’étudiante ou l’étudiant dans l’application de travaux à caractère technique ou d’ingénierie.   Note : avoir cumulé ou être inscrit à un minimum de 12 crédits d’un programme de baccalauréat de l’École, ",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "PRE011"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "STA104",
+    "universite": "ETS",
+    "titre": "Stage coopératif I en génie des technologies de l’information",
+    "credits": 9,
+    "description": "Le premier stage coopératif (S1), réalisé dans le cadre du microprogramme de 1er cycle en enseignement coopératif I, permet d’initier l’étudiante ou l’étudiant d’un baccalauréat en génie aux réalités du marché du travail de son secteur. Ce stage rémunéré fait surtout appel au sens pratique de l’étudiante ou l’étudiant dans l’application de travaux à caractère technique ou d’ingénierie.   Note : avoir cumulé ou être inscrit à un minimum de 12 crédits d’un programme de baccalauréat de l’École, ",
+    "niveau": 1,
+    "hors_perimetre": true,
+    "prerequisite_courses": [
+      "PRE011"
+    ],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  },
+  {
+    "sigle": "STA204",
+    "universite": "ETS",
+    "titre": "Stage coopératif II en génie des technologies de l’information",
+    "credits": 9,
+    "description": "Le deuxième stage coopératif (S2), réalisé dans le cadre du microprogramme de 1er cycle en enseignement coopératif II, a l’objectif de faire participer l’étudiante ou l’étudiant d’un baccalauréat en génie, de façon significative, à l’exécution d’un projet d’ingénierie ou à la réalisation de travaux ou d’études de nature technique. Ce stage est rémunéré. ",
+    "niveau": 2,
+    "hors_perimetre": true,
+    "prerequisite_courses": [],
+    "concomitant_courses": [],
+    "equivalent_courses": [],
+    "requirement_text": ""
+  }
+]
