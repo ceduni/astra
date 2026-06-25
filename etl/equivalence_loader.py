@@ -20,6 +20,7 @@ from typing import Iterable
 from uuid import uuid4
 
 INFERRED = "inferred"
+VERSION = "v1"
 
 
 def clear_inferred_equivalences(session, universite: str) -> int:
@@ -66,12 +67,13 @@ def write_inferred_equivalence(
             created_at: datetime($created_at),
             created_by: 'etl',
             confidence: $confidence,
-            evidence:   $evidence
+            evidence:   $evidence,
+            version:    $version
         }]->(b)
         """,
         a=sigle_a, b=sigle_b, id=edge_id, source=INFERRED,
         created_at=datetime.now(timezone.utc).isoformat(),
-        confidence=confidence, evidence=evidence,
+        confidence=confidence, evidence=evidence, version=VERSION,
     )
     return edge_id
 

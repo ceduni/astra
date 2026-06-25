@@ -67,6 +67,20 @@ STATEMENTS = [
     CREATE INDEX equivaut_a_status IF NOT EXISTS
     FOR ()-[r:EQUIVAUT_A]-() ON (r.status)
     """,
+
+    # ── Version indexes ──────────────────────────────────────────────────────
+    """
+    CREATE INDEX cours_version IF NOT EXISTS
+    FOR (c:Cours) ON (c.version)
+    """,
+    """
+    CREATE INDEX requiert_version IF NOT EXISTS
+    FOR ()-[r:REQUIERT]-() ON (r.version)
+    """,
+    """
+    CREATE INDEX equivaut_a_version IF NOT EXISTS
+    FOR ()-[r:EQUIVAUT_A]-() ON (r.version)
+    """,
 ]
 
 

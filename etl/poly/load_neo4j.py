@@ -26,24 +26,25 @@ load_dotenv(Path(__file__).parents[2] / ".env")
 
 INPUT_FILE = Path(__file__).parent / "canonical_courses.json"
 UNIVERSITE = "Poly"
+VERSION = "v1"
 
 
 def load(tx, courses: list, stats: dict):
     for c in courses:
-        merge_cours(tx, c)
+        merge_cours(tx, c, VERSION)
 
     for c in courses:
         prereqs = c.get("prerequisite_courses", [])
         if not prereqs:
             continue
         items = parse_prereqs(prereqs, c.get("requirement_text", ""))
-        load_prereqs(tx, c["sigle"], items, stats)
+        load_prereqs(tx, c["sigle"], items, stats, VERSION)
 
     for c in courses:
         concomitants = c.get("concomitant_courses", [])
         if not concomitants:
             continue
-        stats["concomitant"] += load_concomitants(tx, c["sigle"], concomitants)
+        stats["concomitant"] += load_concomitants(tx, c["sigle"], concomitants, VERSION)
 
 
 def main():

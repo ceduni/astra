@@ -95,7 +95,8 @@ SET c.universite       = $universite,
     c.description      = $description,
     c.niveau           = $niveau,
     c.hors_perimetre   = $hors_perimetre,
-    c.requirement_text = $requirement_text
+    c.requirement_text = $requirement_text,
+    c.version          = $version
 """
 
 _COURS_FIELDS = (
@@ -104,11 +105,11 @@ _COURS_FIELDS = (
 )
 
 
-def merge_cours(tx, course: dict):
-    tx.run(_MERGE_COURS, **{k: course[k] for k in _COURS_FIELDS})
+def merge_cours(tx, course: dict, version: str):
+    tx.run(_MERGE_COURS, **{k: course[k] for k in _COURS_FIELDS}, version=version)
 
 
-def load_prereqs(tx, from_sigle: str, items: list, stats: dict):
+def load_prereqs(tx, from_sigle: str, items: list, stats: dict, version: str):
     """Write parsed prerequisite structure to Neo4j, updating stats."""
     if not items:
         return
@@ -119,14 +120,14 @@ def load_prereqs(tx, from_sigle: str, items: list, stats: dict):
             # ── direct REQUIERT ──────────────────────────────────────────────
             tx.run(
                 "MATCH (a:Cours {sigle:$f}) MATCH (b:Cours {sigle:$t})"
-                " MERGE (a)-[:REQUIERT]->(b)",
-                f=from_sigle, t=item,
+                " MERGE (a)-[r:REQUIERT]->(b) SET r.version = $version",
+                f=from_sigle, t=item, version=version,
             )
             stats["direct"] += 1
         else:
             # ── single OR group ──────────────────────────────────────────────
             gid = f"{from_sigle}__OR"
-            _create_or_group(tx, from_sigle, gid, item, parent_is_cours=True)
+            _create_or_group(tx, from_sigle, gid, item, parent_is_cours=True, version=version)
             stats["or"] += 1
         return
 
@@ -138,8 +139,8 @@ def load_prereqs(tx, from_sigle: str, items: list, stats: dict):
     )
     tx.run(
         "MATCH (a:Cours {sigle:$f}) MATCH (g:PrerequisiteGroup {id:$id})"
-        " MERGE (a)-[:REQUIERT]->(g)",
-        f=from_sigle, id=and_id,
+        " MERGE (a)-[r:REQUIERT]->(g) SET r.version = $version",
+        f=from_sigle, id=and_id, version=version,
     )
     stats["and"] += 1
 
@@ -173,7 +174,7 @@ def load_prereqs(tx, from_sigle: str, items: list, stats: dict):
             stats["or"] += 1
 
 
-def _create_or_group(tx, from_sigle, gid, codes, parent_is_cours):
+def _create_or_group(tx, from_sigle, gid, codes, parent_is_cours, version: str):
     tx.run(
         "MERGE (g:PrerequisiteGroup {id:$id}) SET g.type='OR'",
         id=gid,
@@ -181,8 +182,8 @@ def _create_or_group(tx, from_sigle, gid, codes, parent_is_cours):
     if parent_is_cours:
         tx.run(
             "MATCH (a:Cours {sigle:$f}) MATCH (g:PrerequisiteGroup {id:$id})"
-            " MERGE (a)-[:REQUIERT]->(g)",
-            f=from_sigle, id=gid,
+            " MERGE (a)-[r:REQUIERT]->(g) SET r.version = $version",
+            f=from_sigle, id=gid, version=version,
         )
     for code in codes:
         tx.run(
@@ -194,7 +195,7 @@ def _create_or_group(tx, from_sigle, gid, codes, parent_is_cours):
 
 # ── Corequisites (concomitant courses) ─────────────────────────────────────────
 
-def load_concomitants(tx, from_sigle: str, concomitant_courses: list) -> int:
+def load_concomitants(tx, from_sigle: str, concomitant_courses: list, version: str) -> int:
     """
     Write direct (Cours)-[:REQUIERT_CONCOMITANT]->(Cours) edges for one
     course's corequisites.
@@ -209,8 +210,8 @@ def load_concomitants(tx, from_sigle: str, concomitant_courses: list) -> int:
     for t in targets:
         tx.run(
             "MATCH (a:Cours {sigle:$f}) MATCH (b:Cours {sigle:$t})"
-            " MERGE (a)-[:REQUIERT_CONCOMITANT]->(b)",
-            f=from_sigle, t=t,
+            " MERGE (a)-[r:REQUIERT_CONCOMITANT]->(b) SET r.version = $version",
+            f=from_sigle, t=t, version=version,
         )
     return len(targets)
 
