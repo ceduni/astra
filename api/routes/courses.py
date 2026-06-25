@@ -43,8 +43,26 @@ class Universite(BaseModel):
     program_courses: int
 
 
+class CoursAccessible(Cours):
+    official_equiv_sigle: Optional[str] = None
+
+
+class EquivalencePair(BaseModel):
+    id: str
+    sigle_a: str
+    titre_a: str
+    universite_a: str
+    sigle_b: str
+    titre_b: str
+    universite_b: str
+    source: str
+    confidence: Optional[float] = None
+    status: str
+
+
 class EligibilityRequest(BaseModel):
     completed: List[str]
+    home_universite: Optional[str] = None
 
 
 class PrereqGroup(BaseModel):
@@ -217,11 +235,35 @@ ORDER BY c.universite, c.sigle
 """
 
 
-@router.post("/eligible", response_model=List[Cours])
+@router.post("/eligible", response_model=List[CoursAccessible])
 def get_eligible(body: EligibilityRequest):
     with get_driver().session() as session:
         rows = session.run(_ELIGIBLE_QUERY, completed=body.completed)
-        return [dict(r["c"]) for r in rows]
+        courses = [dict(r["c"]) for r in rows]
+
+    if body.home_universite:
+        courses = [c for c in courses if c.get("universite") != body.home_universite]
+
+    if not body.completed or not courses:
+        return courses
+
+    course_sigles = [c["sigle"] for c in courses]
+    with get_driver().session() as session:
+        equiv_rows = session.run(
+            """
+            MATCH (c:Cours)-[:EQUIVAUT_A {source: 'official', status: 'active'}]-(oc:Cours)
+            WHERE c.sigle IN $sigles AND oc.sigle IN $completed
+            RETURN c.sigle AS sigle, oc.sigle AS equiv_sigle
+            """,
+            sigles=course_sigles,
+            completed=body.completed,
+        )
+        official_equivs = {r["sigle"]: r["equiv_sigle"] for r in equiv_rows}
+
+    return [
+        {**c, "official_equiv_sigle": official_equivs.get(c["sigle"])}
+        for c in courses
+    ]
 
 
 # ── GET /courses/{sigle}/prerequisite-chain ──────────────────────────────────
@@ -360,6 +402,50 @@ def get_course(sigle: str):
     if record is None:
         raise HTTPException(status_code=404, detail=f"Course '{sigle}' not found")
     return dict(record["c"])
+
+
+# ── GET /equivalences ────────────────────────────────────────────────────────
+
+@search_router.get("/equivalences", response_model=List[EquivalencePair])
+def get_equivalences(
+    source: Optional[str] = None,
+    universite: Optional[str] = None,
+    q: Optional[str] = Query(None, description="Search in sigles and titles"),
+    limit: int = Query(500, ge=1, le=2000),
+):
+    filters = ["r.status = 'active'"]
+    params: dict = {"limit": limit}
+
+    if source:
+        filters.append("r.source = $source")
+        params["source"] = source
+    if universite:
+        filters.append("(a.universite = $uni OR b.universite = $uni)")
+        params["uni"] = universite
+    if q:
+        filters.append(
+            "(toLower(a.sigle) CONTAINS toLower($q) OR toLower(b.sigle) CONTAINS toLower($q)"
+            " OR toLower(a.titre) CONTAINS toLower($q) OR toLower(b.titre) CONTAINS toLower($q))"
+        )
+        params["q"] = q
+
+    where = "WHERE " + " AND ".join(filters)
+    with get_driver().session() as session:
+        rows = session.run(
+            f"""
+            MATCH (a:Cours)-[r:EQUIVAUT_A]->(b:Cours)
+            {where}
+            RETURN r.id AS id,
+                   a.sigle AS sigle_a, coalesce(a.titre, '') AS titre_a, a.universite AS universite_a,
+                   b.sigle AS sigle_b, coalesce(b.titre, '') AS titre_b, b.universite AS universite_b,
+                   r.source AS source, r.confidence AS confidence, r.status AS status
+            ORDER BY CASE r.source WHEN 'official' THEN 0 ELSE 1 END,
+                     CASE WHEN r.confidence IS NULL THEN 0 ELSE r.confidence END DESC
+            LIMIT $limit
+            """,
+            **params,
+        )
+        return [dict(r) for r in rows]
 
 
 # ── GET /search ───────────────────────────────────────────────────────────────

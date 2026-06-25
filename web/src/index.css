@@ -21,52 +21,85 @@ body {
   --poly:       #f0a500;
 }
 
-/* ── App shell ───────────────────────────────────────────────────────── */
+/* ── App shell (flex column) ─────────────────────────────────────────── */
 
 .app-shell {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* ── Sidebar ─────────────────────────────────────────────────────────── */
-
-.sidebar {
-  flex-shrink: 0;
-  display: flex;
   flex-direction: column;
   height: 100vh;
-  background: #fff;
   overflow: hidden;
-  transition: width 0.15s ease;
 }
 
-.sidebar-header {
-  padding: 1.25rem 1.25rem 1rem;
-  border-bottom: 1px solid #f0f0f0;
+/* ── Tab bar ─────────────────────────────────────────────────────────── */
+
+.app-tabbar {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 48px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 1.25rem;
 }
 
-.sidebar-header h1 {
-  font-size: 1.25rem;
+.app-brand {
+  font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: -0.03em;
   color: #111;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
 }
 
-.sidebar-header p {
-  font-size: 0.72rem;
-  color: #999;
-  margin-top: 0.2rem;
-  line-height: 1.4;
-}
-
-.sidebar-body {
-  flex: 1;
-  overflow: hidden;
+.app-tabs {
   display: flex;
-  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  flex: 1;
 }
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  height: 100%;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #888;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.1s, border-color 0.1s;
+}
+.tab-btn:hover { color: #333; }
+.tab-btn.active { color: #1a6ef5; border-bottom-color: #1a6ef5; font-weight: 600; }
+
+.tab-btn-admin {
+  margin-left: auto;
+  padding: 0.3rem 0.85rem;
+  background: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 0.82rem;
+  color: #888;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.tab-btn-admin:hover { color: #1a6ef5; border-color: #d0d8f0; background: #f0f4ff; }
+.tab-btn-admin.active { color: #1a6ef5; border-color: #1a6ef5; background: #f0f4ff; }
+
+/* ── Content area ────────────────────────────────────────────────────── */
+
+.app-content {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ── Sidebar (shared, used in Visualiseur) ───────────────────────────── */
 
 .sidebar-section {
   padding: 1rem 1.25rem;
@@ -74,7 +107,6 @@ body {
   flex-shrink: 0;
 }
 
-/* Grows to fill remaining sidebar space; inner content scrolls */
 .sidebar-section.grow {
   flex: 1;
   min-height: 0;
@@ -87,16 +119,7 @@ body {
   overflow-y: auto;
 }
 
-.sidebar-footer {
-  padding: 0.75rem 1.25rem;
-  border-top: 1px solid #f0f0f0;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-/* ── Resize handle ───────────────────────────────────────────────────────── */
+/* ── Resize handle (Visualiseur) ─────────────────────────────────────── */
 
 .resize-handle {
   width: 5px;
@@ -131,7 +154,7 @@ body {
 }
 .collapse-btn:hover { color: #1a6ef5; border-color: #1a6ef5; }
 
-/* ── Collapsible section toggle ──────────────────────────────────────────── */
+/* ── Section toggle ──────────────────────────────────────────────────── */
 
 .section-toggle {
   display: flex;
@@ -146,11 +169,7 @@ body {
 }
 .section-toggle:hover .section-label { color: #555; }
 
-.section-chevron {
-  font-size: 0.6rem;
-  color: #bbb;
-  flex-shrink: 0;
-}
+.section-chevron { font-size: 0.6rem; color: #bbb; flex-shrink: 0; }
 
 .section-label {
   display: block;
@@ -159,7 +178,6 @@ body {
   color: #aaa;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  margin-bottom: 0;
 }
 
 /* ── Search input ────────────────────────────────────────────────────── */
@@ -199,11 +217,7 @@ body {
 .result-row:hover { background: #f7f9ff; }
 .result-row.done { opacity: 0.55; }
 
-.result-actions {
-  display: flex;
-  gap: 0.3rem;
-  flex-shrink: 0;
-}
+.result-actions { display: flex; gap: 0.3rem; flex-shrink: 0; }
 
 .result-info {
   flex: 1;
@@ -248,7 +262,6 @@ body {
   padding: 0.3rem 0.5rem;
   border-radius: 5px;
   background: #f5f7fa;
-  cursor: pointer;
 }
 .completed-item:hover { background: #ebf0f9; }
 .completed-item .compact-titre { flex: 1; }
@@ -307,27 +320,35 @@ body {
   color: #888;
   cursor: pointer;
 }
-.btn-reset:hover { border-color: #c00; color: #c00; }
+.btn-reset:hover { border-color: #aaa; color: #444; }
 
-/* ── Main area ───────────────────────────────────────────────────────── */
+/* ── University dot ──────────────────────────────────────────────────── */
 
-.main-area {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  height: 100vh;
-  overflow: hidden;
+.uni-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
 }
+.uni-dot[data-uni="UdeM"]       { background: var(--udem); }
+.uni-dot[data-uni="UQAM"]       { background: var(--uqam); }
+.uni-dot[data-uni="McGill"]     { background: var(--mcgill); }
+.uni-dot[data-uni="Concordia"]  { background: var(--concordia); }
+.uni-dot[data-uni="Poly"]       { background: var(--poly); }
 
-/* CRITICAL: min-height: 0 allows ReactFlow to shrink in a flex column */
+.error { font-size: 0.82rem; color: #c00; }
+
+/* ── Graph canvas wrapper (Visualiseur) ──────────────────────────────── */
+
+/* CRITICAL: min-height: 0 allows ReactFlow to shrink in flex column */
 .graph-canvas-wrapper {
   flex: 1;
   min-height: 0;
   position: relative;
 }
 
-/* ── Course detail panel ─────────────────────────────────────────────── */
+/* ── Course detail panel (Visualiseur) ───────────────────────────────── */
 
 .detail-panel {
   flex-shrink: 0;
@@ -337,10 +358,7 @@ body {
   overflow: hidden;
   transition: max-height 0.2s ease;
 }
-.detail-panel.open {
-  max-height: 230px;
-  overflow-y: auto;
-}
+.detail-panel.open { max-height: 230px; overflow-y: auto; }
 
 .detail-panel[data-uni="UdeM"]       { border-top-color: var(--udem); }
 .detail-panel[data-uni="UQAM"]       { border-top-color: var(--uqam); }
@@ -380,12 +398,7 @@ body {
   overflow: hidden;
 }
 
-.detail-req {
-  font-size: 0.75rem;
-  color: #aaa;
-  line-height: 1.5;
-  font-style: italic;
-}
+.detail-req { font-size: 0.75rem; color: #aaa; line-height: 1.5; font-style: italic; }
 
 .btn-complete {
   padding: 0.3rem 0.75rem;
@@ -412,7 +425,7 @@ body {
 }
 .btn-dismiss:hover { color: #555; }
 
-/* ── Graph empty state ───────────────────────────────────────────────── */
+/* ── Graph empty/loading states ──────────────────────────────────────── */
 
 .graph-empty {
   position: absolute;
@@ -430,8 +443,6 @@ body {
 .graph-empty-icon { font-size: 2.5rem; }
 .graph-empty-text { font-size: 0.9rem; text-align: center; line-height: 1.5; max-width: 280px; }
 
-/* ── Graph loading indicator ─────────────────────────────────────────── */
-
 .graph-loading-badge {
   position: absolute;
   bottom: 1rem;
@@ -446,80 +457,353 @@ body {
   z-index: 10;
 }
 
-/* ── University dot ──────────────────────────────────────────────────── */
+/* ── Tag pills ───────────────────────────────────────────────────────── */
 
-.uni-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  display: inline-block;
-}
-.uni-dot[data-uni="UdeM"]       { background: var(--udem); }
-.uni-dot[data-uni="UQAM"]       { background: var(--uqam); }
-.uni-dot[data-uni="McGill"]     { background: var(--mcgill); }
-.uni-dot[data-uni="Concordia"]  { background: var(--concordia); }
-.uni-dot[data-uni="Poly"]       { background: var(--poly); }
-
-.error { font-size: 0.82rem; color: #c00; }
-
-/* ── Eligible section ────────────────────────────────────────────────── */
-
-.eligible-list {
-  border: 1px solid #eee;
-  border-radius: 6px;
-  margin-top: 0.5rem;
-  overflow-y: auto;
-}
-
-.eligible-group-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #bbb;
-  padding: 0.4rem 0.65rem 0.2rem;
-  background: #fafafa;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-/* ── Tag pills (detail panel) ────────────────────────────────────────── */
-
-.detail-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
+.detail-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 
 .tag-pill {
   display: inline-block;
-  padding: 0.2rem 0.55rem;
+  padding: 0.18rem 0.5rem;
   border-radius: 4px;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   background: #f0f2f5;
   color: #555;
 }
 
-/* ── Admin button (sidebar footer) ──────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════════
+   TAB 1 — Cours accessibles
+   ═══════════════════════════════════════════════════════════════════════ */
 
-.btn-admin {
-  width: 100%;
-  padding: 0.45rem;
-  background: none;
-  border: 1px solid #d0d8f0;
+.accessible-shell {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Sidebar */
+
+.accessible-sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  overflow-y: auto;
+}
+
+/* University selector */
+
+.uni-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.uni-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid #e5e7eb;
   border-radius: 6px;
+  background: #fafafa;
   font-size: 0.82rem;
-  color: #1a6ef5;
+  font-weight: 500;
+  color: #555;
   cursor: pointer;
+  transition: background 0.1s, border-color 0.1s;
+  text-align: left;
+}
+.uni-pill:hover { background: #f0f4ff; border-color: #d0d8f0; }
+.uni-pill.active { font-weight: 700; }
+
+/* Main area */
+
+.accessible-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.accessible-header {
+  flex-shrink: 0;
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.accessible-summary {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.accessible-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #bbb;
+  padding: 2rem;
+}
+.accessible-empty-icon { font-size: 2.5rem; }
+.accessible-empty-text { font-size: 0.9rem; text-align: center; line-height: 1.5; max-width: 340px; }
+
+.accessible-groups {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.accessible-group-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.75rem;
+}
+
+.accessible-group-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.accessible-group-count {
+  font-size: 0.78rem;
+  color: #aaa;
+}
+
+/* Card grid */
+
+.accessible-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.course-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-top: 3px solid #ddd;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.course-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.course-card-sigle {
+  font-family: monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.badge-equiv {
+  display: inline-block;
+  background: #e6f4ea;
+  color: #1e7e34;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.course-card-title {
+  font-size: 0.82rem;
+  color: #333;
+  line-height: 1.35;
+}
+
+.course-card-meta {
+  font-size: 0.74rem;
+  color: #aaa;
+}
+
+.course-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
   margin-top: 0.2rem;
 }
-.btn-admin:hover { background: #f0f4ff; border-color: #1a6ef5; }
 
-/* ── Admin panel shell ───────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════════
+   TAB 2 — Équivalences
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.equiv-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: #f7f8fa;
+}
+
+.equiv-toolbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+}
+
+.equiv-toolbar-left {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.equiv-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  white-space: nowrap;
+}
+
+.equiv-count {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.equiv-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.equiv-select {
+  padding: 0.38rem 0.65rem;
+  font-size: 0.84rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fff;
+  outline: none;
+  color: #333;
+}
+.equiv-select:focus { border-color: #1a6ef5; }
+
+.equiv-search {
+  padding: 0.38rem 0.75rem;
+  font-size: 0.84rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fff;
+  outline: none;
+  min-width: 200px;
+}
+.equiv-search:focus { border-color: #1a6ef5; }
+
+.equiv-table-wrap {
+  flex: 1;
+  overflow: auto;
+  background: #fff;
+  margin: 1rem 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.equiv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+.equiv-table th {
+  text-align: left;
+  padding: 0.65rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #aaa;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+}
+
+.equiv-table td {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #f5f5f5;
+  vertical-align: middle;
+}
+
+.equiv-table tr:last-child td { border-bottom: none; }
+.equiv-table tbody tr:hover td { background: #fafbff; }
+
+.equiv-course-cell { min-width: 200px; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   TAB 3 — Visualiseur
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.vis-shell {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.vis-sidebar {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+  transition: width 0.15s ease;
+}
+
+.vis-sidebar-inner {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.vis-sidebar-footer {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid #f0f0f0;
+  flex-shrink: 0;
+}
+
+.vis-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #f7f8fb;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   ADMIN PANEL
+   ═══════════════════════════════════════════════════════════════════════ */
 
 .admin-panel {
   display: flex;
@@ -539,11 +823,7 @@ body {
   flex-shrink: 0;
 }
 
-.admin-topbar-left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
+.admin-topbar-left { display: flex; align-items: center; gap: 1rem; }
 
 .admin-back-btn {
   background: none;
@@ -556,16 +836,8 @@ body {
 }
 .admin-back-btn:hover { background: #f5f5f5; }
 
-.admin-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #111;
-}
-
-.admin-stats {
-  font-size: 0.8rem;
-  color: #888;
-}
+.admin-title { font-size: 1rem; font-weight: 700; color: #111; }
+.admin-stats { font-size: 0.8rem; color: #888; }
 
 .admin-logout-btn {
   background: none;
@@ -587,8 +859,6 @@ body {
   gap: 1rem;
 }
 
-/* ── Admin login ─────────────────────────────────────────────────────── */
-
 .admin-login-wrap {
   display: flex;
   align-items: center;
@@ -609,20 +879,8 @@ body {
   box-shadow: 0 4px 20px rgba(0,0,0,.07);
 }
 
-.admin-login-title {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: #111;
-  margin-bottom: 0;
-}
-
-.admin-login-sub {
-  font-size: 0.8rem;
-  color: #aaa;
-  margin-bottom: 0.75rem;
-}
-
-/* ── Admin form elements ─────────────────────────────────────────────── */
+.admin-login-title { font-size: 1.2rem; font-weight: 800; color: #111; }
+.admin-login-sub   { font-size: 0.8rem; color: #aaa; margin-bottom: 0.75rem; }
 
 .admin-field-label {
   font-size: 0.72rem;
@@ -671,41 +929,17 @@ body {
 
 .admin-error { font-size: 0.82rem; color: #c00; }
 
-/* ── Create form ─────────────────────────────────────────────────────── */
-
 .admin-create-wrap {
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   padding: 1rem;
 }
+.admin-create-form  { margin-top: 0.75rem; }
+.admin-create-row   { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.admin-create-field { flex: 1; min-width: 140px; display: flex; flex-direction: column; gap: 0.3rem; }
 
-.admin-create-form {
-  margin-top: 0.75rem;
-}
-
-.admin-create-row {
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.admin-create-field {
-  flex: 1;
-  min-width: 140px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-/* ── Filters ─────────────────────────────────────────────────────────── */
-
-.admin-filters {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
+.admin-filters { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; }
 
 .admin-filter-select,
 .admin-filter-input {
@@ -717,10 +951,7 @@ body {
   outline: none;
 }
 .admin-filter-input { min-width: 180px; }
-.admin-filter-select:focus,
-.admin-filter-input:focus { border-color: #1a6ef5; }
-
-/* ── Table ───────────────────────────────────────────────────────────── */
+.admin-filter-select:focus, .admin-filter-input:focus { border-color: #1a6ef5; }
 
 .admin-table-wrap {
   background: #fff;
@@ -729,11 +960,7 @@ body {
   overflow: auto;
 }
 
-.admin-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.84rem;
-}
+.admin-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
 
 .admin-table th {
   text-align: left;
@@ -756,15 +983,9 @@ body {
 
 .admin-table tr:last-child td { border-bottom: none; }
 .admin-table tr:hover td { background: #fafbff; }
-
 .admin-row-revoked td { opacity: 0.5; }
 
-.admin-sigle {
-  font-family: monospace;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #222;
-}
+.admin-sigle { font-family: monospace; font-size: 0.85rem; font-weight: 700; color: #222; }
 
 .admin-badge {
   display: inline-block;
@@ -774,18 +995,11 @@ body {
   font-weight: 600;
 }
 
-.admin-status {
-  font-size: 0.78rem;
-  font-weight: 600;
-}
+.admin-status { font-size: 0.78rem; font-weight: 600; }
 .admin-status.active  { color: #2a9d4e; }
 .admin-status.revoked { color: #c00; }
 
-.admin-num, .admin-date, .admin-by {
-  font-size: 0.78rem;
-  color: #888;
-  white-space: nowrap;
-}
+.admin-num, .admin-date, .admin-by { font-size: 0.78rem; color: #888; white-space: nowrap; }
 
 .admin-btn-revoke {
   padding: 0.25rem 0.65rem;
@@ -817,9 +1031,3 @@ body {
 
 .admin-loading { font-size: 0.82rem; color: #aaa; }
 .admin-empty   { font-size: 0.84rem; color: #bbb; padding: 1.5rem; text-align: center; }
-
-/* ── Responsive ──────────────────────────────────────────────────────── */
-
-@media (max-width: 700px) {
-  .sidebar { width: 260px; }
-}
