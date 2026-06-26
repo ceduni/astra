@@ -1,0 +1,42 @@
+{
+  "universite": "ets",
+  "programme": "genie_logiciel",
+  "version": "v1",
+  "credits_total": 120,
+  "segments": {
+    "obligatoire": {
+      "type": "obligatoire",
+      "cours": [
+        "LOG100", "LOG121", "LOG200", "LOG210", "LOG240",
+        "LOG410", "LOG430", "LOG795",
+        "MAT145", "MAT210", "MAT265", "MAT350", "MAT472",
+        "PHY332", "PHY335",
+        "COM120", "ETH310", "TIN503",
+        "ING500", "GIA400"
+      ]
+    },
+    "optionnels": {
+      "type": "option",
+      "note": "Cours au choix parmi les cours LOG/GTI 500+",
+      "cours": [
+        "LOG430", "LOG450", "LOG460", "LOG530", "LOG550",
+        "LOG635", "LOG645", "LOG660", "LOG680", "LOG710",
+        "LOG721", "LOG725", "LOG736", "LOG750",
+        "GTI320", "GTI350", "GTI510", "GTI525", "GTI611",
+        "GTI619", "GTI650", "GTI700", "GTI745", "GTI771"
+      ]
+    }
+  },
+  "tous_les_cours": [
+    "LOG100", "LOG121", "LOG200", "LOG210", "LOG240",
+    "LOG410", "LOG430", "LOG795",
+    "MAT145", "MAT210", "MAT265", "MAT350", "MAT472",
+    "PHY332", "PHY335",
+    "COM120", "ETH310", "TIN503", "ING500", "GIA400",
+    "LOG450", "LOG460", "LOG530", "LOG550",
+    "LOG635", "LOG645", "LOG660", "LOG680", "LOG710",
+    "LOG721", "LOG725", "LOG736", "LOG750",
+    "GTI320", "GTI350", "GTI510", "GTI525", "GTI611",
+    "GTI619", "GTI650", "GTI700", "GTI745", "GTI771"
+  ]
+}

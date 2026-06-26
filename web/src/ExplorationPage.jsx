@@ -2,6 +2,30 @@ import { useEffect, useState } from 'react'
 import { API, SearchSection, CompletedSection, useUniversities } from './shared'
 import ExplorationGraph from './ExplorationGraph'
 
+const PROGRAMME_LABELS = {
+  informatique: 'Informatique',
+  informatique_genie_logiciel: 'Informatique & génie logiciel',
+  computer_science: 'Computer Science',
+  genie_informatique: 'Génie informatique',
+  genie_logiciel: 'Génie logiciel',
+  genie_technologies_information: 'Génie TI',
+}
+function programLabel(id) {
+  return PROGRAMME_LABELS[id] ?? id.replace(/_/g, ' ')
+}
+
+function usePrograms(homeUniversite) {
+  const [programs, setPrograms] = useState([])
+  useEffect(() => {
+    if (!homeUniversite) { setPrograms([]); return }
+    fetch(`${API}/courses/programs`)
+      .then(r => r.json())
+      .then(data => setPrograms(data[homeUniversite] ?? []))
+      .catch(() => setPrograms([]))
+  }, [homeUniversite])
+  return programs
+}
+
 // ── Detail panel ───────────────────────────────────────────────────────────────
 
 function ConfBar({ value }) {
@@ -135,7 +159,12 @@ export default function ExplorationPage({
   homeUniversite, onSetHome,
 }) {
   const universities = useUniversities()
+  const programs = usePrograms(homeUniversite)
+  const [program, setProgram] = useState(null)
   const [selectedCourse, setSelectedCourse] = useState(null)
+
+  // Reset program when university changes
+  useEffect(() => { setProgram(null) }, [homeUniversite])
 
   return (
     <div className="vis-shell">
@@ -159,6 +188,23 @@ export default function ExplorationPage({
             </div>
           </div>
 
+          {programs.length > 0 && (
+            <div className="sidebar-section" style={{ borderBottom: '1px solid #f3f4f6' }}>
+              <div className="section-label" style={{ marginBottom: '0.6rem' }}>Programme</div>
+              <div className="uni-selector">
+                {programs.map(p => (
+                  <button
+                    key={p.id}
+                    className={`uni-pill${program === p.id ? ' active' : ''}`}
+                    onClick={() => setProgram(program === p.id ? null : p.id)}
+                  >
+                    {programLabel(p.id)}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
           <SearchSection onAddCompleted={onAddCompleted} completed={completed} />
           <CompletedSection completed={completed} onRemove={onRemoveCompleted} />
         </div>
@@ -178,6 +224,7 @@ export default function ExplorationPage({
             <ExplorationGraph
               completed={completed}
               homeUniversite={homeUniversite}
+              program={program}
               onNodeClick={setSelectedCourse}
             />
           )}

@@ -1,0 +1,51 @@
+{
+  "universite": "mcgill",
+  "programme": "computer_science",
+  "version": "v1",
+  "credits_total": 63,
+  "segments": {
+    "required": {
+      "type": "obligatoire",
+      "cours": [
+        "COMP202", "COMP206", "COMP250", "COMP251", "COMP273",
+        "COMP302", "COMP303", "COMP310",
+        "MATH222", "MATH223", "MATH240"
+      ]
+    },
+    "theory_option": {
+      "type": "option",
+      "note": "Au moins 6 crédits parmi",
+      "cours": ["COMP330", "COMP350", "COMP360"]
+    },
+    "math_option": {
+      "type": "option",
+      "note": "3-9 crédits, doit inclure MATH323 ou MATH340",
+      "cours": ["MATH318", "MATH323", "MATH324", "MATH340"]
+    },
+    "complementaires": {
+      "type": "option",
+      "note": "Au moins 6 crédits au niveau 400+, reste au niveau 300+",
+      "cours": [
+        "COMP322", "COMP409", "COMP421", "COMP424", "COMP462",
+        "COMP499", "COMP512", "COMP520", "COMP521", "COMP522",
+        "COMP523", "COMP524", "COMP525", "COMP529", "COMP533",
+        "COMP547", "COMP551", "COMP557", "COMP560", "COMP561",
+        "COMP564", "COMP566", "COMP567", "COMP575", "COMP579",
+        "COMP589", "COMP598"
+      ]
+    }
+  },
+  "tous_les_cours": [
+    "COMP202", "COMP206", "COMP250", "COMP251", "COMP273",
+    "COMP302", "COMP303", "COMP310",
+    "MATH222", "MATH223", "MATH240",
+    "COMP330", "COMP350", "COMP360",
+    "MATH318", "MATH323", "MATH324", "MATH340",
+    "COMP322", "COMP409", "COMP421", "COMP424", "COMP462",
+    "COMP499", "COMP512", "COMP520", "COMP521", "COMP522",
+    "COMP523", "COMP524", "COMP525", "COMP529", "COMP533",
+    "COMP547", "COMP551", "COMP557", "COMP560", "COMP561",
+    "COMP564", "COMP566", "COMP567", "COMP575", "COMP579",
+    "COMP589", "COMP598"
+  ]
+}

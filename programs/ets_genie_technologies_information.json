@@ -1,0 +1,40 @@
+{
+  "universite": "ets",
+  "programme": "genie_technologies_information",
+  "version": "v1",
+  "credits_total": 120,
+  "segments": {
+    "obligatoire": {
+      "type": "obligatoire",
+      "cours": [
+        "GTI100", "LOG121", "LOG200", "LOG210",
+        "GTI510", "GTI525", "GTI611",
+        "MAT145", "MAT210", "MAT265", "MAT350", "MAT472",
+        "PHY332", "PHY335",
+        "COM120", "ETH310", "TIN503",
+        "ING500", "GIA400"
+      ]
+    },
+    "optionnels": {
+      "type": "option",
+      "note": "Cours au choix selon axe de spécialisation",
+      "cours": [
+        "GTI320", "GTI350", "GTI515", "GTI619", "GTI650",
+        "GTI700", "GTI719", "GTI720", "GTI723", "GTI745",
+        "GTI750", "GTI755", "GTI771",
+        "LOG430", "LOG460", "LOG635", "LOG660", "LOG710"
+      ]
+    }
+  },
+  "tous_les_cours": [
+    "GTI100", "LOG121", "LOG200", "LOG210",
+    "GTI510", "GTI525", "GTI611",
+    "MAT145", "MAT210", "MAT265", "MAT350", "MAT472",
+    "PHY332", "PHY335",
+    "COM120", "ETH310", "TIN503", "ING500", "GIA400",
+    "GTI320", "GTI350", "GTI515", "GTI619", "GTI650",
+    "GTI700", "GTI719", "GTI720", "GTI723", "GTI745",
+    "GTI750", "GTI755", "GTI771",
+    "LOG430", "LOG460", "LOG635", "LOG660", "LOG710"
+  ]
+}

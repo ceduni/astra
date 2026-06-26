@@ -160,7 +160,7 @@ const NODE_TYPES = {
 
 // ── Main component ─────────────────────────────────────────────────────────────
 
-export default function ExplorationGraph({ completed, homeUniversite, onNodeClick }) {
+export default function ExplorationGraph({ completed, homeUniversite, program, onNodeClick }) {
   const [nodes, setNodes, onNodesChange] = useNodesState([])
   const [edges, setEdges, onEdgesChange] = useEdgesState([])
   const [status, setStatus] = useState('idle')
@@ -182,6 +182,7 @@ export default function ExplorationGraph({ completed, homeUniversite, onNodeClic
       body: JSON.stringify({
         completed: completed.map(c => c.sigle),
         home_universite: homeUniversite,
+        program: program ?? null,
       }),
     })
       .then(r => { if (!r.ok) throw new Error(r.status); return r.json() })
@@ -230,7 +231,7 @@ export default function ExplorationGraph({ completed, homeUniversite, onNodeClic
       .catch(() => { if (!cancelled) setStatus('error') })
 
     return () => { cancelled = true }
-  }, [completed, homeUniversite]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [completed, homeUniversite, program]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function handleNodeClick(_, node) {
     if (node.type !== 'explorationCourse') return

@@ -1,0 +1,62 @@
+{
+  "universite": "concordia",
+  "programme": "computer_science",
+  "version": "v1",
+  "credits_total": 90,
+  "segments": {
+    "cs_core": {
+      "type": "obligatoire",
+      "note": "Computer Science Core",
+      "cours": [
+        "COMP248", "COMP249", "COMP232", "COMP228",
+        "COMP346", "COMP348", "COMP352",
+        "MATH203", "MATH204", "MATH205"
+      ]
+    },
+    "cs_complementary_core": {
+      "type": "obligatoire",
+      "note": "Computer Science Complementary Core",
+      "cours": [
+        "COMP335", "COMP339", "COMP345", "COMP371",
+        "COMP426", "COMP428", "COMP472", "COMP478"
+      ]
+    },
+    "cs_electives": {
+      "type": "option",
+      "note": "Computer Science Electives — minimum 6 cours",
+      "cours": [
+        "COMP353", "COMP354", "COMP361", "COMP367",
+        "COMP376", "COMP392", "COMP420", "COMP422",
+        "COMP423", "COMP424", "COMP425", "COMP427",
+        "COMP429", "COMP431", "COMP432", "COMP433",
+        "COMP436", "COMP442", "COMP445", "COMP452",
+        "COMP462", "COMP465", "COMP474", "COMP479",
+        "COMP480", "COMP489"
+      ]
+    },
+    "math_science": {
+      "type": "option",
+      "note": "Mathematics/Science electives",
+      "cours": [
+        "MATH251", "MATH252", "MATH264", "MATH354",
+        "STAT249", "STAT360"
+      ]
+    }
+  },
+  "tous_les_cours": [
+    "COMP248", "COMP249", "COMP232", "COMP228",
+    "COMP346", "COMP348", "COMP352",
+    "MATH203", "MATH204", "MATH205",
+    "COMP335", "COMP339", "COMP345", "COMP371",
+    "COMP426", "COMP428", "COMP472", "COMP478",
+    "COMP353", "COMP354", "COMP361", "COMP367",
+    "COMP376", "COMP392", "COMP420", "COMP422",
+    "COMP423", "COMP424", "COMP425", "COMP427",
+    "COMP429", "COMP431", "COMP432", "COMP433",
+    "COMP436", "COMP442", "COMP445", "COMP452",
+    "COMP462", "COMP465", "COMP474", "COMP479",
+    "COMP480", "COMP489",
+    "MATH251", "MATH252", "MATH264", "MATH354",
+    "STAT249", "STAT360"
+  ]
+}

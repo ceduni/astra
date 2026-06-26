@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+from pathlib import Path
 from typing import List, Optional, Union
 
 from fastapi import APIRouter, HTTPException, Query
@@ -10,6 +12,27 @@ from ..database import get_driver
 router = APIRouter(prefix="/courses", tags=["courses"])
 universities_router = APIRouter(prefix="/universities", tags=["universities"])
 search_router = APIRouter(tags=["search"])
+
+# ── Programs index (loaded once at import time) ───────────────────────────────
+
+_UNI_KEY = {"udem": "UdeM", "uqam": "UQAM", "mcgill": "McGill",
+             "concordia": "Concordia", "poly": "Poly", "ets": "ETS"}
+
+def _load_programs() -> dict:
+    programs: dict = {}
+    programs_dir = Path(__file__).parents[2] / "programs"
+    if not programs_dir.exists():
+        return programs
+    for f in sorted(programs_dir.glob("*.json")):
+        data = json.loads(f.read_text(encoding="utf-8"))
+        display = _UNI_KEY.get(data["universite"], data["universite"])
+        programs.setdefault(display, []).append({
+            "id": data["programme"],
+            "tous_les_cours": data["tous_les_cours"],
+        })
+    return programs
+
+_PROGRAMS = _load_programs()
 
 
 # ── Models ────────────────────────────────────────────────────────────────────
@@ -357,6 +380,7 @@ WITH expanded,
 
 MATCH (c:Cours {hors_perimetre: false, universite: $home_universite})
 WHERE NOT c.sigle IN expanded
+  AND ($program_courses IS NULL OR c.sigle IN $program_courses)
 OPTIONAL MATCH (c)-[:REQUIERT]->(t)
 WITH c, t, expanded, satisfied_groups
 WHERE t IS NULL
@@ -382,15 +406,32 @@ RETURN a.sigle AS source, b.sigle AS target
 class ExplorationRequest(BaseModel):
     completed: List[str]
     home_universite: str
+    program: Optional[str] = None
+
+
+@router.get("/programs")
+def get_programs():
+    return {uni: [{"id": p["id"]} for p in progs]
+            for uni, progs in _PROGRAMS.items()}
 
 
 @router.post("/eligible-graph")
 def get_eligible_graph(body: ExplorationRequest):
+    program_courses = None
+    if body.program and body.home_universite in _PROGRAMS:
+        match = next(
+            (p for p in _PROGRAMS[body.home_universite] if p["id"] == body.program),
+            None,
+        )
+        if match:
+            program_courses = match["tous_les_cours"]
+
     with get_driver().session() as session:
         rows = session.run(
             _EXPLORATION_ELIGIBLE_QUERY,
             completed=body.completed,
             home_universite=body.home_universite,
+            program_courses=program_courses,
         )
         nodes = [dict(r["c"]) for r in rows]
 
