@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react'
 import AccessiblePage from './AccessiblePage'
 import EquivalencesPage from './EquivalencesPage'
 import VisualiseurPage from './VisualiseurPage'
+import ExplorationPage from './ExplorationPage'
 import AdminPanel from './AdminPanel'
 
 const TABS = [
   { id: 'accessible',   label: 'Cours accessibles' },
   { id: 'equivalences', label: 'Équivalences' },
   { id: 'visualiseur',  label: 'Visualiseur' },
+  { id: 'exploration',  label: 'Exploration' },
 ]
 
 export default function App() {
@@ -112,6 +114,16 @@ export default function App() {
             onResetGraph={resetGraph}
             selectedCourse={selectedCourse}
             onSelectCourse={setSelectedCourse}
+          />
+        )}
+
+        {tab === 'exploration' && (
+          <ExplorationPage
+            completed={completed}
+            onAddCompleted={markCompleted}
+            onRemoveCompleted={removeCourse}
+            homeUniversite={homeUniversite}
+            onSetHome={setHomeUniversite}
           />
         )}
 

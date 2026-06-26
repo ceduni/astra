@@ -288,6 +288,123 @@ def get_eligible(body: EligibilityRequest):
     ]
 
 
+# ── POST /courses/eligible-graph ─────────────────────────────────────────────
+#
+# Same eligibility logic as /eligible but filtered to a single home university,
+# plus a second pass to find prerequisite edges between the eligible courses.
+# Used by the exploration graph prototype.
+
+_EXPLORATION_ELIGIBLE_QUERY = """
+WITH $completed AS completed_raw
+
+CALL {
+    WITH completed_raw
+    UNWIND completed_raw AS s
+    OPTIONAL MATCH (:Cours {sigle: s})-[:EQUIVAUT_A {status: 'active'}]-(eq:Cours)
+    RETURN collect(DISTINCT eq.sigle) AS via_equiv
+}
+WITH completed_raw, [x IN completed_raw + via_equiv WHERE x IS NOT NULL] AS expanded
+
+WITH completed_raw, expanded, [s IN expanded WHERE NOT s IN completed_raw] AS equiv_only
+CALL {
+    WITH equiv_only
+    UNWIND equiv_only AS eq_sigle
+    OPTIONAL MATCH (:Cours {sigle: eq_sigle})-[:REQUIERT]->(prereq_c:Cours)
+    RETURN collect(DISTINCT prereq_c.sigle) AS via_direct_prereqs
+}
+WITH completed_raw, expanded, equiv_only, via_direct_prereqs
+CALL {
+    WITH equiv_only
+    UNWIND equiv_only AS eq_sigle
+    OPTIONAL MATCH (:Cours {sigle: eq_sigle})-[:REQUIERT]->(:PrerequisiteGroup)-[:INCLUDES]->(prereq_pg:Cours)
+    RETURN collect(DISTINCT prereq_pg.sigle) AS via_group_prereqs
+}
+WITH [x IN expanded + via_direct_prereqs + via_group_prereqs WHERE x IS NOT NULL] AS expanded
+
+CALL {
+    WITH expanded
+    MATCH (g:PrerequisiteGroup)
+    WHERE NOT EXISTS { (g)-[:INCLUDES]->(:PrerequisiteGroup) }
+    WITH g, expanded, [(g)-[:INCLUDES]->(c:Cours) | c.sigle] AS kids
+    WITH g.id AS gid,
+         CASE g.type
+             WHEN 'AND' THEN all(k IN kids WHERE k IN expanded)
+             WHEN 'OR'  THEN any(k IN kids WHERE k IN expanded)
+             ELSE false
+         END AS ok
+    RETURN collect(CASE WHEN ok THEN gid END) AS leaf_raw
+}
+WITH expanded, [x IN leaf_raw WHERE x IS NOT NULL] AS leaf_satisfied
+
+CALL {
+    WITH expanded, leaf_satisfied
+    MATCH (g:PrerequisiteGroup)
+    WHERE EXISTS { (g)-[:INCLUDES]->(:PrerequisiteGroup) }
+    WITH g, expanded, leaf_satisfied,
+         [(g)-[:INCLUDES]->(c:Cours) | c.sigle IN expanded]
+         + [(g)-[:INCLUDES]->(sub:PrerequisiteGroup) | sub.id IN leaf_satisfied]
+         AS bools
+    WITH g.id AS gid,
+         CASE g.type
+             WHEN 'AND' THEN all(b IN bools WHERE b)
+             WHEN 'OR'  THEN any(b IN bools WHERE b)
+             ELSE false
+         END AS ok
+    RETURN collect(CASE WHEN ok THEN gid END) AS parent_raw
+}
+WITH expanded,
+     leaf_satisfied + [x IN parent_raw WHERE x IS NOT NULL] AS satisfied_groups
+
+MATCH (c:Cours {hors_perimetre: false, universite: $home_universite})
+WHERE NOT c.sigle IN expanded
+OPTIONAL MATCH (c)-[:REQUIERT]->(t)
+WITH c, t, expanded, satisfied_groups
+WHERE t IS NULL
+   OR (t:Cours AND t.sigle IN expanded)
+   OR (t:PrerequisiteGroup AND t.id IN satisfied_groups)
+WITH c, expanded
+WHERE all(coreq IN [(c)-[:REQUIERT_CONCOMITANT]->(co:Cours) | co.sigle] WHERE coreq IN expanded)
+RETURN c
+ORDER BY c.sigle
+"""
+
+_EXPLORATION_EDGES_QUERY = """
+MATCH (a:Cours)-[:REQUIERT]->(b:Cours)
+WHERE a.sigle IN $sigles AND b.sigle IN $sigles
+RETURN a.sigle AS source, b.sigle AS target
+UNION
+MATCH (a:Cours)-[:REQUIERT]->(:PrerequisiteGroup)-[:INCLUDES]->(b:Cours)
+WHERE a.sigle IN $sigles AND b.sigle IN $sigles
+RETURN a.sigle AS source, b.sigle AS target
+"""
+
+
+class ExplorationRequest(BaseModel):
+    completed: List[str]
+    home_universite: str
+
+
+@router.post("/eligible-graph")
+def get_eligible_graph(body: ExplorationRequest):
+    with get_driver().session() as session:
+        rows = session.run(
+            _EXPLORATION_ELIGIBLE_QUERY,
+            completed=body.completed,
+            home_universite=body.home_universite,
+        )
+        nodes = [dict(r["c"]) for r in rows]
+
+    if not nodes:
+        return {"nodes": [], "edges": []}
+
+    sigles = [n["sigle"] for n in nodes]
+    with get_driver().session() as session:
+        edge_rows = session.run(_EXPLORATION_EDGES_QUERY, sigles=sigles)
+        edges = [{"source": r["source"], "target": r["target"]} for r in edge_rows]
+
+    return {"nodes": nodes, "edges": edges}
+
+
 # ── GET /courses/{sigle}/prerequisite-chain ──────────────────────────────────
 
 @router.get("/{sigle}/prerequisite-chain")
