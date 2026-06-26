@@ -162,9 +162,23 @@ export default function ExplorationPage({
   const programs = usePrograms(homeUniversite)
   const [program, setProgram] = useState(null)
   const [selectedCourse, setSelectedCourse] = useState(null)
+  // snapshot is set only when the user clicks "Calculer"; null = nothing shown yet
+  const [snapshot, setSnapshot] = useState(null)
 
-  // Reset program when university changes
-  useEffect(() => { setProgram(null) }, [homeUniversite])
+  // Reset program and graph when university changes
+  useEffect(() => { setProgram(null); setSnapshot(null) }, [homeUniversite])
+  // Reset graph when program changes so stale results don't persist
+  useEffect(() => { setSnapshot(null) }, [program])
+
+  function handleCalculer() {
+    if (!homeUniversite || !program) return
+    setSelectedCourse(null)
+    setSnapshot({
+      completedSigles: completed.map(c => c.sigle),
+      homeUniversite,
+      program,
+    })
+  }
 
   return (
     <div className="vis-shell">
@@ -208,23 +222,35 @@ export default function ExplorationPage({
           <SearchSection onAddCompleted={onAddCompleted} completed={completed} />
           <CompletedSection completed={completed} onRemove={onRemoveCompleted} />
         </div>
+
+        <div className="vis-sidebar-footer">
+          <button
+            className="btn-calculer"
+            onClick={handleCalculer}
+            disabled={!homeUniversite || !program}
+          >
+            Visualiser le programme
+          </button>
+        </div>
       </aside>
 
       {/* Main */}
       <div className="vis-main">
         <div className="graph-canvas-wrapper">
-          {!homeUniversite ? (
+          {!snapshot ? (
             <div className="graph-empty">
               <div className="graph-empty-icon">⬡</div>
               <div className="graph-empty-text">
-                Sélectionne ton université d'accueil pour voir les cours accessibles
+                {!homeUniversite
+                  ? 'Sélectionne ton université et ton programme'
+                  : !program
+                  ? 'Sélectionne ton programme'
+                  : 'Ajoute tes cours complétés puis clique sur Visualiser'}
               </div>
             </div>
           ) : (
             <ExplorationGraph
-              completed={completed}
-              homeUniversite={homeUniversite}
-              program={program}
+              snapshot={snapshot}
               onNodeClick={setSelectedCourse}
             />
           )}

@@ -446,6 +446,107 @@ def get_eligible_graph(body: ExplorationRequest):
     return {"nodes": nodes, "edges": edges}
 
 
+# ── POST /courses/program-graph ──────────────────────────────────────────────
+
+class ProgramGraphRequest(BaseModel):
+    uni: str
+    program: str
+
+
+@router.post("/program-graph")
+def get_program_graph(body: ProgramGraphRequest):
+    program_match = next(
+        (p for p in _PROGRAMS.get(body.uni, []) if p["id"] == body.program),
+        None,
+    )
+    if program_match is None:
+        raise HTTPException(status_code=404, detail=f"Program '{body.program}' not found for '{body.uni}'")
+
+    tous_les_cours = program_match["tous_les_cours"]
+
+    with get_driver().session() as session:
+        nodes: dict = {}
+        edges: list = []
+        edge_ids: set = set()
+        visited_courses: set = set()
+
+        def traverse_course(s: str):
+            if s in visited_courses:
+                return
+            visited_courses.add(s)
+            rec = session.run("MATCH (c:Cours {sigle: $s}) RETURN c", s=s).single()
+            if rec:
+                nodes[s] = {"id": s, "node_type": "course", "data": dict(rec["c"])}
+            prereq_rec = session.run(
+                "MATCH (c:Cours {sigle: $s})-[:REQUIERT]->(t) RETURN t", s=s
+            ).single()
+            if prereq_rec:
+                traverse_node(s, prereq_rec["t"], "prerequisite")
+            for coreq_rec in session.run(
+                "MATCH (c:Cours {sigle: $s})-[:REQUIERT_CONCOMITANT]->(t:Cours) RETURN t", s=s
+            ):
+                traverse_node(s, coreq_rec["t"], "corequisite")
+
+        def traverse_node(source_id: str, node, relation_type: str):
+            if "Cours" in node.labels:
+                child_sigle = node["sigle"]
+                eid = f"{source_id}->{child_sigle}:{relation_type}"
+                if eid not in edge_ids:
+                    edge_ids.add(eid)
+                    edges.append({"id": eid, "source": source_id, "target": child_sigle,
+                                  "relation_type": relation_type})
+                traverse_course(child_sigle)
+            else:
+                gid = node["id"]
+                if gid not in nodes:
+                    nodes[gid] = {"id": gid, "node_type": "group", "data": {"type": node["type"]}}
+                eid = f"{source_id}->{gid}:{relation_type}"
+                if eid not in edge_ids:
+                    edge_ids.add(eid)
+                    edges.append({"id": eid, "source": source_id, "target": gid,
+                                  "relation_type": relation_type})
+                for child_rec in session.run(
+                    "MATCH (g:PrerequisiteGroup {id: $id})-[:INCLUDES]->(child) RETURN child",
+                    id=gid,
+                ):
+                    traverse_node(gid, child_rec["child"], relation_type)
+
+        for sigle in tous_les_cours:
+            traverse_course(sigle)
+
+        seen_equiv_pairs: set = set()
+        for s in list(visited_courses):
+            seen_eq_for_s: set = set()
+            for rec in session.run(
+                "MATCH (c:Cours {sigle: $s})-[r:EQUIVAUT_A {status: 'active'}]-(eq:Cours)"
+                " RETURN eq, r.source AS source, r.confidence AS confidence"
+                " ORDER BY CASE r.source WHEN 'official' THEN 0 ELSE 1 END, r.confidence DESC",
+                s=s,
+            ):
+                eq = rec["eq"]
+                eq_sigle = eq["sigle"]
+                if eq_sigle in seen_eq_for_s:
+                    continue
+                seen_eq_for_s.add(eq_sigle)
+                pair = frozenset((s, eq_sigle))
+                if pair in seen_equiv_pairs:
+                    continue
+                seen_equiv_pairs.add(pair)
+                if eq_sigle not in nodes:
+                    data = dict(eq)
+                    data["is_equivalent"] = True
+                    data["source"] = rec["source"]
+                    data["confidence"] = rec["confidence"]
+                    nodes[eq_sigle] = {"id": eq_sigle, "node_type": "course", "data": data}
+                eid = f"{s}<->{eq_sigle}:equivalent"
+                if eid not in edge_ids:
+                    edge_ids.add(eid)
+                    edges.append({"id": eid, "source": s, "target": eq_sigle,
+                                  "relation_type": "equivalent", "label": "équivalent"})
+
+    return {"nodes": list(nodes.values()), "edges": edges, "program_sigles": tous_les_cours}
+
+
 # ── GET /courses/{sigle}/prerequisite-chain ──────────────────────────────────
 
 @router.get("/{sigle}/prerequisite-chain")
