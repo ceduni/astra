@@ -38,23 +38,61 @@ function equivalentBadgeLabel(data) {
 }
 
 export function CourseNode({ data }) {
-  const color = UNI_COLORS[data.universite] || '#999'
+  // Collapsed "Cours complétés" aggregate node
+  if (data.isCollapsed) {
+    return (
+      <div style={{
+        background: '#f0faf3',
+        border: '2px solid #2a9d4e',
+        borderRadius: 16,
+        padding: '6px 16px',
+        fontFamily: 'system-ui, sans-serif',
+        cursor: 'default',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: 2,
+        boxShadow: '0 1px 4px rgba(42,157,78,.15)',
+        minWidth: 130,
+      }}>
+        <Handle type="target" position={Position.Left} style={{ background: '#2a9d4e' }} />
+        <div style={{ fontSize: 11, fontWeight: 700, color: '#2a9d4e', display: 'flex', alignItems: 'center', gap: 5 }}>
+          <span>✓</span> Cours complétés
+        </div>
+        <div style={{ fontSize: 9.5, color: '#5a8a6a' }}>{data.titre}</div>
+        <Handle type="source" position={Position.Right} style={{ background: '#2a9d4e' }} />
+      </div>
+    )
+  }
+
+  const isSub = !!data.substitution
+  const displaySigle = isSub ? data.substitution.sigle : data.sigle
+  const displayTitre = isSub ? data.substitution.titre : data.titre
+  const displayUni   = isSub ? data.substitution.universite : data.universite
+
+  const color = UNI_COLORS[displayUni] || '#999'
   const isEquivalent = !!data.is_equivalent
 
   const bg = data.completed ? '#f0faf3'
+    : isSub ? '#f3f0ff'
     : data.isRoot ? '#f0f6ff'
     : isEquivalent ? '#faf5ff'
     : '#fff'
   const border = data.completed ? '#2a9d4e'
+    : isSub ? '#7c5cbf'
     : data.isRoot ? '#1a6ef5'
     : isEquivalent ? EQUIVALENT_COLOR
     : '#ddd'
-  const leftBorder = data.completed ? '#2a9d4e' : isEquivalent ? EQUIVALENT_COLOR : color
+  const leftBorder = data.completed ? '#2a9d4e'
+    : isSub ? color
+    : isEquivalent ? EQUIVALENT_COLOR
+    : color
+  const borderStyle = isSub || (isEquivalent && !data.completed) ? 'dashed' : 'solid'
 
   return (
     <div style={{
       background: bg,
-      border: `1.5px ${isEquivalent && !data.completed ? 'dashed' : 'solid'} ${border}`,
+      border: `1.5px ${borderStyle} ${border}`,
       borderLeft: `4px solid ${leftBorder}`,
       borderRadius: 8,
       padding: '8px 12px',
@@ -67,7 +105,7 @@ export function CourseNode({ data }) {
       <Handle type="target" position={Position.Left} style={{ background: '#aaa' }} />
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 4 }}>
         <div style={{ fontSize: 11, fontWeight: 700, fontFamily: 'monospace', color: '#333', marginBottom: 3 }}>
-          {data.sigle}
+          {displaySigle}
           {data.completed && <span style={{ marginLeft: 6, color: '#2a9d4e', fontSize: 12 }}>✓</span>}
         </div>
         {data.isRoot && data.onRemoveChain && (
@@ -78,34 +116,44 @@ export function CourseNode({ data }) {
           >×</button>
         )}
       </div>
-      {isEquivalent && (
+
+      {isSub && (
         <div style={{
-          display: 'inline-block',
-          fontSize: 9,
-          fontWeight: 700,
-          letterSpacing: '0.05em',
-          marginBottom: 2,
-          padding: '1px 6px',
-          borderRadius: 4,
+          display: 'inline-block', fontSize: 9, fontWeight: 700, letterSpacing: '0.05em',
+          marginBottom: 3, padding: '1px 6px', borderRadius: 4,
+          background: '#ede9f8', color: '#7c5cbf',
+        }}>
+          via {displayUni}
+        </div>
+      )}
+
+      {!isSub && isEquivalent && (
+        <div style={{
+          display: 'inline-block', fontSize: 9, fontWeight: 700, letterSpacing: '0.05em',
+          marginBottom: 2, padding: '1px 6px', borderRadius: 4,
           background: data.source === 'official' ? OFFICIAL_BADGE.bg : INFERRED_BADGE.bg,
           color: data.source === 'official' ? OFFICIAL_BADGE.color : INFERRED_BADGE.color,
         }}>
           {equivalentBadgeLabel(data)}
         </div>
       )}
+
       <div style={{ fontSize: 11, color: '#555', lineHeight: 1.35 }}>
-        {data.titre ? data.titre.slice(0, 45) + (data.titre.length > 45 ? '…' : '') : ''}
+        {displayTitre ? displayTitre.slice(0, 45) + (displayTitre.length > 45 ? '…' : '') : ''}
       </div>
-      {data.tags && data.tags.length > 0 && (
+
+      {isSub && (
+        <div style={{ fontSize: 9, color: '#aaa', marginTop: 2, fontFamily: 'monospace' }}>
+          ({data.sigle})
+        </div>
+      )}
+
+      {!isSub && data.tags && data.tags.length > 0 && (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 3, marginTop: 5 }}>
           {data.tags.slice(0, 2).map(tag => (
             <span key={tag} style={{
-              ...tagStyle(tag),
-              fontSize: 9,
-              fontWeight: 700,
-              padding: '1px 5px',
-              borderRadius: 3,
-              letterSpacing: '0.03em',
+              ...tagStyle(tag), fontSize: 9, fontWeight: 700,
+              padding: '1px 5px', borderRadius: 3, letterSpacing: '0.03em',
             }}>
               {tag}
             </span>
