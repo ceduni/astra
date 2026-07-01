@@ -1,0 +1,41 @@
+{
+  "universite": "poly",
+  "programme": "genie_logiciel",
+  "version": "v1",
+  "credits_total": 120,
+  "segments": {
+    "obligatoire": {
+      "label": "Cours obligatoires",
+      "type": "obligatoire",
+      "credits_min": 69,
+      "credits_max": 69,
+      "cours": [
+        "INF1007", "INF1040", "SSH3201",
+        "INF2610", "INF3705", "INF3800",
+        "LOG1000", "LOG2410", "LOG2810", "LOG3000",
+        "LOG3210", "LOG3430", "LOG4791", "LOG4860",
+        "LOG6302", "LOG6305",
+        "MTH1006", "MTH1101", "MTH1102", "MTH2302",
+        "PHS1101",
+        "GEN1010"
+      ]
+    },
+    "concentrations_orientations": {
+      "label": "Concentrations et orientations",
+      "type": "libre",
+      "credits_min": 12,
+      "credits_max": 27,
+      "note": "Concentration (27 cr.) ou orientation (12 cr.) au choix — cours définis par le département"
+    }
+  },
+  "tous_les_cours": [
+    "INF1007", "INF1040", "SSH3201",
+    "INF2610", "INF3705", "INF3800",
+    "LOG1000", "LOG2410", "LOG2810", "LOG3000",
+    "LOG3210", "LOG3430", "LOG4791", "LOG4860",
+    "LOG6302", "LOG6305",
+    "MTH1006", "MTH1101", "MTH1102", "MTH2302",
+    "PHS1101",
+    "GEN1010"
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "universite": "udem",
+  "programme": "informatique",
+  "version": "v1",
+  "orientation_commune": "01_commun",
+  "orientations": [
+    { "id": "76_orientation_generale", "label": "Orientation générale" },
+    { "id": "77_orientation_coop",     "label": "Orientation coopérative" },
+    { "id": "78_cheminement_honor",    "label": "Cheminement Honor" }
+  ],
+  "segments": {
+    "01_commun": {
+      "label": "Tronc commun",
+      "bloc_01A_programmation": {
+        "label": "Programmation",
+        "type": "obligatoire",
+        "credits_min": 15,
+        "credits_max": 15,
+        "cours": ["IFT1005", "IFT1015", "IFT1025", "IFT2015", "IFT2035"]
+      },
+      "bloc_01B_systeme": {
+        "label": "Systèmes informatiques",
+        "type": "obligatoire",
+        "credits_min": 12,
+        "credits_max": 12,
+        "cours": ["IFT1215", "IFT1227", "IFT2245", "IFT2255"]
+      },
+      "bloc_01C_theorie": {
+        "label": "Théorie et algorithmique",
+        "type": "obligatoire",
+        "credits_min": 12,
+        "credits_max": 12,
+        "cours": ["IFT1065", "IFT1575", "IFT2105", "IFT2125"]
+      },
+      "bloc_01D_mathematiques": {
+        "label": "Mathématiques",
+        "type": "obligatoire",
+        "credits_min": 12,
+        "credits_max": 12,
+        "cours": ["MAT1400", "MAT1600", "MAT1978"]
+      },
+      "bloc_01Y_autres_disciplines": {
+        "label": "Autres disciplines",
+        "type": "option",
+        "credits_min": 6,
+        "credits_max": 6,
+        "cours": [
+          "ANG1903", "ANG1913", "ANG1921", "ANG1924", "ANG1926", "ANG1933",
+          "BCM1501", "BCM1503", "BIO1203", "COM2001", "DRT1002S",
+          "ECN1000", "ECN1050", "ECN2230",
+          "GEO1532", "GEO1542",
+          "HEC3015", "HEC3017", "HOR1200",
+          "LCO2030", "LNG1080", "LNG1955",
+          "MAT2450", "MAT2531",
+          "MCB1979", "PHI1130", "PHI2005", "PHY1651",
+          "PSY2055", "PSY2065", "REI1010"
+        ]
+      },
+      "bloc_01Z_choix": {
+        "label": "Cours au choix (hors IFT)",
+        "type": "libre",
+        "credits_min": 6,
+        "credits_max": 6,
+        "note": "Cours hors sigle IFT"
+      }
+    },
+    "76_orientation_generale": {
+      "label": "Orientation générale",
+      "bloc_76A_interfaces_BD": {
+        "label": "Interfaces et bases de données",
+        "type": "obligatoire",
+        "credits_min": 6,
+        "credits_max": 6,
+        "cours": ["IFT2905", "IFT2935"]
+      },
+      "bloc_76B_genie_logiciel": {
+        "label": "Génie logiciel",
+        "type": "option",
+        "credits_min": 3,
+        "credits_max": 9,
+        "cours": ["IFT3911", "IFT3913"]
+      },
+      "bloc_76C_complementaires": {
+        "label": "Cours complémentaires",
+        "type": "option",
+        "credits_min": 12,
+        "credits_max": 18,
+        "cours": [
+          "IFT2425", "IFT2505", "IFT3065", "IFT3155", "IFT3205",
+          "IFT3225", "IFT3245", "IFT3275", "IFT3295", "IFT3325",
+          "IFT3335", "IFT3345", "IFT3355", "IFT3375", "IFT3395",
+          "IFT3515", "IFT3545", "IFT3655", "IFT3700", "STT2700"
+        ]
+      },
+      "bloc_76D_projet_stage": {
+        "label": "Projet et stage",
+        "type": "option",
+        "credits_min": 0,
+        "credits_max": 6,
+        "cours": ["HOR3200", "IFT3150", "IFT3151", "IFT3710"]
+      }
+    },
+    "77_orientation_coop": {
+      "label": "Orientation coopérative",
+      "bloc_77A_interfaces_BD": {
+        "label": "Interfaces et bases de données",
+        "type": "obligatoire",
+        "credits_min": 6,
+        "credits_max": 6,
+        "cours": ["IFT2905", "IFT2935"]
+      },
+      "bloc_77B_genie_logiciel": {
+        "label": "Génie logiciel",
+        "type": "option",
+        "credits_min": 3,
+        "credits_max": 9,
+        "cours": ["IFT3911", "IFT3913"]
+      },
+      "bloc_77C_stages": {
+        "label": "Stages coopératifs",
+        "type": "obligatoire",
+        "credits_min": 9,
+        "credits_max": 9,
+        "cours": ["IFT2550", "IFT3550", "IFT3551"]
+      },
+      "bloc_77D_complementaires": {
+        "label": "Cours complémentaires",
+        "type": "option",
+        "credits_min": 3,
+        "credits_max": 9,
+        "cours": [
+          "IFT2425", "IFT2505", "IFT3065", "IFT3155", "IFT3205",
+          "IFT3225", "IFT3275", "IFT3295", "IFT3325", "IFT3335",
+          "IFT3345", "IFT3355", "IFT3375", "IFT3395", "IFT3515",
+          "IFT3545", "IFT3710", "IFT3911", "IFT3913", "STT2700"
+        ]
+      }
+    },
+    "78_cheminement_honor": {
+      "label": "Cheminement Honor",
+      "bloc_78A_methodes_formelles": {
+        "label": "Méthodes formelles et IA",
+        "type": "option",
+        "credits_min": 3,
+        "credits_max": 9,
+        "cours": ["IFT2425", "IFT2505", "IFT3245", "IFT3395", "IFT3655", "IFT3700"]
+      },
+      "bloc_78B_projet_honor": {
+        "label": "Projet Honor",
+        "type": "obligatoire",
+        "credits_min": 3,
+        "credits_max": 3,
+        "cours": ["IFT4055"]
+      },
+      "bloc_78C_deuxieme_cycle": {
+        "label": "Cours de 2e cycle",
+        "type": "option",
+        "credits_min": 7,
+        "credits_max": 8,
+        "cours": [
+          "BIN6002", "BIN6003", "IFT6010", "IFT6042", "IFT6080",
+          "IFT6145", "IFT6150", "IFT6155", "IFT6172", "IFT6180",
+          "IFT6232", "IFT6255", "IFT6261", "IFT6271", "IFT6291",
+          "IFT6292", "IFT6521", "IFT6551", "IFT6561"
+        ]
+      },
+      "bloc_78D_complements": {
+        "label": "Cours complémentaires",
+        "type": "option",
+        "credits_min": 9,
+        "credits_max": 15,
+        "cours": [
+          "HOR3200", "IFT2905", "IFT2935", "IFT3065", "IFT3151",
+          "IFT3155", "IFT3205", "IFT3225", "IFT3275", "IFT3295",
+          "IFT3325", "IFT3335", "IFT3345", "IFT3355", "IFT3375",
+          "IFT3515", "IFT3545", "IFT3710", "IFT3911", "IFT3913",
+          "STT2700"
+        ]
+      }
+    }
+  },
+  "tous_les_cours": [
+    "IFT1005", "IFT1015", "IFT1025", "IFT2015", "IFT2035",
+    "IFT1215", "IFT1227", "IFT2245", "IFT2255",
+    "IFT1065", "IFT1575", "IFT2105", "IFT2125",
+    "MAT1400", "MAT1600", "MAT1978",
+    "IFT2905", "IFT2935",
+    "IFT3911", "IFT3913",
+    "IFT2425", "IFT2505", "IFT3065", "IFT3155", "IFT3205",
+    "IFT3225", "IFT3245", "IFT3275", "IFT3295", "IFT3325",
+    "IFT3335", "IFT3345", "IFT3355", "IFT3375", "IFT3395",
+    "IFT3515", "IFT3545", "IFT3655", "IFT3700", "STT2700",
+    "HOR3200", "IFT3150", "IFT3151", "IFT3710",
+    "IFT2550", "IFT3550", "IFT3551",
+    "IFT4055",
+    "BIN6002", "BIN6003", "IFT6010", "IFT6042", "IFT6080",
+    "IFT6145", "IFT6150", "IFT6155", "IFT6172", "IFT6180",
+    "IFT6232", "IFT6255", "IFT6261", "IFT6271", "IFT6291",
+    "IFT6292", "IFT6521", "IFT6551", "IFT6561"
+  ]
+}

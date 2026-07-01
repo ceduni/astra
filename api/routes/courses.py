@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+from pathlib import Path
 from typing import List, Optional, Union
 
 from fastapi import APIRouter, HTTPException, Query
@@ -10,6 +12,30 @@ from ..database import get_driver
 router = APIRouter(prefix="/courses", tags=["courses"])
 universities_router = APIRouter(prefix="/universities", tags=["universities"])
 search_router = APIRouter(tags=["search"])
+
+# ── Programs index (loaded once at import time) ───────────────────────────────
+
+_UNI_KEY = {"udem": "UdeM", "uqam": "UQAM", "mcgill": "McGill",
+             "concordia": "Concordia", "poly": "Poly", "ets": "ETS"}
+
+def _load_programs() -> dict:
+    programs: dict = {}
+    programs_dir = Path(__file__).parents[2] / "programs"
+    if not programs_dir.exists():
+        return programs
+    for f in sorted(programs_dir.glob("*.json")):
+        data = json.loads(f.read_text(encoding="utf-8"))
+        display = _UNI_KEY.get(data["universite"], data["universite"])
+        programs.setdefault(display, []).append({
+            "id": data["programme"],
+            "tous_les_cours": data["tous_les_cours"],
+            "segments": data.get("segments", {}),
+            "orientation_commune": data.get("orientation_commune"),
+            "orientations": data.get("orientations"),
+        })
+    return programs
+
+_PROGRAMS = _load_programs()
 
 
 # ── Models ────────────────────────────────────────────────────────────────────
@@ -286,6 +312,297 @@ def get_eligible(body: EligibilityRequest):
         {**c, "official_equiv_sigle": official_equivs.get(c["sigle"])}
         for c in courses
     ]
+
+
+# ── POST /courses/eligible-graph ─────────────────────────────────────────────
+#
+# Same eligibility logic as /eligible but filtered to a single home university,
+# plus a second pass to find prerequisite edges between the eligible courses.
+# Used by the exploration graph prototype.
+
+_EXPLORATION_ELIGIBLE_QUERY = """
+WITH $completed AS completed_raw
+
+CALL {
+    WITH completed_raw
+    UNWIND completed_raw AS s
+    OPTIONAL MATCH (:Cours {sigle: s})-[:EQUIVAUT_A {status: 'active'}]-(eq:Cours)
+    RETURN collect(DISTINCT eq.sigle) AS via_equiv
+}
+WITH completed_raw, [x IN completed_raw + via_equiv WHERE x IS NOT NULL] AS expanded
+
+WITH completed_raw, expanded, [s IN expanded WHERE NOT s IN completed_raw] AS equiv_only
+CALL {
+    WITH equiv_only
+    UNWIND equiv_only AS eq_sigle
+    OPTIONAL MATCH (:Cours {sigle: eq_sigle})-[:REQUIERT]->(prereq_c:Cours)
+    RETURN collect(DISTINCT prereq_c.sigle) AS via_direct_prereqs
+}
+WITH completed_raw, expanded, equiv_only, via_direct_prereqs
+CALL {
+    WITH equiv_only
+    UNWIND equiv_only AS eq_sigle
+    OPTIONAL MATCH (:Cours {sigle: eq_sigle})-[:REQUIERT]->(:PrerequisiteGroup)-[:INCLUDES]->(prereq_pg:Cours)
+    RETURN collect(DISTINCT prereq_pg.sigle) AS via_group_prereqs
+}
+WITH [x IN expanded + via_direct_prereqs + via_group_prereqs WHERE x IS NOT NULL] AS expanded
+
+CALL {
+    WITH expanded
+    MATCH (g:PrerequisiteGroup)
+    WHERE NOT EXISTS { (g)-[:INCLUDES]->(:PrerequisiteGroup) }
+    WITH g, expanded, [(g)-[:INCLUDES]->(c:Cours) | c.sigle] AS kids
+    WITH g.id AS gid,
+         CASE g.type
+             WHEN 'AND' THEN all(k IN kids WHERE k IN expanded)
+             WHEN 'OR'  THEN any(k IN kids WHERE k IN expanded)
+             ELSE false
+         END AS ok
+    RETURN collect(CASE WHEN ok THEN gid END) AS leaf_raw
+}
+WITH expanded, [x IN leaf_raw WHERE x IS NOT NULL] AS leaf_satisfied
+
+CALL {
+    WITH expanded, leaf_satisfied
+    MATCH (g:PrerequisiteGroup)
+    WHERE EXISTS { (g)-[:INCLUDES]->(:PrerequisiteGroup) }
+    WITH g, expanded, leaf_satisfied,
+         [(g)-[:INCLUDES]->(c:Cours) | c.sigle IN expanded]
+         + [(g)-[:INCLUDES]->(sub:PrerequisiteGroup) | sub.id IN leaf_satisfied]
+         AS bools
+    WITH g.id AS gid,
+         CASE g.type
+             WHEN 'AND' THEN all(b IN bools WHERE b)
+             WHEN 'OR'  THEN any(b IN bools WHERE b)
+             ELSE false
+         END AS ok
+    RETURN collect(CASE WHEN ok THEN gid END) AS parent_raw
+}
+WITH expanded,
+     leaf_satisfied + [x IN parent_raw WHERE x IS NOT NULL] AS satisfied_groups
+
+MATCH (c:Cours {hors_perimetre: false, universite: $home_universite})
+WHERE NOT c.sigle IN expanded
+  AND ($program_courses IS NULL OR c.sigle IN $program_courses)
+OPTIONAL MATCH (c)-[:REQUIERT]->(t)
+WITH c, t, expanded, satisfied_groups
+WHERE t IS NULL
+   OR (t:Cours AND t.sigle IN expanded)
+   OR (t:PrerequisiteGroup AND t.id IN satisfied_groups)
+WITH c, expanded
+WHERE all(coreq IN [(c)-[:REQUIERT_CONCOMITANT]->(co:Cours) | co.sigle] WHERE coreq IN expanded)
+RETURN c
+ORDER BY c.sigle
+"""
+
+_EXPLORATION_EDGES_QUERY = """
+MATCH (a:Cours)-[:REQUIERT]->(b:Cours)
+WHERE a.sigle IN $sigles AND b.sigle IN $sigles
+RETURN a.sigle AS source, b.sigle AS target
+UNION
+MATCH (a:Cours)-[:REQUIERT]->(:PrerequisiteGroup)-[:INCLUDES]->(b:Cours)
+WHERE a.sigle IN $sigles AND b.sigle IN $sigles
+RETURN a.sigle AS source, b.sigle AS target
+"""
+
+
+class ExplorationRequest(BaseModel):
+    completed: List[str]
+    home_universite: str
+    program: Optional[str] = None
+
+
+@router.get("/programs")
+def get_programs():
+    return {
+        uni: [{"id": p["id"], "orientations": p.get("orientations")} for p in progs]
+        for uni, progs in _PROGRAMS.items()
+    }
+
+
+def _flatten_segments(
+    segments_raw: dict,
+    orientation_commune: Optional[str],
+    chosen_orientation: Optional[str],
+) -> list:
+    result = []
+    for key, val in segments_raw.items():
+        if not isinstance(val, dict):
+            continue
+        if orientation_commune is not None:
+            if key != orientation_commune and key != chosen_orientation:
+                continue
+        if "type" in val:
+            result.append({
+                "id": key,
+                "label": val.get("label", key),
+                "type": val["type"],
+                "credits_min": val.get("credits_min"),
+                "credits_max": val.get("credits_max"),
+                "cours": val.get("cours", []),
+                "note": val.get("note"),
+                "group_label": None,
+            })
+        else:
+            group_label = val.get("label", key)
+            for subkey, subval in val.items():
+                if subkey == "label" or not isinstance(subval, dict):
+                    continue
+                result.append({
+                    "id": subkey,
+                    "label": subval.get("label", subkey),
+                    "type": subval.get("type", "option"),
+                    "credits_min": subval.get("credits_min"),
+                    "credits_max": subval.get("credits_max"),
+                    "cours": subval.get("cours", []),
+                    "note": subval.get("note"),
+                    "group_label": group_label,
+                })
+    return result
+
+
+@router.post("/eligible-graph")
+def get_eligible_graph(body: ExplorationRequest):
+    program_courses = None
+    if body.program and body.home_universite in _PROGRAMS:
+        match = next(
+            (p for p in _PROGRAMS[body.home_universite] if p["id"] == body.program),
+            None,
+        )
+        if match:
+            program_courses = match["tous_les_cours"]
+
+    with get_driver().session() as session:
+        rows = session.run(
+            _EXPLORATION_ELIGIBLE_QUERY,
+            completed=body.completed,
+            home_universite=body.home_universite,
+            program_courses=program_courses,
+        )
+        nodes = [dict(r["c"]) for r in rows]
+
+    if not nodes:
+        return {"nodes": [], "edges": []}
+
+    sigles = [n["sigle"] for n in nodes]
+    with get_driver().session() as session:
+        edge_rows = session.run(_EXPLORATION_EDGES_QUERY, sigles=sigles)
+        edges = [{"source": r["source"], "target": r["target"]} for r in edge_rows]
+
+    return {"nodes": nodes, "edges": edges}
+
+
+# ── POST /courses/program-graph ──────────────────────────────────────────────
+
+class ProgramGraphRequest(BaseModel):
+    uni: str
+    program: str
+    orientation: Optional[str] = None
+    completed_sigles: List[str] = []
+
+
+@router.post("/program-graph")
+def get_program_graph(body: ProgramGraphRequest):
+    program_match = next(
+        (p for p in _PROGRAMS.get(body.uni, []) if p["id"] == body.program),
+        None,
+    )
+    if program_match is None:
+        raise HTTPException(status_code=404, detail=f"Program '{body.program}' not found for '{body.uni}'")
+
+    tous_les_cours = program_match["tous_les_cours"]
+
+    with get_driver().session() as session:
+        nodes: dict = {}
+        edges: list = []
+        edge_ids: set = set()
+        visited_courses: set = set()
+
+        def traverse_course(s: str):
+            if s in visited_courses:
+                return
+            visited_courses.add(s)
+            rec = session.run("MATCH (c:Cours {sigle: $s}) RETURN c", s=s).single()
+            if rec:
+                nodes[s] = {"id": s, "node_type": "course", "data": dict(rec["c"])}
+            prereq_rec = session.run(
+                "MATCH (c:Cours {sigle: $s})-[:REQUIERT]->(t) RETURN t", s=s
+            ).single()
+            if prereq_rec:
+                traverse_node(s, prereq_rec["t"], "prerequisite")
+            for coreq_rec in session.run(
+                "MATCH (c:Cours {sigle: $s})-[:REQUIERT_CONCOMITANT]->(t:Cours) RETURN t", s=s
+            ):
+                traverse_node(s, coreq_rec["t"], "corequisite")
+
+        def traverse_node(source_id: str, node, relation_type: str):
+            if "Cours" in node.labels:
+                child_sigle = node["sigle"]
+                eid = f"{source_id}->{child_sigle}:{relation_type}"
+                if eid not in edge_ids:
+                    edge_ids.add(eid)
+                    edges.append({"id": eid, "source": source_id, "target": child_sigle,
+                                  "relation_type": relation_type})
+                traverse_course(child_sigle)
+            else:
+                gid = node["id"]
+                if gid not in nodes:
+                    nodes[gid] = {"id": gid, "node_type": "group", "data": {"type": node["type"]}}
+                eid = f"{source_id}->{gid}:{relation_type}"
+                if eid not in edge_ids:
+                    edge_ids.add(eid)
+                    edges.append({"id": eid, "source": source_id, "target": gid,
+                                  "relation_type": relation_type})
+                for child_rec in session.run(
+                    "MATCH (g:PrerequisiteGroup {id: $id})-[:INCLUDES]->(child) RETURN child",
+                    id=gid,
+                ):
+                    traverse_node(gid, child_rec["child"], relation_type)
+
+        for sigle in tous_les_cours:
+            traverse_course(sigle)
+
+        seen_equiv_pairs: set = set()
+        for s in list(visited_courses):
+            seen_eq_for_s: set = set()
+            for rec in session.run(
+                "MATCH (c:Cours {sigle: $s})-[r:EQUIVAUT_A {status: 'active'}]-(eq:Cours)"
+                " RETURN eq, r.source AS source, r.confidence AS confidence"
+                " ORDER BY CASE r.source WHEN 'official' THEN 0 ELSE 1 END, r.confidence DESC",
+                s=s,
+            ):
+                eq = rec["eq"]
+                eq_sigle = eq["sigle"]
+                if eq_sigle in seen_eq_for_s:
+                    continue
+                seen_eq_for_s.add(eq_sigle)
+                pair = frozenset((s, eq_sigle))
+                if pair in seen_equiv_pairs:
+                    continue
+                seen_equiv_pairs.add(pair)
+                if eq_sigle not in nodes:
+                    data = dict(eq)
+                    data["is_equivalent"] = True
+                    data["source"] = rec["source"]
+                    data["confidence"] = rec["confidence"]
+                    nodes[eq_sigle] = {"id": eq_sigle, "node_type": "course", "data": data}
+                eid = f"{s}<->{eq_sigle}:equivalent"
+                if eid not in edge_ids:
+                    edge_ids.add(eid)
+                    edges.append({"id": eid, "source": s, "target": eq_sigle,
+                                  "relation_type": "equivalent", "label": "équivalent"})
+
+    segments = _flatten_segments(
+        program_match.get("segments", {}),
+        program_match.get("orientation_commune"),
+        body.orientation,
+    )
+    return {
+        "nodes": list(nodes.values()),
+        "edges": edges,
+        "program_sigles": tous_les_cours,
+        "segments": segments,
+    }
 
 
 # ── GET /courses/{sigle}/prerequisite-chain ──────────────────────────────────
