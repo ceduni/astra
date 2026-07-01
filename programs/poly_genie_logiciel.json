@@ -5,7 +5,10 @@
   "credits_total": 120,
   "segments": {
     "obligatoire": {
+      "label": "Cours obligatoires",
       "type": "obligatoire",
+      "credits_min": 69,
+      "credits_max": 69,
       "cours": [
         "INF1007", "INF1040", "SSH3201",
         "INF2610", "INF3705", "INF3800",
@@ -18,9 +21,11 @@
       ]
     },
     "concentrations_orientations": {
-      "type": "option",
-      "note": "Concentration (27 cr.) ou orientation (12 cr.) au choix",
-      "cours": []
+      "label": "Concentrations et orientations",
+      "type": "libre",
+      "credits_min": 12,
+      "credits_max": 27,
+      "note": "Concentration (27 cr.) ou orientation (12 cr.) au choix — cours définis par le département"
     }
   },
   "tous_les_cours": [

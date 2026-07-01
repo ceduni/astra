@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from 'react'
 
 const API = '/api/admin/equivalences'
+const API_META = '/api/admin'
 
 function authHeader(token) {
   return { Authorization: `Basic ${token}` }
@@ -42,12 +43,17 @@ function PendingQueue({ token, onChanged }) {
   if (loading) return null
   if (rows.length === 0) return null
 
+  const alerts = rows.filter(eq => eq.flag_reason)
+  const inferred = rows.filter(eq => !eq.flag_reason)
+
   return (
     <div className="admin-pending-wrap">
       <div className="admin-pending-header">
         <span className="admin-pending-title">En attente de révision</span>
         <span className="admin-pending-count">{rows.length} paire{rows.length !== 1 ? 's' : ''}</span>
-        <span className="admin-pending-hint">Équivalences inférées entre {(70).toFixed(0)}% et {(78).toFixed(0)}% de confiance</span>
+        {alerts.length > 0 && (
+          <span className="admin-pending-alert-hint">{alerts.length} alerte{alerts.length !== 1 ? 's' : ''} cours modifié</span>
+        )}
       </div>
       <div className="admin-table-wrap">
         <table className="admin-table">
@@ -55,46 +61,62 @@ function PendingQueue({ token, onChanged }) {
             <tr>
               <th>Cours A</th>
               <th>Cours B</th>
-              <th>Confiance</th>
-              <th>Preuve</th>
+              <th>Motif</th>
+              <th>Détecté</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            {rows.map(eq => (
-              <tr key={eq.id} className="admin-row-pending">
-                <td><code className="admin-sigle">{eq.sigle_a}</code></td>
-                <td><code className="admin-sigle">{eq.sigle_b}</code></td>
-                <td>
-                  <span className="admin-conf-bar-wrap">
-                    <span
-                      className="admin-conf-bar"
-                      style={{ width: `${Math.round((eq.confidence || 0) * 100)}%` }}
-                    />
-                    <span className="admin-conf-label">
-                      {eq.confidence != null ? `${Math.round(eq.confidence * 100)}%` : '—'}
-                    </span>
-                  </span>
-                </td>
-                <td className="admin-evidence">{eq.evidence || '—'}</td>
-                <td className="admin-pending-actions">
-                  <button
-                    className="admin-btn-approve"
-                    disabled={acting === eq.id}
-                    onClick={() => act(eq.id, 'approve')}
-                  >
-                    ✓ Approuver
-                  </button>
-                  <button
-                    className="admin-btn-reject"
-                    disabled={acting === eq.id}
-                    onClick={() => act(eq.id, 'reject')}
-                  >
-                    ✕ Rejeter
-                  </button>
-                </td>
-              </tr>
-            ))}
+            {rows.map(eq => {
+              const isAlert = Boolean(eq.flag_reason)
+              return (
+                <tr key={eq.id} className={isAlert ? 'admin-row-alert' : 'admin-row-pending'}>
+                  <td><code className="admin-sigle">{eq.sigle_a}</code></td>
+                  <td><code className="admin-sigle">{eq.sigle_b}</code></td>
+                  <td>
+                    {isAlert ? (
+                      <span className="admin-flag-reason">{eq.flag_reason}</span>
+                    ) : (
+                      <span className="admin-conf-bar-wrap">
+                        <span
+                          className="admin-conf-bar"
+                          style={{ width: `${Math.round((eq.confidence || 0) * 100)}%` }}
+                        />
+                        <span className="admin-conf-label">
+                          {eq.confidence != null ? `${Math.round(eq.confidence * 100)}%` : '—'}
+                        </span>
+                      </span>
+                    )}
+                  </td>
+                  <td className="admin-date">
+                    {eq.flagged_at ? eq.flagged_at.slice(0, 10) : (eq.evidence || '—')}
+                  </td>
+                  <td className="admin-pending-actions">
+                    <button
+                      className="admin-btn-approve"
+                      disabled={acting === eq.id}
+                      onClick={() => act(eq.id, 'approve')}
+                    >
+                      {isAlert ? '✓ Confirmer valide' : '✓ Approuver'}
+                    </button>
+                    <button
+                      className="admin-btn-skip"
+                      disabled={acting === eq.id}
+                      onClick={() => act(eq.id, 'skip')}
+                    >
+                      → Passer
+                    </button>
+                    <button
+                      className="admin-btn-reject"
+                      disabled={acting === eq.id}
+                      onClick={() => act(eq.id, 'reject')}
+                    >
+                      ✕ Révoquer
+                    </button>
+                  </td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </div>
@@ -117,7 +139,7 @@ function LoginScreen({ onLogin }) {
     setError(null)
     const token = btoa(`${user}:${pass}`)
     try {
-      const resp = await fetch(`${API}?limit=1`, {
+      const resp = await fetch(`${API_META}/me`, {
         headers: authHeader(token),
       })
       if (resp.status === 401) {
@@ -125,8 +147,10 @@ function LoginScreen({ onLogin }) {
       } else if (!resp.ok) {
         setError(`Erreur serveur : ${resp.status}`)
       } else {
+        const me = await resp.json()
         sessionStorage.setItem('admin_token', token)
-        onLogin(token)
+        sessionStorage.setItem('admin_university', me.university || '')
+        onLogin(token, me.university || null)
       }
     } catch {
       setError('Impossible de contacter le serveur.')
@@ -172,14 +196,13 @@ function CreateForm({ token, onCreated }) {
   const [open, setOpen] = useState(false)
   const [sigleA, setSigleA] = useState('')
   const [sigleB, setSigleB] = useState('')
-  const [source, setSource] = useState('official')
   const [evidence, setEvidence] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
   async function handleSubmit(e) {
     e.preventDefault()
-    if (!sigleA.trim() || !sigleB.trim()) return
+    if (!sigleA.trim() || !sigleB.trim() || !evidence.trim()) return
     setLoading(true)
     setError(null)
     try {
@@ -189,15 +212,15 @@ function CreateForm({ token, onCreated }) {
         body: JSON.stringify({
           sigle_a: sigleA.trim().toUpperCase(),
           sigle_b: sigleB.trim().toUpperCase(),
-          source,
-          evidence: evidence.trim() || null,
+          source: 'admin_created',
+          evidence: evidence.trim(),
         }),
       })
       if (!resp.ok) {
         const body = await resp.json().catch(() => ({}))
         setError(body.detail || `Erreur ${resp.status}`)
       } else {
-        setSigleA(''); setSigleB(''); setEvidence(''); setSource('official')
+        setSigleA(''); setSigleB(''); setEvidence('')
         setOpen(false)
         onCreated()
       }
@@ -235,33 +258,22 @@ function CreateForm({ token, onCreated }) {
                 onChange={e => setSigleB(e.target.value)}
               />
             </div>
-            <div className="admin-create-field">
-              <label className="admin-field-label">Source</label>
-              <select
-                className="admin-input"
-                value={source}
-                onChange={e => setSource(e.target.value)}
-              >
-                <option value="official">official</option>
-                <option value="inferred">inferred</option>
-                <option value="request">request</option>
-              </select>
-            </div>
           </div>
           <div className="admin-create-field" style={{ marginTop: '0.5rem' }}>
-            <label className="admin-field-label">Justification (optionnel)</label>
+            <label className="admin-field-label">Justification <span style={{ color: '#c00' }}>*</span></label>
             <input
               className="admin-input"
               placeholder="ex. Même syllabus, approuvé par comité pédagogique"
               value={evidence}
               onChange={e => setEvidence(e.target.value)}
+              required
             />
           </div>
           {error && <p className="admin-error" style={{ marginTop: '0.5rem' }}>{error}</p>}
           <button
             className="admin-btn-primary"
             type="submit"
-            disabled={loading}
+            disabled={loading || !evidence.trim()}
             style={{ marginTop: '0.75rem', width: 'auto', padding: '0.4rem 1.25rem' }}
           >
             {loading ? 'Création…' : 'Créer'}
@@ -283,9 +295,10 @@ function FiltersBar({ filters, onChange }) {
         onChange={e => onChange({ ...filters, source: e.target.value })}
       >
         <option value="">Toutes sources</option>
-        <option value="official">official</option>
+        <option value="official_table">official_table</option>
+        <option value="admin_created">admin_created</option>
         <option value="inferred">inferred</option>
-        <option value="request">request</option>
+        <option value="official">official (legacy)</option>
       </select>
       <select
         className="admin-filter-select"
@@ -310,9 +323,11 @@ function FiltersBar({ filters, onChange }) {
 // ── Source / status badges ─────────────────────────────────────────────────────
 
 const SOURCE_COLORS = {
-  official: '#0057a8',
-  inferred: '#6c3fb5',
-  request:  '#c97300',
+  official_table: '#0057a8',
+  admin_created:  '#127a4c',
+  official:       '#0057a8',
+  inferred:       '#6c3fb5',
+  request:        '#c97300',
 }
 
 function Badge({ value, colorMap }) {
@@ -425,6 +440,9 @@ export default function AdminPanel({ onBack }) {
   const [token, setToken] = useState(
     () => sessionStorage.getItem('admin_token') || null
   )
+  const [university, setUniversity] = useState(
+    () => sessionStorage.getItem('admin_university') || null
+  )
   const [rows, setRows] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -457,13 +475,16 @@ export default function AdminPanel({ onBack }) {
     if (token) fetchEquivs(token, filters)
   }, [token, filters, fetchEquivs])
 
-  function handleLogin(tok) {
+  function handleLogin(tok, uni) {
     setToken(tok)
+    setUniversity(uni || null)
   }
 
   function handleLogout() {
     sessionStorage.removeItem('admin_token')
+    sessionStorage.removeItem('admin_university')
     setToken(null)
+    setUniversity(null)
   }
 
   if (!token) {
@@ -481,6 +502,9 @@ export default function AdminPanel({ onBack }) {
             ‹ Retour
           </button>
           <h2 className="admin-title">Administration — Équivalences</h2>
+          {university && (
+            <span className="admin-university-badge">{university}</span>
+          )}
           <span className="admin-stats">
             {active} actives · {revoked} révoquées
           </span>

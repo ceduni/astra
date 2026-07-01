@@ -59,9 +59,9 @@ _AUTH = "Basic " + __import__("base64").b64encode(f"{ADMIN_USER}:{ADMIN_PASS}".e
 
 
 def fetch_existing_pairs() -> set[tuple[str, str]]:
-    """Return set of (sigle_a, sigle_b) sorted tuples already in the graph as official."""
+    """Return set of (sigle_a, sigle_b) sorted tuples already in the graph as official_table."""
     req = urllib.request.Request(
-        f"{API_BASE_URL}/admin/equivalences?source=official&limit=1000",
+        f"{API_BASE_URL}/admin/equivalences?source=official_table&limit=1000",
         headers={"Authorization": _AUTH},
     )
     try:
@@ -77,8 +77,9 @@ def post_equivalence(sigle_a: str, sigle_b: str) -> tuple[bool, str]:
     body = json.dumps({
         "sigle_a": sigle_a,
         "sigle_b": sigle_b,
-        "source": "official",
+        "source": "official_table",
         "confidence": 1.0,
+        "evidence": "Official equivalence table",
     }).encode()
     req = urllib.request.Request(
         f"{API_BASE_URL}/admin/equivalences",

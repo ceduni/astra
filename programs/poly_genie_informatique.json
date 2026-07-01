@@ -5,12 +5,15 @@
   "credits_total": 120,
   "segments": {
     "obligatoire": {
+      "label": "Cours obligatoires",
       "type": "obligatoire",
+      "credits_min": 75,
+      "credits_max": 75,
       "cours": [
         "INF1007", "INF1040", "INF1600", "SSH3201",
         "INF2610", "INF2705", "INF3405", "INF3710",
         "INF3800", "INF4410", "INF4480", "INF4705",
-        "INF4710", "INF4705", "INF1900",
+        "INF4710", "INF1900",
         "MTH1006", "MTH1101", "MTH1102", "MTH2302",
         "PHS1101", "PHS1110",
         "ELE1600",
@@ -18,9 +21,11 @@
       ]
     },
     "concentrations_orientations": {
-      "type": "option",
-      "note": "Concentration (27 cr.) ou orientation (12 cr.) au choix",
-      "cours": []
+      "label": "Concentrations et orientations",
+      "type": "libre",
+      "credits_min": 12,
+      "credits_max": 27,
+      "note": "Concentration (27 cr.) ou orientation (12 cr.) au choix — cours définis par le département"
     }
   },
   "tous_les_cours": [

@@ -5,7 +5,10 @@
   "credits_total": 63,
   "segments": {
     "required": {
+      "label": "Cours obligatoires",
       "type": "obligatoire",
+      "credits_min": 33,
+      "credits_max": 33,
       "cours": [
         "COMP202", "COMP206", "COMP250", "COMP251", "COMP273",
         "COMP302", "COMP303", "COMP310",
@@ -13,17 +16,26 @@
       ]
     },
     "theory_option": {
+      "label": "Option théorie",
       "type": "option",
+      "credits_min": 6,
+      "credits_max": 9,
       "note": "Au moins 6 crédits parmi",
       "cours": ["COMP330", "COMP350", "COMP360"]
     },
     "math_option": {
+      "label": "Option mathématiques",
       "type": "option",
+      "credits_min": 3,
+      "credits_max": 9,
       "note": "3-9 crédits, doit inclure MATH323 ou MATH340",
       "cours": ["MATH318", "MATH323", "MATH324", "MATH340"]
     },
     "complementaires": {
+      "label": "Cours complémentaires",
       "type": "option",
+      "credits_min": 6,
+      "credits_max": 21,
       "note": "Au moins 6 crédits au niveau 400+, reste au niveau 300+",
       "cours": [
         "COMP322", "COMP409", "COMP421", "COMP424", "COMP462",

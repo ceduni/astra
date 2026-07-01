@@ -5,7 +5,10 @@
   "credits_total": 120,
   "segments": {
     "obligatoire": {
+      "label": "Cours obligatoires",
       "type": "obligatoire",
+      "credits_min": 57,
+      "credits_max": 57,
       "cours": [
         "GTI100", "LOG121", "LOG200", "LOG210",
         "GTI510", "GTI525", "GTI611",
@@ -16,7 +19,10 @@
       ]
     },
     "optionnels": {
+      "label": "Cours à option",
       "type": "option",
+      "credits_min": 18,
+      "credits_max": 63,
       "note": "Cours au choix selon axe de spécialisation",
       "cours": [
         "GTI320", "GTI350", "GTI515", "GTI619", "GTI650",

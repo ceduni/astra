@@ -5,7 +5,10 @@
   "credits_total": 120,
   "segments": {
     "obligatoire": {
+      "label": "Cours obligatoires",
       "type": "obligatoire",
+      "credits_min": 60,
+      "credits_max": 60,
       "cours": [
         "LOG100", "LOG121", "LOG200", "LOG210", "LOG240",
         "LOG410", "LOG430", "LOG795",
@@ -16,7 +19,10 @@
       ]
     },
     "optionnels": {
+      "label": "Cours à option",
       "type": "option",
+      "credits_min": 18,
+      "credits_max": 60,
       "note": "Cours au choix parmi les cours LOG/GTI 500+",
       "cours": [
         "LOG430", "LOG450", "LOG460", "LOG530", "LOG550",

@@ -29,6 +29,9 @@ def _load_programs() -> dict:
         programs.setdefault(display, []).append({
             "id": data["programme"],
             "tous_les_cours": data["tous_les_cours"],
+            "segments": data.get("segments", {}),
+            "orientation_commune": data.get("orientation_commune"),
+            "orientations": data.get("orientations"),
         })
     return programs
 
@@ -411,8 +414,51 @@ class ExplorationRequest(BaseModel):
 
 @router.get("/programs")
 def get_programs():
-    return {uni: [{"id": p["id"]} for p in progs]
-            for uni, progs in _PROGRAMS.items()}
+    return {
+        uni: [{"id": p["id"], "orientations": p.get("orientations")} for p in progs]
+        for uni, progs in _PROGRAMS.items()
+    }
+
+
+def _flatten_segments(
+    segments_raw: dict,
+    orientation_commune: Optional[str],
+    chosen_orientation: Optional[str],
+) -> list:
+    result = []
+    for key, val in segments_raw.items():
+        if not isinstance(val, dict):
+            continue
+        if orientation_commune is not None:
+            if key != orientation_commune and key != chosen_orientation:
+                continue
+        if "type" in val:
+            result.append({
+                "id": key,
+                "label": val.get("label", key),
+                "type": val["type"],
+                "credits_min": val.get("credits_min"),
+                "credits_max": val.get("credits_max"),
+                "cours": val.get("cours", []),
+                "note": val.get("note"),
+                "group_label": None,
+            })
+        else:
+            group_label = val.get("label", key)
+            for subkey, subval in val.items():
+                if subkey == "label" or not isinstance(subval, dict):
+                    continue
+                result.append({
+                    "id": subkey,
+                    "label": subval.get("label", subkey),
+                    "type": subval.get("type", "option"),
+                    "credits_min": subval.get("credits_min"),
+                    "credits_max": subval.get("credits_max"),
+                    "cours": subval.get("cours", []),
+                    "note": subval.get("note"),
+                    "group_label": group_label,
+                })
+    return result
 
 
 @router.post("/eligible-graph")
@@ -451,6 +497,8 @@ def get_eligible_graph(body: ExplorationRequest):
 class ProgramGraphRequest(BaseModel):
     uni: str
     program: str
+    orientation: Optional[str] = None
+    completed_sigles: List[str] = []
 
 
 @router.post("/program-graph")
@@ -544,7 +592,17 @@ def get_program_graph(body: ProgramGraphRequest):
                     edges.append({"id": eid, "source": s, "target": eq_sigle,
                                   "relation_type": "equivalent", "label": "équivalent"})
 
-    return {"nodes": list(nodes.values()), "edges": edges, "program_sigles": tous_les_cours}
+    segments = _flatten_segments(
+        program_match.get("segments", {}),
+        program_match.get("orientation_commune"),
+        body.orientation,
+    )
+    return {
+        "nodes": list(nodes.values()),
+        "edges": edges,
+        "program_sigles": tous_les_cours,
+        "segments": segments,
+    }
 
 
 # ── GET /courses/{sigle}/prerequisite-chain ──────────────────────────────────

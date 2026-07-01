@@ -23,9 +23,29 @@ clear_uni_prereqs(session, universite)
   that belong to a given university before a reload.
 """
 
+import hashlib
 import re
+from datetime import datetime, timezone
 
 OR_RE = re.compile(r"\b(ou|or)\b", re.IGNORECASE)
+
+
+# ── Content-hash helpers ──────────────────────────────────────────────────────
+
+def _content_hash(titre: str, credits, description: str) -> str:
+    payload = f"{titre or ''}|{credits or 0}|{description or ''}"
+    return hashlib.sha256(payload.encode()).hexdigest()[:16]
+
+
+def _diff_reason(old_titre, old_credits, old_desc, new_titre, new_credits, new_desc) -> str:
+    parts = []
+    if str(old_credits) != str(new_credits):
+        parts.append(f"credits: {old_credits} → {new_credits}")
+    if (old_titre or "") != (new_titre or ""):
+        parts.append("title updated")
+    if (old_desc or "") != (new_desc or ""):
+        parts.append("description updated")
+    return "; ".join(parts) or "content updated"
 
 
 # ── Parser ────────────────────────────────────────────────────────────────────
@@ -96,7 +116,8 @@ SET c.universite       = $universite,
     c.niveau           = $niveau,
     c.hors_perimetre   = $hors_perimetre,
     c.requirement_text = $requirement_text,
-    c.version          = $version
+    c.version          = $version,
+    c.content_hash     = $content_hash
 """
 
 _COURS_FIELDS = (
@@ -104,9 +125,45 @@ _COURS_FIELDS = (
     "description", "niveau", "hors_perimetre", "requirement_text",
 )
 
+_FLAG_EQUIVALENCES = """
+MATCH (c:Cours {sigle: $sigle})-[r:EQUIVAUT_A]-(other:Cours)
+WHERE r.status IN ['active', 'needs_review']
+  AND r.source IN ['admin_created', 'official_table', 'official']
+SET r.status      = 'needs_review',
+    r.flagged_at  = datetime($now),
+    r.flag_reason = $reason
+"""
+
 
 def merge_cours(tx, course: dict, version: str):
-    tx.run(_MERGE_COURS, **{k: course[k] for k in _COURS_FIELDS}, version=version)
+    sigle = course["sigle"]
+    new_titre   = course.get("titre", "") or ""
+    new_credits = course.get("credits", 0)
+    new_desc    = course.get("description", "") or ""
+    new_hash    = _content_hash(new_titre, new_credits, new_desc)
+
+    existing = tx.run(
+        "MATCH (c:Cours {sigle: $sigle}) "
+        "RETURN c.content_hash AS hash, c.titre AS titre, "
+        "       c.credits AS credits, c.description AS description",
+        sigle=sigle,
+    ).single()
+
+    tx.run(_MERGE_COURS, **{k: course[k] for k in _COURS_FIELDS},
+           version=version, content_hash=new_hash)
+
+    # Only flag when a previous hash exists and it differs from the new one.
+    # If existing hash is null, this is the first ETL run after bootstrap — skip.
+    if existing is not None and existing["hash"] is not None:
+        if existing["hash"] != new_hash:
+            now_iso = datetime.now(timezone.utc).isoformat()
+            reason  = _diff_reason(
+                existing["titre"], existing["credits"], existing["description"],
+                new_titre, new_credits, new_desc,
+            )
+            tx.run("MATCH (c:Cours {sigle: $sigle}) SET c.changed_at = datetime($now)",
+                   sigle=sigle, now=now_iso)
+            tx.run(_FLAG_EQUIVALENCES, sigle=sigle, now=now_iso, reason=reason)
 
 
 def load_prereqs(tx, from_sigle: str, items: list, stats: dict, version: str):
