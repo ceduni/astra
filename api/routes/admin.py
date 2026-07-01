@@ -173,6 +173,8 @@ class Equivalence(BaseModel):
     revoked_at: Optional[str] = None
     flagged_at: Optional[str] = None
     flag_reason: Optional[str] = None
+    universite_a: Optional[str] = None
+    universite_b: Optional[str] = None
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -183,6 +185,8 @@ def _row_to_equivalence(record) -> Equivalence:
         id=r["id"],
         sigle_a=record["a"]["sigle"],
         sigle_b=record["b"]["sigle"],
+        universite_a=record["a"].get("universite"),
+        universite_b=record["b"].get("universite"),
         source=r["source"],
         status=r["status"],
         created_at=str(r["created_at"]),

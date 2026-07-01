@@ -9,7 +9,7 @@ function authHeader(token) {
 
 // ── Pending queue ──────────────────────────────────────────────────────────────
 
-function PendingQueue({ token, onChanged }) {
+function PendingQueue({ token, university, onChanged }) {
   const [rows, setRows] = useState([])
   const [loading, setLoading] = useState(true)
   const [acting, setActing] = useState(null)
@@ -61,8 +61,6 @@ function PendingQueue({ token, onChanged }) {
             <tr>
               <th>Cours A</th>
               <th>Cours B</th>
-              <th>Motif</th>
-              <th>Détecté</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -71,25 +69,17 @@ function PendingQueue({ token, onChanged }) {
               const isAlert = Boolean(eq.flag_reason)
               return (
                 <tr key={eq.id} className={isAlert ? 'admin-row-alert' : 'admin-row-pending'}>
-                  <td><code className="admin-sigle">{eq.sigle_a}</code></td>
-                  <td><code className="admin-sigle">{eq.sigle_b}</code></td>
                   <td>
-                    {isAlert ? (
-                      <span className="admin-flag-reason">{eq.flag_reason}</span>
-                    ) : (
-                      <span className="admin-conf-bar-wrap">
-                        <span
-                          className="admin-conf-bar"
-                          style={{ width: `${Math.round((eq.confidence || 0) * 100)}%` }}
-                        />
-                        <span className="admin-conf-label">
-                          {eq.confidence != null ? `${Math.round(eq.confidence * 100)}%` : '—'}
-                        </span>
-                      </span>
+                    <code className="admin-sigle">{eq.sigle_a}</code>
+                    {eq.universite_a && eq.universite_a !== university && (
+                      <span className="admin-uni-label">{eq.universite_a}</span>
                     )}
                   </td>
-                  <td className="admin-date">
-                    {eq.flagged_at ? eq.flagged_at.slice(0, 10) : (eq.evidence || '—')}
+                  <td>
+                    <code className="admin-sigle">{eq.sigle_b}</code>
+                    {eq.universite_b && eq.universite_b !== university && (
+                      <span className="admin-uni-label">{eq.universite_b}</span>
+                    )}
                   </td>
                   <td className="admin-pending-actions">
                     <button
@@ -517,6 +507,7 @@ export default function AdminPanel({ onBack }) {
       <div className="admin-body">
         <PendingQueue
           token={token}
+          university={university}
           onChanged={() => fetchEquivs(token, filters)}
         />
 

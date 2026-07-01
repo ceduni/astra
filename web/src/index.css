@@ -1097,6 +1097,7 @@ body {
 .admin-row-pending td { background: #fffdf5; }
 .admin-row-alert td { background: #fff8f0; }
 .admin-flag-reason { font-size: 0.78rem; color: #8a4500; font-style: italic; }
+.admin-uni-label { display: block; font-size: 0.72rem; color: #888; margin-top: 2px; }
 .admin-pending-alert-hint { font-size: 0.75rem; color: #c75c00; font-weight: 600; margin-left: auto; }
 .admin-conf-bar-wrap {
   display: flex;
