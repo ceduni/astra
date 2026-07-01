@@ -252,29 +252,76 @@ def _create_or_group(tx, from_sigle, gid, codes, parent_is_cours, version: str):
 
 # ── Corequisites (concomitant courses) ─────────────────────────────────────────
 
-def load_concomitants(tx, from_sigle: str, concomitant_courses: list, version: str) -> int:
+def load_concomitants_structured(tx, from_sigle: str, items: list, version: str) -> int:
     """
-    Write direct (Cours)-[:REQUIERT_CONCOMITANT]->(Cours) edges for one
-    course's corequisites.
+    Write corequisite edges preserving AND/OR structure.
 
-    Source data occasionally lists a course as its own concomitant (a
-    scraper artifact seen on Poly and UdeM); such self-references are
-    skipped to avoid self-loops.
+    `items` is the same format returned by parse_prereqs():
+      - str  → direct REQUIERT_CONCOMITANT to Cours
+      - list → OR group: REQUIERT_CONCOMITANT to a PrerequisiteGroup (OR)
+                whose members are INCLUDES → Cours
 
-    Returns the number of edges created.
+    OR group node IDs use the COREQ_ prefix to distinguish them from
+    regular prerequisite groups (which use __AND / __OR prefixes).
+
+    Returns the number of corequisite course references written.
     """
-    targets = [t for t in concomitant_courses if t != from_sigle]
-    for t in targets:
+    if not items:
+        return 0
+
+    count = 0
+    if len(items) == 1:
+        item = items[0]
+        if isinstance(item, str):
+            tx.run(
+                "MATCH (a:Cours {sigle:$f}) MATCH (b:Cours {sigle:$t})"
+                " MERGE (a)-[r:REQUIERT_CONCOMITANT]->(b) SET r.version = $version",
+                f=from_sigle, t=item, version=version,
+            )
+            count += 1
+        else:
+            gid = f"{from_sigle}__COREQ_OR"
+            _create_coreq_or_group(tx, from_sigle, gid, item, version)
+            count += len(item)
+        return count
+
+    for i, item in enumerate(items):
+        if isinstance(item, str):
+            tx.run(
+                "MATCH (a:Cours {sigle:$f}) MATCH (b:Cours {sigle:$t})"
+                " MERGE (a)-[r:REQUIERT_CONCOMITANT]->(b) SET r.version = $version",
+                f=from_sigle, t=item, version=version,
+            )
+            count += 1
+        else:
+            gid = f"{from_sigle}__COREQ_OR_{i}"
+            _create_coreq_or_group(tx, from_sigle, gid, item, version)
+            count += len(item)
+
+    return count
+
+
+def _create_coreq_or_group(tx, from_sigle: str, gid: str, codes: list, version: str):
+    tx.run("MERGE (g:PrerequisiteGroup {id:$id}) SET g.type='OR'", id=gid)
+    tx.run(
+        "MATCH (a:Cours {sigle:$f}) MATCH (g:PrerequisiteGroup {id:$id})"
+        " MERGE (a)-[r:REQUIERT_CONCOMITANT]->(g) SET r.version = $version",
+        f=from_sigle, id=gid, version=version,
+    )
+    for code in codes:
         tx.run(
-            "MATCH (a:Cours {sigle:$f}) MATCH (b:Cours {sigle:$t})"
-            " MERGE (a)-[r:REQUIERT_CONCOMITANT]->(b) SET r.version = $version",
-            f=from_sigle, t=t, version=version,
+            "MATCH (g:PrerequisiteGroup {id:$id}) MATCH (b:Cours {sigle:$t})"
+            " MERGE (g)-[:INCLUDES]->(b)",
+            id=gid, t=code,
         )
-    return len(targets)
 
 
 def clear_uni_concomitants(session, universite: str):
-    """Remove all REQUIERT_CONCOMITANT edges for one university before a reload."""
+    """Remove all REQUIERT_CONCOMITANT edges and corequisite OR groups for one university."""
+    session.run("""
+        MATCH (c:Cours {universite: $uni})-[:REQUIERT_CONCOMITANT]->(g:PrerequisiteGroup)
+        DETACH DELETE g
+    """, uni=universite)
     session.run("""
         MATCH (c:Cours {universite: $uni})-[r:REQUIERT_CONCOMITANT]->(:Cours)
         DELETE r

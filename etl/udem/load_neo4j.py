@@ -19,7 +19,7 @@ from neo4j import GraphDatabase
 sys.path.insert(0, str(Path(__file__).parents[1]))
 from prereq_parser import (
     merge_cours, load_prereqs, clear_uni_prereqs, parse_prereqs,
-    set_prereqs_known, load_concomitants, clear_uni_concomitants,
+    set_prereqs_known, load_concomitants_structured, clear_uni_concomitants,
 )
 
 load_dotenv(Path(__file__).parents[2] / ".env")
@@ -41,10 +41,11 @@ def load(tx, courses: list, stats: dict):
         load_prereqs(tx, c["sigle"], items, stats, VERSION)
 
     for c in courses:
-        concomitants = c.get("concomitant_courses", [])
+        concomitants = [t for t in c.get("concomitant_courses", []) if t != c["sigle"]]
         if not concomitants:
             continue
-        stats["concomitant"] += load_concomitants(tx, c["sigle"], concomitants, VERSION)
+        items = parse_prereqs(concomitants, c.get("requirement_text", ""))
+        stats["concomitant"] += load_concomitants_structured(tx, c["sigle"], items, VERSION)
 
 
 def main():

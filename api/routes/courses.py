@@ -531,7 +531,7 @@ def get_program_graph(body: ProgramGraphRequest):
             if prereq_rec:
                 traverse_node(s, prereq_rec["t"], "prerequisite")
             for coreq_rec in session.run(
-                "MATCH (c:Cours {sigle: $s})-[:REQUIERT_CONCOMITANT]->(t:Cours) RETURN t", s=s
+                "MATCH (c:Cours {sigle: $s})-[:REQUIERT_CONCOMITANT]->(t) RETURN t", s=s
             ):
                 traverse_node(s, coreq_rec["t"], "corequisite")
 
@@ -631,7 +631,7 @@ def get_prereq_chain(sigle: str):
                 traverse_node(s, prereq_rec["t"], relation_type="prerequisite")
 
             coreq_recs = session.run(
-                "MATCH (c:Cours {sigle: $s})-[:REQUIERT_CONCOMITANT]->(t:Cours) RETURN t", s=s
+                "MATCH (c:Cours {sigle: $s})-[:REQUIERT_CONCOMITANT]->(t) RETURN t", s=s
             )
             for coreq_rec in coreq_recs:
                 traverse_node(s, coreq_rec["t"], relation_type="corequisite")
