@@ -592,6 +592,22 @@ def get_program_graph(body: ProgramGraphRequest):
                     edges.append({"id": eid, "source": s, "target": eq_sigle,
                                   "relation_type": "equivalent", "label": "équivalent"})
 
+        # Expand completed sigles via active equivalences so the client can
+        # compute equivalence-aware availability without a second round-trip.
+        expanded_completed = list(body.completed_sigles)
+        if body.completed_sigles:
+            eq_res = session.run(
+                """
+                WITH $completed AS completed
+                UNWIND completed AS s
+                OPTIONAL MATCH (:Cours {sigle: s})-[:EQUIVAUT_A {status: 'active'}]-(eq:Cours)
+                RETURN collect(DISTINCT eq.sigle) AS equivalents
+                """,
+                completed=body.completed_sigles,
+            ).single()
+            equivalents = (eq_res["equivalents"] if eq_res else None) or []
+            expanded_completed = list(set(body.completed_sigles) | set(equivalents))
+
     segments = _flatten_segments(
         program_match.get("segments", {}),
         program_match.get("orientation_commune"),
@@ -602,6 +618,7 @@ def get_program_graph(body: ProgramGraphRequest):
         "edges": edges,
         "program_sigles": tous_les_cours,
         "segments": segments,
+        "expanded_completed": expanded_completed,
     }
 
 

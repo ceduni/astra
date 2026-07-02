@@ -270,11 +270,14 @@ export default function RoadmapView({ snapshot, onNodeClick }) {
   const nodeById = {}
   rawData.nodes.forEach(n => { nodeById[n.id] = n })
 
-  const availableSigles = computeAvailability(rawData, snapshot.completedSigles)
+  // Use server-expanded set (completed + their active equivalents) so courses
+  // whose prerequisites are satisfied via equivalences show as available.
+  const expandedCompleted = rawData.expanded_completed || snapshot.completedSigles
+  const availableSigles = computeAvailability(rawData, expandedCompleted)
   const availableSet = new Set(availableSigles)
 
   const nextWaveSigles = showNext
-    ? computeAvailability(rawData, [...snapshot.completedSigles, ...availableSigles])
+    ? computeAvailability(rawData, [...expandedCompleted, ...availableSigles])
     : []
   const nextWaveSet = new Set(nextWaveSigles)
 
