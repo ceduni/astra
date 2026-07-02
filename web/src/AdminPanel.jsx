@@ -7,6 +7,20 @@ function authHeader(token) {
   return { Authorization: `Basic ${token}` }
 }
 
+function parseChange(flagReason) {
+  if (!flagReason) return null
+  const m = flagReason.match(/^(\w+):\s*(.+?)\s*→\s*(.+)$/)
+  if (m) {
+    const field = m[1].toLowerCase()
+    if (field === 'credits') return `Les crédits sont passés de ${m[2]} à ${m[3]}.`
+    if (field === 'titre' || field === 'title') return `Le titre a changé : "${m[2]}" → "${m[3]}".`
+    return `${m[1]} : ${m[2]} → ${m[3]}`
+  }
+  if (/description/i.test(flagReason)) return 'La description du cours a changé.'
+  if (/titre|title/i.test(flagReason)) return 'Le titre du cours a changé.'
+  return flagReason
+}
+
 // ── Pending queue ──────────────────────────────────────────────────────────────
 
 function PendingQueue({ token, university, onChanged, onAlerts }) {
@@ -554,18 +568,25 @@ export default function AdminPanel({ onBack }) {
                   ) : (
                     alerts.map(eq => (
                       <div key={eq.id} style={{
-                        padding: '12px 16px', borderBottom: '1px solid #f7f7f7',
+                        padding: '12px 16px', borderBottom: '1px solid #f0f0f0',
+                        display: 'flex', gap: 10, alignItems: 'flex-start',
                       }}>
-                        <div style={{ fontSize: 12, fontWeight: 600, color: '#111' }}>
-                          <code style={{ fontFamily: 'monospace' }}>{eq.sigle_a}</code>
-                          {' ↔ '}
-                          <code style={{ fontFamily: 'monospace' }}>{eq.sigle_b}</code>
-                        </div>
-                        <div style={{ fontSize: 11, color: '#b45309', marginTop: 3 }}>
-                          {eq.flag_reason}
-                        </div>
-                        <div style={{ fontSize: 10, color: '#bbb', marginTop: 2 }}>
-                          {eq.flagged_at?.slice(0, 10)}
+                        <div style={{
+                          width: 8, height: 8, borderRadius: '50%',
+                          background: '#e53e3e', flexShrink: 0, marginTop: 4,
+                        }} />
+                        <div>
+                          <div style={{ fontSize: 12, fontWeight: 700, color: '#111', marginBottom: 3 }}>
+                            Cours {eq.sigle_a} ({eq.universite_a}) mis à jour
+                          </div>
+                          <div style={{ fontSize: 11, color: '#444', marginBottom: 3 }}>
+                            {parseChange(eq.flag_reason)}
+                          </div>
+                          <div style={{ fontSize: 10, color: '#999' }}>
+                            Équivalence avec{' '}
+                            <span style={{ fontWeight: 600 }}>{eq.sigle_b}</span>
+                            {' '}({eq.universite_b}) · {eq.flagged_at?.slice(0, 10)}
+                          </div>
                         </div>
                       </div>
                     ))
