@@ -9,49 +9,109 @@
       "type": "obligatoire",
       "credits_min": 8,
       "credits_max": 8,
-      "cours": ["INF1007", "INF1015"]
+      "cours": [
+        "INF1007",
+        "INF1015"
+      ],
+      "category": [
+        "programming"
+      ]
     },
     "mathematiques_structures": {
       "label": "Mathématiques et structures",
       "type": "obligatoire",
       "credits_min": 13,
       "credits_max": 13,
-      "cours": ["MTH1008", "LOG1810", "INF2010", "MTH2304"]
+      "cours": [
+        "MTH1008",
+        "LOG1810",
+        "INF2010",
+        "MTH2304"
+      ],
+      "category": [
+        "math",
+        "algorithms_theory"
+      ]
     },
     "systemes_architecture": {
       "label": "Systèmes et architecture",
       "type": "obligatoire",
       "credits_min": 15,
       "credits_max": 15,
-      "cours": ["INF1500", "INF1600", "INF1900", "INF2610", "INF3405"]
+      "cours": [
+        "INF1500",
+        "INF1600",
+        "INF1900",
+        "INF2610",
+        "INF3405"
+      ],
+      "category": [
+        "systems"
+      ]
     },
     "systemes_avances_securite": {
       "label": "Systèmes avancés et sécurité",
       "type": "obligatoire",
       "credits_min": 12,
       "credits_max": 12,
-      "cours": ["INF8480", "INF8085", "INF8405", "INF8770"]
+      "cours": [
+        "INF8480",
+        "INF8085",
+        "INF8405",
+        "INF8770"
+      ],
+      "category": [
+        "systems",
+        "ai"
+      ]
     },
     "intelligence_artificielle": {
       "label": "Intelligence artificielle",
       "type": "obligatoire",
       "credits_min": 9,
       "credits_max": 9,
-      "cours": ["INF8175", "INF8225", "INF8775"]
+      "cours": [
+        "INF8175",
+        "INF8225",
+        "INF8775"
+      ],
+      "category": [
+        "ai"
+      ]
     },
     "conception_donnees_web": {
       "label": "Conception, données et web",
       "type": "obligatoire",
       "credits_min": 16,
       "credits_max": 16,
-      "cours": ["LOG2400", "LOG2440", "LOG2990", "INF3710", "INF2705"]
+      "cours": [
+        "LOG2400",
+        "LOG2440",
+        "LOG2990",
+        "INF3710",
+        "INF2705"
+      ],
+      "category": [
+        "software_engineering",
+        "data",
+        "programming",
+        "ai"
+      ]
     },
     "formation_generale": {
       "label": "Formation générale",
       "type": "obligatoire",
       "credits_min": 16,
       "credits_max": 16,
-      "cours": ["INF1040", "INF1205", "GCH2730", "SSH3201", "SSH3101", "SSH3501"]
+      "cours": [
+        "INF1040",
+        "INF1205",
+        "GCH2730",
+        "SSH3201",
+        "SSH3101",
+        "SSH3501"
+      ],
+      "category": []
     },
     "option_sciences": {
       "label": "Sciences appliquées (au choix)",
@@ -59,7 +119,13 @@
       "credits_min": 3,
       "credits_max": 3,
       "note": "3 crédits au choix parmi les cours de sciences",
-      "cours": ["GBM1610", "PHS1101", "PHS4700", "MEC1210"]
+      "cours": [
+        "GBM1610",
+        "PHS1101",
+        "PHS4700",
+        "MEC1210"
+      ],
+      "category": []
     },
     "option_avancee": {
       "label": "Cours avancés à option",
@@ -67,25 +133,58 @@
       "credits_min": 9,
       "credits_max": 9,
       "note": "9 crédits parmi les cours INF8xxx",
-      "cours": ["INF8402", "INF8601"]
+      "cours": [
+        "INF8402",
+        "INF8601"
+      ],
+      "category": [
+        "systems"
+      ]
     },
     "concentrations_orientations": {
       "label": "Concentrations et orientations",
       "type": "libre",
       "credits_min": 27,
       "credits_max": 39,
-      "note": "Concentration (27 cr.) + orientation (12 cr.) au choix de l'étudiant en dernière année"
+      "note": "Concentration (27 cr.) + orientation (12 cr.) au choix de l'étudiant en dernière année",
+      "category": []
     }
   },
   "tous_les_cours": [
-    "INF1007", "INF1015",
-    "MTH1008", "LOG1810", "INF2010", "MTH2304",
-    "INF1500", "INF1600", "INF1900", "INF2610", "INF3405",
-    "INF8480", "INF8085", "INF8405", "INF8770",
-    "INF8175", "INF8225", "INF8775",
-    "LOG2400", "LOG2440", "LOG2990", "INF3710", "INF2705",
-    "INF1040", "INF1205", "GCH2730", "SSH3201", "SSH3101", "SSH3501",
-    "GBM1610", "PHS1101", "PHS4700", "MEC1210",
-    "INF8402", "INF8601"
+    "INF1007",
+    "INF1015",
+    "MTH1008",
+    "LOG1810",
+    "INF2010",
+    "MTH2304",
+    "INF1500",
+    "INF1600",
+    "INF1900",
+    "INF2610",
+    "INF3405",
+    "INF8480",
+    "INF8085",
+    "INF8405",
+    "INF8770",
+    "INF8175",
+    "INF8225",
+    "INF8775",
+    "LOG2400",
+    "LOG2440",
+    "LOG2990",
+    "INF3710",
+    "INF2705",
+    "INF1040",
+    "INF1205",
+    "GCH2730",
+    "SSH3201",
+    "SSH3101",
+    "SSH3501",
+    "GBM1610",
+    "PHS1101",
+    "PHS4700",
+    "MEC1210",
+    "INF8402",
+    "INF8601"
   ]
 }

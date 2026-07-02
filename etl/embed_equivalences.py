@@ -5,22 +5,34 @@ Model: paraphrase-multilingual-MiniLM-L12-v2
   Maps 50+ languages into a shared 384-dim space — handles FR↔EN pairs
   that TF-IDF cannot reach (zero shared vocabulary across languages).
 
+Category-filtered matching (primary path):
+  Each course is assigned one or more canonical categories based on its
+  segment in the program JSONs (programs/*.json). Only courses that share
+  at least one category are compared. This eliminates cross-domain noise
+  (e.g. a database course matching a networking course) and allows a lower
+  threshold — maximising recall for the student-facing equivalence view.
+
+  Canonical categories: programming, algorithms_theory, systems,
+  software_engineering, math, data, ai
+
+  Courses not in any program JSON (mostly grad-level or out-of-scope) fall
+  back to the original global thresholds with no category filter.
+
 Thresholds:
-  THRESHOLD    = 0.78  all cross-university pairs
-  POLY_ETS_THR = 0.72  Poly↔ETS only, gated by same course-code prefix
-                       (both schools share LOG/IND/ELE/MTH conventions)
+  CAT_ACTIVE   = 0.70  within-category active   (lowered from 0.78)
+  CAT_PENDING  = 0.58  within-category pending  (lowered from 0.70)
+  THRESHOLD    = 0.78  no-category fallback active
+  PENDING_THR  = 0.70  no-category fallback pending
+  POLY_ETS_THR = 0.65  Poly↔ETS same-prefix within-category (was 0.72)
 
-Scope: all courses with description > 30 chars, filtered to same academic cycle.
-  Cycle is inferred from hors_perimetre: false → 1er cycle, true → 2e cycle+.
-
-This script replaces infer_equivalences.py for the inferred edge set —
-it clears all inferred edges first and rewrites them from scratch
-(idempotent; safe to re-run).
+Scope: all courses with description > 30 chars, filtered to same academic
+  cycle. Cycle is inferred from hors_perimetre: false → 1er cycle.
 
 Usage:
   python etl/embed_equivalences.py
 """
 
+import json
 import os
 import re
 import sys
@@ -38,20 +50,26 @@ from equivalence_loader import INFERRED, clear_inferred_equivalences, write_infe
 load_dotenv(Path(__file__).parents[1] / ".env")
 
 MODEL_NAME   = "paraphrase-multilingual-MiniLM-L12-v2"
-THRESHOLD    = 0.78   # active
-PENDING_THR  = 0.70   # pending — requires admin review
-POLY_ETS_THR = 0.72   # active for Poly↔ETS same-prefix pairs
+
+# Within-category thresholds (lower = more recall)
+CAT_ACTIVE   = 0.70
+CAT_PENDING  = 0.58
+
+# Fallback thresholds for courses not in any program JSON
+THRESHOLD    = 0.78
+PENDING_THR  = 0.70
+
+# Poly↔ETS same-prefix bonus (within-category)
+POLY_ETS_THR = 0.65
+
 MIN_DESC_LEN = 30
 
-# Universities that teach primarily in French
 FR_UNIS = {"UdeM", "UQAM", "Poly", "ETS"}
 EN_UNIS = {"McGill", "Concordia"}
 
 PREFIX_RE = re.compile(r"^([A-Z]+)", re.ASCII)
 LEVEL_RE  = re.compile(r"(\d)")
 
-# Titles containing these words are excluded from equivalence inference —
-# project/capstone/internship courses are rarely true content equivalences.
 SKIP_TITLE_WORDS = {
     "project", "projet", "capstone", "stage", "internship",
     "intégrateur", "integrateur", "honor", "honours", "honors",
@@ -65,7 +83,6 @@ def code_prefix(sigle: str) -> str:
 
 
 def course_level(sigle: str) -> int | None:
-    """First digit found in the sigle, e.g. IFT3275 → 3, COMP 248 → 2."""
     m = LEVEL_RE.search(sigle)
     return int(m.group(1)) if m else None
 
@@ -75,14 +92,47 @@ def is_skip_title(titre: str) -> bool:
     return bool(SKIP_TITLE_WORDS.intersection(words))
 
 
+def build_category_index(programs_dir: Path) -> dict[str, set[str]]:
+    """
+    Returns sigle → set[category] by reading all program JSONs.
+    Handles both flat segments and UdeM's two-level group→bloc structure.
+    Courses with no category assignment (empty list) are not added to the index,
+    so they fall back to the global threshold path.
+    """
+    sigle_cats: dict[str, set[str]] = defaultdict(set)
+
+    for path in programs_dir.glob("*.json"):
+        prog = json.loads(path.read_text())
+        segments = prog.get("segments", {})
+
+        for seg_id, seg in segments.items():
+            if not isinstance(seg, dict):
+                continue
+
+            if "cours" in seg:
+                # Flat segment
+                cats = seg.get("category", [])
+                if cats:
+                    for sigle in seg.get("cours", []):
+                        sigle_cats[sigle].update(cats)
+            else:
+                # Two-level structure (UdeM): iterate blocs inside the group
+                for bloc_id, bloc in seg.items():
+                    if not isinstance(bloc, dict):
+                        continue
+                    cats = bloc.get("category", [])
+                    if cats:
+                        for sigle in bloc.get("cours", []):
+                            sigle_cats[sigle].update(cats)
+
+    return dict(sigle_cats)
+
+
 def fetch_courses(session) -> list:
-    return [dict(r["c"]) for r in session.run(
-        "MATCH (c:Cours) RETURN c"
-    )]
+    return [dict(r["c"]) for r in session.run("MATCH (c:Cours) RETURN c")]
 
 
 def course_cycle(c: dict) -> int:
-    """1 = undergraduate (hors_perimetre=false), 2 = graduate (hors_perimetre=true)."""
     return 1 if not c.get("hors_perimetre") else 2
 
 
@@ -99,12 +149,23 @@ def lang(uni: str) -> str:
 
 
 def main():
+    programs_dir = Path(__file__).parents[1] / "programs"
+    sigle_cats = build_category_index(programs_dir)
+
+    categorised = sum(1 for cats in sigle_cats.values() if cats)
+    print(f"Category index: {categorised} courses assigned to at least one category")
+    cat_counts: dict[str, int] = defaultdict(int)
+    for cats in sigle_cats.values():
+        for c in cats:
+            cat_counts[c] += 1
+    for cat, n in sorted(cat_counts.items()):
+        print(f"  {cat:<25} {n:>4} courses")
+
     driver = GraphDatabase.driver(
         os.environ["NEO4J_URI"],
         auth=(os.environ["NEO4J_USER"], os.environ["NEO4J_PASSWORD"]),
     )
 
-    # ── Snapshot + clear ─────────────────────────────────────────────────────
     with driver.session() as session:
         all_courses = fetch_courses(session)
 
@@ -115,15 +176,12 @@ def main():
             "MATCH ()-[r:EQUIVAUT_A {source: $s}]->() RETURN count(r) AS n",
             s=INFERRED,
         ).single()["n"]
-
-        print(f"Edges before — total: {before_total}  (inferred: {before_inferred})")
+        print(f"\nEdges before — total: {before_total}  (inferred: {before_inferred})")
 
         for uni in {c["universite"] for c in all_courses}:
             clear_inferred_equivalences(session, uni)
-
         covered_pairs = fetch_covered_pairs(session)
 
-    # ── Filter to courses with usable descriptions ────────────────────────────
     courses = [
         c for c in all_courses
         if c.get("description") and len(c["description"]) > MIN_DESC_LEN
@@ -135,6 +193,7 @@ def main():
         and is_skip_title(c.get("titre", ""))
     )
     print(f"Skipped {skipped_titles} courses with project/capstone/stage titles")
+
     by_uni: dict[str, list] = defaultdict(list)
     for c in courses:
         by_uni[c["universite"]].append(c)
@@ -147,7 +206,6 @@ def main():
         u_c2 = sum(1 for c in by_uni[uni] if course_cycle(c) == 2)
         print(f"  {uni:<12} {len(by_uni[uni]):>4}  (c1: {u_c1}, c2+: {u_c2})")
 
-    # ── Encode ────────────────────────────────────────────────────────────────
     print(f"\nLoading {MODEL_NAME} …")
     model = SentenceTransformer(MODEL_NAME)
 
@@ -160,16 +218,17 @@ def main():
         texts,
         batch_size=64,
         show_progress_bar=True,
-        normalize_embeddings=True,   # L2-norm → cosine = dot product
+        normalize_embeddings=True,
         convert_to_numpy=True,
     )
 
-    # Index: sigle → (embedding index, course dict)
-    sigle_to_idx  = {c["sigle"]: i for i, c in enumerate(courses)}
+    sigle_to_idx = {c["sigle"]: i for i, c in enumerate(courses)}
 
-    # ── Score cross-university pairs ─────────────────────────────────────────
     uni_names  = sorted(by_uni.keys())
-    candidates = []   # (sigle_a, sigle_b, score, status)
+    candidates = []
+    skipped_domain = 0
+    cat_filtered   = 0
+    fallback_pairs = 0
 
     for i_u, uni_a in enumerate(uni_names):
         for uni_b in uni_names[i_u + 1:]:
@@ -179,9 +238,9 @@ def main():
 
             idxs_a = [sigle_to_idx[c["sigle"]] for c in items_a]
             idxs_b = [sigle_to_idx[c["sigle"]] for c in items_b]
-            emb_a  = embeddings[idxs_a]   # (n_a, 384)
-            emb_b  = embeddings[idxs_b]   # (n_b, 384)
-            sims   = emb_a @ emb_b.T      # (n_a, n_b) — cosine scores
+            emb_a  = embeddings[idxs_a]
+            emb_b  = embeddings[idxs_b]
+            sims   = emb_a @ emb_b.T
 
             for row_i, ca in enumerate(items_a):
                 for col_j, cb in enumerate(items_b):
@@ -190,7 +249,6 @@ def main():
 
                     if pair in covered_pairs:
                         continue
-
                     if course_cycle(ca) != course_cycle(cb):
                         continue
 
@@ -198,28 +256,59 @@ def main():
                     if lv_a is not None and lv_b is not None and abs(lv_a - lv_b) > 1:
                         continue
 
-                    if is_poly_ets:
-                        same_prefix = (
-                            code_prefix(ca["sigle"]) == code_prefix(cb["sigle"])
-                            and code_prefix(ca["sigle"]) != ""
-                        )
-                        if same_prefix and score >= POLY_ETS_THR:
-                            candidates.append((ca["sigle"], cb["sigle"], score, "active"))
-                        elif same_prefix and score >= PENDING_THR:
-                            candidates.append((ca["sigle"], cb["sigle"], score, "pending"))
+                    cats_a = sigle_cats.get(ca["sigle"], set())
+                    cats_b = sigle_cats.get(cb["sigle"], set())
+                    both_categorised = bool(cats_a) and bool(cats_b)
+                    shared = cats_a & cats_b
+
+                    # Both courses are in the category index but share no category → skip
+                    if both_categorised and not shared:
+                        skipped_domain += 1
+                        continue
+
+                    if both_categorised and shared:
+                        # Within-category path: lower thresholds
+                        cat_filtered += 1
+                        if is_poly_ets:
+                            same_prefix = (
+                                code_prefix(ca["sigle"]) == code_prefix(cb["sigle"])
+                                and code_prefix(ca["sigle"]) != ""
+                            )
+                            thr_active  = POLY_ETS_THR if same_prefix else CAT_ACTIVE
+                            thr_pending = CAT_PENDING
+                        else:
+                            thr_active  = CAT_ACTIVE
+                            thr_pending = CAT_PENDING
                     else:
-                        if score >= THRESHOLD:
-                            candidates.append((ca["sigle"], cb["sigle"], score, "active"))
-                        elif score >= PENDING_THR:
-                            candidates.append((ca["sigle"], cb["sigle"], score, "pending"))
+                        # Fallback: at least one course not in any program JSON
+                        fallback_pairs += 1
+                        if is_poly_ets:
+                            same_prefix = (
+                                code_prefix(ca["sigle"]) == code_prefix(cb["sigle"])
+                                and code_prefix(ca["sigle"]) != ""
+                            )
+                            thr_active  = POLY_ETS_THR if same_prefix else THRESHOLD
+                            thr_pending = PENDING_THR
+                        else:
+                            thr_active  = THRESHOLD
+                            thr_pending = PENDING_THR
+
+                    if score >= thr_active:
+                        candidates.append((ca["sigle"], cb["sigle"], score, "active"))
+                    elif score >= thr_pending:
+                        candidates.append((ca["sigle"], cb["sigle"], score, "pending"))
 
     candidates.sort(key=lambda x: -x[2])
-    active_cands  = [(a, b, s, st) for a, b, s, st in candidates if st == "active"]
-    pending_cands = [(a, b, s, st) for a, b, s, st in candidates if st == "pending"]
-    print(f"  Active candidates (≥{THRESHOLD}):  {len(active_cands)}")
-    print(f"  Pending candidates ({PENDING_THR}–{THRESHOLD}): {len(pending_cands)}")
+    active_cands  = [c for c in candidates if c[3] == "active"]
+    pending_cands = [c for c in candidates if c[3] == "pending"]
 
-    # ── Write to Neo4j ────────────────────────────────────────────────────────
+    print(f"\nPairs evaluated:")
+    print(f"  Within-category (lower threshold): {cat_filtered:>7}")
+    print(f"  Cross-domain skipped:              {skipped_domain:>7}")
+    print(f"  Fallback (uncategorised):          {fallback_pairs:>7}")
+    print(f"  Active candidates  (≥{CAT_ACTIVE}/{THRESHOLD}): {len(active_cands)}")
+    print(f"  Pending candidates ({CAT_PENDING}–):         {len(pending_cands)}")
+
     sigle_to_course = {c["sigle"]: c for c in courses}
 
     with driver.session() as session:
@@ -246,11 +335,9 @@ def main():
 
     driver.close()
 
-    # ── Report ────────────────────────────────────────────────────────────────
     print(f"\nEdges after  — total: {after_total}  (inferred: {after_inferred})")
     print(f"New inferred edges written: {written}  (active: {len(active_cands)}, pending: {len(pending_cands)})")
 
-    # Breakdown by university pair
     pair_counts: dict[str, int] = defaultdict(int)
     pair_fr_en:  dict[str, int] = defaultdict(int)
     for a, b, _, _st in candidates:
@@ -267,14 +354,13 @@ def main():
         tag = f"  ({fr_en} FR↔EN)" if fr_en else ""
         print(f"  {key:<25} {n:>4}{tag}")
 
-    print(f"\nTop 25 pairs by confidence:")
-    print(f"  {'Score':>6}  {'Status':<8} {'A':<22} {'B':<22} {'Direction'}")
+    print(f"\nTop 30 pairs by confidence:")
+    print(f"  {'Score':>6}  {'Status':<8} {'A':<22} {'B':<22} {'Shared cats'}")
     print(f"  {'─'*6}  {'─'*8} {'─'*22} {'─'*22} {'─'*20}")
-    for a, b, score, st in candidates[:25]:
-        ca = sigle_to_course.get(a, {})
-        cb = sigle_to_course.get(b, {})
-        direction = f"[{ca.get('universite','')}↔{cb.get('universite','')}] {lang(ca.get('universite',''))}↔{lang(cb.get('universite',''))}"
-        print(f"  {score:.4f}  {st:<8} {a:<22} {b:<22} {direction}")
+    for a, b, score, st in candidates[:30]:
+        shared = sigle_cats.get(a, set()) & sigle_cats.get(b, set())
+        cats_str = ",".join(sorted(shared)) if shared else "—"
+        print(f"  {score:.4f}  {st:<8} {a:<22} {b:<22} {cats_str}")
 
 
 if __name__ == "__main__":

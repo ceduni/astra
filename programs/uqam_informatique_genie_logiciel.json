@@ -9,56 +9,107 @@
       "type": "obligatoire",
       "credits_min": 15,
       "credits_max": 15,
-      "cours": ["INF1120", "INF2120", "INF3191", "INF5171", "INF6120"]
+      "cours": [
+        "INF1120",
+        "INF2120",
+        "INF3191",
+        "INF5171",
+        "INF6120"
+      ],
+      "category": [
+        "programming"
+      ]
     },
     "genie_logiciel": {
       "label": "Génie logiciel",
       "type": "obligatoire",
       "credits_min": 15,
       "credits_max": 15,
-      "cours": ["INF2050", "INF3135", "INF5151", "INF5153", "INF6150"]
+      "cours": [
+        "INF2050",
+        "INF3135",
+        "INF5151",
+        "INF5153",
+        "INF6150"
+      ],
+      "category": [
+        "software_engineering"
+      ]
     },
     "systemes_reseaux": {
       "label": "Systèmes et réseaux",
       "type": "obligatoire",
       "credits_min": 12,
       "credits_max": 12,
-      "cours": ["INF1070", "INF2171", "INF3173", "INF3271"]
+      "cours": [
+        "INF1070",
+        "INF2171",
+        "INF3173",
+        "INF3271"
+      ],
+      "category": [
+        "systems"
+      ]
     },
     "donnees_algorithmes": {
       "label": "Données et algorithmes",
       "type": "obligatoire",
       "credits_min": 6,
       "credits_max": 6,
-      "cours": ["INF3080", "INF3105"]
+      "cours": [
+        "INF3080",
+        "INF3105"
+      ],
+      "category": [
+        "algorithms_theory",
+        "data"
+      ]
     },
     "mathematiques_obligatoire": {
       "label": "Mathématiques",
       "type": "obligatoire",
       "credits_min": 9,
       "credits_max": 9,
-      "cours": ["INF1132", "INF5130", "MAT4681"]
+      "cours": [
+        "INF1132",
+        "INF5130",
+        "MAT4681"
+      ],
+      "category": [
+        "math",
+        "algorithms_theory"
+      ]
     },
     "sciences_gestion_obligatoire": {
       "label": "Sciences de la gestion",
       "type": "obligatoire",
       "credits_min": 6,
       "credits_max": 6,
-      "cours": ["ECO1081", "AOT1110"]
+      "cours": [
+        "ECO1081",
+        "AOT1110"
+      ],
+      "category": []
     },
     "ethique_obligatoire": {
       "label": "Éthique et professionnalisme",
       "type": "obligatoire",
       "credits_min": 3,
       "credits_max": 3,
-      "cours": ["INM6000"]
+      "cours": [
+        "INM6000"
+      ],
+      "category": []
     },
     "synthese_obligatoire": {
       "label": "Activité de synthèse",
       "type": "obligatoire",
       "credits_min": 3,
       "credits_max": 3,
-      "cours": ["INM5151"]
+      "cours": [
+        "INM5151"
+      ],
+      "category": []
     },
     "cours_choix_informatique": {
       "label": "Cours au choix en informatique",
@@ -67,9 +118,29 @@
       "credits_max": 15,
       "note": "5 cours au choix dans la liste, dont au moins 3 siglés INF",
       "cours": [
-        "INF4150", "INF4170", "INF4230", "INF4471", "INF4500",
-        "INF5001", "INF5071", "INF5082", "INF5190", "INF6200",
-        "AOT3221", "AOT5332", "AOT5334", "AOT5341", "TEL4165"
+        "INF4150",
+        "INF4170",
+        "INF4230",
+        "INF4471",
+        "INF4500",
+        "INF5001",
+        "INF5071",
+        "INF5082",
+        "INF5190",
+        "INF6200",
+        "AOT3221",
+        "AOT5332",
+        "AOT5334",
+        "AOT5341",
+        "TEL4165"
+      ],
+      "category": [
+        "programming",
+        "algorithms_theory",
+        "systems",
+        "ai",
+        "data",
+        "software_engineering"
       ]
     },
     "cours_communication": {
@@ -77,27 +148,56 @@
       "type": "libre",
       "credits_min": 3,
       "credits_max": 3,
-      "note": "Un cours de langue ou communication au choix (ALL, ANG, ARA, CHN, ESP, ITA, JPN, LSQ, PTG, RUS, EDM, FCE, FCM, COM acceptés)"
+      "note": "Un cours de langue ou communication au choix (ALL, ANG, ARA, CHN, ESP, ITA, JPN, LSQ, PTG, RUS, EDM, FCE, FCM, COM acceptés)",
+      "category": []
     },
     "cours_libre": {
       "label": "Cours libre hors spécialisation",
       "type": "libre",
       "credits_min": 3,
       "credits_max": 3,
-      "note": "Un cours au choix hors champ de spécialisation (ne peut pas être INF, INM, TEL, MIC, ING)"
+      "note": "Un cours au choix hors champ de spécialisation (ne peut pas être INF, INM, TEL, MIC, ING)",
+      "category": []
     }
   },
   "tous_les_cours": [
-    "INF1120", "INF2120", "INF3191", "INF5171", "INF6120",
-    "INF2050", "INF3135", "INF5151", "INF5153", "INF6150",
-    "INF1070", "INF2171", "INF3173", "INF3271",
-    "INF3080", "INF3105",
-    "INF1132", "INF5130", "MAT4681",
-    "ECO1081", "AOT1110",
+    "INF1120",
+    "INF2120",
+    "INF3191",
+    "INF5171",
+    "INF6120",
+    "INF2050",
+    "INF3135",
+    "INF5151",
+    "INF5153",
+    "INF6150",
+    "INF1070",
+    "INF2171",
+    "INF3173",
+    "INF3271",
+    "INF3080",
+    "INF3105",
+    "INF1132",
+    "INF5130",
+    "MAT4681",
+    "ECO1081",
+    "AOT1110",
     "INM6000",
     "INM5151",
-    "INF4150", "INF4170", "INF4230", "INF4471", "INF4500",
-    "INF5001", "INF5071", "INF5082", "INF5190", "INF6200",
-    "AOT3221", "AOT5332", "AOT5334", "AOT5341", "TEL4165"
+    "INF4150",
+    "INF4170",
+    "INF4230",
+    "INF4471",
+    "INF4500",
+    "INF5001",
+    "INF5071",
+    "INF5082",
+    "INF5190",
+    "INF6200",
+    "AOT3221",
+    "AOT5332",
+    "AOT5334",
+    "AOT5341",
+    "TEL4165"
   ]
 }

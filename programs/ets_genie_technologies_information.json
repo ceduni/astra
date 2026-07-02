@@ -9,14 +9,27 @@
       "type": "obligatoire",
       "credits_min": 20,
       "credits_max": 20,
-      "cours": ["MAT145", "MAT210", "MAT265", "MAT350", "MAT472"]
+      "cours": [
+        "MAT145",
+        "MAT210",
+        "MAT265",
+        "MAT350",
+        "MAT472"
+      ],
+      "category": []
     },
     "sciences_fondamentales": {
       "label": "Sciences fondamentales",
       "type": "obligatoire",
       "credits_min": 16,
       "credits_max": 16,
-      "cours": ["CHM131", "ING150", "PHY332", "PHY335"]
+      "cours": [
+        "CHM131",
+        "ING150",
+        "PHY332",
+        "PHY335"
+      ],
+      "category": []
     },
     "formation_generale": {
       "label": "Formation générale",
@@ -24,14 +37,24 @@
       "credits_min": 6,
       "credits_max": 6,
       "note": "COM210 et PEP110 non disponibles dans la base de données",
-      "cours": ["GIA400", "TIN503"]
+      "cours": [
+        "GIA400",
+        "TIN503"
+      ],
+      "category": []
     },
     "introduction_programmation": {
       "label": "Introduction et programmation",
       "type": "obligatoire",
       "credits_min": 7,
       "credits_max": 7,
-      "cours": ["GTI210", "GTI100"]
+      "cours": [
+        "GTI210",
+        "GTI100"
+      ],
+      "category": [
+        "programming"
+      ]
     },
     "conception_genie_logiciel": {
       "label": "Conception et génie logiciel",
@@ -39,7 +62,16 @@
       "credits_min": 15,
       "credits_max": 15,
       "note": "GTI311, GTI411, GTI795 non disponibles dans la base de données",
-      "cours": ["LOG121", "LOG210", "GTI510", "LOG320"]
+      "cours": [
+        "LOG121",
+        "LOG210",
+        "GTI510",
+        "LOG320"
+      ],
+      "category": [
+        "software_engineering",
+        "algorithms_theory"
+      ]
     },
     "interfaces_reseaux": {
       "label": "Interfaces et réseaux",
@@ -47,7 +79,14 @@
       "credits_min": 8,
       "credits_max": 8,
       "note": "GTI660 non disponible dans la base de données",
-      "cours": ["GTI350", "GTI611"]
+      "cours": [
+        "GTI350",
+        "GTI611"
+      ],
+      "category": [
+        "systems",
+        "software_engineering"
+      ]
     },
     "complementaire": {
       "label": "Étude complémentaire (au choix)",
@@ -55,7 +94,18 @@
       "credits_min": 3,
       "credits_max": 3,
       "note": "1 cours au choix parmi les cours complémentaires approuvés",
-      "cours": ["ENT201", "ENT202", "ENT601", "ETH610", "GIA602", "GPE450", "GPO602", "ING500", "LRC110"]
+      "cours": [
+        "ENT201",
+        "ENT202",
+        "ENT601",
+        "ETH610",
+        "GIA602",
+        "GPE450",
+        "GPO602",
+        "ING500",
+        "LRC110"
+      ],
+      "category": []
     },
     "optionnels": {
       "label": "Cours à option",
@@ -64,28 +114,101 @@
       "credits_max": 21,
       "note": "7 cours au choix parmi les cours à option de 1er et 2e cycle",
       "cours": [
-        "GTI320", "GTI525", "GTI619", "GTI650", "GTI700",
-        "GTI719", "GTI720", "GTI723", "GTI745", "GTI750",
-        "GTI755", "GTI771", "GTI780",
-        "LOG430", "LOG450", "LOG460", "LOG530", "LOG550",
-        "LOG635", "LOG645", "LOG675", "LOG680", "LOG710",
-        "LOG721", "LOG725", "LOG736", "LOG750", "LOG780"
+        "GTI320",
+        "GTI525",
+        "GTI619",
+        "GTI650",
+        "GTI700",
+        "GTI719",
+        "GTI720",
+        "GTI723",
+        "GTI745",
+        "GTI750",
+        "GTI755",
+        "GTI771",
+        "GTI780",
+        "LOG430",
+        "LOG450",
+        "LOG460",
+        "LOG530",
+        "LOG550",
+        "LOG635",
+        "LOG645",
+        "LOG675",
+        "LOG680",
+        "LOG710",
+        "LOG721",
+        "LOG725",
+        "LOG736",
+        "LOG750",
+        "LOG780"
+      ],
+      "category": [
+        "programming",
+        "algorithms_theory",
+        "systems",
+        "ai",
+        "data",
+        "software_engineering"
       ]
     }
   },
   "tous_les_cours": [
-    "MAT145", "MAT210", "MAT265", "MAT350", "MAT472",
-    "CHM131", "ING150", "PHY332", "PHY335",
-    "GIA400", "TIN503",
-    "GTI210", "GTI100",
-    "LOG121", "LOG210", "GTI510", "LOG320",
-    "GTI350", "GTI611",
-    "ENT201", "ENT202", "ENT601", "ETH610", "GIA602", "GPE450", "GPO602", "ING500", "LRC110",
-    "GTI320", "GTI525", "GTI619", "GTI650", "GTI700",
-    "GTI719", "GTI720", "GTI723", "GTI745", "GTI750",
-    "GTI755", "GTI771", "GTI780",
-    "LOG430", "LOG450", "LOG460", "LOG530", "LOG550",
-    "LOG635", "LOG645", "LOG675", "LOG680", "LOG710",
-    "LOG721", "LOG725", "LOG736", "LOG750", "LOG780"
+    "MAT145",
+    "MAT210",
+    "MAT265",
+    "MAT350",
+    "MAT472",
+    "CHM131",
+    "ING150",
+    "PHY332",
+    "PHY335",
+    "GIA400",
+    "TIN503",
+    "GTI210",
+    "GTI100",
+    "LOG121",
+    "LOG210",
+    "GTI510",
+    "LOG320",
+    "GTI350",
+    "GTI611",
+    "ENT201",
+    "ENT202",
+    "ENT601",
+    "ETH610",
+    "GIA602",
+    "GPE450",
+    "GPO602",
+    "ING500",
+    "LRC110",
+    "GTI320",
+    "GTI525",
+    "GTI619",
+    "GTI650",
+    "GTI700",
+    "GTI719",
+    "GTI720",
+    "GTI723",
+    "GTI745",
+    "GTI750",
+    "GTI755",
+    "GTI771",
+    "GTI780",
+    "LOG430",
+    "LOG450",
+    "LOG460",
+    "LOG530",
+    "LOG550",
+    "LOG635",
+    "LOG645",
+    "LOG675",
+    "LOG680",
+    "LOG710",
+    "LOG721",
+    "LOG725",
+    "LOG736",
+    "LOG750",
+    "LOG780"
   ]
 }

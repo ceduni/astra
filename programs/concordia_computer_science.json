@@ -9,28 +9,58 @@
       "type": "obligatoire",
       "credits_min": 9,
       "credits_max": 9,
-      "cours": ["COMP 248", "COMP 249", "COMP 348"]
+      "cours": [
+        "COMP 248",
+        "COMP 249",
+        "COMP 348"
+      ],
+      "category": [
+        "programming"
+      ]
     },
     "algorithmes_theorie": {
       "label": "Algorithmes et théorie",
       "type": "obligatoire",
       "credits_min": 12,
       "credits_max": 12,
-      "cours": ["COMP 232", "COMP 352", "COMP 335", "COMP 339"]
+      "cours": [
+        "COMP 232",
+        "COMP 352",
+        "COMP 335",
+        "COMP 339"
+      ],
+      "category": [
+        "algorithms_theory"
+      ]
     },
     "systemes_parallele": {
       "label": "Systèmes et calcul parallèle",
       "type": "obligatoire",
       "credits_min": 15,
       "credits_max": 15,
-      "cours": ["COMP 228", "COMP 346", "COMP 426", "COMP 428"]
+      "cours": [
+        "COMP 228",
+        "COMP 346",
+        "COMP 426",
+        "COMP 428"
+      ],
+      "category": [
+        "systems"
+      ]
     },
     "ia_vision": {
       "label": "Intelligence artificielle et vision",
       "type": "obligatoire",
       "credits_min": 12,
       "credits_max": 12,
-      "cours": ["COMP 371", "COMP 472", "COMP 478"]
+      "cours": [
+        "COMP 371",
+        "COMP 472",
+        "COMP 478"
+      ],
+      "category": [
+        "ai"
+      ]
     },
     "mathematiques": {
       "label": "Mathématiques",
@@ -38,7 +68,13 @@
       "credits_min": 6,
       "credits_max": 6,
       "note": "MATH 204 et MATH 205 non disponibles dans la base de données",
-      "cours": ["MATH 204", "MATH 205"]
+      "cours": [
+        "MATH 204",
+        "MATH 205"
+      ],
+      "category": [
+        "math"
+      ]
     },
     "cs_electives": {
       "label": "Cours à option en informatique",
@@ -47,9 +83,26 @@
       "credits_max": 18,
       "note": "Minimum 6 cours, dont au moins 2 au niveau 400",
       "cours": [
-        "COMP 353", "COMP 354", "COMP 361", "COMP 367", "COMP 376",
-        "COMP 425", "COMP 432", "COMP 433", "COMP 442", "COMP 465",
-        "COMP 474", "COMP 479"
+        "COMP 353",
+        "COMP 354",
+        "COMP 361",
+        "COMP 367",
+        "COMP 376",
+        "COMP 425",
+        "COMP 432",
+        "COMP 433",
+        "COMP 442",
+        "COMP 465",
+        "COMP 474",
+        "COMP 479"
+      ],
+      "category": [
+        "programming",
+        "algorithms_theory",
+        "systems",
+        "ai",
+        "data",
+        "software_engineering"
       ]
     },
     "math_science": {
@@ -58,18 +111,45 @@
       "credits_min": 6,
       "credits_max": 18,
       "note": "Mathematics/Science electives",
-      "cours": ["MATH 251", "MATH 252"]
+      "cours": [
+        "MATH 251",
+        "MATH 252"
+      ],
+      "category": [
+        "math"
+      ]
     }
   },
   "tous_les_cours": [
-    "COMP 248", "COMP 249", "COMP 348",
-    "COMP 232", "COMP 352", "COMP 335", "COMP 339",
-    "COMP 228", "COMP 346", "COMP 426", "COMP 428",
-    "COMP 371", "COMP 472", "COMP 478",
-    "MATH 204", "MATH 205",
-    "COMP 353", "COMP 354", "COMP 361", "COMP 367", "COMP 376",
-    "COMP 425", "COMP 432", "COMP 433", "COMP 442", "COMP 465",
-    "COMP 474", "COMP 479",
-    "MATH 251", "MATH 252"
+    "COMP 248",
+    "COMP 249",
+    "COMP 348",
+    "COMP 232",
+    "COMP 352",
+    "COMP 335",
+    "COMP 339",
+    "COMP 228",
+    "COMP 346",
+    "COMP 426",
+    "COMP 428",
+    "COMP 371",
+    "COMP 472",
+    "COMP 478",
+    "MATH 204",
+    "MATH 205",
+    "COMP 353",
+    "COMP 354",
+    "COMP 361",
+    "COMP 367",
+    "COMP 376",
+    "COMP 425",
+    "COMP 432",
+    "COMP 433",
+    "COMP 442",
+    "COMP 465",
+    "COMP 474",
+    "COMP 479",
+    "MATH 251",
+    "MATH 252"
   ]
 }
