@@ -9,7 +9,7 @@ function authHeader(token) {
 
 // ── Pending queue ──────────────────────────────────────────────────────────────
 
-function PendingQueue({ token, university, onChanged, onAlertCount, containerRef }) {
+function PendingQueue({ token, university, onChanged, onAlertCount }) {
   const [rows, setRows] = useState([])
   const [loading, setLoading] = useState(true)
   const [acting, setActing] = useState(null)
@@ -50,7 +50,7 @@ function PendingQueue({ token, university, onChanged, onAlertCount, containerRef
   const alerts = rows.filter(eq => eq.flag_reason)
 
   return (
-    <div ref={containerRef} className="admin-pending-wrap">
+    <div className="admin-pending-wrap">
       <div className="admin-pending-header">
         <span className="admin-pending-title">En attente de révision</span>
         <span className="admin-pending-count">{rows.length} paire{rows.length !== 1 ? 's' : ''}</span>
@@ -441,7 +441,7 @@ export default function AdminPanel({ onBack }) {
   const [error, setError] = useState(null)
   const [filters, setFilters] = useState({ source: '', status: 'active', sigle: '' })
   const [alertCount, setAlertCount] = useState(0)
-  const pendingRef = useRef(null)
+  const adminBodyRef = useRef(null)
 
   const fetchEquivs = useCallback(async (tok, f) => {
     setLoading(true)
@@ -507,7 +507,7 @@ export default function AdminPanel({ onBack }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           {alertCount > 0 && (
             <button
-              onClick={() => pendingRef.current?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => adminBodyRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
               style={{
                 position: 'relative', background: 'none', border: 'none',
                 cursor: 'pointer', fontSize: 20, lineHeight: 1, padding: '4px 6px',
@@ -533,13 +533,12 @@ export default function AdminPanel({ onBack }) {
         </div>
       </div>
 
-      <div className="admin-body">
+      <div ref={adminBodyRef} className="admin-body">
         <PendingQueue
           token={token}
           university={university}
           onChanged={() => fetchEquivs(token, filters)}
           onAlertCount={setAlertCount}
-          containerRef={pendingRef}
         />
 
         <CreateForm
