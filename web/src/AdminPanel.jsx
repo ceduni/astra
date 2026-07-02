@@ -61,6 +61,7 @@ function PendingQueue({ token, university, onChanged }) {
             <tr>
               <th>Cours A</th>
               <th>Cours B</th>
+              <th>Changement</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -79,6 +80,18 @@ function PendingQueue({ token, university, onChanged }) {
                     <code className="admin-sigle">{eq.sigle_b}</code>
                     {eq.universite_b && eq.universite_b !== university && (
                       <span className="admin-uni-label">{eq.universite_b}</span>
+                    )}
+                  </td>
+                  <td style={{ fontSize: 11, maxWidth: 220 }}>
+                    {isAlert && (
+                      <>
+                        <div style={{ fontWeight: 600, color: '#b45309' }}>{eq.flag_reason}</div>
+                        {eq.flagged_at && (
+                          <div style={{ color: '#aaa', marginTop: 2 }}>
+                            {eq.flagged_at.slice(0, 10)}
+                          </div>
+                        )}
+                      </>
                     )}
                   </td>
                   <td className="admin-pending-actions">

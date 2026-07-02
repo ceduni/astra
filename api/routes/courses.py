@@ -214,7 +214,8 @@ WITH $completed AS completed_raw
 CALL {
     WITH completed_raw
     UNWIND completed_raw AS s
-    OPTIONAL MATCH (:Cours {sigle: s})-[:EQUIVAUT_A {status: 'active'}]-(eq:Cours)
+    OPTIONAL MATCH (:Cours {sigle: s})-[eq_r:EQUIVAUT_A]-(eq:Cours)
+    WHERE eq_r.status IN ['active', 'needs_review']
     RETURN collect(DISTINCT eq.sigle) AS via_equiv
 }
 WITH completed_raw, [x IN completed_raw + via_equiv WHERE x IS NOT NULL] AS expanded
@@ -299,8 +300,9 @@ def get_eligible(body: EligibilityRequest):
     with get_driver().session() as session:
         equiv_rows = session.run(
             """
-            MATCH (c:Cours)-[:EQUIVAUT_A {source: 'official', status: 'active'}]-(oc:Cours)
-            WHERE c.sigle IN $sigles AND oc.sigle IN $completed
+            MATCH (c:Cours)-[eq_r:EQUIVAUT_A {source: 'official'}]-(oc:Cours)
+            WHERE eq_r.status IN ['active', 'needs_review']
+              AND c.sigle IN $sigles AND oc.sigle IN $completed
             RETURN c.sigle AS sigle, oc.sigle AS equiv_sigle
             """,
             sigles=course_sigles,
@@ -326,7 +328,8 @@ WITH $completed AS completed_raw
 CALL {
     WITH completed_raw
     UNWIND completed_raw AS s
-    OPTIONAL MATCH (:Cours {sigle: s})-[:EQUIVAUT_A {status: 'active'}]-(eq:Cours)
+    OPTIONAL MATCH (:Cours {sigle: s})-[eq_r:EQUIVAUT_A]-(eq:Cours)
+    WHERE eq_r.status IN ['active', 'needs_review']
     RETURN collect(DISTINCT eq.sigle) AS via_equiv
 }
 WITH completed_raw, [x IN completed_raw + via_equiv WHERE x IS NOT NULL] AS expanded
@@ -566,7 +569,8 @@ def get_program_graph(body: ProgramGraphRequest):
         for s in list(visited_courses):
             seen_eq_for_s: set = set()
             for rec in session.run(
-                "MATCH (c:Cours {sigle: $s})-[r:EQUIVAUT_A {status: 'active'}]-(eq:Cours)"
+                "MATCH (c:Cours {sigle: $s})-[r:EQUIVAUT_A]-(eq:Cours)"
+                " WHERE r.status IN ['active', 'needs_review']"
                 " RETURN eq, r.source AS source, r.confidence AS confidence"
                 " ORDER BY CASE r.source WHEN 'official' THEN 0 ELSE 1 END, r.confidence DESC",
                 s=s,
@@ -600,7 +604,8 @@ def get_program_graph(body: ProgramGraphRequest):
                 """
                 WITH $completed AS completed
                 UNWIND completed AS s
-                OPTIONAL MATCH (:Cours {sigle: s})-[:EQUIVAUT_A {status: 'active'}]-(eq:Cours)
+                OPTIONAL MATCH (:Cours {sigle: s})-[eq_r:EQUIVAUT_A]-(eq:Cours)
+                WHERE eq_r.status IN ['active', 'needs_review']
                 RETURN collect(DISTINCT eq.sigle) AS equivalents
                 """,
                 completed=body.completed_sigles,
@@ -694,7 +699,8 @@ def get_prereq_chain(sigle: str):
             # highest-confidence one wins rather than whichever row Neo4j
             # returns first.
             equiv_recs = session.run(
-                "MATCH (c:Cours {sigle: $s})-[r:EQUIVAUT_A {status: 'active'}]-(eq:Cours)"
+                "MATCH (c:Cours {sigle: $s})-[r:EQUIVAUT_A]-(eq:Cours)"
+                " WHERE r.status IN ['active', 'needs_review']"
                 " RETURN eq, r.source AS source, r.confidence AS confidence"
                 " ORDER BY CASE r.source WHEN 'official' THEN 0 ELSE 1 END, r.confidence DESC",
                 s=s,
@@ -769,7 +775,7 @@ def get_equivalences(
     q: Optional[str] = Query(None, description="Search in sigles and titles"),
     limit: int = Query(500, ge=1, le=2000),
 ):
-    filters = ["r.status = 'active'"]
+    filters = ["r.status IN ['active', 'needs_review']"]
     params: dict = {"limit": limit}
 
     if source:

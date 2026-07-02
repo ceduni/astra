@@ -232,7 +232,7 @@ def list_pending(
     ctx: AdminContext = Depends(require_admin),
     limit: int = Query(200, ge=1, le=1000),
 ):
-    filters = ["r.source = 'inferred'", "r.status IN ['pending', 'needs_review']"]
+    filters = ["(r.source = 'inferred' AND r.status = 'pending') OR r.status = 'needs_review'"]
     params: dict = {"limit": limit}
 
     if ctx.university:
