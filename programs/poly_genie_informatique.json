@@ -4,21 +4,54 @@
   "version": "v1",
   "credits_total": 120,
   "segments": {
-    "tronc_commun": {
-      "label": "Tronc commun",
+    "programmation": {
+      "label": "Programmation",
       "type": "obligatoire",
-      "credits_min": 75,
-      "credits_max": 75,
-      "cours": [
-        "INF1007", "INF1040", "INF1500", "MTH1008", "INF1205",
-        "INF1600", "INF1015", "LOG1810",
-        "GCH2730", "INF2010", "LOG2440", "LOG2400", "INF1900",
-        "INF2610", "MTH2304", "SSH3201", "INF3405", "LOG2990",
-        "INF3710", "INF2705", "INF8085",
-        "INF8480", "INF8770", "SSH3501", "INF8175",
-        "SSH3101",
-        "INF8775", "INF8225", "INF8405"
-      ]
+      "credits_min": 8,
+      "credits_max": 8,
+      "cours": ["INF1007", "INF1015"]
+    },
+    "mathematiques_structures": {
+      "label": "Mathématiques et structures",
+      "type": "obligatoire",
+      "credits_min": 13,
+      "credits_max": 13,
+      "cours": ["MTH1008", "LOG1810", "INF2010", "MTH2304"]
+    },
+    "systemes_architecture": {
+      "label": "Systèmes et architecture",
+      "type": "obligatoire",
+      "credits_min": 15,
+      "credits_max": 15,
+      "cours": ["INF1500", "INF1600", "INF1900", "INF2610", "INF3405"]
+    },
+    "systemes_avances_securite": {
+      "label": "Systèmes avancés et sécurité",
+      "type": "obligatoire",
+      "credits_min": 12,
+      "credits_max": 12,
+      "cours": ["INF8480", "INF8085", "INF8405", "INF8770"]
+    },
+    "intelligence_artificielle": {
+      "label": "Intelligence artificielle",
+      "type": "obligatoire",
+      "credits_min": 9,
+      "credits_max": 9,
+      "cours": ["INF8175", "INF8225", "INF8775"]
+    },
+    "conception_donnees_web": {
+      "label": "Conception, données et web",
+      "type": "obligatoire",
+      "credits_min": 16,
+      "credits_max": 16,
+      "cours": ["LOG2400", "LOG2440", "LOG2990", "INF3710", "INF2705"]
+    },
+    "formation_generale": {
+      "label": "Formation générale",
+      "type": "obligatoire",
+      "credits_min": 16,
+      "credits_max": 16,
+      "cours": ["INF1040", "INF1205", "GCH2730", "SSH3201", "SSH3101", "SSH3501"]
     },
     "option_sciences": {
       "label": "Sciences appliquées (au choix)",
@@ -45,14 +78,13 @@
     }
   },
   "tous_les_cours": [
-    "INF1007", "INF1040", "INF1500", "MTH1008", "INF1205",
-    "INF1600", "INF1015", "LOG1810",
-    "GCH2730", "INF2010", "LOG2440", "LOG2400", "INF1900",
-    "INF2610", "MTH2304", "SSH3201", "INF3405", "LOG2990",
-    "INF3710", "INF2705", "INF8085",
-    "INF8480", "INF8770", "SSH3501", "INF8175",
-    "SSH3101",
-    "INF8775", "INF8225", "INF8405",
+    "INF1007", "INF1015",
+    "MTH1008", "LOG1810", "INF2010", "MTH2304",
+    "INF1500", "INF1600", "INF1900", "INF2610", "INF3405",
+    "INF8480", "INF8085", "INF8405", "INF8770",
+    "INF8175", "INF8225", "INF8775",
+    "LOG2400", "LOG2440", "LOG2990", "INF3710", "INF2705",
+    "INF1040", "INF1205", "GCH2730", "SSH3201", "SSH3101", "SSH3501",
     "GBM1610", "PHS1101", "PHS4700", "MEC1210",
     "INF8402", "INF8601"
   ]

@@ -4,21 +4,47 @@
   "version": "v1",
   "credits_total": 120,
   "segments": {
-    "tronc_commun": {
-      "label": "Tronc commun",
+    "programmation": {
+      "label": "Programmation",
       "type": "obligatoire",
-      "credits_min": 87,
-      "credits_max": 87,
-      "cours": [
-        "INF1007", "INF1040", "INF1500", "MTH1008", "INF1205",
-        "INF1600", "INF1015", "LOG1810",
-        "INF2010", "LOG2420", "LOG2440", "GCH2730", "LOG2400", "INF1900",
-        "INF3405", "MTH2304", "INF2610", "SSH3201",
-        "LOG3430", "SSH3101", "INF3710", "LOG3420",
-        "LOG3000", "LOG3005", "LOG3210", "SSH3501",
-        "INF8480",
-        "LOG2995", "LOG3900"
-      ]
+      "credits_min": 11,
+      "credits_max": 11,
+      "cours": ["INF1007", "INF1015", "LOG3210"]
+    },
+    "mathematiques_structures": {
+      "label": "Mathématiques et structures",
+      "type": "obligatoire",
+      "credits_min": 13,
+      "credits_max": 13,
+      "cours": ["MTH1008", "LOG1810", "INF2010", "MTH2304"]
+    },
+    "systemes_architecture": {
+      "label": "Systèmes et architecture",
+      "type": "obligatoire",
+      "credits_min": 18,
+      "credits_max": 18,
+      "cours": ["INF1500", "INF1600", "INF1900", "INF2610", "INF3405", "INF8480"]
+    },
+    "genie_logiciel_projets": {
+      "label": "Génie logiciel et projets",
+      "type": "obligatoire",
+      "credits_min": 19,
+      "credits_max": 19,
+      "cours": ["LOG2400", "LOG3000", "LOG3420", "LOG3430", "LOG2995", "LOG3900"]
+    },
+    "donnees_interfaces": {
+      "label": "Données et interfaces",
+      "type": "obligatoire",
+      "credits_min": 9,
+      "credits_max": 9,
+      "cours": ["INF3710", "LOG2420", "LOG2440"]
+    },
+    "formation_generale": {
+      "label": "Formation générale",
+      "type": "obligatoire",
+      "credits_min": 17,
+      "credits_max": 17,
+      "cours": ["INF1040", "INF1205", "GCH2730", "SSH3201", "SSH3101", "SSH3501", "LOG3005"]
     },
     "option_sciences": {
       "label": "Sciences appliquées (au choix)",
@@ -53,14 +79,12 @@
     }
   },
   "tous_les_cours": [
-    "INF1007", "INF1040", "INF1500", "MTH1008", "INF1205",
-    "INF1600", "INF1015", "LOG1810",
-    "INF2010", "LOG2420", "LOG2440", "GCH2730", "LOG2400", "INF1900",
-    "INF3405", "MTH2304", "INF2610", "SSH3201",
-    "LOG3430", "SSH3101", "INF3710", "LOG3420",
-    "LOG3000", "LOG3005", "LOG3210", "SSH3501",
-    "INF8480",
-    "LOG2995", "LOG3900",
+    "INF1007", "INF1015", "LOG3210",
+    "MTH1008", "LOG1810", "INF2010", "MTH2304",
+    "INF1500", "INF1600", "INF1900", "INF2610", "INF3405", "INF8480",
+    "LOG2400", "LOG3000", "LOG3420", "LOG3430", "LOG2995", "LOG3900",
+    "INF3710", "LOG2420", "LOG2440",
+    "INF1040", "INF1205", "GCH2730", "SSH3201", "SSH3101", "SSH3501", "LOG3005",
     "GBM1610", "PHS1101", "PHS4700", "MEC1210",
     "INF8775", "INF8085", "LOG8430", "LOG8371", "INF8175",
     "LOG8970", "ING8971"
