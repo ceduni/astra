@@ -4,16 +4,33 @@
   "version": "v1",
   "credits_total": 90,
   "segments": {
-    "informatique_obligatoire": {
-      "label": "Informatique obligatoire",
+    "programmation": {
+      "label": "Programmation",
       "type": "obligatoire",
-      "credits_min": 48,
-      "credits_max": 48,
-      "cours": [
-        "INF1070", "INF1120", "INF2050", "INF2120", "INF2171",
-        "INF3080", "INF3105", "INF3135", "INF3173", "INF3191",
-        "INF3271", "INF5151", "INF5153", "INF5171", "INF6120", "INF6150"
-      ]
+      "credits_min": 15,
+      "credits_max": 15,
+      "cours": ["INF1120", "INF2120", "INF3191", "INF5171", "INF6120"]
+    },
+    "genie_logiciel": {
+      "label": "Génie logiciel",
+      "type": "obligatoire",
+      "credits_min": 15,
+      "credits_max": 15,
+      "cours": ["INF2050", "INF3135", "INF5151", "INF5153", "INF6150"]
+    },
+    "systemes_reseaux": {
+      "label": "Systèmes et réseaux",
+      "type": "obligatoire",
+      "credits_min": 12,
+      "credits_max": 12,
+      "cours": ["INF1070", "INF2171", "INF3173", "INF3271"]
+    },
+    "donnees_algorithmes": {
+      "label": "Données et algorithmes",
+      "type": "obligatoire",
+      "credits_min": 6,
+      "credits_max": 6,
+      "cours": ["INF3080", "INF3105"]
     },
     "mathematiques_obligatoire": {
       "label": "Mathématiques",
@@ -71,9 +88,10 @@
     }
   },
   "tous_les_cours": [
-    "INF1070", "INF1120", "INF2050", "INF2120", "INF2171",
-    "INF3080", "INF3105", "INF3135", "INF3173", "INF3191",
-    "INF3271", "INF5151", "INF5153", "INF5171", "INF6120", "INF6150",
+    "INF1120", "INF2120", "INF3191", "INF5171", "INF6120",
+    "INF2050", "INF3135", "INF5151", "INF5153", "INF6150",
+    "INF1070", "INF2171", "INF3173", "INF3271",
+    "INF3080", "INF3105",
     "INF1132", "INF5130", "MAT4681",
     "ECO1081", "AOT1110",
     "INM6000",

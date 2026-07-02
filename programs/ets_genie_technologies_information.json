@@ -4,28 +4,50 @@
   "version": "v1",
   "credits_total": 116,
   "segments": {
-    "cours_generaux": {
-      "label": "Cours généraux obligatoires",
+    "mathematiques": {
+      "label": "Mathématiques",
       "type": "obligatoire",
-      "credits_min": 42,
-      "credits_max": 42,
-      "note": "COM210 et PEP110 non disponibles dans la base de données",
-      "cours": [
-        "CHM131", "GIA400", "ING150",
-        "MAT145", "MAT210", "MAT265", "MAT350", "MAT472",
-        "PHY332", "PHY335", "TIN503"
-      ]
+      "credits_min": 20,
+      "credits_max": 20,
+      "cours": ["MAT145", "MAT210", "MAT265", "MAT350", "MAT472"]
     },
-    "cours_specifiques": {
-      "label": "Cours spécifiques en génie des TI",
+    "sciences_fondamentales": {
+      "label": "Sciences fondamentales",
       "type": "obligatoire",
-      "credits_min": 30,
-      "credits_max": 30,
-      "note": "GTI311, GTI411, GTI660, GTI795 non disponibles dans la base de données",
-      "cours": [
-        "GTI100", "GTI210", "GTI350", "GTI510", "GTI611",
-        "LOG121", "LOG210", "LOG320"
-      ]
+      "credits_min": 16,
+      "credits_max": 16,
+      "cours": ["CHM131", "ING150", "PHY332", "PHY335"]
+    },
+    "formation_generale": {
+      "label": "Formation générale",
+      "type": "obligatoire",
+      "credits_min": 6,
+      "credits_max": 6,
+      "note": "COM210 et PEP110 non disponibles dans la base de données",
+      "cours": ["GIA400", "TIN503"]
+    },
+    "introduction_programmation": {
+      "label": "Introduction et programmation",
+      "type": "obligatoire",
+      "credits_min": 7,
+      "credits_max": 7,
+      "cours": ["GTI210", "GTI100"]
+    },
+    "conception_genie_logiciel": {
+      "label": "Conception et génie logiciel",
+      "type": "obligatoire",
+      "credits_min": 15,
+      "credits_max": 15,
+      "note": "GTI311, GTI411, GTI795 non disponibles dans la base de données",
+      "cours": ["LOG121", "LOG210", "GTI510", "LOG320"]
+    },
+    "interfaces_reseaux": {
+      "label": "Interfaces et réseaux",
+      "type": "obligatoire",
+      "credits_min": 8,
+      "credits_max": 8,
+      "note": "GTI660 non disponible dans la base de données",
+      "cours": ["GTI350", "GTI611"]
     },
     "complementaire": {
       "label": "Étude complémentaire (au choix)",
@@ -33,10 +55,7 @@
       "credits_min": 3,
       "credits_max": 3,
       "note": "1 cours au choix parmi les cours complémentaires approuvés",
-      "cours": [
-        "ENT201", "ENT202", "ENT601", "ETH610",
-        "GIA602", "GPE450", "GPO602", "ING500", "LRC110"
-      ]
+      "cours": ["ENT201", "ENT202", "ENT601", "ETH610", "GIA602", "GPE450", "GPO602", "ING500", "LRC110"]
     },
     "optionnels": {
       "label": "Cours à option",
@@ -55,13 +74,13 @@
     }
   },
   "tous_les_cours": [
-    "CHM131", "GIA400", "ING150",
     "MAT145", "MAT210", "MAT265", "MAT350", "MAT472",
-    "PHY332", "PHY335", "TIN503",
-    "GTI100", "GTI210", "GTI350", "GTI510", "GTI611",
-    "LOG121", "LOG210", "LOG320",
-    "ENT201", "ENT202", "ENT601", "ETH610",
-    "GIA602", "GPE450", "GPO602", "ING500", "LRC110",
+    "CHM131", "ING150", "PHY332", "PHY335",
+    "GIA400", "TIN503",
+    "GTI210", "GTI100",
+    "LOG121", "LOG210", "GTI510", "LOG320",
+    "GTI350", "GTI611",
+    "ENT201", "ENT202", "ENT601", "ETH610", "GIA602", "GPE450", "GPO602", "ING500", "LRC110",
     "GTI320", "GTI525", "GTI619", "GTI650", "GTI700",
     "GTI719", "GTI720", "GTI723", "GTI745", "GTI750",
     "GTI755", "GTI771", "GTI780",

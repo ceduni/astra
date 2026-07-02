@@ -4,24 +4,33 @@
   "version": "v1",
   "credits_total": 63,
   "segments": {
-    "required": {
-      "label": "Cours obligatoires",
+    "programmation_conception": {
+      "label": "Programmation et conception",
       "type": "obligatoire",
-      "credits_min": 33,
-      "credits_max": 33,
-      "cours": [
-        "COMP 202",
-        "COMP 206",
-        "COMP 250",
-        "COMP 251",
-        "COMP 273",
-        "COMP 302",
-        "COMP 303",
-        "COMP 310",
-        "MATH 222",
-        "MATH 223",
-        "MATH 240"
-      ]
+      "credits_min": 12,
+      "credits_max": 12,
+      "cours": ["COMP 202", "COMP 206", "COMP 302", "COMP 303"]
+    },
+    "algorithmes": {
+      "label": "Algorithmes et structures de données",
+      "type": "obligatoire",
+      "credits_min": 6,
+      "credits_max": 6,
+      "cours": ["COMP 250", "COMP 251"]
+    },
+    "systemes": {
+      "label": "Systèmes informatiques",
+      "type": "obligatoire",
+      "credits_min": 6,
+      "credits_max": 6,
+      "cours": ["COMP 273", "COMP 310"]
+    },
+    "mathematiques": {
+      "label": "Mathématiques",
+      "type": "obligatoire",
+      "credits_min": 9,
+      "credits_max": 9,
+      "cours": ["MATH 222", "MATH 223", "MATH 240"]
     },
     "theory_option": {
       "label": "Option théorie",
@@ -29,24 +38,15 @@
       "credits_min": 6,
       "credits_max": 9,
       "note": "Au moins 6 crédits parmi",
-      "cours": [
-        "COMP 330",
-        "COMP 350",
-        "COMP 360"
-      ]
+      "cours": ["COMP 330", "COMP 350", "COMP 360"]
     },
     "math_option": {
       "label": "Option mathématiques",
       "type": "option",
       "credits_min": 3,
       "credits_max": 9,
-      "note": "3-9 crédits, doit inclure MATH323 ou MATH340",
-      "cours": [
-        "MATH 318",
-        "MATH 323",
-        "MATH 324",
-        "MATH 340"
-      ]
+      "note": "3-9 crédits, doit inclure MATH 323 ou MATH 340",
+      "cours": ["MATH 318", "MATH 323", "MATH 324", "MATH 340"]
     },
     "complementaires": {
       "label": "Cours complémentaires",
@@ -54,38 +54,16 @@
       "credits_min": 6,
       "credits_max": 21,
       "note": "Au moins 6 crédits au niveau 400+, reste au niveau 300+",
-      "cours": [
-        "COMP 322",
-        "COMP 409",
-        "COMP 421",
-        "COMP 424",
-        "COMP 462"
-      ]
+      "cours": ["COMP 322", "COMP 409", "COMP 421", "COMP 424", "COMP 462"]
     }
   },
   "tous_les_cours": [
-    "COMP 202",
-    "COMP 206",
-    "COMP 250",
-    "COMP 251",
-    "COMP 273",
-    "COMP 302",
-    "COMP 303",
-    "COMP 310",
-    "MATH 222",
-    "MATH 223",
-    "MATH 240",
-    "COMP 330",
-    "COMP 350",
-    "COMP 360",
-    "MATH 318",
-    "MATH 323",
-    "MATH 324",
-    "MATH 340",
-    "COMP 322",
-    "COMP 409",
-    "COMP 421",
-    "COMP 424",
-    "COMP 462"
+    "COMP 202", "COMP 206", "COMP 302", "COMP 303",
+    "COMP 250", "COMP 251",
+    "COMP 273", "COMP 310",
+    "MATH 222", "MATH 223", "MATH 240",
+    "COMP 330", "COMP 350", "COMP 360",
+    "MATH 318", "MATH 323", "MATH 324", "MATH 340",
+    "COMP 322", "COMP 409", "COMP 421", "COMP 424", "COMP 462"
   ]
 }
