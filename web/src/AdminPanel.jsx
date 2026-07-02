@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 
 const API = '/api/admin/equivalences'
 const API_META = '/api/admin'
@@ -9,7 +9,7 @@ function authHeader(token) {
 
 // ── Pending queue ──────────────────────────────────────────────────────────────
 
-function PendingQueue({ token, university, onChanged }) {
+function PendingQueue({ token, university, onChanged, onAlertCount, containerRef }) {
   const [rows, setRows] = useState([])
   const [loading, setLoading] = useState(true)
   const [acting, setActing] = useState(null)
@@ -25,6 +25,10 @@ function PendingQueue({ token, university, onChanged }) {
   }, [token])
 
   useEffect(() => { fetchPending() }, [fetchPending])
+
+  useEffect(() => {
+    onAlertCount?.(rows.filter(r => r.flag_reason).length)
+  }, [rows, onAlertCount])
 
   async function act(id, action) {
     setActing(id)
@@ -44,10 +48,9 @@ function PendingQueue({ token, university, onChanged }) {
   if (rows.length === 0) return null
 
   const alerts = rows.filter(eq => eq.flag_reason)
-  const inferred = rows.filter(eq => !eq.flag_reason)
 
   return (
-    <div className="admin-pending-wrap">
+    <div ref={containerRef} className="admin-pending-wrap">
       <div className="admin-pending-header">
         <span className="admin-pending-title">En attente de révision</span>
         <span className="admin-pending-count">{rows.length} paire{rows.length !== 1 ? 's' : ''}</span>
@@ -61,7 +64,6 @@ function PendingQueue({ token, university, onChanged }) {
             <tr>
               <th>Cours A</th>
               <th>Cours B</th>
-              <th>Changement</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -80,18 +82,6 @@ function PendingQueue({ token, university, onChanged }) {
                     <code className="admin-sigle">{eq.sigle_b}</code>
                     {eq.universite_b && eq.universite_b !== university && (
                       <span className="admin-uni-label">{eq.universite_b}</span>
-                    )}
-                  </td>
-                  <td style={{ fontSize: 11, maxWidth: 220 }}>
-                    {isAlert && (
-                      <>
-                        <div style={{ fontWeight: 600, color: '#b45309' }}>{eq.flag_reason}</div>
-                        {eq.flagged_at && (
-                          <div style={{ color: '#aaa', marginTop: 2 }}>
-                            {eq.flagged_at.slice(0, 10)}
-                          </div>
-                        )}
-                      </>
                     )}
                   </td>
                   <td className="admin-pending-actions">
@@ -450,6 +440,8 @@ export default function AdminPanel({ onBack }) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [filters, setFilters] = useState({ source: '', status: 'active', sigle: '' })
+  const [alertCount, setAlertCount] = useState(0)
+  const pendingRef = useRef(null)
 
   const fetchEquivs = useCallback(async (tok, f) => {
     setLoading(true)
@@ -512,9 +504,33 @@ export default function AdminPanel({ onBack }) {
             {active} actives · {revoked} révoquées
           </span>
         </div>
-        <button className="admin-logout-btn" onClick={handleLogout}>
-          Déconnexion
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          {alertCount > 0 && (
+            <button
+              onClick={() => pendingRef.current?.scrollIntoView({ behavior: 'smooth' })}
+              style={{
+                position: 'relative', background: 'none', border: 'none',
+                cursor: 'pointer', fontSize: 20, lineHeight: 1, padding: '4px 6px',
+              }}
+              title={`${alertCount} alerte${alertCount > 1 ? 's' : ''} — cours modifié`}
+            >
+              🔔
+              <span style={{
+                position: 'absolute', top: 0, right: 0,
+                background: '#e53e3e', color: '#fff',
+                fontSize: 10, fontWeight: 700, lineHeight: 1,
+                minWidth: 16, height: 16, borderRadius: 8,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                padding: '0 3px',
+              }}>
+                {alertCount}
+              </span>
+            </button>
+          )}
+          <button className="admin-logout-btn" onClick={handleLogout}>
+            Déconnexion
+          </button>
+        </div>
       </div>
 
       <div className="admin-body">
@@ -522,6 +538,8 @@ export default function AdminPanel({ onBack }) {
           token={token}
           university={university}
           onChanged={() => fetchEquivs(token, filters)}
+          onAlertCount={setAlertCount}
+          containerRef={pendingRef}
         />
 
         <CreateForm
