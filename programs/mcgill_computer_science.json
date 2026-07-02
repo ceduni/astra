@@ -10,9 +10,17 @@
       "credits_min": 33,
       "credits_max": 33,
       "cours": [
-        "COMP202", "COMP206", "COMP250", "COMP251", "COMP273",
-        "COMP302", "COMP303", "COMP310",
-        "MATH222", "MATH223", "MATH240"
+        "COMP 202",
+        "COMP 206",
+        "COMP 250",
+        "COMP 251",
+        "COMP 273",
+        "COMP 302",
+        "COMP 303",
+        "COMP 310",
+        "MATH 222",
+        "MATH 223",
+        "MATH 240"
       ]
     },
     "theory_option": {
@@ -21,7 +29,11 @@
       "credits_min": 6,
       "credits_max": 9,
       "note": "Au moins 6 crédits parmi",
-      "cours": ["COMP330", "COMP350", "COMP360"]
+      "cours": [
+        "COMP 330",
+        "COMP 350",
+        "COMP 360"
+      ]
     },
     "math_option": {
       "label": "Option mathématiques",
@@ -29,7 +41,12 @@
       "credits_min": 3,
       "credits_max": 9,
       "note": "3-9 crédits, doit inclure MATH323 ou MATH340",
-      "cours": ["MATH318", "MATH323", "MATH324", "MATH340"]
+      "cours": [
+        "MATH 318",
+        "MATH 323",
+        "MATH 324",
+        "MATH 340"
+      ]
     },
     "complementaires": {
       "label": "Cours complémentaires",
@@ -38,26 +55,37 @@
       "credits_max": 21,
       "note": "Au moins 6 crédits au niveau 400+, reste au niveau 300+",
       "cours": [
-        "COMP322", "COMP409", "COMP421", "COMP424", "COMP462",
-        "COMP499", "COMP512", "COMP520", "COMP521", "COMP522",
-        "COMP523", "COMP524", "COMP525", "COMP529", "COMP533",
-        "COMP547", "COMP551", "COMP557", "COMP560", "COMP561",
-        "COMP564", "COMP566", "COMP567", "COMP575", "COMP579",
-        "COMP589", "COMP598"
+        "COMP 322",
+        "COMP 409",
+        "COMP 421",
+        "COMP 424",
+        "COMP 462"
       ]
     }
   },
   "tous_les_cours": [
-    "COMP202", "COMP206", "COMP250", "COMP251", "COMP273",
-    "COMP302", "COMP303", "COMP310",
-    "MATH222", "MATH223", "MATH240",
-    "COMP330", "COMP350", "COMP360",
-    "MATH318", "MATH323", "MATH324", "MATH340",
-    "COMP322", "COMP409", "COMP421", "COMP424", "COMP462",
-    "COMP499", "COMP512", "COMP520", "COMP521", "COMP522",
-    "COMP523", "COMP524", "COMP525", "COMP529", "COMP533",
-    "COMP547", "COMP551", "COMP557", "COMP560", "COMP561",
-    "COMP564", "COMP566", "COMP567", "COMP575", "COMP579",
-    "COMP589", "COMP598"
+    "COMP 202",
+    "COMP 206",
+    "COMP 250",
+    "COMP 251",
+    "COMP 273",
+    "COMP 302",
+    "COMP 303",
+    "COMP 310",
+    "MATH 222",
+    "MATH 223",
+    "MATH 240",
+    "COMP 330",
+    "COMP 350",
+    "COMP 360",
+    "MATH 318",
+    "MATH 323",
+    "MATH 324",
+    "MATH 340",
+    "COMP 322",
+    "COMP 409",
+    "COMP 421",
+    "COMP 424",
+    "COMP 462"
   ]
 }

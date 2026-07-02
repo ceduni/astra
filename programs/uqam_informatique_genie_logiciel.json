@@ -10,9 +10,21 @@
       "credits_min": 48,
       "credits_max": 48,
       "cours": [
-        "INF1070", "INF1120", "INF2050", "INF2120", "INF2171",
-        "INF3080", "INF3105", "INF3135", "INF3173", "INF3190",
-        "INF3271", "INF4170", "INF5151", "INF5153", "INF6120",
+        "INF1070",
+        "INF1120",
+        "INF2050",
+        "INF2120",
+        "INF2171",
+        "INF3080",
+        "INF3105",
+        "INF3135",
+        "INF3173",
+        "INF3190",
+        "INF3271",
+        "INF4170",
+        "INF5151",
+        "INF5153",
+        "INF6120",
         "INF6150"
       ]
     },
@@ -21,28 +33,37 @@
       "type": "obligatoire",
       "credits_min": 9,
       "credits_max": 9,
-      "cours": ["INF1131", "INF5130", "MAT4681"]
+      "cours": [
+        "INF5130",
+        "MAT4681"
+      ]
     },
     "sciences_gestion_obligatoire": {
       "label": "Sciences de la gestion",
       "type": "obligatoire",
       "credits_min": 6,
       "credits_max": 6,
-      "cours": ["ECO1081", "MET1110"]
+      "cours": [
+        "ECO1081"
+      ]
     },
     "ethique_obligatoire": {
       "label": "Éthique professionnelle",
       "type": "obligatoire",
       "credits_min": 3,
       "credits_max": 3,
-      "cours": ["INM6000"]
+      "cours": [
+        "INM6000"
+      ]
     },
     "synthese_obligatoire": {
       "label": "Cours de synthèse",
       "type": "obligatoire",
       "credits_min": 3,
       "credits_max": 3,
-      "cours": ["INM5151"]
+      "cours": [
+        "INM5151"
+      ]
     },
     "cours_choix_informatique": {
       "label": "Cours au choix en informatique",
@@ -51,9 +72,14 @@
       "credits_max": 15,
       "note": "5 cours parmi la liste",
       "cours": [
-        "INF4150", "INF4230", "INF4471", "INF4500",
-        "INF5000", "INF5071", "INF5081", "INF5171",
-        "MET4902", "MET5311", "MET5904", "MET6910", "TEL4165"
+        "INF4150",
+        "INF4230",
+        "INF4471",
+        "INF4500",
+        "INF5071",
+        "INF5171",
+        "MET4902",
+        "TEL4165"
       ]
     },
     "cours_langue": {
@@ -65,13 +91,34 @@
     }
   },
   "tous_les_cours": [
-    "INF1070", "INF1120", "INF2050", "INF2120", "INF2171",
-    "INF3080", "INF3105", "INF3135", "INF3173", "INF3190",
-    "INF3271", "INF4170", "INF5151", "INF5153", "INF6120",
-    "INF6150", "INF1131", "INF5130", "MAT4681",
-    "ECO1081", "MET1110", "INM6000", "INM5151",
-    "INF4150", "INF4230", "INF4471", "INF4500",
-    "INF5000", "INF5071", "INF5081", "INF5171",
-    "MET4902", "MET5311", "MET5904", "MET6910", "TEL4165"
+    "INF1070",
+    "INF1120",
+    "INF2050",
+    "INF2120",
+    "INF2171",
+    "INF3080",
+    "INF3105",
+    "INF3135",
+    "INF3173",
+    "INF3190",
+    "INF3271",
+    "INF4170",
+    "INF5151",
+    "INF5153",
+    "INF6120",
+    "INF6150",
+    "INF5130",
+    "MAT4681",
+    "ECO1081",
+    "INM6000",
+    "INM5151",
+    "INF4150",
+    "INF4230",
+    "INF4471",
+    "INF4500",
+    "INF5071",
+    "INF5171",
+    "MET4902",
+    "TEL4165"
   ]
 }

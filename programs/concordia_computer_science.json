@@ -11,9 +11,15 @@
       "credits_max": 30,
       "note": "Computer Science Core",
       "cours": [
-        "COMP248", "COMP249", "COMP232", "COMP228",
-        "COMP346", "COMP348", "COMP352",
-        "MATH203", "MATH204", "MATH205"
+        "COMP 248",
+        "COMP 249",
+        "COMP 232",
+        "COMP 228",
+        "COMP 346",
+        "COMP 348",
+        "COMP 352",
+        "MATH 204",
+        "MATH 205"
       ]
     },
     "cs_complementary_core": {
@@ -23,8 +29,13 @@
       "credits_max": 24,
       "note": "Computer Science Complementary Core",
       "cours": [
-        "COMP335", "COMP339", "COMP345", "COMP371",
-        "COMP426", "COMP428", "COMP472", "COMP478"
+        "COMP 335",
+        "COMP 339",
+        "COMP 371",
+        "COMP 426",
+        "COMP 428",
+        "COMP 472",
+        "COMP 478"
       ]
     },
     "cs_electives": {
@@ -34,13 +45,18 @@
       "credits_max": 18,
       "note": "Computer Science Electives — minimum 6 cours",
       "cours": [
-        "COMP353", "COMP354", "COMP361", "COMP367",
-        "COMP376", "COMP392", "COMP420", "COMP422",
-        "COMP423", "COMP424", "COMP425", "COMP427",
-        "COMP429", "COMP431", "COMP432", "COMP433",
-        "COMP436", "COMP442", "COMP445", "COMP452",
-        "COMP462", "COMP465", "COMP474", "COMP479",
-        "COMP480", "COMP489"
+        "COMP 353",
+        "COMP 354",
+        "COMP 361",
+        "COMP 367",
+        "COMP 376",
+        "COMP 425",
+        "COMP 432",
+        "COMP 433",
+        "COMP 442",
+        "COMP 465",
+        "COMP 474",
+        "COMP 479"
       ]
     },
     "math_science": {
@@ -50,25 +66,41 @@
       "credits_max": 18,
       "note": "Mathematics/Science electives",
       "cours": [
-        "MATH251", "MATH252", "MATH264", "MATH354",
-        "STAT249", "STAT360"
+        "MATH 251",
+        "MATH 252"
       ]
     }
   },
   "tous_les_cours": [
-    "COMP248", "COMP249", "COMP232", "COMP228",
-    "COMP346", "COMP348", "COMP352",
-    "MATH203", "MATH204", "MATH205",
-    "COMP335", "COMP339", "COMP345", "COMP371",
-    "COMP426", "COMP428", "COMP472", "COMP478",
-    "COMP353", "COMP354", "COMP361", "COMP367",
-    "COMP376", "COMP392", "COMP420", "COMP422",
-    "COMP423", "COMP424", "COMP425", "COMP427",
-    "COMP429", "COMP431", "COMP432", "COMP433",
-    "COMP436", "COMP442", "COMP445", "COMP452",
-    "COMP462", "COMP465", "COMP474", "COMP479",
-    "COMP480", "COMP489",
-    "MATH251", "MATH252", "MATH264", "MATH354",
-    "STAT249", "STAT360"
+    "COMP 248",
+    "COMP 249",
+    "COMP 232",
+    "COMP 228",
+    "COMP 346",
+    "COMP 348",
+    "COMP 352",
+    "MATH 204",
+    "MATH 205",
+    "COMP 335",
+    "COMP 339",
+    "COMP 371",
+    "COMP 426",
+    "COMP 428",
+    "COMP 472",
+    "COMP 478",
+    "COMP 353",
+    "COMP 354",
+    "COMP 361",
+    "COMP 367",
+    "COMP 376",
+    "COMP 425",
+    "COMP 432",
+    "COMP 433",
+    "COMP 442",
+    "COMP 465",
+    "COMP 474",
+    "COMP 479",
+    "MATH 251",
+    "MATH 252"
   ]
 }
