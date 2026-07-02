@@ -19,8 +19,8 @@ Category-filtered matching (primary path):
   back to the original global thresholds with no category filter.
 
 Thresholds:
-  CAT_ACTIVE   = 0.70  within-category active   (lowered from 0.78)
-  CAT_PENDING  = 0.58  within-category pending  (lowered from 0.70)
+  CAT_ACTIVE   = 0.65  within-category active   (lowered from 0.70)
+  CAT_PENDING  = 0.55  within-category pending  (lowered from 0.58)
   THRESHOLD    = 0.78  no-category fallback active
   PENDING_THR  = 0.70  no-category fallback pending
   POLY_ETS_THR = 0.65  Poly↔ETS same-prefix within-category (was 0.72)
@@ -52,8 +52,8 @@ load_dotenv(Path(__file__).parents[1] / ".env")
 MODEL_NAME   = "paraphrase-multilingual-MiniLM-L12-v2"
 
 # Within-category thresholds (lower = more recall)
-CAT_ACTIVE   = 0.70
-CAT_PENDING  = 0.58
+CAT_ACTIVE   = 0.65
+CAT_PENDING  = 0.55
 
 # Fallback thresholds for courses not in any program JSON
 THRESHOLD    = 0.78
@@ -306,8 +306,8 @@ def main():
     print(f"  Within-category (lower threshold): {cat_filtered:>7}")
     print(f"  Cross-domain skipped:              {skipped_domain:>7}")
     print(f"  Fallback (uncategorised):          {fallback_pairs:>7}")
-    print(f"  Active candidates  (≥{CAT_ACTIVE}/{THRESHOLD}): {len(active_cands)}")
-    print(f"  Pending candidates ({CAT_PENDING}–):         {len(pending_cands)}")
+    print(f"  Active candidates  (≥{CAT_ACTIVE} cat / {THRESHOLD} fallback): {len(active_cands)}")
+    print(f"  Pending candidates ({CAT_PENDING}–{CAT_ACTIVE} cat / {PENDING_THR}–{THRESHOLD} fallback): {len(pending_cands)}")
 
     sigle_to_course = {c["sigle"]: c for c in courses}
 
