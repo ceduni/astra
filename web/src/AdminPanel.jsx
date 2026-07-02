@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useRef } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 
 const API = '/api/admin/equivalences'
 const API_META = '/api/admin'
@@ -9,7 +9,7 @@ function authHeader(token) {
 
 // ── Pending queue ──────────────────────────────────────────────────────────────
 
-function PendingQueue({ token, university, onChanged, onAlertCount }) {
+function PendingQueue({ token, university, onChanged, onAlerts }) {
   const [rows, setRows] = useState([])
   const [loading, setLoading] = useState(true)
   const [acting, setActing] = useState(null)
@@ -27,8 +27,8 @@ function PendingQueue({ token, university, onChanged, onAlertCount }) {
   useEffect(() => { fetchPending() }, [fetchPending])
 
   useEffect(() => {
-    onAlertCount?.(rows.filter(r => r.flag_reason).length)
-  }, [rows, onAlertCount])
+    onAlerts?.(rows.filter(r => r.flag_reason))
+  }, [rows, onAlerts])
 
   async function act(id, action) {
     setActing(id)
@@ -440,8 +440,8 @@ export default function AdminPanel({ onBack }) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [filters, setFilters] = useState({ source: '', status: 'active', sigle: '' })
-  const [alertCount, setAlertCount] = useState(0)
-  const adminBodyRef = useRef(null)
+  const [alerts, setAlerts] = useState([])
+  const [showNotifs, setShowNotifs] = useState(false)
 
   const fetchEquivs = useCallback(async (tok, f) => {
     setLoading(true)
@@ -505,40 +505,87 @@ export default function AdminPanel({ onBack }) {
           </span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          {alertCount > 0 && (
+          <div style={{ position: 'relative' }}>
             <button
-              onClick={() => adminBodyRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={() => setShowNotifs(v => !v)}
               style={{
                 position: 'relative', background: 'none', border: 'none',
                 cursor: 'pointer', fontSize: 20, lineHeight: 1, padding: '4px 6px',
               }}
-              title={`${alertCount} alerte${alertCount > 1 ? 's' : ''} — cours modifié`}
             >
               🔔
-              <span style={{
-                position: 'absolute', top: 0, right: 0,
-                background: '#e53e3e', color: '#fff',
-                fontSize: 10, fontWeight: 700, lineHeight: 1,
-                minWidth: 16, height: 16, borderRadius: 8,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                padding: '0 3px',
-              }}>
-                {alertCount}
-              </span>
+              {alerts.length > 0 && (
+                <span style={{
+                  position: 'absolute', top: 0, right: 0,
+                  background: '#e53e3e', color: '#fff',
+                  fontSize: 10, fontWeight: 700, lineHeight: 1,
+                  minWidth: 16, height: 16, borderRadius: 8,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  padding: '0 3px',
+                }}>
+                  {alerts.length}
+                </span>
+              )}
             </button>
-          )}
+
+            {showNotifs && (
+              <>
+                <div
+                  onClick={() => setShowNotifs(false)}
+                  style={{ position: 'fixed', inset: 0, zIndex: 99 }}
+                />
+                <div style={{
+                  position: 'absolute', top: 'calc(100% + 8px)', right: 0,
+                  width: 320, background: '#fff',
+                  border: '1px solid #e5e7eb', borderRadius: 10,
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                  zIndex: 100, overflow: 'hidden',
+                }}>
+                  <div style={{
+                    padding: '12px 16px', borderBottom: '1px solid #f0f0f0',
+                    fontWeight: 700, fontSize: 13, color: '#111',
+                  }}>
+                    Notifications
+                  </div>
+                  {alerts.length === 0 ? (
+                    <p style={{ padding: '16px', color: '#aaa', fontSize: 12, margin: 0 }}>
+                      Aucune alerte.
+                    </p>
+                  ) : (
+                    alerts.map(eq => (
+                      <div key={eq.id} style={{
+                        padding: '12px 16px', borderBottom: '1px solid #f7f7f7',
+                      }}>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: '#111' }}>
+                          <code style={{ fontFamily: 'monospace' }}>{eq.sigle_a}</code>
+                          {' ↔ '}
+                          <code style={{ fontFamily: 'monospace' }}>{eq.sigle_b}</code>
+                        </div>
+                        <div style={{ fontSize: 11, color: '#b45309', marginTop: 3 }}>
+                          {eq.flag_reason}
+                        </div>
+                        <div style={{ fontSize: 10, color: '#bbb', marginTop: 2 }}>
+                          {eq.flagged_at?.slice(0, 10)}
+                        </div>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </>
+            )}
+          </div>
           <button className="admin-logout-btn" onClick={handleLogout}>
             Déconnexion
           </button>
         </div>
       </div>
 
-      <div ref={adminBodyRef} className="admin-body">
+      <div className="admin-body">
         <PendingQueue
           token={token}
           university={university}
           onChanged={() => fetchEquivs(token, filters)}
-          onAlertCount={setAlertCount}
+          onAlerts={setAlerts}
         />
 
         <CreateForm
