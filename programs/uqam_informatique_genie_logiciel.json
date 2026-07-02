@@ -10,22 +10,9 @@
       "credits_min": 48,
       "credits_max": 48,
       "cours": [
-        "INF1070",
-        "INF1120",
-        "INF2050",
-        "INF2120",
-        "INF2171",
-        "INF3080",
-        "INF3105",
-        "INF3135",
-        "INF3173",
-        "INF3190",
-        "INF3271",
-        "INF4170",
-        "INF5151",
-        "INF5153",
-        "INF6120",
-        "INF6150"
+        "INF1070", "INF1120", "INF2050", "INF2120", "INF2171",
+        "INF3080", "INF3105", "INF3135", "INF3173", "INF3191",
+        "INF3271", "INF5151", "INF5153", "INF5171", "INF6120", "INF6150"
       ]
     },
     "mathematiques_obligatoire": {
@@ -33,92 +20,66 @@
       "type": "obligatoire",
       "credits_min": 9,
       "credits_max": 9,
-      "cours": [
-        "INF5130",
-        "MAT4681"
-      ]
+      "cours": ["INF1132", "INF5130", "MAT4681"]
     },
     "sciences_gestion_obligatoire": {
       "label": "Sciences de la gestion",
       "type": "obligatoire",
       "credits_min": 6,
       "credits_max": 6,
-      "cours": [
-        "ECO1081"
-      ]
+      "cours": ["ECO1081", "AOT1110"]
     },
     "ethique_obligatoire": {
-      "label": "Éthique professionnelle",
+      "label": "Éthique et professionnalisme",
       "type": "obligatoire",
       "credits_min": 3,
       "credits_max": 3,
-      "cours": [
-        "INM6000"
-      ]
+      "cours": ["INM6000"]
     },
     "synthese_obligatoire": {
-      "label": "Cours de synthèse",
+      "label": "Activité de synthèse",
       "type": "obligatoire",
       "credits_min": 3,
       "credits_max": 3,
-      "cours": [
-        "INM5151"
-      ]
+      "cours": ["INM5151"]
     },
     "cours_choix_informatique": {
       "label": "Cours au choix en informatique",
       "type": "option",
       "credits_min": 15,
       "credits_max": 15,
-      "note": "5 cours parmi la liste",
+      "note": "5 cours au choix dans la liste, dont au moins 3 siglés INF",
       "cours": [
-        "INF4150",
-        "INF4230",
-        "INF4471",
-        "INF4500",
-        "INF5071",
-        "INF5171",
-        "MET4902",
-        "TEL4165"
+        "INF4150", "INF4170", "INF4230", "INF4471", "INF4500",
+        "INF5001", "INF5071", "INF5082", "INF5190", "INF6200",
+        "AOT3221", "AOT5332", "AOT5334", "AOT5341", "TEL4165"
       ]
     },
-    "cours_langue": {
-      "label": "Langue et communication",
+    "cours_communication": {
+      "label": "Cours de communication ou de langue",
       "type": "libre",
       "credits_min": 3,
       "credits_max": 3,
-      "note": "Un cours de langue ou communication"
+      "note": "Un cours de langue ou communication au choix (ALL, ANG, ARA, CHN, ESP, ITA, JPN, LSQ, PTG, RUS, EDM, FCE, FCM, COM acceptés)"
+    },
+    "cours_libre": {
+      "label": "Cours libre hors spécialisation",
+      "type": "libre",
+      "credits_min": 3,
+      "credits_max": 3,
+      "note": "Un cours au choix hors champ de spécialisation (ne peut pas être INF, INM, TEL, MIC, ING)"
     }
   },
   "tous_les_cours": [
-    "INF1070",
-    "INF1120",
-    "INF2050",
-    "INF2120",
-    "INF2171",
-    "INF3080",
-    "INF3105",
-    "INF3135",
-    "INF3173",
-    "INF3190",
-    "INF3271",
-    "INF4170",
-    "INF5151",
-    "INF5153",
-    "INF6120",
-    "INF6150",
-    "INF5130",
-    "MAT4681",
-    "ECO1081",
+    "INF1070", "INF1120", "INF2050", "INF2120", "INF2171",
+    "INF3080", "INF3105", "INF3135", "INF3173", "INF3191",
+    "INF3271", "INF5151", "INF5153", "INF5171", "INF6120", "INF6150",
+    "INF1132", "INF5130", "MAT4681",
+    "ECO1081", "AOT1110",
     "INM6000",
     "INM5151",
-    "INF4150",
-    "INF4230",
-    "INF4471",
-    "INF4500",
-    "INF5071",
-    "INF5171",
-    "MET4902",
-    "TEL4165"
+    "INF4150", "INF4170", "INF4230", "INF4471", "INF4500",
+    "INF5001", "INF5071", "INF5082", "INF5190", "INF6200",
+    "AOT3221", "AOT5332", "AOT5334", "AOT5341", "TEL4165"
   ]
 }
