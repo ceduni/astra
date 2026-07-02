@@ -4,40 +4,65 @@
   "version": "v1",
   "credits_total": 120,
   "segments": {
-    "obligatoire": {
-      "label": "Cours obligatoires",
+    "tronc_commun": {
+      "label": "Tronc commun",
       "type": "obligatoire",
-      "credits_min": 69,
-      "credits_max": 69,
+      "credits_min": 87,
+      "credits_max": 87,
       "cours": [
-        "INF1007",
-        "INF1040",
-        "SSH3201",
-        "INF2610",
-        "LOG2810",
-        "LOG3000",
-        "LOG3210",
-        "LOG3430",
-        "PHS1101"
+        "INF1007", "INF1040", "INF1500", "MTH1008", "INF1205",
+        "INF1600", "INF1015", "LOG1810",
+        "INF2010", "LOG2420", "LOG2440", "GCH2730", "LOG2400", "INF1900",
+        "INF3405", "MTH2304", "INF2610", "SSH3201",
+        "LOG3430", "SSH3101", "INF3710", "LOG3420",
+        "LOG3000", "LOG3005", "LOG3210", "SSH3501",
+        "INF8480",
+        "LOG2995", "LOG3900"
       ]
+    },
+    "option_sciences": {
+      "label": "Sciences appliquées (au choix)",
+      "type": "option",
+      "credits_min": 3,
+      "credits_max": 3,
+      "note": "3 crédits au choix parmi les cours de sciences",
+      "cours": ["GBM1610", "PHS1101", "PHS4700", "MEC1210"]
+    },
+    "option_avancee": {
+      "label": "Cours avancés à option (8e série)",
+      "type": "option",
+      "credits_min": 9,
+      "credits_max": 9,
+      "note": "9 crédits au choix parmi les cours avancés INF8xxx et LOG8xxx",
+      "cours": ["INF8775", "INF8085", "LOG8430", "LOG8371", "INF8175"]
+    },
+    "projet_fin_etudes": {
+      "label": "Projet de fin d'études",
+      "type": "option",
+      "credits_min": 6,
+      "credits_max": 6,
+      "note": "6 crédits au choix : projet final en génie logiciel ou projet intégrateur en développement durable",
+      "cours": ["LOG8970", "ING8971"]
     },
     "concentrations_orientations": {
       "label": "Concentrations et orientations",
       "type": "libre",
       "credits_min": 12,
       "credits_max": 27,
-      "note": "Concentration (27 cr.) ou orientation (12 cr.) au choix — cours définis par le département"
+      "note": "Concentration (27 cr.) ou orientation personnalisée/thématique (12 cr.) au choix de l'étudiant en dernière année"
     }
   },
   "tous_les_cours": [
-    "INF1007",
-    "INF1040",
-    "SSH3201",
-    "INF2610",
-    "LOG2810",
-    "LOG3000",
-    "LOG3210",
-    "LOG3430",
-    "PHS1101"
+    "INF1007", "INF1040", "INF1500", "MTH1008", "INF1205",
+    "INF1600", "INF1015", "LOG1810",
+    "INF2010", "LOG2420", "LOG2440", "GCH2730", "LOG2400", "INF1900",
+    "INF3405", "MTH2304", "INF2610", "SSH3201",
+    "LOG3430", "SSH3101", "INF3710", "LOG3420",
+    "LOG3000", "LOG3005", "LOG3210", "SSH3501",
+    "INF8480",
+    "LOG2995", "LOG3900",
+    "GBM1610", "PHS1101", "PHS4700", "MEC1210",
+    "INF8775", "INF8085", "LOG8430", "LOG8371", "INF8175",
+    "LOG8970", "ING8971"
   ]
 }
