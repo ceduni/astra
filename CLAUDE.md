@@ -57,7 +57,7 @@ etl/                      Python scripts — fetch, transform, load to Neo4j
   udem/
     fetch_courses.py      Fetch IFT + MAT courses from Planifium API
     tag_courses.py        Tag courses with topic labels (against Aura)
-  embed_equivalences.py   TF-IDF similarity → inferred equivalences (→ Aura)
+  embed_equivalences.py   Multilingual sentence embeddings (paraphrase-multilingual-MiniLM-L12-v2) → inferred equivalences (→ Aura)
   load_official_equivs.py Official equivalence table → Aura
 
 api/                      FastAPI backend
@@ -65,17 +65,20 @@ api/                      FastAPI backend
   database.py             Neo4j driver (singleton, reads NEO4J_URI env var)
   routes/
     courses.py            All course/program/equivalence endpoints
+    admin.py              Admin auth, equivalence lifecycle, change-detection flagging
 
 web/                      React 19 + Vite frontend
   src/
-    App.jsx               Tab routing (Visualiseur / Exploration)
+    App.jsx               Single-page shell — ExplorationPage by default, AdminPanel toggled via topbar button
     shared.jsx            Shared components: SearchSection, CompletedSection, useUniversities
     graphShared.jsx       Shared graph primitives: CourseNode, GroupNode, applyLayout, NODE_TYPES
-    GraphCanvas.jsx       Prerequisite chain visualizer (Visualiseur tab)
     ExplorationPage.jsx   Roadmap page shell + sidebar + detail panel
-    RoadmapView.jsx       V1 roadmap renderer (replaces ExplorationGraph.jsx)
-    ExplorationGraph.jsx  DEPRECATED — replaced by RoadmapView, kept as dead code
-  vercel.json             SPA routing + API proxy rewrites (see Deployment)
+    RoadmapView.jsx       V1 roadmap renderer
+    AdminPanel.jsx        Admin login, pending queue, equivalence table, notification bell
+    ExplorationGraph.jsx  DEPRECATED — dead code, can be deleted
+
+vercel.json               ROOT-level — SPA routing + API proxy rewrites (see Deployment)
+                          Do NOT confuse with web/vercel.json which no longer holds rewrites
 
 programs/                 Program JSON files — one per university × program
   udem_informatique.json
@@ -96,7 +99,7 @@ programs/                 Program JSON files — one per university × program
 | Backend | Railway | `https://astra-beta-production.up.railway.app` |
 | Database | Neo4j Aura | `neo4j+s://7707976b.databases.neo4j.io` |
 
-`web/vercel.json` rewrites `/api/*` → Railway so Vite's dev proxy and production both work without changing API call URLs.
+The root `vercel.json` sets `installCommand`, `buildCommand`, `outputDirectory` to scope Vercel to the `web/` subdirectory (prevents Python build detection), and rewrites `/api/*` → Railway for production. Vite's dev proxy (`vite.config.js`) handles the same rewrite locally.
 
 ## Local development
 
@@ -158,7 +161,7 @@ This is backward-compatible with the original single-admin setup. Remove these o
 ### What university scoping controls
 
 - `GET /admin/equivalences` — automatically filters to equivalences where either endpoint course belongs to the admin's university
-- `GET /admin/equivalences/pending` — same filter for the review queue
+- `GET /admin/equivalences/pending` — inferred pending items + any `needs_review` item (any source) for the admin's university. Filter: `(source='inferred' AND status='pending') OR status='needs_review'`
 - `POST /admin/equivalences` — `created_by` is stamped from the authenticated username
 - All other endpoints (approve, revoke, skip, restore) are not university-gated at the query level — an admin can technically act on any equivalence ID they know. This is acceptable for the prototype.
 
@@ -255,7 +258,9 @@ Each `programs/*.json` file follows this enriched schema (updated in this sessio
 
 ## Availability computation
 
-Availability is computed **client-side** in `RoadmapView.jsx` from the graph data returned by `POST /courses/program-graph`. The logic mirrors the backend `/eligible` query but without equivalence expansion (V2 improvement — see Known Issues).
+Availability is computed **client-side** in `RoadmapView.jsx` from the graph data returned by `POST /courses/program-graph`.
+
+`program-graph` now returns `expanded_completed` — the student's completed sigles plus any courses that are active/needs_review equivalents of completed courses (1-hop expansion via Neo4j). `RoadmapView` uses `expanded_completed` (not raw `completedSigles`) when calling `computeAvailability`, so equivalence-aware availability works without a second API call.
 
 A course is available if all entries in `outgoing[sigle]` are satisfied:
 - For a `course` node: `completedSet.has(nodeId)`
@@ -297,7 +302,9 @@ Base path in frontend: `/api` (proxied to Railway in production via `vercel.json
 }
 ```
 
-**Response:** `{ nodes, edges, program_sigles, segments }`
+**Response:** `{ nodes, edges, program_sigles, segments, expanded_completed }`
+
+`expanded_completed` — the student's completed sigles unioned with their active/needs_review equivalents (1-hop). Used by `RoadmapView` for equivalence-aware availability computation client-side.
 
 `segments` is a flat list of enriched segment objects:
 ```json
@@ -321,12 +328,11 @@ Must be URL-encoded in paths: `COMP%20251`, `MATH%20203`.
 
 # V1 Scope — What's Been Built
 
-## Visualiseur tab (GraphCanvas)
-- Search any course and add its prerequisite chain to the graph
-- ReactFlow + dagre layout, LR direction
-- Completed courses highlighted green
-- Equivalence edges shown as dashed purple
-- Fullscreen mode
+## App shell (App.jsx)
+- Single page — no tabs. Visualiseur, Cours accessibles, and Équivalences tabs were removed.
+- Default view: `ExplorationPage`
+- "Admin" button in topbar toggles `AdminPanel` (replaces the main view while open)
+- Completed courses and homeUniversite persisted in localStorage
 
 ## Exploration tab (RoadmapView — V1)
 - University + program selector in sidebar
@@ -341,6 +347,22 @@ Must be URL-encoded in paths: `COMP%20251`, `MATH%20203`.
 - Detail panel shows equivalences with OFFICIELLE/SIMILAIRE badges and confidence bars
 - Substitution mechanic in detail panel (wired but not V1 roadmap feature)
 
+## Admin panel (AdminPanel.jsx)
+- Login screen with university-scoped Basic Auth
+- **Notification bell** in topbar: shows count of `needs_review` equivalences with `flag_reason`. Clicking opens an Instagram-style dropdown listing each alert with the course, university, parsed change reason (e.g. "Les crédits sont passés de 3 à 4"), and date.
+- Pending queue: shows inferred `pending` items + `needs_review` alerts from any source. Alert rows have "Confirmer valide" button instead of "Approuver".
+- Full equivalence table with filters (source, status, sigle)
+- Create equivalence form
+- Revoke / restore actions
+
+## Student-facing equivalence visibility rule
+- `active` → visible to students
+- `needs_review` → **visible to students** (`needs_review` is internal admin quality-control state, not a visibility blocker)
+- `pending` → hidden from students
+- `revoked` → hidden from students
+
+All student-facing Cypher queries filter `r.status IN ['active', 'needs_review']`. This applies to: program-graph equiv nodes, prereq-chain equiv nodes, expanded_completed computation, eligible/eligible-graph Phase 1a expansion, and the `/equivalences` search endpoint.
+
 ---
 
 # Decisions Made — Do Not Revisit
@@ -353,7 +375,7 @@ Must be URL-encoded in paths: `COMP%20251`, `MATH%20203`.
 
 4. **UdeM requires an orientation selector.** The JSON has `orientation_commune` + `orientations[]`. The UI gates "Visualiser" until orientation is picked. The `_flatten_segments()` function handles the two-level hierarchy.
 
-5. **Client-side availability computation.** `computeAvailability()` in `RoadmapView.jsx` uses the graph edges returned by `program-graph`. It does NOT call the `/eligible` endpoint — that would add a second API call and require sending completed_sigles separately. The downside (no equivalence expansion) is a known V2 item.
+5. **Client-side availability computation with server-side equivalence expansion.** `computeAvailability()` in `RoadmapView.jsx` uses the graph edges returned by `program-graph`. It does NOT call the `/eligible` endpoint. Equivalence expansion is handled server-side: `program-graph` returns `expanded_completed` (completed sigles + 1-hop active/needs_review equivalents), and the client passes this to `computeAvailability` instead of the raw completed list.
 
 6. **`ExplorationGraph.jsx` is dead code.** It was replaced by `RoadmapView.jsx`. Do not restore it. It can be deleted in a cleanup pass.
 
@@ -387,11 +409,9 @@ Effect: `computeAvailability` sees MAT1720 as a required target. MAT1720 is `hor
 
 **Scope:** ETL-level. Does not require roadmap or API changes.
 
-## Bug 2 — Client-side availability ignores equivalences (V2)
+## Bug 2 — FIXED
 
-`computeAvailability` in `RoadmapView.jsx` does not expand equivalences. The backend `/eligible` query does (Phase 1a/1b: completing IFT3335 also credits COMP 472 and its prerequisites). For a student using only their home university's courses, this doesn't matter. For cross-university students it may produce false negatives — courses that should be available aren't shown.
-
-**Fix:** In V2, either call `/eligible` instead of computing client-side, or replicate the equivalence expansion in JS.
+`program-graph` now returns `expanded_completed` and `RoadmapView` uses it for availability computation. Cross-university equivalences are properly accounted for.
 
 ## Bug 3 — Credits default to 3 for null values (minor display)
 
@@ -482,11 +502,11 @@ See `etl/load_official_equivs.py` and `etl/embed_equivalences.py`. Equivalences 
 
 In priority order:
 
-1. **Complete V1 manual test** — use the checklist below. Report which items pass/fail.
-2. **Fix the IFT2125-class ETL bug** — rewrite concomitant OR group handling so the OR semantics are preserved as `REQUIERT_CONCOMITANT` edges pointing to a group node (same pattern as REQUIERT uses PrerequisiteGroup)
-3. **Verify credit values** — check `credits` in Neo4j for all courses in UdeM informatique program, update `credits_max` in segment JSON if needed (especially MAT1978 = 4cr, MAT1400 = 4cr, MAT1600 = 3cr → math bloc is 11cr not 12cr)
-4. **Delete `ExplorationGraph.jsx`** — it's dead code, replaced by `RoadmapView.jsx`
-5. **V2 substitution UI in roadmap** — wire the existing substitution mechanic into course cards in `RoadmapView.jsx`
+1. **Fix the IFT2125-class ETL bug** — rewrite concomitant OR group handling so OR semantics are preserved as `REQUIERT_CONCOMITANT` edges pointing to a group node (same pattern as REQUIERT uses PrerequisiteGroup)
+2. **Verify credit values** — check `credits` in Neo4j for UdeM informatique courses; update `credits_max` in segment JSON where needed (MAT1978=4cr, MAT1400=4cr, MAT1600=3cr → math bloc likely 11cr not 12cr)
+3. **Delete `ExplorationGraph.jsx`** — dead code
+4. **Admin equivalence review** — 329 pending inferred equivalences need human review by university staff. More approvals = better student experience.
+5. **V2 substitution UI in roadmap** — wire existing substitution mechanic into course cards in `RoadmapView.jsx`
 
 ## Manual test scenario
 
@@ -519,13 +539,16 @@ When starting a new Claude Code session:
 
 1. Read this file first — it captures all major decisions and their rationale
 2. Read `web/src/RoadmapView.jsx` for the current roadmap rendering logic
-3. Read `api/routes/courses.py` starting at `_load_programs()` and `get_program_graph()` for the data pipeline
-4. Read `programs/udem_informatique.json` as the canonical example of the enriched program JSON schema
+3. Read `web/src/AdminPanel.jsx` for the admin UI including notification bell and pending queue
+4. Read `api/routes/courses.py` starting at `_load_programs()` and `get_program_graph()` for the data pipeline
 5. Read `api/routes/admin.py` for the full admin API including auth, equivalence lifecycle, and change-detection flagging
-6. Read `etl/prereq_parser.py` — `merge_cours()` now includes content-hash change detection and equivalence flagging
+6. Read `programs/udem_informatique.json` as the canonical example of the enriched program JSON schema
+7. Read `etl/prereq_parser.py` — `merge_cours()` includes content-hash change detection and equivalence flagging
 
 **Do not** re-read `web/src/ExplorationGraph.jsx` — it's dead code.
 
 **Do not** suggest going back to a graph-based view for the Exploration tab — the roadmap approach is decided.
 
 **Do not** propose deriving segment labels from JSON key names — labels were manually authored.
+
+**Do not** add a Visualiseur tab back — it was intentionally removed. The Exploration roadmap is the sole student-facing view.
