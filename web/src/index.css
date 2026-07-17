@@ -783,6 +783,129 @@ body {
 .equiv-course-cell { min-width: 200px; }
 
 /* ═══════════════════════════════════════════════════════════════════════
+   EXPLORATION — full-width visualization, compact top toolbar
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.explore-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.explore-topbar {
+  flex-shrink: 0;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.explore-topbar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.explore-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.explore-filter-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+.uni-selector-inline {
+  display: flex;
+  flex-direction: row;
+  gap: 0.35rem;
+  overflow-x: auto;
+  max-width: 100%;
+  scrollbar-width: thin;
+}
+.uni-selector-inline .uni-pill { flex-shrink: 0; white-space: nowrap; }
+
+.explore-calculer {
+  width: auto;
+  padding: 0.5rem 1rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* Compact search (top bar) */
+
+.compact-search {
+  position: relative;
+  width: 280px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.compact-search .search-input { margin-bottom: 0; }
+
+.compact-search-results {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Completed toggle (top bar) */
+
+.completed-toggle-wrap {
+  position: relative;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.completed-toggle-btn {
+  padding: 0.45rem 0.8rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fafafa;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.completed-toggle-btn:hover { border-color: #aaa; color: #333; }
+
+.completed-popover {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  width: 280px;
+  max-width: calc(100vw - 2rem);
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  padding: 0.75rem;
+  z-index: 20;
+}
+
+@media (max-width: 760px) {
+  .explore-calculer { margin-left: 0; width: 100%; order: 10; }
+  .compact-search { width: 100%; }
+  .completed-toggle-wrap { margin-left: 0; }
+  .explore-topbar-row:last-child { justify-content: space-between; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
    TAB 3 — Visualiseur
    ═══════════════════════════════════════════════════════════════════════ */
 
