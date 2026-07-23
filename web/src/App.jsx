@@ -2,18 +2,33 @@ import { useEffect, useState } from 'react'
 import ExplorationPage from './ExplorationPage'
 import AdminPanel from './AdminPanel'
 
+const DEMO_COMPLETED = [
+  'IFT1005',
+  'IFT1015',
+  'IFT1025',
+  'IFT1065',
+  'IFT1575',
+  'IFT1215',
+  'IFT1227',
+  'MAT1400',
+  'MAT1600',
+  'MAT1978',
+].map(sigle => ({ sigle, universite: 'UdeM' }))
+
 export default function App() {
   const [showAdmin, setShowAdmin] = useState(false)
 
   const [completed, setCompleted] = useState(() => {
-    try { return JSON.parse(localStorage.getItem('completed') || '[]') } catch { return [] }
+    const raw = localStorage.getItem('completed')
+    if (raw == null) return DEMO_COMPLETED
+    try { return JSON.parse(raw) } catch { return [] }
   })
   useEffect(() => {
     localStorage.setItem('completed', JSON.stringify(completed))
   }, [completed])
 
   const [homeUniversite, setHomeUniversite] = useState(() =>
-    localStorage.getItem('homeUniversite') || null
+    localStorage.getItem('homeUniversite') || 'UdeM'
   )
   useEffect(() => {
     homeUniversite

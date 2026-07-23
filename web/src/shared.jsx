@@ -123,7 +123,7 @@ export function CompletedSection({ completed, onRemove, onSelect }) {
               <span className="uni-dot" data-uni={course.universite} />
               <div className="result-info">
                 <span className="sigle">{course.sigle}</span>
-                <span className="compact-titre">{course.titre}</span>
+                <span className="compact-titre">{course.titre || course.sigle}</span>
               </div>
               <button
                 className="btn-remove"
