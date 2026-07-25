@@ -151,7 +151,7 @@
         "label": "Génie logiciel",
         "type": "option",
         "credits_min": 3,
-        "credits_max": 9,
+        "credits_max": 6,
         "cours": [
           "IFT3911",
           "IFT3913"
@@ -230,7 +230,7 @@
         "label": "Génie logiciel",
         "type": "option",
         "credits_min": 3,
-        "credits_max": 9,
+        "credits_max": 6,
         "cours": [
           "IFT3911",
           "IFT3913"
