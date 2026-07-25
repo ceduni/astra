@@ -10,7 +10,7 @@ export function buildOutgoing(edges) {
 
 export function isSatisfied(nodeId, nodeById, outgoing, completedSet) {
   const node = nodeById[nodeId]
-  if (!node) return true
+  if (!node) return false
   if (node.node_type === 'course') return completedSet.has(nodeId)
   if (node.node_type === 'group') {
     const children = outgoing[nodeId] || []

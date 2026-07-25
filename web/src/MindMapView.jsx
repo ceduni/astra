@@ -374,7 +374,7 @@ function buildGraph(rawData, expandedSegment, completedSigles, substitutions, pr
   segments.forEach(seg => {
     const credCompleted = (seg.cours || []).reduce((sum, s) => {
       if (!completedSet.has(s)) return sum
-      return sum + (nodeById[s]?.data?.credits ?? 3)
+      return sum + (nodeById[s]?.data?.credits ?? 0)
     }, 0)
     const isExpanded = expandedSegment === seg.id
 
