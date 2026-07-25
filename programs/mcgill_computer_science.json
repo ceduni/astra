@@ -98,11 +98,24 @@
       "credits_max": 21,
       "note": "Au moins 6 crédits au niveau 400+, reste au niveau 300+",
       "cours": [
+        "COMP 307",
+        "COMP 308",
+        "COMP 321",
         "COMP 322",
+        "COMP 345",
+        "COMP 361D1",
+        "COMP 361D2",
+        "COMP 362",
+        "COMP 370",
+        "COMP 400",
         "COMP 409",
+        "COMP 417",
         "COMP 421",
         "COMP 424",
-        "COMP 462"
+        "COMP 445",
+        "COMP 451",
+        "COMP 462",
+        "COMP 480"
       ],
       "category": [
         "programming",
@@ -133,10 +146,23 @@
     "MATH 323",
     "MATH 324",
     "MATH 340",
+    "COMP 307",
+    "COMP 308",
+    "COMP 321",
     "COMP 322",
+    "COMP 345",
+    "COMP 361D1",
+    "COMP 361D2",
+    "COMP 362",
+    "COMP 370",
+    "COMP 400",
     "COMP 409",
+    "COMP 417",
     "COMP 421",
     "COMP 424",
-    "COMP 462"
+    "COMP 445",
+    "COMP 451",
+    "COMP 462",
+    "COMP 480"
   ]
 }
