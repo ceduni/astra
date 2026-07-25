@@ -1,6 +1,7 @@
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from .database import check_connection, close_driver
 from .routes.courses import router as courses_router
@@ -15,6 +16,14 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="Cours Interuniversitaire API", lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://astra-beta-chi.vercel.app", "http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(courses_router)
 app.include_router(universities_router)

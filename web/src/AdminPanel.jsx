@@ -3,10 +3,6 @@ import { useEffect, useState, useCallback } from 'react'
 const API = '/api/admin/equivalences'
 const API_META = '/api/admin'
 
-function authHeader(token) {
-  return { Authorization: `Basic ${token}` }
-}
-
 function parseChange(flagReason) {
   if (!flagReason) return null
   const m = flagReason.match(/^(\w+):\s*(.+?)\s*→\s*(.+)$/)
@@ -23,7 +19,7 @@ function parseChange(flagReason) {
 
 // ── Pending queue ──────────────────────────────────────────────────────────────
 
-function PendingQueue({ token, university, onChanged, onAlerts }) {
+function PendingQueue({ university, onChanged, onAlerts }) {
   const [rows, setRows] = useState([])
   const [loading, setLoading] = useState(true)
   const [acting, setActing] = useState(null)
@@ -31,12 +27,12 @@ function PendingQueue({ token, university, onChanged, onAlerts }) {
   const fetchPending = useCallback(async () => {
     setLoading(true)
     try {
-      const resp = await fetch(`${API}/pending`, { headers: authHeader(token) })
+      const resp = await fetch(`${API}/pending`, { credentials: 'include' })
       if (resp.ok) setRows(await resp.json())
     } finally {
       setLoading(false)
     }
-  }, [token])
+  }, [])
 
   useEffect(() => { fetchPending() }, [fetchPending])
 
@@ -49,7 +45,7 @@ function PendingQueue({ token, university, onChanged, onAlerts }) {
     try {
       await fetch(`${API}/${id}/${action}`, {
         method: 'PATCH',
-        headers: authHeader(token),
+        credentials: 'include',
       })
       await fetchPending()
       onChanged()
@@ -144,20 +140,22 @@ function LoginScreen({ onLogin }) {
     if (!user || !pass) return
     setLoading(true)
     setError(null)
-    const token = btoa(`${user}:${pass}`)
     try {
-      const resp = await fetch(`${API_META}/me`, {
-        headers: authHeader(token),
+      const resp = await fetch(`${API_META}/login`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: user, password: pass }),
       })
       if (resp.status === 401) {
         setError('Identifiants incorrects.')
+      } else if (resp.status === 429) {
+        setError('Trop de tentatives. Réessayez dans une minute.')
       } else if (!resp.ok) {
         setError(`Erreur serveur : ${resp.status}`)
       } else {
         const me = await resp.json()
-        sessionStorage.setItem('admin_token', token)
-        sessionStorage.setItem('admin_university', me.university || '')
-        onLogin(token, me.university || null)
+        onLogin(me.university || null)
       }
     } catch {
       setError('Impossible de contacter le serveur.')
@@ -199,7 +197,7 @@ function LoginScreen({ onLogin }) {
 
 // ── Create form ────────────────────────────────────────────────────────────────
 
-function CreateForm({ token, onCreated }) {
+function CreateForm({ onCreated }) {
   const [open, setOpen] = useState(false)
   const [sigleA, setSigleA] = useState('')
   const [sigleB, setSigleB] = useState('')
@@ -215,7 +213,8 @@ function CreateForm({ token, onCreated }) {
     try {
       const resp = await fetch(API, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', ...authHeader(token) },
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           sigle_a: sigleA.trim().toUpperCase(),
           sigle_b: sigleB.trim().toUpperCase(),
@@ -315,6 +314,7 @@ function FiltersBar({ filters, onChange }) {
         <option value="">Tous statuts</option>
         <option value="active">active</option>
         <option value="pending">pending</option>
+        <option value="needs_review">needs_review</option>
         <option value="revoked">revoked</option>
       </select>
       <input
@@ -350,16 +350,13 @@ function Badge({ value, colorMap }) {
 
 // ── Equivalences table ─────────────────────────────────────────────────────────
 
-function EquivTable({ rows, token, onRefresh }) {
+function EquivTable({ rows, onRefresh }) {
   const [acting, setActing] = useState(null)
 
   async function revoke(id) {
     setActing(id)
     try {
-      await fetch(`${API}/${id}`, {
-        method: 'DELETE',
-        headers: authHeader(token),
-      })
+      await fetch(`${API}/${id}`, { method: 'DELETE', credentials: 'include' })
       onRefresh()
     } finally {
       setActing(null)
@@ -369,10 +366,7 @@ function EquivTable({ rows, token, onRefresh }) {
   async function restore(id) {
     setActing(id)
     try {
-      await fetch(`${API}/${id}/restore`, {
-        method: 'PATCH',
-        headers: authHeader(token),
-      })
+      await fetch(`${API}/${id}/restore`, { method: 'PATCH', credentials: 'include' })
       onRefresh()
     } finally {
       setActing(null)
@@ -444,12 +438,9 @@ function EquivTable({ rows, token, onRefresh }) {
 // ── Admin panel root ───────────────────────────────────────────────────────────
 
 export default function AdminPanel({ onBack }) {
-  const [token, setToken] = useState(
-    () => sessionStorage.getItem('admin_token') || null
-  )
-  const [university, setUniversity] = useState(
-    () => sessionStorage.getItem('admin_university') || null
-  )
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [university, setUniversity] = useState(null)
+  const [sessionChecked, setSessionChecked] = useState(false)
   const [rows, setRows] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -457,7 +448,21 @@ export default function AdminPanel({ onBack }) {
   const [alerts, setAlerts] = useState([])
   const [showNotifs, setShowNotifs] = useState(false)
 
-  const fetchEquivs = useCallback(async (tok, f) => {
+  // Restore session on mount — cookie is sent automatically
+  useEffect(() => {
+    fetch(`${API_META}/me`, { credentials: 'include' })
+      .then(r => r.ok ? r.json() : null)
+      .then(me => {
+        if (me) {
+          setLoggedIn(true)
+          setUniversity(me.university || null)
+        }
+      })
+      .catch(() => {})
+      .finally(() => setSessionChecked(true))
+  }, [])
+
+  const fetchEquivs = useCallback(async (f) => {
     setLoading(true)
     setError(null)
     const params = new URLSearchParams({ limit: '200' })
@@ -465,10 +470,9 @@ export default function AdminPanel({ onBack }) {
     if (f.status) params.set('status', f.status)
     if (f.sigle.trim()) params.set('sigle', f.sigle.trim().toUpperCase())
     try {
-      const resp = await fetch(`${API}?${params}`, { headers: authHeader(tok) })
+      const resp = await fetch(`${API}?${params}`, { credentials: 'include' })
       if (resp.status === 401) {
-        sessionStorage.removeItem('admin_token')
-        setToken(null)
+        setLoggedIn(false)
         return
       }
       if (!resp.ok) { setError(`Erreur ${resp.status}`); return }
@@ -481,22 +485,24 @@ export default function AdminPanel({ onBack }) {
   }, [])
 
   useEffect(() => {
-    if (token) fetchEquivs(token, filters)
-  }, [token, filters, fetchEquivs])
+    if (loggedIn) fetchEquivs(filters)
+  }, [loggedIn, filters, fetchEquivs])
 
-  function handleLogin(tok, uni) {
-    setToken(tok)
+  function handleLogin(uni) {
+    setLoggedIn(true)
     setUniversity(uni || null)
   }
 
-  function handleLogout() {
-    sessionStorage.removeItem('admin_token')
-    sessionStorage.removeItem('admin_university')
-    setToken(null)
+  async function handleLogout() {
+    await fetch(`${API_META}/logout`, { method: 'POST', credentials: 'include' })
+    setLoggedIn(false)
     setUniversity(null)
+    setRows([])
   }
 
-  if (!token) {
+  if (!sessionChecked) return null
+
+  if (!loggedIn) {
     return <LoginScreen onLogin={handleLogin} />
   }
 
@@ -603,15 +609,13 @@ export default function AdminPanel({ onBack }) {
 
       <div className="admin-body">
         <PendingQueue
-          token={token}
           university={university}
-          onChanged={() => fetchEquivs(token, filters)}
+          onChanged={() => fetchEquivs(filters)}
           onAlerts={setAlerts}
         />
 
         <CreateForm
-          token={token}
-          onCreated={() => fetchEquivs(token, filters)}
+          onCreated={() => fetchEquivs(filters)}
         />
 
         <FiltersBar filters={filters} onChange={setFilters} />
@@ -621,8 +625,7 @@ export default function AdminPanel({ onBack }) {
         {!loading && !error && (
           <EquivTable
             rows={rows}
-            token={token}
-            onRefresh={() => fetchEquivs(token, filters)}
+            onRefresh={() => fetchEquivs(filters)}
           />
         )}
       </div>

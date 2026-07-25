@@ -28,21 +28,78 @@ DELETE /admin/equivalences/{id}         soft-delete (status -> 'revoked')
 
 from __future__ import annotations
 
+import hashlib
+import hmac
 import json
 import os
 import secrets
+from collections import defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import List, Literal, Optional
 from uuid import uuid4
 
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Cookie, Depends, HTTPException, Query, Request, Response, status
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from pydantic import BaseModel, Field, model_validator
 
 from ..database import get_driver
 
-_http_basic = HTTPBasic()
+_http_basic = HTTPBasic(auto_error=False)
+
+# In-memory rate limiter: IP → list of failure timestamps (UTC epoch seconds)
+_failed_attempts: dict[str, list[float]] = defaultdict(list)
+_RATE_WINDOW = 60      # seconds
+_RATE_LIMIT   = 10     # max failures per window
+
+
+def _check_rate_limit(ip: str) -> None:
+    now = datetime.now(timezone.utc).timestamp()
+    window_start = now - _RATE_WINDOW
+    attempts = _failed_attempts[ip]
+    # Drop timestamps outside the window
+    _failed_attempts[ip] = [t for t in attempts if t > window_start]
+    if len(_failed_attempts[ip]) >= _RATE_LIMIT:
+        raise HTTPException(
+            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+            detail="Too many failed login attempts. Try again later.",
+        )
+
+
+def _record_failure(ip: str) -> None:
+    _failed_attempts[ip].append(datetime.now(timezone.utc).timestamp())
+
+
+# ── Cookie session store ───────────────────────────────────────────────────────
+
+# Maps session token → AdminContext. In-memory; resets on server restart.
+_sessions: dict[str, AdminContext] = {}
+
+_COOKIE_NAME = "admin_session"
+_SESSION_SECRET = os.environ.get("SESSION_SECRET") or secrets.token_hex(32)
+
+
+def _sign_token(token: str) -> str:
+    """Return HMAC-SHA256 signature of token."""
+    return hmac.new(_SESSION_SECRET.encode(), token.encode(), hashlib.sha256).hexdigest()
+
+
+def _make_session(ctx: AdminContext) -> str:
+    token = secrets.token_urlsafe(32)
+    sig = _sign_token(token)
+    signed = f"{token}.{sig}"
+    _sessions[signed] = ctx
+    return signed
+
+
+def _verify_session(signed: str) -> AdminContext | None:
+    if not signed or "." not in signed:
+        return None
+    token, _, sig = signed.partition(".")
+    expected = _sign_token(token)
+    if not secrets.compare_digest(sig, expected):
+        return None
+    return _sessions.get(signed)
 
 
 @dataclass
@@ -64,8 +121,29 @@ def _parse_accounts() -> list[dict] | None:
     return None
 
 
-def require_admin(credentials: HTTPBasicCredentials = Depends(_http_basic)) -> AdminContext:
+def require_admin(
+    request: Request,
+    credentials: HTTPBasicCredentials | None = Depends(_http_basic),
+    admin_session: str | None = Cookie(default=None),
+) -> AdminContext:
+    # Cookie-first: if a valid signed session exists, skip Basic Auth entirely
+    if admin_session:
+        ctx = _verify_session(admin_session)
+        if ctx:
+            return ctx
+
+    # Fall back to Basic Auth (used by curl / API clients without the cookie)
+    if credentials is None:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Not authenticated",
+            headers={"WWW-Authenticate": "Basic"},
+        )
+
     # TODO: replace plaintext password comparison with bcrypt hashing before production
+    ip = request.client.host if request.client else "unknown"
+    _check_rate_limit(ip)
+
     given_user = credentials.username.encode()
     given_pass = credentials.password.encode()
 
@@ -80,6 +158,7 @@ def require_admin(credentials: HTTPBasicCredentials = Depends(_http_basic)) -> A
             if user_ok and pass_ok:
                 matched = account
         if matched is None:
+            _record_failure(ip)
             raise HTTPException(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 detail="Invalid credentials",
@@ -98,6 +177,7 @@ def require_admin(credentials: HTTPBasicCredentials = Depends(_http_basic)) -> A
         and secrets.compare_digest(given_pass, expected_pass)
     )
     if not ok:
+        _record_failure(ip)
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid credentials",
@@ -117,6 +197,66 @@ admin_meta_router = APIRouter(prefix="/admin", tags=["admin"])
 @admin_meta_router.get("/me")
 def admin_me(ctx: AdminContext = Depends(require_admin)):
     return {"username": ctx.username, "university": ctx.university}
+
+
+class LoginBody(BaseModel):
+    username: str
+    password: str
+
+
+@admin_meta_router.post("/login")
+def admin_login(body: LoginBody, request: Request, response: Response):
+    ip = request.client.host if request.client else "unknown"
+    _check_rate_limit(ip)
+
+    given_user = body.username.encode()
+    given_pass = body.password.encode()
+
+    accounts = _parse_accounts()
+    ctx: AdminContext | None = None
+
+    if accounts is not None:
+        matched: dict | None = None
+        for account in accounts:
+            user_ok = secrets.compare_digest(given_user, account.get("username", "").encode())
+            pass_ok = secrets.compare_digest(given_pass, account.get("password", "").encode())
+            if user_ok and pass_ok:
+                matched = account
+        if matched is None:
+            _record_failure(ip)
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
+        ctx = AdminContext(username=matched["username"], university=matched.get("university") or None)
+    else:
+        expected_user = os.environ.get("ADMIN_USER", "admin").encode()
+        expected_pass = os.environ.get("ADMIN_PASSWORD", "astra-admin").encode()
+        ok = (
+            secrets.compare_digest(given_user, expected_user)
+            and secrets.compare_digest(given_pass, expected_pass)
+        )
+        if not ok:
+            _record_failure(ip)
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
+        ctx = AdminContext(username=body.username, university=os.environ.get("ADMIN_UNIVERSITY") or None)
+
+    signed = _make_session(ctx)
+    response.set_cookie(
+        key=_COOKIE_NAME,
+        value=signed,
+        httponly=True,
+        samesite="strict",
+        secure=True,
+        max_age=8 * 3600,  # 8 hours
+        path="/",
+    )
+    return {"username": ctx.username, "university": ctx.university}
+
+
+@admin_meta_router.post("/logout")
+def admin_logout(response: Response, admin_session: str | None = Cookie(default=None)):
+    if admin_session and admin_session in _sessions:
+        del _sessions[admin_session]
+    response.delete_cookie(key=_COOKIE_NAME, path="/", samesite="strict", secure=True)
+    return {"ok": True}
 
 
 # ── Equivalences router: /admin/equivalences ──────────────────────────────────
