@@ -416,6 +416,14 @@ export default function ExplorationPage({
   useEffect(() => { setOrientation(null); setSnapshot(null) }, [program])
   useEffect(() => { setSubstitutions(new Map()) }, [snapshot])
 
+  // Auto-refresh the mindmap when completed courses change while a snapshot is active.
+  useEffect(() => {
+    setSnapshot(prev => {
+      if (!prev) return prev
+      return { ...prev, completedSigles: completed.map(c => c.sigle) }
+    })
+  }, [completed])
+
   function handleCalculer() {
     if (!homeUniversite || !program) return
     setSelectedCourse(null)

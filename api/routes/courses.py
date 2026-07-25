@@ -516,88 +516,110 @@ def get_program_graph(body: ProgramGraphRequest):
     tous_les_cours = program_match["tous_les_cours"]
 
     with get_driver().session() as session:
+        # ── 1. Fetch all nodes in the transitive prerequisite subgraph ────────
+        # Single variable-length path query replaces the recursive N+1 loop.
+        node_rows = list(session.run(
+            """
+            MATCH (start:Cours)
+            WHERE start.sigle IN $sigles
+            OPTIONAL MATCH (start)-[:REQUIERT|REQUIERT_CONCOMITANT|INCLUDES*1..15]->(n)
+            WITH collect(DISTINCT start) AS starts,
+                 [x IN collect(DISTINCT n) WHERE x IS NOT NULL] AS reached
+            UNWIND starts + reached AS node
+            RETURN DISTINCT node, labels(node) AS lbls
+            """,
+            sigles=tous_les_cours,
+        ))
+
         nodes: dict = {}
+        course_sigles: list = []
+        group_ids: list = []
+        for row in node_rows:
+            node = row["node"]
+            lbls = row["lbls"]
+            if "Cours" in lbls:
+                sigle = node["sigle"]
+                nodes[sigle] = {"id": sigle, "node_type": "course", "data": dict(node)}
+                course_sigles.append(sigle)
+            elif "PrerequisiteGroup" in lbls:
+                gid = node["id"]
+                nodes[gid] = {"id": gid, "node_type": "group", "data": {"type": node["type"]}}
+                group_ids.append(gid)
+
+        # ── 2. Fetch all edges between nodes in the subgraph ──────────────────
         edges: list = []
         edge_ids: set = set()
-        visited_courses: set = set()
+        edge_rows = list(session.run(
+            """
+            MATCH (a)-[r:REQUIERT|REQUIERT_CONCOMITANT|INCLUDES]->(b)
+            WHERE (a:Cours AND a.sigle IN $course_sigles
+                   OR a:PrerequisiteGroup AND a.id IN $group_ids)
+              AND (b:Cours AND b.sigle IN $course_sigles
+                   OR b:PrerequisiteGroup AND b.id IN $group_ids)
+            RETURN DISTINCT
+                CASE WHEN a:Cours THEN a.sigle ELSE a.id END AS src,
+                type(r) AS rel_type,
+                CASE WHEN b:Cours THEN b.sigle ELSE b.id END AS tgt
+            """,
+            course_sigles=course_sigles,
+            group_ids=group_ids,
+        ))
 
-        def traverse_course(s: str):
-            if s in visited_courses:
-                return
-            visited_courses.add(s)
-            rec = session.run("MATCH (c:Cours {sigle: $s}) RETURN c", s=s).single()
-            if rec:
-                nodes[s] = {"id": s, "node_type": "course", "data": dict(rec["c"])}
-            prereq_rec = session.run(
-                "MATCH (c:Cours {sigle: $s})-[:REQUIERT]->(t) RETURN t", s=s
-            ).single()
-            if prereq_rec:
-                traverse_node(s, prereq_rec["t"], "prerequisite")
-            for coreq_rec in session.run(
-                "MATCH (c:Cours {sigle: $s})-[:REQUIERT_CONCOMITANT]->(t) RETURN t", s=s
-            ):
-                traverse_node(s, coreq_rec["t"], "corequisite")
+        for row in edge_rows:
+            src, tgt, rel = row["src"], row["tgt"], row["rel_type"]
+            relation_type = (
+                "prerequisite" if rel == "REQUIERT"
+                else "corequisite" if rel == "REQUIERT_CONCOMITANT"
+                else "includes"
+            )
+            eid = f"{src}->{tgt}:{relation_type}"
+            if eid not in edge_ids:
+                edge_ids.add(eid)
+                edges.append({"id": eid, "source": src, "target": tgt,
+                              "relation_type": relation_type})
 
-        def traverse_node(source_id: str, node, relation_type: str):
-            if "Cours" in node.labels:
-                child_sigle = node["sigle"]
-                eid = f"{source_id}->{child_sigle}:{relation_type}"
-                if eid not in edge_ids:
-                    edge_ids.add(eid)
-                    edges.append({"id": eid, "source": source_id, "target": child_sigle,
-                                  "relation_type": relation_type})
-                traverse_course(child_sigle)
-            else:
-                gid = node["id"]
-                if gid not in nodes:
-                    nodes[gid] = {"id": gid, "node_type": "group", "data": {"type": node["type"]}}
-                eid = f"{source_id}->{gid}:{relation_type}"
-                if eid not in edge_ids:
-                    edge_ids.add(eid)
-                    edges.append({"id": eid, "source": source_id, "target": gid,
-                                  "relation_type": relation_type})
-                for child_rec in session.run(
-                    "MATCH (g:PrerequisiteGroup {id: $id})-[:INCLUDES]->(child) RETURN child",
-                    id=gid,
-                ):
-                    traverse_node(gid, child_rec["child"], relation_type)
-
-        for sigle in tous_les_cours:
-            traverse_course(sigle)
-
+        # ── 3. Fetch equivalences for all courses in the subgraph ─────────────
         seen_equiv_pairs: set = set()
-        for s in list(visited_courses):
-            seen_eq_for_s: set = set()
-            for rec in session.run(
-                "MATCH (c:Cours {sigle: $s})-[r:EQUIVAUT_A]-(eq:Cours)"
-                " WHERE r.status IN ['active', 'needs_review']"
-                " RETURN eq, r.source AS source, r.confidence AS confidence"
-                " ORDER BY CASE r.source WHEN 'official' THEN 0 ELSE 1 END, r.confidence DESC",
-                s=s,
-            ):
-                eq = rec["eq"]
-                eq_sigle = eq["sigle"]
-                if eq_sigle in seen_eq_for_s:
-                    continue
-                seen_eq_for_s.add(eq_sigle)
-                pair = frozenset((s, eq_sigle))
-                if pair in seen_equiv_pairs:
-                    continue
-                seen_equiv_pairs.add(pair)
-                if eq_sigle not in nodes:
-                    data = dict(eq)
-                    data["is_equivalent"] = True
-                    data["source"] = rec["source"]
-                    data["confidence"] = rec["confidence"]
-                    nodes[eq_sigle] = {"id": eq_sigle, "node_type": "course", "data": data}
-                eid = f"{s}<->{eq_sigle}:equivalent"
-                if eid not in edge_ids:
-                    edge_ids.add(eid)
-                    edges.append({"id": eid, "source": s, "target": eq_sigle,
-                                  "relation_type": "equivalent", "label": "équivalent"})
+        seen_eq_per_course: dict = {}
+        equiv_rows = list(session.run(
+            """
+            MATCH (c:Cours)-[r:EQUIVAUT_A]-(eq:Cours)
+            WHERE c.sigle IN $course_sigles
+              AND r.status IN ['active', 'needs_review']
+            RETURN c.sigle AS s, eq,
+                   r.source AS eq_source, r.confidence AS confidence
+            ORDER BY c.sigle,
+                     CASE r.source WHEN 'official' THEN 0 ELSE 1 END,
+                     r.confidence DESC
+            """,
+            course_sigles=course_sigles,
+        ))
 
-        # Expand completed sigles via active equivalences so the client can
-        # compute equivalence-aware availability without a second round-trip.
+        for row in equiv_rows:
+            s = row["s"]
+            eq = row["eq"]
+            eq_sigle = eq["sigle"]
+            seen_eq_per_course.setdefault(s, set())
+            if eq_sigle in seen_eq_per_course[s]:
+                continue
+            seen_eq_per_course[s].add(eq_sigle)
+            pair = frozenset((s, eq_sigle))
+            if pair in seen_equiv_pairs:
+                continue
+            seen_equiv_pairs.add(pair)
+            if eq_sigle not in nodes:
+                data = dict(eq)
+                data["is_equivalent"] = True
+                data["source"] = row["eq_source"]
+                data["confidence"] = row["confidence"]
+                nodes[eq_sigle] = {"id": eq_sigle, "node_type": "course", "data": data}
+            eid = f"{s}<->{eq_sigle}:equivalent"
+            if eid not in edge_ids:
+                edge_ids.add(eid)
+                edges.append({"id": eid, "source": s, "target": eq_sigle,
+                              "relation_type": "equivalent", "label": "équivalent"})
+
+        # ── 4. Expand completed via active equivalences ───────────────────────
         expanded_completed = list(body.completed_sigles)
         if body.completed_sigles:
             eq_res = session.run(
@@ -635,103 +657,106 @@ def get_prereq_chain(sigle: str):
         if session.run("MATCH (c:Cours {sigle: $s}) RETURN c", s=sigle).single() is None:
             raise HTTPException(status_code=404, detail=f"Course '{sigle}' not found")
 
+        # ── 1. Fetch all nodes in the prereq chain ────────────────────────────
+        node_rows = list(session.run(
+            """
+            MATCH (start:Cours {sigle: $s})
+            OPTIONAL MATCH (start)-[:REQUIERT|REQUIERT_CONCOMITANT|INCLUDES*1..15]->(n)
+            WITH collect(DISTINCT start) AS starts,
+                 [x IN collect(DISTINCT n) WHERE x IS NOT NULL] AS reached
+            UNWIND starts + reached AS node
+            RETURN DISTINCT node, labels(node) AS lbls
+            """,
+            s=sigle,
+        ))
+
         nodes: dict = {}
-        edges: list = []
-        visited_courses: set = set()
-
-        def traverse_course(s: str):
-            if s in visited_courses:
-                return
-            visited_courses.add(s)
-            rec = session.run("MATCH (c:Cours {sigle: $s}) RETURN c", s=s).single()
-            if rec:
-                nodes[s] = {"id": s, "node_type": "course", "data": dict(rec["c"])}
-            prereq_rec = session.run(
-                "MATCH (c:Cours {sigle: $s})-[:REQUIERT]->(t) RETURN t", s=s
-            ).single()
-            if prereq_rec:
-                traverse_node(s, prereq_rec["t"], relation_type="prerequisite")
-
-            coreq_recs = session.run(
-                "MATCH (c:Cours {sigle: $s})-[:REQUIERT_CONCOMITANT]->(t) RETURN t", s=s
-            )
-            for coreq_rec in coreq_recs:
-                traverse_node(s, coreq_rec["t"], relation_type="corequisite")
-
-        def traverse_node(source_id: str, node, relation_type: str):
-            if "Cours" in node.labels:
-                child_sigle = node["sigle"]
-                edges.append({
-                    "id": f"{source_id}->{child_sigle}:{relation_type}",
-                    "source": source_id,
-                    "target": child_sigle,
-                    "relation_type": relation_type,
-                })
-                traverse_course(child_sigle)
-            else:
+        course_sigles: list = []
+        group_ids: list = []
+        for row in node_rows:
+            node = row["node"]
+            lbls = row["lbls"]
+            if "Cours" in lbls:
+                sig = node["sigle"]
+                nodes[sig] = {"id": sig, "node_type": "course", "data": dict(node)}
+                course_sigles.append(sig)
+            elif "PrerequisiteGroup" in lbls:
                 gid = node["id"]
-                if gid not in nodes:
-                    nodes[gid] = {"id": gid, "node_type": "group", "data": {"type": node["type"]}}
-                edges.append({
-                    "id": f"{source_id}->{gid}:{relation_type}",
-                    "source": source_id,
-                    "target": gid,
-                    "relation_type": relation_type,
-                })
-                children = list(session.run(
-                    "MATCH (g:PrerequisiteGroup {id: $id})-[:INCLUDES]->(child) RETURN child",
-                    id=gid,
-                ))
-                for child_rec in children:
-                    traverse_node(gid, child_rec["child"], relation_type)
+                nodes[gid] = {"id": gid, "node_type": "group", "data": {"type": node["type"]}}
+                group_ids.append(gid)
 
-        traverse_course(sigle)
+        # ── 2. Fetch all edges between nodes in the chain ─────────────────────
+        edges: list = []
+        edge_ids: set = set()
+        edge_rows = list(session.run(
+            """
+            MATCH (a)-[r:REQUIERT|REQUIERT_CONCOMITANT|INCLUDES]->(b)
+            WHERE (a:Cours AND a.sigle IN $course_sigles
+                   OR a:PrerequisiteGroup AND a.id IN $group_ids)
+              AND (b:Cours AND b.sigle IN $course_sigles
+                   OR b:PrerequisiteGroup AND b.id IN $group_ids)
+            RETURN DISTINCT
+                CASE WHEN a:Cours THEN a.sigle ELSE a.id END AS src,
+                type(r) AS rel_type,
+                CASE WHEN b:Cours THEN b.sigle ELSE b.id END AS tgt
+            """,
+            course_sigles=course_sigles,
+            group_ids=group_ids,
+        ))
 
-        # ── Equivalent courses (siblings, not traversed further) ────────────
-        # For every course already in the chain, attach its active EQUIVAUT_A
-        # neighbors so a student can see that a partner-university course
-        # they completed already satisfies this node. These are leaves: we
-        # don't walk their own prerequisites, just show the link.
-        seen_equiv_pairs: set = set()
-        for s in list(visited_courses):
-            # Ordered so that, if a pair somehow has more than one active
-            # edge (e.g. official + inferred both present), the official /
-            # highest-confidence one wins rather than whichever row Neo4j
-            # returns first.
-            equiv_recs = session.run(
-                "MATCH (c:Cours {sigle: $s})-[r:EQUIVAUT_A]-(eq:Cours)"
-                " WHERE r.status IN ['active', 'needs_review']"
-                " RETURN eq, r.source AS source, r.confidence AS confidence"
-                " ORDER BY CASE r.source WHEN 'official' THEN 0 ELSE 1 END, r.confidence DESC",
-                s=s,
+        for row in edge_rows:
+            src, tgt, rel = row["src"], row["tgt"], row["rel_type"]
+            relation_type = (
+                "prerequisite" if rel == "REQUIERT"
+                else "corequisite" if rel == "REQUIERT_CONCOMITANT"
+                else "includes"
             )
-            seen_eq_for_s: set = set()
-            for rec in equiv_recs:
-                eq = rec["eq"]
-                eq_sigle = eq["sigle"]
-                if eq_sigle in seen_eq_for_s:
-                    continue
-                seen_eq_for_s.add(eq_sigle)
+            eid = f"{src}->{tgt}:{relation_type}"
+            if eid not in edge_ids:
+                edge_ids.add(eid)
+                edges.append({"id": eid, "source": src, "target": tgt,
+                              "relation_type": relation_type})
 
-                pair = frozenset((s, eq_sigle))
-                if pair in seen_equiv_pairs:
-                    continue
-                seen_equiv_pairs.add(pair)
+        # ── 3. Fetch equivalences for all courses in the chain ────────────────
+        seen_equiv_pairs: set = set()
+        seen_eq_per_course: dict = {}
+        equiv_rows = list(session.run(
+            """
+            MATCH (c:Cours)-[r:EQUIVAUT_A]-(eq:Cours)
+            WHERE c.sigle IN $course_sigles
+              AND r.status IN ['active', 'needs_review']
+            RETURN c.sigle AS s, eq,
+                   r.source AS eq_source, r.confidence AS confidence
+            ORDER BY c.sigle,
+                     CASE r.source WHEN 'official' THEN 0 ELSE 1 END,
+                     r.confidence DESC
+            """,
+            course_sigles=course_sigles,
+        ))
 
-                if eq_sigle not in nodes:
-                    data = dict(eq)
-                    data["is_equivalent"] = True
-                    data["source"] = rec["source"]
-                    data["confidence"] = rec["confidence"]
-                    nodes[eq_sigle] = {"id": eq_sigle, "node_type": "course", "data": data}
-
-                edges.append({
-                    "id": f"{s}<->{eq_sigle}:equivalent",
-                    "source": s,
-                    "target": eq_sigle,
-                    "relation_type": "equivalent",
-                    "label": "équivalent",
-                })
+        for row in equiv_rows:
+            s = row["s"]
+            eq = row["eq"]
+            eq_sigle = eq["sigle"]
+            seen_eq_per_course.setdefault(s, set())
+            if eq_sigle in seen_eq_per_course[s]:
+                continue
+            seen_eq_per_course[s].add(eq_sigle)
+            pair = frozenset((s, eq_sigle))
+            if pair in seen_equiv_pairs:
+                continue
+            seen_equiv_pairs.add(pair)
+            if eq_sigle not in nodes:
+                data = dict(eq)
+                data["is_equivalent"] = True
+                data["source"] = row["eq_source"]
+                data["confidence"] = row["confidence"]
+                nodes[eq_sigle] = {"id": eq_sigle, "node_type": "course", "data": data}
+            eid = f"{s}<->{eq_sigle}:equivalent"
+            if eid not in edge_ids:
+                edge_ids.add(eid)
+                edges.append({"id": eid, "source": s, "target": eq_sigle,
+                              "relation_type": "equivalent", "label": "équivalent"})
 
     return {"root": sigle, "nodes": list(nodes.values()), "edges": edges}
 

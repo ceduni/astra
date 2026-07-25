@@ -347,7 +347,8 @@ function applyDagreLayout(nodes, edges) {
 
 function buildGraph(rawData, expandedSegment, completedSigles, substitutions, programInfo = {}) {
   const completedSet = new Set(completedSigles)
-  const availableSet = new Set(computeAvailability(rawData, completedSigles))
+  const expandedCompleted = rawData.expanded_completed || completedSigles
+  const availableSet = new Set(computeAvailability(rawData, expandedCompleted))
 
   const nodeById = {}
   rawData.nodes.forEach(n => { nodeById[n.id] = n })
@@ -536,7 +537,8 @@ export default function MindMapView({ snapshot, onNodeClick, substitutions }) {
     }
     if (node.type === 'mm_course') {
       const prereqs = getPrereqTree(node.id, rawData)
-      const unlocked = computeUnlocks(node.id, rawData, snapshot.completedSigles)
+      const expandedCompleted = rawData.expanded_completed || snapshot.completedSigles
+      const unlocked = computeUnlocks(node.id, rawData, expandedCompleted)
       onNodeClick?.({ ...node.data, prereqs, unlocked })
     }
   }
