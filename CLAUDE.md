@@ -73,7 +73,8 @@ web/                      React 19 + Vite frontend
     shared.jsx            Shared components: SearchSection, CompletedSection, useUniversities
     graphShared.jsx       Shared graph primitives: CourseNode, GroupNode, applyLayout, NODE_TYPES
     ExplorationPage.jsx   Roadmap page shell + sidebar + detail panel
-    RoadmapView.jsx       V1 roadmap renderer
+    MindMapView.jsx       ACTIVE roadmap renderer (replaced RoadmapView and ExplorationGraph)
+    RoadmapView.jsx       DEPRECATED — dead code, can be deleted
     AdminPanel.jsx        Admin login, pending queue, equivalence table, notification bell
     ExplorationGraph.jsx  DEPRECATED — dead code, can be deleted
 
@@ -258,9 +259,9 @@ Each `programs/*.json` file follows this enriched schema (updated in this sessio
 
 ## Availability computation
 
-Availability is computed **client-side** in `RoadmapView.jsx` from the graph data returned by `POST /courses/program-graph`.
+Availability is computed **client-side** in `MindMapView.jsx` from the graph data returned by `POST /courses/program-graph`.
 
-`program-graph` now returns `expanded_completed` — the student's completed sigles plus any courses that are active/needs_review equivalents of completed courses (1-hop expansion via Neo4j). `RoadmapView` uses `expanded_completed` (not raw `completedSigles`) when calling `computeAvailability`, so equivalence-aware availability works without a second API call.
+`program-graph` now returns `expanded_completed` — the student's completed sigles plus any courses that are active/needs_review equivalents of completed courses (1-hop expansion via Neo4j). `MindMapView` uses `expanded_completed` (not raw `completedSigles`) when calling `computeAvailability`, so equivalence-aware availability works without a second API call.
 
 A course is available if all entries in `outgoing[sigle]` are satisfied:
 - For a `course` node: `completedSet.has(nodeId)`
@@ -304,7 +305,7 @@ Base path in frontend: `/api` (proxied to Railway in production via `vercel.json
 
 **Response:** `{ nodes, edges, program_sigles, segments, expanded_completed }`
 
-`expanded_completed` — the student's completed sigles unioned with their active/needs_review equivalents (1-hop). Used by `RoadmapView` for equivalence-aware availability computation client-side.
+`expanded_completed` — the student's completed sigles unioned with their active/needs_review equivalents (1-hop). Used by `MindMapView` for equivalence-aware availability computation client-side.
 
 `segments` is a flat list of enriched segment objects:
 ```json
@@ -334,7 +335,7 @@ Must be URL-encoded in paths: `COMP%20251`, `MATH%20203`.
 - "Admin" button in topbar toggles `AdminPanel` (replaces the main view while open)
 - Completed courses and homeUniversite persisted in localStorage
 
-## Exploration tab (RoadmapView — V1)
+## Exploration tab (MindMapView — V1)
 - University + program selector in sidebar
 - **Orientation selector** for UdeM (3 tracks: générale, coopérative, honor)
 - Completed courses entry (search + add)
@@ -375,9 +376,9 @@ All student-facing Cypher queries filter `r.status IN ['active', 'needs_review']
 
 4. **UdeM requires an orientation selector.** The JSON has `orientation_commune` + `orientations[]`. The UI gates "Visualiser" until orientation is picked. The `_flatten_segments()` function handles the two-level hierarchy.
 
-5. **Client-side availability computation with server-side equivalence expansion.** `computeAvailability()` in `RoadmapView.jsx` uses the graph edges returned by `program-graph`. It does NOT call the `/eligible` endpoint. Equivalence expansion is handled server-side: `program-graph` returns `expanded_completed` (completed sigles + 1-hop active/needs_review equivalents), and the client passes this to `computeAvailability` instead of the raw completed list.
+5. **Client-side availability computation with server-side equivalence expansion.** `computeAvailability()` in `MindMapView.jsx` uses the graph edges returned by `program-graph`. It does NOT call the `/eligible` endpoint. Equivalence expansion is handled server-side: `program-graph` returns `expanded_completed` (completed sigles + 1-hop active/needs_review equivalents), and the client passes this to `computeAvailability` instead of the raw completed list.
 
-6. **`ExplorationGraph.jsx` is dead code.** It was replaced by `RoadmapView.jsx`. Do not restore it. It can be deleted in a cleanup pass.
+6. **`ExplorationGraph.jsx` and `RoadmapView.jsx` are dead code.** Both were replaced by `MindMapView.jsx`. Do not restore them. They can be deleted in a cleanup pass.
 
 7. **`type: "libre"` segments never show course cards.** They render as info text cards with a note. Courses like "any non-IFT course" can't be listed.
 
@@ -385,7 +386,7 @@ All student-facing Cypher queries filter `r.status IN ['active', 'needs_review']
 
 9. **`vercel.json` rewrites for production API proxy.** Vite's dev proxy (`/api → localhost:8001`) only works in dev. The `web/vercel.json` rewrites `/api/*` to the Railway URL for production. Do not remove or change this without re-validating production.
 
-10. **The roadmap is not a graph.** `RoadmapView.jsx` uses pure CSS flexbox, not ReactFlow. The Visualiseur tab keeps ReactFlow. These are two different components for two different purposes.
+10. **The roadmap is not a graph.** `MindMapView.jsx` uses ReactFlow but in a segment-tree layout, not a raw prerequisite graph. The Visualiseur tab (GraphCanvas) uses ReactFlow in dagre LR mode for prerequisite chains. These are two different components for two different purposes.
 
 ---
 
@@ -411,18 +412,11 @@ Effect: `computeAvailability` sees MAT1720 as a required target. MAT1720 is `hor
 
 ## Bug 2 — FIXED
 
-`program-graph` now returns `expanded_completed` and `RoadmapView` uses it for availability computation. Cross-university equivalences are properly accounted for.
+`program-graph` now returns `expanded_completed` and `MindMapView` uses it for availability computation. Cross-university equivalences are properly accounted for.
 
-## Bug 3 — Credits default to 3 for null values (minor display)
+## Bug 3 — FIXED (partial)
 
-In `RoadmapView.jsx` `SegmentCluster`:
-```javascript
-// TODO V2: courses with null credits in Neo4j default to 3cr — may cause inaccurate progress bars
-return sum + (nodeById[s]?.data?.credits ?? 3)
-```
-Most UdeM IFT courses are 3cr so this is usually correct. MAT1978 is 4cr (verified). The progress bar for "Mathématiques" shows 9/12 instead of the correct 11/12 (MAT1978=4cr + MAT1400=4cr + MAT1600=3cr = 11cr... but `credits_max` is 12 in the JSON which also needs verification against the actual program).
-
-**Fix:** Verify credit values in Neo4j for all program courses; update `credits_min/credits_max` in program JSONs where needed.
+`MindMapView.jsx` now defaults to `?? 0` instead of `?? 3` for courses with null credits — progress bars no longer silently inflate. Root fix still needed: verify credit values in Neo4j for all program courses and update `credits_min/credits_max` in program JSONs where needed (MAT1978=4cr, MAT1400=4cr, MAT1600=3cr confirmed).
 
 ---
 
@@ -504,9 +498,9 @@ In priority order:
 
 1. **Fix the IFT2125-class ETL bug** — rewrite concomitant OR group handling so OR semantics are preserved as `REQUIERT_CONCOMITANT` edges pointing to a group node (same pattern as REQUIERT uses PrerequisiteGroup)
 2. **Verify credit values** — check `credits` in Neo4j for UdeM informatique courses; update `credits_max` in segment JSON where needed (MAT1978=4cr, MAT1400=4cr, MAT1600=3cr → math bloc likely 11cr not 12cr)
-3. **Delete `ExplorationGraph.jsx`** — dead code
+3. **Delete `ExplorationGraph.jsx` and `RoadmapView.jsx`** — both are dead code
 4. **Admin equivalence review** — 329 pending inferred equivalences need human review by university staff. More approvals = better student experience.
-5. **V2 substitution UI in roadmap** — wire existing substitution mechanic into course cards in `RoadmapView.jsx`
+5. **V2 substitution UI in roadmap** — wire existing substitution mechanic into course cards in `MindMapView.jsx`
 
 ## Manual test scenario
 
@@ -538,14 +532,14 @@ MAT1400, MAT1600, MAT1978     (Mathématiques, 10cr actual / shows 9cr due to Bu
 When starting a new Claude Code session:
 
 1. Read this file first — it captures all major decisions and their rationale
-2. Read `web/src/RoadmapView.jsx` for the current roadmap rendering logic
+2. Read `web/src/MindMapView.jsx` for the current roadmap rendering logic (RoadmapView.jsx is dead code)
 3. Read `web/src/AdminPanel.jsx` for the admin UI including notification bell and pending queue
 4. Read `api/routes/courses.py` starting at `_load_programs()` and `get_program_graph()` for the data pipeline
 5. Read `api/routes/admin.py` for the full admin API including auth, equivalence lifecycle, and change-detection flagging
 6. Read `programs/udem_informatique.json` as the canonical example of the enriched program JSON schema
 7. Read `etl/prereq_parser.py` — `merge_cours()` includes content-hash change detection and equivalence flagging
 
-**Do not** re-read `web/src/ExplorationGraph.jsx` — it's dead code.
+**Do not** re-read `web/src/ExplorationGraph.jsx` or `web/src/RoadmapView.jsx` — both are dead code.
 
 **Do not** suggest going back to a graph-based view for the Exploration tab — the roadmap approach is decided.
 

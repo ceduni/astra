@@ -1,3 +1,4 @@
+// DEPRECATED — replaced by MindMapView.jsx. ExplorationPage no longer imports this file.
 import { useEffect, useState } from 'react'
 import { UNI_COLORS } from './graphShared'
 

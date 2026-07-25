@@ -83,7 +83,7 @@ export function SearchSection({ onAddCompleted, onVisualize, completed }) {
                 <div className="result-actions">
                   <button
                     className="btn-add"
-                    onClick={() => onAddCompleted(course)}
+                    onClick={() => { onAddCompleted(course); setQuery(''); setResults([]) }}
                     disabled={done}
                     title={done ? 'Déjà ajouté' : 'Ajouter à mon parcours'}
                   >✓</button>
