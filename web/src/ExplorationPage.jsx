@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { API, SearchSection, CompletedSection, useUniversities } from './shared'
+import { useEffect, useRef, useState } from 'react'
+import { API, CompletedSection, useDebounce, useUniversities } from './shared'
 import { UNI_COLORS } from './graphShared'
 import MindMapView from './MindMapView'
 
@@ -395,6 +395,108 @@ function DetailPanel({ course, completed, substitutions, onSubstitute, onRestore
   )
 }
 
+// ── Compact search (same fetch/debounce logic as SearchSection, compact shell) ─
+
+function CompactSearch({ onAddCompleted, completed }) {
+  const [query, setQuery] = useState('')
+  const [results, setResults] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [open, setOpen] = useState(false)
+  const debouncedQuery = useDebounce(query, 300)
+  const wrapRef = useRef(null)
+
+  const completedSigles = new Set(completed.map(c => c.sigle))
+
+  useEffect(() => {
+    if (debouncedQuery.length < 2) { setResults([]); return }
+    setLoading(true)
+    fetch(`${API}/search?q=${encodeURIComponent(debouncedQuery)}`)
+      .then(r => r.json())
+      .then(setResults)
+      .catch(() => setResults([]))
+      .finally(() => setLoading(false))
+  }, [debouncedQuery])
+
+  useEffect(() => {
+    function onDocClick(e) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target)) setOpen(false)
+    }
+    document.addEventListener('mousedown', onDocClick)
+    return () => document.removeEventListener('mousedown', onDocClick)
+  }, [])
+
+  const showDropdown = open && (loading || results.length > 0 || debouncedQuery.length >= 2)
+
+  return (
+    <div className="compact-search" ref={wrapRef}>
+      <input
+        type="search"
+        className="search-input"
+        placeholder="Rechercher un cours…"
+        value={query}
+        onFocus={() => setOpen(true)}
+        onChange={e => { setQuery(e.target.value); setOpen(true) }}
+      />
+      {showDropdown && (
+        <div className="compact-search-results result-list">
+          {loading && <p className="hint" style={{ padding: '0.4rem 0.65rem' }}>Recherche…</p>}
+          {!loading && results.length === 0 && (
+            <p className="hint" style={{ padding: '0.4rem 0.65rem' }}>Aucun résultat.</p>
+          )}
+          {!loading && results.map(course => {
+            const done = completedSigles.has(course.sigle)
+            return (
+              <div key={`${course.universite}-${course.sigle}`} className={`result-row ${done ? 'done' : ''}`}>
+                <span className="uni-dot" data-uni={course.universite} />
+                <div className="result-info">
+                  <span className="sigle">{course.sigle}</span>
+                  <span className="compact-titre">{course.titre}</span>
+                </div>
+                <div className="result-actions">
+                  <button
+                    className="btn-add"
+                    onClick={() => onAddCompleted(course)}
+                    disabled={done}
+                    title={done ? 'Déjà ajouté' : 'Ajouter à mon parcours'}
+                  >✓</button>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      )}
+    </div>
+  )
+}
+
+// ── Completed courses — compact popover trigger around the existing section ────
+
+function CompletedToggle({ completed, onRemove }) {
+  const [open, setOpen] = useState(false)
+  const wrapRef = useRef(null)
+
+  useEffect(() => {
+    function onDocClick(e) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target)) setOpen(false)
+    }
+    document.addEventListener('mousedown', onDocClick)
+    return () => document.removeEventListener('mousedown', onDocClick)
+  }, [])
+
+  return (
+    <div className="completed-toggle-wrap" ref={wrapRef}>
+      <button className="completed-toggle-btn" onClick={() => setOpen(o => !o)}>
+        Complétés {completed.length > 0 ? `(${completed.length})` : ''}
+      </button>
+      {open && (
+        <div className="completed-popover">
+          <CompletedSection completed={completed} onRemove={onRemove} />
+        </div>
+      )}
+    </div>
+  )
+}
+
 // ── Page ───────────────────────────────────────────────────────────────────────
 
 export default function ExplorationPage({
@@ -456,13 +558,13 @@ export default function ExplorationPage({
     : null
 
   return (
-    <div className="vis-shell">
-      {/* Sidebar */}
-      <aside className="vis-sidebar" style={{ width: 280, borderRight: '1px solid #e5e7eb' }}>
-        <div className="vis-sidebar-inner">
-          <div className="sidebar-section" style={{ borderBottom: '1px solid #f3f4f6' }}>
-            <div className="section-label" style={{ marginBottom: '0.6rem' }}>Mon université</div>
-            <div className="uni-selector">
+    <div className="explore-shell">
+      {/* Top bar */}
+      <div className="explore-topbar">
+        <div className="explore-topbar-row">
+          <div className="explore-filter-group">
+            <span className="explore-filter-label">Université</span>
+            <div className="uni-selector-inline">
               {universities.map(uni => (
                 <button
                   key={uni}
@@ -478,9 +580,9 @@ export default function ExplorationPage({
           </div>
 
           {programs.length > 0 && (
-            <div className="sidebar-section" style={{ borderBottom: '1px solid #f3f4f6' }}>
-              <div className="section-label" style={{ marginBottom: '0.6rem' }}>Programme</div>
-              <div className="uni-selector">
+            <div className="explore-filter-group">
+              <span className="explore-filter-label">Programme</span>
+              <div className="uni-selector-inline">
                 {programs.map(p => (
                   <button
                     key={p.id}
@@ -495,9 +597,9 @@ export default function ExplorationPage({
           )}
 
           {hasOrientations && (
-            <div className="sidebar-section" style={{ borderBottom: '1px solid #f3f4f6' }}>
-              <div className="section-label" style={{ marginBottom: '0.6rem' }}>Orientation</div>
-              <div className="uni-selector">
+            <div className="explore-filter-group">
+              <span className="explore-filter-label">Orientation</span>
+              <div className="uni-selector-inline">
                 {selectedProgramData.orientations.map(o => (
                   <button
                     key={o.id}
@@ -511,20 +613,20 @@ export default function ExplorationPage({
             </div>
           )}
 
-          <SearchSection onAddCompleted={onAddCompleted} completed={completed} />
-          <CompletedSection completed={completed} onRemove={onRemoveCompleted} />
-        </div>
-
-        <div className="vis-sidebar-footer">
           <button
-            className="btn-calculer"
+            className="btn-calculer explore-calculer"
             onClick={handleCalculer}
             disabled={!homeUniversite || !program || (hasOrientations && !orientation)}
           >
             Visualiser le programme
           </button>
         </div>
-      </aside>
+
+        <div className="explore-topbar-row">
+          <CompactSearch onAddCompleted={onAddCompleted} completed={completed} />
+          <CompletedToggle completed={completed} onRemove={onRemoveCompleted} />
+        </div>
+      </div>
 
       {/* Main */}
       <div className="vis-main">
